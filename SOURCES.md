@@ -46,3 +46,11 @@ original hosts below. All URLs verified live in July 2026.
 - Kimi-VL-A3B-Thinking-2506 config/API — https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking-2506
 - Kimi K2.5 / K2.7-Code model cards (MoonViT 400M vision encoder, 256K context, native INT4) — https://huggingface.co/moonshotai/Kimi-K2.5 , https://huggingface.co/moonshotai/Kimi-K2.7-Code
 - vLLM engine args (gpu-memory-utilization default 0.92 = 8% reserve) — https://docs.vllm.ai/en/latest/configuration/engine_args.html
+
+## Kimi K3 launch + native-precision pass (2026-07-18)
+- Kimi K3 announcement, "Kimi K3: Open Frontier Intelligence" (2.8T params; KDA + AttnRes + Gated MLA; 16-of-896 experts, Stable LatentMoE; native vision; 1M context; QAT from SFT onward, MXFP4 weights + MXFP8 activations; weights due 2026-07-27) — https://www.kimi.com/blog/kimi-k3
+- Kimi API platform pricing, Kimi K3 (model id kimi-k3; context 1,048,576; $0.30 cache-hit / $3.00 cache-miss / $15.00 output per MTok) — https://platform.kimi.ai/docs/pricing/chat-k3 (index: /docs/pricing/chat)
+- Kimi-Linear-48B-A3B-Instruct config.json (KDA:MLA 3:1 layer ratio precedent — 20 kda_layers vs 7 full_attn_layers of 27; KDA head_dim 128; MLA kv_lora_rank 512 + qk_rope 64) — https://huggingface.co/moonshotai/Kimi-Linear-48B-A3B-Instruct
+- Kimi K2 technical report p.7 (Sparsity Scaling Law; sparsity 48 = 8-of-384 adopted for K2; abstract: 1.04T total / 32B activated; BF16 training, FP8-E4M3 storage of insensitive activations only) — https://arxiv.org/pdf/2507.20534
+- Kimi K2.5 technical report (arXiv 2602.02276, "Visual Agentic Intelligence") — https://arxiv.org/abs/2602.02276
+- Crucial DDR5-5600 UDIMM MSRPs via Wayback: CT16G56C46U5 $144.99, CP24G56C46U5 $195.99, CP32G56C46U5 $292.99, CP48G56C46U5 $380.99 (snap 2026-04-16, flagged EOL), CP64G56C46U5 $555.99 (snap 2026-04-14) — https://web.archive.org/web/2026*/https://www.crucial.com/memory/ddr5/

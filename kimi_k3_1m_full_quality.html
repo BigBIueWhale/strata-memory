@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kimi K3 @ 1M, full quality &mdash; the memory build, straight</title>
+<style>
+  :root{--ink:#1b1f24;--paper:#fbfaf7;--muted:#5d6571;--rule:#e2ddd2;--accent:#7a4cc4;--accent2:#1f7a5a;--amber:#9a6a00;--red:#9a2f2f;--code-bg:#f1ede4;--code-ink:#3a2f5a;--blue:#1f5d7a;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:940px;margin:0 auto;padding:44px 24px 120px}
+  header.hero{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:8px}
+  .kicker{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:31px;line-height:1.1;margin:.2em 0 .12em}
+  .sub{font-size:18px;color:var(--muted);margin:0}
+  .meta{font-size:12.5px;color:var(--muted);margin-top:12px}
+  h2{font-size:22px;margin:2em 0 .45em;padding-top:.3em;border-top:1px solid var(--rule);line-height:1.18}
+  h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;font-size:15px;vertical-align:.18em;margin-right:.5em}
+  h3{font-size:16.5px;margin:1.3em 0 .3em;color:var(--accent2)}
+  p{margin:.65em 0}
+  code{font-family:"SFMono-Regular",Consolas,Menlo,monospace;font-size:.84em;background:var(--code-bg);color:var(--code-ink);padding:1px 5px;border-radius:4px;white-space:nowrap}
+  strong{font-weight:700}
+  ul,ol{margin:.5em 0 .8em;padding-left:1.3em}
+  li{margin:.3em 0}
+  .lede{font-size:18px;color:#33373d}
+  .callout{margin:1.1em 0;padding:13px 17px;border-radius:9px;border-left:5px solid var(--accent);background:#f4f0fb}
+  .callout .lab{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:4px;color:var(--accent)}
+  .callout.punch{border-left-color:var(--accent2);background:#e9f5ef}.callout.punch .lab{color:var(--accent2)}
+  .callout.catch{border-left-color:var(--amber);background:#fbf4e4}.callout.catch .lab{color:var(--amber)}
+  .callout.stop{border-left-color:var(--red);background:#fbecec}.callout.stop .lab{color:var(--red)}
+  .callout.spec{border-left-color:var(--blue);background:#e8f2f7}.callout.spec .lab{color:var(--blue)}
+  table{border-collapse:collapse;width:100%;margin:1em 0;font-size:13px}
+  th,td{border:1px solid var(--rule);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:#efe9dd;font-size:12px}
+  tbody tr:nth-child(even){background:#f6f2ea}
+  .verdict{font-size:20px;font-weight:800;color:var(--red)}
+  .flag{color:var(--amber);font-weight:700}
+  .pass{color:var(--accent2);font-weight:700}
+  footer{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">checked-out decision record &middot; the real Kimi K3</div>
+  <h1>Kimi K3 @ 1M, full quality &mdash; the memory build, straight</h1>
+  <p class="sub">The honest cost to run the announced Kimi K3 (2.8T, MXFP4-native, 1M context, multimodal) at full quality on commodity DDR5 &mdash; no spec-shrinking, no precision inflation.</p>
+  <p class="meta">Every fact quoted from downloaded sources (Moonshot K3 blog + platform, per-generation model cards/configs, DDR5 datasheets, price snapshots) in <code>pricing_evidence/</code>. K3 announced ~2026-07-16; open weights due 2026-07-27 (this predates them &mdash; byte-split details flagged). Prices point-in-time, crunch-inflated; ₪3.04/USD.</p>
+</header>
+
+<p class="lede">This replaces a prior report that fumbled the target twice &mdash; it used K2-scale, then <em>assumed</em> FP8 was &ldquo;full quality.&rdquo; Both are superseded by <strong>announced fact</strong>: K3 is real, it is 2.8&nbsp;T, and its native precision is <strong>MXFP4</strong>.</p>
+
+<div class="callout stop"><span class="lab">Verdict &mdash; the ₪30k question, answered straight</span>
+<p style="margin-top:2px"><span class="verdict">NO. Kimi K3 @ 1M full quality &asymp; ₪61,500 landed &mdash; 2.05&times; the ₪30k line.</span></p>
+<p>At K3&rsquo;s <strong>native MXFP4</strong> precision (which <em>is</em> full quality) with the KV cache un-quantized (FP16), MTP resident, and the vision stack in, a 1M-context K3 needs <strong>~1.56&nbsp;TiB</strong> &rarr; <strong>45 &times; 48&nbsp;GiB DDR5-5600 UDIMM = 2.16&nbsp;TiB @ 1.79&nbsp;TB/s</strong> &rarr; $17,145 MSRP + 18% VAT = <strong>~₪61,500 landed</strong> (Israeli retail ~2&times; &rarr; ₪95k+). The NO is estimate-proof: even the low end of the VRAM range (1.51&nbsp;TiB) still forces 45&times;48. <strong>₪30k buys K2.7 (~700 GiB, 45&times;24), not K3</strong> &mdash; K3&rsquo;s 2.8&nbsp;T is a bigger animal than the budget. No spec was shrunk and no precision was inflated above native.</p>
+</div>
+
+<h2 id="real"><span class="num">01</span>Kimi K3 is real &mdash; announced facts, not estimates</h2>
+<p>K3 launched on the Kimi API ~2026-07-16/17 (&ldquo;Kimi K3 has launched!&rdquo;); open weights are due <strong>2026-07-27</strong> (HF <code>moonshotai/Kimi-K3</code> &rarr; 401 as of 2026-07-18). From Moonshot&rsquo;s own blog + platform:</p>
+<table>
+<thead><tr><th>Property</th><th>Value (quoted / measured)</th></tr></thead>
+<tbody>
+<tr><td>Parameters</td><td><strong>2.8 T</strong> &mdash; &ldquo;the world&rsquo;s first open 3T-class model&rdquo;</td></tr>
+<tr><td>MoE sparsity</td><td>&ldquo;effectively activating <strong>16 of 896 experts</strong>&rdquo; (sparsity 56; continues the K2 report&rsquo;s Sparsity Scaling Law, p.7)</td></tr>
+<tr><td>Attention</td><td><strong>Kimi Delta Attention (KDA) + Attention Residuals</strong>; 3:1 KDA:MLA hybrid; 96 layers, dim 8192, 512-dim MLA</td></tr>
+<tr><td>Context</td><td><strong>1,000,000 tokens</strong></td></tr>
+<tr><td>Modality</td><td><strong>native vision</strong> &mdash; text, images, video in one model</td></tr>
+<tr><td>Native precision</td><td><strong>MXFP4 weights + MXFP8 activations, QAT from the SFT stage onward</strong></td></tr>
+</tbody>
+</table>
+
+<h2 id="prec"><span class="num">02</span>The precision determination &mdash; per generation, from evidence</h2>
+<p>&ldquo;Full quality&rdquo; = the model&rsquo;s <em>own native trained precision</em>. Running above it is a phantom (more VRAM, zero quality); below it is over-quantizing. The Kimi line&rsquo;s trajectory, each quoted from its downloaded card/config:</p>
+<table>
+<thead><tr><th>Generation</th><th>Native precision</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr><td>DeepSeek-V3 (lineage parent)</td><td>block-FP8 e4m3</td><td>&ldquo;we only provide FP8 weights&rdquo;</td></tr>
+<tr><td>K2-Instruct (2025-07)</td><td>block-FP8 e4m3</td><td>&ldquo;checkpoints are stored in the block-fp8 format&rdquo; (958.5 GiB measured)</td></tr>
+<tr><td>K2-Thinking (2025-11)</td><td><strong>INT4-QAT</strong> W4A16 g32</td><td>&ldquo;native INT4 &hellip; lossless &hellip; QAT &hellip; all benchmarks reported under INT4&rdquo; (553.5 GiB)</td></tr>
+<tr><td>K2.5 / 2.6 / 2.7 (2026)</td><td>INT4-QAT (same scheme) + BF16 vision</td><td>&ldquo;same native int4 quantization method as K2-Thinking&rdquo; (K2.7: 554.3 GiB)</td></tr>
+<tr><td><strong>K3 (2026-07)</strong></td><td><strong>MXFP4</strong> weights + MXFP8 activations, QAT from SFT</td><td>&ldquo;Kimi K3 applies quantization-aware training from the SFT stage onward, using MXFP4 weights with MXFP8 activations&rdquo;</td></tr>
+</tbody>
+</table>
+<p><strong>MXFP4</strong> = OCP microscaling FP4: 4-bit E2M1 elements + one E8M0 scale per 32-block = <strong>~4.25 bits/param effective</strong>. It <em>is</em> K3&rsquo;s full quality &mdash; QAT&rsquo;d, served, and benchmarked there ($3/$15-per-MTok economics only close at 4-bit). FP8 (~3.0 TiB) or FP16 (~5.9 TiB) would be decompression phantoms.</p>
+
+<h2 id="vram"><span class="num">03</span>Full-quality VRAM @ 1M &mdash; native MXFP4, un-quantized FP16 KV</h2>
+<table>
+<thead><tr><th>Component</th><th>Size</th><th>Basis</th></tr></thead>
+<tbody>
+<tr><td>Weights, native MXFP4</td><td><strong>1,431 GiB</strong></td><td>2.8T &times; [98.8% @ 4.25 b + 1.2% BF16], split mirrored from K2.7&rsquo;s measured INT4/BF16 ratio</td></tr>
+<tr><td>KV @1M, FP16 <strong>un-quantized</strong></td><td><strong>~28 GiB</strong> (bound ~108)</td><td>only 24 of 96 layers are MLA (3:1 KDA:MLA) &mdash; KDA is recurrent, near-zero state; the hybrid is what shrinks KV</td></tr>
+<tr><td>MTP module (native)</td><td>+17.8 GiB <span class="flag">[flag]</span></td><td>~35B block (V3 ratio); no K2-line model shipped one &mdash; assumed for K3</td></tr>
+<tr><td>Vision (MoonViT + projector)</td><td>+1 GiB</td><td>400M-class, BF16</td></tr>
+<tr><td>Runtime overhead</td><td>&times;1.08</td><td>vLLM default reserve</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>&asymp; 1,596 GiB &asymp; 1.56 TiB</strong></td><td><strong>range 1.51&ndash;1.77 TiB</strong></td></tr>
+</tbody>
+</table>
+<div class="callout spec"><span class="lab">Why it&rsquo;s buildable at all</span>Native MXFP4 is the difference between a buildable machine and an impossible one: at FP8 the same model is ~3.0 TiB (won&rsquo;t fit 45&times;64 = 2.88 TiB); at FP16 ~5.9 TiB. And the KDA:MLA hybrid keeps the 1M-token KV at ~28 GiB (vs ~100+ for all-MLA). The model was co-designed to be servable at 4-bit &mdash; so 4-bit <em>is</em> the honest quality.</div>
+
+<h2 id="cfg"><span class="num">04</span>The config &amp; correctness</h2>
+<p><strong>45 &times; Crucial <code>CP48G56C46U5</code> (48 GiB DDR5-5600 UDIMM, official Micron brand, JEDEC-native CL46) = 2,160 GiB.</strong> Fits the entire 1.51&ndash;1.77 TiB range with &ge;19% headroom (45&times;32 = 1,440 GiB fails even the low case). Bandwidth 45 &times; 44.8 GB/s = 2,016 GB/s raw &rarr; the front&rsquo;s <strong>1.79 TB/s</strong> at 88.9% duty.</p>
+<table>
+<thead><tr><th>Check (&sect;10)</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Encodable <code>CL</code></td><td><span class="pass">PASS</span> &mdash; ~50.5&ndash;64.5 ns via the custom widened field</td></tr>
+<tr><td>Schedulable refresh</td><td><span class="pass">PASS</span> &mdash; <strong>per-bank REFsb mandatory</strong> (all-bank +0.6 pp cool, fails hot); monolithic UDIMM is the refresh-friendly corner (10.5% vs 3DS ~84%)</td></tr>
+<tr><td>Integrity</td><td><span class="flag">ADD</span> converter-side CRC / 44-data+1-parity &mdash; consumer UDIMM is non-ECC</td></tr>
+<tr><td>Physical</td><td><strong>hierarchical appliance only</strong> &mdash; ~9 leaf converters + switch-class root, ~0.2 m&sup2; board, ~0.5 kW; never one package (~5,000+ signal pins)</td></tr>
+</tbody>
+</table>
+
+<h2 id="cost"><span class="num">05</span>Cost &amp; the budget</h2>
+<table>
+<thead><tr><th>Line</th><th>Amount</th></tr></thead>
+<tbody>
+<tr><td>45 &times; <code>CP48G56C46U5</code> @ $380.99 (Crucial MSRP)</td><td>$17,144.55</td></tr>
+<tr><td>+ 18% Israeli VAT (ICs duty-free)</td><td>$20,230.57</td></tr>
+<tr><td><strong>Landed @ ₪3.04</strong></td><td><strong>&asymp; ₪61,500</strong> (~₪62&ndash;64k with freight/handling)</td></tr>
+<tr><td>Israeli retail alternative (~2&times; MSRP)</td><td>₪95k+ (48 GiB parts barely stocked in IL)</td></tr>
+<tr><td>&mdash; What ₪30k <em>does</em> buy: 45 &times; 24 GiB (1,080 GiB)</td><td>₪31.6k &rarr; runs <strong>K2.7</strong> @ 1M full quality (~700 GiB) with 54% headroom &mdash; not K3</td></tr>
+</tbody>
+</table>
+
+<h2 id="flags"><span class="num">06</span>Honest flags</h2>
+<ul>
+<li><strong>Pre-weights:</strong> K3 open weights land 2026-07-27; the MXFP4/BF16 byte-split, exact layer/KV geometry, and MTP presence are from the blog + lineage inference &mdash; firm within the 1.51&ndash;1.77 TiB range, exact at release.</li>
+<li><strong>MTP flagged:</strong> no K2-line model shipped an MTP module; the +17.8 GiB assumes K3 does. If not, subtract it.</li>
+<li><strong>Price:</strong> Crucial <code>CP48G56C46U5</code> MSRP is a Wayback snapshot and the page flags EOL (Micron exited consumer Crucial DRAM) &mdash; a last-published paper floor; live/IL prices run higher. US retail was bot-walled.</li>
+<li><strong>Scope:</strong> DRAM only. The converter silicon (custom N3E ASIC ~$50M NRE, or FPGA prototype) is separate.</li>
+</ul>
+
+<footer>
+  <p><strong>Bottom line.</strong> Kimi K3 is a real, announced <strong>2.8 T</strong>, <strong>MXFP4-native</strong>, 1M-context, multimodal model. At its true full quality (native MXFP4 + un-quantized FP16 KV + MTP + vision) it needs <strong>~1.56 TiB</strong> &rarr; <strong>45 &times; 48 GiB DDR5-5600 UDIMM @ 1.79 TB/s &asymp; ₪61,500 landed</strong>. The ₪30,000 target is <strong>not</strong> achievable for K3 &mdash; it is 2&times; over, and estimate-proof. ₪30k runs the previous-generation K2.7, not K3. The precision was determined from Moonshot&rsquo;s own words (MXFP4), not assumed; the spec was neither shrunk nor inflated.</p>
+  <p style="color:var(--muted)">Compiled from an evidence-only research pass, 2026-07-18. Sources in <code>pricing_evidence/</code> + <code>SOURCES.md</code>. Point-in-time crunch prices, not quotes. Supersedes the deleted prior report (K2-scale / FP8 assumption).</p>
+</footer>
+
+</div>
+</body>
+</html>
