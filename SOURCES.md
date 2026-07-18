@@ -54,6 +54,7 @@ original hosts below. All URLs verified live in July 2026.
 - Kimi K2 technical report p.7 (Sparsity Scaling Law; sparsity 48 = 8-of-384 adopted for K2; abstract: 1.04T total / 32B activated; BF16 training, FP8-E4M3 storage of insensitive activations only) — https://arxiv.org/pdf/2507.20534
 - Kimi K2.5 technical report (arXiv 2602.02276, "Visual Agentic Intelligence") — https://arxiv.org/abs/2602.02276
 - Crucial DDR5-5600 UDIMM MSRPs via Wayback: CT16G56C46U5 $144.99, CP24G56C46U5 $195.99, CP32G56C46U5 $292.99, CP48G56C46U5 $380.99 (snap 2026-04-16, flagged EOL), CP64G56C46U5 $555.99 (snap 2026-04-14) — https://web.archive.org/web/2026*/https://www.crucial.com/memory/ddr5/
+- Crucial Pro **CP48G56C46U5** product page — the chosen 48 GiB DDR5-5600 UDIMM (CL46, Pro series, **EOL** badge, and the 8/16/24/32/48/64 GB density ladder visible) — crucial.com; screenshot in `pricing_evidence/crucial_CP48G56C46U5_product_page.png` (+ archived HTML `pricing_evidence/wayback_crucial_CP48G56C46U5*.html`)
 
 ## NVIDIA B200 / GB200 scale-out + serving economics (2026-07-18/19)
 - NVIDIA DGX B200 page + user guide (180 GB/GPU shipping = 1,440 GB/node; 14.4 TB/s all-to-all NVLink; 8× ConnectX-7 400 Gb/s IB scale-out) — https://www.nvidia.com/en-us/data-center/dgx-b200/ , https://docs.nvidia.com/dgx/dgxb200-user-guide/introduction-to-dgxb200.html
