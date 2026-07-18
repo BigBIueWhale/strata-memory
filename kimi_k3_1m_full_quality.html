@@ -100,8 +100,8 @@
 
 <h2 id="cfg"><span class="num">04</span>The config &amp; correctness</h2>
 <p><strong>45 &times; Crucial <code>CP48G56C46U5</code> (48 GiB DDR5-5600 UDIMM, official Micron brand, JEDEC-native CL46) = 2,160 GiB.</strong> Fits the entire 1.51&ndash;1.77 TiB range with &ge;19% headroom (45&times;32 = 1,440 GiB fails even the low case). Bandwidth 45 &times; 44.8 GB/s = 2,016 GB/s raw &rarr; the front&rsquo;s <strong>1.79 TB/s</strong> at 88.9% duty.</p>
-<div class="callout spec"><span class="lab">Why 48 GiB is the matched density &mdash; and where 1.79 TB/s is crossed</span>
-<p style="margin-top:2px">Bandwidth forces <strong>45 channels</strong> (45 &times; 44.8 = 2,016 GB/s raw &rarr; 1.79 TB/s net); each channel takes one UDIMM, so capacity is simply <code>45 &times; density</code> and the ~10-chip converter is identical at every rung &mdash; only the stick changes:</p>
+<div class="callout spec"><span class="lab">Why 48 GiB &mdash; its 1.79 TB/s break-even is the matched one (and why not 64 GiB)</span>
+<p style="margin-top:2px">Bandwidth forces <strong>45 channels</strong> (45 &times; 44.8 = 2,016 GB/s raw &rarr; 1.79 TB/s net); each channel takes one UDIMM, so capacity is simply <code>45 &times; density</code> and the ~10-chip converter is identical at every rung. Each density has a <strong>break-even capacity</strong> &mdash; where its 45 sticks fill all 45 channels and the build <em>first</em> reaches 1.79 TB/s (the Capacity column below). Every rung is the same <strong>CL46</strong> JEDEC-native part; only the stick &mdash; and thus the break-even &mdash; changes:</p>
 <table style="margin-top:.5em">
 <thead><tr><th>DDR5-5600 UDIMM (&times; 45)</th><th>Capacity</th><th>Bandwidth</th><th>Runs</th></tr></thead>
 <tbody>
@@ -109,10 +109,10 @@
 <tr><td>16 GiB</td><td>720 GiB</td><td>1.79 TB/s</td><td>small models</td></tr>
 <tr><td>24 GiB (<code>CP24G56C46U5</code>)</td><td>1.05 TiB</td><td>1.79 TB/s</td><td>K2.7-scale (~700 GiB)</td></tr>
 <tr><td><strong>48 GiB (<code>CP48G56C46U5</code>) &mdash; chosen</strong></td><td><strong>2.11 TiB</strong></td><td>1.79 TB/s</td><td><strong>Kimi K3</strong> (1.56 TiB + 19%)</td></tr>
-<tr><td>64 GiB</td><td>2.81 TiB</td><td>1.79 TB/s</td><td>overshoot / headroom</td></tr>
+<tr><td>64 GiB (<code>CP64G56C46U5</code>) &mdash; <strong>same CL46</strong></td><td><strong>2.81 TiB</strong></td><td>1.79 TB/s</td><td>break-even overshoots K3 &mdash; more capacity/cost, no gain</td></tr>
 </tbody>
 </table>
-<p style="margin-bottom:2px"><strong>48 GiB is the <em>matched</em> density:</strong> the smallest stick for which the 45 channels the bandwidth already forces (45 &times; 48 = 2.11 TiB) also clear K3&rsquo;s ~1.56 TiB. Smaller keeps 1.79 TB/s but falls short on capacity (45 &times; 24 = 1.05 TiB); larger overshoots and wastes money. So for <em>this</em> chip, <strong>full bandwidth and 2.11 TiB are welded to one point</strong> &mdash; you cannot buy 1.79 TB/s with a 48 GiB part at any lower capacity, because dropping a stick drops a channel. To cross 1.79 TB/s <em>lower</em>, switch to a smaller stick (the dial above), never a smaller converter (see <code>strata_v_design.html</code>&nbsp;&sect;04).</p>
+<p style="margin-bottom:2px"><strong>We chose 48 GiB because its break-even &mdash; <em>2.11 TiB</em> (45 &times; 48) &mdash; is the smallest one that still clears K3&rsquo;s ~1.56 TiB.</strong> The <strong>64 GiB</strong> part (<code>CP64G56C46U5</code>) was the alternative and is <em>identical where it counts &mdash; same CL46, same DDR5-5600, same bandwidth-per-channel</em> &mdash; but its break-even is <strong>2.81 TiB</strong> (45 &times; 64): ~0.7 TiB more capacity and cost for <em>zero</em> gain in bandwidth or latency. So 48-vs-64 is purely a break-even-<em>capacity</em> choice, not a performance one. And note what a break-even is: below it a given stick cannot reach 1.79 TB/s (drop a stick, drop a channel), so for the 48 GiB part <strong>full bandwidth and 2.11 TiB are welded to one point</strong>. To break even <em>lower</em>, step down the density dial to a smaller stick (24 GiB &rarr; 1.05 TiB), never a smaller converter (see <code>strata_v_design.html</code>&nbsp;&sect;04).</p>
 </div>
 <table>
 <thead><tr><th>Check (&sect;10)</th><th>Result</th></tr></thead>
