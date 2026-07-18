@@ -26,7 +26,7 @@ real, shipping reference, and estimates are flagged as such.
 
 ## The through-line (what the three docs establish)
 
-- **Pins buy bandwidth; capacity is depth.** They're independent axes — `bandwidth ≈ pins × per-pin rate`, capacity is how much DRAM sits behind the pins.
+- **Pins buy bandwidth; capacity is depth.** They're independent axes — `bandwidth ≈ pins × per-pin rate`, capacity is how much DRAM sits behind the pins. So once bandwidth fixes the channel count (and the converter with it), **capacity is a free dial** set by DIMM density alone — the same converter is the cheapest build at *every* capacity, with a hard floor of `channels × smallest DIMM` (360 GiB for the DDR5-5600 UDIMM build; the chosen 48 GiB is the density where that dial lands exactly on Kimi K3).
 - **1.79 TB/s is a *low* bandwidth.** It's ~18 MRDIMM channels or ~35 DDR5-6400 channels — reachable with cheap, deep commodity DRAM, no GDDR7 required.
 - **At multi-TiB scale, bandwidth is nearly free.** 2 TiB of commodity DDR5 already contains multiple TB/s of latent parallelism; a converter just exposes the slice you want.
 - **A converter can front cheap-and-deep DDR5 as a fast, huge virtual device** — the catch is a fixed ~5–10% latency tax and a hard requirement that the backing stay *deterministic* (a fixed-beat memory protocol has no "please wait").

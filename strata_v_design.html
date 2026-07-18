@@ -112,6 +112,13 @@
 </ul>
 <p>So &ldquo;higher bandwidth than DDR5 provides&rdquo; is true <em>per component</em> (18&ndash;287&times;) and comes entirely from quantity + interleave &mdash; not from any single chip doing more than it can.</p>
 <p><strong>The 1.79&nbsp;TB/s target is arbitrary</strong> &mdash; chosen only to match the RTX&nbsp;5090. Bandwidth and capacity are independent knobs: set any front bandwidth by the channel count (N&nbsp;&times;&nbsp;per&#8209;channel), and any capacity by the depth (channels&nbsp;&times;&nbsp;3DS&nbsp;stack). 1.79&nbsp;TB/s and 2.25&nbsp;TiB are simply the point we picked.</p>
+<div class="callout punch"><span class="lab">The consequence: capacity is a free dial</span>
+<p style="margin-top:2px">Because bandwidth is set by <em>channel count</em>, and the channel count fixes the converter, <strong>capacity becomes a dial the converter never sees</strong> &mdash; set purely by the density of the DIMM in each channel. Two facts fall out, for any target:</p>
+<ul style="margin:.3em 0 0">
+<li><strong>The floor.</strong> Minimum capacity at full bandwidth = <code>channels &times; smallest&nbsp;DIMM</code>; below it you must depopulate channels and bandwidth drops. It depends on the memory type: the DDR5-5600 UDIMM build reaches down to 45&times;8&nbsp;GiB = <strong>360&nbsp;GiB</strong>, whereas this MRDIMM path can&rsquo;t go below ~2.25&nbsp;TiB (it only ships in big 3DS densities) &mdash; which is why the consumer-UDIMM route is the one that spans low capacities.</li>
+<li><strong>One converter, cheapest at every capacity.</strong> The ~10-chip converter is fixed by bandwidth, so the only thing that changes across the whole range is the stick you slot in &mdash; making the same design the cheapest N-TB/s build at <em>every</em> capacity, top to bottom.</li>
+</ul>
+<p style="margin-bottom:2px">The worked DDR5-5600 UDIMM ladder (45 channels; floor 360&nbsp;GiB &rarr; K3 at 2.11&nbsp;TiB) is in <code>kimi_k3_1m_full_quality.html</code>&nbsp;&sect;04.</p></div>
 
 <h2 id="cmp"><span class="num">05</span>Comparison &mdash; vs. a 32&nbsp;GiB GDDR7 GPU and one DDR5 channel</h2>
 <table>
