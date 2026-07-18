@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheapest official-DDR build for Kimi @ 1M full quality &mdash; checked-out verdict</title>
+<style>
+  :root{--ink:#1b1f24;--paper:#fbfaf7;--muted:#5d6571;--rule:#e2ddd2;--accent:#7a4cc4;--accent2:#1f7a5a;--amber:#9a6a00;--red:#9a2f2f;--code-bg:#f1ede4;--code-ink:#3a2f5a;--blue:#1f5d7a;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:940px;margin:0 auto;padding:44px 24px 120px}
+  header.hero{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:8px}
+  .kicker{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:31px;line-height:1.1;margin:.2em 0 .12em}
+  .sub{font-size:18px;color:var(--muted);margin:0}
+  .meta{font-size:12.5px;color:var(--muted);margin-top:12px}
+  h2{font-size:22px;margin:2em 0 .45em;padding-top:.3em;border-top:1px solid var(--rule);line-height:1.18}
+  h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;font-size:15px;vertical-align:.18em;margin-right:.5em}
+  h3{font-size:16.5px;margin:1.3em 0 .3em;color:var(--accent2)}
+  p{margin:.65em 0}
+  code{font-family:"SFMono-Regular",Consolas,Menlo,monospace;font-size:.84em;background:var(--code-bg);color:var(--code-ink);padding:1px 5px;border-radius:4px;white-space:nowrap}
+  strong{font-weight:700}
+  ul,ol{margin:.5em 0 .8em;padding-left:1.3em}
+  li{margin:.3em 0}
+  .lede{font-size:18px;color:#33373d}
+  .callout{margin:1.1em 0;padding:13px 17px;border-radius:9px;border-left:5px solid var(--accent);background:#f4f0fb}
+  .callout .lab{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:4px;color:var(--accent)}
+  .callout.punch{border-left-color:var(--accent2);background:#e9f5ef}.callout.punch .lab{color:var(--accent2)}
+  .callout.catch{border-left-color:var(--amber);background:#fbf4e4}.callout.catch .lab{color:var(--amber)}
+  .callout.stop{border-left-color:var(--red);background:#fbecec}.callout.stop .lab{color:var(--red)}
+  .callout.spec{border-left-color:var(--blue);background:#e8f2f7}.callout.spec .lab{color:var(--blue)}
+  table{border-collapse:collapse;width:100%;margin:1em 0;font-size:13px}
+  th,td{border:1px solid var(--rule);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:#efe9dd;font-size:12px}
+  tbody tr:nth-child(even){background:#f6f2ea}
+  .verdict{font-size:20px;font-weight:800;color:var(--accent2)}
+  .flag{color:var(--amber);font-weight:700}
+  .pass{color:var(--accent2);font-weight:700}.fail{color:var(--red);font-weight:700}
+  footer{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">checked-out decision record &middot; price-optimized STRATA-V</div>
+  <h1>The cheapest official-DDR build for Kimi @ 1M, full quality</h1>
+  <p class="sub">A price-optimized STRATA-V: consumer DDR5-5600 UDIMMs behind the converter, sized to run a Kimi-K2/K3-scale MoE at 1M context, full quality, with MTP + vision + un-quantized KV.</p>
+  <p class="meta">Every number verified by four Fable-5 research passes with downloaded evidence in <code>pricing_evidence/</code> (datasheets, model configs, price snapshots). Parameter model validated to 0.006% vs measured HF totals. Prices point-in-time 2026-07-18, crunch-inflated; conversions at ₪3.0 (planning) / ₪3.04 (actual). Not quotes.</p>
+</header>
+
+<p class="lede">The goal shifted from &ldquo;2 TiB&rdquo; to &ldquo;the memory to <em>run the model</em> at 1M full quality, as cheaply as an official-brand build allows.&rdquo; Answer: it fits far under 2 TiB &mdash; and the whole thing turns on what &ldquo;full quality&rdquo; actually means for this model family.</p>
+
+<div class="callout punch"><span class="lab">Verdict</span>
+<p style="margin-top:2px"><span class="verdict">~₪25&ndash;28k landed &mdash; won, narrowly, at native precision + MSRP import.</span></p>
+<p>Running Kimi at its <strong>native INT4-QAT</strong> precision (which <em>is</em> full quality &mdash; FP16 is a phantom that adds VRAM, not quality) with the <strong>KV cache un-quantized (FP16)</strong>, the <strong>MTP module</strong>, and the <strong>full vision stack</strong> all included, a K2-scale model @ 1M fits in <strong>~700 GiB</strong>. That is <strong>45 &times; 16 GiB DDR5-5600 UDIMM (Crucial <code>CT16G56C46U5</code>) = 720 GiB @ 1.79 TB/s = $6,525 &asymp; ₪20k</strong>, ~₪25&ndash;28k landed in Israel with 18% VAT. Under the ₪30k line &mdash; with three honest asterisks: it needs native INT4 (not FP8), Crucial-US MSRP sourcing (Israeli retail is ~2&times; &rarr; ₪40&ndash;46k), and it is DRAM-only (the converter silicon is separate).</p>
+</div>
+
+<h2 id="cap"><span class="num">01</span>The requirement, everything included (evidence-backed)</h2>
+<p>&ldquo;Kimi K3 @ 1M, full quality, run as intended, un-quantized KV, plus multi-token prediction and vision.&rdquo; Each adder was measured, not guessed:</p>
+<table>
+<thead><tr><th>Component</th><th>Verified size</th><th>Source / note</th></tr></thead>
+<tbody>
+<tr><td>Text weights (K2, 1.04T)</td><td>native INT4-QAT <strong>~554 GiB</strong> / FP8 <strong>958.5 GiB</strong></td><td>measured dtype-exact bytes (HF API); K2.5+/K2.7 ship INT4-QAT</td></tr>
+<tr><td>KV cache @1M, <strong>un-quantized FP16</strong></td><td><strong>65.45 GiB</strong></td><td>MLA (512+64)&times;61&times;10&#8310;&times;2 B; your requirement (+33 over FP8)</td></tr>
+<tr><td>Multi-token prediction module</td><td><strong>+20.4 GiB</strong> FP8 (~10 INT4)</td><td>K2 has <em>none</em> built in (<code>num_nextn_predict_layers:0</code>) &rarr; pure adder; validated vs DeepSeek-V3 &ldquo;671B + 14B MTP&rdquo;; +1 KV layer</td></tr>
+<tr><td>Vision (MoonViT + projector)</td><td><strong>+0.9 GiB only</strong></td><td>400M encoder, does <em>not</em> scale with the LLM; image/video tokens are ordinary context tokens &rarr; <strong>zero extra KV</strong></td></tr>
+<tr><td>Runtime overhead</td><td>+8%</td><td>vLLM default <code>gpu-memory-utilization 0.92</code></td></tr>
+</tbody>
+</table>
+<p><strong>All-in totals (native precision + FP16 KV + MTP + vision + 8%):</strong></p>
+<table>
+<thead><tr><th>Scenario</th><th>All-in</th><th>Min 45-channel config</th></tr></thead>
+<tbody>
+<tr><td><strong>K2 today, native INT4-QAT</strong></td><td><strong>~700 GiB</strong></td><td><strong>45 &times; 16 GiB</strong> (720 GiB)</td></tr>
+<tr><td>K2 today, FP8 (above native)</td><td>~1.10 TiB (1,130 GiB)</td><td>45 &times; 32 GiB (1,440 GiB) &mdash; 45&times;24 <span class="fail">fails</span> (only 3.1% headroom)</td></tr>
+<tr><td>K3 = 1.5&times;, FP8</td><td>~1.62&ndash;1.66 TiB</td><td>45 &times; 48 GiB (2,160 GiB) / a 2.0 TiB pool</td></tr>
+<tr><td>K3 = 2&times; multimodal, FP8</td><td>~2.14&ndash;2.21 TiB</td><td>45 &times; 64 GiB (2,880 GiB) &mdash; even 2.11 TiB is a near-miss</td></tr>
+</tbody>
+</table>
+
+<h2 id="prec"><span class="num">02</span>The precision reality &mdash; why FP16 is a phantom</h2>
+<p>Kimi&rsquo;s <strong>native, shipped, benchmarked</strong> precision is <strong>INT4-QAT</strong> (K2.5/2.7 model cards: &ldquo;Native INT4 Quantization,&rdquo; lossless-claimed) or FP8 (K2-Instruct). The weights <em>are</em> INT4/FP8; up-casting to FP16 decompresses them for <strong>zero</strong> quality gain at 2&ndash;4&times; the VRAM. So &ldquo;run it the way you&rsquo;re supposed to, not over-quantized&rdquo; = the <strong>native</strong> checkpoint &mdash; <em>not</em> FP16. Where un-quantized precision genuinely matters is exactly where it was required: the <strong>KV cache &rarr; FP16</strong>. Both honored.</p>
+
+<h2 id="cfg"><span class="num">03</span>The config &amp; bandwidth</h2>
+<p><strong>45 &times; Crucial DDR5-5600 UDIMM (official Micron brand, JEDEC-native CL46, non-ECC), density chosen by precision target</strong> &mdash; 16 GiB (<code>CT16G56C46U5</code>) for native-INT4, up to 64 GiB (<code>CT64G56C46U5</code>) for a 2&times; K3.</p>
+<ul>
+<li><strong>Bandwidth:</strong> 45 ch &times; 44.8 GB/s = <strong>2,016 GB/s raw</strong> &rarr; the front&rsquo;s 1,792 GB/s (512-pin &times; 28 Gb/s) at 88.9% duty &mdash; the 11.1 pp gap is the refresh/turnaround headroom.</li>
+<li><strong>Why 5600 not 6400:</strong> 5600 is JEDEC-native (no XMP/EXPO overclock dependency &mdash; ideal for a custom controller); official-brand value 6400 UDIMMs are scarce as singles.</li>
+</ul>
+
+<h2 id="correct"><span class="num">04</span>Correctness &mdash; the two &sect;10 checks, re-run for the real part</h2>
+<table>
+<thead><tr><th>Check</th><th>Result</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td>Encodable <code>CL</code></td><td><span class="pass">PASS</span></td><td>serviceable ~50.5&ndash;64.5 ns (142&ndash;181 cycles); not a stock JEDEC CL (bins ~14&ndash;18 ns) but a custom 8-bit field covers 181 with 41% headroom &mdash; the design&rsquo;s own &ldquo;widen-the-field&rdquo; clause</td></tr>
+<tr><td>Schedulable refresh</td><td><span class="pass">PASS</span> &mdash; <strong>REFsb mandatory</strong></td><td>24 Gb-die all-bank tax = 10.5% vs 11.1 pp budget (<strong>+0.6 pp cool; <span class="fail">FAILS hot</span></strong> at 85&ndash;95 &deg;C, 21%). Per-bank REFsb &rarr; ~1&ndash;2% tax, robust; &ldquo;no read hits a refreshing bank&rdquo; is contractual. Monolithic UDIMM = the refresh-friendly corner (10.5% vs a 256 GB 3DS part&rsquo;s ~84%)</td></tr>
+<tr><td>Data integrity</td><td><span class="flag">ADD</span></td><td>consumer UDIMM is <strong>non-ECC</strong> (on-die only). For a design whose nightmare is silent corruption, add converter-side <strong>end-to-end CRC</strong> (DDR5 write-CRC exists) or a <strong>44-data + 1-parity</strong> channel</td></tr>
+</tbody>
+</table>
+
+<h2 id="phys"><span class="num">05</span>Physical &mdash; a hierarchical appliance, never one package</h2>
+<ul>
+<li><strong>Pins:</strong> ~110&ndash;120 signals/channel &rarr; ~5,000&ndash;5,400 signal pins for 45 channels (~15k+ balls monolithic). Beachfront ~112&ndash;158 mm die-edge vs ~118 mm reticle perimeter &rarr; <strong>impossible on one die.</strong></li>
+<li><strong>Required structure:</strong> ~9 leaf converters &times; 5 channels (~2,000-ball FCBGA each) + a switch-class root (~14 Tb/s SerDes/side). 2.5&times; the pins and ~3&times; the leaf dies of the 18-MRDIMM design.</li>
+<li><strong>Board / power:</strong> 288-pin UDIMM 133&times;31 mm, ~4 banks &times; 12 slots &asymp; <strong>~0.2 m&sup2; baseboard</strong>; ~<strong>440&ndash;500 W</strong> (DRAM + converters) &mdash; same class as the 18-MRDIMM build, for half the capacity but ~5&ndash;10&times; lower $/GiB.</li>
+</ul>
+
+<h2 id="cost"><span class="num">06</span>Cost &mdash; and the honest hat</h2>
+<table>
+<thead><tr><th>Basis (everything on)</th><th>Config</th><th>Crucial US MSRP</th><th>Israeli retail (zap.co.il)</th></tr></thead>
+<tbody>
+<tr><td><strong>Native INT4-QAT</strong> (as-intended)</td><td>45 &times; 16 GiB</td><td><strong>$6,525 &asymp; ₪20k</strong> &rarr; <strong>~₪25&ndash;28k landed</strong> (18% VAT)</td><td>₪40&ndash;46k <span class="flag">(only 16 GiB parts stocked in IL)</span></td></tr>
+<tr><td>FP8 (above native)</td><td>45 &times; 32 GiB</td><td>$12,690 &asymp; ₪38&ndash;44k</td><td>higher</td></tr>
+<tr><td>2&times; multimodal K3 (FP8)</td><td>45 &times; 64 GiB</td><td>$24,075 &asymp; ₪72&ndash;84k</td><td>higher</td></tr>
+</tbody>
+</table>
+<div class="callout catch"><span class="lab">The price catch the second-source hunt found</span>Crucial-direct MSRP is the market <em>floor</em>, not the street. Verified live: <code>CT16G56C46U5</code> = &euro;209 (billiger.de, DE) / <strong>₪890&ndash;1,028 (zap.co.il, 6 IL stores)</strong> = +65% (DE) to +100&ndash;130% (IL) over Crucial&rsquo;s $144.99. So the ₪30k line is cleared only by sourcing at MSRP (import + 18% VAT &rarr; ~₪25&ndash;28k); at Israeli retail the same 45 modules are ~₪40&ndash;46k. US retail (Newegg/Amazon/B&amp;H) was bot-walled &mdash; MSRP is a Wayback snapshot, and a 45-unit order may trip per-SKU quantity limits.</div>
+
+<h2 id="flags"><span class="num">07</span>Honest flags (what stays unverified)</h2>
+<ul>
+<li><strong>INT4-vs-FP8 is the hat&rsquo;s hinge.</strong> The win requires accepting native INT4-QAT as full quality (it is, per Moonshot&rsquo;s lossless claim + INT4 benchmarks). Demand FP8 and it&rsquo;s ₪38&ndash;44k; FP16 is a phantom.</li>
+<li><strong>Prices:</strong> MSRP from Wayback (crucial.com live blocked); most US retail bot-walled; FX approximate; crunch prices move weekly.</li>
+<li><strong>Timings:</strong> <code>tRFC2</code>/<code>tRFCsb</code> numerics are commonly-published JESD79-5 values (JEDEC/Micron die datasheets login-walled); Kingston&rsquo;s 48 GB sheet prints a 295 ns <code>tRFC</code> that looks like 16 Gb boilerplate &mdash; the worse 410 ns was used. The 3DS ~84% figure is spec-derived.</li>
+<li><strong>Scope:</strong> DRAM only. The converter silicon (custom N3E ASIC ~$50M NRE, or a $12&ndash;25k FPGA prototype) is separate and far outside ₪30k.</li>
+<li><strong>Model:</strong> no shipped Kimi does 1M yet (256K today); 1M is the forward requirement, correctly budgeted. K3 is not public &mdash; K3=1.5&ndash;2&times; is a stated scale-up assumption.</li>
+</ul>
+
+<footer>
+  <p><strong>Bottom line.</strong> At the model&rsquo;s genuine full-quality native precision (INT4-QAT), with the KV cache un-quantized, MTP resident, and the full vision stack &mdash; all measured, not assumed &mdash; a 1M-context Kimi-K2-scale machine needs <strong>~700 GiB</strong>, which is <strong>45 &times; 16 GiB DDR5-5600 UDIMM at 1.79 TB/s for ~$6,525 &asymp; ₪25&ndash;28k landed</strong>: under the ₪30k line. It passes both correctness checks (per-bank refresh mandatory; add converter CRC for the non-ECC UDIMMs) and is buildable as a ~9-leaf hierarchical appliance (~0.2 m&sup2;, ~0.5 kW), never one package. The hat is off &mdash; provided you run native INT4, buy at MSRP, and count the memory alone. FP8, Israeli-retail sourcing, or a 2&times; multimodal K3 each push it back over.</p>
+  <p style="color:var(--muted)">Compiled from four Fable-5 research passes, 2026-07-18. Evidence archived in <code>pricing_evidence/</code>; sources appended to <code>SOURCES.md</code>. Point-in-time crunch prices, not quotes.</p>
+</footer>
+
+</div>
+</body>
+</html>

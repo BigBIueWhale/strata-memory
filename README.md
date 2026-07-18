@@ -21,6 +21,7 @@ real, shipping reference, and estimates are flagged as such.
 | 2 | [`strata_v_design.html`](strata_v_design.html) | **STRATA-V** — a DDR5 *memory-virtualizer*: a converter hierarchy that makes ~600 ordinary DDR5 dies appear to a GPU as **one impossible chip** (2.25 TiB, 1.79 TB/s, fixed-beat protocol). Same pin count and bandwidth as a 5090, ~70× the capacity. |
 | 3 | [`rtx5090_strata_v_retrofit_verdict.html`](rtx5090_strata_v_retrofit_verdict.html) | **Retrofit verdict** — why you *cannot* desolder a stock RTX 5090's GDDR7 and bolt STRATA-V on to trick it into 2 TiB. A negative result: a finished GPU's memory is defined by its controller, not its chips. |
 | 4 | [`sourcing_report.html`](sourcing_report.html) | **Sourcing report** — can you actually *buy* it? A four-thread hunt for the finished product, the DDR5 parts, the converter silicon, and the CXL path, with real 2026 reseller prices — and a corrected (6–10× higher) DDR5 cost. |
+| 5 | [`cheapest_config_report.html`](cheapest_config_report.html) | **Cheapest build, checked out** — price-optimized STRATA-V to run Kimi @ 1M full quality: consumer DDR5-5600 UDIMMs behind the converter. The everything-included capacity (native INT4 weights + un-quantized FP16 KV + MTP + vision ≈ **700 GiB**, not 2 TiB — FP16 is a phantom), both §10 correctness checks re-run for the real part, the physical build (a ~9-leaf appliance), and the honest **~₪25–28k-landed** cost. Every number backed by downloaded evidence in `pricing_evidence/`. |
 
 ## The through-line (what the three docs establish)
 

@@ -38,3 +38,11 @@ original hosts below. All URLs verified live in July 2026.
 
 ## Reference photos (not redistributed)
 - RTX 6000D clamshell teardown (front die + back-side memory) — Club386, https://www.club386.com/nvidia-rtx-6000d-teardown-shows-84gb-vram-using-3gb-memory-chips/
+
+## Model capacity: MTP + vision pass (July 2026)
+- DeepSeek-V3 technical report (MTP architecture, D=1, spec-decode reuse; arXiv 2412.19437) — https://arxiv.org/pdf/2412.19437
+- DeepSeek-V3 HF model card ("685B = 671B main + 14B MTP module") + config + API — https://huggingface.co/deepseek-ai/DeepSeek-V3
+- Kimi-VL technical report (MoonViT 400M, MLP projector, 3.2MP native-res; arXiv 2504.07491) — https://arxiv.org/pdf/2504.07491
+- Kimi-VL-A3B-Thinking-2506 config/API — https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking-2506
+- Kimi K2.5 / K2.7-Code model cards (MoonViT 400M vision encoder, 256K context, native INT4) — https://huggingface.co/moonshotai/Kimi-K2.5 , https://huggingface.co/moonshotai/Kimi-K2.7-Code
+- vLLM engine args (gpu-memory-utilization default 0.92 = 8% reserve) — https://docs.vllm.ai/en/latest/configuration/engine_args.html

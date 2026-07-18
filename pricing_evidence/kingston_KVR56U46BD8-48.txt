@@ -1,0 +1,65 @@
+      Memory Module Speciﬁcations
+
+  KVR56U46BD8-48
+  48GB 2Rx8 6G x 64-Bit
+  PC5-5600 CL46 288-Pin DIMM
+
+
+  DESCRIPTION                                                          SPECIFICATIONS
+  This document describes ValueRAM's KVR56U46BD8-48 is a 6G x            CL(IDD)                             46 cycles
+  64-bit (48GB) DDR5-5600 CL46 SDRAM (Synchronous DRAM), 2Rx8,           Row Cycle Time (tRCmin)             48ns(min.)
+  memory module, based on sixteen 3G x 8-bit FBGA components. The                                            295ns(min.)
+                                                                         Refresh to Active/Refresh
+  SPD is programmed to JEDEC standard latency DDR5-5600 timing of        Command Time (tRFCmin)
+  46-45-45 at 1.1V. Each 288-pin DIMM uses gold contact fingers. The
+                                                                         Row Active Time (tRASmin)           32ns(min.)
+  electrical and mechanical specifications are as follows:
+                                                                         UL Rating                           94 V - 0
+                                                                         Operating Temperature               0o C to +85o C
+                                                                         Storage Temperature                 -55o C to +100o C
+  FEATURES
+   • Power Supply: VDD = 1.1V Typical
+
+   • VDDQ = 1.1V Typical
+
+   • VPP = 1.8V Typical
+
+   • VDDSPD = 1.8V to 2.0V
+
+   • On-Die ECC
+
+   • PCB: Height 1.23” (31.25mm)
+
+   • RoHS Compliant and Halogen-Free
+
+
+
+
+                                                                                                                         Continued >>
+
+
+kingston.com                                                           Rev. A        Document No. VALUERAM1701A   06/22/23     Page 1
+    continued                                                                                                                                                              HyperX
+
+
+
+            MODULE DIMENSIONS
+
+
+
+
+                                                                                 All measurements are in millimeters.
+                                                                        (Tolerances on all dimensions are ±0.15 unless otherwise specified)
+
+
+
+
+                                       The product images shown are for illustration purposes only and may not be an exact representation of the product.
+                                       Kingston reserves the right to change any information at anytime without notice.
+
+
+
+kingston.com                                                                                                             Rev. A               Document No. VALUERAM1701A     Page 2
+©2023 Kingston Technology Corporation, 17600 Newhope Street, Fountain Valley, CA 92708 USA.
+All rights reserved. All trademarks and registered trademarks are the property of their respective owners.
+

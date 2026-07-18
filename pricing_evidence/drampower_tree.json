@@ -1,0 +1,2336 @@
+{
+  "sha": "23246a0b85d5194ef87c0ccc55a5391615120003",
+  "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/23246a0b85d5194ef87c0ccc55a5391615120003",
+  "tree": [
+    {
+      "path": ".clang-format",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dbc742ceb1e3beb7abcf5756ff315e14498ffde8",
+      "size": 335,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/dbc742ceb1e3beb7abcf5756ff315e14498ffde8"
+    },
+    {
+      "path": ".clang-tidy",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15cccef317573b0b32666da57d20d17e0d4f477b",
+      "size": 422,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/15cccef317573b0b32666da57d20d17e0d4f477b"
+    },
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f28d52b45319f7d853701db5dbe7fdd3675bb45e",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/f28d52b45319f7d853701db5dbe7fdd3675bb45e"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6f4513bcc91189009323ff19cd022292dd573bd0",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/6f4513bcc91189009323ff19cd022292dd573bd0"
+    },
+    {
+      "path": ".github/workflows/CI.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "57cf76c5b16d7fe2069b30dec631e8bb8fa932a9",
+      "size": 3201,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/57cf76c5b16d7fe2069b30dec631e8bb8fa932a9"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b0d05c1f56c675d3e718ef0466d52da38375dd5",
+      "size": 431,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/8b0d05c1f56c675d3e718ef0466d52da38375dd5"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34acad7802f65624e627f596aa212bfdf8654457",
+      "size": 7306,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/34acad7802f65624e627f596aa212bfdf8654457"
+    },
+    {
+      "path": "CMakePresets.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9dc3f5e89c48d03bd68e61eaa2a99d1f9ed0adba",
+      "size": 1460,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/9dc3f5e89c48d03bd68e61eaa2a99d1f9ed0adba"
+    },
+    {
+      "path": "LICENSE.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3d8b3838e218b3b6f27bb0a54561932487ce293",
+      "size": 1676,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/c3d8b3838e218b3b6f27bb0a54561932487ce293"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d866bbba22768bdcce9e04984eca73c4532408f9",
+      "size": 16860,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d866bbba22768bdcce9e04984eca73c4532408f9"
+    },
+    {
+      "path": "benches",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9ed9df21f6c7e040fcbc78b4df1c07d6ee3122ad",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/9ed9df21f6c7e040fcbc78b4df1c07d6ee3122ad"
+    },
+    {
+      "path": "benches/CMakeLists.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "348f968504822a3ef264315f7616dc231fb9384a",
+      "size": 2712,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/348f968504822a3ef264315f7616dc231fb9384a"
+    },
+    {
+      "path": "benches/main.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "43a854914fa18e7efe029d1dcc7ae5da096df146",
+      "size": 1823,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/43a854914fa18e7efe029d1dcc7ae5da096df146"
+    },
+    {
+      "path": "benches/simulation.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca083c60dc0ec2d5175ed09df9350b1076295f6e",
+      "size": 4800,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/ca083c60dc0ec2d5175ed09df9350b1076295f6e"
+    },
+    {
+      "path": "cmake",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e4d4abc7789e69b6b25f162d08ae937f6d3d2720",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/e4d4abc7789e69b6b25f162d08ae937f6d3d2720"
+    },
+    {
+      "path": "cmake/DRAMPowerConfig.cmake.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2d3d7da30ab353547f2350d476ef3bb3ddca608",
+      "size": 184,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/b2d3d7da30ab353547f2350d476ef3bb3ddca608"
+    },
+    {
+      "path": "cmake/build_source_group.cmake",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "563638bfea8c54916b5f10d036f00dec3a95d9f2",
+      "size": 452,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/563638bfea8c54916b5f10d036f00dec3a95d9f2"
+    },
+    {
+      "path": "cmake/diagnostics_print.cmake",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a07ec142ace83bba689b6b2e87d615dd814398fc",
+      "size": 878,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/a07ec142ace83bba689b6b2e87d615dd814398fc"
+    },
+    {
+      "path": "cmake/enable_clang_format.cmake",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f009d1f2afa0aff49d8918d42a02746bcc5b48fa",
+      "size": 322,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/f009d1f2afa0aff49d8918d42a02746bcc5b48fa"
+    },
+    {
+      "path": "cmake/enable_clang_tidy.cmake",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc8361e28380cb099892192ee971bae872829e7d",
+      "size": 753,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/fc8361e28380cb099892192ee971bae872829e7d"
+    },
+    {
+      "path": "cmake/enable_cppcheck.cmake",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b44262fc64956666112eaa332e639a660178be72",
+      "size": 905,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/b44262fc64956666112eaa332e639a660178be72"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b15d16a67530823762dce2d3a7670615dfd787a9",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/b15d16a67530823762dce2d3a7670615dfd787a9"
+    },
+    {
+      "path": "docs/images",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c7f41b3ca39ddc9b6f3ee89bc85e554e3e0f7388",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/c7f41b3ca39ddc9b6f3ee89bc85e554e3e0f7388"
+    },
+    {
+      "path": "docs/images/logo_drampower_5_0.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb164d4d36616ddead2453153072493d199b32d3",
+      "size": 56573,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/fb164d4d36616ddead2453153072493d199b32d3"
+    },
+    {
+      "path": "lib",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "37b6d90a6f23a52f8e935db0c1bc3596ff6c2205",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/37b6d90a6f23a52f8e935db0c1bc3596ff6c2205"
+    },
+    {
+      "path": "lib/cli11",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "477b1d6084a6a0c1a927b543833646ed4aaddab9",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/477b1d6084a6a0c1a927b543833646ed4aaddab9"
+    },
+    {
+      "path": "lib/cli11/CMakeLists.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02be6e0ee6c225d7b6d600271f62650b6b7c64fa",
+      "size": 290,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/02be6e0ee6c225d7b6d600271f62650b6b7c64fa"
+    },
+    {
+      "path": "lib/spdlog",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d3afea210c48d8a7dc75e7bb65107288198ce289",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/d3afea210c48d8a7dc75e7bb65107288198ce289"
+    },
+    {
+      "path": "lib/spdlog/CMakeLists.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "796b230b8833ce418a5f9200e1e415c387d07e22",
+      "size": 292,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/796b230b8833ce418a5f9200e1e415c387d07e22"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2938c24718711c200837b14c7a53503ce5f2eb2f",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/2938c24718711c200837b14c7a53503ce5f2eb2f"
+    },
+    {
+      "path": "src/DRAMPower",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bc058699c61ffa4c6ba5004f26036ce1e970f2d8",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/bc058699c61ffa4c6ba5004f26036ce1e970f2d8"
+    },
+    {
+      "path": "src/DRAMPower/CMakeLists.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2e464deaca6862de73a9dbc8bfed9f162318066",
+      "size": 5960,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/c2e464deaca6862de73a9dbc8bfed9f162318066"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b4d3103f15774c5c21cc8adb9272dcf76ac6c5bd",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/b4d3103f15774c5c21cc8adb9272dcf76ac6c5bd"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/Exceptions.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c540822ba16bd4aba94da33fb3b0f7cdf77d65fd",
+      "size": 1105,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/c540822ba16bd4aba94da33fb3b0f7cdf77d65fd"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/Types.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9642c786d7dc04d8ca40a9174dfc213b7295b56",
+      "size": 259,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d9642c786d7dc04d8ca40a9174dfc213b7295b56"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/command",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3d22e021d8d9209006c44879d441fdb3e80ef57a",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/3d22e021d8d9209006c44879d441fdb3e80ef57a"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/command/CmdType.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd55c5667f8e449e97538f8822b6c426b8beead6",
+      "size": 3250,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/cd55c5667f8e449e97538f8822b6c426b8beead6"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/command/Command.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d23baaf45ee80b32fac5216ad8d792009832a54",
+      "size": 1003,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/2d23baaf45ee80b32fac5216ad8d792009832a54"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/command/Command.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0d65a47803b2e6b251fc92864d48e01d1a1c69c",
+      "size": 1131,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/a0d65a47803b2e6b251fc92864d48e01d1a1c69c"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/command/Pattern.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd44a6a187ac627340153f414752179ee98ddacd",
+      "size": 10872,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/cd44a6a187ac627340153f414752179ee98ddacd"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/command/Pattern.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e11f1165d968ea94ca71960b515bad65a9c89496",
+      "size": 3058,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e11f1165d968ea94ca71960b515bad65a9c89496"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "36be081f8e1a488b642f8725517165bb06f60661",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/36be081f8e1a488b642f8725517165bb06f60661"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/data/energy.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fc068132f7a10af6e30231f30f9004cdcfef6f0",
+      "size": 2899,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/2fc068132f7a10af6e30231f30f9004cdcfef6f0"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/data/energy.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e145cd468afdd69732dfbba7537014939616a091",
+      "size": 2169,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e145cd468afdd69732dfbba7537014939616a091"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/data/stats.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25b7b128ba6bae0f6c7ce016463d0d2743e1bdb0",
+      "size": 8504,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/25b7b128ba6bae0f6c7ce016463d0d2743e1bdb0"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/dram",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "354e54d017460baee9608602584bf6bcb1b19ba4",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/354e54d017460baee9608602584bf6bcb1b19ba4"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/dram/Bank.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb0a81c6238a98b20e1984bcd896bdcf9f913f90",
+      "size": 1691,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/fb0a81c6238a98b20e1984bcd896bdcf9f913f90"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/dram/Interface.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a02f6fd49fae324c93a284e90ffc24f743f6bd8e",
+      "size": 8727,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/a02f6fd49fae324c93a284e90ffc24f743f6bd8e"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/dram/Interface.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38c91217a3cf390d242fa9a9767ba4a78c4fe865",
+      "size": 2988,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/38c91217a3cf390d242fa9a9767ba4a78c4fe865"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/dram/Rank.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc361b35e8febff44ba7f1c015c1fd4f469f06b4",
+      "size": 4346,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/dc361b35e8febff44ba7f1c015c1fd4f469f06b4"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/dram/Rank.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99f371b951a8394ad0064815370d07b296693b12",
+      "size": 1911,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/99f371b951a8394ad0064815370d07b296693b12"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/dram/dram_base.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "362c6437ab7497a2b7b07992f1a3819b8e9b825a",
+      "size": 4077,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/362c6437ab7497a2b7b07992f1a3819b8e9b825a"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/memspec",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4568d2d484adfe920735433b8caab28247a13d99",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/4568d2d484adfe920735433b8caab28247a13d99"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/memspec/MemSpec.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ef4a8ef157d667e74954b8e8ab55c035fab9b35",
+      "size": 3494,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/3ef4a8ef157d667e74954b8e8ab55c035fab9b35"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/memspec/MemSpecDDR4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62e77c7b9d91b22a12dae9e8a8b64a0039efd2b0",
+      "size": 6411,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/62e77c7b9d91b22a12dae9e8a8b64a0039efd2b0"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/memspec/MemSpecDDR4.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30d3b617f60cc7377b988bd8c3160f73d2482383",
+      "size": 4581,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/30d3b617f60cc7377b988bd8c3160f73d2482383"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/memspec/MemSpecDDR5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb403a8e07b7830baa96783b8973e71972d337ca",
+      "size": 4196,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/fb403a8e07b7830baa96783b8973e71972d337ca"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/memspec/MemSpecDDR5.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b40c350dd2c1895c75349c01a6bad35c4237b265",
+      "size": 2673,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/b40c350dd2c1895c75349c01a6bad35c4237b265"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/memspec/MemSpecLPDDR4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49dc40e493c7f868897f12b4ffc36976fd07f670",
+      "size": 7971,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/49dc40e493c7f868897f12b4ffc36976fd07f670"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/memspec/MemSpecLPDDR4.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d19e8b7fb27fe46b79086169905231a7ed55ef6",
+      "size": 2571,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/6d19e8b7fb27fe46b79086169905231a7ed55ef6"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/memspec/MemSpecLPDDR5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5eb179a5a0d82b1376bd53b32815818f3b5ea537",
+      "size": 6252,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/5eb179a5a0d82b1376bd53b32815818f3b5ea537"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/memspec/MemSpecLPDDR5.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1451b142f9d356103e68d36abe38cb79924007c",
+      "size": 2956,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/f1451b142f9d356103e68d36abe38cb79924007c"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/simconfig",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6b90bc03b20b1a57227cea9b71f6f180c713d905",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/6b90bc03b20b1a57227cea9b71f6f180c713d905"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/simconfig/simconfig.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1a5b9840fee32e842a7cd6e21b4e2dcd3649688",
+      "size": 491,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d1a5b9840fee32e842a7cd6e21b4e2dcd3649688"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9f2bac9481e4bed30409dcfaacdb54eb246fe782",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/9f2bac9481e4bed30409dcfaacdb54eb246fe782"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr4",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cd331c394b7226cbeb6d866bc79da2dfe2d1efe6",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/cd331c394b7226cbeb6d866bc79da2dfe2d1efe6"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr4/DDR4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb13b29a62bc941caf7fa8b464e14c82dbeb385d",
+      "size": 2541,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/eb13b29a62bc941caf7fa8b464e14c82dbeb385d"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr4/DDR4.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e9fa1a16c18a41680c78ea9003816511107f74b",
+      "size": 2718,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/3e9fa1a16c18a41680c78ea9003816511107f74b"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr4/DDR4Core.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a45d31412adf8dac42963049c41cb239620173c",
+      "size": 15299,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/9a45d31412adf8dac42963049c41cb239620173c"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr4/DDR4Core.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b653ddd08490e72f7939dcd5f51d541f1f032eb",
+      "size": 3388,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/6b653ddd08490e72f7939dcd5f51d541f1f032eb"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr4/DDR4Interface.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed52934f6b465bb04dc7f55b7913da1624c28a53",
+      "size": 15877,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/ed52934f6b465bb04dc7f55b7913da1624c28a53"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr4/DDR4Interface.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07366b0c374668bcb66f1b6a7ad684fd51c24dae",
+      "size": 3514,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/07366b0c374668bcb66f1b6a7ad684fd51c24dae"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr4/core_calculation_DDR4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2cb484a48c06fd3cd2752e8a70b6719dbe9a472",
+      "size": 6689,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/f2cb484a48c06fd3cd2752e8a70b6719dbe9a472"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr4/core_calculation_DDR4.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "28e7bfb494cca900408e24e9a76c84f7fab5bef6",
+      "size": 1478,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/28e7bfb494cca900408e24e9a76c84f7fab5bef6"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr4/interface_calculation_DDR4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "22a47d000b6db19895e0aa4c621149ae5bb2a6bd",
+      "size": 7264,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/22a47d000b6db19895e0aa4c621149ae5bb2a6bd"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr4/interface_calculation_DDR4.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea5ee5b92c0d9b879adbd2518366691322bf01dd",
+      "size": 1135,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/ea5ee5b92c0d9b879adbd2518366691322bf01dd"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr4/types.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8fdaa42d98a7c22e03483b9720d68a194d5a576",
+      "size": 786,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/f8fdaa42d98a7c22e03483b9720d68a194d5a576"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr5",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "598bba07d6f490c3692a672a79f6946f7af2427f",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/598bba07d6f490c3692a672a79f6946f7af2427f"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr5/DDR5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c0f468d2261225c8b90a19e81392c22d57eb556",
+      "size": 1837,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/7c0f468d2261225c8b90a19e81392c22d57eb556"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr5/DDR5.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6aa64b84946264e7f0aec2552a23d5abc5d74d88",
+      "size": 2506,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/6aa64b84946264e7f0aec2552a23d5abc5d74d88"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr5/DDR5Core.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d27b3fb51b2145f6a9847428325de8917b10ce7",
+      "size": 14871,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/2d27b3fb51b2145f6a9847428325de8917b10ce7"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr5/DDR5Core.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "398c10558e5786300eeca8e64ebe31a8fde5a50d",
+      "size": 3825,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/398c10558e5786300eeca8e64ebe31a8fde5a50d"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr5/DDR5Interface.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "997bfe3fd333bf191424b27b1b9e28fced84d2cb",
+      "size": 10655,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/997bfe3fd333bf191424b27b1b9e28fced84d2cb"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr5/DDR5Interface.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f46909149e00552f7395762affcfce0f980662ef",
+      "size": 2437,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/f46909149e00552f7395762affcfce0f980662ef"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr5/core_calculation_DDR5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7d6202ed94e267ce2f3f22f76e7aca227526dec",
+      "size": 7012,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/b7d6202ed94e267ce2f3f22f76e7aca227526dec"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr5/core_calculation_DDR5.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0287adb45f6885629c49581a8fb07d3652c4b722",
+      "size": 1617,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/0287adb45f6885629c49581a8fb07d3652c4b722"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr5/interface_calculation_DDR5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6cd8d46d94b0afc11a8041754b25ee6de815951",
+      "size": 4820,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/c6cd8d46d94b0afc11a8041754b25ee6de815951"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr5/interface_calculation_DDR5.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c637a2983b8c8da943765ff9576c9714ae9a9974",
+      "size": 1115,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/c637a2983b8c8da943765ff9576c9714ae9a9974"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/ddr5/types.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7b8eb363b69e55e297647156582ce41ad82c21a",
+      "size": 786,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e7b8eb363b69e55e297647156582ce41ad82c21a"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr4",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "98c11ef866b8ef041921207d399241cbfd534cbf",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/98c11ef866b8ef041921207d399241cbfd534cbf"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr4/LPDDR4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9136011f69f1e5e7b697aeee42575729ced3b8a1",
+      "size": 2212,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/9136011f69f1e5e7b697aeee42575729ced3b8a1"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr4/LPDDR4.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18184463633c4116d9d8de77ee0e9e4a5ec2ae65",
+      "size": 2634,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/18184463633c4116d9d8de77ee0e9e4a5ec2ae65"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr4/LPDDR4Core.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f55157be9fbaa968df5af1416e1d57cfa76f08b3",
+      "size": 14240,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/f55157be9fbaa968df5af1416e1d57cfa76f08b3"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr4/LPDDR4Core.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b592b54714d7364e7374ab278b8db5b606a8d750",
+      "size": 3670,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/b592b54714d7364e7374ab278b8db5b606a8d750"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr4/LPDDR4Interface.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69aac27a675eb603afe2630b08da60533cb5f4f0",
+      "size": 10009,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/69aac27a675eb603afe2630b08da60533cb5f4f0"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr4/LPDDR4Interface.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8aee8ebf372797b79167e890f66e4fd2b7909d2",
+      "size": 3119,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/f8aee8ebf372797b79167e890f66e4fd2b7909d2"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr4/core_calculation_LPDDR4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "359d113a5d538d8383c54ee5b9cd3ab25804827d",
+      "size": 6979,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/359d113a5d538d8383c54ee5b9cd3ab25804827d"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr4/core_calculation_LPDDR4.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63af20b4c3e2fb9b78d5a34b460f0b987fdde3d4",
+      "size": 1551,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/63af20b4c3e2fb9b78d5a34b460f0b987fdde3d4"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr4/interface_calculation_LPDDR4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73a67e7251fb370ff8092dcd6254fc8e96241410",
+      "size": 5388,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/73a67e7251fb370ff8092dcd6254fc8e96241410"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr4/interface_calculation_LPDDR4.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "819bb1d951d169870a1a18ecf96edcd4c829da06",
+      "size": 1224,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/819bb1d951d169870a1a18ecf96edcd4c829da06"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr4/types.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8af1e549f677d07b815b302a7df055190e565ec0",
+      "size": 826,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/8af1e549f677d07b815b302a7df055190e565ec0"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr5",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "938f52e60f815f09e7c8be7562f66e33252d198a",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/938f52e60f815f09e7c8be7562f66e33252d198a"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr5/LPDDR5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83ccdb16e86fc551269e5dbc5092c66a72fc9202",
+      "size": 2208,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/83ccdb16e86fc551269e5dbc5092c66a72fc9202"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr5/LPDDR5.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb526eba62993fb1a8ff8dc4160df627501a2085",
+      "size": 2631,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/eb526eba62993fb1a8ff8dc4160df627501a2085"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr5/LPDDR5Core.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba15dc9aa6f9fff38bff98ff0be14b9d3d6bd23f",
+      "size": 16095,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/ba15dc9aa6f9fff38bff98ff0be14b9d3d6bd23f"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr5/LPDDR5Core.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5700397baa95977ffc9a89f5e6bf73fb90bea15",
+      "size": 4056,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/b5700397baa95977ffc9a89f5e6bf73fb90bea15"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr5/LPDDR5Interface.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5cbccb35e81d5e99e7cadca1b7cdba717d54a8a2",
+      "size": 13680,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/5cbccb35e81d5e99e7cadca1b7cdba717d54a8a2"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr5/LPDDR5Interface.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e48402d17569e2a63a40cec288079b82fe1f19c",
+      "size": 3294,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/6e48402d17569e2a63a40cec288079b82fe1f19c"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr5/core_calculation_LPDDR5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3211e6e4f0c0cd6bc7cc482d8e26f59211a422a",
+      "size": 8519,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d3211e6e4f0c0cd6bc7cc482d8e26f59211a422a"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr5/core_calculation_LPDDR5.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5567931405493283867175cd8aa6e253334a5f97",
+      "size": 1737,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/5567931405493283867175cd8aa6e253334a5f97"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr5/interface_calculation_LPDDR5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "748b156dfadc7261f93733418d45d23c3300a17d",
+      "size": 5732,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/748b156dfadc7261f93733418d45d23c3300a17d"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr5/interface_calculation_LPDDR5.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75c1c8482456d640c600911778a1fbe60b1f35d9",
+      "size": 1237,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/75c1c8482456d640c600911778a1fbe60b1f35d9"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/lpddr5/types.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c5269f2e9045461c4050222302280966016d967",
+      "size": 826,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/5c5269f2e9045461c4050222302280966016d967"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/standards/test_accessor.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7818c17de666caa3200244dd4b1fdd04d30eba86",
+      "size": 1074,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/7818c17de666caa3200244dd4b1fdd04d30eba86"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "775410bffec1cedc46fe597cf85c0c48ec1b021c",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/775410bffec1cedc46fe597cf85c0c48ec1b021c"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/Deserialize.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19edd604b9fc9b8dfa0e83294c540ef3e138f2d9",
+      "size": 2218,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/19edd604b9fc9b8dfa0e83294c540ef3e138f2d9"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/ImplicitCommandHandler.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a2946d6c0379fe1db6d45a68378ce55f7096b20",
+      "size": 3439,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/8a2946d6c0379fe1db6d45a68378ce55f7096b20"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/PatternHandler.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a4be82d9d1901c75799d1746d116a69f2b2a5ff",
+      "size": 3911,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/3a4be82d9d1901c75799d1746d116a69f2b2a5ff"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/RegisterHelper.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7f3d3831c4caffe210dca7bae8d1353ef046bd5",
+      "size": 3424,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/b7f3d3831c4caffe210dca7bae8d1353ef046bd5"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/Router.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d604e3c1b253b28bd7c98e26d75d0092cd0d65c2",
+      "size": 1804,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d604e3c1b253b28bd7c98e26d75d0092cd0d65c2"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/Serialize.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "767c2b708c403857f6489e1d19ba72cfc467c0a2",
+      "size": 2194,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/767c2b708c403857f6489e1d19ba72cfc467c0a2"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/binary_ops.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51604ce084f2fbf99d6b369e825e4dd7ee856d18",
+      "size": 1537,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/51604ce084f2fbf99d6b369e825e4dd7ee856d18"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/burst_storage.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92dd95283f68f3c926986f2ed5b5eea0cb6df25f",
+      "size": 13843,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/92dd95283f68f3c926986f2ed5b5eea0cb6df25f"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/bus.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/bus.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19a2d66301c8b8505ce5bc59f125e6a6cb8123e4",
+      "size": 13066,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/19a2d66301c8b8505ce5bc59f125e6a6cb8123e4"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/bus_types.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61da5af7fbb8727db64c8c0f402dc2606fa188a6",
+      "size": 2506,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/61da5af7fbb8727db64c8c0f402dc2606fa188a6"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/cli_architecture_config.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6aa5ff307381d5d7b73510f87a48e7c13dea72b",
+      "size": 315,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d6aa5ff307381d5d7b73510f87a48e7c13dea72b"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/clock.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f654eac69d870c61ee6bd78a4611fe00ce947c2",
+      "size": 2565,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/1f654eac69d870c61ee6bd78a4611fe00ce947c2"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/command_counter.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "773ac934d79ee167975484e4ee93872165cf4da6",
+      "size": 1190,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/773ac934d79ee167975484e4ee93872165cf4da6"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/cycle_stats.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55a095536de349a3d04c3e590bf556c22c406e0e",
+      "size": 2771,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/55a095536de349a3d04c3e590bf556c22c406e0e"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/databus.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ba79496dda18572b3ba9dbf40f3be35b2398a4e",
+      "size": 12721,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/2ba79496dda18572b3ba9dbf40f3be35b2398a4e"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/databus_presets.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2172169d7cfe7c6abbe0dbc3fabfd875c405b23e",
+      "size": 1564,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/2172169d7cfe7c6abbe0dbc3fabfd875c405b23e"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/databus_types.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3a7f76c65150ee95987f8614ccdefba04cd1d51",
+      "size": 478,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/c3a7f76c65150ee95987f8614ccdefba04cd1d51"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/dbi.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f0a24fff0ab7b3bf0d8e03da6ad26d325d0fd88",
+      "size": 20851,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/0f0a24fff0ab7b3bf0d8e03da6ad26d325d0fd88"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/dbialgos.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3b5482f0645d3453953eafd49e0f71221f5e2bc",
+      "size": 3292,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/a3b5482f0645d3453953eafd49e0f71221f5e2bc"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/dbihelpers.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "404ecb426a68ac23184990e9b100231f9fb0fbd0",
+      "size": 4297,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/404ecb426a68ac23184990e9b100231f9fb0fbd0"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/dbitypes.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19508b6aed9f47d1872a00fa469703c2eaa8df7e",
+      "size": 1732,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/19508b6aed9f47d1872a00fa469703c2eaa8df7e"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/dynamic_bitset.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc0eb2b95a07eda460131b6dbce71c0c96843567",
+      "size": 6715,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/cc0eb2b95a07eda460131b6dbce71c0c96843567"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/extension_base.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6c9079a6c1835112b0271df2ca0aa24afca41eb",
+      "size": 566,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/a6c9079a6c1835112b0271df2ca0aa24afca41eb"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/extension_manager.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f4eb42a81edde52cbfa0dd9d0acbf6310d4c011",
+      "size": 7309,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/6f4eb42a81edde52cbfa0dd9d0acbf6310d4c011"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/extension_manager_static.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67f4711fb7eb04e058b73ff79310847ff3a9e41f",
+      "size": 5257,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/67f4711fb7eb04e058b73ff79310847ff3a9e41f"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/extensions.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52b0bfcceaea996b50945e01e8a9884d7e980ad9",
+      "size": 782,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/52b0bfcceaea996b50945e01e8a9884d7e980ad9"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/extensions.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddc351ffc81e67484bcb3f9ff878b3f66e68df1d",
+      "size": 1556,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/ddc351ffc81e67484bcb3f9ff878b3f66e68df1d"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/pending_stats.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "029dd976e4158c7f1bc9bba4f873fcb88a5cac9c",
+      "size": 1869,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/029dd976e4158c7f1bc9bba4f873fcb88a5cac9c"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/pin.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a94e235f686f7b809b618ac9da086a4dabc1601",
+      "size": 8107,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/1a94e235f686f7b809b618ac9da086a4dabc1601"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/pin_types.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1815aa5f49818cbe408acb2bf1687c07f31b9725",
+      "size": 225,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/1815aa5f49818cbe408acb2bf1687c07f31b9725"
+    },
+    {
+      "path": "src/DRAMPower/DRAMPower/util/sub_bitset.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "718f05e66d6158292d74438c9e15fbcb02ac37e5",
+      "size": 4718,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/718f05e66d6158292d74438c9e15fbcb02ac37e5"
+    },
+    {
+      "path": "src/cli",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "45b5030d39b13cf0cff262bafe4fa30778c3b753",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/45b5030d39b13cf0cff262bafe4fa30778c3b753"
+    },
+    {
+      "path": "src/cli/CMakeLists.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce4078655e5d09c3096ff698ba755f8886639654",
+      "size": 150,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/ce4078655e5d09c3096ff698ba755f8886639654"
+    },
+    {
+      "path": "src/cli/lib",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "28e5a41d34982cc083992cc1ce660d659b90ec9a",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/28e5a41d34982cc083992cc1ce660d659b90ec9a"
+    },
+    {
+      "path": "src/cli/lib/CMakeLists.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f8f192378023c217544c6b782ba03bf30533ce7",
+      "size": 711,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/6f8f192378023c217544c6b782ba03bf30533ce7"
+    },
+    {
+      "path": "src/cli/lib/DRAMPower",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fc9c5a0d8e4e6899bf979ae3275028fb1f2e7597",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/fc9c5a0d8e4e6899bf979ae3275028fb1f2e7597"
+    },
+    {
+      "path": "src/cli/lib/DRAMPower/cli",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4f65841e1cf49c405809e24ec229b6b1b1c50df0",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/4f65841e1cf49c405809e24ec229b6b1b1c50df0"
+    },
+    {
+      "path": "src/cli/lib/DRAMPower/cli/config.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8d524c860c744b6ba4cd2c4eec5887718f15a03",
+      "size": 437,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/a8d524c860c744b6ba4cd2c4eec5887718f15a03"
+    },
+    {
+      "path": "src/cli/lib/DRAMPower/cli/csv.hpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9cebfc2b0c33875599cea516354766e303f258c4",
+      "size": 285895,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/9cebfc2b0c33875599cea516354766e303f258c4"
+    },
+    {
+      "path": "src/cli/lib/DRAMPower/cli/run.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e2faaf4254bd8c92c6c0fbd1a5769068cb494c4",
+      "size": 8927,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/4e2faaf4254bd8c92c6c0fbd1a5769068cb494c4"
+    },
+    {
+      "path": "src/cli/lib/DRAMPower/cli/run.hpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a65e296db7b3a8d1f324c31b195d5200f7215999",
+      "size": 1365,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/a65e296db7b3a8d1f324c31b195d5200f7215999"
+    },
+    {
+      "path": "src/cli/lib/DRAMPower/cli/util.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "290b477511c34cca64c826f270deb4a4205e6b49",
+      "size": 839,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/290b477511c34cca64c826f270deb4a4205e6b49"
+    },
+    {
+      "path": "src/cli/lib/DRAMPower/cli/util.hpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96e56f7ad2f99f1588aa8d1f9c79600224a5c552",
+      "size": 3549,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/96e56f7ad2f99f1588aa8d1f9c79600224a5c552"
+    },
+    {
+      "path": "src/cli/main",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2ab805332ef03154fe1637ae32a34d33852ce28f",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/2ab805332ef03154fe1637ae32a34d33852ce28f"
+    },
+    {
+      "path": "src/cli/main/CMakeLists.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2569313813813e2cff4b237cf29a575d4351364",
+      "size": 595,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e2569313813813e2cff4b237cf29a575d4351364"
+    },
+    {
+      "path": "src/cli/main/main.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a756f1894487d1cba0d1da2db9ec7f056daa7a32",
+      "size": 2659,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/a756f1894487d1cba0d1da2db9ec7f056daa7a32"
+    },
+    {
+      "path": "src/cli/main/validators.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ad3bb4d1ee704cc78cf66b9cf209a726bd40c98",
+      "size": 5456,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/9ad3bb4d1ee704cc78cf66b9cf209a726bd40c98"
+    },
+    {
+      "path": "src/cli/main/validators.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f79c023a4c0feb2f5af7171055f2f348ba1eed0",
+      "size": 351,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/0f79c023a4c0feb2f5af7171055f2f348ba1eed0"
+    },
+    {
+      "path": "tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "97f3fe3adced5c589bc1038f9cba39564aab36a3",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/97f3fe3adced5c589bc1038f9cba39564aab36a3"
+    },
+    {
+      "path": "tests/CMakeLists.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e623fcb2dcc5250ae1062fee7b631bf8e82d3c1",
+      "size": 1019,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/6e623fcb2dcc5250ae1062fee7b631bf8e82d3c1"
+    },
+    {
+      "path": "tests/tests_drampower",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2b54c31c747787da2c18671324717f6a6a07d3d2",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/2b54c31c747787da2c18671324717f6a6a07d3d2"
+    },
+    {
+      "path": "tests/tests_drampower/CMakeLists.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b676504d6dab606591f6690fb1ef267fdb9f160e",
+      "size": 4286,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/b676504d6dab606591f6690fb1ef267fdb9f160e"
+    },
+    {
+      "path": "tests/tests_drampower/base",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "711d3bec2730a0e48dcdcebedde39bbe6b1b5345",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/711d3bec2730a0e48dcdcebedde39bbe6b1b5345"
+    },
+    {
+      "path": "tests/tests_drampower/base/test_ddr_base.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96ed1aeb94ba2640f6d7adef4a87d2338ba756c6",
+      "size": 3594,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/96ed1aeb94ba2640f6d7adef4a87d2338ba756c6"
+    },
+    {
+      "path": "tests/tests_drampower/base/test_ddr_data.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f585519fa1b84d9e3702728b7d8fa15cd8149088",
+      "size": 1423,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/f585519fa1b84d9e3702728b7d8fa15cd8149088"
+    },
+    {
+      "path": "tests/tests_drampower/base/test_ddr_serialize.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0abfb8c820b9f8873c115a5ff5023f48c628afe",
+      "size": 7675,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/c0abfb8c820b9f8873c115a5ff5023f48c628afe"
+    },
+    {
+      "path": "tests/tests_drampower/base/test_pattern_pre_cycles.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9fb52c6f792b0a3c612916c118dfbd4d68b20c2",
+      "size": 5064,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d9fb52c6f792b0a3c612916c118dfbd4d68b20c2"
+    },
+    {
+      "path": "tests/tests_drampower/core",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "48e7667614303ab4efd9c62c8a158e7ba2e7ed10",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/48e7667614303ab4efd9c62c8a158e7ba2e7ed10"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d9796387675245f25ceb913640da3ab3c345c9af",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/d9796387675245f25ceb913640da3ab3c345c9af"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_multidevice_tests.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32b805e2e0a507b3bda3e1fe57d66dbb11ee2bf9",
+      "size": 5273,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/32b805e2e0a507b3bda3e1fe57d66dbb11ee2bf9"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_multirank_tests.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fa45bf7b9e5d8218a33ef511745cd4eb1a4c6ca",
+      "size": 3531,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/2fa45bf7b9e5d8218a33ef511745cd4eb1a4c6ca"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_0.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "296466b6c28e2fe164d759c6ffe3086cea8b28d6",
+      "size": 2606,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/296466b6c28e2fe164d759c6ffe3086cea8b28d6"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_1.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "81b1550cb8fb0880fa2fc9ff080a7c94649a5e5c",
+      "size": 3036,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/81b1550cb8fb0880fa2fc9ff080a7c94649a5e5c"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_10.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96164a1c6783a74be73ab7faf9f437c5869e29e3",
+      "size": 6659,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/96164a1c6783a74be73ab7faf9f437c5869e29e3"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_11.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bd3f0010f348d3f3dbd747980ffde7888d2d50f",
+      "size": 4914,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/2bd3f0010f348d3f3dbd747980ffde7888d2d50f"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_12.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f11933c5152ac1ee2e67de0d99e1131a3aba318",
+      "size": 8385,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/7f11933c5152ac1ee2e67de0d99e1131a3aba318"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_13.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb2dba0d9a8bb3ab40797364c190cbe5c237d273",
+      "size": 5348,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/eb2dba0d9a8bb3ab40797364c190cbe5c237d273"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_14.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0edc1b15c55cabf2b100af0a2cead0c5275b3ecf",
+      "size": 5149,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/0edc1b15c55cabf2b100af0a2cead0c5275b3ecf"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_15.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "601f26b73d7c06a734b2f79be8e54a99eb11fea2",
+      "size": 14943,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/601f26b73d7c06a734b2f79be8e54a99eb11fea2"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_2.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cf5c68be3d8cf3e969eaee1da3c1332dced61c1",
+      "size": 3041,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/4cf5c68be3d8cf3e969eaee1da3c1332dced61c1"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_3.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7d4b051aab97e588dad1883bee94d019fdfd0d9",
+      "size": 3570,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e7d4b051aab97e588dad1883bee94d019fdfd0d9"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5915898cc24c3e0f388b857e01de8abc44cf4a7d",
+      "size": 3701,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/5915898cc24c3e0f388b857e01de8abc44cf4a7d"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b035aa7d0d17c4717b5952e66d72efd8fd8a19c",
+      "size": 4032,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/5b035aa7d0d17c4717b5952e66d72efd8fd8a19c"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_6.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "857a456623db9642ea86edb1c98672a4863b8c89",
+      "size": 4174,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/857a456623db9642ea86edb1c98672a4863b8c89"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_7.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08124c2dfb2cb85f122540c740c017b7573869c5",
+      "size": 2892,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/08124c2dfb2cb85f122540c740c017b7573869c5"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_8.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2755d6c8e1d02a8135f0f44ca053812a1a262638",
+      "size": 3412,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/2755d6c8e1d02a8135f0f44ca053812a1a262638"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR4/ddr4_test_pattern_9.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bb9de5c26194cf7599467fbdffacdae61355b13",
+      "size": 3969,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/2bb9de5c26194cf7599467fbdffacdae61355b13"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9fa6d85e48a79712bd6aa21edd524833d3cb5ea3",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/9fa6d85e48a79712bd6aa21edd524833d3cb5ea3"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_multidevice_tests.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cdf338bbaeba082054fa82650a73ccf51b54dc42",
+      "size": 5273,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/cdf338bbaeba082054fa82650a73ccf51b54dc42"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_multirank_tests.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "edde41a0667c3b7250646311f2f5abe45f64b0ac",
+      "size": 4805,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/edde41a0667c3b7250646311f2f5abe45f64b0ac"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_0.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "300244a2e09f52cff7a4f2bac67716ea14584e96",
+      "size": 2527,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/300244a2e09f52cff7a4f2bac67716ea14584e96"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_1.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf5adb6aa97726d5002bb2aad2c8eb987d5be6b7",
+      "size": 3038,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/cf5adb6aa97726d5002bb2aad2c8eb987d5be6b7"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_10.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "821dd7978a5f50582b6932e702ddc2f52401c33f",
+      "size": 3994,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/821dd7978a5f50582b6932e702ddc2f52401c33f"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_11.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3d75472e52b2c534ead2255c41ffe2cc94c991e",
+      "size": 4125,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/f3d75472e52b2c534ead2255c41ffe2cc94c991e"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_12.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ffaa2f25784b81ee93dd0cee689f44bc2c01b1a",
+      "size": 6500,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/0ffaa2f25784b81ee93dd0cee689f44bc2c01b1a"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_13.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "567df63478fd13e309359da37cf0e6a4f92074aa",
+      "size": 4975,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/567df63478fd13e309359da37cf0e6a4f92074aa"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_14.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b56c4a3ac7febb9365413b08a75b4a03309a9e4",
+      "size": 8382,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/2b56c4a3ac7febb9365413b08a75b4a03309a9e4"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_15.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "988c05776542c97e06347db430db44217b14fc63",
+      "size": 5410,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/988c05776542c97e06347db430db44217b14fc63"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_16.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1465bce8956658473e12c0cd00b37db01982437b",
+      "size": 5865,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/1465bce8956658473e12c0cd00b37db01982437b"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_17.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8e0ddadc05cb93b183c6b9c8a2f2cff840060eb",
+      "size": 5240,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d8e0ddadc05cb93b183c6b9c8a2f2cff840060eb"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_18.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b416e2937f42f6baff6cc0585f7f3771932804e",
+      "size": 15016,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/7b416e2937f42f6baff6cc0585f7f3771932804e"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_2.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5b3ec78be33f607dfaf91f40d9068651c9a5afa",
+      "size": 3041,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/b5b3ec78be33f607dfaf91f40d9068651c9a5afa"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_3.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d620c81a41f3fea918640b37f1583db39300a221",
+      "size": 3571,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d620c81a41f3fea918640b37f1583db39300a221"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a1654743e5bc7571e99c70beadf98d628fd0e64",
+      "size": 3702,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/3a1654743e5bc7571e99c70beadf98d628fd0e64"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2258c7fe9df3629eb7078ab7cfe389bf8f37714c",
+      "size": 4032,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/2258c7fe9df3629eb7078ab7cfe389bf8f37714c"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_6.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c0f711ae0fc53de023cf410dbd30d8d66904184",
+      "size": 4174,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/7c0f711ae0fc53de023cf410dbd30d8d66904184"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_7.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a66c20af858ea9ad2c143f7665125b4321c23374",
+      "size": 2891,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/a66c20af858ea9ad2c143f7665125b4321c23374"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_8.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aee75e1253dbe9eb9e43d7c4cda184fd7b51887a",
+      "size": 3195,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/aee75e1253dbe9eb9e43d7c4cda184fd7b51887a"
+    },
+    {
+      "path": "tests/tests_drampower/core/DDR5/ddr5_test_pattern_9.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "541216478cf86a3fe01c9a329bbfd04c66455cc3",
+      "size": 3951,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/541216478cf86a3fe01c9a329bbfd04c66455cc3"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "27bcef55f9f5d25fe0c2e02794aced42d8d78d67",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/27bcef55f9f5d25fe0c2e02794aced42d8d78d67"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_multidevice_tests.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e4427b267b2d08f1e643a63f1249a9bde29798b8",
+      "size": 5299,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e4427b267b2d08f1e643a63f1249a9bde29798b8"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_multirank_tests.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b49cf2d2f9115dd214b9eeb9f4d79f29dfe60a38",
+      "size": 4814,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/b49cf2d2f9115dd214b9eeb9f4d79f29dfe60a38"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_0.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d861c63b99354abec285a2dd281d58d3cb99a294",
+      "size": 2567,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d861c63b99354abec285a2dd281d58d3cb99a294"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_1.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51861cd51360e9fd10b4e0a34934812648b8b6a2",
+      "size": 3061,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/51861cd51360e9fd10b4e0a34934812648b8b6a2"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_10.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "27f1f1274b5dd13f681c4dd75fb60aa3749f6cd5",
+      "size": 4234,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/27f1f1274b5dd13f681c4dd75fb60aa3749f6cd5"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_11.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c5da5edcf24eea73dc14b4c704018934f395c3d",
+      "size": 6969,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/3c5da5edcf24eea73dc14b4c704018934f395c3d"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_12.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e0db8e76ac7db5066d6135c0662cd9a31c534cb",
+      "size": 5275,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/6e0db8e76ac7db5066d6135c0662cd9a31c534cb"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_13.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3f699de43a4c5c034407ba0816903302bb6f226",
+      "size": 9000,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/a3f699de43a4c5c034407ba0816903302bb6f226"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_14.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6cfdf8719ada8814552086010e53c4ecfe5cc833",
+      "size": 5861,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/6cfdf8719ada8814552086010e53c4ecfe5cc833"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_15.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e71d5e3ee81b26cf3624c44d17901ad575a56da1",
+      "size": 5935,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e71d5e3ee81b26cf3624c44d17901ad575a56da1"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_16.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a66a7125545f8231779615223e386a9814db939e",
+      "size": 5648,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/a66a7125545f8231779615223e386a9814db939e"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_17.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b05cb9db04879cb797e28d48a4364f1a5457fb4a",
+      "size": 15424,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/b05cb9db04879cb797e28d48a4364f1a5457fb4a"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_18.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d350eeb1c10f4746f8ae393892592995ab49388",
+      "size": 11227,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/7d350eeb1c10f4746f8ae393892592995ab49388"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_2.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d43eca6a606f07dc6ac00c85ea536bf29693c8b",
+      "size": 3065,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/5d43eca6a606f07dc6ac00c85ea536bf29693c8b"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_3.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "feb20ab025c14c3f36c4c68b33ae72e27aa4a351",
+      "size": 3594,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/feb20ab025c14c3f36c4c68b33ae72e27aa4a351"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e962c5e984f254b3459676334e47fef9a848b585",
+      "size": 3725,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e962c5e984f254b3459676334e47fef9a848b585"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40c772c5b89b70d606201b5fedc4bbe02ed77289",
+      "size": 4172,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/40c772c5b89b70d606201b5fedc4bbe02ed77289"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_6.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc4316afa10ce337d7b0f1881ca653f568140e47",
+      "size": 4256,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/cc4316afa10ce337d7b0f1881ca653f568140e47"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_7.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d91db09add8d453421b22e21f79aab6474a08fa5",
+      "size": 2917,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d91db09add8d453421b22e21f79aab6474a08fa5"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_8.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf66392ace06d2eb8506c9ff3964034c2b031088",
+      "size": 3219,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/cf66392ace06d2eb8506c9ff3964034c2b031088"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR4/lpddr4_test_pattern_9.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7da2da5efdced4880779888085a378f27eb82ac3",
+      "size": 3975,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/7da2da5efdced4880779888085a378f27eb82ac3"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6a5d95a31f1919b3932fea4ac354931068e28db7",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/6a5d95a31f1919b3932fea4ac354931068e28db7"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_multidevice_tests.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5f4da92aeccea46f9101290e86d8bba390916f0",
+      "size": 5345,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e5f4da92aeccea46f9101290e86d8bba390916f0"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_multirank_tests.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63215e81dfd57ec6f36845ccb6154a921b1e10d9",
+      "size": 3921,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/63215e81dfd57ec6f36845ccb6154a921b1e10d9"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_0.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d9118e85ce4401da4c1a0a71567a16ae7662577",
+      "size": 2567,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/2d9118e85ce4401da4c1a0a71567a16ae7662577"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_1.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77f046d2a7b7fa0ec46d11b0759d69803ab392a6",
+      "size": 3061,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/77f046d2a7b7fa0ec46d11b0759d69803ab392a6"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_10.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e6e5d5f4b80638404e12ce7f22c0a4b9190883d",
+      "size": 3901,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/1e6e5d5f4b80638404e12ce7f22c0a4b9190883d"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_11.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd06e7aa915998a9ce7462bb547e11103f7b6d0c",
+      "size": 4280,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/fd06e7aa915998a9ce7462bb547e11103f7b6d0c"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_12.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3c08cf1313f27853df6e999205021b57a54c2c1",
+      "size": 7385,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d3c08cf1313f27853df6e999205021b57a54c2c1"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_13.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a81109e1965e8d41f80a11be1d5d834f9b6811e",
+      "size": 5901,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/0a81109e1965e8d41f80a11be1d5d834f9b6811e"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_14.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fbe06e02379b11c7a1232944734205dbbb3c129a",
+      "size": 9587,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/fbe06e02379b11c7a1232944734205dbbb3c129a"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_15.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6e907029f4531f4d1dd04ec686b04201eeb07b7",
+      "size": 6151,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e6e907029f4531f4d1dd04ec686b04201eeb07b7"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_16.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf6fddd8691827ccde6f2e080e2bf8d973e56e2e",
+      "size": 6470,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/cf6fddd8691827ccde6f2e080e2bf8d973e56e2e"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_17.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c7cef6c2e1d90d74ebde43734603cd0a5f28fae",
+      "size": 5992,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/4c7cef6c2e1d90d74ebde43734603cd0a5f28fae"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_18.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6fe66baa905945a99a31f6de3aa44b563b480fe6",
+      "size": 5961,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/6fe66baa905945a99a31f6de3aa44b563b480fe6"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_19.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47ae07d3b9583ee70d45bb5bde1eb71c6040f6be",
+      "size": 15705,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/47ae07d3b9583ee70d45bb5bde1eb71c6040f6be"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_2.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8120de84fef36d52cb355169a7c3b0249eed9c3",
+      "size": 3065,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e8120de84fef36d52cb355169a7c3b0249eed9c3"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_20.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "428415471659263c452c6d46ef03d6b8b27f2be3",
+      "size": 11523,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/428415471659263c452c6d46ef03d6b8b27f2be3"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_21.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aaf97b0791edd99ab7450d8f9174efd50e1943a4",
+      "size": 5463,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/aaf97b0791edd99ab7450d8f9174efd50e1943a4"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_3.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db7a880817565da8689846335246f989c723e2a9",
+      "size": 3594,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/db7a880817565da8689846335246f989c723e2a9"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c43fdcbb04759181ed69bdace304d067931c7be",
+      "size": 3724,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/8c43fdcbb04759181ed69bdace304d067931c7be"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b13ff8ea310be6cd0062f2960269143b102bbf26",
+      "size": 4171,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/b13ff8ea310be6cd0062f2960269143b102bbf26"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_6.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75554254ebbb46a6c558b7aa14b37b89d58d4d1b",
+      "size": 4256,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/75554254ebbb46a6c558b7aa14b37b89d58d4d1b"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_7.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee4b74436005acdeffa141abb97c5c29893b4e5c",
+      "size": 2917,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/ee4b74436005acdeffa141abb97c5c29893b4e5c"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_8.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dabab499a8d4f189ea46d8d0e7248b54931866a1",
+      "size": 3219,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/dabab499a8d4f189ea46d8d0e7248b54931866a1"
+    },
+    {
+      "path": "tests/tests_drampower/core/LPDDR5/lpddr5_test_pattern_9.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6da2d619bd2589c5e16dae4949e6d33aeca7684d",
+      "size": 3974,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/6da2d619bd2589c5e16dae4949e6d33aeca7684d"
+    },
+    {
+      "path": "tests/tests_drampower/interface",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4b20388062f11e10ded452dd4fe82794c39549fc",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/4b20388062f11e10ded452dd4fe82794c39549fc"
+    },
+    {
+      "path": "tests/tests_drampower/interface/test_dbi_ddr4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0724a7fa157f4290afec247f1abe924cf57280d",
+      "size": 9728,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d0724a7fa157f4290afec247f1abe924cf57280d"
+    },
+    {
+      "path": "tests/tests_drampower/interface/test_dbi_lpddr4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09b5dab1f51d57d6a08cc0a6d8e7d4e1014d7064",
+      "size": 9578,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/09b5dab1f51d57d6a08cc0a6d8e7d4e1014d7064"
+    },
+    {
+      "path": "tests/tests_drampower/interface/test_dbi_lpddr5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "adb852723f1d1c38779787dc8db6f855372d4117",
+      "size": 9578,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/adb852723f1d1c38779787dc8db6f855372d4117"
+    },
+    {
+      "path": "tests/tests_drampower/interface/test_interface_ddr4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51addaef388cfeef487ecace23e997778a7d9ae9",
+      "size": 26784,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/51addaef388cfeef487ecace23e997778a7d9ae9"
+    },
+    {
+      "path": "tests/tests_drampower/interface/test_interface_ddr5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62800f497fe130773801113d85ae9b267040c631",
+      "size": 13925,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/62800f497fe130773801113d85ae9b267040c631"
+    },
+    {
+      "path": "tests/tests_drampower/interface/test_interface_lpddr4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4153bc33e5fdfe0a2851c6dca54a2ea5c11427d4",
+      "size": 17160,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/4153bc33e5fdfe0a2851c6dca54a2ea5c11427d4"
+    },
+    {
+      "path": "tests/tests_drampower/interface/test_interface_lpddr5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80427df5ba59e9c623d86303725dd48f249116f0",
+      "size": 19178,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/80427df5ba59e9c623d86303725dd48f249116f0"
+    },
+    {
+      "path": "tests/tests_drampower/interface/test_togglingrate_ddr4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fe0a073eb4df2e3b51865fd39d3366c3a49b402b",
+      "size": 18736,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/fe0a073eb4df2e3b51865fd39d3366c3a49b402b"
+    },
+    {
+      "path": "tests/tests_drampower/interface/test_togglingrate_ddr5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7d97c7ed4d17f44326d9c0c0e66ca178e9b15c7",
+      "size": 18119,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d7d97c7ed4d17f44326d9c0c0e66ca178e9b15c7"
+    },
+    {
+      "path": "tests/tests_drampower/interface/test_togglingrate_lpddr4.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6c1c973769647d384b55f0b9fd3b314ca29b35f",
+      "size": 18380,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/f6c1c973769647d384b55f0b9fd3b314ca29b35f"
+    },
+    {
+      "path": "tests/tests_drampower/interface/test_togglingrate_lpddr5.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9290e8ebe5f1143fe85652415f2624f2e5b9449d",
+      "size": 17870,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/9290e8ebe5f1143fe85652415f2624f2e5b9449d"
+    },
+    {
+      "path": "tests/tests_drampower/resources",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "06e3c1b70b3dd957d6f80adf6aa9005b26ab3773",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/06e3c1b70b3dd957d6f80adf6aa9005b26ab3773"
+    },
+    {
+      "path": "tests/tests_drampower/resources/cliconfig.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4bb1929864e662416709d8dc2bea17c66308143",
+      "size": 316,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/f4bb1929864e662416709d8dc2bea17c66308143"
+    },
+    {
+      "path": "tests/tests_drampower/resources/ddr4.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0e1de4301e119f675e5bcb0e207638cc879ea7a",
+      "size": 118,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/f0e1de4301e119f675e5bcb0e207638cc879ea7a"
+    },
+    {
+      "path": "tests/tests_drampower/resources/ddr4.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52893b6c2cd4850d3dfafe296991b166de108fe2",
+      "size": 2703,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/52893b6c2cd4850d3dfafe296991b166de108fe2"
+    },
+    {
+      "path": "tests/tests_drampower/resources/ddr5.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddc779b13cacace8dd16e0361831d1dc1bfa9301",
+      "size": 50,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/ddc779b13cacace8dd16e0361831d1dc1bfa9301"
+    },
+    {
+      "path": "tests/tests_drampower/resources/ddr5.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4fedca7a5975416ab3e68678a2a8e25e47bdf9c6",
+      "size": 2974,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/4fedca7a5975416ab3e68678a2a8e25e47bdf9c6"
+    },
+    {
+      "path": "tests/tests_drampower/resources/lpddr4.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddc779b13cacace8dd16e0361831d1dc1bfa9301",
+      "size": 50,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/ddc779b13cacace8dd16e0361831d1dc1bfa9301"
+    },
+    {
+      "path": "tests/tests_drampower/resources/lpddr4.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14b24916e68c2ca3068a1979cfa6a7be7957b21f",
+      "size": 2399,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/14b24916e68c2ca3068a1979cfa6a7be7957b21f"
+    },
+    {
+      "path": "tests/tests_drampower/resources/lpddr5.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddc779b13cacace8dd16e0361831d1dc1bfa9301",
+      "size": 50,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/ddc779b13cacace8dd16e0361831d1dc1bfa9301"
+    },
+    {
+      "path": "tests/tests_drampower/resources/lpddr5.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae2413b391ba97a4b87b709bb2894ac8cbbf072d",
+      "size": 2870,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/ae2413b391ba97a4b87b709bb2894ac8cbbf072d"
+    },
+    {
+      "path": "tests/tests_misc",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e90f305063aea673525cec63005f096d440ebf93",
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/trees/e90f305063aea673525cec63005f096d440ebf93"
+    },
+    {
+      "path": "tests/tests_misc/CMakeLists.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7bbc0df63f977158a505bd47770b8b12cc152df",
+      "size": 569,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e7bbc0df63f977158a505bd47770b8b12cc152df"
+    },
+    {
+      "path": "tests/tests_misc/test_bus.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0388d63785b78cbee446456d4cbbea59f04653a3",
+      "size": 20289,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/0388d63785b78cbee446456d4cbbea59f04653a3"
+    },
+    {
+      "path": "tests/tests_misc/test_bus_extended.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b92b8715e6c1f6d087539b4ed2d4c712c0fd95db",
+      "size": 12547,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/b92b8715e6c1f6d087539b4ed2d4c712c0fd95db"
+    },
+    {
+      "path": "tests/tests_misc/test_clock.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6fbf8284d034e2bfba015821427113f28021d1a",
+      "size": 1969,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e6fbf8284d034e2bfba015821427113f28021d1a"
+    },
+    {
+      "path": "tests/tests_misc/test_dynamic_bitset.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76d0c204541e23d6f22a8387bfaebd0f093cafa3",
+      "size": 4705,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/76d0c204541e23d6f22a8387bfaebd0f093cafa3"
+    },
+    {
+      "path": "tests/tests_misc/test_dynamic_extension_manager.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37b4af2201b6423939b9864d4451557e3af77c59",
+      "size": 12047,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/37b4af2201b6423939b9864d4451557e3af77c59"
+    },
+    {
+      "path": "tests/tests_misc/test_interval.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d07813c9da17ee72b08b5d711564835ed3711ac4",
+      "size": 1760,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/d07813c9da17ee72b08b5d711564835ed3711ac4"
+    },
+    {
+      "path": "tests/tests_misc/test_misc.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "817cdc860caf647451c8dc861d52ac29c0b6526a",
+      "size": 5023,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/817cdc860caf647451c8dc861d52ac29c0b6526a"
+    },
+    {
+      "path": "tests/tests_misc/test_pattern.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "876e56a2457d327da396a9d92c2dc4696c469514",
+      "size": 4375,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/876e56a2457d327da396a9d92c2dc4696c469514"
+    },
+    {
+      "path": "tests/tests_misc/test_pin.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6507b861f5a85b02df4d92cbc96fe11eb5d2f8c1",
+      "size": 12311,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/6507b861f5a85b02df4d92cbc96fe11eb5d2f8c1"
+    },
+    {
+      "path": "tests/tests_misc/test_static_extension_manager.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e281308f1d47b9b3a9873c5de693539aed9e52de",
+      "size": 4662,
+      "url": "https://api.github.com/repos/tukl-msd/DRAMPower/git/blobs/e281308f1d47b9b3a9873c5de693539aed9e52de"
+    }
+  ],
+  "truncated": false
+}
