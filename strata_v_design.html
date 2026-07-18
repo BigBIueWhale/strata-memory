@@ -74,7 +74,7 @@
   <div class="lbl">Tier&nbsp;2 &mdash; DRAM</div>
   <div class="box b2">18 &times; MRDIMM&#8209;12800, 128&nbsp;GiB each = 2.25&nbsp;TiB &asymp; ~576 &times; 32&nbsp;Gb dies</div>
 </div>
-<p>The <strong>root converter</strong> presents the impossible&#8209;chip face and stripes the flat address across channels (a RAID&#8209;0 stripe over DRAM). The <strong>channel converters</strong> each schedule ~3 DDR5 channels and, crucially, hide refresh and bank conflicts behind a small reorder buffer so the front sees <em>deterministic</em> timing. The whole thing can collapse onto one large converter die if pin/thermal budgets allow (fewer hops, lower latency), or split into the root+leaf hierarchy shown (+~5&nbsp;ns/level).</p>
+<p>The <strong>root converter</strong> presents the impossible&#8209;chip face and stripes the flat address across channels (a RAID&#8209;0 stripe over DRAM). The <strong>channel converters</strong> each schedule ~3 DDR5 channels and, crucially, hide refresh and bank conflicts behind a small reorder buffer so the front sees <em>deterministic</em> timing. The whole thing can collapse onto one large converter die if pin/thermal budgets allow (fewer hops, lower latency), or split into the root+leaf hierarchy shown (+~5&nbsp;ns/level). <strong>Depth, the way the GPU sees it:</strong> a monolithic GDDR7 device is <strong>0 levels deep</strong> (the controller drives it directly); here the GPU reaches each DRAM die <strong>1 level</strong> deep if the converter fits a single die, or <strong>2 levels</strong> (root &rarr; leaf &rarr; DRAM) once the channel count forces the split. The depth is set by that channel count &mdash; never by DIMM density.</p>
 
 <h2 id="choices"><span class="num">02</span>Specific choices &amp; physical dimensions</h2>
 <table>
@@ -133,6 +133,7 @@
 <tr><td>Flow control</td><td>none</td><td>none &mdash; needs deterministic backing</td><td>none</td></tr>
 <tr><td>Front pins</td><td>512</td><td>512 (identical)</td><td>80</td></tr>
 <tr><td>Backing pins</td><td>&mdash;</td><td>~2,000 (on converters)</td><td>80</td></tr>
+<tr><td>Levels, GPU &rarr; DRAM die</td><td><strong>0</strong> (direct)</td><td><strong>1&ndash;2</strong> (single die, or root+leaf)</td><td>1 (register)</td></tr>
 <tr><td>Physical footprint</td><td>~16 chips, on&#8209;card</td><td>~18 DIMMs &mdash; appliance</td><td>1 DIMM</td></tr>
 <tr><td>DRAM cost (2026 crunch, <em>observed reseller</em>)</td><td>~$0.7&ndash;1.1k</td><td><strong>~$37&ndash;115k</strong></td><td>~$4&ndash;9k</td></tr>
 </tbody>

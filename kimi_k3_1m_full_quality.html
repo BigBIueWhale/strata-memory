@@ -120,7 +120,7 @@
 <tr><td>Encodable <code>CL</code></td><td><span class="pass">PASS</span> &mdash; ~50.5&ndash;64.5 ns via the custom widened field</td></tr>
 <tr><td>Schedulable refresh</td><td><span class="pass">PASS</span> &mdash; <strong>per-bank REFsb mandatory</strong> (all-bank +0.6 pp cool, fails hot); monolithic UDIMM is the refresh-friendly corner (10.5% vs 3DS ~84%)</td></tr>
 <tr><td>Integrity</td><td><span class="flag">ADD</span> converter-side CRC / 44-data+1-parity &mdash; consumer UDIMM is non-ECC</td></tr>
-<tr><td>Physical</td><td><strong>hierarchical appliance only</strong> &mdash; ~9 leaf converters + switch-class root, ~0.2 m&sup2; board, ~0.5 kW; never one package (~5,000+ signal pins)</td></tr>
+<tr><td>Physical</td><td><strong>hierarchical appliance only</strong> &mdash; ~9 leaf converters + switch-class root, so each DRAM die sits <strong>2 levels deep</strong> from the GPU (root &rarr; leaf &rarr; DRAM, vs <strong>0</strong> for a monolithic GDDR7 device); ~0.2 m&sup2; board, ~0.5 kW; never one package (~5,000+ signal pins force the split)</td></tr>
 </tbody>
 </table>
 
