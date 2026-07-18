@@ -20,6 +20,7 @@ real, shipping reference, and estimates are flagged as such.
 | 1 | [`strata_2t_design.html`](strata_2t_design.html) | **STRATA-2T** — a two-tier-memory accelerator: a 96 GiB GDDR7 fast tier (1.79 TB/s, an RTX PRO 6000-class subsystem) fused with a 2 TiB DDR5 bulk tier in one coherent address space. Modeled on the Grace Hopper HBM+LPDDR division of labor. |
 | 2 | [`strata_v_design.html`](strata_v_design.html) | **STRATA-V** — a DDR5 *memory-virtualizer*: a converter hierarchy that makes ~600 ordinary DDR5 dies appear to a GPU as **one impossible chip** (2.25 TiB, 1.79 TB/s, fixed-beat protocol). Same pin count and bandwidth as a 5090, ~70× the capacity. |
 | 3 | [`rtx5090_strata_v_retrofit_verdict.html`](rtx5090_strata_v_retrofit_verdict.html) | **Retrofit verdict** — why you *cannot* desolder a stock RTX 5090's GDDR7 and bolt STRATA-V on to trick it into 2 TiB. A negative result: a finished GPU's memory is defined by its controller, not its chips. |
+| 4 | [`sourcing_report.html`](sourcing_report.html) | **Sourcing report** — can you actually *buy* it? A four-thread hunt for the finished product, the DDR5 parts, the converter silicon, and the CXL path, with real 2026 reseller prices — and a corrected (6–10× higher) DDR5 cost. |
 
 ## The through-line (what the three docs establish)
 

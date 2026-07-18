@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STRATA &mdash; can you buy it? A real-world sourcing report</title>
+<style>
+  :root{--ink:#1b1f24;--paper:#fbfaf7;--muted:#5d6571;--rule:#e2ddd2;--accent:#7a4cc4;--accent2:#1f7a5a;--amber:#9a6a00;--red:#9a2f2f;--code-bg:#f1ede4;--code-ink:#3a2f5a;--blue:#1f5d7a;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:960px;margin:0 auto;padding:44px 24px 120px}
+  header.hero{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:8px}
+  .kicker{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:31px;line-height:1.1;margin:.2em 0 .12em}
+  .sub{font-size:18px;color:var(--muted);margin:0}
+  .meta{font-size:12.5px;color:var(--muted);margin-top:12px}
+  h2{font-size:22px;margin:2em 0 .45em;padding-top:.3em;border-top:1px solid var(--rule);line-height:1.18}
+  h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;font-size:15px;vertical-align:.18em;margin-right:.5em}
+  h3{font-size:16.5px;margin:1.3em 0 .3em;color:var(--accent2)}
+  p{margin:.65em 0}
+  code{font-family:"SFMono-Regular",Consolas,Menlo,monospace;font-size:.84em;background:var(--code-bg);color:var(--code-ink);padding:1px 5px;border-radius:4px;white-space:nowrap}
+  strong{font-weight:700}
+  ul,ol{margin:.5em 0 .8em;padding-left:1.3em}
+  li{margin:.3em 0}
+  .lede{font-size:18px;color:#33373d}
+  .callout{margin:1.1em 0;padding:13px 17px;border-radius:9px;border-left:5px solid var(--accent);background:#f4f0fb}
+  .callout .lab{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:4px;color:var(--accent)}
+  .callout.punch{border-left-color:var(--accent2);background:#e9f5ef}.callout.punch .lab{color:var(--accent2)}
+  .callout.catch{border-left-color:var(--amber);background:#fbf4e4}.callout.catch .lab{color:var(--amber)}
+  .callout.spec{border-left-color:var(--blue);background:#e8f2f7}.callout.spec .lab{color:var(--blue)}
+  table{border-collapse:collapse;width:100%;margin:1em 0;font-size:13px}
+  th,td{border:1px solid var(--rule);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:#efe9dd;font-size:12px}
+  tbody tr:nth-child(even){background:#f6f2ea}
+  .verdict{font-size:20px;font-weight:800;color:var(--accent2)}
+  .flag{color:var(--amber);font-weight:700}
+  .ok{color:var(--accent2);font-weight:700}
+  footer{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">real-world sourcing report &middot; four-agent hunt</div>
+  <h1>Can you actually buy STRATA?</h1>
+  <p class="sub">What of the STRATA designs &mdash; a GPU with ~2&nbsp;TiB of coherent memory at ~1.79&nbsp;TB/s &mdash; is purchasable today, as a product, as parts, or as a path to build.</p>
+  <p class="meta">Findings from four parallel research agents (turnkey products &middot; DDR5 parts &middot; converter silicon &middot; CXL/appliance/chips). Prices observed ~2026&#8209;07&#8209;13/18 at the reachable resellers; many sites (eBay, amd.com, Alibaba, Mouser, Crucial) were bot&#8209;blocked this session, so figures are bracketed and flagged. Prices are volatile in the 2026 DRAM crunch. <span class="flag">Not quotes.</span></p>
+</header>
+
+<p class="lede">The four hunts converge on one picture: <strong>nobody sells the exact STRATA point &mdash; one GPU module, ~2&nbsp;TiB, ~1.79&nbsp;TB/s, one coherent space.</strong> But the market <em>brackets</em> it tightly from every side, the design&rsquo;s own commodity&#8209;DRAM thesis is already buyable as parts, and the custom converter is prototypeable now for ~$12k.</p>
+
+<div class="callout punch"><span class="lab">Verdict</span>
+<p style="margin-top:2px"><span class="verdict">Buy the pieces today; the exact chip needs a GPU&#8209;vendor co&#8209;design.</span></p>
+<ul style="margin:.5em 0 0">
+<li><strong>Closest thing you can order at a listed price:</strong> the <strong>NVIDIA GB300 &ldquo;AI Station&rdquo;</strong> (Supermicro <code>ARS&#8209;511GD&#8209;NB&#8209;LCC</code>) &mdash; <strong>$80,541</strong> &mdash; which <em>is</em> STRATA&#8209;2T&rsquo;s fast&#8209;tier + coherent&#8209;bulk&#8209;tier shape (252&nbsp;GB HBM3e @ 7.1&nbsp;TB/s + 496&nbsp;GB LPDDR5X), at ~&frac13; the capacity.</li>
+<li><strong>The design&rsquo;s commodity thesis, buyable as parts:</strong> a <strong>2&#8209;socket Xeon 6980P + 24&times; MRDIMM&#8209;8800</strong> &asymp; <strong>2.3&nbsp;TB coherent @ ~1.69&nbsp;TB/s for ~$110k</strong> &mdash; the STRATA&#8209;V bandwidth&#8209;from&#8209;many&#8209;channels idea, real &mdash; but it is a CPU, not a GPU.</li>
+<li><strong>The converter is prototypeable now</strong> on an <strong>Altera Agilex&nbsp;7 M&#8209;series kit (~$11.5k)</strong> with hardened DDR5; the literal 512&#8209;pin fixed&#8209;beat front only exists in a ~$50M+ N3E ASIC that (per our retrofit verdict) needs a GPU&#8209;vendor partner.</li>
+<li><strong>Cost reality check:</strong> the 2&nbsp;TiB of DDR5 alone is <strong>~$37k&ndash;115k</strong> in the crunch &mdash; 6&ndash;10&times; what the STRATA&#8209;V draft estimated.</li>
+</ul>
+</div>
+
+<h2 id="turnkey"><span class="num">01</span>Turnkey products &mdash; the market brackets the spec</h2>
+<p>Target: one accelerator, ~2,199&nbsp;GB in a single coherent space, ~1.79&nbsp;TB/s hot bandwidth. Nothing hits all three; here is what does exist.</p>
+<table>
+<thead><tr><th>Product</th><th>Coherent capacity</th><th>Hot BW</th><th>One coherent device?</th><th>Price (observed)</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA <strong>GB300 &ldquo;AI Station&rdquo;</strong> (Supermicro <code>ARS&#8209;511GD&#8209;NB&#8209;LCC</code>)</td><td>748&nbsp;GB (252 HBM3e + 496 LPDDR5X)</td><td>7.1&nbsp;TB/s</td><td><span class="ok">Yes</span> (Grace NVLink&#8209;C2C)</td><td><strong>$80,541</strong> pre&#8209;order (Wiredzone); ~$100&ndash;125k street <span class="flag">[street est]</span></td></tr>
+<tr><td>NVIDIA <strong>GB200 NVL4</strong> node (2 Grace + 4 B200)</td><td><strong>1,768&nbsp;GB</strong> (744 HBM3e + 1,024 LPDDR5X)</td><td>~32&nbsp;TB/s</td><td><span class="ok">Yes</span> (NVLink domain)</td><td>quote&#8209;only (GPTshop / Supermicro) <span class="flag">[unverified]</span></td></tr>
+<tr><td>NVIDIA <strong>GH200</strong> 624&nbsp;GB / NVL2</td><td>624&nbsp;GB / 1.2&nbsp;TB</td><td>4.9 / 10&nbsp;TB/s</td><td><span class="ok">Yes</span></td><td><strong>$35,401</strong> superchip board (Wiredzone) <span class="flag">[SKU config unverified]</span></td></tr>
+<tr><td>NVIDIA <strong>GB300 NVL72</strong> rack</td><td><strong>37&nbsp;TB</strong> (20 HBM3e + 17 LPDDR5X)</td><td>up to 576&nbsp;TB/s</td><td><span class="ok">Yes</span> (one NVLink domain)</td><td>~$3&ndash;4M/rack <span class="flag">[analyst est]</span></td></tr>
+<tr><td>AMD <strong>8&times; MI355X</strong> server</td><td><strong>2,304&nbsp;GB</strong> HBM3e</td><td>64&nbsp;TB/s aggregate</td><td><span class="flag">No</span> &mdash; 8 peers over Infinity&nbsp;Fabric/PCIe</td><td>quote&#8209;only; GPU&#8209;less 8U barebone $24,080 <span class="flag">[AMD site blocked]</span></td></tr>
+<tr><td><strong>2S Xeon 6980P + 24&times; MRDIMM&#8209;8800</strong></td><td>2,304&nbsp;GB (up to 6&nbsp;TB)</td><td><strong>~1.69&nbsp;TB/s</strong> (94% of target, theoretical)</td><td><span class="ok">Yes</span> (2 NUMA) &mdash; but a <strong>CPU</strong></td><td><strong>~$110k in parts</strong> (Xeon 6980P $5,994 ea; 96&nbsp;GB MRDIMM $4,085)</td></tr>
+<tr><td>NVIDIA <strong>RTX PRO 6000</strong> 96&nbsp;GB</td><td>96&nbsp;GB GDDR7</td><td><strong>1,792&nbsp;GB/s</strong> (100%)</td><td><span class="ok">Yes</span> (one device)</td><td><strong>$12,093</strong> (Wiredzone) &mdash; the exact STRATA fast tier, no bulk</td></tr>
+<tr><td>Apple Mac Studio <strong>M3 Ultra 512&nbsp;GB</strong></td><td>512&nbsp;GB unified</td><td>819&nbsp;GB/s</td><td><span class="ok">Yes</span></td><td><span class="flag">Discontinued</span> at 512&nbsp;GB (2026 RAM shortage; now caps 96&nbsp;GB)</td></tr>
+</tbody>
+</table>
+<div class="callout spec"><span class="lab">The one you can order that <em>is</em> STRATA&#8209;2T&rsquo;s shape</span>The <strong>GB300 AI Station ($80,541)</strong> is literally a fast HBM tier + a coherent LPDDR5X bulk tier over 900&nbsp;GB/s NVLink&#8209;C2C &mdash; the STRATA&#8209;2T architecture, shipping, at a listed price &mdash; with <em>4&times;</em> the target hot bandwidth and <em>&frac13;</em> the capacity. The exact 2&nbsp;TiB point sits in the gap between it and the $3M+ NVL72.</div>
+
+<h2 id="ddr5"><span class="num">02</span>The 2&nbsp;TiB DDR5 bulk tier &mdash; real parts, real (higher) cost</h2>
+<table>
+<thead><tr><th>Part</th><th>What</th><th>Price each (observed)</th><th>Channel status</th></tr></thead>
+<tbody>
+<tr><td>Samsung <code>M321RBJA0M22-CLP</code></td><td>256&nbsp;GB DDR5&#8209;6400 3DS RDIMM (4Rx4)</td><td><strong>~$9,357</strong> (CoreWave, 96&nbsp;pcs)</td><td><span class="ok">in distribution</span> &mdash; healthiest 256&nbsp;GB part</td></tr>
+<tr><td>Samsung <code>M321RBGA0B40-CWK</code></td><td>256&nbsp;GB DDR5&#8209;4800 8Rx4 3DS</td><td>~$9,199 (OEM, OOS) / ~$7,600 compatible</td><td>thin &mdash; refurb / third&#8209;party in stock</td></tr>
+<tr><td>Micron <code>MTC40F2047S1RC56BR</code></td><td>128&nbsp;GB DDR5&#8209;5600 RDIMM</td><td>~$4,130&ndash;6,053</td><td><span class="ok">deep stock</span> (antonline/Newegg)</td></tr>
+<tr><td>Micron 256&nbsp;GB <strong>MRDIMM&#8209;8800</strong> (ES)</td><td>engineering&#8209;sample MRDIMM</td><td><strong>~$4,699</strong> (Shenzhen grey / eBay)</td><td>broker/gray only, Xeon&#8209;6, no warranty</td></tr>
+<tr><td>RCD / DB / MRCD / MDB logic (Renesas <code>RG5R364</code>/<code>RG5R188</code>, Montage <code>M88DR5RCD03</code>)</td><td>register + buffer chips</td><td>no price / zero stock</td><td><span class="flag">not merchant&#8209;buyable</span> &mdash; OEM RFQ; ship soldered on DIMMs</td></tr>
+<tr><td>Design&rsquo;s primary: <strong>MRDIMM&#8209;12800</strong></td><td>Gen2 128&nbsp;GB</td><td>&mdash;</td><td><span class="flag">not orderable anywhere</span> &mdash; Gen2 sampling&#8209;only (confirms the doc&rsquo;s own catch)</td></tr>
+</tbody>
+</table>
+<h3>Real 2&nbsp;TiB DRAM bill of materials (mid&#8209;2026 crunch)</h3>
+<table>
+<thead><tr><th>Route</th><th>Build</th><th>Cost</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>Grey&#8209;market MRDIMM&#8209;8800 ES</td><td>8&ndash;9&times; 256&nbsp;GB $4,699</td><td><strong>~$37k&ndash;42k</strong></td><td>cheapest per GB (~$18/GB); ES&#8209;grade, ~11 visible units</td></tr>
+<tr><td>In&#8209;distribution 256&nbsp;GB 3DS RDIMM</td><td>8&ndash;9&times; Samsung CLP $9,357</td><td><strong>~$75k&ndash;84k</strong></td><td>cleanest in&#8209;channel build for 2&ndash;2.25&nbsp;TiB</td></tr>
+<tr><td>128&nbsp;GB RDIMM</td><td>16&times; Micron $6,053</td><td>~$97k</td><td>deep stock</td></tr>
+<tr><td>Bandwidth&#8209;driven fallback</td><td>35&times; 64&nbsp;GB DDR5&#8209;6400</td><td>~$115k</td><td>most expensive capacity path (as specced for uniform 1.79&nbsp;TB/s)</td></tr>
+</tbody>
+</table>
+<div class="callout catch"><span class="lab">Correction to the design docs</span>Street DDR5 is <strong>$30&ndash;57/GB</strong> in the crunch, so 2.25&nbsp;TiB is <strong>~$37k&ndash;115k</strong>, not the &ldquo;~$6&ndash;12k&rdquo; the STRATA&#8209;V/2T drafts stated &mdash; a <strong>6&ndash;10&times; understatement</strong>. A single 128&nbsp;GB module is ~$4&ndash;6k, not ~$400. The design docs&rsquo; cost lines have been corrected to point here.</div>
+
+<h2 id="converter"><span class="num">03</span>The converter &mdash; a buildable staircase, one un&#8209;buyable block</h2>
+<p>The custom 3&#8209;nm converter is realizable from catalog parts <em>except</em> its device&#8209;mode front PHY. <strong>Nobody sells a device&#8209;mode GDDR/DDR front</strong> (the block that answers training and launches on a frozen beat) &mdash; every FPGA and PHY IP is host/controller side. That is exactly the retrofit&#8209;verdict wall.</p>
+<table>
+<thead><tr><th>Stage</th><th>What you buy / engage</th><th>Cost (observed / flagged)</th></tr></thead>
+<tbody>
+<tr><td>1. FPGA prototype of the internals</td><td>Altera <strong>Agilex&nbsp;7 M&#8209;series</strong> kit <code>DK&#8209;DEV&#8209;AGM039EA</code> (hardened DDR5&#8209;5600 + HBM2e) or BittWare <code>IA&#8209;860m</code>; Achronix VectorPath (hardened GDDR6)</td><td><strong>$11,499</strong> (DigiKey); IA&#8209;860m/VectorPath quote&#8209;only</td></tr>
+<tr><td>2. License the backing IP</td><td><strong>Synopsys</strong> DDR5 MRDIMM/RDIMM PHY+controller to 14.4&nbsp;Gb/s <em>on TSMC N3E</em>; <strong>Cadence</strong> MRDIMM&#8209;12800 PHY (N3, silicon&#8209;proven), GDDR6/7; <strong>Rambus</strong> GDDR7 controller + purchasable RCD/DB/MRCD chips; GUC HBM4 on 3&nbsp;nm</td><td>license quotes <span class="flag">[NDA]</span></td></tr>
+<tr><td>3. Silicon&#8209;prove the scheduler</td><td>MPW shuttle: <strong>chipIgnite</strong> $14,950 (SkyWater 130&nbsp;nm); <strong>Europractice</strong> to TSMC 16/7&nbsp;nm (&euro;7&ndash;18k/mm&sup2;&#8209;class); <strong>Muse</strong> TSMC N3P (quote); TSMC CyberShuttle (NDA, customer&#8209;only)</td><td>~$100&ndash;300k for a 16&nbsp;nm interleave/refresh core <span class="flag">[est]</span></td></tr>
+<tr><td>4. The real N3E converter ASIC</td><td>ASIC houses: <strong>Aion&nbsp;Silicon</strong> (ex&#8209;Sondrel, TSMC&nbsp;N3/Intel&nbsp;18A), <strong>Alchip</strong>, <strong>GUC</strong>, Socionext</td><td>~$50M+ full&#8209;program NRE <span class="flag">[industry est]</span>; only viable with a GPU&#8209;vendor co&#8209;design partner</td></tr>
+</tbody>
+</table>
+<p><strong>Cheapest realistic path:</strong> Agilex&#8209;M FPGA (~$25k) to prove deterministic interleave + staggered&#8209;refresh scheduling &rarr; a low&#8209;six&#8209;figure 16&nbsp;nm MPW of the scheduler core &rarr; N3E design&#8209;in only once a GPU vendor partners on the front PHY. There is no shuttle shortcut to a 28&nbsp;Gb/s PAM3 front.</p>
+
+<h2 id="cxl"><span class="num">04</span>CXL &amp; appliances &mdash; the productized &ldquo;huge coherent memory&rdquo;, buyable now</h2>
+<ul>
+<li><strong>Astera Labs Leo</strong> <code>A1000&#8209;1254AB</code> &mdash; a PCIe&nbsp;x16 CXL add&#8209;in card, 4&times; DDR5&#8209;5600 RDIMM slots, <strong>up to 2&nbsp;TB per controller</strong>, ~50&nbsp;ns adder &mdash; <em>listed as orderable</em>. The closest real silicon to the STRATA &ldquo;converter&rdquo;.</li>
+<li><strong>Marvell Structera X&nbsp;2504</strong> &mdash; 4&#8209;ch DDR5, 8 DIMMs, <strong>&gt;6&nbsp;TB</strong>, 200&nbsp;GB/s, CXL&nbsp;2.0 (hyperscaler sampling).</li>
+<li><strong>H3 Platform Falcon C5022</strong> &mdash; CXL pooling appliance, <strong>up to 5.5&nbsp;TB</strong>, 22&times; E3.S, 8 hosts, &ldquo;Order&nbsp;Now&rdquo;. <strong>Liqid SmartStack</strong> &mdash; 10&ndash;40&nbsp;TB CXL pools (RFQ).</li>
+<li><strong>Memory modules:</strong> Samsung CMM&#8209;D 256&nbsp;GB (RFQ), Micron CZ120 128/256&nbsp;GB (OEM&#8209;certified; current orderability unclear <span class="flag">[flag]</span>), SK&nbsp;hynix CMM&#8209;DDR5 96&nbsp;GB.</li>
+<li><strong>System integrators (call today):</strong> Thinkmate (in&#8209;stock QuickShip), Exxact, Penguin&nbsp;Solutions (owns SMART Modular &mdash; can quote a CXL box end&#8209;to&#8209;end), AMAX, Broadberry, ICC.</li>
+<li><strong>Grey&#8209;market graphics chips (AliExpress, verified live):</strong> GDDR7 <code>K4VCF325ZC-SC28</code> (24&nbsp;Gb) <strong>~$42&ndash;70</strong>; GDDR6 <code>K4ZAF325BM</code> ~$12&ndash;26. A 96&nbsp;GB clamshell set &asymp; $1.4&ndash;3.1k &mdash; but useless for capacity without the controller (per the retrofit verdict). Authenticity unverifiable pre&#8209;delivery (the same sellers list obvious fakes).</li>
+</ul>
+
+<h2 id="rec"><span class="num">05</span>Consolidated recommendation &mdash; buy this for that</h2>
+<table>
+<thead><tr><th>If your goal is&hellip;</th><th>Buy today</th><th>~Cost</th></tr></thead>
+<tbody>
+<tr><td>The STRATA&#8209;2T <em>architecture</em> in one GPU box, off the shelf</td><td>NVIDIA GB300 AI Station (<code>ARS&#8209;511GD&#8209;NB&#8209;LCC</code>)</td><td><strong>$80.5k</strong></td></tr>
+<tr><td>~2&nbsp;TiB coherent @ ~1.7&nbsp;TB/s, cheapest, CPU acceptable</td><td>2S Xeon 6980P + 24&times; MRDIMM&#8209;8800 (Thinkmate/Exxact build)</td><td>~$110k</td></tr>
+<tr><td>Max capacity in one coherent domain, cost&#8209;no&#8209;object</td><td>NVIDIA GB300 NVL72 rack</td><td>~$3&ndash;4M</td></tr>
+<tr><td>Just the STRATA fast tier (96&nbsp;GB @ 1.79&nbsp;TB/s)</td><td>RTX PRO 6000 Blackwell</td><td>$12.1k</td></tr>
+<tr><td>Prototype the converter on the bench</td><td>Agilex&nbsp;7 M&#8209;series kit + DDR5</td><td>~$12&ndash;25k</td></tr>
+<tr><td>Productized memory expansion behind a real converter</td><td>Astera Leo 2&nbsp;TB card / H3 Falcon C5022</td><td>RFQ</td></tr>
+</tbody>
+</table>
+
+<h2 id="flags"><span class="num">06</span>What couldn&rsquo;t be verified (tool access, not existence)</h2>
+<p>Web search budget was exhausted, so agents fetched constructed URLs directly; several hosts blocked that. Treat the following as <span class="flag">unconfirmed this session</span>: all eBay listings (timeouts) &rarr; no used GH200 / Mac Studio prices; <code>amd.com</code> (MI355X specs came from a partner spec sheet, not AMD); Alibaba (captcha) &rarr; no broker MOQ quotes; Mouser/Crucial/CDW/Octopart (blocked) &rarr; some distributor prices; every &ldquo;quote&#8209;only&rdquo; and &ldquo;analyst estimate&rdquo; price (GB200 NVL4, MI355X node, NVL72 ~$3&ndash;4M, GPTshop); the exact config behind Wiredzone&rsquo;s $35,401 GH200 SKU; N3E mask&#8209;set (~$15&ndash;25M) and full&#8209;program NRE (~$50M+) are industry estimates; grey&#8209;market chip/DIMM authenticity is unverifiable pre&#8209;delivery. Prices move weekly in the crunch.</p>
+
+<footer>
+  <p><strong>Bottom line.</strong> The exact STRATA point &mdash; one GPU module, ~2&nbsp;TiB, ~1.79&nbsp;TB/s, one flat coherent space &mdash; is a genuine gap in the 2026 market: you can buy the <em>architecture</em> at less capacity (GB300 Station, $80k), or the <em>memory numbers</em> without a GPU (2S Xeon + MRDIMM, ~$110k), or exceed everything at rack scale ($3M+ NVL72). The converter that would close the gap is prototypeable now (~$12k FPGA) but its device&#8209;mode front PHY is the one block no one sells &mdash; buildable only as a ~$50M+ N3E ASIC with a GPU&#8209;vendor co&#8209;design partner, exactly as the retrofit verdict concluded. And in this DRAM crunch, the memory alone costs 6&ndash;10&times; the draft estimate.</p>
+  <p style="color:var(--muted)">Compiled from four parallel research agents, 2026&#8209;07&#8209;18. Observed reseller prices, not quotes; volatile; verification caveats in &sect;06.</p>
+</footer>
+
+</div>
+</body>
+</html>
