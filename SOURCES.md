@@ -54,3 +54,17 @@ original hosts below. All URLs verified live in July 2026.
 - Kimi K2 technical report p.7 (Sparsity Scaling Law; sparsity 48 = 8-of-384 adopted for K2; abstract: 1.04T total / 32B activated; BF16 training, FP8-E4M3 storage of insensitive activations only) — https://arxiv.org/pdf/2507.20534
 - Kimi K2.5 technical report (arXiv 2602.02276, "Visual Agentic Intelligence") — https://arxiv.org/abs/2602.02276
 - Crucial DDR5-5600 UDIMM MSRPs via Wayback: CT16G56C46U5 $144.99, CP24G56C46U5 $195.99, CP32G56C46U5 $292.99, CP48G56C46U5 $380.99 (snap 2026-04-16, flagged EOL), CP64G56C46U5 $555.99 (snap 2026-04-14) — https://web.archive.org/web/2026*/https://www.crucial.com/memory/ddr5/
+
+## NVIDIA B200 / GB200 scale-out + serving economics (2026-07-18/19)
+- NVIDIA DGX B200 page + user guide (180 GB/GPU shipping = 1,440 GB/node; 14.4 TB/s all-to-all NVLink; 8× ConnectX-7 400 Gb/s IB scale-out) — https://www.nvidia.com/en-us/data-center/dgx-b200/ , https://docs.nvidia.com/dgx/dgxb200-user-guide/introduction-to-dgxb200.html
+- NVIDIA HGX platform (B200 8-GPU, 1.4 TB total memory) — https://www.nvidia.com/en-us/data-center/hgx/
+- NVIDIA Blackwell architecture technical brief (5th-gen NVLink 1.8 TB/s/GPU = 18×100 GB/s; per-GPU memory; HGX B300 NVL16) — https://resources.nvidia.com/en-us-blackwell-architecture
+- NVIDIA GB200 NVL72 (72-GPU single NVLink domain, 130 TB/s aggregate, 13.4 TB HBM3e ≈ 186 GB/GPU) + dev blog (NVL36 = 36 GPUs, 9 dual-GB200 nodes) — https://www.nvidia.com/en-us/data-center/gb200-nvl72/ , https://developer.nvidia.com/blog/nvidia-gb200-nvl72-delivers-trillion-parameter-llm-training-and-real-time-inference/
+- NVIDIA NVLink / NVSwitch (5th-gen; official NVLink domain sizes **8 | 72** — no NVL16 for B200) — https://www.nvidia.com/en-us/data-center/nvlink/
+- NVIDIA DGX SuperPOD B200 reference architecture (scale-out between 8-GPU nodes is Quantum-2 NDR 400G InfiniBand, not NVLink) — https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-b200/latest/
+- 8× B200 reseller prices (Exxact $338k, IT Creations/Supermicro $449k, GPTshop from $350k, Thinkmate $506k, ViperaTech DGX $580k, Wiredzone HGX baseboard $325k) — captures in `pricing_evidence/b200_gb200_serving/`
+- GB200 NVL36 / NVL72 price estimates (Morgan Stanley / TrendForce ~$1.8M / ~$2–3M per rack) — `pricing_evidence/b200_gb200_serving/`
+- Bank of Israel USD/ILS reference rate (3.05, 2026-07-17), cross-checked vs ECB/Frankfurter — https://www.boi.org.il
+- Israel VAT 18% (from 2025-01-01; Israel Tax Authority Directive 01/2025; PwC Tax Summaries) — https://taxsummaries.pwc.com/israel/corporate/other-taxes
+- 0% customs duty on servers (HS 8471) — WTO Information Technology Agreement (Israel participant) + US–Israel FTA — https://www.wto.org/english/tratop_e/inftec_e/itapart_e.htm
+- Archived research evidence (NVIDIA datasheets, FX JSONs, VAT/customs pages, reseller captures): `pricing_evidence/b200_gb200_serving/` (124 files)

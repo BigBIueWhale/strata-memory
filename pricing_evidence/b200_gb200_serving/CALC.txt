@@ -1,0 +1,20 @@
+ANCHOR ₪1,600,000 incl VAT
+  ex-VAT: ₪1,355,932  (÷1.18)
+  USD @3.05 (BoI): $444,568 | @3.0432 (mkt): $445,561
+  margin vs IT Creations SYS-A22GA-NBRT $449,344: -1.1%
+  margin vs ServerSimply €410,373=$469,314@1.1436: -5.3%
+  margin vs ITCT HGX baseboard $390,000: +14.0%
+  margin vs Aivres/Arc whitebox ~$340,000: +30.8%
+  margin vs DGX B200 list ~$515,410 (2024 ref): -13.7%
+
+16x AS 2x 8-GPU NODES (incl VAT)
+  2 nodes: ₪3,200,000
+  fabric: direct-connect ₪11,517 | 1x QM9700+16 cables ₪151,878 | dual-switch ₪409,465
+  TOTAL low: ₪3,211,517
+  TOTAL central: ₪3,351,878
+  TOTAL high: ₪3,609,465
+  central ₪3,351,878 incl VAT = ex-VAT ₪2,840,574 = $931,336
+  sanity: 2x$449,344 + $42,200 fabric = $940,888 vs implied $931,336
+
+NVLINK-DOMAIN PREMIUM (GB200 NVL36, 36 GPUs, ~$1.8M)
+  landed Israel: ₪6,478,200 incl VAT  -> vs 2-node ₪3,351,878: +93%

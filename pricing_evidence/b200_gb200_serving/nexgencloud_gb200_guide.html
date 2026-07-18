@@ -1,0 +1,3427 @@
+<!doctype html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>NVIDIA GB200 User Guide: Specs, Features and Use Cases</title>
+   
+    <link rel="shortcut icon" href="https://www.nexgencloud.com/hubfs/nexgencloud-favicon.webp">
+    <meta name="description" content="Learn about the NVIDIA Blackwell GB200. Enterprise-scale AI with superior performance, advanced networking and custom solutions.">
+    
+    
+    
+      
+    
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="/hs/hsstatic/jquery-libs/static-1.4/jquery/jquery-1.11.2.js"></script>
+<script>hsjQuery = window['jQuery'];</script>
+    <meta property="og:description" content="Learn about the NVIDIA Blackwell GB200. Enterprise-scale AI with superior performance, advanced networking and custom solutions.">
+    <meta property="og:title" content="NVIDIA GB200 User Guide: Specs, Features and Use Cases">
+    <meta name="twitter:description" content="Learn about the NVIDIA Blackwell GB200. Enterprise-scale AI with superior performance, advanced networking and custom solutions.">
+    <meta name="twitter:title" content="NVIDIA GB200 User Guide: Specs, Features and Use Cases">
+
+    
+
+    
+    <style>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+<link rel="stylesheet" href="https://www.nexgencloud.com/hubfs/hub_generated/template_assets/1/112532344531/1780328027006/template_main.min.css">
+<link rel="stylesheet" href="https://www.nexgencloud.com/hubfs/hub_generated/template_assets/1/112532537037/1780328021355/template_blog.min.css">
+<link rel="stylesheet" href="https://www.nexgencloud.com/hubfs/hub_generated/template_assets/1/112532344532/1782983197379/template_theme-overrides.min.css">
+<link rel="stylesheet" href="https://www.nexgencloud.com/hubfs/hub_generated/template_assets/1/112549263037/1780328023188/template_style.css">
+<link rel="stylesheet" href="https://www.nexgencloud.com/hubfs/hub_generated/module_assets/1/112549262803/1779702731019/module_Header.min.css">
+<link rel="stylesheet" href="https://www.nexgencloud.com/hubfs/hub_generated/module_assets/1/117758948555/1775716191876/module_NexGen_-_Collection_Post_Hero.min.css">
+<link rel="stylesheet" href="https://www.nexgencloud.com/hubfs/hub_generated/module_assets/1/117753178580/1777975786752/module_NexGen_-_Collection_Post_Body.min.css">
+<link rel="stylesheet" href="https://www.nexgencloud.com/hubfs/hub_generated/module_assets/1/117753178616/1744349989399/module_NexGen_-_Collection_Recent_Article.min.css">
+<link rel="stylesheet" href="https://www.nexgencloud.com/hubfs/hub_generated/module_assets/1/117753178838/1744349990566/module_NexGen_-_Collection_Subscribe_Global.min.css">
+<link rel="stylesheet" href="https://www.nexgencloud.com/hubfs/hub_generated/module_assets/1/113319619005/1753349862077/module_Footer.min.css">
+<style>
+  @font-face {
+    font-family: "Fira Sans";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Fira_Sans/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Fira_Sans/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Fira Sans";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Fira_Sans/700.woff2") format("woff2"), url("/_hcms/googlefonts/Fira_Sans/700.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Exo";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Exo/700.woff2") format("woff2"), url("/_hcms/googlefonts/Exo/700.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Exo";
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Exo/300.woff2") format("woff2"), url("/_hcms/googlefonts/Exo/300.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Exo";
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Exo/500.woff2") format("woff2"), url("/_hcms/googlefonts/Exo/500.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Exo";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Exo/600.woff2") format("woff2"), url("/_hcms/googlefonts/Exo/600.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Exo";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Exo/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Exo/regular.woff") format("woff");
+  }
+</style>
+
+    <script type="application/ld+json">
+{
+  "mainEntityOfPage" : {
+    "@type" : "WebPage",
+    "@id" : "https://www.nexgencloud.com/blog/case-studies/nvidia-gb200-user-guide-specs-features-and-use-cases"
+  },
+  "author" : {
+    "name" : "Damanpreet Kaur Vohra",
+    "url" : "https://www.nexgencloud.com/blog/case-studies/author/damanpreet-kaur-vohra",
+    "@type" : "Person"
+  },
+  "headline" : "NVIDIA GB200 User Guide: Specs, Features and Use Cases",
+  "datePublished" : "2025-07-18T10:11:18.000Z",
+  "dateModified" : "2025-10-14T07:09:23.490Z",
+  "publisher" : {
+    "name" : "Nexgen Cloud Ltd",
+    "logo" : {
+      "url" : "https://www.nexgencloud.com/hubfs/NG%20Iocn%20copy.png",
+      "@type" : "ImageObject"
+    },
+    "@type" : "Organization"
+  },
+  "@context" : "https://schema.org",
+  "@type" : "BlogPosting",
+  "image" : [ "https://www.nexgencloud.com/hubfs/nexgencloud_2024/products/nvidia-gb200-nvl72/nvidia-gb200-nvl72-36-1.webp" ]
+}
+</script>
+
+
+    
+<!--  Added by GoogleTagManager integration -->
+<script>
+var _hsp = window._hsp = window._hsp || [];
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+var useGoogleConsentModeV2 = true;
+var waitForUpdateMillis = 1000;
+
+
+
+var hsLoadGtm = function loadGtm() {
+    if(window._hsGtmLoadOnce) {
+      return;
+    }
+
+    if (useGoogleConsentModeV2) {
+
+      gtag('set','developer_id.dZTQ1Zm',true);
+
+      gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': waitForUpdateMillis
+      });
+
+      _hsp.push(['useGoogleConsentModeV2'])
+    }
+
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K62HGWN');
+
+    window._hsGtmLoadOnce = true;
+};
+
+_hsp.push(['addPrivacyConsentListener', function(consent){
+  if(consent.allowed || (consent.categories && consent.categories.analytics)){
+    hsLoadGtm();
+  }
+}]);
+
+</script>
+
+<!-- /Added by GoogleTagManager integration -->
+
+
+<script>!function(s,a,e,v,n,t,z){if(s.saq)return;n=s.saq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!s._saq)s._saq=n;n.push=n;n.loaded=!0;n.version='1.0';n.queue=[];t=a.createElement(e);t.async=!0;t.src=v;z=a.getElementsByTagName(e)[0];z.parentNode.insertBefore(t,z)}(window,document,'script','https://tags.srv.stackadapt.com/events.js');saq('ts', '5rm5Jagj8F9iNu_eoJGD3g');</script>
+
+<meta name="facebook-domain-verification" content="m1g5r6w8v9fb1mvripi7bhz6t99brb">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '248751834401391');
+fbq('track', 'PageView');
+</script>
+<noscript>&lt;img  height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=248751834401391&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
+<!-- End Meta Pixel Code -->
+
+<script type="text/javascript" src="https://secure.insightful-enterprise-52.com/js/783652.js"></script>
+<noscript>&lt;img  src="https://secure.moon8ball.com/783652.png" style="display:none;"&gt;</noscript>
+
+<meta name="msvalidate.01" content="BF26D571713571802D199F84C0C12F90">
+<meta property="og:image" content="https://www.nexgencloud.com/hubfs/nexgencloud_2024/products/nvidia-gb200-nvl72/nvidia-gb200-nvl72-36-1.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="582">
+
+<meta name="twitter:image" content="https://www.nexgencloud.com/hubfs/nexgencloud_2024/products/nvidia-gb200-nvl72/nvidia-gb200-nvl72-36-1.webp">
+
+
+<meta property="og:url" content="https://www.nexgencloud.com/blog/case-studies/nvidia-gb200-user-guide-specs-features-and-use-cases">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://www.nexgencloud.com/blog/case-studies/nvidia-gb200-user-guide-specs-features-and-use-cases">
+
+<meta property="og:type" content="article">
+<link rel="alternate" type="application/rss+xml" href="https://www.nexgencloud.com/blog/case-studies/rss.xml">
+<meta name="twitter:domain" content="www.nexgencloud.com">
+<script src="//platform.linkedin.com/in.js" type="text/javascript">
+    lang: en_US
+</script>
+
+<meta http-equiv="content-language" content="en">
+
+
+
+
+
+
+  <meta name="generator" content="HubSpot"></head>
+  <body>
+<!--  Added by GoogleTagManager integration -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K62HGWN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- /Added by GoogleTagManager integration -->
+
+    <div class="body-wrapper   hs-content-id-254413853897 hs-blog-post hs-blog-id-189430056168">
+      
+        <div data-global-resource-path="NexGen - 2024/templates/partials/Main Header.html"><header class="ng-header">
+    <div id="hs_cos_wrapper_main_page" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+<div class="overlay"></div>
+<div class="ngc-header scrolling-header">
+  <div class="header_container">
+    <div class="ngc-header_wrap df sb ac">
+      <div class="ngc-header_logo">
+
+        <a href="https://www.nexgencloud.com/">
+          
+            
+            
+              
+            
+             
+            <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/nexgencloud.svg" alt="nexgencloud" loading="lazy" width="145" height="40" style="max-width: 100%; height: auto;">
+          
+        </a>
+        
+
+      </div>
+      
+      <div class="ngc-header_mega_menu main_menu">
+        
+        
+          <ul>
+            
+            <!-- Products starts -->
+            
+            <li class="mega_menu_dropdown mega_menu_demo_2 has_dropdown mega_menu_products mega_menu_products_third-child">
+              <a href="https://www.nexgencloud.com/products">Products</a>
+              <div class="mega_menu sub_menu">
+                <!-- for 3 col add this class to ngc-sub-rsc-nav .ngc-sub-tab-nav--->
+
+                <div class="ngc_mega_menu_box">
+                  <div class="ngc-sub-tb">
+                    <ul id="ngc-sub-tb-nav" class="ngc-sub-tab-nav ngc-sub-rsc-nav">
+                      
+                      <li class="ngc-sub-tab-nav-item ngc-sub-tab-nav-item1">
+                        
+                        
+                        
+                        
+                        
+                        <!-- Normal Starts --->
+                        <a id="prd_sub_main1" href="#ngc-sub-bx1">
+                          <div class="ngc-sub-head">
+                            <div class="ngc-sub-head_icon">
+                              
+                                
+                                
+                                 
+                                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2026/menu/secure-private-cloud-1.svg" alt="secure-private-cloud-1" loading="" width="28" height="28">
+                              
+                            </div>
+                            <div class="ngc-sub-head_text"><h4>Secure Private Cloud</h4>
+<p>Single-tenant Superclusters</p></div>
+                          </div>
+                        </a>
+                        <!-- Normal Ends --->
+                        
+                        
+                        <div class="feature-tab-corners">
+                          <div class="feature-tab-corner is-left"></div>
+                          <div class="feature-tab-corner is-right"></div>
+                        </div>
+                      </li>
+                      
+                      <li class="ngc-sub-tab-nav-item ngc-sub-tab-nav-item2">
+                        
+                        
+                        
+                        
+                        
+                        <!-- Normal Starts --->
+                        <a id="prd_sub_main2" href="#ngc-sub-bx2">
+                          <div class="ngc-sub-head">
+                            <div class="ngc-sub-head_icon">
+                              
+                                
+                                
+                                 
+                                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2026/menu/hyperstack-on-demand.svg" alt="hyperstack-on-demand" loading="" width="28" height="28">
+                              
+                            </div>
+                            <div class="ngc-sub-head_text"><h4>Hyperstack On-Demand</h4>
+<p>The Full Stack AI Cloud Platform</p></div>
+                          </div>
+                        </a>
+                        <!-- Normal Ends --->
+                        
+                        
+                        <div class="feature-tab-corners">
+                          <div class="feature-tab-corner is-left"></div>
+                          <div class="feature-tab-corner is-right"></div>
+                        </div>
+                      </li>
+                      
+                      <li class="ngc-sub-tab-nav-item ngc-sub-tab-nav-item3">
+                        
+                        
+                        
+                        <!-- Custom Starts --->
+                        
+                        
+                        <a href="https://www.infrahubcompute.com/" target="_blank" rel="noopener">
+                          <div class="ngc-sub-head">
+                            <div class="ngc-sub-head_icon">
+                              
+                                
+                                
+                                 
+                                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2026/menu/infrahub-compute.svg" alt="infrahub-compute" loading="" width="28" height="28">
+                              
+                            </div>
+                            <div class="ngc-sub-head_text"><h4>Infrahub Compute</h4>
+<p>Shaping the Future of AI &amp; Technology</p></div>
+                          </div>
+                        </a>
+
+                        <!-- Custom Ends --->
+                        
+                        
+                        
+                        
+                        <div class="feature-tab-corners">
+                          <div class="feature-tab-corner is-left"></div>
+                          <div class="feature-tab-corner is-right"></div>
+                        </div>
+                      </li>
+                      
+                    </ul>
+                    <!-- END ngc-sub-tb-nav -->
+                    <div id="ngc-sub-tb-content">
+                      
+                      <div id="ngc-sub-bx1" class="ngc-sub-bx-content">
+                        <div class="ngc-sub-child_box df sb">
+                        
+                        <div class="ngc-sub-child">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2026/menu/icon_spc.svg" alt="icon_spc" loading="" width="24" height="29">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>Discover Secure Private Cloud</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.nexgencloud.com/secure-private-cloud">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        <div class="ngc-sub-child">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/software.svg" alt="software" loading="" width="28" height="28">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>NVIDIA HGX B300</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.hyperstack.cloud/nvidia-hgx-b300" target="_blank" rel="noopener">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        <div class="ngc-sub-child">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/software.svg" alt="software" loading="" width="28" height="28">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>NVIDIA GB300 NVL72</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.hyperstack.cloud/nvidia-gb300-nvl72">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        </div>
+                      </div>
+                      
+                      <div id="ngc-sub-bx2" class="ngc-sub-bx-content">
+                        <div class="ngc-sub-child_box df sb">
+                        
+                        <div class="ngc-sub-child ngc_new_tab_option">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                                
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/visit-site.svg" alt="visit-site" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>Visit Site</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.hyperstack.cloud/" target="_blank" rel="noopener">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        <div class="ngc-sub-child ngc_new_tab_option">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                                
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/software.svg" alt="software" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>NVIDIA H100 SXM On-Demand</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.hyperstack.cloud/nvidia-h100-sxm" target="_blank" rel="noopener">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        <div class="ngc-sub-child ngc_new_tab_option">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                                
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/on-demand-gpu-pricing.svg" alt="on-demand-gpu-pricing" loading="lazy" width="30" height="30" style="max-width: 100%; height: auto;">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>On-Demand GPU Pricing</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.hyperstack.cloud/gpu-pricing" target="_blank" rel="noopener">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        <div class="ngc-sub-child ngc_new_tab_option">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                                
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/software.svg" alt="software" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>NVIDIA H100 PCIe On-Demand</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.hyperstack.cloud/h100-pcie" target="_blank" rel="noopener">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        <div class="ngc-sub-child ngc_new_tab_option">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                                
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/documentation.svg" alt="documentation" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>Documentation</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://infrahub-doc.nexgencloud.com/docs/intro/" target="_blank" rel="noopener">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        <div class="ngc-sub-child ngc_new_tab_option">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                                
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/software.svg" alt="software" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>NVIDIA A100 On-Demand</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.hyperstack.cloud/a100" target="_blank" rel="noopener">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        </div>
+                      </div>
+                      
+                      <div id="ngc-sub-bx3" class="ngc-sub-bx-content">
+                        <div class="ngc-sub-child_box df sb">
+                        
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <!-- END ngc-sub-tb-content -->
+                  </div>
+                </div>
+
+
+                
+              </div>
+            </li>
+            
+            <!-- Products Ends -->
+            
+            
+            
+            <!-- Company Starts -->
+            
+            <li class="mega_menu_dropdown mega_menu_demo_2 has_dropdown mega_menu_products">
+              <a href="#">Company</a>
+              
+              <div class="mega_menu sub_menu">
+                <div class="ngc_mega_menu_box">
+                  <div class="ngc_mega_menu_eq_box df">
+                    
+                    <div class="ngc_mega_menu_eq_box_item">
+                      <div class="ngc_mega_menu_eq_box_item_icon">
+                          
+                            
+                            
+                              
+                            
+                             
+                            <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/about-us.svg" alt="about-us" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                          
+                      </div>
+                      <div class="ngc_mega_menu_eq_box_item_text">
+                        <h4>About Us</h4>
+<p>Discover the story of NexGen Cloud.</p>
+                      </div>
+                      
+                        
+                        
+                        <a class="ngc-sub-link" href="https://www.nexgencloud.com/about">
+                          Link text
+                        </a>
+                    </div>
+                    
+                    <div class="ngc_mega_menu_eq_box_item">
+                      <div class="ngc_mega_menu_eq_box_item_icon">
+                          
+                            
+                            
+                              
+                            
+                             
+                            <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/missions-values.svg" alt="missions-values" loading="lazy" width="29" height="29" style="max-width: 100%; height: auto;">
+                          
+                      </div>
+                      <div class="ngc_mega_menu_eq_box_item_text">
+                        <h4>Missions &amp; Values</h4>
+<p>Explore NexGen Cloud's mission and values.</p>
+                      </div>
+                      
+                        
+                        
+                        <a class="ngc-sub-link" href="https://www.nexgencloud.com/mission-vision">
+                          Link text
+                        </a>
+                    </div>
+                    
+                    <div class="ngc_mega_menu_eq_box_item">
+                      <div class="ngc_mega_menu_eq_box_item_icon">
+                          
+                            
+                            
+                              
+                            
+                             
+                            <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/leadership-team.svg" alt="leadership-team" loading="lazy" width="29" height="28" style="max-width: 100%; height: auto;">
+                          
+                      </div>
+                      <div class="ngc_mega_menu_eq_box_item_text">
+                        <h4>Leadership Team</h4>
+<p>Meet NexGen Cloud's Leadership Team.</p>
+                      </div>
+                      
+                        
+                        
+                        <a class="ngc-sub-link" href="https://www.nexgencloud.com/leadership-team">
+                          Link text
+                        </a>
+                    </div>
+                    
+                    <div class="ngc_mega_menu_eq_box_item">
+                      <div class="ngc_mega_menu_eq_box_item_icon">
+                          
+                            
+                            
+                              
+                            
+                             
+                            <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/letter-from-our-ceo.svg" alt="letter-from-our-ceo" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                          
+                      </div>
+                      <div class="ngc_mega_menu_eq_box_item_text">
+                        <h4>Letter from our CEO</h4>
+<p>A message from our CEO, Chris Starkey.</p>
+                      </div>
+                      
+                        
+                        
+                        <a class="ngc-sub-link" href="https://www.nexgencloud.com/letter-from-our-ceo">
+                          Link text
+                        </a>
+                    </div>
+                    
+                    <div class="ngc_mega_menu_eq_box_item">
+                      <div class="ngc_mega_menu_eq_box_item_icon">
+                          
+                            
+                            
+                              
+                            
+                             
+                            <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/sustainability.svg" alt="sustainability" loading="lazy" width="29" height="28" style="max-width: 100%; height: auto;">
+                          
+                      </div>
+                      <div class="ngc_mega_menu_eq_box_item_text">
+                        <h4>Sustainability</h4>
+<p>Learn about our commitment to sustainability.</p>
+                      </div>
+                      
+                        
+                        
+                        <a class="ngc-sub-link" href="https://www.nexgencloud.com/sustainability">
+                          Link text
+                        </a>
+                    </div>
+                    
+                    <div class="ngc_mega_menu_eq_box_item">
+                      <div class="ngc_mega_menu_eq_box_item_icon">
+                          
+                            
+                            
+                             
+                            <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2025/culture/Culture.svg" alt="Culture" loading="" width="28" height="28">
+                          
+                      </div>
+                      <div class="ngc_mega_menu_eq_box_item_text">
+                        <h4>Culture</h4>
+<p>What Happens Behind the Scenes</p>
+                      </div>
+                      
+                        
+                        
+                        <a class="ngc-sub-link" href="https://www.nexgencloud.com/culture">
+                          Link text
+                        </a>
+                    </div>
+                    
+                    <div class="ngc_mega_menu_eq_box_item comp_new_tab_option">
+                      <div class="ngc_mega_menu_eq_box_item_icon">
+                          
+                            
+                            
+                              
+                            
+                             
+                            <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/careers.svg" alt="careers" loading="lazy" width="29" height="29" style="max-width: 100%; height: auto;">
+                          
+                      </div>
+                      <div class="ngc_mega_menu_eq_box_item_text">
+                        <h4>Careers</h4>
+<p>Explore career opportunities and join our team.</p>
+                      </div>
+                      
+                        
+                        
+                        <a class="ngc-sub-link" href="https://www.nexgencloud.com/careers">
+                          Link text
+                        </a>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              
+            </li>
+            <!-- Company Ends -->
+            
+
+            <!-- Simple Menu Item -->
+            
+            
+            <li class="mega_menu_dropdown mega_menu_demo_2 has_dropdown mega_menu_products">
+              <a href="#">Partnerships</a>
+              
+              <div class="mega_menu sub_menu">
+                <div class="ngc_mega_menu_box">
+                  <div class="ngp_mega_menu_eq_box df">
+                    
+                    <div class="ngp_mega_menu_eq_box_item">
+                      <div class="ngc_mega_menu_eq_box_item_icon">
+                          
+                            
+                            
+                              
+                            
+                             
+                            <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2025/partnerships.svg" alt="partnerships" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                          
+                      </div>
+                      <div class="ngc_mega_menu_eq_box_item_text">
+                        <h4>Partnerships</h4>
+<p>Learn more about our existing partnerships</p>
+                      </div>
+                      
+                        
+                        
+                        <a class="ngc-sub-link" href="https://www.nexgencloud.com/partnership">
+                          Link text
+                        </a>
+                    </div>
+                    
+                    <div class="ngp_mega_menu_eq_box_item">
+                      <div class="ngc_mega_menu_eq_box_item_icon">
+                          
+                            
+                            
+                             
+                            <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2025/channelpartnerships.svg" alt="channelpartnerships" loading="" width="28" height="28">
+                          
+                      </div>
+                      <div class="ngc_mega_menu_eq_box_item_text">
+                        <h4>Channel Partnerships</h4>
+<p>Become a Channel Partner</p>
+                      </div>
+                      
+                        
+                        
+                        <a class="ngc-sub-link" href="https://www.nexgencloud.com/channel-partnerships">
+                          Link text
+                        </a>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              
+            </li>
+            
+            
+            
+            <!-- Old Simple Menu for  Partnerships --->
+           
+              <!-- Old Simple Menu for  Partnerships --->
+            <!-- Simple Menu Item -->
+            
+            
+            
+            <!-- Resources starts -->
+            <!-- Resources Backup with all child menu -->
+            <li class="mega_menu_dropdown mega_menu_demo_2 has_dropdown mega_menu_products">
+              <a href="#">Resources</a>
+              <div class="mega_menu sub_menu">
+                
+
+                <div class="ngc_mega_menu_box">
+                  <div class="ngc-sub-tb">
+                    
+                    <!-- for 3 col add this class to ngc-sub-rsc-nav .ngc-sub-tab-nav--->
+                    
+                    <ul id="ngc-sub-resource-nav" class="ngc-sub-tab-nav">
+                      
+                      <li class="ngc-sub-tab-nav-item ngc-sub-tab-nav-item1">
+                        <a id="rs_menu1" href="#ngc-rs-bx1">
+                          <div class="ngc-sub-head">
+                            <div class="ngc-sub-head_icon">
+                              
+                                
+                                
+                                 
+                                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/blog.svg" alt="blog" loading="" width="29" height="28">
+                              
+                            </div>
+                            <div class="ngc-sub-head_text"><h4>Blog</h4>
+<p>Read blogs on Thought Leadership.</p></div>
+                          </div>
+                        </a>
+                        <div class="feature-tab-corners">
+                          <div class="feature-tab-corner is-left"></div>
+                          <div class="feature-tab-corner is-right"></div>
+                        </div>
+                      </li>
+                      
+                      <li class="ngc-sub-tab-nav-item ngc-sub-tab-nav-item2">
+                        <a id="rs_menu2" href="#ngc-rs-bx2">
+                          <div class="ngc-sub-head">
+                            <div class="ngc-sub-head_icon">
+                              
+                                
+                                
+                                  
+                                
+                                 
+                                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/news-and-events.svg" alt="news-and-events" loading="lazy" width="29" height="28" style="max-width: 100%; height: auto;">
+                              
+                            </div>
+                            <div class="ngc-sub-head_text"><h4>News and Events</h4>
+<p>Latest updates and announcements.</p></div>
+                          </div>
+                        </a>
+                        <div class="feature-tab-corners">
+                          <div class="feature-tab-corner is-left"></div>
+                          <div class="feature-tab-corner is-right"></div>
+                        </div>
+                      </li>
+                      
+                    </ul>
+                    <!-- END ngc-sub-tb-nav -->
+                    <div id="ngc-sub-rs-content">
+                      
+                      <div id="ngc-rs-bx1" class="ngc-sub-bx-content">
+                        <div class="ngc-sub-child_box df sb">
+                        
+                        <div class="ngc-sub-child">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/performance-benchmarks.svg" alt="performance-benchmarks" loading="" width="28" height="28">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>Performance Benchmarks</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.nexgencloud.com/blog/performance-benchmarks">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        <div class="ngc-sub-child">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                                
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/business-case-studies.svg" alt="business-case-studies" loading="lazy" width="30" height="30" style="max-width: 100%; height: auto;">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>Business Case Studies</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.nexgencloud.com/blog/case-studies">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        <div class="ngc-sub-child">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                                
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/thought-leadership.svg" alt="thought-leadership" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>Thought Leadership</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.nexgencloud.com/blog/thought-leadership">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        <div class="ngc-sub-child">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                                
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/software.svg" alt="software" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>Innovation</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.nexgencloud.com/blog/innovation">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        <div class="ngc-sub-child">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                                
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/all-blogs.svg" alt="all-blogs" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>All Blogs</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.nexgencloud.com/blog">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        </div>
+                      </div>
+                      
+                      <div id="ngc-rs-bx2" class="ngc-sub-bx-content">
+                        <div class="ngc-sub-child_box df sb">
+                        
+                        <div class="ngc-sub-child">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                                
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/news.svg" alt="news" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>News</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.nexgencloud.com/news">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        <div class="ngc-sub-child">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                                
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/london-events.svg" alt="london-events" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>All Events</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.nexgencloud.com/events">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        <div class="ngc-sub-child">
+                          <div class="ngc-sub-child_icon">
+                            
+                              
+                              
+                                
+                              
+                               
+                              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/press-coverage.svg" alt="press-coverage" loading="lazy" width="28" height="28" style="max-width: 100%; height: auto;">
+                            
+                          </div>
+                          <div class="ngc-sub-child_text"><p>Press Coverage</p></div>
+                          
+                            
+                            
+                            <a class="ngc-sub-link" href="https://www.nexgencloud.com/media-coverage">
+                              Link text
+                            </a>
+                        </div>
+                        
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <!-- END ngc-sub-tb-content -->
+                  </div>
+                </div>
+
+
+                
+              </div>
+            </li>
+            
+            
+           
+            
+            <!-- Resources Ends -->
+            
+            <!-- Simple Menu Item -->
+            <li>
+              
+              
+              <a href="https://www.nexgencloud.com/contact">
+               Contact
+              </a>
+            </li>
+            <!-- Simple Menu Item -->
+            
+            
+            <!-- Multiple Dropdown Item -->
+<!--             <li class="has_dropdown multilevel_dropdown">
+              <a href="#">Pages <i class="fas fa-angle-down"></i></a>
+              <ul class="sub_menu">
+                <li><a href="#">Page 1</a></li>
+                <li class="has_dropdown">
+                  <a href="#">Page 2 <i class="fas fa-angle-right"></i></a>
+                  <ul class="sub_menu">
+                    <li><a href="#">Page 2.1</a></li>
+                    <li><a href="#">Page 2.2</a></li>
+                    <li class="has_dropdown">
+                      <a href="#">Page 2.3 <i class="fas fa-angle-right"></i></a>
+                      <ul class="sub_menu">
+                        <li><a href="#">Page 2.1</a></li>
+                        <li><a href="#">Page 2.2</a></li>
+                        <li><a href="#">Page 2.3</a></li>
+                        <li><a href="#">Page 2.4</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Page 2.4</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Page 3</a></li>
+                <li><a href="#">Page 4</a></li>
+              </ul>
+            </li> -->
+             <!-- Multiple Dropdown Item -->
+
+
+
+          </ul>
+
+        
+      </div>
+      <div class="ngc-header_btn df ac">
+        
+          <div class="ngc-header_btns ngc-button ngc-secondary">
+            
+            
+            <a href="tel:+442031375256">
+
+              <div class="btn-icon">
+                <div class="btn-icon_normal">
+                  
+                    
+                    
+                      
+                    
+                     
+                    <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/call.svg" alt="call" loading="lazy" width="25" height="24" style="max-width: 100%; height: auto;">
+                  
+                </div>
+                <div class="btn-ico_hover">
+                  
+                    
+                    
+                      
+                    
+                     
+                    <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/call.svg" alt="call" loading="lazy" width="25" height="24" style="max-width: 100%; height: auto;">
+                  
+                </div>
+              </div>
+              <span>Contact Sales</span>
+            </a>
+          </div>
+        
+          <div class="ngc-header_btns ngc-button ngc-primary">
+            
+            
+            <a href="https://www.nexgencloud.com/nexgen-book-a-discovery-call">
+
+              <div class="btn-icon">
+                <div class="btn-icon_normal">
+                  
+                    
+                    
+                     
+                    <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/header-calendar.svg" alt="header-calendar" loading="" width="24" height="24">
+                  
+                </div>
+                <div class="btn-ico_hover">
+                  
+                    
+                    
+                     
+                    <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/header-calendar.svg" alt="header-calendar" loading="" width="24" height="24">
+                  
+                </div>
+              </div>
+              <span>Book a Discovery Call</span>
+            </a>
+          </div>
+        
+      </div>
+      
+      <div id="mainmenu">
+        <a href="#" id="menu_trigger" class="menulines-button">
+          <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/hamburguer.svg" alt="Hamburger" class="default-menu">
+          <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/x-hamburguer.svg" alt="Hamburger Close" class="close-menu">
+        </a>
+        <div class="mobile-menu">
+          
+          <div class="mobile-menu_wrapper">
+            <div class="mobile-menu_out">
+              
+            
+          <ul class="menu multilevel_main">
+            
+                <!-- Normal Menu --->
+                
+                <li>
+                  
+                  
+                  <a href="https://www.nexgencloud.com/">
+                    Home
+                  </a>
+                </li>
+                
+                <!-- Normal Menu --->
+            
+                
+            
+            
+            
+            
+            
+                <!-- Normal Menu --->
+                
+                <!-- Normal Menu --->
+            
+              
+              <li class="megamenu">
+                <a href="#">Products<span class="navtrigger"></span></a>
+                <ul class="submenu">
+                <div class="ngc_multilevel_parent">
+                  
+                <div class="ngc_multilevel no_child_menu_option">
+                  
+                  
+                  
+                  
+                  <div class="ngc_multilevel_sub">
+                    
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/products">
+                            All Products
+                          </a>
+                    </div>
+                     
+                  </div>
+                </div>
+                  
+                <div class="ngc_multilevel">
+                  
+                  
+                  <div class="ngc_multilevel_top">
+                    <div class="ngc_multilevel_top_icon">
+                      
+                        
+                        
+                         
+                        <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/mobile-header/ai-supercloud-mobile.svg" alt="ai-supercloud-mobile" loading="" width="47" height="46">
+                      
+                    </div>
+                    <div class="ngc_multilevel_top_text">
+                      <p>AI SUPERCLOUD</p>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  <div class="ngc_multilevel_sub">
+                    
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/secure-private-cloud">
+                            Discover Secure Private Cloud
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/nvidia-gb200-nvl72">
+                            NVIDIA GB200 NVL72
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/nvidia-hgx-h100">
+                            NVIDIA HGX H100
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/nvidia-hgx-h200">
+                            NVIDIA HGX H200
+                          </a>
+                    </div>
+                     
+                  </div>
+                </div>
+                  
+                <div class="ngc_multilevel">
+                  
+                  
+                  <div class="ngc_multilevel_top">
+                    <div class="ngc_multilevel_top_icon">
+                      
+                        
+                        
+                         
+                        <img src="https://www.nexgencloud.com/hs-fs/hubfs/nexgencloud_2024/header/icon-hs.png?width=46&amp;height=46&amp;name=icon-hs.png" alt="icon-hs" loading="" width="46" height="46" srcset="https://www.nexgencloud.com/hs-fs/hubfs/nexgencloud_2024/header/icon-hs.png?width=23&amp;height=23&amp;name=icon-hs.png 23w, https://www.nexgencloud.com/hs-fs/hubfs/nexgencloud_2024/header/icon-hs.png?width=46&amp;height=46&amp;name=icon-hs.png 46w, https://www.nexgencloud.com/hs-fs/hubfs/nexgencloud_2024/header/icon-hs.png?width=69&amp;height=69&amp;name=icon-hs.png 69w, https://www.nexgencloud.com/hs-fs/hubfs/nexgencloud_2024/header/icon-hs.png?width=92&amp;height=92&amp;name=icon-hs.png 92w, https://www.nexgencloud.com/hs-fs/hubfs/nexgencloud_2024/header/icon-hs.png?width=115&amp;height=115&amp;name=icon-hs.png 115w, https://www.nexgencloud.com/hs-fs/hubfs/nexgencloud_2024/header/icon-hs.png?width=138&amp;height=138&amp;name=icon-hs.png 138w" sizes="(max-width: 46px) 100vw, 46px">
+                      
+                    </div>
+                    <div class="ngc_multilevel_top_text">
+                      <p>Hyperstack</p>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  <div class="ngc_multilevel_sub">
+                    
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.hyperstack.cloud/" target="_blank" rel="noopener">
+                            Visit Site
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.hyperstack.cloud/gpu-pricing" target="_blank" rel="noopener">
+                            On-Demand GPU Pricing
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://infrahub-doc.nexgencloud.com/docs/intro" target="_blank" rel="noopener">
+                            Documentation
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.hyperstack.cloud/nvidia-h100-sxm" target="_blank" rel="noopener">
+                            NVIDIA H100 SXM <span>On-Demand</span>
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.hyperstack.cloud/h100-pcie" target="_blank" rel="noopener">
+                            NVIDIA H100 PCIe <span>On-Demand</span>
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.hyperstack.cloud/a100" target="_blank" rel="noopener">
+                            NVIDIA A100 <span>On-Demand</span>
+                          </a>
+                    </div>
+                     
+                  </div>
+                </div>
+                  
+                <div class="ngc_multilevel">
+                  
+                  
+                  <div class="ngc_multilevel_top">
+                    <div class="ngc_multilevel_top_icon">
+                      
+                        
+                        
+                         
+                        <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/nexgen-labs-mobile.svg" alt="nexgen-labs-mobile" loading="" width="46" height="46">
+                      
+                    </div>
+                    <div class="ngc_multilevel_top_text">
+                      <p>NexGen Labs</p>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  <div class="ngc_multilevel_sub">
+                    
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/nexgen-labs">
+                            Discover the NEXGEN LABS
+                          </a>
+                    </div>
+                     
+                  </div>
+                </div>
+                
+                </div>
+                  
+                </ul>
+              </li>
+                
+            
+            
+            
+            
+            
+                <!-- Normal Menu --->
+                
+                <!-- Normal Menu --->
+            
+              
+              <li class="megamenu">
+                <a href="#">Company<span class="navtrigger"></span></a>
+                <ul class="submenu">
+                <div class="ngc_multilevel_parent">
+                  
+                <div class="ngc_multilevel">
+                  
+                  
+                  <div class="ngc_multilevel_top">
+                    <div class="ngc_multilevel_top_icon">
+                      
+                        
+                        
+                         
+                        <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/mobile-header/about-us-mobile.svg" alt="about-us-mobile" loading="" width="46" height="46">
+                      
+                    </div>
+                    <div class="ngc_multilevel_top_text">
+                      <p>Our Organization</p>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  <div class="ngc_multilevel_sub">
+                    
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/about">
+                            About Us
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/mission-vision">
+                            Missions &amp; Values
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/leadership-team">
+                            Leadership Team
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/letter-from-our-ceo">
+                            Letter from our CEO
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/sustainability">
+                            Sustainability
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/culture">
+                            Culture 
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/careers">
+                            Careers
+                          </a>
+                    </div>
+                     
+                  </div>
+                </div>
+                
+                </div>
+                  
+                </ul>
+              </li>
+                
+            
+            
+            
+            
+            
+                <!-- Normal Menu --->
+                
+                <!-- Normal Menu --->
+            
+              
+              <li class="megamenu">
+                <a href="#">Partnerships<span class="navtrigger"></span></a>
+                <ul class="submenu">
+                <div class="ngc_multilevel_parent">
+                  
+                <div class="ngc_multilevel no_child_menu_option">
+                  
+                  
+                  
+                  
+                  <div class="ngc_multilevel_sub">
+                    
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/partnership">
+                            Partnerships
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/channel-partnerships">
+                            Channel Partnerships
+                          </a>
+                    </div>
+                     
+                  </div>
+                </div>
+                
+                </div>
+                  
+                </ul>
+              </li>
+                
+            
+            
+            
+            
+            
+                <!-- Normal Menu --->
+                
+                <!-- Normal Menu --->
+            
+              
+              <li class="megamenu">
+                <a href="#">Resources<span class="navtrigger"></span></a>
+                <ul class="submenu">
+                <div class="ngc_multilevel_parent">
+                  
+                <div class="ngc_multilevel">
+                  
+                  
+                  <div class="ngc_multilevel_top">
+                    <div class="ngc_multilevel_top_icon">
+                      
+                        
+                        
+                         
+                        <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/mobile-header/blog-mobile.svg" alt="blog-mobile" loading="" width="46" height="46">
+                      
+                    </div>
+                    <div class="ngc_multilevel_top_text">
+                      <p>BLOG</p>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  <div class="ngc_multilevel_sub">
+                    
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/blog/performance-benchmarks">
+                            Performance Benchmarks
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/blog/thought-leadership">
+                            Thought Leadership
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/blog/innovation">
+                            Innovation
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/blog/case-studies">
+                            Business Case Studies
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/blog">
+                            All Blogs
+                          </a>
+                    </div>
+                     
+                  </div>
+                </div>
+                  
+                <div class="ngc_multilevel">
+                  
+                  
+                  <div class="ngc_multilevel_top">
+                    <div class="ngc_multilevel_top_icon">
+                      
+                        
+                        
+                         
+                        <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/mobile-header/news-and-events-mobile.svg" alt="news-and-events-mobile" loading="" width="46" height="46">
+                      
+                    </div>
+                    <div class="ngc_multilevel_top_text">
+                      <p>News and Events</p>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  <div class="ngc_multilevel_sub">
+                    
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/news">
+                            News
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/media-coverage">
+                            Press Coverage
+                          </a>
+                    </div>
+                     
+                    <div class="ngc_multilevel_sub_item">
+                          
+                          
+                          <a href="https://www.nexgencloud.com/events">
+                            London Events
+                          </a>
+                    </div>
+                     
+                  </div>
+                </div>
+                
+                </div>
+                  
+                </ul>
+              </li>
+                
+            
+            
+            
+            
+            
+                <!-- Normal Menu --->
+                
+                <li>
+                  
+                  
+                  <a href="https://www.nexgencloud.com/contact">
+                    Contact
+                  </a>
+                </li>
+                
+                <!-- Normal Menu --->
+            
+                
+            
+            
+            
+            
+            
+
+          </ul>
+            </div>
+          <div class="multilevel_button">
+              
+            <div class="multilevel_button_item">
+              
+              
+              <a href="tel:+442031375256">
+                <div class="multilevel_button_link">
+              
+                
+                
+                  
+                
+                 
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/mobile-menu-call.svg" alt="mobile-menu-call" loading="lazy" width="20" height="19" style="max-width: 100%; height: auto;">
+              
+                  <span>Contact Sales</span>
+                </div>
+
+              </a>
+            </div>
+              
+            <div class="multilevel_button_item">
+              
+              
+              <a href="https://www.nexgencloud.com/nexgen-book-a-discovery-call">
+                <div class="multilevel_button_link">
+              
+                
+                
+                  
+                
+                 
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/header/mobile-menu-book.svg" alt="mobile-menu-book" loading="lazy" width="21" height="21" style="max-width: 100%; height: auto;">
+              
+                  <span>Book a Discovery Call</span>
+                </div>
+
+              </a>
+            </div>
+            
+            
+            
+          </div>
+          </div>
+
+
+          
+        </div>
+      </div>
+
+
+      
+      
+    </div>
+  </div>
+</div></div> 
+</header></div>
+      
+
+      
+
+      <main id="main-content" class="body-container-wrapper">
+        
+<div class="body-container body-container--blog-post">
+
+  <div id="hs_cos_wrapper_NexGen_-_Collection_Post_Hero" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="ngc-coll-post-hero sec-full">
+  <div class="page-center">
+    <div class="ngc-coll-post-hero_wrap">
+      <div class="ngc-coll-post-hero_info df">
+        <div class="ngc-cph_info">
+          <div class="ngc-cph_date">
+            <p><img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/ai-supercloud/publish-date.svg" alt="publish-date">July 18, 2025</p>
+          </div>
+          <div class="ngc-cph_min"><p>5 min read</p></div>
+        </div>
+        <div class="ngc-cph_updated">
+          <p>
+            <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2025/blog/Icon.svg" alt="Updated-date">Updated on 14 Oct 2025
+          </p>
+        </div>
+      </div>
+      <div class="ngc-coll-post-hero_title">
+        <h1><span id="hs_cos_wrapper_name" class="hs_cos_wrapper hs_cos_wrapper_meta_field hs_cos_wrapper_type_text" style="" data-hs-cos-general-type="meta_field" data-hs-cos-type="text">NVIDIA GB200 User Guide: Specs, Features, and Enterprise Use Cases</span></h1>
+      </div>
+      <div class="ngc-coll-post-hero_tags">
+        <ul>
+           
+          
+            <li>
+              <a class="main_blog_tag" href="https://www.nexgencloud.com/blog/case-studies/tag/ai">AI</a>
+            </li>
+           
+           
+          
+            <li>
+              <a class="main_blog_tag" href="https://www.nexgencloud.com/blog/case-studies/tag/gen-ai">Gen AI</a>
+            </li>
+           
+           
+          
+            <li>
+              <a class="main_blog_tag" href="https://www.nexgencloud.com/blog/case-studies/tag/cloud-computing">Cloud Computing</a>
+            </li>
+           
+           
+          
+            <li>
+              <a class="main_blog_tag" href="https://www.nexgencloud.com/blog/case-studies/tag/gpu-cloud">GPU Cloud</a>
+            </li>
+           
+          
+          <li>
+            <a href="javascript:void(0)">...</a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="ngc-coll-post-hero_featured">
+        <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/products/nvidia-gb200-nvl72/nvidia-gb200-nvl72-36-1.webp" alt="" loading="lazy">
+      </div>
+      <div class="ngc-coll-post-hero_bottom df sb">
+        <div class="ngc-coll-post-hero_author_box">
+          <div class="ngc-coll-post-hero_author_by">
+            <p>Written by</p>
+          </div>
+          <div class="ngc-coll-post-hero_author df ac">
+             
+            <div class="ngc-coll-post-hero_author_img">
+               <img src="https://www.nexgencloud.com/hubfs/daman.webp" alt="Damanpreet Kaur Vohra">
+            </div>
+            
+            <div class="ngc-coll-post-hero_author_bio">
+              <h4>Damanpreet Kaur Vohra</h4>
+              <p>Technical Copywriter, NexGen cloud</p>
+            </div>
+          </div>
+        </div>
+        <div class="ngc-coll-post-hero_share">
+          <div class="ngc-coll-post-hero_share_title">
+            <p>Share this post</p>
+          </div>
+          <div class="ngc-coll-post-hero_share_links">
+          
+              <ul>
+                
+                <li>
+                  <a href="" onclick="shareOnLinkedIn('https://www.nexgencloud.com/blog/case-studies/nvidia-gb200-user-guide-specs-features-and-use-cases', '', 'Blog post summary')">
+                    <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/collection-post/linkedin.svg" alt="linkedin" class="normal-social">
+                  </a>
+                </li>
+                <li>
+                  <a href="" onclick="shareOnTwitter('https://www.nexgencloud.com/blog/case-studies/nvidia-gb200-user-guide-specs-features-and-use-cases', '')">
+                    <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/collection-post/twitter.svg" alt="twitter" class="normal-social">
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onclick="shareOnFacebook('https://www.nexgencloud.com/blog/case-studies/nvidia-gb200-user-guide-specs-features-and-use-cases', '')">
+                    <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/collection-post/facebook.svg" alt="facebook" class="normal-social">
+                  </a>
+                </li>
+              </ul>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<style>
+
+@media (min-width: 768px) {
+  
+  .ngc-coll-post-hero {
+      background-image: url(https://www.nexgencloud.com/hubfs/nexgencloud_2024/collection-post/blog-post-hero.webp);
+  }
+  
+}
+  
+  
+@media (max-width: 767px) {
+
+  .ngc-coll-post-hero {
+      background-image: url();
+  }
+
+}
+
+</style>
+
+
+
+
+
+
+</div>
+  
+  <div id="hs_cos_wrapper_NexGen_-_Collection_Post_Author" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"></div>
+
+  <div id="hs_cos_wrapper_NexGen_-_Collection_Post_Body" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="ngc-coll-post-body sec-full">
+  <div class="page-center">
+    <div class="ngc-coll-post-body_wrap df sb">
+      <div class="ngc-coll-post-body_left">
+        <div class="ngc-coll-post-toc">
+          <div class="ngc-coll-post-toc_title">
+            <p>Table of contents</p>
+          </div>
+          <div class="ngc-coll-post-toc_links toc"></div>
+        </div>
+      </div>
+
+      <div class="ngc-coll-post-body_right">
+        
+          <div class="post-body_summary df sb ac">
+            <div class="post-body_summary_icon">
+              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/blog/summary.svg" alt="summary">
+            </div>
+            <div class="post-body_summary_text">
+              <p>If you’re building or scaling enterprise-grade AI infrastructure, chances are you're hitting the limits of what traditional GPUs can handle. No matter if you're running trillion-parameter models or facing bottlenecks in real-time inference, the demand for faster and more scalable compute is real (and immediate). Exactly the reason why NVIDIA launched the groundbreaking<span>&nbsp;</span><a href="https://www.nexgencloud.com/blog/performance-benchmarks/nvidia-blackwell-gpus-architecture-features-specs"><strong><span>Blackwell GPUs&nbsp;</span></strong></a>including the NVIDIA Blackwell GB200 to build AI workloads at a scale you didn’t think was possible.</p>
+            </div>
+          </div>
+        
+        <div class="ngc-coll-post-body_text">
+          <span id="hs_cos_wrapper_post_body" class="hs_cos_wrapper hs_cos_wrapper_meta_field hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="meta_field" data-hs-cos-type="rich_text"><p><span style="color: #fcfcfc; font-family: Exo, sans-serif; font-size: 34px; background-color: transparent;">What</span><span style="color: #fcfcfc; font-family: Exo, sans-serif; font-size: 34px; background-color: transparent;"> is NVIDIA GB200?</span></p>
+<!--more--><p>The<a href="https://www.nexgencloud.com/nvidia-gb200-nvl72"><strong><span> NVIDIA Blackwell GB200 NVL72/36</span></strong></a> is built on the <a href="https://www.nexgencloud.com/news/nexgen-cloud-part-of-first-wave-to-offer-nvidia-blackwell-platform-powered-ai-infrastructure-and-compute-services"><strong><span>new Blackwell </span></strong></a>architecture launched at the GTC 2024. It offers massive compute power and scalability for generative AI workloads at scale. The NVIDIA GB200 NVL72 features 36 Superchips with 72 GPUs and 36 CPUs within a liquid-cooled rack-scale system. With full NVLink interconnect, it operates as a single massive GPU delivering unprecedented performance for large-scale AI workloads.</p>
+<h2>What are NVIDIA GB200 Specs?</h2>
+<p>The NVIDIA Blackwell GB200 have the following specifications:&nbsp;</p>
+<ul>
+<li aria-level="1"><strong>36 GB200 Superchips per Cluster</strong><br>Each cluster includes 36 Superchips, with each<span style="background-color: transparent;"> Superchip combining 2 Blackwell GPUs and 1 Grace CPU.</span></li>
+<li aria-level="1"><strong>High-Speed NVLink Interconnect</strong><strong><br></strong>All 72 GPUs are interconnected through a unified NVLink fabric for ultra-fast GPU-to-GPU communication with up to 130 TB/s bandwidth.</li>
+<li aria-level="1"><strong>Extreme Compute Performance</strong><strong><br></strong>Delivers up to 1.44 exaFLOPS (FP4) and 5,760 TFLOPS (FP32), supporting multiple precision formats including FP64, FP16, BF16, FP8, and FP4.</li>
+<li aria-level="1"><strong>Advanced Liquid Cooling</strong><strong><br></strong>Integrated liquid-cooled design ensures high-density, energy-efficient performance while preventing thermal throttling under heavy AI workloads.</li>
+<li aria-level="1"><strong>Industry-Leading Memory Bandwidth</strong><strong><br></strong>Supports up to 13.5 TB of high-bandwidth HBM3e memory per rack with a total memory bandwidth of 576 TB/s, critical for large-scale AI training.</li>
+<li aria-level="1"><strong>Massive Performance Gains</strong><strong><br></strong>Offers up to 30× faster inference for trillion-parameter LLMs, 4× faster training, and up to 25× greater energy efficiency than previous generations.&nbsp;</li>
+</ul>
+<p><img src="https://www.nexgencloud.com/hs-fs/hubfs/Benchmarks.webp?width=1100&amp;height=600&amp;name=Benchmarks.webp" width="1100" height="600" loading="lazy" alt="Benchmarks" style="height: auto; max-width: 100%; width: 1100px;" srcset="https://www.nexgencloud.com/hs-fs/hubfs/Benchmarks.webp?width=550&amp;height=300&amp;name=Benchmarks.webp 550w, https://www.nexgencloud.com/hs-fs/hubfs/Benchmarks.webp?width=1100&amp;height=600&amp;name=Benchmarks.webp 1100w, https://www.nexgencloud.com/hs-fs/hubfs/Benchmarks.webp?width=1650&amp;height=900&amp;name=Benchmarks.webp 1650w, https://www.nexgencloud.com/hs-fs/hubfs/Benchmarks.webp?width=2200&amp;height=1200&amp;name=Benchmarks.webp 2200w, https://www.nexgencloud.com/hs-fs/hubfs/Benchmarks.webp?width=2750&amp;height=1500&amp;name=Benchmarks.webp 2750w, https://www.nexgencloud.com/hs-fs/hubfs/Benchmarks.webp?width=3300&amp;height=1800&amp;name=Benchmarks.webp 3300w" sizes="(max-width: 1100px) 100vw, 1100px"></p>
+<p style="font-weight: bold; font-size: 14px;"><span style="color: #19c39b;">Source:&nbsp;<a href="https://developer.nvidia.com/blog/nvidia-gb200-nvl72-delivers-trillion-parameter-llm-training-and-real-time-inference/#ai_training%C2%A0" rel="noopener" style="color: #19c39b; font-weight: bold;">NVIDIA GB200 NVL72 LLM Training and Real-Time Inference</a><span style="font-weight: bold;">&nbsp;</span></span></p>
+<h2>NVIDIA GB200 Features on the AI Supercloud</h2>
+<p>At the AI Supercloud, we don’t sell you hardware. We deliver optimised hardware for your AI needs. Our NVIDIA GB200-powered systems are available via reservation,where you can access the power of NVIDIA GB200 NVL72/36 with full flexibility and support.</p>
+<p>Here’s how we tailor the NVIDIA GB200 for your workload:</p>
+<h3>Customisation</h3>
+<p>No one-size-fits-all here. You can customise your GB200,&nbsp; from GPU/CPU to RAM, storage or middleware to align perfectly with your training, inference or data science pipelines.</p>
+<h3>Advanced Networking</h3>
+<p>We integrate NVIDIA-certified WEKA storage with GPUDirect Storage support for NVIDIA GB200 GPU clusters for AI. They also come with NVLink and Quantum-2 InfiniBand to reduce I/O bottlenecks and boost throughput for training and inference tasks.</p>
+<h3>Scalable Solutions</h3>
+<p>Need to burst beyond your baseline resources? You can dynamically scale on-demand or plan to access thousands of NVIDIA GB200 GPUs within as little as 8 weeks, ideal for enterprises with high-volume data or scheduled model updates.</p>
+<h3>Managed Kubernetes and MLOps Support</h3>
+<p>We provide a fully managed Kubernetes environment optimised for AI workloads. Our MLOps stack ensures smooth integration across the pipeline from data ingestion to model deployment with expert assistance every step of the way.</p>
+<h3>Data Protection and Compliance</h3>
+<p>We offer a secure cloud where you can deploy your NVIDIA GB200 cluster by adhering to regional compliance and data standards. It ensures encrypted data flows, offers private access control and audit trails with single-tenant deployments.</p>
+<h2>Use Cases of NVIDIA GB200</h2>
+<p>Let’s get this straight, NVIDIA GB200 is not for hobby projects or lightweight experiments. This is infrastructure for serious scale to meet the demands of the most compute-heavy enterprise workloads:</p>
+<h3>Generative AI</h3>
+<p>The NVIDIA GB200 is purpose-built for generative AI at a massive scale. With its powerful architecture, you can train and fine-tune trillion-parameter foundation models that power advanced capabilities in text generation, vision-language understanding and code completion. No matter if you're developing custom LLMs or adapting open-source models for enterprise use, the NVIDIA GB200's unified memory and high throughput enable faster iteration and larger model sizes. It can support complex workflows across multimodal tasks, reduce training times and offer more responsive, production-ready generative applications.</p>
+<h3>Real-Time Inference at Scale</h3>
+<p>In production environments where every millisecond matters, the NVIDIA GB200 delivers real-time inference performance for the largest AI models. From personalised recommendation engines and search to self-driving perception systems and fraud detection pipelines, the NVIDIA GB200 enables rapid data flow between GPUs with advanced networking. Its high bandwidth and compute density make it ideal for enterprises deploying large models in real-time across distributed user bases.&nbsp;</p>
+<h3>Large-Scale Model Training</h3>
+<p>To build LLMs, diffusion models or multimodal applications, the NVIDIA GB200’s architecture ensures high-efficiency training across thousands of cores. NVLink interconnects reduce communication bottlenecks for near-linear scaling across GPUs. This allows enterprises and research teams to shorten training cycles, cut infrastructure costs and reach convergence faster. From early-stage experimentation to production-grade training of massive models, the NVIDIA GB200 allows you to move from data to insight with unmatched speed and scale.</p>
+<h2>How to Access the NVIDIA Blackwell GB200&nbsp;</h2>
+<p>The NVIDIA GB200 is expected to be available by the end of 2025. NexGen Cloud&nbsp;is offering early reservations for the NVIDIA GB200 NVL72/36 clusters. You don’t need to wait until launch to secure access in advance and ensure your enterprise is first in line to deploy at scale.</p>
+<p>All you need to do is <a href="https://www.nexgencloud.com/nexgen-book-a-discovery-call"><strong><span>book a discovery call with our team</span></strong></a>. We’ll help you assess your workload needs and assist in reserving a GB200-powered environment optimised specifically for your AI projects</p>
+<h2>Conclusion</h2>
+<p>The NVIDIA GB200 is your new foundation for enterprise-scale AI. If your models are already pushing the limits of current infrastructure or if you’re building next-gen AI applications that demand real-time performance at scale, the NVIDIA GB200 is what you need.</p>
+<p>But the hardware is just part of the story. At the AI Supercloud, we help you <strong>make it work</strong> faster and smarter. Our optimised NVIDIA GB200 NVL72/36 GPU Clusters for AI are built with <strong>your workload</strong> in mind, supported by expert teams who understand the nuances of AI deployment across industries.</p>
+<p><!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-57af258a-9b08-4d16-9965-468fc60bf0c3"><span class="hs-cta-node hs-cta-57af258a-9b08-4d16-9965-468fc60bf0c3" id="hs-cta-57af258a-9b08-4d16-9965-468fc60bf0c3"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://hubspot-cta-redirect-eu1-prod.s3.amazonaws.com/cta/redirect/26282475/57af258a-9b08-4d16-9965-468fc60bf0c3"><img class="hs-cta-img" id="hs-cta-img-57af258a-9b08-4d16-9965-468fc60bf0c3" style="border-width:0px;" height="475" width="1920" src="https://hubspot-no-cache-eu1-prod.s3.amazonaws.com/cta/default/26282475/57af258a-9b08-4d16-9965-468fc60bf0c3.png" alt="New call-to-action"></a></span><script charset="utf-8" src="/hs/cta/cta/current.js"></script><script type="text/javascript"> hbspt.cta._relativeUrls=true;hbspt.cta.load(26282475, '57af258a-9b08-4d16-9965-468fc60bf0c3', {"useNewLoader":"true","region":"eu1"}); </script></span><!-- end HubSpot Call-to-Action Code --><span style="font-size: 16px; color: #000000;"></span></p>
+<h2>FAQs</h2>
+<h3><strong>What is NVIDIA GB200?</strong></h3>
+<p>The NVIDIA GB200 is a Blackwell-based Superchip built for large-scale AI, combining Grace CPUs and Blackwell GPUs with NVLink.</p>
+<h3><strong>When was NVIDIA GB200 launched?</strong></h3>
+<p>NVIDIA GB200 was launched at GTC 2024 as part of the Blackwell architecture to power trillion-parameter AI workloads at scale.</p>
+<h3 data-start="62" data-end="507"><strong data-start="62" data-end="93">How many GPUs are in GB200?</strong></h3>
+<p data-start="62" data-end="507">The NVIDIA GB200 NVL72 connects 36 Grace CPUs and 72 Blackwell GPUs.&nbsp;</p>
+<h3 data-start="514" data-end="1150"><strong data-start="514" data-end="555">Who is the NVIDIA GB200 designed for?</strong></h3>
+<p data-start="514" data-end="1150">The NVIDIA GB200 is designed for organisations and researchers pushing the boundaries of <strong data-start="647" data-end="688">AI, HPC, and data-intensive workloads</strong>. It is purpose-built for training trillion-parameter large language models (LLMs), running generative AI at scale, and accelerating scientific simulations. Enterprises in industries such as cloud computing, healthcare, finance, and advanced research benefit from its unmatched performance, memory capacity, and efficiency. Essentially, the GB200 is tailored for those who need maximum compute power to drive next-generation AI and large-scale data processing.</p>
+<h3><strong>What is the price of NVIDIA GB200?</strong></h3>
+<p>Book a discovery call with our team to reserve and learn about the NVIDIA GB200 pricing.</p>
+<h3><strong>What are the key features of NVIDIA GB200?</strong></h3>
+<p>On the NexGen Cloud, we deliver optimised hardware including the NVIDIA Blackwell GB200 NVL72/36 with advanced networking, higher-performance data storage, MLOps support and customisable configurations.&nbsp;</p>
+<h3><strong>Where can I access NVIDIA GB200 on the cloud?</strong></h3>
+<p>You can reserve the NVIDIA GB200 NVL72/36 GPU Clusters optimised for AI on NexGen Cloud. Book a discovery call with our Solutions Consultant&nbsp;<a href="https://www.nexgencloud.com/nexgen-book-a-discovery-call"><strong><span>here</span></strong></a>.&nbsp;</p></span>
+        </div>
+      </div>
+    </div>
+    <div class="ngc-coll-post-body_share">
+          <div class="ngc-coll-post_share_title tc">
+            <p>Share this post</p>
+          </div>
+          <div class="ngc-coll-post-hero_share_links ngc-coll-post-hero_share_links_btm">
+          
+              <ul>
+                
+                <li>
+                  <a href="" onclick="shareOnLinkedIn('https://www.nexgencloud.com/blog/case-studies/nvidia-gb200-user-guide-specs-features-and-use-cases', '', 'Blog post summary')">
+                    <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/collection-post/linkedin.svg" alt="linkedin" class="normal-social">
+                  </a>
+                </li>
+                <li>
+                  <a href="" onclick="shareOnTwitter('https://www.nexgencloud.com/blog/case-studies/nvidia-gb200-user-guide-specs-features-and-use-cases', '')">
+                    <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/collection-post/twitter.svg" alt="twitter" class="normal-social">
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onclick="shareOnFacebook('https://www.nexgencloud.com/blog/case-studies/nvidia-gb200-user-guide-specs-features-and-use-cases', '')">
+                    <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/collection-post/facebook.svg" alt="facebook" class="normal-social">
+                  </a>
+                </li>
+              </ul>
+          
+          </div>
+    </div>
+  </div>
+</div>
+</div>
+  
+  <div id="hs_cos_wrapper_NexGen_-_Collection_Recent_Article" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="ngc-rba sec-full">
+  <div class="page-center">
+    <div class="ngc-rba_top ngc_text tc">
+      <h2><span>Discover</span> the Best</h2>
+<p>Stay updated with our latest articles.</p>
+    </div>
+    <!-- Set the max number of recent posts to be output to the page here -->
+    
+    
+    
+    
+    <div class="ngc-rba_wrap">
+      
+      
+      <div class="ngc-rba_item">
+        <div class="ngc-rba_featured_box">
+          <div class="ngc-rba_featured" style="background-image: url(https://www.nexgencloud.com/hubfs/nexgen-cloud-achieves-soc-2-type-2-attestation-strengthening-verified-security-assurance-for-enterprise-.webp);">
+            
+          </div>
+          <div class="ngc-rba_blog"><span>Thought Leadership</span></div>
+        </div>
+        
+        <div class="ngc-rba_btns ngc-button ngc-primary">
+          <a href="https://www.nexgencloud.com/news/nexgen-cloud-achieves-soc-2-type-2-attestation-strengthening-verified-security-assurance-for-enterprise-ai">
+            <div class="btn-icon">
+              <div class="btn-icon_normal">
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/arrow-32.svg" alt="arrow-32" loading="lazy" width="33" height="32" style="max-width: 100%; height: auto;">
+              </div>
+              <div class="btn-ico_hover">
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/arrow-32.svg" alt="arrow-32" loading="lazy" width="33" height="32" style="max-width: 100%; height: auto;">
+              </div>
+            </div>
+            <span>Read More</span>
+          </a>
+        </div>
+
+        <div class="ngc-rba_details">
+          <div class="ngc-rba_content">
+            <h3><a href="https://www.nexgencloud.com/news/nexgen-cloud-achieves-soc-2-type-2-attestation-strengthening-verified-security-assurance-for-enterprise-ai">NexGen Cloud Achieves SOC 2 Type 2 ...</a></h3>
+            <p> Independent audit validates NexGen Cloud's controls operate effectively over time, giving regulated ...</p>
+          </div>
+          <div class="ngc-rba_info">
+            <div class="ngc-rba_date"><p><img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/ai-supercloud/publish-date.svg" alt="publish-date">July 9, 2026</p></div>
+            <div class="ngc-rba_min"><p>5 min read</p></div>
+          </div>
+          <div class="ngc-rba_tag">
+            <ul>
+              
+
+              
+              <li>
+                <a class="main_blog_tag" href="https://www.nexgencloud.com/blog/case-studies/tag/ai">AI</a>
+              </li>
+              
+              
+              
+              <li>
+                <a href="javascript:void(0)">...</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+                
+      
+      
+      
+      <div class="ngc-rba_item">
+        <div class="ngc-rba_featured_box">
+          <div class="ngc-rba_featured" style="background-image: url(https://www.nexgencloud.com/hubfs/b99f0974-4885-440d-beb1-3fa5a7b7a8a0%20%281%29.png);">
+            
+          </div>
+          <div class="ngc-rba_blog"><span>Thought Leadership</span></div>
+        </div>
+        
+        <div class="ngc-rba_btns ngc-button ngc-primary">
+          <a href="https://www.nexgencloud.com/news/usd.ai-provides-34m-facility-to-finance-nexgen-clouds-gpu-deployment-in-sweden">
+            <div class="btn-icon">
+              <div class="btn-icon_normal">
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/arrow-32.svg" alt="arrow-32" loading="lazy" width="33" height="32" style="max-width: 100%; height: auto;">
+              </div>
+              <div class="btn-ico_hover">
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/arrow-32.svg" alt="arrow-32" loading="lazy" width="33" height="32" style="max-width: 100%; height: auto;">
+              </div>
+            </div>
+            <span>Read More</span>
+          </a>
+        </div>
+
+        <div class="ngc-rba_details">
+          <div class="ngc-rba_content">
+            <h3><a href="https://www.nexgencloud.com/news/usd.ai-provides-34m-facility-to-finance-nexgen-clouds-gpu-deployment-in-sweden">USD.AI Provides $34M Facility to Finance ...</a></h3>
+            <p> The three-year, non-recourse facility will fund large-scale NVIDIA B200 GPU fleet, expanding Europe's ...</p>
+          </div>
+          <div class="ngc-rba_info">
+            <div class="ngc-rba_date"><p><img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/ai-supercloud/publish-date.svg" alt="publish-date">June 25, 2026</p></div>
+            <div class="ngc-rba_min"><p>5 min read</p></div>
+          </div>
+          <div class="ngc-rba_tag">
+            <ul>
+              
+              <li>
+                <a href="javascript:void(0)">...</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+                
+      
+      
+      
+      <div class="ngc-rba_item">
+        <div class="ngc-rba_featured_box">
+          <div class="ngc-rba_featured" style="background-image: url(https://www.nexgencloud.com/hubfs/nexgencloud_2024/news/nexgen-cloud-continues-uk-commitment-with-new-london-hq-executive-appointments-and-ambitious-hiring-plans.jpg);">
+            
+          </div>
+          <div class="ngc-rba_blog"><span>Thought Leadership</span></div>
+        </div>
+        
+        <div class="ngc-rba_btns ngc-button ngc-primary">
+          <a href="https://www.nexgencloud.com/news/nexgen-cloud-continues-uk-commitment-with-new-london-hq-executive-appointments-and-ambitious-hiring-plans">
+            <div class="btn-icon">
+              <div class="btn-icon_normal">
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/arrow-32.svg" alt="arrow-32" loading="lazy" width="33" height="32" style="max-width: 100%; height: auto;">
+              </div>
+              <div class="btn-ico_hover">
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/arrow-32.svg" alt="arrow-32" loading="lazy" width="33" height="32" style="max-width: 100%; height: auto;">
+              </div>
+            </div>
+            <span>Read More</span>
+          </a>
+        </div>
+
+        <div class="ngc-rba_details">
+          <div class="ngc-rba_content">
+            <h3><a href="https://www.nexgencloud.com/news/nexgen-cloud-continues-uk-commitment-with-new-london-hq-executive-appointments-and-ambitious-hiring-plans">NexGen Cloud Continues UK Commitment with ...</a></h3>
+            <p> Company's latest milestone will support cutting-edge UK and European businesses looking for sovereign, ...</p>
+          </div>
+          <div class="ngc-rba_info">
+            <div class="ngc-rba_date"><p><img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/ai-supercloud/publish-date.svg" alt="publish-date">May 19, 2026</p></div>
+            <div class="ngc-rba_min"><p>5 min read</p></div>
+          </div>
+          <div class="ngc-rba_tag">
+            <ul>
+              
+              <li>
+                <a href="javascript:void(0)">...</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+                
+      
+      
+      
+      <div class="ngc-rba_item">
+        <div class="ngc-rba_featured_box">
+          <div class="ngc-rba_featured" style="background-image: url(https://www.nexgencloud.com/hubfs/blog_img.png);">
+            
+          </div>
+          <div class="ngc-rba_blog"><span>Thought Leadership</span></div>
+        </div>
+        
+        <div class="ngc-rba_btns ngc-button ngc-primary">
+          <a href="https://www.nexgencloud.com/news/ai-data-center-to-receive-50-capacity-boost-with-ai-power-orchestration">
+            <div class="btn-icon">
+              <div class="btn-icon_normal">
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/arrow-32.svg" alt="arrow-32" loading="lazy" width="33" height="32" style="max-width: 100%; height: auto;">
+              </div>
+              <div class="btn-ico_hover">
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/arrow-32.svg" alt="arrow-32" loading="lazy" width="33" height="32" style="max-width: 100%; height: auto;">
+              </div>
+            </div>
+            <span>Read More</span>
+          </a>
+        </div>
+
+        <div class="ngc-rba_details">
+          <div class="ngc-rba_content">
+            <h3><a href="https://www.nexgencloud.com/news/ai-data-center-to-receive-50-capacity-boost-with-ai-power-orchestration">AI Data Center to Receive 50% Capacity ...</a></h3>
+            <p> Utilidata and NexGen Cloud Partner to Scale AI Compute by Unlocking Stranded Energy Utilidata, a leader ...</p>
+          </div>
+          <div class="ngc-rba_info">
+            <div class="ngc-rba_date"><p><img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/ai-supercloud/publish-date.svg" alt="publish-date">March 18, 2026</p></div>
+            <div class="ngc-rba_min"><p>5 min read</p></div>
+          </div>
+          <div class="ngc-rba_tag">
+            <ul>
+              
+
+              
+              <li>
+                <a class="main_blog_tag" href="https://www.nexgencloud.com/blog/case-studies/tag/announcements">Announcements</a>
+              </li>
+              
+              
+              
+
+              
+              <li>
+                <a class="main_blog_tag" href="https://www.nexgencloud.com/blog/case-studies/tag/ai">AI</a>
+              </li>
+              
+              
+              
+
+              
+              <li>
+                <a class="main_blog_tag" href="https://www.nexgencloud.com/blog/case-studies/tag/cloud-computing">Cloud Computing</a>
+              </li>
+              
+              
+              
+
+              
+              <li>
+                <a class="main_blog_tag" href="https://www.nexgencloud.com/blog/case-studies/tag/gpu-cloud">GPU Cloud</a>
+              </li>
+              
+              
+              
+              <li>
+                <a href="javascript:void(0)">...</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+                
+      
+      
+      
+      <div class="ngc-rba_item">
+        <div class="ngc-rba_featured_box">
+          <div class="ngc-rba_featured" style="background-image: url(https://www.nexgencloud.com/hubfs/1000069985.png);">
+            
+          </div>
+          <div class="ngc-rba_blog"><span>Thought Leadership</span></div>
+        </div>
+        
+        <div class="ngc-rba_btns ngc-button ngc-primary">
+          <a href="https://www.nexgencloud.com/news/nexgen-cloud-brings-hugging-face-into-hyperstack-ai-studio">
+            <div class="btn-icon">
+              <div class="btn-icon_normal">
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/arrow-32.svg" alt="arrow-32" loading="lazy" width="33" height="32" style="max-width: 100%; height: auto;">
+              </div>
+              <div class="btn-ico_hover">
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/arrow-32.svg" alt="arrow-32" loading="lazy" width="33" height="32" style="max-width: 100%; height: auto;">
+              </div>
+            </div>
+            <span>Read More</span>
+          </a>
+        </div>
+
+        <div class="ngc-rba_details">
+          <div class="ngc-rba_content">
+            <h3><a href="https://www.nexgencloud.com/news/nexgen-cloud-brings-hugging-face-into-hyperstack-ai-studio">NexGen Cloud Brings Hugging Face into ...</a></h3>
+            <p> AI Application Accelerated Through Seamless Integration of Hugging Face Models with Hyperstack AI Studio ...</p>
+          </div>
+          <div class="ngc-rba_info">
+            <div class="ngc-rba_date"><p><img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/ai-supercloud/publish-date.svg" alt="publish-date">November 25, 2025</p></div>
+            <div class="ngc-rba_min"><p>5 min read</p></div>
+          </div>
+          <div class="ngc-rba_tag">
+            <ul>
+              
+              <li>
+                <a href="javascript:void(0)">...</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+                
+      
+      
+      
+      
+  
+      
+    </div>
+    
+    <div class="ngc-rba_nav df sb ac">
+      <div class="ngc-rba_dots rba-slick-slider-dots"></div>
+      <div class="ngc-rba_arrow rba-slick-slider-nav df"></div>
+    </div>
+
+    
+  </div>
+</div></div>
+
+  
+  <div id="hs_cos_wrapper_NexGen_-_Collection_Subscribe_Global" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="ngc-collection-subscribe sec-full">
+  
+  <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/collection/top-left.svg" alt="" class="coll_sub-banner coll_sub-banner1">  
+  <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/collection/top-right.svg" alt="" class="coll_sub-banner coll_sub-banner2"> 
+  
+  <div class="page-center">
+    <div class="ngc-collection-subscribe_box">
+      <div class="ngc-collection-subscribe_content tc">
+        <h2>Stay <span>Updated</span> <br>with NexGen Cloud</h2>
+<p>Subscribe to our newsletter for the latest updates and insights.</p>
+      </div>
+      <div class="ngc-collection-subscribe_form">
+        <span id="hs_cos_wrapper_NexGen_-_Collection_Subscribe_Global_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style="" data-hs-cos-general-type="widget" data-hs-cos-type="form"><h3 id="hs_cos_wrapper_NexGen_-_Collection_Subscribe_Global__title" class="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text"></h3>
+
+<div id="hs_form_target_NexGen_-_Collection_Subscribe_Global_"></div>
+
+
+
+
+
+
+
+
+
+</span>
+      </div>
+    </div>
+  </div>
+  
+  <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/collection/bottom-left.svg" alt="" class="coll_sub-banner coll_sub-banner3"> 
+  <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/collection/bottom-right.svg" alt="" class="coll_sub-banner coll_sub-banner4"> 
+  
+  
+</div>
+
+
+<style>
+
+@media (min-width: 768px) {
+  
+  .ngc-collection-subscribe {
+      background-image: url(https://www.nexgencloud.com/hubfs/nexgencloud_2024/collection/form-banner.jpg);
+  }
+}
+  
+@media (max-width: 767px) {
+  .ngc-collection-subscribe {
+      background-image: url(https://www.nexgencloud.com/hubfs/nexgencloud_2024/collection/form-mobile-bg.webp);
+  }
+}
+  
+  
+</style></div>
+  
+  
+  
+</div>
+
+      </main>
+
+      
+        <div data-global-resource-path="NexGen - 2024/templates/partials/Main Footer.html"><footer class="footer">
+  <div class="container-fluid content-wrapper">
+<div class="row-fluid-wrapper">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="12">
+
+</div><!--end widget-span -->
+</div>
+</div>
+</div>
+  
+    <div id="hs_cos_wrapper_main_page" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="ng-footer sec-full">
+  <div class="ng-footer-social">
+    <div class="page-center">
+      <div class="ng-footer-social_box df sb">
+        
+        <div class="ng-footer-social_box_item df sb ac ng-footer-social_box_item1">
+          <div class="ng-footer-social_icon">
+              
+                
+                
+                 
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/footer/x.svg" alt="x" loading="" width="40" height="40" class="social_normal">
+              
+            
+            
+              
+                
+                
+                 
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/footer/x_color.svg" alt="x_color" loading="" width="40" height="40" class="social_hover">
+              
+            
+          </div>
+          <div class="ng-footer-social_text">
+            <p>X [Twitter]</p>
+          </div>
+          
+          
+          
+          <a href="https://x.com/cloudnexgen" target="_blank" rel="nofollow noopener" class="link-block">
+            Link text
+          </a>
+          
+        </div>
+        
+        <div class="ng-footer-social_box_item df sb ac ng-footer-social_box_item2">
+          <div class="ng-footer-social_icon">
+              
+                
+                
+                 
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/footer/in-new.svg" alt="in-new" loading="" width="40" height="40" class="social_normal">
+              
+            
+            
+              
+                
+                
+                 
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/footer/in_new-color.svg" alt="in_new-color" loading="" width="40" height="40" class="social_hover">
+              
+            
+          </div>
+          <div class="ng-footer-social_text">
+            <p>LinkedIn</p>
+          </div>
+          
+          
+          
+          <a href="https://www.linkedin.com/company/nexgen-cloud" target="_blank" rel="nofollow noopener" class="link-block">
+            Link text
+          </a>
+          
+        </div>
+        
+        <div class="ng-footer-social_box_item df sb ac ng-footer-social_box_item3">
+          <div class="ng-footer-social_icon">
+              
+                
+                
+                 
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/footer/youtube.svg" alt="youtube" loading="" width="40" height="40" class="social_normal">
+              
+            
+            
+              
+                
+                
+                 
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/footer/youtube_color.svg" alt="youtube_color" loading="" width="40" height="40" class="social_hover">
+              
+            
+          </div>
+          <div class="ng-footer-social_text">
+            <p>Youtube</p>
+          </div>
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCSC1iWtWblDfJlRwgESdw4Q" target="_blank" rel="nofollow noopener" class="link-block">
+            Link text
+          </a>
+          
+        </div>
+        
+        <div class="ng-footer-social_box_item df sb ac ng-footer-social_box_item4">
+          <div class="ng-footer-social_icon">
+              
+                
+                
+                 
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/footer/facebook.svg" alt="facebook" loading="" width="40" height="40" class="social_normal">
+              
+            
+            
+              
+                
+                
+                 
+                <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/footer/facebook_color.svg" alt="facebook_color" loading="" width="40" height="40" class="social_hover">
+              
+            
+          </div>
+          <div class="ng-footer-social_text">
+            <p>Facebook</p>
+          </div>
+          
+          
+          
+          <a href="https://www.facebook.com/people/NexGen-Cloud/61564669263595/" target="_blank" rel="noopener" class="link-block">
+            Link text
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="ng-footer-middle">
+    <div class="page-center">
+
+
+      <div class="ng-footer-middle_box df sb">
+        <div class="ng-footer-middle_left">
+          <div class="ng-footer-middle_logo">
+            
+              
+              
+                
+              
+               
+              <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2025/badge/ng-logo-nvidia-badge.svg" alt="ng-logo-nvidia-badge" loading="lazy" width="300" height="52" style="max-width: 100%; height: auto;">
+            
+          </div>
+          <div class="ng-footer-middle_content">
+            <p>NexGen Cloud is accelerating the future with access to the industry’s best GPUs, on-demand and in large-scale sovereign AI Cloud environments.</p>
+          </div>
+          <div class="ng-footer-middle_info df sb">
+            
+            
+            <div class="ng-footer-middle_info_item">
+              
+              
+              <a href="tel:+442031375256">
+            <div class="ng-footer-middle_info_in df ac sb">
+              <div class="ng-footer-middle_info_item_icn">
+                
+                  
+                  
+                    
+                  
+                   
+                  <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/phone.svg" alt="" loading="lazy" width="19" height="20" style="max-width: 100%; height: auto;">
+                
+              </div>
+              <div class="ng-footer-middle_info_item_text"><span>+44 (0) 203 475 3402</span></div>
+            </div>
+              </a>  
+               </div>
+            
+            
+            <div class="ng-footer-middle_info_item">
+              
+              
+                
+              
+              <a href="/cdn-cgi/l/email-protection#80e9eee6efc0eee5f8e7e5eee3eceff5e4aee3efed">
+            <div class="ng-footer-middle_info_in df ac sb">
+              <div class="ng-footer-middle_info_item_icn">
+                
+                  
+                  
+                   
+                  <img src="https://www.nexgencloud.com/hubfs/nexgencloud_2024/home/mail.svg" alt="mail" loading="" width="17" height="18">
+                
+              </div>
+              <div class="ng-footer-middle_info_item_text"><span><span class="__cf_email__" data-cfemail="224b4c444d624c475a45474c414e4d57460c414d4f">[email&#160;protected]</span></span></div>
+            </div>
+              </a>  
+               </div>
+            
+         
+        </div>
+        </div>
+        <div class="ng-footer-middle_right">
+          <div class="ng-footer-middle_subscribe_title">
+            <h4>Stay informed. Join our newsletter</h4>
+<p>Get the latest updates and exclusive offers.</p>
+          </div>
+          <div class="ng-footer-middle_subscribe">
+              <span id="hs_cos_wrapper_main_page_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style="" data-hs-cos-general-type="widget" data-hs-cos-type="form"><h3 id="hs_cos_wrapper_main_page__title" class="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text"></h3>
+
+<div id="hs_form_target_main_page_"></div>
+
+
+
+
+
+
+
+
+
+</span>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <div class="ng-footer-main">
+    <div class="page-center">
+      <div class="ng-footer-main_box df sb">
+        <div class="ng-footer-col ng-footer-col1 ng-footer-address">
+          <div class="ng-footer-col-box">
+            
+              <div class="ng-footer-col-box_item">
+                <div class="ng-footer-col-title"><p>United Kingdom Address<br>  (Head office)</p></div>
+                <div class="ng-footer-col-text"><p>TechSpace.<br>9-13 St Andrew St, 3rd Floor,<br>London EC4A 3AF,<br>United Kingdom</p></div>
+              </div>
+            
+              <div class="ng-footer-col-box_item">
+                <div class="ng-footer-col-title"><p>Registered Office</p></div>
+                <div class="ng-footer-col-text"><p>6th Floor, 99 Gresham Street, <br>London, EC2V 7NG<br>United Kingdom</p></div>
+              </div>
+            
+          </div>
+        </div>
+        <div class="ng-footer-col ng-footer-col2 ng-footer-address">
+          <div class="ng-footer-col-box">
+            <div class="ng-footer-col-title"><p>Spain Address</p></div>
+            <div class="ng-footer-col-text"><p>Ctra NACIONAL 340, KM 176<br>Local C-12,<br>Marbella 29600 Malaga</p></div>
+          </div>
+        </div>
+        <div class="ng-footer-col ng-footer-col3 ng-footer-menu">
+          <div class="ng-footer-col-box">
+            <div class="ng-footer-col-title"><p>Products</p></div>
+            <div class="ng-footer-col-menu"><span id="hs_cos_wrapper_main_page_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_simple_menu" style="" data-hs-cos-general-type="widget" data-hs-cos-type="simple_menu"><div id="hs_menu_wrapper_main_page_" class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="" data-menu-id="" aria-label="Navigation Menu">
+ <ul role="menu">
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.nexgencloud.com/secure-private-cloud" role="menuitem" target="_blank" rel="noopener">Secure Private Cloud</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.hyperstack.cloud/" role="menuitem" target="_blank" rel="noopener">Hyperstack On-Demand</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.infrahubcompute.com/" role="menuitem" target="_blank" rel="noopener">Infrahub Compute</a></li>
+ </ul>
+</div></span></div>
+          </div>
+        </div>
+        <div class="ng-footer-col ng-footer-col4 ng-footer-menu">
+          <div class="ng-footer-col-box">
+            <div class="ng-footer-col-title"><p>Quicklinks</p></div>
+            <div class="ng-footer-col-menu"><span id="hs_cos_wrapper_main_page_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_simple_menu" style="" data-hs-cos-general-type="widget" data-hs-cos-type="simple_menu"><div id="hs_menu_wrapper_main_page_" class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="" data-menu-id="" aria-label="Navigation Menu">
+ <ul role="menu">
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.nexgencloud.com/about" role="menuitem" target="_self">Company</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.nexgencloud.com/leadership-team" role="menuitem" target="_self">Leadership Team</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.nexgencloud.com/sustainability" role="menuitem" target="_self">Sustainability</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.nexgencloud.com/security" role="menuitem" target="_self">Security </a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.nexgencloud.com/partnership" role="menuitem" target="_self">Partnerships</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.nexgencloud.com/blog" role="menuitem" target="_self">Blog</a></li>
+ </ul>
+</div></span></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ng-footer-main_badge df">
+        
+        <div class="ng-footer-main_badge_item">
+          
+	
+	
+	<a href="http://www.aicpa-cima.com/soc4so" target="_blank" rel="noopener">
+	
+		
+		
+			
+		
+		 
+		<img src="https://www.nexgencloud.com/hubfs/nexgencloud_2025/badge/soc-2-type-1-certified.svg" alt="soc-2-type-1-certified" loading="lazy" width="191" height="190" style="max-width: 100%; height: auto;">
+	
+	</a>
+        
+        </div>
+        
+      </div>
+
+      
+    </div>
+  </div>
+  
+  
+  <div class="ng-footer-bottom">
+    <div class="page-center">
+      <div class="ng-footer-bottom_box df sb ac">
+        <div class="ng-footer-bottom_left">
+          <p>@Copyright NexGen Cloud Ltd. 2026. All Rights Reserved.</p>
+        </div>
+        <div class="ng-footer-bottom_right">
+          <span id="hs_cos_wrapper_main_page_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_simple_menu" style="" data-hs-cos-general-type="widget" data-hs-cos-type="simple_menu"><div id="hs_menu_wrapper_main_page_" class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="" data-menu-id="" aria-label="Navigation Menu">
+ <ul role="menu">
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.nexgencloud.com/privacy-policy" role="menuitem" target="_self">Privacy Policy</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.nexgencloud.com/terms-and-conditions" role="menuitem" target="_self">General T&amp;Cs</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.nexgencloud.com/terms-and-conditions-servers-services" role="menuitem" target="_self">Servers &amp; Services</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.nexgencloud.com/data-processing" role="menuitem" target="_self">Data Processing</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.nexgencloud.com/slas" role="menuitem" target="_self">SLAs</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.nexgencloud.com/sitemap" role="menuitem" target="_self">Sitemap</a></li>
+ </ul>
+</div></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+</div></div> 
+  
+  <div class="container-fluid content-wrapper">
+<div class="row-fluid-wrapper">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="12">
+
+</div><!--end widget-span -->
+</div>
+</div>
+</div>
+</footer></div>
+      
+    </div>
+    
+    
+    
+    
+<!-- HubSpot performance collection script -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="/hs/hsstatic/content-cwv-embed/static-1.1293/embed.js"></script>
+<script src="https://www.nexgencloud.com/hubfs/hub_generated/template_assets/1/112532187846/1780328023763/template_main.min.js"></script>
+<script src="https://www.nexgencloud.com/hubfs/hub_generated/template_assets/1/112601439950/1780328025285/template_slick.min.js"></script>
+<script>
+var hsVars = hsVars || {}; hsVars['language'] = 'en';
+</script>
+
+<script src="/hs/hsstatic/cos-i18n/static-1.53/bundles/project.js"></script>
+<script src="https://www.nexgencloud.com/hubfs/hub_generated/module_assets/1/112549262803/1779702731019/module_Header.min.js"></script>
+
+<script>
+
+  
+  
+  // Function to share a blog post on Facebook
+    function shareOnFacebook(url, title) {
+      var facebookUrl = "https://www.facebook.com/sharer.php?u=" + encodeURIComponent(url) + "&t=" + encodeURIComponent(title);
+      window.open(facebookUrl, "_blank");
+    }
+
+    // Function to share a blog post on Twitter
+    function shareOnTwitter(url, title) {
+      var twitterUrl = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(title);
+      window.open(twitterUrl, "_blank");
+    }
+
+    // Function to share a blog post on LinkedIn
+    function shareOnLinkedIn(url, title, summary) {
+      var linkedInUrl = "https://www.linkedin.com/shareArticle?url=" + encodeURIComponent(url) + "&title=" + encodeURIComponent(title) + "&summary=" + encodeURIComponent(summary);
+      window.open(linkedInUrl, "_blank");
+    }
+  
+  
+  
+</script>
+
+<script src="https://www.nexgencloud.com/hubfs/hub_generated/module_assets/1/117753178580/1777975786752/module_NexGen_-_Collection_Post_Body.min.js"></script>
+
+<script>
+  
+$(document).ready(function(){
+  $('.toc').toc({
+      'selectors': 'h2',
+      'container': '.ngc-coll-post-body_text', //element to find all selectors in
+      'prefix': 'toc', //prefix for anchor tags and class names
+      'highlightOnScroll': true, //add class to heading that is currently in focus
+
+   });
+});
+  
+  
+  
+</script>
+
+<script src="https://www.nexgencloud.com/hubfs/hub_generated/module_assets/1/117753178616/1744349989399/module_NexGen_-_Collection_Recent_Article.min.js"></script>
+
+    <!--[if lte IE 8]>
+    <script charset="utf-8" src="https://js-eu1.hsforms.net/forms/v2-legacy.js"></script>
+    <![endif]-->
+
+<script data-hs-allowed="true" src="/_hcms/forms/v2.js"></script>
+
+    <script data-hs-allowed="true">
+        var options = {
+            portalId: '26282475',
+            formId: '9fabe8c3-640b-4a58-bb3e-b352f9cc0978',
+            formInstanceId: '8923',
+            
+            pageId: '254413853897',
+            
+            region: 'eu1',
+            
+            
+            
+            
+            pageName: "NVIDIA GB200 User Guide: Specs, Features and Use Cases",
+            
+            
+            
+            inlineMessage: "Thanks for submitting the form.",
+            
+            
+            rawInlineMessage: "Thanks for submitting the form.",
+            
+            
+            hsFormKey: "2a0afb65508c821f9e0c5e53be341826",
+            
+            
+            css: '',
+            target: '#hs_form_target_NexGen_-_Collection_Subscribe_Global_',
+            
+            
+            
+            
+            
+            
+            
+            contentType: "blog-post",
+            
+            
+            
+            formsBaseUrl: '/_hcms/forms/',
+            
+            
+            
+            formData: {
+                cssClass: 'hs-form stacked hs-custom-form'
+            }
+        };
+
+        options.getExtraMetaDataBeforeSubmit = function() {
+            var metadata = {};
+            
+
+            if (hbspt.targetedContentMetadata) {
+                var count = hbspt.targetedContentMetadata.length;
+                var targetedContentData = [];
+                for (var i = 0; i < count; i++) {
+                    var tc = hbspt.targetedContentMetadata[i];
+                     if ( tc.length !== 3) {
+                        continue;
+                     }
+                     targetedContentData.push({
+                        definitionId: tc[0],
+                        criterionId: tc[1],
+                        smartTypeId: tc[2]
+                     });
+                }
+                metadata["targetedContentMetadata"] = JSON.stringify(targetedContentData);
+            }
+
+            return metadata;
+        };
+
+        hbspt.forms.create(options);
+    </script>
+
+
+    <script data-hs-allowed="true">
+        var options = {
+            portalId: '26282475',
+            formId: 'aeaea000-e70b-4fea-a9fb-e05c8a195d79',
+            formInstanceId: '4882',
+            
+            pageId: '254413853897',
+            
+            region: 'eu1',
+            
+            
+            
+            
+            pageName: "NVIDIA GB200 User Guide: Specs, Features and Use Cases",
+            
+            
+            
+            inlineMessage: "Thanks for submitting the form.",
+            
+            
+            rawInlineMessage: "Thanks for submitting the form.",
+            
+            
+            hsFormKey: "a66a7a7f43aca7fc468f59ef5aa17367",
+            
+            
+            css: '',
+            target: '#hs_form_target_main_page_',
+            
+            
+            
+            
+            
+            
+            
+            contentType: "blog-post",
+            
+            
+            
+            formsBaseUrl: '/_hcms/forms/',
+            
+            
+            
+            formData: {
+                cssClass: 'hs-form stacked hs-custom-form'
+            }
+        };
+
+        options.getExtraMetaDataBeforeSubmit = function() {
+            var metadata = {};
+            
+
+            if (hbspt.targetedContentMetadata) {
+                var count = hbspt.targetedContentMetadata.length;
+                var targetedContentData = [];
+                for (var i = 0; i < count; i++) {
+                    var tc = hbspt.targetedContentMetadata[i];
+                     if ( tc.length !== 3) {
+                        continue;
+                     }
+                     targetedContentData.push({
+                        definitionId: tc[0],
+                        criterionId: tc[1],
+                        smartTypeId: tc[2]
+                     });
+                }
+                metadata["targetedContentMetadata"] = JSON.stringify(targetedContentData);
+            }
+
+            return metadata;
+        };
+
+        hbspt.forms.create(options);
+    </script>
+
+
+<!-- Start of HubSpot Analytics Code -->
+<script type="text/javascript">
+var _hsq = _hsq || [];
+_hsq.push(["setContentType", "blog-post"]);
+_hsq.push(["setCanonicalUrl", "https:\/\/www.nexgencloud.com\/blog\/case-studies\/nvidia-gb200-user-guide-specs-features-and-use-cases"]);
+_hsq.push(["setPageId", "254413853897"]);
+_hsq.push(["setContentMetadata", {
+    "contentPageId": 254413853897,
+    "legacyPageId": "254413853897",
+    "contentFolderId": null,
+    "contentGroupId": 189430056168,
+    "abTestId": null,
+    "languageVariantId": 254413853897,
+    "languageCode": "en",
+    
+    
+}]);
+</script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="/hs/scriptloader/26282475.js?businessUnitId=16737611"></script>
+<!-- End of HubSpot Analytics Code -->
+
+
+<script type="text/javascript">
+var hsVars = {
+    render_id: "989c9e38-7183-443e-bea9-8dba7eaba17a",
+    ticks: 1783578868848,
+    page_id: 254413853897,
+    
+    content_group_id: 189430056168,
+    portal_id: 26282475,
+    app_hs_base_url: "https://app-eu1.hubspot.com",
+    cp_hs_base_url: "https://cp-eu1.hubspot.com",
+    language: "en",
+    analytics_page_type: "blog-post",
+    scp_content_type: "",
+    
+    analytics_page_id: "254413853897",
+    category_id: 3,
+    folder_id: 0,
+    is_hubspot_user: false
+}
+</script>
+
+
+<script defer src="/hs/hsstatic/HubspotToolsMenu/static-1.640/js/index.js"></script>
+
+
+
+<script>
+(function() {
+  // Get current page's query parameters
+  const currentQuery = window.location.search;
+  const currentParams = new URLSearchParams(currentQuery || '');
+  const paramsToTrack = {};
+  
+  // Check if there are any existing UTM parameters
+  let hasExistingUTM = false;
+  currentParams.forEach((value, key) => {
+    if (key.toLowerCase().startsWith('utm_')) {
+      hasExistingUTM = true;
+      paramsToTrack[key] = value;
+    }
+  });
+  
+  // If no UTM parameters exist but we have a referrer, generate UTM parameters
+  if (!hasExistingUTM && document.referrer) {
+    try {
+      const referrerUrl = new URL(document.referrer);
+      const referrerHostname = referrerUrl.hostname.toLowerCase();
+
+      // Define common search engines with their domain patterns
+      const searchEngines = [
+        {
+          pattern: /^(www\.)?google\.[a-z]{2,3}(\.[a-z]{2})?$/,
+          name: 'google'
+        },
+        {
+          pattern: /^(www\.)?bing\.[a-z]{2,3}(\.[a-z]{2})?$/,
+          name: 'bing'
+        },
+        {
+          pattern: /^(www\.)?(search\.)?yahoo\.[a-z]{2,3}(\.[a-z]{2})?$/,
+          name: 'yahoo'
+        },
+        {
+          pattern: /^(www\.)?duckduckgo\.[a-z]{2,3}(\.[a-z]{2})?$/,
+          name: 'duckduckgo'
+        },
+        {
+          pattern: /^(www\.)?baidu\.[a-z]{2,3}(\.[a-z]{2})?$/,
+          name: 'baidu'
+        },
+        {
+          pattern: /^(www\.)?yandex\.[a-z]{2,3}(\.[a-z]{2})?$/,
+          name: 'yandex'
+        },
+        {
+          pattern: /^(www\.)?ask\.[a-z]{2,3}(\.[a-z]{2})?$/,
+          name: 'ask'
+        }
+      ];
+
+      // Check if referrer is a search engine
+      let isSearchEngine = false;
+      let searchEngineName = '';
+
+      for (const engine of searchEngines) {
+        if (engine.pattern.test(referrerHostname)) {
+          isSearchEngine = true;
+          searchEngineName = engine.name;
+          break;
+        }
+      }
+
+      if (isSearchEngine) {
+        // Traffic from search engine
+        paramsToTrack['utm_medium'] = 'organic';
+        paramsToTrack['utm_source'] = searchEngineName;
+      } else {
+        // Traffic from other referrer
+        paramsToTrack['utm_medium'] = 'referral';
+
+        // Get hostname with subdomain, truncate to 128 chars if needed
+        let sourceHostname = referrerHostname;
+        if (sourceHostname.length > 128) {
+          // Truncate in the middle to show both start and end
+          const maxLength = 128;
+          const ellipsis = '...';
+          const charsToShow = maxLength - ellipsis.length;
+          const frontChars = Math.ceil(charsToShow * 0.6); // Show more of the front
+          const backChars = Math.floor(charsToShow * 0.4);
+
+          sourceHostname = sourceHostname.substring(0, frontChars) +
+                          ellipsis +
+                          sourceHostname.substring(sourceHostname.length - backChars);
+        }
+
+        paramsToTrack['utm_source'] = sourceHostname;
+      }
+
+    } catch (e) {
+      console.error('Error parsing referrer:', e);
+    }
+  }
+  
+  // Exit if no UTM parameters to track
+  if (Object.keys(paramsToTrack).length === 0) {
+    return;
+  }
+  
+  // Helper function to check if two URLs are same domain (including subdomains)
+  function isSameDomain(url1, url2) {
+    try {
+      const domain1 = url1.hostname.split('.').slice(-2).join('.');
+      const domain2 = url2.hostname.split('.').slice(-2).join('.');
+      return domain1 === domain2;
+    } catch (e) {
+      return false;
+    }
+  }
+  
+  // Helper function to append parameters to a URL
+  function appendParams(url, baseUrl = window.location.href) {
+    if (!url) return url;
+    
+    try {
+      // Handle various URL formats
+      let urlObj;
+      if (url.startsWith('javascript:') || url.startsWith('mailto:') || url.startsWith('tel:')) {
+        return url;
+      }
+      
+      if (url.startsWith('#')) {
+        // Hash-only URL
+        urlObj = new URL(window.location.href);
+        urlObj.hash = url;
+      } else if (url.startsWith('?')) {
+        // Query-only URL
+        urlObj = new URL(window.location.href);
+        urlObj.search = url;
+      } else {
+        // Full or relative URL
+        urlObj = new URL(url, baseUrl);
+      }
+      
+      // Don't modify external domains (but allow subdomains)
+      if (!isSameDomain(urlObj, window.location)) {
+        // Check if it's a completely different domain that we should still track
+        // You can customize this logic based on your needs
+        const allowedDomains = [
+          'hyperstack.cloud',
+          'nexgencloud.com',
+          // Add more domains here if needed
+        ];
+        
+        const urlDomain = urlObj.hostname.split('.').slice(-2).join('.');
+        const isAllowedDomain = allowedDomains.some(domain => urlDomain === domain);
+        
+        if (!isAllowedDomain) {
+          return url;
+        }
+      }
+      
+      // THIS IS THE KEY PART:
+      // 1. First, we parse any EXISTING parameters from the link (UTM or otherwise)
+      const urlParams = new URLSearchParams(urlObj.search);
+      
+      // 2. Then we ADD our UTM parameters (but only if they don't already exist)
+      Object.entries(paramsToTrack).forEach(([key, value]) => {
+        if (!urlParams.has(key)) {
+          urlParams.set(key, value);
+        }
+      });
+      
+      // 3. The result has ALL original parameters PLUS the new UTM parameters
+      urlObj.search = urlParams.toString();
+      
+      // Return the appropriate format
+      if (url.startsWith('#')) {
+        return urlObj.hash;
+      } else if (url.startsWith('?')) {
+        return urlObj.search + urlObj.hash;
+      } else if (url.startsWith('/')) {
+        return urlObj.pathname + urlObj.search + urlObj.hash;
+      } else {
+        return urlObj.toString();
+      }
+    } catch (e) {
+      console.error('Error processing URL:', url, e);
+      return url;
+    }
+  }
+  
+  // 1. Process existing links
+  function processLink(link) {
+    if (!link.href) return;
+    const newHref = appendParams(link.href);
+    if (newHref !== link.href) {
+      link.href = newHref;
+    }
+  }
+  
+  // Process all current links
+  document.querySelectorAll('a[href]').forEach(processLink);
+  
+  // 2. Intercept click events using event delegation
+  document.addEventListener('click', function(e) {
+    // Find the actual clicked link (might be a child element)
+    let target = e.target;
+    while (target && target !== document) {
+      if (target.tagName === 'A' && target.href) {
+        const newHref = appendParams(target.href);
+        if (newHref !== target.href) {
+          target.href = newHref;
+        }
+      }
+      target = target.parentElement;
+    }
+  }, true);
+  
+  // 3. Override window.location setters
+  const originalLocationDescriptor = Object.getOwnPropertyDescriptor(window, 'location');
+  const originalLocation = window.location;
+  
+  // Intercept location.href assignments
+  if (originalLocationDescriptor && originalLocationDescriptor.configurable) {
+    Object.defineProperty(window, 'location', {
+      get: function() {
+        return originalLocation;
+      },
+      set: function(url) {
+        const newUrl = appendParams(url);
+        originalLocationDescriptor.set.call(window, newUrl);
+      },
+      configurable: true
+    });
+  }
+  
+  // Override location methods
+  const originalAssign = location.assign;
+  location.assign = function(url) {
+    return originalAssign.call(this, appendParams(url));
+  };
+  
+  const originalReplace = location.replace;
+  location.replace = function(url) {
+    return originalReplace.call(this, appendParams(url));
+  };
+  
+  // 4. Override history methods
+  const originalPushState = history.pushState;
+  history.pushState = function(state, title, url) {
+    const newUrl = url ? appendParams(url) : url;
+    return originalPushState.call(this, state, title, newUrl);
+  };
+  
+  const originalReplaceState = history.replaceState;
+  history.replaceState = function(state, title, url) {
+    const newUrl = url ? appendParams(url) : url;
+    return originalReplaceState.call(this, state, title, newUrl);
+  };
+  
+  // 5. Override window.open
+  const originalOpen = window.open;
+  window.open = function(url, ...args) {
+    const newUrl = url ? appendParams(url) : url;
+    return originalOpen.call(this, newUrl, ...args);
+  };
+  
+  // 6. Intercept form submissions
+  document.addEventListener('submit', function(e) {
+    const form = e.target;
+    if (form.method && form.method.toUpperCase() === 'GET') {
+      // For GET forms, add hidden inputs for UTM parameters
+      Object.entries(paramsToTrack).forEach(([key, value]) => {
+        if (!form.elements[key]) {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = key;
+          input.value = value;
+          form.appendChild(input);
+        }
+      });
+    } else if (form.action) {
+      // For POST forms, modify the action URL
+      const newAction = appendParams(form.action);
+      if (newAction !== form.action) {
+        form.action = newAction;
+      }
+    }
+  }, true);
+  
+  // 7. Watch for dynamically added content
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      mutation.addedNodes.forEach(function(node) {
+        if (node.nodeType === 1) { // Element node
+          // Check if it's a link
+          if (node.tagName === 'A' && node.href) {
+            processLink(node);
+          }
+          // Check for links within the added node
+          if (node.querySelectorAll) {
+            node.querySelectorAll('a[href]').forEach(processLink);
+          }
+          // Check for forms
+          if (node.tagName === 'FORM' && node.action) {
+            node.action = appendParams(node.action);
+          }
+          if (node.querySelectorAll) {
+            node.querySelectorAll('form[action]').forEach(form => {
+              form.action = appendParams(form.action);
+            });
+          }
+        }
+      });
+    });
+  });
+  
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+  
+  // 8. Handle XMLHttpRequest (for AJAX requests that might navigate)
+  const originalXHROpen = XMLHttpRequest.prototype.open;
+  XMLHttpRequest.prototype.open = function(method, url, ...args) {
+    // Only modify GET requests to same domain
+    if (method.toUpperCase() === 'GET' && url) {
+      const newUrl = appendParams(url);
+      return originalXHROpen.call(this, method, newUrl, ...args);
+    }
+    return originalXHROpen.call(this, method, url, ...args);
+  };
+  
+  // 9. Handle fetch API
+  const originalFetch = window.fetch;
+  window.fetch = function(input, init) {
+    if (typeof input === 'string') {
+      // Only modify GET requests (default or explicit)
+      if (!init || !init.method || init.method.toUpperCase() === 'GET') {
+        input = appendParams(input);
+      }
+    } else if (input instanceof Request) {
+      if (input.method === 'GET') {
+        const newUrl = appendParams(input.url);
+        if (newUrl !== input.url) {
+          input = new Request(newUrl, input);
+        }
+      }
+    }
+    return originalFetch.call(this, input, init);
+  };
+  
+  // 10. Intercept any onclick attributes that might be set dynamically
+  const originalSetAttribute = Element.prototype.setAttribute;
+  Element.prototype.setAttribute = function(name, value) {
+    if (name === 'onclick' && typeof value === 'string') {
+      // Try to detect navigation patterns in onclick
+      const patterns = [
+        /window\.location\s*=\s*['"]([^'"]+)['"]/,
+        /location\.href\s*=\s*['"]([^'"]+)['"]/,
+        /location\.assign\s*\(\s*['"]([^'"]+)['"]\s*\)/,
+        /window\.open\s*\(\s*['"]([^'"]+)['"]/
+      ];
+      
+      let modifiedValue = value;
+      patterns.forEach(pattern => {
+        modifiedValue = modifiedValue.replace(pattern, (match, url) => {
+          const newUrl = appendParams(url);
+          return match.replace(url, newUrl);
+        });
+      });
+      
+      return originalSetAttribute.call(this, name, modifiedValue);
+    }
+    return originalSetAttribute.call(this, name, value);
+  };
+  
+  // 11. Handle popstate (browser back/forward) - ensure UTM params persist
+  window.addEventListener('popstate', function(e) {
+    const currentUrl = new URL(window.location.href);
+    const urlParams = new URLSearchParams(currentUrl.search);
+    let hasAllParams = true;
+    
+    Object.entries(paramsToTrack).forEach(([key, value]) => {
+      if (!urlParams.has(key)) {
+        hasAllParams = false;
+        urlParams.set(key, value);
+      }
+    });
+    
+    if (!hasAllParams) {
+      currentUrl.search = urlParams.toString();
+      history.replaceState(e.state, '', currentUrl.toString());
+    }
+  });
+  
+  // 12. Special handling for common frameworks/libraries
+  
+  // jQuery support (if jQuery is loaded)
+  if (typeof jQuery !== 'undefined' && jQuery.ajax) {
+    const originalAjax = jQuery.ajax;
+    jQuery.ajax = function(url, options) {
+      if (typeof url === 'string') {
+        url = appendParams(url);
+      } else if (typeof url === 'object' && url.url) {
+        url.url = appendParams(url.url);
+      }
+      return originalAjax.call(this, url, options);
+    };
+  }
+  
+  // React Router support (if using history object)
+  if (window.history && window.history.push) {
+    const originalHistoryPush = window.history.push;
+    window.history.push = function(path, state) {
+      const newPath = typeof path === 'string' ? appendParams(path) : path;
+      return originalHistoryPush.call(this, newPath, state);
+    };
+  }
+  
+})();
+  
+  console.log('From: ALL');
+</script>
+
+<div id="fb-root"></div>
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0";
+  fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));</script> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ 
+
+
+  
+</body></html>

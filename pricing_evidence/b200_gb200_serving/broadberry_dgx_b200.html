@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+
+<!-- Multinational -->
+<link rel="alternate" hreflang="en-gb" href="https://www.broadberry.co.uk/xeon-scalable-processor-gen4-rackmount-servers/nvidia-dgx-b200" />
+<link rel="alternate" hreflang="en-za" href="https://www.broadberry.co.za/xeon-scalable-processor-gen4-rackmount-servers/nvidia-dgx-b200" />
+<link rel="alternate" hreflang="en-au" href="https://www.broadberry.com.au/xeon-scalable-processor-gen4-rackmount-servers/nvidia-dgx-b200" />
+<link rel="alternate" hreflang="de" href="https://www.broadberry.de/xeon-scalable-processor-gen4-rackmount-servers/nvidia-dgx-b200" />
+<link rel="alternate" hreflang="en150" href="https://www.broadberry.eu/xeon-scalable-processor-gen4-rackmount-servers/nvidia-dgx-b200" />
+<link rel="alternate" hreflang="fr" href="https://www.broadberry.fr/xeon-scalable-processor-gen4-rackmount-servers/nvidia-dgx-b200" />
+<meta http-equiv="Content-Language" content="en-us">
+
+<title>NVIDIA DGX B200 - Configure Online</title>
+<meta name="description" content="NVIDIA DGX B200 with 8x NVIDIA Blackwell GPUs, Dual Intel® Xeon® Platinum 8570 Processors, 4TB DDR5 Memory, 2x 1.92TB NVMe M.2 & 8x 3.84TB NVMe SSDs.">
+<meta name="keywords" content="">
+
+<link rel="canonical" href="https://www.broadberry.com/xeon-scalable-processor-gen4-rackmount-servers/nvidia-dgx-b200" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Bootstrap -->
+<script src="/inc/javascript/modules/jquery-1.12.4/jquery.min.js"></script>
+<link href="/inc/bootstrap/bootstrap-3.3.2/css/bootstrap.css" rel="stylesheet">
+<script src="/inc/bootstrap/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+
+<!-- Broadberry -->
+<link href="/inc/css/broadberry_bootstrap.css?v=9" rel="stylesheet">
+
+<!-- Other Modules -->
+<script src="/inc/javascript/broadberry_theme.js"></script>
+<script src="/inc/javascript/modules/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+<link href="/inc/javascript/modules/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
+
+
+
+<link href="/inc/css/system_items-bootstrap.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/inc/javascript/system_items-bootstrap.php?thisSystemId=2791&amp;pageURL=aHR0cHMlM0ElMkYlMkZ3d3cuYnJvYWRiZXJyeS5jb20lMkZ4ZW9uLXNjYWxhYmxlLXByb2Nlc3Nvci1nZW40LXJhY2ttb3VudC1zZXJ2ZXJzJTJGbnZpZGlhLWRneC1iMjAw&system_id=nvidia-dgx-b200&saved_quote=&return_page=&storage_array_type=&save_button_override="></script><!--[if lt IE 9]>
+<style type="text/css">
+
+	.new_item_type img
+    {
+      border-width: 0px !important;
+      border-top-style: none !important;
+    }
+
+</style>     
+<![endif]-->
+
+<style type="text/css">
+
+.group_holder {
+	font-size: 10px;
+	display: block;
+	margin: 0px;
+	padding-top: 2px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 0px;
+	text-align: center;
+	float: left;
+	margin-right: 4px;
+	padding-right: 4px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-right-color: #e8e8e8;
+}
+
+.att {
+	font-size: 10px;
+	text-align: center;
+	display: block;
+}
+
+.att em {
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    color: #286090;
+    font-size: 12px;
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top yamm" role="navigation">
+  <div class="container" style="position:static !important;">
+      
+	<!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="/img/css/logo-white.png" alt=""></a>
+      </div>
+    
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+		  
+		<li class="dropdown  yamm-fw"><a href="/storage-servers" class="dropdown-toggle" data-toggle="dropdown">Storage <b class="caret"></b></a>
+          <div class="dropdown-menu newNav">
+               
+<div class="container"> 
+         
+<h2 class="page-header">
+    <a href="/storage-servers" class="btn btn-primary pull-right">View All</a>
+    <span class="">Enterprise Storage Servers <small>NAS, iSCSI SAN, DAS and Backup Storage</small></span>
+</h2>
+         
+<div class="row marketing height60">
+	<div class="col-xs-12 col-md-2  yamm-hover">
+		<a class="marketing-image" href="/storage-storage-servers"><img src="/img/menu-includes/storage/storage-servers.png" alt="Storage Servers" /></a>
+		<a class="he he-double" href="/storage-storage-servers">Storage Servers</a>
+		<div class="yamm_red_price">Configure From $6,298</div>
+		<p class="yamm-desc">Our Multi-Award winning 12Gb/s range of Storage Servers are perfect for any Scalable Enterprise Storage</p>
+	</div>
+				
+	<div class="col-xs-12 col-md-2  yamm-hover">
+		<a class="marketing-image" href="/performance-storage-servers"><img src="/img/menu-includes/storage/performance-storage.png" alt="All Flash Storage Array" /></a>
+		<a class="he he-double" href="/performance-storage-servers">All Flash Storage Arrays</a>
+		<div class="yamm_red_price">Configure From $4,996</div>
+		<p class="yamm-desc">Enterprise-grade NVMe storage for when high read/write performance is key, for up to 20 million IOPS</p>
+	</div>
+				
+	<div class="col-xs-12 col-md-2  yamm-hover">
+		<a class="marketing-image" href="/das-direct-attached-storage-servers"><img src="/img/menu-includes/storage/jbod.png" alt="JBOD Storage Server"/></a>
+		<a class="he he-double" href="/das-direct-attached-storage-servers">JBOD Storage - DAS</a>
+		<div class="yamm_red_price">Configure From $2,570</div>
+		<p class="yamm-desc">Expand your current storage pool with enterprise-grade Direct Attached Storage appliances</p>
+	</div>
+				
+	<div class="col-xs-12 col-md-2  yamm-hover">
+		<a class="marketing-image" href="/ip-surveillence-storage-servers"><img src="/img/menu-includes/storage/surveillence.png" alt="Surveillance Storage Server" /></a>
+		<a class="he he-double" href="/ip-surveillence-storage-servers">Surveillance Storage</a>
+		<div class="yamm_red_price">Configure From $5,166</div>
+		<p class="yamm-desc">Video server and storage appliances built for video surveillance, access control and video analytics</p>
+	</div>
+				
+	<div class="col-xs-12 col-md-2  yamm-hover">
+		<a class="marketing-image" href="/storage/backup-archive-storage.php"><img src="/img/menu-includes/storage/backup-archive-storage.png" alt="Backup Archive Storage" /></a>
+		<a class="he he-double" href="/storage/backup-archive-storage.php">Backup / Archive Storage</a>
+		<div class="yamm_red_price">Configure From $6,009</div>
+		<p class="yamm-desc"><a href="/veeam-backup-storage-servers">Veeam Backup servers</a> for VMware &amp; Hyper-V, or robust <a href="/backup-archive-storage-servers">Archiving Appliances</a> for cold data</p>
+	</div>
+	
+	<div class="col-xs-12 col-md-2  yamm-hover">
+		<a class="marketing-image" href="/petarack.php"><img src="/img/menu-includes/storage/petabyte-rack.png" alt="Petabyte Rack Storage" /></a>
+		<a class="he he-double" href="/petarack.php">Petabyte Rack</a>
+		<div class="yamm_red_price">Configure From &#163;87,500</div>
+		<p class="yamm-desc">Introducing the Petabyte Rack, 3.6 PetaBytes of RAW Storage in a Half Rack under a single name space or volume</p>
+	</div>
+			
+	</div>           
+</div>
+
+<div class="full_band visible-lg-block">
+	<div class="container">
+    	<div class="row marketing yam-height60">
+			<div class="col-md-3 yamm-hover yam-bord-right">
+				<a class="marketing-image" href="/windows-storage-servers"><img src="/system_files/images/system_attribute_values/168.jpg" alt="Windows Storage Server" /></a>
+				<a class="he" href="/windows-storage-servers">Windows Storage Server</a>
+				<div class="yamm_red_price">Configure From $6,607</div>
+                <p>PC Pro's best storage appliance for 5 years, the CyberStore WSS comes preconfigured with Microsoft Windows Server</p>
+			</div>
+			
+			<div class="col-md-3 yamm-hover yam-bord-right">
+				<a class="marketing-image" href="/jovian-dss-storage-servers"><img src="/system_files/images/system_attribute_values/1001.jpg" alt="Open-E Jovian DSS Storage" /></a>
+				<a class="he" href="/jovian-dss-storage-servers">Open-E Jovian-DSS</a>
+				<div class="yamm_red_price">Configure From $7,215</div>
+                <p>Voted PC Pro's best storage appliance, the CyberStore ZFS range comes preconfigured with Open-E JovianDSS ZFS-based operating system</p>
+			</div>
+			
+			<div class="col-md-3 yamm-hover yam-bord-right">
+				<a class="marketing-image" href="/veeam-backup-storage-servers"><img src="/system_files/images/system_attribute_values/1137.jpg" alt="Veeam Storage" /></a>
+				<a class="he" href="/veeam-backup-storage-servers">Veeam Backup Appliances</a>
+				<div class="yamm_red_price">Configure From $3,602</div>
+                <p>Designed and built for Always-On data backup and availability, our CyberStore Veeam range is built for easy-to-use backup of VMware and Hyper-V</p>
+			</div>
+			
+			 <div class="col-md-3 yamm-hover">
+				<a class="marketing-image" href="/high-availability-cluster-storage-servers"><img src="/system_files/images/system_attribute_values/446.jpg"  alt="HA Cluster Storage" /></a>
+				<a class="he" href="/high-availability-cluster-storage-servers">High Availability Clusters</a>
+				<div class="yamm_red_price">Configure From $675</div>
+                <p>Configure a Broadberry failover cluster, powered by Windows Storage Server or Open-E's award-winning storage operating system</p>
+			</div>
+			
+			</div>
+    </div>
+</div>
+            
+          </div>
+        </li>
+		 
+        <li class="dropdown  yamm-fw"><a href="/rackmount-servers" class="dropdown-toggle" data-toggle="dropdown">Servers <b class="caret"></b></a>
+          <div class="dropdown-menu newNav">
+
+<div class="container">
+
+<h2 class="page-header">
+    <a href="/rackmount-servers" class="btn btn-primary pull-right">View All</a>
+    <span class="">Rackmount Servers <small>Multi-Award-Winning, Enterprise-Grade Servers</small></span>
+</h2>
+
+<div class="row marketing yam-height80">
+
+<div class="col-xs-12 col-md-2  yamm-hover" id="menuat545">
+    <a class="marketing-image" href="/iot-embedded-rackmount-servers"><img src="/img/menu-includes/servers/processor/atom.png" alt="Intel Atom Server"/></a>
+    <a class="he he-double-plus" href="/iot-embedded-rackmount-servers"><small><br></small>IoT Embedded <div>Servers</div></a>
+    <div class="yamm_red_price">Configure From $1,279</div>
+    <ul class="yamm-specs"><li>Low Power Consumption</li><li>Compact servers</li><li>Edge Computing Ready</li><li>Industrial Grade Reliability</li></ul>
+</div>
+
+<div class="col-xs-12 col-md-2  yamm-hover" id="menuat546">
+    <a class="marketing-image" href="/xeon-e-rackmount-servers"><img src="/img/menu-includes/servers/processor/xeon-e.png" alt="Intel Xeon E Server"/></a>
+    <a class="he he-double-plus" href="/xeon-e-rackmount-servers"><small>Intel<sup>&reg;</sup></small> Xeon E <div>Servers</div></a>
+    <div class="yamm_red_price">Configure From $1,591</div>
+    <ul class="yamm-specs"><li>Business Server</li><li>Single Processor</li><li>Up to 8 Cores</li><li>128GB Max RAM</li></ul>
+</div>
+
+<div class="col-xs-12 col-md-2  yamm-hover" id="menuat660">
+    <a class="marketing-image" href="/xeon-6-rackmount-servers"><img src="/img/menu-includes/servers/processor/xeon-sp-gen3.png" alt="Intel Xeon Scalable Dual Processor Server" /></a>
+    <a class="he he-double-plus" href="/xeon-6-rackmount-servers"><small>Intel<sup>&reg;</sup></small> Xeon 6<sup>&reg;</sup><div> Servers</div></a>
+    <div class="yamm_red_price">Configure From $1,783</div>
+     <ul class="yamm-specs"><li>Enterprise Server</li><li>Single / Dual Processor</li><li>Up to 2x 144 Cores</li><li>DDR5 8TB Max RAM</li></ul>
+</div>
+
+<div class="col-xs-12 col-md-2  yamm-hover" id="menuat660">
+    <a class="marketing-image" href="/xeon-scalable-processor-gen4-rackmount-servers"><img src="/img/menu-includes/servers/processor/xeon-sp-gen4.png" alt="Intel Xeon Scalable Dual Processor Server" /></a>
+    <a class="he he-double-plus" href="/xeon-scalable-processor-gen4-rackmount-servers"><small>Intel<sup>&reg;</sup></small> Xeon Scalable<sup>&reg;</sup><div>Gen 5/4 Servers</div></a>
+    <div class="yamm_red_price">Configure From $3,708</div>
+    <ul class="yamm-specs"><li>Enterprise Server</li><li>Single / Dual Processor</li><li>Up to 2x 64 Cores</li><li>DDR5 4TB Max RAM</li></ul>
+</div>
+
+<div class="col-xs-12 col-md-2  yamm-hover" id="menuat642">
+    <a class="marketing-image" href="/amd-epyc-8004-rackmount-servers"><img src="/img/menu-includes/servers/processor/amd-epyc-7003.png" alt="AMD EPYC 7003 Series Dual Processor Server" /></a>
+    <a class="he he-double-plus" href="/amd-epyc-8004-rackmount-servers"><small>AMD<sup>&reg;</sup></small> EPYC<sup>&reg;</sup><div>8004 Servers</div></a>
+    <div class="yamm_red_price">Configure From $2,836</div>
+    <ul class="yamm-specs"><li>Enterprise Server</li><li>Single / Dual Processor</li><li>Up to 2x 32 Cores</li><li>DDR5 3TB Max RAM</li></ul>
+</div>
+
+<div class="col-xs-12 col-md-2  yamm-hover" id="menuat642">
+    <a class="marketing-image" href="/amd-epyc-9004-rackmount-servers"><img src="/img/menu-includes/servers/processor/amd-epyc-9004.png" alt="AMD EPYC 9004 Series Dual Processor Server" /></a>
+    <a class="he he-double-plus" href="/amd-epyc-9004-rackmount-servers"><small>AMD<sup>&reg;</sup></small> EPYC<sup>&reg;</sup><div>9005 Servers</div></a>
+    <div class="yamm_red_price">Configure From $6,163</div>
+    <ul class="yamm-specs"><li>Enterprise Server</li><li>Single / Dual Processor</li><li>Up to 2x 96 Cores</li><li>DDR5 3TB Max RAM</li></ul>
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="full_band visible-lg-block">
+	<div class="container">
+    	<div class="row marketing">
+    	
+    	    <div class="col-md-2 yam-bord-right">
+				<div class="yamm-att-list">
+                    <div style="font-weight: bold; margin: 5px 0px 10px 0px;"><small>Previous Generations:</small></div>
+
+                    <div class="yamm-att-list-item yamm-hover">
+                        <a href="/xeon-e3-v5-rackmount-servers" class="he3">
+                            <img src="/img/menu-includes/servers/xeon-e3.png" class="yamm-prev-gen-icon" alt="Intel Xeon E3 Processor" />
+                            <small>Intel<sup>&reg;</sup></small>Xeon E3<sup>&reg;</sup><span class="servers">Servers</span></a>
+                        <div class="yamm_red_price">Configure From &#163;313</div>
+                    </div>
+
+                    <div class="yamm-att-list-item yamm-hover">
+                        <a href="/xeon-scalable-processors-rackmount-servers" class="he3">
+                            <img src="/img/menu-includes/servers/xeon-scalable-gen2.png" class="yamm-prev-gen-icon" alt="Intel Xeon E5 Scalabale 2nd Gen Servers"/>
+                            Xeon Scalable 2nd Gen</a>
+                        <div class="yamm_red_price">Configure From $1,783</div>
+                    </div>
+
+				</div>
+			</div>
+
+			<div class="col-md-2 yam-bord-right">
+				<div class="yamm-att-list">
+					<div class="yamm-att-list-item yamm-hover"><a href="/short-depth-rackmount-servers" class="he3">Short Depth Servers</a> <div class="yamm_red_price">Configure From $1,021</div></div>
+					<div class="yamm-att-list-item yamm-hover"><a href="/low-power-rackmount-servers" class="he3">Low-Power Servers</a> <div class="yamm_red_price">Configure From $1,021</div></div>
+					<div class="yamm-att-list-item yamm-hover"><a href="/vmware-certified-rackmount-servers" class="he3">VMware Certified</a> <div class="yamm_red_price">Configure From $2,836</div></div>
+					<div class="yamm-att-list-item yamm-hover"><a href="/microcloud-rackmount-servers" class="he3">Microcloud Servers</a> <div class="yamm_red_price">Configure From $12,065</div></div>
+				</div>
+			</div>
+
+            <div class="col-md-3 yam-bord-right yamm-hover">
+                <a class="marketing-image" href="/tesla-gpu-rackmount-servers"><img src="/img/menu-includes/servers/tesla.png" alt="NVIDIA GPU Server" /></a>
+                <a href="/tesla-gpu-rackmount-servers" class="he">NVIDIA<sup>&reg;</sup>  GPU <div>Servers</div></a>
+                <div class="yamm_red_price">Configure From $4,454</div>
+                <p>GPU-accelerated servers delivering massive parallel processing power and high configurability, up to 20x GPU's</p>
+			</div>
+
+			<div class="col-md-3 yam-bord-right yamm-hover">
+				<a class="marketing-image" href="/hpc-multi-node-rackmount-servers"><img src="/img/menu-includes/servers/multi-node.png" alt="Multi-Node Servers" /></a>
+				<a class="he" href="/hpc-multi-node-rackmount-servers">HPC Multi-Node <div>Servers</div></a>
+				<div class="yamm_red_price">Configure From $5,038</div>
+                <p>HPC / Cloud servers built for breakthrough performance, compute density, high-speed networking and I/O</p>
+			</div>
+
+			<div class="col-md-2">
+				<div class="yamm-att-list" id="estore-all-list">
+                    <div class="yamm-att-list-item yamm-hover"><a href="/supermicro-servers"><img src="/img/menu-includes/estores2/images/supermicro.png" title="Supermicro Server Configurator" alt="Supermicro Servers" /></a></div>
+                    <div class="yamm-att-list-item yamm-hover"><a href="/tyan-servers"><img src="/img/menu-includes/estores2/images/tyan.png" title="Supermicro TYAN Configurator" alt="TYAN Servers" /></a></div>
+                    <div class="yamm-att-list-item yamm-hover"><a href="/gigabyte-servers"><img src="/img/menu-includes/estores2/images/gigabyte.png" title="Gigabyte Server Configurator" alt="Gigabyte Servers" /></a></div>
+                    <div class="yamm-att-list-item yamm-hover"><a href="/asus-servers"><img src="/img/menu-includes/estores2/images/asus.png" title="ASUS Server Configurator" alt="ASUS Servers"/></a></div>
+                    <div class="yamm-att-list-item yamm-hover"><a href="/intel-servers"><img src="/img/menu-includes/estores2/images/intel.png" title="ASUS Server Configurator" alt="Intel Servers"/></a></div>
+                </div>
+			</div>
+
+        </div>
+    </div>
+</div>
+
+          </div>
+        </li>
+        
+	<li class="dropdown  yamm-fw"><a href="/workstations" class="dropdown-toggle" data-toggle="dropdown">Workstations <b class="caret"></b></a>
+    <div class="dropdown-menu newNav">
+
+        <div class="container">
+            
+            <h2 class="page-header">
+                <a href="/workstations" class="btn btn-primary pull-right">View All</a>
+                <span class="">High Performance Workstations <small>Ultra-Reliable, Power-Efficient Workstations</small></span>
+            </h2>
+
+            <div class="row marketing">
+                <div class="col-xs-12 col-md-2  yamm-hover">
+                    <a class="marketing-image" href="/configure-mini-pc"><img src="/img/menu-includes/workstations/small_form_factor.png" alt="Ultra Small Form Factor Workstation" /></a>
+                    <a class="he he-double" href="/configure-mini-pc">Ultra Small Form Factor PC's</a>
+                    <div class="yamm_red_price">Configure From $359</div>
+                    <p class="yamm-desc">Revolutionary new PC's, the power of traditional computers small enough to screw to the back of your monitor</p>
+                </div>
+
+                <div class="col-xs-12 col-md-2  yamm-hover">
+                    <a class="marketing-image" href="/office-workstations"><img src="/img/menu-includes/workstations/office-workstations.png" alt="Office Workstation" /></a>
+                    <a class="he he-double" href="/office-workstations">Office Workstations</a>
+                    <div class="yamm_red_price">Configure From $525</div>
+                    <p class="yamm-desc">These everyday workstations are cost-effective and highly configurable to your individual needs</p>
+                </div>
+
+                <div class="col-xs-12 col-md-2  yamm-hover">
+                    <a class="marketing-image" href="/high-performance-workstations"><img src="/img/menu-includes/workstations/high-performance.png" alt="High Performance Workstations" /></a>
+                    <a class="he he-double" href="/high-performance-workstations">High Performance Workstations</a>
+                    <div class="yamm_red_price">Configure From $3,382</div>
+                    <p class="yamm-desc">Super-powerful workstations with the latest Intel Xeon processors and plenty of DDR5 memory</p>
+                </div>
+
+                <div class="col-xs-12 col-md-2  yamm-hover">
+                    <a class="marketing-image" href="/graphics-workstations"><img src="/img/menu-includes/workstations/graphics.png"  alt="Graphics Workstation"/></a>
+                    <a class="he he-double" href="/graphics-workstations">Graphics Workstations</a>
+                    <div class="yamm_red_price">Configure From $1,166</div>
+                    <p class="yamm-desc">Purpose-built for digital content creation and gaming, these workstations boast fantastic graphics</p>
+                </div>
+
+                <div class="col-xs-12 col-md-2  yamm-hover">
+                    <a class="marketing-image" href="/whisper-quiet-silent-workstations"><img src="/img/menu-includes/workstations/silent-workstations.png" alt="Silent Workstations"  /></a>
+                    <a class="he he-double" href="/whisper-quiet-silent-workstations">Virtually Silent Workstations</a>
+                    <div class="yamm_red_price">Configure From $832</div>
+                    <p class="yamm-desc">Whisper-quiet workstations meticulously designed for noise-sensitive environments</p>
+                </div>
+
+                <div class="col-xs-12 col-md-2  yamm-hover">
+                    <a class="marketing-image" href="/gpu-workstations"><img src="/img/menu-includes/workstations/gpu.png" alt="NVIDIA GPU Workstations" /></a>
+                    <a class="he he-double" href="/gpu-workstations">GPU Optimised Workstations</a>
+                    <div class="yamm_red_price">Configure From $3,724</div>
+                    <p class="yamm-desc">For the ultimate in number crunching, our GPU workstations can be configured with up to 6x NVIDIA GPU Cards</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="full_band visible-lg-block">
+            <div class="container">
+                <div class="row marketing yam-height60">
+                    <div class="col-md-3 yamm-hover yam-bord-right">
+                        <a class="marketing-image" href="/intel-core-i5-workstations"><img src="/system_files/images/system_attribute_values/140.jpg" alt="Intel Core i3, i5, i7 Workstations" /></a>
+                        <a class="he" href="/intel-core-i5-workstations">Intel Core Workstations</a>
+                        <div class="yamm_red_price">Configure From $606</div>
+                        <p>The new standard for PC performance has arrived - 14th Generation Intel Core processors! Blazingly fast and feature packed</p>
+                    </div>
+
+                    <div class="col-md-3 yamm-hover yam-bord-right">
+                        <a class="marketing-image" href="/intel-core-x-workstations"><img src="/system_files/images/system_attribute_values/142.jpg" alt="Intel Core X Workstation" /></a>
+                        <a class="he" href="/intel-core-x-workstations">Intel Core W Workstations</a>
+                        <div class="yamm_red_price">Configure From $2,021</div>
+                        <p>From gaming to multimedia, unleash maximised performance for your most intensive jobs and leave the competition behind</p>
+                    </div>
+
+                    <div class="col-md-3 yamm-hover yam-bord-right">
+                        <a class="marketing-image" href="/intel-xeon-sp-workstations"><img src="/system_files/images/system_attribute_values/311.jpg" alt="Intel Xeon SP Workstation" /></a>
+                        <a class="he" href="/intel-xeon-sp-workstations">Intel Xeon SP Workstations</a>
+                        <div class="yamm_red_price">Configure From $3,427</div>
+                        <p>Intel Xeon SP powered workstations can be configured for the most high demand applications such as HPC.</p>
+                    </div>
+
+                    <div class="col-md-3 yamm-hover">
+                        <a class="marketing-image" href="/amd-epyc-workstations"><img src="/system_files/images/system_attribute_values/661.jpg" alt="AMD EPYC Workstation" /></a>
+                        <a class="he" href="/amd-epyc-workstations">AMD EPYC Workstations</a>
+                        <div class="yamm_red_price">Configure From $3,382</div>
+                        <p>The CyberStation EPYC range of high-performance workstations are built for flexibility, performance and security</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</li>	
+	<li class="dropdown">
+
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+	<li><a href="/blade-servers">Blade Servers</a></li><li><a href="/10gbe-networking">10GbE Networking</a></li><li><a href="/portable-workstations">Portable Workstations</a></li><li><a href="/oem-appliances">Custom OEM Appliances</a></li><li><a href="/cctv-appliances">IP Surveillance Storage (NVR)</a></li><li><a href="/petarack.php">PetabyteRack</a></li><li><a href="/storage/onapp-intel-hybrid-cloud-storage.php">OnApp Hybrid Cloud Solution</a></li><li class="divider">&nbsp;</li><li role="presentation" class="dropdown-header">Server and Storage Solutions</li><li><a href="/storage-solutions.php">View our Server and Storage Solutions</a></li><li><a href="/verticals.php">Solutions by Markets</a></li></ul></li><li class="dropdown">
+
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown">AI Solutions<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+			<li><a href="/ai-inference-rackmount-servers">AI Inference</a></li>
+<li><a href="/ai-training-rackmount-servers">AI Training</a></li>
+<li><a href="/ai-storage-rackmount-servers">AI Storage</a></li>
+<li><a href="/ai-networking-rackmount-servers">AI Networking</a></li>	
+<li><a href="/ai-software-rackmount-servers">AI Software</a></li>			
+		</ul>
+	</a>
+	</li>
+	<li class="dropdown">
+
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Quick Ship<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+			<li><a href="/quickship-rackmount-servers">Quick Ship Servers</a></li>
+		<li><a href="/instock-rackmount-servers">In Stock Servers</a></li>
+		</ul>
+	</a>
+	</li>
+	
+        </ul>
+        
+	<form class="navbar-form navbar-right visible-lg"><a href="/login.php" class="btn btn-success">Sign In</a>
+	</form>
+	
+	<ul class="nav navbar-nav pull-right">
+		<li class="dropdown">
+			<a href="/contact.php" class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+			  <li><a href="/contact.php">Contact Us</a></li>
+			  <li><a href="/company.php">About Us</a></li>
+			  <li><a href="/support.php">Support</a></li>
+			  <li class="divider">&nbsp;</li>
+			  <li><a href="/account.php">My Account &amp; Quotes</a></li>
+			</ul>
+		</li>
+		
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/system_files/images/site_flags/2.jpg" height="13" /> <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+			  <li><a href="https://www.broadberry.co.uk"><img src="/system_files/images/site_flags/1.jpg" height="13" /> - Browse Broadberry UK</a></li>
+			  
+			  <li><a href="https://www.broadberry.de"><img src="/system_files/images/site_flags/3.jpg" height="13" /> - Browse Broadberry DE</a></li>
+			  <li><a href="https://www.broadberry.eu"><img src="/system_files/images/site_flags/4.jpg" height="13" /> - Browse Broadberry EU</a></li>
+			  <li><a href="https://www.broadberry.fr"><img src="/system_files/images/site_flags/5.jpg" height="13" /> - Browse Broadberry FR</a></li>
+			  <li><a href="https://www.broadberry.com.au"><img src="/system_files/images/site_flags/6.jpg" height="13" /> - Browse Broadberry AUS</a></li>
+			  <li><a href="https://www.broadberry.co.za"><img src="/system_files/images/site_flags/7.jpg" height="13" /> - Browse Broadberry ZA</a></li>
+			  
+			</ul>
+		</li>
+	</ul>
+	 
+	
+      </div><!-- /.navbar-collapse -->	
+	   </div>
+</nav>
+<div class="colour_grey">
+  <div class="container" style="position: relative">
+
+<h1 class="page-header">
+    NVIDIA DGX B200  <sup>&reg;</sup> <small></small>
+</h1>
+    <div class="row">
+      <div class="col-md-6" id="leftTopBox">
+<p class="lead">NVIDIA DGX B200 with 8x NVIDIA Blackwell GPUs, Dual Intel&reg; Xeon&reg; Platinum 8570 Processors, 4TB DDR5 Memory, 2x 1.92TB NVMe M.2 &amp; 8x 3.84TB NVMe SSDs.</p><ul class="features_ul fa-ul"><li><i class="fa-li fa fa-check"></i>Built with eight NVIDIA Blackwell GPUs</li><li><i class="fa-li fa fa-check"></i>GPU Memory 1,440GB total, 64TB/s HBM3e bandwidth</li><li><i class="fa-li fa fa-check"></i>72 petaFLOPS FP8 training and 144 petaFLOPS FP4 inference</li><li><i class="fa-li fa fa-check"></i>NVIDIA networking</li><li><i class="fa-li fa fa-check"></i>Foundation of NVIDIA DGX BasePOD and NVIDIA DGX SuperPOD</li><li><i class="fa-li fa fa-check"></i>Includes NVIDIA AI Enterprise and NVIDIA Base Command™ software</li></ul>      </div>
+      <div class="col-md-6" id="rightTopBox">
+      <div>
+
+<div id="image_gal" class="carousel slide has_gallery">
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+	<div class="item active">
+      <img src="/system_files/images/system_images/cut/nvidia-dgx-h100.jpg" class="main_image">
+    </div>
+	
+	<div class="item">
+      <img src="/system_files/images/gallery_images/cut/ipmi-view.jpg" alt="">
+    </div>
+	
+	<div class="item">
+      <img src="/system_files/images/gallery_images/cut/ipmi-view-2.jpg" alt="">
+    </div>
+	
+	<div class="item">
+      <img src="/system_files/images/gallery_images/cut/ipmi-view-3.jpg" alt="">
+    </div>
+	
+	<div class="item">
+      <img src="/system_files/images/gallery_images/cut/ipmi-view-4.jpg" alt="">
+    </div>
+	
+  </div>
+  
+  <!-- Indicators -->
+  <div class="carousel-indicators"><div class="gal_thumb_hold" data-target="#image_gal" data-slide-to="0" style="background-image: url('/system_files/images/system_images/cut/nvidia-dgx-h100.jpg');"></div>
+<div class="gal_thumb_hold" data-target="#image_gal" data-slide-to="1" style="background-image: url('/system_files/images/gallery_images/cut/ipmi-view.jpg');"></div>
+<div class="gal_thumb_hold" data-target="#image_gal" data-slide-to="2" style="background-image: url('/system_files/images/gallery_images/cut/ipmi-view-2.jpg');"></div>
+<div class="gal_thumb_hold" data-target="#image_gal" data-slide-to="3" style="background-image: url('/system_files/images/gallery_images/cut/ipmi-view-3.jpg');"></div>
+<div class="gal_thumb_hold" data-target="#image_gal" data-slide-to="4" style="background-image: url('/system_files/images/gallery_images/cut/ipmi-view-4.jpg');"></div>
+
+  </div>
+  <!-- Indicators -->
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#image_gal" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#image_gal" data-slide="next">
+    <span class="icon-next"></span>
+  </a>
+</div>
+
+<script type="text/javascript">
+$(window).load(function() {
+
+	function vertically_align_gallery_imgs()
+	{
+		$(".carousel-inner .item").each(function(index)
+		{
+			var spare = $("#image_gal").height() - $(this).height();
+			var margin_top = spare / 2;
+			//alert("Spare: "+spare+" | Image Height: "+$(this).height()+" | Margin Top to "+margin_top);
+			$(this).css("margin-top", margin_top+"px");
+		})
+	}
+
+	$('#image_gal').on('slide.bs.carousel', function () {
+		//Set Image Gallery Height to 350px
+		$("#image_gal").animate( { height:"350px" }, { queue:false, duration:100, complete: vertically_align_gallery_imgs() });
+	})
+
+});
+</script>
+
+
+
+
+
+
+
+        </div>
+
+		  
+	  </div>
+    </div>
+  </div>
+  <!-- /.container -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <hr class="divider-blank">
+
+
+
+
+</div>
+<!-- /colour -->
+
+<hr class="divider-blank">
+
+<div class="container">
+	<ol class="breadcrumb">
+	  <li><a href="/">Home</a></li>
+	  <li><a href="/rackmount-servers">Servers</a></li>
+	  <li><a href="/xeon-scalable-processor-gen4-rackmount-servers">Intel Xeon Scalable Processor Gen 5</a></li>
+	  <li class="active">NVIDIA DGX B200  <sup>&reg;</sup></li>
+	</ol>
+	</div>
+<div class="container">
+    <div class="row" style="position: relative;">
+    <div class="col-md-9">
+      <div class="tabbable" id="configurator_tabs">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#pane1" data-toggle="tab">Configure</a></li>
+          <li class="hidden-xs"><a href="#pane2" data-toggle="tab">Specifications</a></li>
+          <li><a href="#pane3" data-toggle="tab">Features</a></li>
+          <li><a href="#pane4" data-toggle="tab">Resources</a></li>
+          <li><a href="#pane5" data-toggle="tab">Order</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="pane1" class="tab-pane active">
+            
+                <form method="get" id="cform">
+                    <div id="change_configurator">
+                        <p align="center"> <img src="/img/ajax_loaders/bar.gif" /> <br /> <b>Loading Configurator... </b> </p>
+                    </div>
+                    <div class="disclaimer"><p class="disclaimer">Prices for products are subject to change without notice and Prices do not include shipping and/or handling charges or applicable taxes.</p></div>
+                </form>          </div>
+          
+          <div id="pane2" class="tab-pane hidden-xs">
+            <h3>NVIDIA DGX B200   Specifications</h3>
+            <div id="change_system_specs"></div>
+          </div>
+          
+          <div id="pane3" class="tab-pane">
+            <h2 class="page-header">NVIDIA DGX B200  <sup>&reg;</sup> Features</h2><div class="row marketing height100">
+	<div class="col-md-3"> 
+		<a class="marketing-image hidden-xs"><img src="/system_files/images/featurette_images/warranty.jpg" /></a>
+		<h2>3 Years Warranty as Standard</h2>
+		<p>Buy with confidence knowing all Broadberry CyberServe rack servers are backed up by our 3 year warranty, with further warranty upgrade options available.</p>
+    </div>
+	<div class="col-md-3"> 
+		<a class="marketing-image hidden-xs"><img src="/system_files/images/featurette_images/cyberserve-worldwide.jpg" /></a>
+		<h2>Trusted CyberServe Server Platform</h2>
+		<p>The Broadberry range of CyberServe<sup>&reg;</sup> rackmount are trusted as the server of choice for thousands of companies from SMBs to enterprise's across the globe.</p>
+    </div>
+	<div class="col-md-3"> 
+		<a class="marketing-image hidden-xs"><img src="/system_files/images/featurette_images/gpuoptimisedserver-smaller.jpg" /></a>
+		<h2>Based on Tesla GPU</h2>
+		<p>GPU SuperComputing servers offer massive processing power and HPC performance, considerably accelerating applications. </p>
+    </div>
+	<div class="col-md-3"> 
+		<a class="marketing-image hidden-xs"><img src="/system_files/images/featurette_images/nvmedrive-smaller.jpg" /></a>
+		<h2>Supports NVMe Drives</h2>
+		<p>This system can be configured with NVMe drives, which are capable of significantly better performance than SATA and SAS.</p>
+    </div></div> <div class="row marketing height100">
+	<div class="col-md-3"> 
+		<a class="marketing-image hidden-xs"><img src="/system_files/images/featurette_images/2-5in-drives-smaller.jpg" /></a>
+		<h2>Small Form Factor Storage</h2>
+		<p>The NVIDIA DGX B200   boasts high density storage and ultimate energy efficiency, catering for up to 0x High-Performance 2.5" SSD or Hard Drives</p>
+    </div>
+	<div class="col-md-3"> 
+		<a class="marketing-image hidden-xs"><img src="/system_files/images/featurette_images/ram-smaller.jpg" /></a>
+		<h2>Configure with up to 0GB RAM</h2>
+		<p>Ready for the most demanding enterprise applications, the Broadberry NVIDIA DGX B200   can be configured with up to 0   memory modules.</p>
+    </div></div><hr class="featurette-divider" />          </div>
+          
+           <div id="pane4" class="tab-pane" style="min-height: 500px;">
+           	<h3 class="page-header"><a name="RESOURCES" id="RESOURCES"></a>Product Datasheets and Case Studies</h3>
+			<div class="pdf_thumb_hold row">
+                    <div class="col-md-4 col-lg-3">
+                        <a href="/system_files/datasheets/HMRC AI Faruad Server.pdf" target="blank" style="margin-right: 11px;">
+                            <img src="/system_files/datasheet_thumbnails/52.jpg" class="img-responsive"  />
+                            <strong>Artificial Intelligence Server for HMRC Fraud Detection <span class="pdf_thumb_hold_filesize">6.9MB</span></strong>
+                            <p class="text-center"><span class="label label-info">Case Study</span></p>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-4 col-lg-3">
+                        <a href="/system_files/datasheets/Samsung-GPU-Server.pdf" target="blank" style="margin-right: 11px;">
+                            <img src="/system_files/datasheet_thumbnails/51.jpg" class="img-responsive"  />
+                            <strong>Ultra-Performance AI Server for Samsung <span class="pdf_thumb_hold_filesize">5.3MB</span></strong>
+                            <p class="text-center"><span class="label label-info">Case Study</span></p>
+                        </a>
+                    </div>
+                    </div>           </div>
+           
+            <div id="pane5" class="tab-pane" style="min-height: 500px;">
+            	
+				<a id="price_guarantee" name="PRICE_GUARANTEE"></a>
+				<img src="/img/icons/price_guarantee_2.png" class="pull-right-pad" width="160" /><h3>Broadberry Price Guarantee</h3>
+				<p>We're so confident in our great value solutions, If you find a cheaper genuine price for the same specifications elsewhere we'll match it.</p>
+				 <hr class="featurette-divider" />
+				<h3>How to order</h3>
+<p>You can order by either calling us and speaking to one of our experienced  US technical sales team, or pressing <a href="Javascript: email_system_specs(\'ask_email\', \'graham\');">"Email Quote"</a>.</p>
+
+<p><img src="/img/boxes/full_row2_half/viewAllProductType/servers_us_full.jpg" /></p>
+           </div>
+          
+          
+        </div>
+        <!-- /.tab-content --> 
+        
+      </div>
+      <!-- /.tabbable --> 
+      <div id="close_sticky_anchor"></div>
+
+    </div>
+    <!-- /.9 col -->
+    
+    <div class="col-md-3">
+		<div id="rightCol" class="bs-docs-sidebar">
+          <div id="change_prices"></div>
+          <div id="change_power"></div>
+      </div>
+
+
+        <script type="text/javascript">
+
+            // Right Col Stick =================================================================================================
+            rightCol_offset_top = $('#rightCol').offset().top - 110;
+            stop_offset_top = $('#close_sticky_anchor').offset().top - $('#rightCol').outerHeight();
+            //alert(stop_offset_top);
+
+            $('.logoHold').tooltip();
+
+            function check_filter_scroll()
+            {
+                if( $(window).scrollTop() > rightCol_offset_top && $(window).scrollTop() < stop_offset_top ) {
+                    $('#rightCol').attr("class", "stick-right");
+                    //console.log("Add Class Stick Right");
+                } else if($(window).scrollTop() > stop_offset_top)  {
+                    $('#rightCol').attr("class", "stick-right-bottom");
+                } else {
+                    $('#rightCol').attr("class", "");
+                }
+            }
+
+            // Sockets Stick =======================================================================================================
+            /* Some systems dont have sockets therefore there is no change_sockets_repeat*/
+            if($('#change_sockets_repeat').length){
+                sockets_offset_top = $('#change_sockets_repeat').offset().top - 50;
+            } else {
+                sockets_offset_top = 0;
+            }
+
+            function check_sockets_scroll()
+            {
+                if( $(window).scrollTop() > sockets_offset_top )  {
+                    $('#change_sockets_repeat').addClass("stick-top");
+                } else {
+                    $('#change_sockets_repeat').removeClass("stick-top");
+                }
+            }
+
+            //Aslo update stop offset top on tab change
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+                stop_offset_top = $('#close_sticky_anchor').offset().top - $('#rightCol').outerHeight();
+                check_filter_scroll();
+            })
+
+            // Generic on Scroll to control ===========================================================================================
+            $(window).on("scroll", function(){
+                if ($(window).width() > 992) {
+                    check_filter_scroll();
+                }
+                check_sockets_scroll();
+            });
+
+        </script>
+      
+
+    </div><!-- /.3 col -->
+  </div><!-- /.#rightcol -->
+  </div><!-- /.row -->
+
+<hr class="featurette-divider">
+<div class="container">
+    <!-- Why Buy Broadberry -->
+
+<div class="">
+    <div class="container">
+        <h2 class="text-center">Why Buy Broadberry</h2>
+
+        <div class="why_buy" style="margin-top: 0px; padding-top: 10px;">
+        <div class="row">
+         
+    <div class="col-md-3 why_buy_hold">
+        <p class="grid-item-logo"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></p>
+        <p class="h">Leading Security</p>
+        <p>We take security seriously. Broadberry servers offer the latest technologies including TPM, self-encryption and military-grade FIPS certification.</p>
+    </div>
+    
+    <div class="col-md-3 why_buy_hold">
+        <p class="grid-item-logo"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></p>
+        <p class="h">Best Price Guarantee</p>
+        <p>Broadberry offer a Best Price Guarantee on all server and storage solutions. You won't find the same spec cheaper anywhere else.</p>
+    </div>
+    
+    <div class="col-md-3 why_buy_hold">
+        <p class="grid-item-logo"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></p>
+        <p class="h">Ease of Management</p>
+        <p>Feature-rich IPMI with out of band management and redfish API to allow easy management and monitoring of your Broadberry systems.</p>
+    </div>
+    
+    <div class="col-md-3 why_buy_hold">
+        <p class="grid-item-logo"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></p>
+        <p class="h">Customer Service</p>
+        <p>Unlike other leading manufacturers, Broadberry assign all customers a dedicated account manager with direct access. There’s no call centres!</p>
+    </div>
+    </div><div class="row">
+    <div class="col-md-3 why_buy_hold">
+        <p class="grid-item-logo"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></p>
+        <p class="h">Trouble-Free Integration</p>
+        <p>Our trained engineers will pre-configure your server to your requirements, and are here to help over the phone when your server arrives.</p>
+    </div>
+    
+    <div class="col-md-3 why_buy_hold">
+        <p class="grid-item-logo"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></p>
+        <p class="h">3-Year Warranty</p>
+        <p>All Broadberry solutions come with a comprehensive 3-5 year warranty, with a range of upgraded warranty options available.</p>
+    </div>
+    
+    <div class="col-md-3 why_buy_hold">
+        <p class="grid-item-logo"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></p>
+        <p class="h">Easy Installation</p>
+        <p>From clip-in slide rails to pre-configured RAID and pre-installed OS, our engineers ensure installation fast and simple!</p>
+    </div>
+    
+    <div class="col-md-3 why_buy_hold">
+        <p class="grid-item-logo"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></p>
+        <p class="h">Standardisation</p>
+        <p>Our open-platform approach offers high compatibility with your existing infrastructure and no vendor-lockin.</p>
+    </div>
+    </div><div class="row">
+    <div class="col-md-3 why_buy_hold">
+        <p class="grid-item-logo"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></p>
+        <p class="h">Flexibility</p>
+        <p>Every business is different. Configure every element of your solution to your requirements using our powerful online configurator.</p>
+    </div>
+    
+    <div class="col-md-3 why_buy_hold">
+        <p class="grid-item-logo"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></p>
+        <p class="h">Scalability</p>
+        <p>Our servers are built to grow with your organization, whether that be by purchasing additional drives, or additional scale-out nodes.</p>
+    </div>
+    
+    <div class="col-md-3 why_buy_hold">
+        <p class="grid-item-logo"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></p>
+        <p class="h">Innovation</p>
+        <p>Since the introduction of the first Broadberry PC in 1989, we’ve continually innovated and responded to emerging technologies and markets.</p>
+    </div>
+    
+    <div class="col-md-3 why_buy_hold">
+        <p class="grid-item-logo"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></p>
+        <p class="h">GSA Schedule Holder</p>
+        <p> We offer rapid GSA scheduling for custom configurations. For specific hardware requirements we can have your configuration posted on the GSA Schedule within 2-4 weeks.</p>
+    </div>
+           
+        </div>
+    </div>
+        
+</div>
+</div>
+<!-- Why Buy Broadberry -->
+</div>
+
+<div class="hidden-xs"><div></div><hr class="divider-blank" /> <hr class="divider-blank"/>
+<div class="container">
+    <h2 class="page-header">NVIDIA GPU Cards <small>Configure your Broadberry GPU-Optimised Server with the right GPU card</small> </h2>
+    <table class="table table-striped text-center">
+    <thead>
+        <tr>
+        <th class="text-center" width="10%"></th>
+        <th class="text-center" width="10%"><div style="margin-top: 15px;">NVIDIA L4</div></th>
+        <th class="text-center" width="10%"><div style="margin-top: 0px;">NVIDIA RTX6000 ADA</div></th>        
+        <th class="text-center" width="10%"><div style="margin-top: 15px;">NVIDIA L40S</div></th>
+        <th class="text-center" width="10%"><div style="margin-top: 15px;">NVIDIA H100</div></th>
+        <th class="text-center" width="10%"><div style="margin-top: 15px;">NVIDIA GH200</div></th>
+      </tr>
+      </thead>
+      
+      </tr>
+    <tr>
+    
+        <td class="leftHead">Application</td>
+        <td>Virtualised Desktop, Graphical and Edge Applications</td>
+        <td>High-end Design, Real-time Rendering, High-performance Compute Workflows</td>
+        <td>Multi-modal Generative AI, and Graphics and Videos Workflows</td>
+        <td>LLMs Inference, AI and Data Analytics</td>
+        <td>Generative AI, LLMs Inference, and Memory Intensive Applications</td>
+    <tr>
+        <td class="leftHead">Architecture</td>
+        <td>Ada Lovelace</td>
+        <td>Ada Lovelace</td>
+        <td>Ada Lovelace</td>
+        <td>Hopper</td>
+        <td>Grace Hopper</td>
+      </tr>
+    <tr>
+        <td class="leftHead">SMs</td>
+        <td>60</td>
+        <td>142</td>
+        <td>142</td>
+        <td>114</td>
+        <td>144</td>
+      </tr>
+    <tr>
+        <td class="leftHead">CUDA Cores</td>
+        <td>7,424</td>
+        <td>18,176</td>
+        <td>18,176</td>
+        <td>18,432</td>
+        <td>18,432</td>
+      </tr>
+    <tr>
+        <td class="leftHead">Tensor Cores</td>
+        <td>240</td>
+        <td>568</td>
+        <td>568</td>
+        <td>640</td>
+        <td>576</td>
+      </tr>
+    <tr>
+        <td class="leftHead">Frequency</td>
+        <td>795 Mhz</td>
+        <td>915 MHz</td>
+        <td>1,110 Mhz</td>
+        <td>1,590 MHz</td> 
+        <td>1,830 MHz</td>       
+      </tr>
+    <tr>
+        <td class="leftHead">FP32 TFLOPs</td>
+        <td>30.3</td>
+        <td>-</td>
+        <td>91.6</td>
+        <td>51</td>  
+        <td>67</td>      
+      </tr>
+    <tr>
+        <td class="leftHead">FP16 TFLOPs</td>
+        <td>242</td>
+        <td>91.1</td>
+        <td>733</td>
+        <td>1,513</td>
+        <td>1,979</td>
+      </tr>
+    <tr>
+        <td class="leftHead">FP8 TFLOPs</td>
+        <td>485</td>
+        <td>-</td>
+        <td>1,466</td>
+        <td>3,026</td>
+        <td>3,958</td>
+      </tr>
+    <tr>
+        <td class="leftHead">Cache</td>
+        <td>48 MB</td>
+        <td>96 MB</td>
+        <td>48 MB</td>
+        <td>50 MB</td>
+        <td>60 MB</td>
+      </tr>
+    <tr>
+        <td class="leftHead">Max. Memory</td>
+        <td>24 GB</td>
+        <td>48 GB</td>
+        <td>48 GB</td>
+        <td>80 GB</td>
+        <td>512 GB</td>
+      </tr>
+    <tr>
+        <td class="leftHead">Memory B/W</td>
+        <td>300 GB/s</td>
+        <td>960 GB/s</td>
+        <td>864 GB/s</td>
+        <td>2,000 Gb/s</td>
+        <td>546 GB/s</td>
+      </tr>
+  </table>
+</div>
+
+  </div>
+  
+  <hr class="divider-blank"/>
+ </div>
+
+
+
+<div style="margin-bottom: -85px;">  
+	<div class="colour_grey full_band_call_us" style="text-align:center">
+  <div class="container">
+    <h2 class="featurette-heading"> Call a Broadberry Storage &amp; Server Specialist Now: <span class="tel">1 800 496 9918</span> </h2>
+    </p>
+  </div>
+</div>
+	  
+</div>
+
+
+<div class="footer">
+  <div class="container">
+
+<div class="clearfix" style="margin-bottom: 30px;">
+    <img src="/img/logos/iso/bottom_2.jpg" class="pull-left" alt="ISO 9001 Certified"/>
+    <img src="/img/logos/partner-logos/whole.png" class="img-responsive pull-right hidden-xs" style="display:block; margin-left:auto; margin-bottom:45px" alt="Broadberry partners, Intel, AMD, NVIDIA" />
+</div>
+
+    <div class="row">
+      <div class="col-md-4">
+        
+		<h3><i class="fas fa-comments"></i> Latest News</h3>
+		<p>
+		<strong><a href="/blog/news/">Broadberry  Data Systems Allows Buyers to Test Drive New NVIDIA GPU-accelerated Servers</a></strong><br>
+		Broadberry  Data Systems Allows Buyers to Test Drive New NVIDIA GPU-accelerated Servers
+London, UK– Jan 26, 2021  – Broadberry Data Systems, one of the U.K.’s leading providers of customised  s
+		</p>
+		
+        <a href="/blog/news/" class="btn btn-sm btn-default">More News</a>
+        <h3><i class="fa fa-sitemap"></i> links</h3>
+        <p>
+            
+            <a href="/support.php">returns</a> 
+            / <a href="/account.php">my account</a> 
+            / <a href="/contact.php">contact us</a> 
+            / <a href="/new_accounts.php">new accounts</a>
+        </p>
+      </div>
+      <div class="col-md-8">
+        <h3><i class="fa fa-quote-left"></i> Latest Reviews</h3>
+          <div class="row">
+              <div class="col-md-6">
+
+	<p>
+		<strong><a href="/blog/reviews/view_review.php?review_id=49">CyberServe Ryzen RY1-104A</a></strong><br>
+		A core-heavy Ryzen rack server at an entry-level price ...<br>
+		<small><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>   |  April 01, 2024</small>
+		<div class="clearfix"></div>
+	</p>
+	
+	<p>
+		<strong><a href="/blog/reviews/view_review.php?review_id=48">CyberServe Xeon SP1-102G NVMe G5</a></strong><br>
+		A small, powerful, and affordable rack server. 
+Broadberry gets edgy with a great value rack server...<br>
+		<small><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>   |  December 01, 2023</small>
+		<div class="clearfix"></div>
+	</p>
+	</div> <div class="col-md-6">
+	<p>
+		<strong><a href="/blog/reviews/view_review.php?review_id=43">Intel M50CYP2UR208 Coyote Pass Server - 8 Drive Bays. SAS/SATA/NVME</a></strong><br>
+		A mighty server package for the price with a big helping of blisteringly fast Intel Optane 200 PMEMs...<br>
+		<small><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>   |  August 02, 2021</small>
+		<div class="clearfix"></div>
+	</p>
+	
+	<p>
+		<strong><a href="/blog/reviews/view_review.php?review_id=44">Broadberry CyberStore Xeon SP2-490-G3</a></strong><br>
+		A big storage appliance for big data with a powerful hardware package and great performance...<br>
+		<small><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>   |  December 05, 2022</small>
+		<div class="clearfix"></div>
+	</p>
+	        </div>
+      </div>
+
+      <p><a href="/blog/reviews/" class="btn btn-sm btn-default">More Reviews</a></p>
+
+      </div>
+      <div class="col-md-4 hidden-xs">
+        <a href="https://twitter.com/Broadberry" target="_blank"><i class="fab fa-twitter"></i> Broadberry Data Systems</a>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+  <div class="bottom-tel">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"> <a href="/contact.php" class="btn btn-success btn-lg btn-block" style="margin-top: 30px;">Contact Us</a> </div>
+        <div class="col-md-8">
+
+        
+            <div class="big-tel">
+                <h3><img src="/system_files/images/site_flags/2.jpg" class="" /> &nbsp;Call Our US Sales Team Now</h3>
+                1 800 496 9918
+            </div>
+                        
+        </div>
+      </div>
+    </div>
+    <!-- /.container --> 
+  </div>
+  <div class="container"> 
+    <footer>
+      <p class="pull-right">
+        &copy; 2026 Broadberry Data Systems LLC        &nbsp;&nbsp;<a href="Javascript: scroll_to('body');">Back to top</a>
+      </p>
+        
+            <p><img src="/img/icons/payment-methods-compact/2.png" class="img-responsive" alt="Payment methods. VISA, Mastercard, American Express, Bank Transfer." /></p>
+            
+    </footer>
+  </div>
+</div>
+
+
+<!-- No consent required — GA4 loads directly -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-02W0YC87NB"></script>
+<script>
+    gtag("js", new Date());
+    gtag("config", "G-02W0YC87NB", { anonymize_ip: true });
+    gtag("config", "AW-1071919979");
+</script>
+
+
+
+<script type="text/javascript">
+	startup();
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+	<div class="modal-header">
+	  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	  <h4 class="modal-title">Email Quote</h4>
+	</div>
+	<form role="form" id="email_quote_form">
+
+	<input type="hidden" name="asc" value="" />
+
+	<div class="modal-body">
+		<p align="center"><img src="/system_files/images/system_images/nvidia-dgx-h100.jpg" class="img-responsive" style="max-height: 300px" /></p>
+		  
+		  <div class="form-group" id="email_email_group">
+			<label for="email_email_address" class="control-label">Email Address</label>
+			<input type="email" class="form-control" id="email_email_address" name="email_address" placeholder="name@mycompany.com">
+		  </div>
+		  
+		  <div class="row">
+         
+          <div class="form-group col-md-6">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+		  </div>
+		  
+		  <div class="form-group col-md-6">
+			<label for="phone">Telephone Number</label>
+			<input type="tel" class="form-control" id="phone" name="phone" placeholder="020 8997 6000">
+		  </div>
+          
+         </div>
+		 		
+		 
+<div class="aniversary">
+<div class="row"> 
+  <div class="col-md-4"><img src="/img/25year-anniversary/25-icon_2.png" class="img-responsive" /></div>
+  <div class="col-md-8">
+	<p>Since 1989 we've supplied server and storage solutions to the worlds biggest brands, year-after-year beating the likes of Dell<sup>&reg;</sup> and HP<sup>&reg;</sup> as the best solutions on the market. <br><br> We look forward to working with you too.</p>
+	</div>
+</div>
+</div>
+  
+<div class="quote_popup_disclaimer">
+<div class="checkbox">
+  <label>
+	  <input type="checkbox" id="agree_terms" name="agree_terms" value="1" /> By signing up to our website, you agree to our <a href="/terms-conditions.php" target="_blank">Terms &amp; Conditions</a> and <a href="/privacy.php" target="_blank">Privacy Policy</a>.
+  </label>
+</div>
+<div class="checkbox">
+  <label>
+	  <input type="checkbox" id="agree_contact_email" name="agree_contact_email" value="1" /> Keep me updated on news and offers via email.
+  </label>
+</div>
+<div class="checkbox">
+  <label>
+	  <input type="checkbox" id="agree_contact_phone" name="agree_contact_phone" value="1" /> Keep me updated on news and offers via phone.
+  </label>
+</div>
+</div>
+
+        
+        <div id="email_quote_return"></div>
+        <div id="fb-root"></div>
+        
+	</div>
+	<div class="modal-footer">
+	  <button type="button" class="btn btn-primary" onclick="email_system_specs_bootstrap();">Email My Quote</button>
+	</div>
+	
+	</form>
+  
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="pdfModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+	<form role="form" id="create_pdf_form">
+	<div class="modal-body">
+		<p align="center"><img src="/system_files/images/system_images/nvidia-dgx-h100.jpg" class="img-responsive" style="max-height: 250px" /></p>
+		  
+		<div class="form-group" id="pdf_email_group">
+			<label for="pdf_email_address" class="control-label">Email Address<span class="label label-warning"><i class="fa fa-asterisk"></i> Required</span></label>
+			<input type="email" class="form-control" name="email_address" id="pdf_email_address" placeholder="Enter email" />
+		</div>
+		  
+		<div class="row">
+		  
+		  <div class="form-group col-md-6">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+		  </div>
+		  
+		  <div class="form-group col-md-6">
+			<label for="phone">Telephone Number</label>
+			<input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone Number">
+		  </div>
+		  
+		</div>
+
+		<div id="create_pdf_return"></div>
+
+        <div id="pdf_progress" class="progress-container" style="display: none;">
+            <p>Generating PDF Quote...</p>
+            <div class="progress progress-striped active">
+                <div class="progress-bar progress-bar-success" style="width:0%"></div>
+            </div>
+        </div>
+		
+		<div class="hidden-xs">
+<div class="aniversary">
+<div class="row"> 
+  <div class="col-md-4"><img src="/img/25year-anniversary/25-icon_2.png" class="img-responsive" /></div>
+  <div class="col-md-8">
+	<p>Since 1989 we've supplied server and storage solutions to the worlds biggest brands, year-after-year beating the likes of Dell<sup>&reg;</sup> and HP<sup>&reg;</sup> as the best solutions on the market. <br><br> We look forward to working with you too.</p>
+	</div>
+</div>
+</div>
+  
+<div class="quote_popup_disclaimer">
+<div class="checkbox">
+  <label>
+	  <input type="checkbox" id="agree_terms" name="agree_terms" value="1" /> By signing up to our website, you agree to our <a href="/terms-conditions.php" target="_blank">Terms &amp; Conditions</a> and <a href="/privacy.php" target="_blank">Privacy Policy</a>.
+  </label>
+</div>
+<div class="checkbox">
+  <label>
+	  <input type="checkbox" id="agree_contact_email" name="agree_contact_email" value="1" /> Keep me updated on news and offers via email.
+  </label>
+</div>
+<div class="checkbox">
+  <label>
+	  <input type="checkbox" id="agree_contact_phone" name="agree_contact_phone" value="1" /> Keep me updated on news and offers via phone.
+  </label>
+</div>
+</div>
+</div>
+        
+	</div>
+	<div class="modal-footer">
+	  <button type="button" class="btn btn-primary btn-block btn-lg" onclick="output_pdf_bootstrap();">Generate PDF</button>
+	</div>
+	
+	</form>
+  
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+	<div class="modal-header">
+	  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	  <h4 class="modal-title">Ask Us A Question</h4>
+	</div>
+	<form role="form" id="contact_form">
+	<div class="modal-body">
+		
+		<div class="row">
+			<div class="col-md-6"><img src="/system_files/images/system_images/nvidia-dgx-h100.jpg" class="img-responsive" /></div>
+			<div class="col-md-6">
+			  <div class="form-group">
+				<label for="exampleInputEmail1">Email Address</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter Email">
+			  </div>
+			  
+			  <div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+			  </div>
+			  
+			  <div class="form-group">
+				<label for="phone">Telephone Number</label>
+				<input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone Number">
+			  </div>
+		  	</div>
+		</div>
+		  
+		   <div class="form-group">
+			<label for="phone">Question</label>
+			<textarea class="form-control" id="question" name="question" placeholder="Your Question...."></textarea>
+		  </div>
+		 
+		  <div id="contact_return"></div>
+		  
+	</div>
+	<div class="modal-footer">
+	  <button type="button" class="btn btn-primary" onclick="ask_question();">Send</button>
+	</div>
+	
+	</form>
+  
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="payModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+	<div class="modal-header">
+	  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	  <h4 class="modal-title">Buy Online</h4>
+	</div>
+
+	<div id="buy_now_iframe_holder">iframeholder</div>
+  
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="item_info_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="width: 90%; max-width: 1000px;">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="item_info_modal_changer"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+		 <!-- Modal -->
+		  <div class="modal fade" id="dialog_21" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				  <h4 class="modal-title">Accelerate Storage by Upto 8x with SSD Caching</h4>
+				</div>
+				<div class="modal-body">
+				  <p>The Broadberry CyberStore SSD Caching Kit significantly accelerate application I/O performance of hard-disk-drive-based arrays by intelligently caching frequently accessed, or hot spot, data to solid-state drives (SSDs).</p> <p>We offer several SSD Caching Kits available with different IOPS (In Outs Per Second), SSD can make storage operate up to 8x faster than the HDD-only solution, although actual performance may vary depending on your exact situation.</p>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
+		 	 
+		  <script type="text/javascript">
+		   $('#dialog_21 .modal-dialog').css({
+				width: '500px'
+			});
+		</script>
+		
+		 <!-- Modal -->
+		  <div class="modal fade" id="dialog_22" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				  <h4 class="modal-title">Which Version of Windows Storage Server Do I Need?</h4>
+				</div>
+				<div class="modal-body">
+				  <div class="row marketing">
+    <div class="col-md-4 hover-activator">
+        <div class="marketing-image"><img src="/img/icons/tooltips/images/workgroup.png"></div>
+        <h3>Windows Storage Server 2008 R2 Workgroup</h3>
+        <ul class="list-group">
+          <li class="list-group-item">Up to 25 remote connections</li>
+          <li class="list-group-item">Single processor socket</li>
+          <li class="list-group-item">Up to 32GB memory</li>
+        </ul>
+    </div>
+    
+    <div class="col-md-4 hover-activator">
+        <div class="marketing-image"><img src="/img/icons/tooltips/images/standard.png"></div>
+        <h3>Windows Storage Server 2008 R2 Standard</h3>
+        <ul class="list-group">
+          <li class="list-group-item">Unlimited remote connections </li>
+          <li class="list-group-item">Up to 4 processor sockets</li>
+          <li class="list-group-item">Up to 32GB memory</li>
+          <li class="list-group-item">Network services</li>
+        </ul>
+    </div>
+    
+     <div class="col-md-4 hover-activator">
+        <div class="marketing-image"><img src="/img/icons/tooltips/images/enterprise.png"></div>
+        <h3>Windows Storage Server 2008 R2 Enterprise</h3>
+        <ul class="list-group">
+          <li class="list-group-item">Unlimited remote connections</li>
+          <li class="list-group-item">Up to 8 processor sockets</li>
+          <li class="list-group-item">Up to 2TB memory</li>
+          <li class="list-group-item">Network services</li>
+          <li class="list-group-item">Failover Clustering for higher availability</li>
+          <li class="list-group-item">BranchCache for reduces WAN utlisation</li>
+        </ul>
+    </div>
+			
+</div>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
+		 	 
+		  <script type="text/javascript">
+		   $('#dialog_22 .modal-dialog').css({
+				width: '900px'
+			});
+		</script>
+		
+		 <!-- Modal -->
+		  <div class="modal fade" id="dialog_23" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				  <h4 class="modal-title">What is Cache Protection?</h4>
+				</div>
+				<div class="modal-body">
+				  <p>RAID controller cards will cache data from the system temporarily until it has been written to the storage media successfully. While data is cached, it can be lost in the event of a power failure. CacheVault flash cache protection modules safeguard the integrity of cached data through storing cached data in non-volatile flash cache storage. Cache protection provides you with peace of mind, safe in the knowledge that your data is protected. </p>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
+		 	 
+		  <script type="text/javascript">
+		   $('#dialog_23 .modal-dialog').css({
+				width: '500px'
+			});
+		</script>
+		
+		 <!-- Modal -->
+		  <div class="modal fade" id="dialog_26" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				  <h4 class="modal-title">Please add a Riser Card for PCI-Express Expansion</h4>
+				</div>
+				<div class="modal-body">
+				  <img src="/img/pci-express-expansion.png" class="floatRight" />Due to the height of this server a PCI-Express card will not physically fit unless you use a riser card. <br /><br /> Please add a riser card to the configuration if you want to add a PCI-Express card.
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
+		 
+		 <!-- Modal -->
+		  <div class="modal fade" id="dialog_49" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				  <h4 class="modal-title">Looking for an Open-E Active-Active Failover Cluster?</h4>
+				</div>
+				<div class="modal-body">
+				  <img src="/img/storage_chassis/High-Availability/open-e-small.jpg" class="img-responsive" />
+  
+  <p class="lead">Configure an Open-E DSS powered Active-Active cluster solution and benefit from these advantages over a single unit:</p>
+
+    <ul class="features_ul fa-ul">
+        <li><i class="fa-li fa fa-check-square"></i>Doubles your overall performance</li>
+        <li><i class="fa-li fa fa-check-square"></i>Eliminates a Single Point of Failure</li>
+        <li><i class="fa-li fa fa-check-square"></i>Self-Validation of the system!</li>
+    </ul>
+    
+    <h4>What is Open-E Active-Active Failover</h4>
+	<p>The Open-E DSS V7 Active-Active Failover Feature Pack allows you to simultaneously run volumes in the active mode on two nodes - providing high availability of data. In the event of a node failing, the other node takes over automatically whilst all application services continue ruinning without interruption.</p>
+	
+    <p><a href="/open-e-active-active-failover-solution.php" class="btn btn-primary btn-lg">Get Started</a></p>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
+		 
+		 <!-- Modal -->
+		  <div class="modal fade" id="dialog_91" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				  <h4 class="modal-title">Available Plugins</h4>
+				</div>
+				<div class="modal-body">
+				  <p>There are a variety of plugins available:</p>
+
+<div class="row">
+<div class="col-lg-6">
+<ul>
+<li>VMware</li>
+<li>Hyper-V </li>
+<li>Proxmox</li>
+<li>RHV</li>
+<li>KVM</li>
+<li>Citrix (Xenserver)</li>
+<li>Docker</li>
+<li>Kubernetes</li>
+<li>S3-Cloud Interface</li>
+<li>Google Cloud Interface</li>
+<li>Azure Cloud Interface</li>
+<li>Amazon Glacier</li>
+<li>Hadoop HDFS</li>
+<li>MS SQL</li>
+<li>MySQL</li>
+<li>MySQL</li>
+<li>Percona</li>
+<li>PostGRE SQL</li>
+<li>Oracle</li>
+</ul>
+</div>
+<div class="col-lg-6">
+<ul>
+<li>Netapp</li>
+<li>Delta Plugin</li>
+<li>Bare Metal Recover (BMR) Windows</li>
+<li>Bare Metal Recover (BMR) Linux</li>
+<li>VSS File Daemon (15 windows components, incl Exchange, AD)</li>
+<li>Directory Server (LDAP and AD)</li>
+<li>NDMP</li>
+<li>Swift Openstack</li>
+<li>SAN Shared Tape Library</li>
+<li>SAP Plugin</li>
+<li>DB2</li>
+<li>Sybase</li>
+<li>SAP-HANA</li>
+</ul>
+</div>
+</div>
+Please contact your account manager for pricing.
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
+		 	 
+		  <script type="text/javascript">
+		   $('#dialog_91 .modal-dialog').css({
+				width: '500px'
+			});
+		</script>
+		
+		 <!-- Modal -->
+		  <div class="modal fade" id="dialog_71" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				  <h4 class="modal-title">Learn more about Intel VROC NVMe RAID</h4>
+				</div>
+				<div class="modal-body">
+				  
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h6 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          What is Intel Virtual RAID on CPU (Intel VROC)?
+        </a>
+      </h6>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        Intel Virtual RAID on CPU (Intel VROC) is an enterprise RAID solution specifically designed for NVMe*-based solid-state drives (SSD).
+      </div>
+    </div>
+  </div>
+
+    <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h6 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          What is the biggest advantage of Intel VROC?
+        </a>
+      </h6>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        The biggest advantage of Intel VROC is the ability to directly connect NVMe-based SSDs to the new Intel Xeon Scalable Processor PCIe* lanes. It then makes RAID arrays using those SSDs without using a RAID host bus adapter (HBA). As a result, Intel VROC unleashes NVMe SSD performance potential without the complexity and power of a traditional Hardware RAID HBA.
+      </div>
+    </div>
+  </div>
+
+   <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFour">
+      <h6 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Since Intel VROC can RAID SSDs directly connected to the CPU, does that mean I don’t need hardware RAID HBA?
+        </a>
+      </h6>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="panel-body">
+        Intel VROC does not need a hardware RAID HBA for NVMe-based SSDs. However, hardware RAID HBAs have served the RAID industry for years, supporting legacy SATA and SAS HDDs and SSDs, evolving to add NVMe functionality. Intel VROC provides a compelling alternative way to RAID NVMe SSDs. Our goal is to migrate SSDs from the legacy SATA/SAS interfaces designed for much slower HDDs, to the modern NVMe protocol.
+      </div>
+    </div>
+  </div>
+
+
+    <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading5">
+      <h6 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+How is Intel VROC performance and CPU utilization compared to a hardware RAID HBA solution?
+        </a>
+      </h6>
+    </div>
+    <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+      <div class="panel-body">
+ Intel VROC is a data center quality product with performance and CPU utilization metrics befitting such applications. New NVMe enabled hardware RAID HBAs are new to the market as well. Performance does vary depending on configuration and testing parameters, but generally, data transfer rates are comparable between the two technologies. HBAs do have on-card silicon to perform RAID calculations, so typically they use fewer CPU cores. However, from a system perspective, Intel Xeon Scalable Processors are efficient CPUs and RAID calculations with Intel VROC typically use a small fraction of the total cores available. Additionally, it's important to look at the work those cores are doing while being utilized, such as IOPS/CPU utilisation.
+      </div>
+    </div>
+  </div>
+
+    <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading6">
+      <h6 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+Is Intel VROC software or hardware RAID?
+        </a>
+      </h6>
+    </div>
+    <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+      <div class="panel-body">
+Intel VROC is a hybrid RAID solution. It has attributes like hardware RAID because of the key silicon feature, Intel Volume Management Device (Intel VMD). Intel VDM is offered with the new Intel Xeon Scalable Processors. Intel VROC utilizes Intel VMD to aggregate NVMe SSDs allowing bootable RAID. Intel VROC also has attributes like software RAID. For instance, it uses some of the CPU cores to calculate the RAID logic. Because of this combination of software and silicon, Intel VROC is called a hybrid RAID solution.
+      </div>
+    </div>
+  </div>
+
+
+    <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading7">
+      <h6 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+How is Intel VROC performance different for Linux compared to Windows?
+        </a>
+      </h6>
+    </div>
+    <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+      <div class="panel-body">
+Intel VROC for Windows and Linux are implemented in two separate architectures and implementations, so they present different performance. For instance, we're able to achieve 2.4M read IOPS in 4 disk RAID0 in Linux, but only 1.1M IOPS in Windows. We are continuously working on performance improvement.
+
+To achieve better performance in Windows for now, user can aggregate performance across multiple RAID arrays from different Intel VMDs. Please be aware, only 1 VROC license is required for the whole server and VROC can support up to 12 RAID arrays per server.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
+		 
+		 <!-- Modal -->
+		  <div class="modal fade" id="dialog_87" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				  <h4 class="modal-title">What is TPM Module?</h4>
+				</div>
+				<div class="modal-body">
+				  <p>Trusted Platform Module technology is designed to deliver hardware-based, security related functions. A TPM chip is a secure crypto-processor that is designed to execute cryptographic operations. As the chip features a multitude of physical security mechanisms to protect it from tampering, malicious software is not able to interfere with the security functions of the TPM. With TPM technology you are able to:</p>
+
+<ul>
+<li>Generate, store and limit the use of cryptographic keys.</li>
+<li>Utilise TPM technology for platform device authentication by using the TPM’s unique RSA key, which is burned into itself.</li>
+<li>Aid in ensuring platform integrity through taking and storing security measurements. </li>
+</ul>
+
+
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
+		 
+		 <!-- Modal -->
+		  <div class="modal fade" id="dialog_88" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				  <h4 class="modal-title">What is Server Remote Management?</h4>
+				</div>
+				<div class="modal-body">
+				  <p>With remote server management cards, IT admins can maintain full control over a server without an on-site presence being required. Via the management cards, all console screen information and keyboard and mouse functionality are exported to a remote session, which can be managed from anywhere in the world.</p>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
+		 
+		 <!-- Modal -->
+		  <div class="modal fade" id="dialog_99" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				  <h4 class="modal-title"><img src="/img/configurator_popups/nvidia-ai-enterprise.jpg" class="img-responsive" style="margin-bottom: 15px;" /></h4>
+				</div>
+				<div class="modal-body">
+				  <img src="/img/logos/nvidia-logo.png" class="img-responsive center-block" alt="NVIDIA Logo" style="height: 150px;" />
+
+<h2 class="page-header">NVIDIA Base Command</h2>
+
+<p class="lead">The operating system of the NVIDIA DGX data center.</p>
+<p>Delivering a robust AI infrastructure for a large enterprise extends beyond mere hardware provision. Achieving maximum performance and usability demands thoughtful design and orchestration of the entire data center. This entails not only selecting top-tier technologies like the NVIDIA DGX™ platform, NVIDIA networking, optimised storage, and more, but also employing advanced infrastructure software to ensure optimal management and utilisation. The goal is to maximise AI development capabilities across the entire organisation.</p>
+<p>NVIDIA Base Command serves as the backbone of the DGX data center, expediting the return on investment for AI initiatives. Base Command drives the DGX platform, granting organisations access to the finest NVIDIA software innovations. Enterprises can harness the full potential of their DGX infrastructure through a proven platform that encompasses AI workflow management, enterprise-class cluster management, libraries that enhance computational, storage, and network resources, and system software fine-tuned for efficient AI workload execution.</p>
+
+<img src="/img/transparant/nvidia-dgx-h100-base.jpg" class="img-responsive center-block" alt="NVIDIA DGX H100" style="margin-top: 26px;" />
+
+<h3 class="page-header">Realise Faster ROI on AI Infrastructure</h3>
+
+<div class="row">
+    <div class="col-md-2">
+        <img src="/img/nvidia/dgx-h100/feature-icons/blocks.png" class="img-responsive center-block img-responsive" />
+    </div>
+    <div class="col-md-10">
+        <h4>The Best of NVIDIA Software</h4>
+        <p>The software that powers NVIDIA's extensive team of in-house developers, researchers, and AI professionals is now accessible on the NVIDIA DGX™ platform. This platform offers top-notch developer tools, infrastructure management, and high-speed infrastructure libraries.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        <img src="/img/nvidia/dgx-h100/feature-icons/job-scheduling.png" class="img-responsive center-block img-responsive" />
+    </div>
+    <div class="col-md-10">
+        <h4>AI Job Scheduling and Workload Orchestration</h4>
+        <p>Base Command offers DGX infrastructure with Kubernetes, Slurm, and Jupyter Notebook environments, providing a user-friendly, enterprise-tested scheduling and orchestration solution built on well-established enterprise standards.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+<img src="/img/nvidia/dgx-h100/feature-icons/cloud.png" class="img-responsive center-block" />
+   </div>
+<div class="col-md-10">
+<h4>Comprehensive Cluster Management</h4>
+<p>The NVIDIA Base Command Manager offers comprehensive cluster management for DGX systems, encompassing tasks like initial provisioning, OS and firmware updates, as well as real-time monitoring. For other NVIDIA-accelerated systems, the NVIDIA Base Command Manager Essentials is integrated into the NVIDIA AI Enterprise package.</p>
+ </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+<img src="/img/nvidia/dgx-h100/feature-icons/building-office.png" class="img-responsive center-block" />
+    </div>
+    <div class="col-md-10">
+<h4>Hardened and Supported for Enterprise Requirements</h4>
+<p>The complete Base Command software stack is fine-tuned to excel in DGX environments, catering to setups ranging from single nodes to extensive clusters and cloud deployments, guaranteeing peak performance and enhanced productivity.</p>
+ </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+<img src="/img/nvidia/dgx-h100/feature-icons/AI-center.png" class="img-responsive center-block" />
+    </div>
+    <div class="col-md-10">
+<h4>Enabling Your Journey to an AI Center of Excellence</h4>
+<p>Through Base Command, DGX infrastructure is combined with software that makes ambitious goals achievable. Base Command facilitates an organization's AI journey, from their initial system to the pinnacle of a TOP500-class NVIDIA DGX SuperPOD™.</p>
+ </div>
+</div>
+
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
+		 
+		 <!-- Modal -->
+		  <div class="modal fade" id="dialog_102" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				  <h4 class="modal-title">Find your ideal Broadcom card</h4>
+				</div>
+				<div class="modal-body">
+				  <table class="table table-condensed table-striped">
+        <thead>
+            <tr>
+                <th>I/O</th>
+                <th>Broadcom</th>
+                <th>Intel</th>
+                <th>Nvidia</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr class="info">
+            <th colspan="5">PCI-E Form Factor</th>
+        </tr>
+        <tr>
+
+         
+            <td>2x 1G</td>
+            <td>5720-2P <br>BCM95720A2003AC</td>
+            <td>I350-T2V2</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            
+            <td>4x 1G</td>
+            <td>5719-4P <br>BCM95719A1904AC</td>
+            <td>I350-T4V2</td>
+            <td>-</td>
+        </tr>
+             <tr>
+            
+            <td>2x 10GBaseT</td>
+            <td>P210TP <br>BCM957416A4160C</td>
+            <td>X550-T2, X710-T2L</td>
+            <td>-</td>
+           
+        </tr>
+             <tr>
+            
+            <td>2x 10G</td>
+            <td>P210P <br>BCM957412A4120AC</td>
+            <td>X557, X520-DA2, X710-DA2</td>
+            <td>MCX4121A</td>
+             </tr>
+       
+             <tr>
+            
+            <td>2x 25G</td>
+            <td>P225P <br>BCM957414A4142CC</td>
+            <td>E810-XXVDA2, XXV710-DA2, <br>XXV710-DA2T</td>
+            <td>MCX4121A, MCX512A, MCX512F,<br>MCX621102AE/C/N, MCX623102AC/N</td>
+           
+        </tr>
+             <tr>
+            
+            <td>4x 25G </td>
+            <td>P425G <br>BCM957504-P425G</td>
+            <td>E810-XXVDA4 </td>
+            <td>MCX713104AS</td>
+           
+        </tr>
+             <tr>
+            
+            <td>2x 50G </td>
+            <td>P2100G <br>BCM957508-P2100G</td>
+            <td>-</td>
+            <td>MCX414A, MCX516A, MCX623102AN</td>
+           
+        </tr>
+             <tr>
+            <td>1x 100G</td>
+            <td>P1200G <br>BCM957508-P1200G</td>
+            <td>E810-CQDA1</td>
+            <td>MCX515A, MCX555A, MCX623105AN</td>
+           
+        </tr>
+             <tr>
+            
+            <td>2x 100G</td>
+            <td>P2100G <br>BCM957508-P2100G </td>
+            <td>E810-CQDA2</td>
+            <td>MCX516A, MCX623106AC/E/N/S/PN</td>
+           
+        </tr>
+             <tr>
+            
+            <td>1x 200G</td>
+            <td>P1200G <br>BCM957508-P1200G</td>
+            <td>-</td>
+            <td>MCX623105AN</td>
+           
+        </tr>
+             <tr>
+            
+            <td>1x 400G</td>
+            <td>P1400GD <br>BCM957608-P1400GDF00</td>
+            <td>-</td>
+            <td>MCX715105AS, MCX75310AAC/S</td>
+           
+        </tr>
+             <tr>
+            
+            <td>2x 200G</td>
+            <td>P2200G <br>BCM957608-P2200GQF00</td>
+            <td>-</td>
+            <td>MCX755106AC/S</td>
+           
+        </tr>
+             <tr>
+            
+            <td>2x 100G</td>
+            <td>P2100G2 <br>BCM957608-P2100GQF00</td>
+            <td>-</td>
+            <td>MCX713106AS</td>
+           
+        </tr>
+             <tr>
+            
+            <td>4x 100G</td>
+            <td>P4100G <br>BCM957608-P4100GSF00</td>
+            <td>-</td>
+            <td>-</td>
+           
+        </tr>
+
+        <tr class="info">
+            <th colspan="5">OCP 3.0  Form Factor</th>
+        </tr>
+     
+        <tr>
+            
+            <td>4x 1G</td>
+            <td>N41T <br>BCM95719N1905C </td>
+            <td>I350T4OCPV3 </td>
+            <td>-</td>
+        </tr>
+        <tr>
+            
+            <td>2x 10G</td>
+            <td>N210TP <br>BCM957416N4160C </td>
+            <td>X720-T2L</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            
+            <td>2x 10G</td>
+            <td>N210P <br>BCM957412N4120C</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            
+            <td>2x 25G</td>
+            <td>N225P <br>BCM957414N4140C</td>
+            <td>E810XXVDA2OCPV3</td>
+            <td>MCX4121A, MCX562A, MCX623432AC/E/N-,<br>MCX6232AC/E/N, MCX631432AC/N</td>
+        </tr>
+        <tr>
+            
+            <td>4x 25G</td>
+            <td>N425G <br>BCM957504-N425G</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            
+            <td>2x 50G</td>
+            <td>N2100G <br>BCM957508-N2100G</td>
+            <td>-</td>
+            <td>MCX516A, MCX623432AC/N</td>
+        </tr>
+        <tr>
+            <td>1x 100G</td>
+            <td>N1100G <br>BCM957504-N1100G</td>
+            <td>E810-CQDA1OCPV3</td>
+            <td>MCX623432AC/N, MCX623435AC/E/N/MN,<br>MCX565A/M</td>
+        </tr>
+        <tr>
+            
+            <td>2x 100G</td>
+            <td>N2100G <br>BCM957508-N2100G</td>
+            <td>-</td>
+            <td>MCX566A, MCX623436AC/E/N</td>
+        </tr>
+        <tr>
+            
+            <td>1x 200G</td>
+            <td>N1200G <br>BCM957508-N1200G </td>
+            <td>-</td>
+            <td>MCX623435AC/N</td>
+        </tr>
+        <tr>
+            
+            <td>1x400G</td>
+            <td>N1400GD <br>BCM957608-N1400GDP00</td>
+            <td>-</td>
+            <td>MCX75343AMC/S</td>
+        </tr>
+		<tr>
+            
+            <td>2x 200G</td>
+            <td>N2200G <br>BCM957608-N2200GQP00</td>
+            <td>-</td>
+            <td>MCX753436MC/S</td>
+        </tr>
+        <tr>
+            
+            <td>1x 200G</td>
+            <td>N1200G2 <br>BCM957608-N1200GQP00</td>
+            <td>-</td>
+            <td>MCX623435AC/N</td>
+        </tr>
+        <tr>
+            
+            <td>4x 100G</td>
+            <td>N4100G <br>BCM957608-N4100GSP00</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        </tbody>
+    </table>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  
+				</div>
+			  </div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
+		 	 
+		  <script type="text/javascript">
+		   $('#dialog_102 .modal-dialog').css({
+				width: '800px'
+			});
+		</script>
+		
+	 <!-- Modal -->
+	  <div class="modal fade" id="item_dialog_2483" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			  <h4 class="modal-title">On-Site High Availability Bundle - Configuration of High Availability Cluster</h4>
+			</div>
+			<div class="modal-body">
+			  <p>On-site installation of two Nexenta software instances configured in a high availability configuration. Includes setup and testing of one cluster between two Nexenta nodes. </p>
+<p>Also includes auto-scrub and auto-snap functions, as well as HA Cluster health check verification, complete Systems Integration Guide documentation.  </p>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			  
+			</div>
+		  </div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	  </div><!-- /.modal -->
+	 
+	 <!-- Modal -->
+	  <div class="modal fade" id="item_dialog_2491" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			  <h4 class="modal-title">Remote High-Availability Bundle</h4>
+			</div>
+			<div class="modal-body">
+			  <p>Remote installation of two Nexenta software instances configured in a high availability configuration. Includes setup and testing of one cluster between two Nexenta nodes. </p>
+
+<p>Also includes auto-scrub and auto-snap functions, as well as HA Cluster health check verification, complete Systems Integration Guide documentation.  </p>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			  
+			</div>
+		  </div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	  </div><!-- /.modal -->
+	 
+	 <!-- Modal -->
+	  <div class="modal fade" id="item_dialog_2428" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			  <h4 class="modal-title">4 Hours Phone Support</h4>
+			</div>
+			<div class="modal-body">
+			  Delivers up to four hours phone support for Silver customers. Once purchased, our Services team will work with you to schedule a time with the next available Support Engineer. This service is not intended to provide support for multiple technical issues, but rather a single incident. Phone assistance is limited to the number of hours purchased, with a four hour minimum and is only available during standard business hours (weekends excluded).
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			  
+			</div>
+		  </div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	  </div><!-- /.modal -->
+	 
+
+
+<!-- Compare Modal -->
+<div class="modal fade" id="item_compare_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width: 90%;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div id="item_compare_modal_changer"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+	function check_session_timeout()
+	{
+		console.log('Keeping Session alive...')
+		$.get("/inc/ajax/session_timeout.php");
+	}
+
+	// Send AJAX Request to keep session alive every 10 minutes
+	window.setInterval(function(){
+		check_session_timeout();
+	}, 600000);
+
+    function switch_html(){
+        $("#pdfModal").modal("hide");
+        $("#myModal").modal("show");
+    }
+
+    function highlight_incompatible_items(item_type_id)
+    {
+        //alert("running highlight_incompatible_items: "+item_type_id);
+        $("#item_type_holder_"+item_type_id).addClass("item_type_holder_error");
+        $("#item_type_holder_"+item_type_id+" label.item_selected").prepend("<i class=\"fas fa-exclamation-triangle\"></i> ");
+
+    }
+
+</script>
+
+<!-- Start of LiveChat (www.livechatinc.com) code -->
+<!-- CookieConsent: Functionality -->
+<script >
+    window.__lc = window.__lc || {};
+    window.__lc.license = 13138668;
+    window.__lc.params = [
+        { name: 'System ID', value: '2791' },
+        { name: 'Customer ID', value: '' },
+        { name: 'site_id', value: '2' },
+        { name: 'ip_address', value: '149.106.155.35' },
+        { name: 'session_id', value: 'e69838141cce1dced799d35a498a7227' },
+        { name: 'ga_cookie', value: '' },
+    ];
+
+    (function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+
+<!-- CookieConsent: Tracking -->
+<script >
+
+    function onFormSubmitted(data) {
+
+        let chat_save_event = 0;
+        switch (data.type) {
+            case "prechat":
+                // prechat submitted
+                chat_save_event = 1;
+                break;
+
+            case "ticket":
+                // ticket submitted
+                chat_save_event = 1;
+                break;
+
+            default:
+                break;
+        }
+
+        if(chat_save_event==1){
+            gtag('event', 'livechat', {
+                'send_to': 'G-02W0YC87NB',
+                'event_category': 'Configurator Conversion',
+                'event_label': 'NVIDIA DGX B200  ',
+                'value': 1
+            });
+        }
+    }
+
+    LiveChatWidget.on('form_submitted', onFormSubmitted);
+
+</script>
+<!-- End of LiveChat code -->
+
+<!-- Analytics Send Custom Event -->
+<!-- CookieConsent: Tracking -->
+<script >
+
+    document.addEventListener("DOMContentLoaded", function () {
+        gtag("event", "view_item", {
+            currency: "USD",
+            value: 633924.7785,
+            items: [
+                {
+                    item_id: "2791",
+                    item_name: "NVIDIA DGX B200  ",
+                    currency: "USD",
+                    item_brand: "Broadberry",
+                    item_category: "Servers",
+                    item_category2: "Intel Xeon Scalable Processor Gen 5",
+                    price: 633924.7785,
+                    quantity: 1
+                }
+            ]
+        });
+    });
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 # STRATA — custom-silicon designs for scaling GPU memory
 
-Three linked engineering **decision records** exploring one question:
+A set of linked engineering **decision records and research reports** exploring one question:
 
 > How do you give a GPU **far more memory** (up to multiple TiB) than any single
 > memory type can provide on its bus — while keeping the bandwidth and latency
@@ -22,6 +22,7 @@ real, shipping reference, and estimates are flagged as such.
 | 3 | [`rtx5090_strata_v_retrofit_verdict.html`](rtx5090_strata_v_retrofit_verdict.html) | **Retrofit verdict** — why you *cannot* desolder a stock RTX 5090's GDDR7 and bolt STRATA-V on to trick it into 2 TiB. A negative result: a finished GPU's memory is defined by its controller, not its chips. |
 | 4 | [`sourcing_report.html`](sourcing_report.html) | **Sourcing report** — can you actually *buy* it? A four-thread hunt for the finished product, the DDR5 parts, the converter silicon, and the CXL path, with real 2026 reseller prices — and a corrected (6–10× higher) DDR5 cost. |
 | 5 | [`kimi_k3_1m_full_quality.html`](kimi_k3_1m_full_quality.html) | **Kimi K3 @ 1M, full quality — checked out** — the honest memory build for the *real, announced* Kimi K3 (2.8T params, **MXFP4-native** QAT, 96 layers, KDA+MLA hybrid, native vision, 1M context; weights due 2026-07-27). Native precision **determined from Moonshot's own docs** (not assumed): at MXFP4 full quality + un-quantized FP16 KV + MTP + vision ≈ **1.56 TiB** → 45× 48 GiB DDR5-5600 UDIMM @ 1.79 TB/s ≈ **₪61,500 landed**. The ₪30k question, answered straight: **NO** (2× over, estimate-proof — ₪30k runs the previous-gen K2.7, not K3). Evidence in `pricing_evidence/`. |
+| 6 | [`kimi_k3_serving_economics.html`](kimi_k3_serving_economics.html) | **Serving economics** — how many users a machine serves K3 to at a 1M-token context (a fixed **~1.45 TiB** model + **~28 GiB/user** KV), the NVIDIA B200 / GB200 options priced for Israel (16× B200 ≈ **₪2.6–3.35M** → ~42 users; GB200 **NVL36** ≈ ₪6.5M → ~165; **NVL72** → ~380), and why cost-per-user *falls* as the shared pool grows (₪80k → ₪39k → ₪28k) — the market case for the cheap-capacity converter. Evidence in `pricing_evidence/b200_gb200_serving/`. |
 
 ## The through-line (what the three docs establish)
 
@@ -32,6 +33,7 @@ real, shipping reference, and estimates are flagged as such.
 - **You can't retrofit this onto a shipped GPU** — GDDR7 has no capacity-expansion signaling, the timing is training-frozen, and 28 Gb/s PAM3 can't leave the board. Integration is *design-in*, not *bolt-on*.
 - **It provably serves on time — because you *author* the deadline, not race it.** `CL`, `tRCD`, and the refresh interval are parameters you program into the controller you design; set them to what the backing can meet and no legal command stream — peak streaming, row-miss floods, prefetch — can be served late. Correctness reduces to two paper checks: an *encodable* read latency and a *schedulable* refresh budget. (First-principles derivation: `strata_v_design.html` Part II.)
 - **Functionally it's a strict superset** of the memory it replaces (every operation + 64× the capacity). The one inherent cost is a ~10–30% latency premium that bites *only* latency-bound, low-parallelism (CPU-style) access — which GPUs, and MoE inference, structurally don't run.
+- **Serving a frontier model is a memory-*capacity* economy.** The model is a fixed cost paid once; each concurrent 1M-token user adds only ~28 GiB of KV cache. So cost-per-user *falls* as the shared memory pool grows — and capacity is the one axis where HBM/GDDR7 are worst and DDR5 is best. That is the whole market case for the converter, now quantified against NVIDIA's own B200 / GB200 serving hardware (doc 6).
 
 ## Sources
 

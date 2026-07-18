@@ -132,6 +132,7 @@
 
 <footer>
   <p><strong>Bottom line.</strong> Kimi K3 is a real, announced <strong>2.8 T</strong>, <strong>MXFP4-native</strong>, 1M-context, multimodal model. At its true full quality (native MXFP4 + un-quantized FP16 KV + MTP + vision) it needs <strong>~1.56 TiB</strong> &rarr; <strong>45 &times; 48 GiB DDR5-5600 UDIMM @ 1.79 TB/s &asymp; ₪61,500 landed</strong>. The ₪30,000 target is <strong>not</strong> achievable for K3 &mdash; it is 2&times; over, and estimate-proof. ₪30k runs the previous-generation K2.7, not K3. The precision was determined from Moonshot&rsquo;s own words (MXFP4), not assumed; the spec was neither shrunk nor inflated.</p>
+  <p>This is the footprint of a <em>single</em> K3 instance holding one 1M&#8209;token context. For how many users a real machine serves <em>at once</em> &mdash; the fixed&#8209;model&#8209;plus&#8209;per&#8209;user&#8209;KV math, the NVIDIA B200 / GB200 options, and the cost per active user in Israel &mdash; see <code>kimi_k3_serving_economics.html</code>.</p>
   <p style="color:var(--muted)">Compiled from an evidence-only research pass, 2026-07-18. Sources in <code>pricing_evidence/</code> + <code>SOURCES.md</code>. Point-in-time crunch prices, not quotes. Supersedes the deleted prior report (K2-scale / FP8 assumption).</p>
 </footer>
 

@@ -1,0 +1,804 @@
+
+NVIDIA Blackwell HGX™ B300, B200 and GB200 NVL72 Solutions | Supermicro
+ Skip to main content 
+Main Navigation (Enterprise)
+AI
+AI Infrastructure
+Supermicro delivers the broadest selection of AI systems and solutions
+Data Center Building Block Solutions® 
+(DCBBS)
+AI SuperCluster
+Featured: 
+xAI Colossus
+AI Factory
+Edge AI
+AI Storage
+AI Data 
+Platform
+Data 
+Lakes
+Industry AI Solutions
+AI for 
+Retail
+AI for 
+Telco
+AI for Financial 
+Services
+Federal AI 
+Infrastructure
+NVIDIA 
+Solutions
+NVIDIA Vera Rubin 
+Solutions
+NVIDIA Blackwell Architecture 
+Solutions
+NVIDIA RTX PRO™ Blackwell 
+Solutions
+Supermicro Super 
+AI Station
+NVIDIA 
+LaunchPad
+NVIDIA Hopper & Ada Lovelace 
+Solutions
+AMD 
+Solutions
+Intel 
+Solutions
+Intel 
+Edge AI
+Arm AGI 
+Solutions
+AI Infrastructure Solutions
+Data Center Building Block Solutions® (DCBBS)
+AI SuperCluster
+Featured: xAI Colossus
+AI Factory
+Edge AI
+AI Storage
+Industry AI Solutions
+AI for Retail
+AI for Telco
+AI for Financial Services
+Federal AI Infrastructure
+AI Data Platform
+Data Lakes
+NVIDIA Solutions
+NVIDIA Solutions (Home)
+NVIDIA Vera Rubin Solutions
+NVIDIA Blackwell Architecture Solutions
+NVIDIA RTX PRO™ Blackwell Solutions
+Supermicro Super AI Station
+NVIDIA LaunchPad
+NVIDIA Hopper & Ada Lovelace Solutions
+AMD Solutions
+AMD Solutions (Home)
+Enterprise AI
+Retail AI
+Intel Solutions
+Intel Solutions (Home)
+Intel Edge AI
+Arm AGI Solutions
+Products
+Servers & Storage
+Building Blocks
+Edge, Embedded & Telecom
+Networking
+Client
+Rackmount Servers
+Superior Performance, Efficiency and Time-to-Market for Rapid Adoption
+Dual Processor
+The industry's broadest portfolio of performance-optimized dual-processor servers for demanding workloads
+Single Processor
+The industry’s broadest portfolio of single processor servers providing performance and efficiency
+Multi-Processor
+4 and 8-socket servers designed for extremely large in-memory computing and mission-critical applications
+GPU Servers
+Best GPU Servers for Modern Data Centers. The Most Comprehensive AI Systems Featuring the Latest Multi-GPU and Interconnect Technologies
+8U/10U GPU Lines
+Modular Building Block Design, Future Proof Open-Standards Based Platforms for Large Scale AI training and HPC Applications
+4U/5U GPU Lines
+Maximum Acceleration and Flexibility for AI/Deep Learning and HPC Applications
+2U GPU Lines
+High Perfomance and Balanced Solutions for Accelerated Computing Applications
+1U GPU Lines
+Highest Density GPU Platforms for Deployments from the Data Center to the Edge
+Twin Servers
+Innovative Multi-node Architectures with Reduced TCO and TCE
+FlexTwin™
+Purpose-Built Liquid-Cooled, HPC-at-Scale Solution
+BigTwin®
+Highest Performing 2U Twin Architecture with 4 or 2 Nodes
+GrandTwin®
+Multi-node Architecture Optimized for Single Processor Performance
+TwinPro®
+Leading 1U/2U Twin Architecture with 4 or 2 Nodes
+FatTwin®
+Advanced 4U Twin Architecture with 8, 4 or 2 Nodes
+Blade Servers
+High Performance, Density and Efficiency with Resource Saving Architecture
+SuperBlade®
+Highest Performance with Advanced Networking and NVMe
+MicroBlade®
+Highest Density, Energy-Efficiency and Value
+MicroCloud
+Dense Multi-Node Solution for the Cloud
+Storage Servers
+Scalable and Flexible NVMe and Hybrid Storage Architectures
+All Storage Systems
+All-Flash NVMe
+Highest Performing Storage Solutions for Advanced Computing
+Top-Loading 
+Storage
+Density Maximized Storage Systems Optimized for Software-Defined Data Centers
+JBOF
+Petascale Grace Storage
+Petascale All-Flash Array with NVIDIA Grace CPU Superchip and E3.S PCIe Gen5 SSDs
+Enterprise-Optimized 
+Storage
+Application Optimized High-Performance Storage Solutions
+JBOD Storage Enclosures
+Gold Series Servers
+Data Center Building Block Solutions® (DCBBS)
+Liquid Cooling 
+(DLC-2)
+System Management Software
+Motherboards
+Server Boards
+Workstation Boards
+Embedded / IoT Boards
+Desktop / Gaming Boards
+Motherboard Matrix
+Global SKUs
+Chassis
+1U Chassis
+2U Chassis
+3U Chassis
+4U / Tower Chassis
+Mid / Mini-Tower
+Embedded / IoT Chassis
+Mobile Racks / Drive Kits
+JBOD Storage Enclosures
+Global SKUs
+SuperRack®
+Rack Integration Service
+Accessories
+Cable Matrix
+Riser Card Matrix
+Storage AOC Matrix
+Power Supply Matrix
+Heatsink Matrix
+System Fan Matrix
+Mobile Racks / Drive Kits
+Front Chassis Bezels
+Storage, I/O, Security
+All Products
+All Accessories
+Edge AI and IoT Systems
+Short-depth and small form factor systems designed to deliver compute, AI, and connectivity performance to the edge of the network
+Compact Edge Systems
+Small Form Factor Systems for Deployments Anywhere
+Compact Edge Servers
+Server-grade Performance and AI Inferencing at the Edge
+Rackmount Edge Servers
+Short-depth Servers for Remote and Embedded Workloads
+Embedded Components
+Motherboards and chassis designed for high-density, high-performance computing performance in space-constrained and embedded use case
+Embedded Motherboards
+Motherboards supporting high-performance, low-power processing to meet the needs of all types of embedded applications
+Embedded Chassis
+Chassis purpose-built for high-density computing in space-constrained environments
+Gold Series Edge Systems
+Edge AI Solutions
+Edge AI & IoT Brochure
+Switches
+Standard Ethernet Switches
+Switch/OS Compatibility
+Adapters
+Add-on Cards
+1G Ethernet
+10G Ethernet
+25G Ethernet
+100G Ethernet
+200G Ethernet
+400G Ethernet
+InfiniBand
+Fibre Channel
+Omni-Path
+All Networking Products
+Cable/Transceiver Compatibility
+Cables
+Transceivers
+SuperWorkstations
+Powerful graphics capabilities for rendering, image processing, scientific, and engineering applications
+Liquid-Cooled AI Development Platform
+Single-Processor
+Dual-Processor
+Desktop
+Office and Home PCs – the most reliable computing machines for your daily needs
+Supero™ Gaming Solutions
+Server quality, built for gaming – SUPERO systems by Supermicro are optimized for high performance and reliability, providing options for gamers at all levels
+Servers & Storage
+Rackmounts
+Rackmount Servers
+Dual Processor
+Single Processor
+Multi-Processor
+GPU Systems
+All GPU Systems
+8U/10U GPU Lines
+4U/5U GPU Lines
+2U GPU Lines
+1U GPU Lines
+Twin
+All Twin Products
+FlexTwin™
+BigTwin®
+GrandTwin®
+FatTwin®
+TwinPro®
+Blades
+All Blade Products
+SuperBlade®
+MicroBlade®
+MicroCloud
+Storage
+All Storage Systems
+All-Flash NVMe
+Top-Loading Storage
+JBOF
+Petascale Grace Storage
+Enterprise-Optimized Storage
+JBOD Storage Enclosures
+Gold Series Servers
+Data Center Building Block Solutions® (DCBBS)
+Liquid Cooling (DLC-2)
+System Management Software
+Building Blocks
+Motherboards
+All Motherboard Products
+Server Boards
+Workstation Boards
+Embedded / IoT Boards
+Desktop / Gaming Boards
+Motherboard Matrix
+Chassis
+All Chassis Products
+1U Chassis
+2U Chassis
+3U Chassis
+4U / Tower Chassis
+Mid / Mini-Tower
+Embedded / IoT Chassis
+Mobile Racks / Drive Kits
+JBOD Storage Enclosures
+SuperRack®
+Rack Integration Service
+Accessories
+Cable Matrix
+Riser Card Matrix
+Storage AOC Matrix
+Power Supply Matrix
+Heatsink Matrix
+System Fan Matrix
+Mobile Racks / Drive Kits
+Front Chassis Bezels
+Storage, I/O, Security
+All Products
+All Accessories
+Edge, Embedded & Telecom
+Edge AI & IoT Systems
+All Edge AI & IoT Systems
+Compact Edge Servers
+Compact Edge Systems
+Rackmount Edge Servers
+Embedded Components
+Embedded Motherboards
+Embedded Chassis
+Networking
+All Networking Products
+Networking Switches
+Networking Adapters
+Cable/Transceiver Compatibility
+Cables
+Transceivers
+Client
+Liquid-Cooled AI Development Platform
+SuperWorkstations
+Desktop
+Supero™ Gaming Solutions
+Solutions
+Industries
+Supermicro solutions optimized for a wide variety of industrial applications
+Federal
+Financial 
+Services
+Healthcare
+Manufacturing
+IoT Edge – 
+Manufacturing
+Media &
+Entertainment
+Retail
+AI for 
+Retail
+AMD Solutions for 
+Retail AI
+IoT Edge – 
+Retail
+Telecom
+AI for 
+Telco
+5G Networking
+Transportation
+HPC
+Plug-and-Play HPC cluster solutions
+Rack 
+Solutions
+Liquid 
+Cooling
+Data Management
+TCO Optimized Design, high density and scaling architecture to manage and protect your data
+AI Storage
+AI Data 
+Platform
+Data 
+Lakes
+Software-Defined Storage 
+and Memory
+Hyperconverged Infrastructure
+Azure 
+Local
+SteelDome 
+HyperServ™
+VMware 
+vSAN
+Veeam
+Data Analytics & Enterprise Applications
+Purpose-Built Scalable Compute for Structured and Unstructured Data Analytics
+Data 
+Engineering
+Database 
+& ERP
+Microsoft
+Cloud & Virtualization
+Complete Solutions to Build Flexible Cloud Environments and Accelerate Digital Transformation
+Cloud Service Providers 
+(CSPs)
+IT / Hosting Services
+AMD 
+Solution
+Google 
+Distributed Cloud
+Canonical 
+OpenStack
+Red Hat 
+OpenStack
+Kubernetes
+Canonical 
+Kubernetes
+Red Hat
+ OpenShift
+SUSE 
+CaaS
+Virtual Desktop
+5G, IoT, and Edge Computing
+Optimized Solutions for 5G Networks and Intelligent Device Management
+Telecom 
+Solutions
+5G 
+Solutions
+AI for Telco
+IoT Edge 
+Solutions
+Healthcare
+Manufacturing
+Retail
+Transportation
+Edge AI
+Hyperscale Infrastructure
+Designed for the massively-scalable modern Data Center
+OCP 
+Solution
+SuperCloud Composer®
+ (SCC)
+Industries
+Federal
+Finance
+Healthcare
+Manufacturing
+Media & Entertainment
+Retail
+AI for Retail
+AMD Solutions for Retail AI
+IoT Edge – Retail
+Telecom
+Transportation
+HPC
+HPC Solutions
+Rack Solutions
+Liquid Cooling
+Data Management
+AI Storage
+AI Data Platform
+Data Lakes
+Software-Defined Storage and Memory
+Hyperconverged Infrastructure
+Azure Local
+SteelDome HyperServ™
+VMware vSAN
+Veeam
+Enterprise Applications & Data Analytics
+Data Engineering
+Database & ERP
+Microsoft
+Red Hat Product Guide (.pdf)
+NETINT 4K Real-Time Streaming (.pdf)
+Cloud & Virtualization
+Cloud Service Providers (CSPs)
+IT / Hosting Services
+AMD Solution
+Google Anthos
+Canonical OpenStack
+Red Hat OpenStack
+Kubernetes
+Canonical Kubernetes
+Red Hat OpenShift
+SUSE CaaS
+Virtual Desktop
+5G, Edge Computing, and IoT
+Telecom Solutions
+Telecom Solutions (Home)
+5G Solutions
+Rakuten Symphony
+IoT Edge Solutions
+Healthcare
+Manufacturing
+Retail
+Transportation
+Edge AI
+Hyperscale Infrastructure
+OCP Solution
+SuperCloud Composer® (SCC)
+Company
+About Us
+Careers
+Green Computing
+Contact
+Investor Relations
+Policies
+News & Events
+Press Releases
+Supermicro in the News
+Product Reviews
+Events
+Press Kits
+Webinars
+Resources
+White Papers
+Solution Briefs
+Success Stories
+Product Briefs
+About
+About Us
+Careers
+Green Computing
+Contact
+Investor Relations
+Policies
+News
+Press Releases
+Supermicro in the News
+Product Reviews
+Events
+Press Kits
+Webinars
+All News
+Resources
+White Papers
+Success Stories
+Thought Leadership
+Product Briefs
+All Resources
+Support
+Support
+FAQs
+Security Center
+Technical Support
+Technical Resources
+Resources & Downloads
+Management Software Download
+Manuals
+Quick-Reference Guides
+Product Matrices 
+(historical product lists)
+Services
+Onsite Services
+RMA
+Warranty Information
+Partners (MySupermicro)
+Partner Portal
+Where to Buy
+Resources
+Services and Support – Home
+Support
+FAQs
+Security Center
+Technical Support
+Services
+Onsite Services
+RMA
+Warranty Information
+Technical Resources
+Technical Resources – Home
+Downloads
+Management Software Download
+Manuals
+Quick Reference Guides
+Product Matrices (historical product lists)
+Partners (MySupermicro)
+Partner Portal
+Where to Buy
+Resources
+Buy
+eStore
+Supermicro online store
+Buy from Our Partners
+Find a Supermicro Authorized Partner
+eStore
+Buy from Our Partners
+Welcome 
+Sign In
+Create Account
+Reset Password
+Manage Account
+Manage Email preferences
+Sign Out
+ServeTheHome Takes on Supermicro’s Full AI Factory Solution Portfolio
+Patrick Kennedy Rips Through 20+ Solutions in Rapid Fire Featuring NVIDIA Blackwell
+NVIDIA Blackwell Ultra Systems, Now Shipping
+Power your AI Factories with Ultra Performance – Supermicro Systems Optimized for NVIDIA 
+HGX
+™
+ B300
+ and 
+GB300 NVL72
+Download Brochure
+Accelerate Every Enterprise Workload, Everywhere with NVIDIA 
+RTX PRO
+™
+Powerful, flexible multi-workload acceleration from AI factory, to data center, to edge
+Learn More
+ NVIDIA Blackwell Platform 
+ NVIDIA Blackwell Architecture Solutions 
+ Plug-and-Play SuperCluster 
+ Optimized Infrastructure and Software 
+ H200 Tensor Core GPU Solutions 
+ Resources 
+Your NVIDIA Blackwell Journey Starts Here
+In this transformative moment of AI, where the evolving scaling laws continue to push limits of data center capabilities, our latest NVIDIA Blackwell-powered solutions, developed through close collaboration with NVIDIA, offers unprecedented computational performance, density, and efficiency with next-generation air-cooled and liquid-cooled architecture. With our readily deployable AI Data Center Building Block solutions, Supermicro is your premier partner to start your NVIDIA Blackwell journey, providing sustainable, cutting-edge solutions that accelerate AI innovations.
+End-to-End AI Data Center Building Block Solutions Advantage
+A broad range of air-cooled and liquid-cooled systems with multiple CPU options, a full data center management software suite, turn-key rack level integration with full networking, cabling, and cluster level L12 validation, global delivery, support and service.
+Vast Experience
+Supermicro’s AI Data Center Building Block Solutions power the largest liquid-cooled AI Data Center deployment in the World.
+Flexible Offerings
+Air or liquid-cooled, GPU-optimized, multiple system and rack form factors, CPUs, storage, networking options. Optimizable for your needs.
+Liquid-Cooling Pioneer
+Proven, scalable, and plug-and-play liquid-cooling solutions to sustain the AI revolution. Designed specifically for NVIDIA Blackwell Architecture.
+Fast Time to Online
+Accelerated delivery with global capacity, world class deployment expertise, one-site services, to bring your AI to production, fast.
+The Most Compact, Hyperscale AI Platform
+NVIDIA HGX™ B300 System Optimized for OCP ORV3 Design with up to 144 GPUs in a Rack
+Supermicro’s 2-OU liquid-cooled NVIDIA HGX B300 system delivers unmatched GPU density for hyperscale deployments. Built to the OCP ORV3 specification with advanced DLC-2 technology, each compact 8-GPU node fits 21-inch racks, enabling up to 18 nodes and 144 total GPUs per rack. Featuring blind-mate manifold connections and modular GPU/CPU tray architecture, the system sustains each B300 GPU at up to 1,100W TDP while dramatically reducing rack footprint, power consumption, and cooling costs. Ideal for AI factories requiring maximum performance density with exceptional serviceability.
+Up to 144 Liquid-cooled GPUs in a Single Rack
+1.8TB/s GPU-GPU Interconnect
+;
+288 GB HBM3e per GPU
+21-inch OCP ORV3 Standardized Rack Design
+Integrated NVIDIA 
+ConnectX-8
+ SuperNICs for 800Gb/s Compute Fabric
+2-OU Liquid-cooled System
+for NVIDIA HGX B300 8-GPU
+Up to 144 NVIDIA Blackwell Ultra GPUs in a standardized ORV3 Rack
+Datasheet
+Learn More
+Ultra Performance for AI Reasoning
+The Most Advanced Air-cooled and Liquid-cooled Architecture for NVIDIA HGX™ B300
+The Supermicro NVIDIA HGX platform powers many of the world's largest AI clusters, delivering computational output for today's transformative AI applications. Now featuring NVIDIA Blackwell Ultra, the 8U air-cooled system maximizes performance of eight 1100W HGX B300 GPUs with 2.3TB total HBM3e memory. Eight front OSFP ports with integrated 
+ConnectX®-8
+ SuperNICs at 800 Gb/s enable turnkey deployment of NVIDIA Quantum-X800 InfiniBand or 
+Spectrum-X™
+ Ethernet clusters. The 4U liquid-cooled system features DLC-2 technology with 98% heat capture, achieving 40% data center power savings. Supermicro Data Center Building Block Solutions® (DCBBS) and onsite deployment expertise provide complete solutions for liquid cooling, network topology and cabling, power delivery, and thermal management to accelerate AI factory time-to-online.
+Up to 64 (liquid-cooled) GPUs in a Rack
+1.8TB/s GPU-GPU Interconnect 288 GB HBM3e per GPU
+Dual Intel Xeon 6 or AMD EPYC 9005/9004 Processors
+Integrated NVIDIA 
+ConnectX-8
+ SuperNICs for 800Gb/s Compute Fabric
+4U Liquid-cooled or 8U Air-cooled System
+for NVIDIA HGX B300 8-GPU
+Front I/O liquid-cooled system with integrated NVIDIA 
+ConnectX-8
+ 800 Gb/s networking
+Datasheet
+Learn More
+Front I/O air-cooled system for NVIDIA Blackwell Ultra HGX B300 8-GPU with integrated NVIDIA 
+ConnectX-8
+ networking
+Datasheet
+Learn More
+An Exascale of Compute in a Rack
+End-to-end Liquid-cooling Solution for NVIDIA GB300 NVL72
+The Supermicro NVIDIA GB300 NVL72 tackles AI computational demands from training foundational models to large-scale reasoning inference. It combines high AI performance with Supermicro's direct liquid cooling technology, enabling maximum computing density and efficiency. Based on NVIDIA Blackwell Ultra, a single rack integrates 72 NVIDIA B300 GPUs with 288GB HBM3e memory each. With 1.8TB/s NVLink interconnects, the GB300 NVL72 operates as an exascale supercomputer in a single node. Upgraded networking doubles performance across compute fabric, supporting 800 Gb/s speeds. Supermicro's manufacturing capacity and end-to-end services accelerate liquid-cooled AI factory deployment and speed time-to-market for GB300 NVL72 clusters.
+36 NVIDIA Grace CPUs and 72 NVIDIA Blackwell Ultra GPUs
+1.8TB/s GPU-GPU Interconnect across all 72 GPUs and CPUs
+36x NVIDIA 72-core Grace Arm Neoverse V2 CPUs
+250kW CDU Liquid-to-Liquid or 200kW Liquid-to-Air Sidecar Option
+NVIDIA GB300 NVL72 and GB200 NVL72
+for NVIDIA GB300/GB200 Grace™ Blackwell Superchip
+72 NVIDIA Blackwell Ultra GPUs in one NVIDIA NVLink domain. Now with Ultra performance and scalability
+Datasheet
+Learn More
+72 NVIDIA Blackwell GPUs in one NVIDIA NVLink domain. The apex of AI computing architecture.
+Datasheet
+Learn More
+Air-Cooled System, Evolved
+The Best Selling Air-cooled System Redesigned and Optimized for NVIDIA HGX B200 8-GPU
+The new air-cooled NVIDIA HGX B200 8-GPU systems feature enhanced cooling architecture, high configurability for CPU, memory, storage, and networking, and improved serviceability from the front or rear side. Up to 4 of the new 8U/10U air-cooled systems can be installed and fully integrated in a rack, achieving the same density as the previous generation while providing up to 15x inference and 3x training performance. All Supermicro NVIDIA HGX B200 systems are equipped with a 1:1 GPU-to-NIC ratio supporting NVIDIA 
+BlueField®-3
+ or NVIDIA 
+ConnectX®-7
+ for scaling across a high-performance computing fabric.
+Up to 32 GPUs in a rack
+1.8TB/s GPU-GPU Interconnect 180GB HBM3e per GPU
+Dual Intel Xeon 6 or AMD EPYC 9005/9004 Series Processors
+Next-Gen Air-Cooling Heatsink and enhanced Serviceability
+8U 
+Front I/O
+ or 10U 
+Rear I/O
+ Air-cooled System
+for NVIDIA HGX B200 
+8-GPU
+Front I/O air-cooled system with enhanced system memory configuration flexibility and cold aisle serviceability
+Datasheet
+Learn More
+Rear I/O air-cooled design for large language model training and high volume inference
+Datasheet
+Learn More
+Next-Gen Liquid-Cooled System
+Up to 96 NVIDIA HGX™ B200 GPUs in a Single Rack with Maximum Scalability and Efficiency
+The new front-I/O liquid-cooled 4U NVIDIA HGX B200 
+8-GPU
+ system features Supermicro's DLC-2 technology. Direct liquid cooling now captures up to 92% of the heat generated by server components, such as CPU, GPU, PCIe switch, DIMM, VRM, and PSU, allowing up to 40% data center power savings and as low as a 50dB noise level. The new architecture further enhances efficiency and serviceability of the predecessor that was designed for NVIDIA HGX H100/H200 
+8-GPU
+ systems. Available in 42U, 48U, or 52U configurations, the rack-scale design with the new vertical coolant distribution manifolds (CDM) means that horizontal manifolds no longer occupy valuable rack units. This enables 8 systems with 64 NVIDIA Blackwell GPUs in a 42U rack and up to 12 systems with 96 NVIDIA GPUs in a 52U rack.
+Up to 96 GPUs in a rack
+1.8TB/s GPU-GPU Interconnect 180GB HBM3e per GPU
+Dual Intel Xeon 6 or AMD EPYC 9005/9004 Series Processors
+Supermicro DLC-2 Technology with Up to 40% Data Center Power Saving
+4U 
+Front I/O
+ or 
+Rear I/O
+ Liquid-cooled System
+for NVIDIA HGX B200 
+8-GPU
+Front I/O DLC-2 liquid-cooled system with up to 40% data center power savings and noise levels as low as 50dB
+Datasheet
+Learn More
+Rear I/O liquid-cooled system designed for maximum compute density and performance
+Datasheet
+Learn More
+SuperClusters Powered by NVIDIA Blackwell
+Plug-and-Play Scalable Unit Readily Deployable for NVIDIA Blackwell
+Available in 42U, 48U, or 52U rack configurations for Air-cooled or liquid-cooled data centers, the new SuperCluster designs incorporate NVIDIA Quantum InfiniBand or NVIDIA Spectrum™ networking in a centralized rack, the liquid-cooled SuperClusters enabling a non-blocking, 256-GPU scalable unit in five 42U/48U racks or an extended 768-GPU scalable unit in nine 52U racks for the most advanced AI data center deployments. Supermicro also offers an in-row CDU option for large deployments, as well as liquid-to-air cooling rack solution that doesn't require facility water. The air-cooled SuperCluster design follows the proven, industry leading architecture of the previous generation, providing a 256-GPU scalable unit in nine 48U racks.
+Learn More About SuperClusters
+End-to-end Data Center Building Block Solution and Deployment Services for NVIDIA Blackwell
+Supermicro serves as a comprehensive one-stop solution provider with global manufacturing scale, delivering data center-level solution design, liquid-cooling technologies, switching, cabling, a full data center management software suite, L11 and L12 solution validation, onsite installation, and professional support and service. With production facilities across San Jose, Europe, and Asia, Supermicro offers unmatched manufacturing capacity for liquid-cooled or air-cooled rack systems, ensuring timely delivery, reduced total cost of ownership (TCO), and consistent quality.
+Rack and Data Center Integration Services
+NVIDIA Blackwell Optimized Infrastructure and Software
+Supermicro’s NVIDIA Blackwell solutions are optimized with NVIDIA Quantum InfiniBand or NVIDIA Spectrum™ networking in a centralized rack for the best infrastructure scaling and GPU clustering, enabling a non-blocking, 256-GPU scalable unit in five racks or an extended 768-GPU scalable unit in nine racks. This architecture, with native support for NVIDIA Enterprise software, combines with Supermicro’s expertise in deploying the world’s largest liquid-cooled data centers to deliver superior efficiency and unmatched time-to-online for today's most ambitious AI data center projects.
+NVIDIA Quantum InfiniBand and Spectrum Ethernet
+From mainstream enterprise servers to high-performance supercomputers, the NVIDIA Quantum InfiniBand and Spectrum™ networking technology activate the most scalable, fastest, and secure end-to-end networking.
+NVIDIA 
+Quantum-2
+ InfiniBand Platform
+NVIDIA 
+Spectrum-X
+NVIDIA SuperNICs
+Supermicro is at the forefront of adopting NVIDIA SuperNICs: NVIDIA ConnectX for InfiniBand and NVIDIA 
+BlueField-3
+ SuperNIC for Ethernet. All of Supermicro’s NVIDIA HGX B200 systems are equipped with 1:1 networking to each GPU to enable NVIDIA GPUDirect RDMA (InfiniBand) or RoCE (Ethernet) for massively parallel AI computing.
+NVIDIA ConnectX SuperNICs
+NVIDIA 
+BlueField-3
+ SuperNIC
+NVIDIA AI Enterprise Software
+Full access to NVIDIA application frameworks, APIs, SDKs, toolkits and optimizers, along with ability to deploy AI blueprints, NVIDIA NIMs, RAGs, and the latest optimized AI foundation models. NVIDIA AI Enterprise Software streamlines development and deployment of production-grade AI applications with enterprise-grade security, support and stability to ensure smooth transition from prototype 
+to production
+.
+Supermicro PCIe GPU Systems for Enterprise AI
+Flexible, Powerful Acceleration for AI and Visual Computing
+Learn More
+NVIDIA H200 Tensor Core GPU Solutions
+Select right systems for your AI workloads. Supermicro has the broadest portfolio of systems optimized for NVIDIA Hopper and Ada Lovelace Generation platforms including NVIDIA HGX H200, H200 NVL, GH200 Superchip, and L40S. Experience the power of the engine that ignited the AI revolution.
+Learn More
+Featured Resources
+" class="video-embed-field-launch-modal"> 
+Featured Video: EVERYTHING Inside a Supermicro NVIDIA B300 AI Factory [ServeTheHome]
+Certain products may not be available in your region
+×
+Gold Series
+Get fast delivery of pre-built Supermicro servers optimized for a wide range of workloads
+Learn More
+Breadcrumb
+Home
+Accelerators
+NVIDIA Blackwell HGX™ B300, B200 and GB200 NVL72 Solutions
+Select your language
+English
+繁體中文
+簡体中文
+日本語
+Deutsch
+Español
+한국어
+Français
+Italiano
+Português
+Русский
+Vietnamese
+Thai
+Indonesian
+Bahasa Malaysia
+Hindi
+Dutch
+About us
+Company Profile
+Green Computing
+Investor Relations
+Careers
+Site Map
+Glossary
+News
+Press Releases
+Supermicro in the News
+Product Reviews
+Press Kits
+Events
+Webinars
+Resources
+Brochures
+Product Briefs
+Solution Briefs
+Success Stories
+Videos
+White Papers
+Thought Leadership
+Validated Designs
+MySupermicro
+Data Center Stories
+Support
+Support Home
+Onsite Services
+Technical Support
+RMA
+System Management
+Product Resources
+Security Center
+Warranty Policy
+FAQs
+Connect & Follow
+Locations
+Contact Us
+Newsletter Sign-up
+Copyright © 
+ Super Micro Computer, Inc. All Rights Reserved
+Other products and companies referred to herein are trademarks or registered trademarks of their respective companies or mark holders.
+Click for Logo Guidelines
+ • 
+Privacy Policy
+ • 
+Anti-Slavery and Human Trafficking Statement
+×

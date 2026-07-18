@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="oJlmOE2ZTqD9qB6__H366EfdLIMpyXJe3puLDJw2kwSQb3vT7SGK-bqWnxzm-lP3sRUALjzThPEWk-1sYpUQhA" />
+<title>NVIDIA DGX B200 Datasheet</title>
+<link rel="icon" type="image/x-icon" href="https://resources.nvidia.com/_pfcdnapp/lbhq-production/10412/thumbnails/original/1a53d015-3f8b-4152-a6e7-b397ba726c21.png">
+<meta name="description" content="NVIDIA DGX B200 delivers a unified platform for training, fine-tuning and inferencing in a single solution optimized for enterprise AI workloads, powered by the NVIDIA Blackwell GPU.">
+<link rel="canonical" href="https://resources.nvidia.com/en-us-dgx-systems/dgx-b200-datasheet">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="NVIDIA DGX B200 Datasheet">
+<meta property="og:description" content="NVIDIA DGX B200 delivers a unified platform for training, fine-tuning and inferencing in a single solution optimized for enterprise AI workloads, powered by the NVIDIA Blackwell GPU.">
+<meta property="og:site_name" content="NVIDIA">
+<meta property="og:url" content="https://resources.nvidia.com/en-us-dgx-systems/dgx-b200-datasheet">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://resources.nvidia.com/_pfcdn/assets/10412/contents/593204/thumbnails/600x/dgx-scale-ai-infrastructure-dgx-b200-datasheet-nvidia-3184101-r6-web.png">
+<meta property="og:image:height" content="384">
+<meta property="og:image:width" content="576">
+<meta name="twitter:title" content="NVIDIA DGX B200 Datasheet">
+<meta name="twitter:description" content="NVIDIA DGX B200 delivers a unified platform for training, fine-tuning and inferencing in a single solution optimized for enterprise AI workloads, powered by the NVIDIA Blackwell GPU.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://resources.nvidia.com/_pfcdn/assets/10412/contents/593204/thumbnails/600x/dgx-scale-ai-infrastructure-dgx-b200-datasheet-nvidia-3184101-r6-web.png">
+<link href="https://resources.nvidia.com/_pfcdn/web-fonts/roboto_lato/roboto_lato.css" media="screen" rel="stylesheet" type="text/css">
+<link href="https://resources.nvidia.com/_pfcdn/web-fonts/font-awesome/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
+<link href="https://resources.nvidia.com/_pfcdn/web-fonts/overpass/overpass.css" rel="stylesheet" type="text/css">
+<link href="https://resources.nvidia.com/_pfcdn/web-fonts/primeicons/primeicons.css" rel="stylesheet" type="text/css">
+
+<style>
+	@font-face {
+    font-family: NVIDIASansWBd;
+    src: url('https://resources.nvidia.com/_pfcdn/assets/2/fonts/24bc8386-6985-4360-9f61-7107cd1e37f8.woff2') format('woff2');
+  }
+	@font-face {
+    font-family: NVIDIASansWBdIt;
+    src: url('https://resources.nvidia.com/_pfcdn/assets/2/fonts/f169550d-f0dc-436f-a410-a126b54fbbbb.woff2') format('woff2');
+  }
+	@font-face {
+    font-family: NVIDIASansWIt;
+    src: url('https://resources.nvidia.com/_pfcdn/assets/2/fonts/8a9216fb-6ac7-496c-bedb-7543dcf11d81.woff2') format('woff2');
+  }
+	@font-face {
+    font-family: NVIDIASansWLt;
+    src: url('https://resources.nvidia.com/_pfcdn/assets/2/fonts/43b86a56-d2be-4e84-8396-e4c2d71cf4d9.woff2') format('woff2');
+  }
+	@font-face {
+    font-family: NVIDIASansWLtIt;
+    src: url('https://resources.nvidia.com/_pfcdn/assets/2/fonts/ce922b2e-51c5-40e6-8e81-0dcfea65dc4f.woff2') format('woff2');
+  }
+	@font-face {
+    font-family: NVIDIASansWMd;
+    src: url('https://resources.nvidia.com/_pfcdn/assets/2/fonts/720a495d-45b5-441d-a0da-80cd8eb0af28.woff2') format('woff2');
+  }
+	@font-face {
+    font-family: NVIDIASansWMdIt;
+    src: url('https://resources.nvidia.com/_pfcdn/assets/2/fonts/bf17431d-f89c-483b-ae00-01ef2bd57854.woff2') format('woff2');
+  }
+	@font-face {
+    font-family: NVIDIASansWRg;
+    src: url('https://resources.nvidia.com/_pfcdn/assets/2/fonts/ad4ba864-75dc-44ab-a48b-a3c63972f646.woff2') format('woff2');
+  }</style>
+ 
+  
+
+
+  <script type="javascript/pathfactory">
+   (function() {
+     var didInit = false;
+     function initMunchkin() {
+       if(didInit === false) {
+         didInit = true;
+         Munchkin.init('156-OFN-742');
+
+          var webpageTrackTriggered = false;
+          var totalTimeSpent = 0;
+          const threshold = 20;
+          const totalTimer = setInterval(() => {
+            if (!webpageTrackTriggered && !window.formModalOpen && !document.hidden) {
+              totalTimeSpent++;
+              if (totalTimeSpent >= threshold) {
+                trackWebPage(true);
+                webpageTrackTriggered = true;
+                clearInterval(totalTimer);
+              }
+            }
+          }, 1000);
+       }
+     }
+     function trackWebPage(thresholdPassed) {
+       var url = document.location.pathname;
+       var params = "funnel_stage=Middle of Funnel&amp;business_unit=Deep Learning&amp;topic=DGX&amp;campaign_manager_nam=Mara Mahoney&amp;email_address=mmahoney@nvidia.com&amp;funnel_stage=middle-of-funnel&amp;business_unit=deep-learning&amp;topic=dgx&amp;campaign_manager_nam=mara-mahoney&amp;email_address=mmahoney-nvidia-com&amp;content_type=Data Sheet&amp;content_type=data-sheet";
+       var queryString = "";
+
+       if (thresholdPassed) {
+         url = url + ", Met Threshold";
+         params = "threshold_passed=true" + (params ? "&" + params : "");
+       }
+       params = params + (queryString ? "&" + queryString : "");
+
+       window.mktoMunchkinFunction('visitWebPage', {
+         url: url,
+         params: params
+       });
+     }
+     var s = document.createElement('script');
+     s.type = 'text/javascript';
+     s.async = true;
+     s.src = '//munchkin.marketo.net/munchkin.js';
+     s.onreadystatechange = function() {
+       if (this.readyState == 'complete' || this.readyState == 'loaded') {
+         initMunchkin();
+       }
+     };
+     s.onload = initMunchkin;
+     document.getElementsByTagName('head')[0].appendChild(s);
+   })();
+  </script>
+
+
+
+
+<script>
+  window.__PATHFACTORY__ = {"environment":{"apiHost":"https://resources.nvidia.com","appId":"0c527753-20eb-4bd8-885a-7288228baf8c","accessProtectionSsoDomains":[],"baseUrl":"https://resources.nvidia.com","clientId":"LB-AEE03768-10412","consentDeclinedCookieLifetimeDays":"1/48","contentId":593204,"contentUuid":"55429b11-878e-4ad4-9f3e-d09c462d5af0","cookieLifetimeDays":"730","cookieWhitelist":["ELOQUA","_mkto_trk","RegExp::^visitor_id[0-9]+$::pardot_visitor_id","hubspotutk"],"cfCollectionUuid":null,"cfContextConfig":null,"cfContexts":null,"newFeatures":null,"collectionUuid":null,"childTrackExperienceUuid":null,"dynamicCloudFrontHost":"https://resources.nvidia.com/_pfcdn","enableSnowplowForCampaignTools":true,"enableHippoTracking":true,"enableSnowplowTracking":true,"enableRadwareBotDetection":false,"enableDemandbase":false,"enableNvidiaNcidCookie":true,"enableSixSense":true,"environment":"production","experienceId":134054,"experienceType":"target","experienceTypeValue":1,"experienceUuid":"ad7366f0-5d82-49b0-89ae-5709bbbba84f","landingPageContentUuid":null,"gdprCookieConsentEnabled":true,"landingExperienceId":null,"landingExperienceLink":"","landingPageId":null,"marketingAutomationPlatform":"marketo","requestIp":"2.23.208.34","rocketChatEndpoint":"https://rocket.pathfactory.com","showCookieConsent":true,"standardCookieConsentEnabled":false,"experienceUniqueId":null,"snowplowCollector":"spcollector.pathfactory.com","enableCustomSnowplowCollector":false},"global":{"cookieWhitelist":["ELOQUA","_mkto_trk","RegExp::^visitor_id[0-9]+$::pardot_visitor_id","hubspotutk"],"customFonts":[{"title":"NVIDIASansWBd","fontFiles":"https://cdn.pathfactory.com/assets/2/fonts/24bc8386-6985-4360-9f61-7107cd1e37f8.woff2"},{"title":"NVIDIASansWBdIt","fontFiles":"https://cdn.pathfactory.com/assets/2/fonts/f169550d-f0dc-436f-a410-a126b54fbbbb.woff2"},{"title":"NVIDIASansWIt","fontFiles":"https://cdn.pathfactory.com/assets/2/fonts/8a9216fb-6ac7-496c-bedb-7543dcf11d81.woff2"},{"title":"NVIDIASansWLt","fontFiles":"https://cdn.pathfactory.com/assets/2/fonts/43b86a56-d2be-4e84-8396-e4c2d71cf4d9.woff2"},{"title":"NVIDIASansWLtIt","fontFiles":"https://cdn.pathfactory.com/assets/2/fonts/ce922b2e-51c5-40e6-8e81-0dcfea65dc4f.woff2"},{"title":"NVIDIASansWMd","fontFiles":"https://cdn.pathfactory.com/assets/2/fonts/720a495d-45b5-441d-a0da-80cd8eb0af28.woff2"},{"title":"NVIDIASansWMdIt","fontFiles":"https://cdn.pathfactory.com/assets/2/fonts/bf17431d-f89c-483b-ae00-01ef2bd57854.woff2"},{"title":"NVIDIASansWRg","fontFiles":"https://cdn.pathfactory.com/assets/2/fonts/ad4ba864-75dc-44ab-a48b-a3c63972f646.woff2"}],"showCookieConsent":true,"currentContent":{"id":593204,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2024-03-18T12:52:33.000-07:00","imageId":1467427,"slug":"dgx-b200-datasheet","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/593204/thumbnails/600x/dgx-scale-ai-infrastructure-dgx-b200-datasheet-nvidia-3184101-r6-web.png","title":"NVIDIA DGX B200 Datasheet","canonicalUrl":null,"description":"NVIDIA DGX B200 delivers a unified platform for training, fine-tuning and inferencing in a single solution optimized for enterprise AI workloads, powered by the NVIDIA Blackwell GPU.","rating":null,"contentUuid":"55429b11-878e-4ad4-9f3e-d09c462d5af0","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/sfmnb8rtk6/dgx-scale-ai-infrastructure-dgx-b200-datasheet-nvidia-3184101-r6-web","languageId":0,"contentTypeName":"Data Sheet","contentTypeId":5567,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-b200-datasheet","altText":"","topics":["DGX"],"contentTypes":[{"id":5567,"name":"Data Sheet"}],"topicsJson":[{"contentId":593204,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":593204,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":593204,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2024-03-18T16:56:10.000-04:00","updatedAt":"2026-02-13T10:56:29.000-08:00","parameterizedContentTypeName":"data-sheet"},"experienceContent":[{"id":490983,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2023-03-19T21:59:21.000-07:00","imageId":1467504,"slug":"nvidia-dgx-platform-solution-overview-web-us","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/490983/thumbnails/600x/nvidia-dgx-platform-solution-overview-web-us.png","title":"DGX Platform Solution Overview","canonicalUrl":null,"description":"Built expressly for enterprise AI, the NVIDIA DGX platform incorporates","rating":null,"contentUuid":"73d1bc3e-3287-4836-9765-fca2de0ed061","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/cgxzmgd2dx/nvidia-dgx-platform-solution-overview-web-us","languageId":0,"contentTypeName":"Solution Brief","contentTypeId":7047,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/nvidia-dgx-platform-solution-overview-web-us","altText":"","topics":["DGX"],"contentTypes":[{"id":7047,"name":"Solution Brief"}],"topicsJson":[{"contentId":490983,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":490983,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":[],"funnelStagesJson":[],"assetTypes":[],"language":"English","ecCreatedAt":"2023-03-20T01:39:55.000-04:00","updatedAt":"2026-05-28T02:38:35.000-07:00","parameterizedContentTypeName":"solution-brief"},{"id":1182392,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2026-05-28T21:31:02.000-07:00","imageId":1533760,"slug":"eos-data-center-video","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/1182392/thumbnails/600x/eyJoIjoxMDgwfQ==%3Fsig.ver%3D1%26sig.keyId%3Dus-east-1.20240821%26sig.expires%3D1780034400%26sig%3De7mtTC0EV2KOe1OcjjWeNmI94RXJbIjfSixYT6z4-Yo","title":"Eos: The Supercomputer Powering NVIDIA's AI Breakthroughs","canonicalUrl":null,"description":"Explore Eos, an extremely large-scale NVIDIA DGX SuperPOD, where NVIDIA developers create their AI breakthroughs using accelerated computing infrastructure and fully optimized software.","rating":null,"contentUuid":"48254519-288d-4922-b187-b5d9f244f993","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/hzcfnzjccr/nvidia-dgx-eos-data-center-video","languageId":0,"contentTypeName":"Video","contentTypeId":2492,"experienceId":134054,"views":0,"engagementThreshold":30,"url":"https://resources.nvidia.com/en-us-dgx-systems/eos-data-center-video","altText":"","topics":[],"contentTypes":[{"id":2492,"name":"Video"}],"topicsJson":[],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":[],"businessUnitsJson":[],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Top of Funnel"],"funnelStagesJson":[{"contentId":1182392,"name":"Top of Funnel","id":844,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2026-05-29T00:32:02.000-04:00","updatedAt":"2026-05-28T21:31:15.000-07:00","parameterizedContentTypeName":"video"},{"id":583116,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2024-02-18T20:25:07.000-08:00","imageId":712860,"slug":"eos-blog","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/583116/thumbnails/600x/NVIDIA-Eos-Image.jpg","title":"NVIDIA Eos Revealed: Peek Into Operations of a Top 10 Supercomputer","canonicalUrl":null,"description":"Ranked #9 in the TOP500 list of fastest supercomputers, NVIDIA’s groundbreaking DGX AI supercomputer Eos is designed to power the next frontier in AI innovation.","rating":null,"contentUuid":"b168fa90-1f7d-4e5e-a1bf-37a09069a4a4","mediaType":"webpage","sourceUrl":"https://blogs.nvidia.com/blog/eos/","languageId":0,"contentTypeName":"Blog","contentTypeId":2489,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/eos-blog","altText":"","topics":["DGX"],"contentTypes":[{"id":2489,"name":"Blog"}],"topicsJson":[{"contentId":583116,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":["HPC / Scientific Computing","Academia / Education","Cloud Services","Hardware / Semiconductor"],"industriesJson":[{"contentId":583116,"name":"HPC / Scientific Computing","id":43895,"type":"ContentIndustry"},{"contentId":583116,"name":"Academia / Education","id":43905,"type":"ContentIndustry"},{"contentId":583116,"name":"Cloud Services","id":68461,"type":"ContentIndustry"},{"contentId":583116,"name":"Hardware / Semiconductor","id":68462,"type":"ContentIndustry"}],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":583116,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Top of Funnel"],"funnelStagesJson":[{"contentId":583116,"name":"Top of Funnel","id":844,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2024-02-18T23:30:17.000-05:00","updatedAt":"2025-10-27T11:47:53.000-07:00","parameterizedContentTypeName":"blog"},{"id":489757,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2023-03-14T23:33:34.000-07:00","imageId":1512194,"slug":"dgx-ai-4","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/489757/thumbnails/600x/nvidia-dgx-superpod-datasheet-us-web.png","title":"NVIDIA DGX SuperPOD Solution Overview","canonicalUrl":null,"description":"Learn how the NVIDIA DGX SuperPOD™ brings together leadership-class infrastructure with agile, scalable performance for the most challenging AI and high performance computing (HPC) workloads.","rating":null,"contentUuid":"b3be5c09-e6cf-4a8d-8eab-15ed034d7150","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/9mw2w25z6d/nvidia-dgx-superpod-datasheet-us-web","languageId":0,"contentTypeName":"Solution Brief","contentTypeId":7047,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-ai-4","altText":"","topics":["DGX","Data Center / Cloud Infrastructure"],"contentTypes":[{"id":7047,"name":"Solution Brief"}],"topicsJson":[{"contentId":489757,"name":"DGX","id":37649,"type":"ContentTopic"},{"contentId":489757,"name":"Data Center / Cloud Infrastructure","id":53318,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":489757,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Top of Funnel"],"funnelStagesJson":[{"contentId":489757,"name":"Top of Funnel","id":844,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2023-03-15T03:10:26.000-04:00","updatedAt":"2026-04-13T00:24:00.000-07:00","parameterizedContentTypeName":"solution-brief"},{"id":1064743,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2025-10-27T20:37:05.000-07:00","imageId":1467354,"slug":"dgx-b300-technical-brief","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/1064743/thumbnails/600x/DGX-B300-Technical-Brief.png","title":"NVIDIA DGX B300 Technical Brief","canonicalUrl":"","description":"Take a closer look at how a NVIDIA DGX B300 system, featuring eight NVIDIA Blackwell Ultra GPUs in an air-cooled 10 Rack Unit (RU) chassis, addresses scaling demands, energy consumption, and complexity for next-gen AI models.","rating":null,"contentUuid":"e51bd7f1-3bc3-411d-b9d0-30b5237b09d6","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/gwhprtvxhm/dgx-b300-technical-brief","languageId":0,"contentTypeName":"Solution Brief","contentTypeId":7047,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-b300-technical-brief","altText":"","topics":[],"contentTypes":[{"id":7047,"name":"Solution Brief"}],"topicsJson":[],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":1064743,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":["Unknown"],"solutionsJson":[{"contentId":1064743,"name":"Unknown","id":95808,"type":"ContentSolution"}],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":1064743,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English (US)","ecCreatedAt":"2025-10-28T13:39:53.000-04:00","updatedAt":"2026-05-28T02:38:36.000-07:00","parameterizedContentTypeName":"solution-brief"},{"id":1182164,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2026-05-28T02:38:26.000-07:00","imageId":1533503,"slug":"dgx-vera-rubin-nvl72-datasheet","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/1182164/thumbnails/600x/dgx-systems-datasheet-vera-rubin-nvl72-nvidia-us-5211451-web.png","title":"NVIDIA DGX Vera Rubin NVL72 Datasheet","canonicalUrl":null,"description":"NVIDIA DGX Vera Rubin NVL72 is a turnkey, rack-scale AI infrastructure solution purpose-built for gigascale AI training and inference. Built on the NVIDIA Vera Rubin architecture, DGX Vera Rubin NVL72 unifies 72 NVIDIA Rubin GPUs and 36 NVIDIA Vera CPUs through sixth-generation NVIDIA NVLink into a massive shared-memory fabric.","rating":null,"contentUuid":"86098f99-447a-487a-9ee2-a1451f34d3d3","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/flshwwtnhb/dgx-systems-datasheet-vera-rubin-nvl72-nvidia-us-5211451-web","languageId":0,"contentTypeName":"Data Sheet","contentTypeId":5567,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-vera-rubin-nvl72-datasheet","altText":"","topics":[],"contentTypes":[{"id":5567,"name":"Data Sheet"}],"topicsJson":[],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":1182164,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":["Unknown"],"solutionsJson":[{"contentId":1182164,"name":"Unknown","id":95808,"type":"ContentSolution"}],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":1182164,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English (US)","ecCreatedAt":"2026-05-28T05:38:43.000-04:00","updatedAt":"2026-05-28T03:10:44.000-07:00","parameterizedContentTypeName":"data-sheet"},{"id":1182168,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2026-05-28T02:59:24.000-07:00","imageId":1533507,"slug":"dgx-rubin-nvl8-datasheet","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/1182168/thumbnails/600x/dgx-systems-datasheet-rubin-nvl8-intel-nvidia-us-5211465-web.png","title":"NVIDIA DGX Rubin NVL8 Datasheet","canonicalUrl":null,"description":"Powered by 8 NVIDIA Rubin GPUs, 2 Intel x86 CPUs, and sixth-generation NVIDIA NVLink, DGX Rubin NVL8 delivers 400 PFLOPS of NVFP4 inference performance and 280 PFLOPS of NVFP4 training performance.","rating":null,"contentUuid":"0f101c56-c4ce-4a28-a22d-e480c515a619","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/pnx6m7gblv/dgx-systems-datasheet-rubin-nvl8-intel-nvidia-us-5211465-web","languageId":0,"contentTypeName":"Data Sheet","contentTypeId":5567,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-rubin-nvl8-datasheet","altText":"","topics":[],"contentTypes":[{"id":5567,"name":"Data Sheet"}],"topicsJson":[],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":1182168,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":["Unknown"],"solutionsJson":[{"contentId":1182168,"name":"Unknown","id":95808,"type":"ContentSolution"}],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":1182168,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English (US)","ecCreatedAt":"2026-05-28T05:59:50.000-04:00","updatedAt":"2026-05-28T03:10:44.000-07:00","parameterizedContentTypeName":"data-sheet"},{"id":921183,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2025-03-18T05:20:08.000-07:00","imageId":1533762,"slug":"dgx-gb300-datasheet","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/1533762/thumbnails/600x/3bd79cf0-f0dc-4998-a233-f2807320e80f.png","title":"NVIDIA DGX GB300 Datasheet","canonicalUrl":"","description":"","rating":null,"contentUuid":"5e0014c2-f40d-438b-882f-e46688b122ce","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/qtffbm66br/dgx-scale-ai-infrastructure-datasheet-gtc25-dgx-gb300-3725800-us-nvidia-web","languageId":0,"contentTypeName":"Data Sheet","contentTypeId":5567,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-gb300-datasheet","altText":"","topics":["DGX"],"contentTypes":[{"id":5567,"name":"Data Sheet"}],"topicsJson":[{"contentId":921183,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":921183,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":921183,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2025-03-18T15:13:48.000-04:00","updatedAt":"2026-05-28T21:33:54.000-07:00","parameterizedContentTypeName":"data-sheet"},{"id":921184,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2025-03-18T05:21:20.000-07:00","imageId":1533763,"slug":"dgx-b300-datasheet","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/1533763/thumbnails/600x/1c8b8035-e384-43bd-94b1-c574fdd66335.png","title":"NVIDIA DGX B300 Datasheet","canonicalUrl":"","description":"","rating":null,"contentUuid":"84c68215-112e-4c9b-92da-c712ce398cd3","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/mhhx9kgvsz/dgx-scale-ai-infrastructure-datasheet-gtc25-dgx-b300-nvidia-us-3725750-web","languageId":0,"contentTypeName":"Data Sheet","contentTypeId":5567,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-b300-datasheet","altText":"","topics":["DGX"],"contentTypes":[{"id":5567,"name":"Data Sheet"}],"topicsJson":[{"contentId":921184,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":921184,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":921184,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2025-03-18T15:13:48.000-04:00","updatedAt":"2026-05-28T21:34:44.000-07:00","parameterizedContentTypeName":"data-sheet"},{"id":593205,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2024-03-18T12:54:02.000-07:00","imageId":1467424,"slug":"dgx-superpod-gb200-datasheet","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/593205/thumbnails/600x/dgx-superpod-with-gb200-datasheet-nvidia-us-3184929-r5-web.png","title":"NVIDIA DGX GB200 Datasheet","canonicalUrl":null,"description":"NVIDIA DGX GB200 is liquid-cooled, rack-scale AI infrastructure with intelligent predictive management capabilities that scales to tens of thousands of NVIDIA GB200 Grace Blackwell Superchips for training and inferencing trillion-parameter generative AI models.","rating":null,"contentUuid":"c0a6f8c7-7d97-43f8-93b4-d13f80bc70fb","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/q7wr7wcdql/dgx-superpod-with-gb200-datasheet-nvidia-us-3184929-r5-web","languageId":0,"contentTypeName":"Data Sheet","contentTypeId":5567,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-superpod-gb200-datasheet","altText":"","topics":["DGX"],"contentTypes":[{"id":5567,"name":"Data Sheet"}],"topicsJson":[{"contentId":593205,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":593205,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":593205,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2024-03-18T16:56:10.000-04:00","updatedAt":"2026-02-13T10:56:26.000-08:00","parameterizedContentTypeName":"data-sheet"},{"id":593204,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2024-03-18T12:52:33.000-07:00","imageId":1467427,"slug":"dgx-b200-datasheet","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/593204/thumbnails/600x/dgx-scale-ai-infrastructure-dgx-b200-datasheet-nvidia-3184101-r6-web.png","title":"NVIDIA DGX B200 Datasheet","canonicalUrl":null,"description":"NVIDIA DGX B200 delivers a unified platform for training, fine-tuning and inferencing in a single solution optimized for enterprise AI workloads, powered by the NVIDIA Blackwell GPU.","rating":null,"contentUuid":"55429b11-878e-4ad4-9f3e-d09c462d5af0","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/sfmnb8rtk6/dgx-scale-ai-infrastructure-dgx-b200-datasheet-nvidia-3184101-r6-web","languageId":0,"contentTypeName":"Data Sheet","contentTypeId":5567,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-b200-datasheet","altText":"","topics":["DGX"],"contentTypes":[{"id":5567,"name":"Data Sheet"}],"topicsJson":[{"contentId":593204,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":593204,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":593204,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2024-03-18T16:56:10.000-04:00","updatedAt":"2026-02-13T10:56:29.000-08:00","parameterizedContentTypeName":"data-sheet"},{"id":658708,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2024-06-26T05:32:58.000-07:00","imageId":1467425,"slug":"dgx-h200-datasheet","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/658708/thumbnails/600x/nvidia-dgx-h200-datasheet-nvidia-us-web.png","title":"NVIDIA DGX H200 Datasheet","canonicalUrl":null,"description":"NVIDIA DGX H200 powers business innovation and optimization. A foundation of NVIDIA DGX SuperPOD, DGX H200 is an AI powerhouse that features the groundbreaking NVIDIA H200 Tensor Core GPU.","rating":null,"contentUuid":"d6be44d5-5472-4cfe-aecd-64c2aa1569f4","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/lqrqp9b7f9/nvidia-dgx-h200-datasheet-nvidia-us-web","languageId":0,"contentTypeName":"Data Sheet","contentTypeId":5567,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-h200-datasheet","altText":"","topics":[],"contentTypes":[{"id":5567,"name":"Data Sheet"}],"topicsJson":[],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":658708,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":["Unknown"],"solutionsJson":[{"contentId":658708,"name":"Unknown","id":95808,"type":"ContentSolution"}],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":658708,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English (US)","ecCreatedAt":"2024-06-27T10:58:23.000-04:00","updatedAt":"2026-03-09T06:28:12.000-07:00","parameterizedContentTypeName":"data-sheet"},{"id":1110547,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2025-12-04T05:38:10.000-08:00","imageId":1410538,"slug":"the-blueprint-for-ai-success-ebook","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/1110547/thumbnails/600x/dgx-intel-mdf-ebook-ai-coe-intel-version-4262500-web.png","title":"The Blueprint for AI Success","canonicalUrl":"","description":"Gain insights on how leading companies are transforming business performance with an AI Center of Excellence that delivers strategic and repeatable outcomes.","rating":null,"contentUuid":"7e717a39-846e-4524-8fa3-00f56d01fe1b","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/7wphkv5vtz/dgx-intel-mdf-ebook-ai-coe-intel-version-4262500-web","languageId":0,"contentTypeName":"Ebook","contentTypeId":2494,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/the-blueprint-for-ai-success-ebook","altText":"","topics":[],"contentTypes":[{"id":2494,"name":"Ebook"}],"topicsJson":[],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":1110547,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":["Unknown"],"solutionsJson":[{"contentId":1110547,"name":"Unknown","id":95808,"type":"ContentSolution"}],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":1110547,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English (US)","ecCreatedAt":"2025-12-04T08:42:23.000-05:00","updatedAt":"2026-05-28T02:38:41.000-07:00","parameterizedContentTypeName":"ebook"},{"id":1182169,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2026-05-28T02:59:35.000-07:00","imageId":1533764,"slug":"gtc26-s81848","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/1533764/thumbnails/600x/7ea9ddf1-4444-47fc-a9d7-f7e39bbc0429.jpg","title":"Deep Dive on Gigawatt AI Factories","canonicalUrl":null,"description":"Gain insights about internal NVIDIA deployments and the tools and software stack running on these platforms, with detailed views into multi-node NVLink, system interconnects, storage, and the latest liquid-cooled designs shaping the future of AI infrastructure.","rating":null,"contentUuid":"1a60707f-7a2e-41ab-aefb-cbadfc3a642d","mediaType":"webpage","sourceUrl":"https://www.nvidia.com/en-us/on-demand/session/gtc26-s81848/?playlistId=gtc26-nvidia-dgx-platform","languageId":0,"contentTypeName":"Session","contentTypeId":5629,"experienceId":134054,"views":0,"engagementThreshold":30,"url":"https://resources.nvidia.com/en-us-dgx-systems/gtc26-s81848","altText":"","topics":[],"contentTypes":[{"id":5629,"name":"Session"}],"topicsJson":[],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":[],"businessUnitsJson":[],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":1182169,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2026-05-28T05:59:50.000-04:00","updatedAt":"2026-05-28T21:36:00.000-07:00","parameterizedContentTypeName":"session"},{"id":530920,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2023-07-31T01:09:59.000-07:00","imageId":1467423,"slug":"nvidia-dgx-nemo-llm-solution-brief","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/530920/thumbnails/600x/nvidia-dgx-nemo-llm-solution-brief-us-web.png","title":"NVIDIA NeMo on NVIDIA DGX for LLM","canonicalUrl":null,"description":"Build and deploy generative AI for your enterprise, with solutions optimized for LLM applications from NVIDIA. NVIDIA DGX™ provides purpose-built AI infrastructure with access to AI experts. Coupled with the NVIDIA NeMo™ framework, enterprises can easily and cost effectively deliver custom generative AI across their organization.","rating":null,"contentUuid":"8a2f1e91-14dc-41a2-ad56-bc1f563c225d","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/jsjhwxhnfz/nvidia-dgx-nemo-llm-solution-brief-us-web","languageId":0,"contentTypeName":"Solution Brief","contentTypeId":7047,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/nvidia-dgx-nemo-llm-solution-brief","altText":"","topics":["DGX"],"contentTypes":[{"id":7047,"name":"Solution Brief"}],"topicsJson":[{"contentId":530920,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":530920,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":530920,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2023-07-31T04:12:55.000-04:00","updatedAt":"2026-02-13T10:56:25.000-08:00","parameterizedContentTypeName":"solution-brief"},{"id":1110548,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2025-12-04T05:40:16.000-08:00","imageId":1410539,"slug":"gtcdc25-dc51039","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/1110548/thumbnails/600x/1200","title":"Accelerating At-Scale Infrastructure: Data Center AI Factories of the Future","canonicalUrl":"","description":"As AI models grow in complexity and scale, robust supporting infrastructure has become more vital than ever for AI factories","rating":null,"contentUuid":"9d573679-259e-41ed-a162-36d69afc52ed","mediaType":"webpage","sourceUrl":"https://www.nvidia.com/en-us/on-demand/session/gtcdc25-dc51039/?playlistId=gtcdc25-ai-factory","languageId":0,"contentTypeName":"Session","contentTypeId":5629,"experienceId":134054,"views":0,"engagementThreshold":30,"url":"https://resources.nvidia.com/en-us-dgx-systems/gtcdc25-dc51039","altText":"","topics":["DGX"],"contentTypes":[{"id":5629,"name":"Session"}],"topicsJson":[{"contentId":1110548,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":1110548,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":1110548,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2025-12-04T08:42:23.000-05:00","updatedAt":"2025-12-04T05:41:04.000-08:00","parameterizedContentTypeName":"session"},{"id":489754,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2023-03-14T23:29:45.000-07:00","imageId":1467370,"slug":"dgx-ai-2","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/489754/thumbnails/600x/dgx-scale-ai-infrastructure-dgx-basepod-for-hcls-solution-overview-2563350-r5.png","title":"NVIDIA DGX BasePOD for Healthcare and Life Sciences","canonicalUrl":null,"description":"To speed the time to value of AI-powered use cases in health and life sciences, NVIDIA offers the DGX BasePOD Infrastructure Solution for Healthcare and Life Sciences (HCLS). It’s optimized to streamline AI development and deployment, from genomics and drug discovery to medical imaging.","rating":null,"contentUuid":"411a3b45-22ec-429a-bacf-f57b9ceaa00c","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/rknfmbfzrd/dgx-scale-ai-infrastructure-dgx-basepod-for-hcls-solution-overview-2563350-r5","languageId":0,"contentTypeName":"Solution Brief","contentTypeId":7047,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-ai-2","altText":"","topics":["DGX","Data Center / Cloud Infrastructure"],"contentTypes":[{"id":7047,"name":"Solution Brief"}],"topicsJson":[{"contentId":489754,"name":"DGX","id":37649,"type":"ContentTopic"},{"contentId":489754,"name":"Data Center / Cloud Infrastructure","id":53318,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":489754,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":489754,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2023-03-15T03:10:26.000-04:00","updatedAt":"2026-02-13T10:55:36.000-08:00","parameterizedContentTypeName":"solution-brief"},{"id":489755,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2023-03-14T23:31:08.000-07:00","imageId":1467371,"slug":"dgx-ai-3","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/489755/thumbnails/600x/nvidia-dgx-basepod-for-fsi-solution-overview-us-web.png","title":"NVIDIA DGX BasePOD for Financial Industry","canonicalUrl":null,"description":"To speed the delivery of AI-powered use cases in financial services, NVIDIA has delivered the DGX BasePOD infrastructure solution for the financial services industry (FSI), optimized to streamline AI development and deployment for critical applications such as conversational AI, algorithmic trading, and fraud detection.","rating":null,"contentUuid":"d8aee940-9c36-4737-ab5e-bc3cc00aaf8a","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/rbhxq6cnnj/nvidia-dgx-basepod-for-fsi-solution-overview-us-web","languageId":0,"contentTypeName":"Solution Brief","contentTypeId":7047,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-ai-3","altText":"","topics":["DGX","Data Center / Cloud Infrastructure"],"contentTypes":[{"id":7047,"name":"Solution Brief"}],"topicsJson":[{"contentId":489755,"name":"DGX","id":37649,"type":"ContentTopic"},{"contentId":489755,"name":"Data Center / Cloud Infrastructure","id":53318,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":489755,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":489755,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2023-03-15T03:10:26.000-04:00","updatedAt":"2026-02-13T10:55:37.000-08:00","parameterizedContentTypeName":"solution-brief"},{"id":538787,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2023-09-04T03:08:26.000-07:00","imageId":1467372,"slug":"nvidia-dgx-basepod-for-energy-solution-overview","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/538787/thumbnails/600x/dgx-scale-ai-infrastructure-solution-overview-dgx-basepod-for-energy-2832131-r8.png","title":"NVIDIA DGX BasePOD for Energy","canonicalUrl":null,"description":"Leading energy companies can drive innovation across oil, gas, power, and utilities with NVIDIA DGX BasePOD infrastructure solution for energy. DGX BasePOD is optimized to streamline AI development and deployment for applications critical to grid modernization, such as environmental simulations, computer vision and digital twins.","rating":null,"contentUuid":"a284d57d-ae44-4169-9091-a624ae858f78","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/xxhwhwhcdf/dgx-scale-ai-infrastructure-solution-overview-dgx-basepod-for-energy-2832131-r8","languageId":0,"contentTypeName":"Solution Brief","contentTypeId":7047,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/nvidia-dgx-basepod-for-energy-solution-overview","altText":"","topics":["DGX"],"contentTypes":[{"id":7047,"name":"Solution Brief"}],"topicsJson":[{"contentId":538787,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":538787,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":538787,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2023-09-04T06:25:54.000-04:00","updatedAt":"2026-02-13T10:55:37.000-08:00","parameterizedContentTypeName":"solution-brief"},{"id":538788,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2023-09-04T03:09:43.000-07:00","imageId":1467373,"slug":"nvidia-dgx-basepod-for-telco-solution-overview","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/538788/thumbnails/600x/nvidia-dgx-basepod-for-telco-solution-overview-US-web.png","title":"NVIDIA DGX BasePOD for Telco","canonicalUrl":null,"description":"Telcos can reduce costs and risk while enhancing customer experiences with NVIDIA DGX BasePOD infrastructure solution for telecommunication. DGX BasePOD is optimized to streamline AI development and deployment for applications critical to efficient connectivity, such as conversational AI, routing optimization, and video analytics.","rating":null,"contentUuid":"1919f3bf-11a9-4d08-a40c-303799469ef2","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/nrhgbxfv7b/nvidia-dgx-basepod-for-telco-solution-overview-us-web","languageId":0,"contentTypeName":"Solution Brief","contentTypeId":7047,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/nvidia-dgx-basepod-for-telco-solution-overview","altText":"","topics":["DGX"],"contentTypes":[{"id":7047,"name":"Solution Brief"}],"topicsJson":[{"contentId":538788,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":538788,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":538788,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2023-09-04T06:25:54.000-04:00","updatedAt":"2026-02-13T10:55:38.000-08:00","parameterizedContentTypeName":"solution-brief"},{"id":1126182,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2025-12-31T05:32:04.000-08:00","imageId":1467206,"slug":"gtc-2024-next-gen-dgx-architecture","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/1126182/thumbnails/600x/1200","title":"The Next-Generation DGX Architecture for Generative AI","canonicalUrl":"","description":"Hear from the architects of Selene, Eos, and next-generation DGX clusters about how they designed these highest performing clusters — Selene placed in the","rating":null,"contentUuid":"13edcd07-9a35-491f-a9bd-5a6a6b9edc0f","mediaType":"webpage","sourceUrl":"https://www.nvidia.com/en-us/on-demand/session/gtc24-s62421/","languageId":0,"contentTypeName":"Session","contentTypeId":5629,"experienceId":134054,"views":0,"engagementThreshold":30,"url":"https://resources.nvidia.com/en-us-dgx-systems/gtc-2024-next-gen-dgx-architecture","altText":"","topics":["DGX"],"contentTypes":[{"id":5629,"name":"Session"}],"topicsJson":[{"contentId":1126182,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":["HPC / Scientific Computing","Academia / Education","Cloud Services","Hardware / Semiconductor"],"industriesJson":[{"contentId":1126182,"name":"HPC / Scientific Computing","id":43895,"type":"ContentIndustry"},{"contentId":1126182,"name":"Academia / Education","id":43905,"type":"ContentIndustry"},{"contentId":1126182,"name":"Cloud Services","id":68461,"type":"ContentIndustry"},{"contentId":1126182,"name":"Hardware / Semiconductor","id":68462,"type":"ContentIndustry"}],"businessUnits":["Deep Learning","GTC"],"businessUnitsJson":[{"contentId":1126182,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"},{"contentId":1126182,"name":"GTC","id":46177,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Top of Funnel"],"funnelStagesJson":[{"contentId":1126182,"name":"Top of Funnel","id":844,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2025-12-31T08:34:59.000-05:00","updatedAt":"2026-02-13T10:52:03.000-08:00","parameterizedContentTypeName":"session"},{"id":429467,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2022-08-08T22:22:14.000-07:00","imageId":1467374,"slug":"nvidia-llm-customers-ebook-dgx-superpod-nemo-us-web","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/429467/thumbnails/600x/nvidia-llm-customers-ebook-dgx-superpod-nemo-us-web.png","title":"Generative AI in Practice: Examples of Successful Enterprise Deployments","canonicalUrl":null,"description":"Learn how five organizations built generative AI applications based on large language models, powered by NVIDIA, to unlock insights, engage customers, and reach new markets.","rating":null,"contentUuid":"74faa293-ce0b-4b0b-a3e4-aeaf4069d6cd","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/htdbchqjbf/nvidia-llm-customers-ebook-dgx-superpod-nemo-us-web","languageId":0,"contentTypeName":"Ebook","contentTypeId":2494,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/nvidia-llm-customers-ebook-dgx-superpod-nemo-us-web","altText":"","topics":["NLP","DGX","NeMo Megatron"],"contentTypes":[{"id":2494,"name":"Ebook"}],"topicsJson":[{"contentId":429467,"name":"NLP","id":34571,"type":"ContentTopic"},{"contentId":429467,"name":"DGX","id":37649,"type":"ContentTopic"},{"contentId":429467,"name":"NeMo Megatron","id":78431,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":["HPC / Scientific Computing"],"industriesJson":[{"contentId":429467,"name":"HPC / Scientific Computing","id":43895,"type":"ContentIndustry"}],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":429467,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":["Conversational AI / NLP","Data Center / Cloud"],"solutionsJson":[{"contentId":429467,"name":"Conversational AI / NLP","id":95792,"type":"ContentSolution"},{"contentId":429467,"name":"Data Center / Cloud","id":95794,"type":"ContentSolution"}],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":429467,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2024-03-18T16:56:10.000-04:00","updatedAt":"2026-02-13T10:55:39.000-08:00","parameterizedContentTypeName":"ebook"},{"id":1124895,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2025-12-23T00:23:31.000-08:00","imageId":1467218,"slug":"dgx-training-special-offer-2023","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/1124895/thumbnails/600x/nvt-print-10k-training-dgx-promotion-brochure-2899047.png","title":"NVIDIA DLI for DGX Training Brochure","canonicalUrl":"","description":"","rating":null,"contentUuid":"5d97d9ed-b487-42b3-8a75-13ddd6f93903","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/s/k8jpmmkfvk/nvt-print-10k-training-dgx-promotion-brochure-2899047","languageId":0,"contentTypeName":"Brochure","contentTypeId":5535,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-training-special-offer-2023","altText":"","topics":["DGX"],"contentTypes":[{"id":5535,"name":"Brochure"}],"topicsJson":[{"contentId":1124895,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":1124895,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Top of Funnel"],"funnelStagesJson":[{"contentId":1124895,"name":"Top of Funnel","id":844,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2025-12-23T03:25:29.000-05:00","updatedAt":"2026-02-13T10:52:59.000-08:00","parameterizedContentTypeName":"brochure"},{"id":921217,"imageOverrideId":null,"nextPromoterTitle":null,"nextSignpostTitle":null,"nextSignpostBehavior":null,"openExternallyEnabled":false,"previousSignpostTitle":null,"targetDelay":0,"titleOverride":null,"descriptionOverride":null,"thumbnailOverride":null,"videoStartTime":null,"videoRelatedEnabled":null,"videoAutoplayDisabled":false,"enableCaption":false,"languageCode":null,"customSlug":null,"createdAt":"2025-03-18T06:53:55.000-07:00","imageId":1467426,"slug":"dgx-superpod-dgx-basepod-storage-partner-considerations","thumbnail":"https://cdn.pathfactory.com/assets/10412/contents/921217/thumbnails/600x/dgx-superpod-dgx-basepod-storage-partner-considerations.png","title":"Storage Partner Program Overview for NVIDIA DGX SuperPOD and NVIDIA DGX BasePOD with DGX B200, DGX H200, or DGX H100 Systems","canonicalUrl":"","description":"","rating":null,"contentUuid":"f6552f5e-be6b-4024-94c4-c1e6fa31fdc3","mediaType":"webpage","sourceUrl":"https://nvdam.widen.net/view/pdf/i1clwf0edt/dgx-superpod-dgx-basepod-storage-partner-considerations.pdf","languageId":0,"contentTypeName":"White Paper","contentTypeId":2493,"experienceId":134054,"views":0,"engagementThreshold":20,"url":"https://resources.nvidia.com/en-us-dgx-systems/dgx-superpod-dgx-basepod-storage-partner-considerations","altText":"","topics":["DGX"],"contentTypes":[{"id":2493,"name":"White Paper"}],"topicsJson":[{"contentId":921217,"name":"DGX","id":37649,"type":"ContentTopic"}],"languageNames":["English"],"languageJson":[{"id":0,"name":"English"}],"personas":[],"personasJson":[],"industries":[],"industriesJson":[],"businessUnits":["Deep Learning"],"businessUnitsJson":[{"contentId":921217,"name":"Deep Learning","id":16047,"type":"ContentBusinessUnit"}],"products":[],"productsJson":[],"solutions":[],"solutionsJson":[],"funnelStages":["Middle of Funnel"],"funnelStagesJson":[{"contentId":921217,"name":"Middle of Funnel","id":846,"type":"ContentFunnelStage"}],"assetTypes":[],"language":"English","ecCreatedAt":"2025-03-18T15:13:48.000-04:00","updatedAt":"2026-02-13T10:56:28.000-08:00","parameterizedContentTypeName":"white-paper"}],"recommendedContent":null},"pageViewData":{"id":134054,"bottomBarConfig":{"backgroundColor":"#76b900","itemColor":"#000000","itemFontFamily":"NVIDIASansWRg","itemFontSize":"13px","itemFontWeight":"normal","itemLineHeight":"18px","maxItems":3,"showAfter":5,"scrollDistance":100,"titleColor":"#ffffff","titleFontFamily":"NVIDIASansWRg","titleFontSize":"15px","titleFontWeight":"normal","titleLineHeight":"20px","thumbnailAspectRatioWidth":4,"thumbnailAspectRatioHeight":3,"targetTitle":"CONTINUE READING","websiteTitle":"RECOMMENDED FOR YOU"},"bottomBarEnabled":null,"campaignId":null,"captureConfig":{"formId":null,"displayMode":"views","showAfterViews":5,"delay":10,"showAfterTime":30,"isDismissable":false,"enablePromoterNavigation":true,"doNotShow":"known","isOverrideEnabled":false,"titleOverride":"","descriptionOverride":"","enabled":false,"formExcluded":false},"cardConfig":null,"cardEnabled":null,"cookieConsentConfig":{"enabled":"custom"},"cookieConsentEnabled":null,"endCallToActionConfig":null,"endConfig":null,"endEnabled":null,"exitConfig":null,"exitEnabled":null,"experienceId":134054,"experienceType":"target","externalId2":null,"externalId3":null,"externalId":null,"experienceCaptureConfig":{"formId":null,"displayMode":"views","showAfterViews":5,"delay":10,"showAfterTime":30,"isDismissable":false,"enablePromoterNavigation":true,"doNotShow":"known","isOverrideEnabled":false,"titleOverride":"","descriptionOverride":"","enabled":false,"formExcluded":false},"filterTopicConfig":{},"flowCallToActionConfig":[],"flowConfig":{"sidebarBackgroundColor":"#FFFFFF","sharingIconColor":"#76b900","itemBackgroundColor":"#FFFFFF","itemColor":"#000000","itemFontFamily":"NVIDIASansWRg","itemFontSize":"15px","itemFontWeight":"normal","itemLineHeight":"20px","activeItemColor":"#76b900","activeItemFontFamily":"NVIDIASansWRg","activeItemFontSize":"15px","activeItemFontWeight":"bold","activeItemLineHeight":"20px","logo":"https://app.cdn.lookbookhq.com/lbhq-production/10412/thumbnails/original/cc8df558-c3d9-464e-bef4-ad9192e38d5d.png","thumbnailOrIcon":"thumbnail","nextPromoterTeaserBackgroundColor":"#76b900","nextPromoterTeaserColor":"#000000","nextPromoterTeaserFontFamily":"NVIDIASansWRg","nextPromoterTeaserFontSize":"24px","nextPromoterTeaserFontWeight":"normal","nextPromoterTeaserLineHeight":"30px","nextPromoterBackgroundColor":"#FFFFFF","nextPromoterHeadlineColor":"#76b900","nextPromoterHeadlineFontFamily":"NVIDIASansWRg","nextPromoterHeadlineFontSize":"24px","nextPromoterHeadlineFontWeight":"normal","nextPromoterHeadlineLineHeight":"30px","nextPromoterTitleColor":"#76b900","nextPromoterTitleFontFamily":"NVIDIASansWRg","nextPromoterTitleFontSize":"15px","nextPromoterTitleFontWeight":"bold","nextPromoterTitleLineHeight":"20px","nextPromoterBodyColor":"#000000","nextPromoterBodyFontFamily":"NVIDIASansWRg","nextPromoterBodyFontSize":"13px","nextPromoterBodyFontWeight":"normal","nextPromoterBodyLineHeight":"18px","thumbnailAspectRatioWidth":4,"thumbnailAspectRatioHeight":3,"nextPromoterTitle":"NEXT","headerTitle":null,"headerDescription":null,"hideNextPromoter":false,"shareOptions":{"twitter":false,"facebook":false,"linkedin":false,"email":false,"like":false,"download":false},"imageAltText":""},"flowEnabled":true,"folder":"[Root][(DL) Deep Learning]","folderId":2391,"formConfig":{"headerTextFontFamily":"NVIDIASansWRg","headerTextColor":"#212529","headerTextFontWeight":"500","headerTextFontSize":"1.39rem","headerTextLineHeight":"1.2em","bodyTextFontFamily":"NVIDIASansWRg","bodyTextColor":"#212529","bodyTextFontWeight":"normal","bodyTextFontSize":"0.95rem","bodyTextLineHeight":"1.2em","firstName":"First Name","lastName":"Last Name","title":"Title","company":"Company","phone":"Phone","email":"Email","employeeCount":"Employee Count","country":"Country","stateProvince":"State/Province","city":"City","zipCode":"Zip Code/Postal Code","address":"Address"},"gdprCookieConsentEnabled":true,"generalConfig":{"favicon":"https://app.cdn.lookbookhq.com/lbhq-production/10412/thumbnails/original/1a53d015-3f8b-4152-a6e7-b397ba726c21.png","clientLogo":""},"headerCallToActionConfig":null,"headerConfig":null,"headerEnabled":null,"inactivityConfig":null,"inactivityEnabled":null,"name":"[en_us] DGX Systems","shareConfig":{"logoLink":"https://www.nvidia.com/en-us/","emailSubject":"","emailMessage":"","twitterHandle":"","socialShareMessage":"","linkedinEnabled":true,"twitterEnabled":true,"facebookEnabled":true,"emailEnabled":true,"likeEnabled":false,"downloadEnabled":false},"shareEnabled":null,"sidebarCallToActionConfig":null,"sidebarConfig":null,"sidebarEnabled":null,"signpostConfig":{"teaserBackgroundColor":"#76b900","teaserColor":"#000000","teaserFontFamily":"NVIDIASansWRg","teaserFontSize":"21px","teaserFontWeight":"bold","teaserLineHeight":"27px","backgroundColor":"#FFFFFF","headlineColor":"#76b900","headlineFontFamily":"NVIDIASansWRg","headlineFontSize":"24px","headlineFontWeight":"normal","headlineLineHeight":"30px","titleColor":"#76b900","titleFontFamily":"NVIDIASansWRg","titleFontSize":"15px","titleFontWeight":"normal","titleLineHeight":"20px","bodyColor":"#000000","bodyFontFamily":"NVIDIASansWRg","bodyFontSize":"13px","bodyFontWeight":"normal","bodyLineHeight":"18px","thumbnailAspectRatioWidth":4,"thumbnailAspectRatioHeight":3,"nextTitle":"NEXT","previousTitle":"PREVIOUS","nextSignpostBehavior":"hide"},"signpostEnabled":null,"topicSidebarCallToActionConfig":null,"topicSidebarConfig":null,"topicSidebarEnabled":null,"uniqueId":"ATI7LE"}};
+
+    var stringifyObject = JSON.stringify(window.__PATHFACTORY__);
+
+    var orgCdnHost = "https://resources.nvidia.com/_pfcdnapp";
+    var cloudFrontHost = "https://resources.nvidia.com/_pfcdn";
+    var orgCdnHostUrl = orgCdnHost.replace(/(^\w+:|^)\/\//, '');
+    var cloudFrontHostUrl = cloudFrontHost.replace(/(^\w+:|^)\/\//, '');
+
+    var updatedCdnDomainObj = stringifyObject.replace(/cdn-app.pathfactory.com/g, orgCdnHostUrl);
+    var pfWindowObjHost = updatedCdnDomainObj.replace(/cdn.pathfactory.com/g, cloudFrontHostUrl);
+    var pfWindowObj = pfWindowObjHost.replace(/app.cdn.lookbookhq.com/g, orgCdnHostUrl);
+    window.__PATHFACTORY__ = JSON.parse(pfWindowObj);
+  window.getPFContact = function() {
+    var api_host = "https://resources.nvidia.com"
+    return fetch(`${api_host}/get_contact`)
+  };
+</script>
+      <style>
+        * { box-sizing: border-box; }
+        body, html { margin: 0; padding: 0; overflow: hidden; height: 100%; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+        #lookbook-video-player { width: 100%; height: 100%; overflow: hidden; }
+        #lb-app-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          -webkit-overflow-scrolling: touch;
+          background: #fff;
+          overflow: auto;
+        }
+        .standard { height: 100%; width: 100%; margin: 0; }
+        .overlay {
+          height: 100%;
+          width: 100%;
+          margin: auto;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+        @media (max-width: 480px) {
+          .overlay { height: 100%; width: 100%; }
+        }
+      </style>
+
+  <script>
+  if (window.Promise) {
+    window.pfResolveJukeboxLoaded;
+    window.pfOnJukeboxLoad = new Promise(function (resolve) {
+      window.pfResolveJukeboxLoaded = resolve;
+    });
+  }
+</script>
+
+  <style>
+    #ot-pc-content #ot-pc-title, #ot-pc-hdr #ot-lst-title h3 {
+      font-size: 16px !important;
+    }
+    #onetrust-pc-sdk .ot-cat-grp .ot-always-active {
+      font-size: 14px !important;
+    }
+    #onetrust-pc-sdk .ot-host-expand {
+      font-size: 12px !important;
+    }
+        
+    </style>
+    
+    <!-- OneTrust Cookies Consent Notice start for nvidia.com -->
+    <script type="text/javascript">
+    document.write(window.location.hostname === "resources.nvidia.cn"
+        ? '<script src="https://www.nvidia.cn/assets/cn/onetrust/scripttemplates/otSDKStub.js" data-domain-script="1984719c-04aa-48de-8c22-5174bdf5c0ed" data-language="zh-CN"><\/script>'
+        : '<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="3e2b62ff-7ae7-4ac5-87c8-d5949ecafff5"><\/script>');
+    </script>
+    <script type="text/javascript">
+    function OptanonWrapper() {        
+            var event = new Event('bannerLoaded');
+            window.dispatchEvent(event);
+        }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for nvidia.com -->
+    <script type="text/javascript">
+    document.write(window.location.hostname === "resources.nvidia.cn"
+        ? '<script src="https://www.nvidia.cn/assets/cn/onetrust/scripttemplates/nv-ot-custom.js"><\/script>'
+        : '<script type="text/javascript" src="https://images.nvidia.com/aem-dam/Solutions/ot-js/ot-custom.js"><\/script>');
+    </script>
+    
+    <script>
+    var cookieCategory = "C0002";
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+        }
+        return "";
+    } 
+    // Add custom code here.
+    const oneTrustHandler = () => {
+        OneTrust.OnConsentChanged( function() {
+            console.log("consent changed");
+            if (pfConsentStatus() != true &&
+            getCookie("OptanonConsent").includes(cookieCategory+":1")==true) {
+                console.log('Consent Changed to Accepted');
+                window.pf("setConsentSettings", { accepted: true });
+            }
+            if (pfConsentStatus() != false &&
+            getCookie("OptanonConsent").includes(cookieCategory+":1")==false ) {
+                console.log('Consent Changed to Declined');
+                window.pf("setConsentSettings", { accepted: false });
+            }
+        });
+    }
+    loadOneTrustConsent = () => {
+        let retryCount = 0;
+        const retryOneTrust = (cookiePreferences, oneTrustLoaded) => {
+        if (cookiePreferences && oneTrustLoaded && cookiePreferences.includes("C0002:1") &&
+            retryCount < 5) {
+                console.log('inside function to opt-in');
+                window.pf("setConsentSettings", { accepted: true });
+                oneTrustHandler();
+                cookiePreferences = getCookie("OptanonConsent");
+            } else if (retryCount > 5 && !cookiePreferences.includes("C0002:1")) {
+                console.log('inside function to opt-out');
+                window.pf("setConsentSettings", { accepted: false });
+                oneTrustHandler();
+                cookiePreferences = getCookie("OptanonConsent");
+            } else {
+                setTimeout(() => {
+                    retryCount++;
+                    retryOneTrust(getCookie("OptanonConsent"), window.OneTrust);
+                }, 1000)
+            }
+        };
+        retryOneTrust(getCookie("OptanonConsent"), window.OneTrust);
+    }
+    pfOnJukeboxLoad.then(function () {
+        loadOneTrustConsent();
+    });
+    </script>
+  <!-- RUN EXTERNAL CODE IN BOTTOM BODY TAG -->
+<!-- START CONFIGURATION -->
+<script>
+    var titleText = '<h3 class="dev-header">Questions? Ask a DGXpert </h3>'; // Text Above CTA Button
+    var linkUrl = "https://www.nvidia.com/en-us/data-center/dgx-platform-contact/"; // CTA Button URL
+    var linkText = "Talk to Us"; // CTA Button Text
+  </script>
+  <style>
+    .cta-title {
+      font-size: 14px;
+      margin-bottom: 1rem;
+      padding: 0 10px;
+    }
+    .dev-header {
+        color: #76b900;
+        text-transform: none;
+        padding-bottom: 10px;
+    }
+    .cta-button {
+      font-size: 16px;
+      font-weight: bold;
+      padding: .5rem 1rem;
+      color: #000000 !important;
+      border: 1px solid #76b900;
+      background-color: #76b900;
+      text-decoration: none;
+      -webkit-font-smoothing: antialiased;
+      display: block;
+      width: 130px;
+      margin: 0 auto;
+    }
+    .cta-container { font-family: NVIDIA-NALA,Arial,Helvetica,Sans-Serif; text-align: center; padding: 15px; margin-left: auto; }
+    .message_ { display: flex; align-items: center; }
+    .message_ .cta-container { padding: 0 10px 0 0; }
+  </style>
+  <!-- END CONFIGURATION -->
+  <script>
+    var mode;
+  
+    addElement();
+    window.addEventListener("resize", addElement);
+  
+    function addElement() {
+      if (mode === "desktop" && window.innerWidth > 800) { return; }
+      if (mode === "mobile" && window.innerWidth <= 800) { return; }
+  
+      mode = window.innerWidth > 800 ? "desktop" : "mobile";
+  
+      if (mode === "mobile") { return; }
+  
+      var retry = 0;
+      var timer = window.setInterval(function() {
+        if (retry > 20) { clearInterval(timer); }
+  
+        var lbApp = document.getElementById("qa-app-base");
+        if (lbApp) {
+          var header = document.querySelector(".mainHeader_ .message_");
+  
+          if (!header) {
+            header = document.querySelector(".headerContainer_ > div");
+          }
+  
+          if (!header) { return; }
+  
+          var container = document.createElement("div");
+          container.className = "cta-container";
+          var ctaTitle = document.createElement("div");
+          ctaTitle.className = "cta-title";
+          //ctaTitle.innerText = titleText;
+          ctaTitle.innerHTML = titleText;
+          
+          var ctaButtonContainer = document.createElement("div");
+          var cta = document.createElement("a");
+          cta.className = "cta-button";
+          cta.href = linkUrl;
+          cta.innerText = linkText;
+          cta.target = "_blank";
+          ctaButtonContainer.appendChild(cta);
+  
+          container.appendChild(ctaTitle);
+          container.appendChild(ctaButtonContainer);
+          header.appendChild(container);
+  
+          clearInterval(timer);
+        }
+        retry++;
+  
+      }, 200);
+    }
+  </script>
+  
+  <script type="text/javascript" src="https://releases.jquery.com/git/jquery-3.x-git.min.js"></script>
+<script>
+//functions to wait for flow promoter to be rendered
+handleJukeboxDispatchedEvents = event => {
+        switch (event.detail.eventName) {
+          case "load_show":
+            if (event.detail.promoterConfig.logo) {  
+            // Add custom code here.
+            console.info('Load Show Event', event.detail);
+                /*
+                When flow promoter renders, retrieve content tags
+                */
+                
+                var flowLinks=document.querySelectorAll('#qa-flow-content a div span.flow-asset-title');
+                var linkAttrs=__PATHFACTORY__.global.experienceContent
+                
+                for(var i = 0; i < flowLinks.length; i++) {
+                //linkAttrs.forEach(function(item, index){
+                
+                        //console.log('Inside ForEach loop');
+                        //console.log(__PATHFACTORY__.global.experienceContent[i].contentTypeName);
+                        if(__PATHFACTORY__.global.experienceContent[i].contentTypeName){
+                            //flowLinks[i].innerHTML+="<span class='content-type-label'>"+ __PATHFACTORY__.global.experienceContent[i].contentTypeName +"</span>";
+                           flowLinks[i].insertAdjacentHTML('afterbegin', "<span class='content-type-label'>"+ __PATHFACTORY__.global.experienceContent[i].contentTypeName +"</span>");
+                        };
+                //});
+                };
+            };    
+            break;
+        }
+      };
+
+      window.addEventListener("pf_event", this.handleJukeboxDispatchedEvents, false);
+    console.log('Content UUID: 55429b11-878e-4ad4-9f3e-d09c462d5af0');
+//Target Track Title
+$(window).on( "load", function() {
+$('#qa-flow-content').prepend('<h4 class="recommended-title">Recommended For You</h4>');
+console.log('title ready');
+});
+</script>
+
+<style>
+/*.lookbook-overlay-close-wrapper #lookbook-overlay-close.lookbook-overlay-close, .lookbook-overlay-close, #lookbook-overlay-close {
+  background-color: rgb(80,80,80) !important;
+  color: white !important;
+}*/
+    span.content-type-label {
+    line-height: 16px;
+    font-style: normal;
+    color: #000 !important;
+    font-weight: bold !important;
+    display: block;
+    padding-bottom: 2px;
+    font-size: 12px !important;
+}
+/* Add padding around outside of tiles  */
+#qa-flow-content a > div {
+    padding: 0px 5px !important;
+}
+/* Change asset container styling for top most asset  */
+#qa-flow-content a > div {
+    background: white !important;
+    transition: all .3s cubic-bezier(0.25,0.8,0.25,1) !important;
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 19%), 0 2px 6px 0 rgb(0 0 0 / 19%) !important;
+    -webkit-box-shadow: 0 0 2px 0 rgb(0 0 0 / 19%), 0 2px 6px 0 rgb(0 0 0 / 19%) !important;
+    border-radius: 4px !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    vertical-align: bottom !important;
+    padding: 3px 10px 3px 3px !important;
+    margin-top: 15px !important; 
+}
+#qa-flow-content a > div span.flow-asset-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow-wrap: break-word;
+  height:65px;
+}
+/* Change asset container hover state for top most asset */
+#qa-flow-content a > div:hover {
+    box-shadow: 0 0 4px 0 rgb(0 0 0 / 17%), 0 4px 12px 0px rgb(0 0 0 / 17%) !important;
+}
+.recommended-title {
+    color: rgb(118, 185, 0);
+    padding-left: 5px;
+}
+span.content-type-label {
+    padding-top:5px;
+}
+/*.qa-flow-content a div > div, .eTBBht {*/
+.qa-flow-content a div > div {
+    margin-top:0px;
+}
+.recommended-title {
+color:black;
+}
+</style>
+  <script>
+// Create IE + others compatible event handler
+var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+var eventer = window[eventMethod];
+var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+// Listen to message from child window
+eventer(messageEvent,function(e) {
+  try{
+ if (typeof e.data=== 'string'){
+  const data = JSON.parse(e.data);
+  const redirectURL = data.message;
+if(redirectURL && redirectURL !==''){
+  window.open(redirectURL, "_blank");
+}
+}
+}catch(ex){
+}
+},false);
+</script>
+  <script type="text/javascript">
+function checkOnetrustActiveGroups(){
+if (typeof OnetrustActiveGroups !== 'undefined') {
+  //console.log('OnetrustActiveGroups is available:', OnetrustActiveGroups);
+  if (typeof OnetrustActiveGroups === 'string' && OnetrustActiveGroups.includes('C0004')) {
+    //console.log('Value contains C0004');
+    return true;
+  } else {
+    //console.log('Value does not contain C0004');
+    return false;
+  }
+} else {
+  return false;
+}
+}
+
+function checkOptanonConsentCookie() {
+  const cookieValue = getCookie('OptanonConsent');
+  if (cookieValue){
+      if(cookieValue.includes('C0004:1') ) {
+        //console.log('OptanonConsent cookie found:', cookieValue);
+        return true; 
+      } else {
+        //console.log('OptanonConsent cookie not found.');
+        return false;
+      }
+  }else{
+      return false;
+  }
+}
+
+if (location.hostname !== 'resources.nvidia.cn') {
+  if(checkOnetrustActiveGroups()&&checkOptanonConsentCookie()){
+  _linkedin_partner_id = "84497";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+
+  (function(){var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script");
+  b.type = "text/javascript";b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})();
+  }
+}
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=84497&fmt=gif" />
+</noscript>
+
+  <!--test-->
+<!-- Facebook Pixel Code -->
+<script>
+    if (location.hostname !== 'resources.nvidia.cn') {
+        if(checkOnetrustActiveGroups()&&checkOptanonConsentCookie()){
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '161755414605325');
+          fbq('track', 'PageView');
+        }
+    }
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=161755414605325&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+  <!-- Global site tag (gtag.js) - Google Ads: 1041695361 -->
+<script>
+if (location.hostname !== 'resources.nvidia.cn') {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-1041695361';
+  document.head.appendChild(s);
+}
+</script>
+<script>
+if (location.hostname !== 'resources.nvidia.cn') {
+  if(checkOnetrustActiveGroups()&&checkOptanonConsentCookie()){
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-1041695361');
+  }
+}
+</script>
+  <style>
+    
+#download {
+    display:none !important;
+}    
+    
+#print {
+     display:none !important;
+}
+.lookbook-overlay-close-wrapper #lookbook-overlay-close.lookbook-overlay-close, .lookbook-overlay-close, #lookbook-overlay-close > span {
+  background-color: rgb(255, 255, 255) !important;
+  color: black !important;
+}
+
+ #lookbook-overlay-close > span {
+line-height:30px;
+}
+</style>
+  <style>
+
+/* Change green featured label ontop large currently selected tile */
+#qa-sidebar-featured-tag {
+    background: #76b900;
+}
+
+/* Change large currently selected tile styling */
+#qa-sidebar-featured-item {
+    background: white;
+    transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
+    box-shadow: 0 0 2px 0 #dee2e6, 0 2px 6px 0 #dee2e6;
+    border-radius: 2px;
+    margin-top: 2px;
+}
+
+/* Change small tile styling */
+.iDHATf{
+    background: white;
+    transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
+    border-radius: 2px;    
+    margin-top: 10px !important;
+    box-shadow: 0 1px 6px rgb(0 0 0 / 15%), 0 1px 3px rgb(0 0 0 / 15%) !important;
+    -webkit-transition: box-shadow 0.1s ease-in-out !important;
+    transition: box-shadow 0.1s ease-in-out !important;
+}
+
+
+/* Change asset container hover state */
+.iDHATf:hover {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 22%), 0 2px 5px rgb(0 0 0 / 22%) !important;
+}
+
+</style>
+  <script> if(checkOnetrustActiveGroups()&&checkOptanonConsentCookie()){(function(w,d,t,r,u) { var f,n,i; w[u]=w[u]||[],f=function() { var o={ti:"30006101", enableAutoSpaTracking: true}; o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad") }, n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function() { var s=this.readyState; s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null) }, i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i) }) (window,document,"script","//bat.bing.com/bat.js","uetq"); }</script>
+  <script type='text/javascript'> 
+if(checkOnetrustActiveGroups()&&checkOptanonConsentCookie()){
+if(window.location.href.indexOf('resources.nvidia.com/ja-jp')>-1){
+window._tfa = window._tfa || []; window._tfa.push({notify: 'event', name: 'page_view', id: 1667085}); !function (t, f, a, x) { if (!document.getElementById(x)) { t.async = 1;t.src = a;t.id=x;f.parentNode.insertBefore(t, f); } }(document.createElement('script'), document.getElementsByTagName('script')[0], '//cdn.taboola.com/libtrc/unip/1667085/tfa.js', 'tb_tfa_script'); 
+}}
+</script>
+   <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primeicons@4.1.0/primeicons.css" />-->
+
+  </head>
+  <body class="standard target flow-enabled">
+      <script>
+var trackURL= document.location.href;
+if (sessionStorage.clickcount) 
+          sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+    else 
+          sessionStorage.clickcount = 1;
+if(trackURL.includes("fm=dnd") && Number(sessionStorage.clickcount)===1){
+    __PATHFACTORY__.pageViewData.captureConfig.enabled=false;
+    
+}
+</script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+window.onload = function() {
+$('#qa-flow-footer-home-button').append('View All Content');
+};
+</script>
+<style>
+#qa-flow-footer-home-button {
+    color: white;
+    background-color: #76b900;
+    margin-left: 10px;
+}
+#qa-flow-footer-home-button i {
+    padding-right:10px;
+}
+</style>
+      <div id="lb-app-container" data-source-url="https://nvdam.widen.net/s/sfmnb8rtk6/dgx-scale-ai-infrastructure-dgx-b200-datasheet-nvidia-3184101-r6-web" data-media-type="webpage">
+          <iframe
+            title="Content Window"
+            class="content"
+            src="https://nvdam.widen.net/s/sfmnb8rtk6/dgx-scale-ai-infrastructure-dgx-b200-datasheet-nvidia-3184101-r6-web" style="display: block; height: 100%; width: 100%; border: 0; padding: 0; margin: 0; overflow: hidden;"
+            allowfullscreen
+            >
+          </iframe>
+</div>
+
+    <div id="jukebox-app"></div>
+    <script>
+  (function(j,u,k,e,b,o,x){j["pfObject"]=b;j[b]=j[b]||function(){
+    (j[b].q=j[b].q||[]).push(arguments)},j[b].l=1*new Date();o=u.createElement(k),
+    x=u.getElementsByTagName(k)[0];o.async=1;o.src=e;x.parentNode.insertBefore(o,x)
+  })(window,document,"script","https://resources.nvidia.com/_pfcdnapp/production/jukebox/current/tracks.js?x=2","pf");
+  pf("create", "LB-AEE03768-10412");
+</script>
+
+      <!-- The style attribute was added on May/12/2020 based on a request
+to have the consent bar show up in explore pages.-->
+<style>
+	#cookiePolicy-layer {
+		opacity: 1 !important;
+	}
+</style>
+<div id="cookiePolicy-layer" style="display: none;" class="noSelection shadowBox-light"><div class="messageContainer fontSmall">
+        NVIDIA websites use cookies to deliver and improve the website experience. See our <a href="https://www.nvidia.com/en-us/about-nvidia/cookie-policy/" target="_blank">cookie policy</a> for further details on how we use cookies and how to change your cookie settings.
+</div><div id="cookiePolicy-btn-close" class="green-box-bttn"><span>Accept</span></div></div>
+
+      <script>
+if(checkOnetrustActiveGroups()&&checkOptanonConsentCookie()){
+  gtag('event', 'page_view', {
+    'send_to': 'AW-1041695361',
+    'user_id': 'replace with value'
+  });
+}
+</script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/arrive/2.4.1/arrive.min.js" integrity="sha256-WXHeZwrvHW+Qpj5u2NCVyiL5XEVf/AzrYL5i4w4aRHM=" crossorigin="anonymous"></script>
+<script>
+if (location.hostname === 'resources.nvidia.cn') {
+  document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
+} else {
+  document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
+}
+</script>
+<script>
+$(window).on("load", function(){
+var trackURL= document.location.href;
+
+  document.arrive('div#qa-logo-common', function () {
+
+    if(trackURL.includes("sidebar=dnd")){
+    $('#qa-app-base > div > div').hide();
+    $('#qa-flow-next-wrapper').hide();
+    $('#qa-app-base > div > div').css('display','none');
+    $('#qa-app-base > div > div').addClass('hideQuery')
+    $('#lb-app-container').attr('style','left:0px;');
+    console.log('query present');
+    }
+  });
+});
+</script>
+<style>
+.hideQuery {
+    display:none !important;
+}
+</style>
+      <script>
+    if (location.hostname === 'resources.nvidia.cn') {
+        // Utility function to wait for an element to appear
+        function waitForElement(selector, callback) {
+            // If it's already there, run the callback immediately
+            if ($(selector).length) {
+                callback();
+                return;
+            }
+            // Otherwise, watch the DOM for changes
+            const observer = new MutationObserver(function(mutations, obs) {
+                if ($(selector).length) {
+                    obs.disconnect(); // Stop watching once found
+                    callback();
+                }
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+        }
+
+        $(document).ready(function() {
+            // Wait for and hide the share element
+            waitForElement("#qa-share-common", function() {
+                $("#qa-share-common").hide();
+            });
+
+            // Wait for and update the logo link
+            waitForElement("#qa-logo-common a", function() {
+                $("#qa-logo-common a").attr("href", "https://www.nvidia.cn/");
+            });
+        });
+    }
+</script>
+    
+    
+  </body>
+</html>

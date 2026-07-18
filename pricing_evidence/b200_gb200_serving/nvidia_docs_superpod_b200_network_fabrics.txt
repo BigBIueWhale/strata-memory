@@ -1,0 +1,184 @@
+
+Network Fabrics — NVIDIA DGX SuperPOD: Next Generation Scalable Infrastructure for AI Leadership Reference Architecture Featuring NVDIA DGX B200
+Skip to main content
+Back to top
+Ctrl
++
+K
+NVIDIA DGX SuperPOD: Next Generation Scalable Infrastructure for AI Leadership Reference Architecture Featuring NVDIA DGX B200
+Search
+Ctrl
++
+K
+Search
+Ctrl
++
+K
+NVIDIA DGX SuperPOD: Next Generation Scalable Infrastructure for AI Leadership Reference Architecture Featuring NVDIA DGX B200
+Table of Contents
+Reference Architecture
+Abstract
+Key Components of the DGX SuperPOD
+DGX SuperPOD Architecture
+Network Fabrics
+Storage Architecture
+DGX SuperPOD Software
+Summary
+Major Components
+Notices
+Notices
+Network Fabrics
+Is this page helpful?
+Network Fabrics
+#
+Building systems by SU provides the most efficient designs. However, if a different node count is required due to budgetary constraints, data center constraints, or other needs, the fabric should be designed to support the full SU, including leaf switches and leaf-spine cables, and leave the portion of the fabric unused where these nodes would be located. This will ensure optimal traffic routing and ensure that performance is consistent across all portions of the fabric.
+DGX SuperPOD configurations utilize four network fabrics:
+Compute Fabric
+Storage Fabric
+In-Band Management Network
+Out-of-Band Management Network
+Note
+Each network is detailed in this section.
+Figure 4
+ shows the ports on the back of the DGX B200 CPU tray and the connectivity provided. The compute fabric ports in the middle use a two-port transceiver to access all eight GPUs. Each pair of in-band management and storage ports provide parallel pathways into the DGX B200 ystem for increased performance. The OOB port is used for BMC access. (The LAN port next to the BMC port is not used in DGX SuperPOD configurations.)
+Figure 4 
+DGX B200 network ports
+#
+Compute Fabric
+#
+Figure 5
+ shows the compute fabric layout for the full 127-node DGX SuperPOD. Each group of 32 nodes is rail-aligned. Traffic per rail of the DGX B200 systems is always one hop away from the other 31 nodes in a SU. Traffic between nodes, or between rails, traverses the spine layer.
+Figure 5 
+Compute fabric for full 127-node DGX SuperPOD
+#
+Table 4
+ shows the number of cables and switches required for the compute fabric for different SU sizes.
+Table 4 
+Compute Fabric Component Count
+#
+SU Count
+Node Count
+GPU Count
+InfiniBand Switch Count
+Cable Counts
+Leaf
+Spine
+Compute and UFM
+Spine-Leaf
+1
+31¹
+248
+8
+4
+252
+256
+2
+63
+504
+16
+8
+508
+512
+3
+95
+760
+24
+16
+764
+768
+4
+127
+1016
+32
+16
+1020
+1024
+¹. This is a 32 node per SU design, however a DGX system must be removed to accommodate for UFM connectivity.
+InfiniBand Storage Fabric
+#
+The storage fabric employs an InfiniBand network fabric that is essential to maximum bandwidth (
+Figure 6
+). This is because the I/O per-node for the DGX SuperPOD must exceed 40 GBps. High bandwidth‑requirements with advanced fabric management features, such as congestion control and AR, provide significant benefits for the storage fabric.
+Figure 6 
+Storage fabric logical design
+#
+The InfiniBand storage fabric uses 
+MQM9700-NS2F
+ switches (
+Figure 7
+). The high-speed storage devices are connected at a 1:1 port to uplink ratio. The DGX B200 system connections are slightly oversubscribed with a ratio near 4:3 with adjustments as needed to enable more storage flexibility regarding cost and performance.
+Figure 7 
+MQM9700-NS2F switch
+#
+Ethernet Storage Fabric
+#
+The Ethernet storage fabric employs a high-speed Ethernet network fabric that is essential to maximum bandwidth (
+Figure 8
+). This is because the I/O per-node for the DGX SuperPOD must exceed 40 GBps. High bandwidth‑requirements with advanced fabric management features, provide significant benefits for the storage fabric. Supported ethernet storage appliance leverages RoCE to provide best performance and minimizes CPU usage.
+Figure 8 
+Storage fabric logical design
+#
+The storage fabric uses SN5600 switches (
+Figure 9
+). The high-speed storage devices are connected at a 1:1 port to uplink ratio. The DGX B200 system connections are slightly oversubscribed with a ratio near 4:3 with adjustments as needed to enable more storage flexibility regarding cost and performance.
+Figure 9 
+NVIDIA Spectrum SN5600 Ethernet Switch
+#
+In-Band Management Network
+#
+The in-band management network provides several key functions:
+Connects all the services that manage the cluster.
+Enables access to the data NFS tier.
+Provides connectivity for the in-cluster services such as Base Command Manager, Slurm, Run:ai and to other services outside of the cluster such as the NGC registry, code repositories, and data sources.
+Figure 10
+ shows the logical layout of the in-band Ethernet network. The in-band network connects the compute nodes and management nodes. In addition, the OOB network is connected to the in-band network to provide high-speed interfaces from the management nodes to support parallel operations to devices connected to the OOB storage fabric, such as storage.
+The OOB fabric and the In-Band fabric are logically separated on the spine layer to ensure secure isolation for these networks.
+Figure 10 
+In-band Ethernet network
+#
+The in-band management network uses SN5600 and SN2201 switches (
+Figure 9
+ and 
+Figure 12
+)
+Out-of-Band Management Network
+#
+Figure 11
+ shows the OOB Ethernet fabric. It connects the management ports of all devices including DGX and management servers, storage, networking gear, rack PDUs, and all other devices. These are separated onto their own fabric because there is no use-case where users need access to these ports and are secured using logical network separation. 
+Figure 11
+ shows the Switch Management Network is a subset of the Out-Of-Band Network that provides additional security and resiliency.
+Figure 11 
+Logical OOB management network layout
+#
+The OOB management network uses SN2201 switches (
+Figure 12
+).
+Figure 12 
+SN2201 switch
+#
+previous
+DGX SuperPOD Architecture
+next
+Storage Architecture
+ On this page
+Compute Fabric
+InfiniBand Storage Fabric
+Ethernet Storage Fabric
+In-Band Management Network
+Out-of-Band Management Network
+ so the DOM is not blocked -->
+Privacy Policy
+   | 
+Your Privacy Choices
+   | 
+Terms of Service
+   | 
+Accessibility
+   | 
+Corporate Policies
+   | 
+Product Security
+   | 
+Contact
+      Copyright © 2024-2025, NVIDIA Corporation.
+  Last updated on Nov 19, 2025.

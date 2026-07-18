@@ -1,0 +1,177 @@
+
+NVIDIA GB200 NVL72 Delivers Trillion-Parameter LLM Training and Real-Time Inference | NVIDIA Technical Blog
+DEVELOPER
+Home
+Blog
+Forums
+Docs
+Downloads
+Training
+        Join
+Technical Blog
+            Subscribe
+    Related Resources 
+Data Center / Cloud
+English
+日本語
+NVIDIA GB200 NVL72 Delivers Trillion-Parameter LLM Training and Real-Time Inference
+            Mar 18, 2024
+            By 
+Ivan Goldwasser
+, 
+Harry Petty
+, 
+Pradyumna Desale
+ and 
+Kirthi Devleker
+  Like
+ Discuss (13)
+L
+T
+F
+R
+E
+AI-Generated Summary
+Like
+Dislike
+The NVIDIA GB200 NVL72 is a rack-scale system designed to handle trillion-parameter models, offering improved performance for tasks like natural language processing, multimodal applications, and scientific simulations.
+The system features the NVIDIA GB200 Grace Blackwell Superchip, which connects two Blackwell Tensor Core GPUs and an NVIDIA Grace CPU, delivering 900 GB/s of bidirectional bandwidth and a unified memory space.
+The GB200 NVL72 achieves significant performance gains, including a 30x speedup for AI inference and 4x faster training performance for large language models compared to the NVIDIA H100 generation.
+AI-generated content may summarize information incompletely. Verify important information. 
+Learn more
+What is the interest in trillion-parameter models? We know many of the use cases today and interest is growing due to the promise of an increased capacity for:
+Natural language processing tasks like translation, question answering, abstraction, and fluency.
+Holding longer-term context and conversational ability.
+Multimodal applications combining language, vision, and speech.
+Creative applications like storytelling, poetry generation, and code generation.
+Scientific applications, such as protein folding predictions and drug discovery.
+Personalization, with the ability to develop a consistent personality and remember user context.
+The benefits are‌ great, but training and deploying large models can be computationally expensive and resource-intensive. Computationally efficient, cost-effective, and energy-efficient systems, architected to deliver real-time inference will be critical for widespread deployment. The new NVIDIA GB200 NVL72 is one such system up to the task.
+To illustrate, let’s consider the Mixture of Experts (MoE) models. These models help distribute the computational load across multiple experts and train across thousands of GPUs using model parallelism and pipeline parallelism. Making the system more efficient. 
+However, a new level of parallel compute, high-speed memory, and high-performance communications could enable GPU clusters to make the technical challenge tractable. The NVIDIA GB200 NVL72 rack-scale architecture achieves this goal, which we detail in the following post.
+A rack scale design for an exascale AI supercomputer
+The heart of the 
+GB200 NVL72
+ is the NVIDIA GB200 Grace Blackwell Superchip. It connects two high-performance NVIDIA Blackwell Tensor Core GPUs and the NVIDIA Grace CPU with the NVLink-Chip-to-Chip (C2C) interface that delivers 900 GB/s of bidirectional bandwidth. With NVLink-C2C, applications have coherent access to a unified memory space. This simplifies programming and supports the larger memory needs of trillion-parameter LLMs, transformer models for multimodal tasks, models for large-scale simulations, and generative models for 3D data.
+The GB200 compute tray is based on the new NVIDIA MGX design. It contains two Grace CPUs and four Blackwell GPUs. The GB200 has cold plates and connections for liquid cooling, PCIe gen 6 support for high-speed networking, and NVLink connectors for the NVLink cable cartridge. The GB200 compute tray delivers 80 petaflops of AI performance and 1.7 TB of fast memory.
+Figure 1. GB200 compute tray with liquid cooling enables power-efficient and high-performance compute density
+The largest problems require sufficient numbers of groundbreaking 
+Blackwell GPU
+s to work in parallel efficiently, so they must communicate with high bandwidth and low latency and keep constantly busy. 
+The GB200 NVL72 rack-scale system facilitates parallel model efficiency for the 18 compute nodes using the NVIDIA NVLink Switch System with nine NVLink switch trays, and cable cartridges interconnecting the GPUs and switches. 
+NVIDIA GB200 NVL36 and NVL72 
+The GB200 supports 36 and 72 GPUs in NVLink domains. Each rack hosts 18 compute nodes based upon the MGX reference design and the NVLink Switch System. It comes in the GB200 NVL36 configuration with 36 GPUs in one rack and 9 dual GB200 compute nodes. The GB200 NVL72 is configured with 72 GPUs in one rack and 18 dual GB200 compute nodes—or 72 GPUs in two racks with 18 single GB200 compute nodes. 
+The GB200 NVL72 densely packs and interconnects the GPUs using a copper cable cartridge for operational simplicity. It also uses a liquid cooling system design, delivering 25x lower cost and energy consumption.  
+Figure 2. 
+NVLink Switch System
+Fifth-generation NVLink and NVLink Switch System 
+The NVIDIA GB200 NVL72 introduces fifth-generation NVLink, which connects up to 576 GPUs in a single NVLink domain with over 1 PB/s total bandwidth and 240 TB of fast memory. Each NVLink switch tray delivers 144 NVLink ports at 100 GB so the nine switches fully connect each of the 18 NVLink ports on every one of the 72 Blackwell GPUs.
+The revolutionary 1.8 TB/s of bidirectional throughput per GPU is over 14x the bandwidth of PCIe Gen5, providing seamless high-speed communication for today’s most complex large models. 
+Figure 3. High-speed NVLink Switch interconnect delivers 1 PB/s of aggregate bandwidth to GPUs
+NVLink over generations
+The NVIDIA industry-leading innovation for high-speed low-power SerDes drives the advance of GPU-to-GPU communication, beginning with the introduction of NVLink to accelerate multi-GPU communications at high speed. The NVLink GPU-to-GPU bandwidth is 1.8 TB/s, which is 14x the bandwidth of PCIe. The fifth-generation NVLink is 12x faster than the first generation at 160 GB/s, introduced in 2014. NVLink GPU-to-GPU communications have been instrumental in scaling multi-GPU performance in AI and HPC. 
+GPU bandwidth advances coupled with the exponential expansion of NVLink domain size have increased the total bandwidth of an NVLink domain 900x since 2014 to 1 PB/s for a 576 Blackwell GPU NVLink domain.
+Use cases and performance results
+The compute and communications capabilities of the GB200 NVL72 are unprecedented, bringing grand challenges in AI and HPC within practical reach. 
+AI training 
+The GB200 includes a faster second-generation transformer engine featuring FP8 precision. It delivers 4X faster training performance with 32k GB200 NVL72 for large language models like GPT-MoE-1.8T compared to the same number of NVIDIA H100 GPUs.
+AI inference
+The GB200 introduces cutting-edge capabilities and a second-generation transformer engine that accelerates LLM inference workloads. It delivers a 30x speedup for resource-intensive applications like the 1.8T parameter GPT-MoE compared to the previous H100 generation. This advancement is made possible with a new generation of Tensor Cores, which introduce FP4 precision and the many advantages that come with fifth-generation NVLink
+Figure 4. The GB200 delivers 30x real-time throughput compared to the H100
+Results based on token-to-token latency = 50 ms; real-time, first token latency = 5,000 ms; input sequence length = 32,768; output sequence length = 1,024 output, 9x eight-way HGX H100 air-cooled: 400 GB IB Network vs 18 GB200 Superchip liquid-cooled: NVL72
+,
+ per GPU performance comparison​. Projected performance is subject to change.
+Data processing
+Big data analytics helps organizations unlock insights and make better-informed decisions. Organizations continuously generate data at scale and rely on various compression techniques to alleviate bottlenecks and save on storage costs. To process these datasets efficiently on GPUs, the Blackwell architecture introduces a hardware decompression engine that can natively decompress compressed data at scale and speed up analytics pipelines end-to-end. The decompression engine natively supports decompressing data compressed using LZ4, Deflate, and Snappy compression formats.
+The decompression engine speeds up memory-bound kernel operations. It provides performance up to 800 GB/s and enables Grace Blackwell to perform 18x faster than CPUs (Sapphire Rapids) and 6x faster than NVIDIA H100 Tensor Core GPUs for query benchmarks.
+With the blazing 8 TB/s of high memory bandwidth and the Grace CPU high-speed NVlink-Chip-to-Chip (C2C), the engine speeds up the entire process of database queries. This results in top-notch performance across data analytics and data science use cases. This enables organizations to obtain insights quickly while reducing their costs.  
+Figure 5. Database Join query throughput comparing GB200 NVL72, 72x H100, and 72 x86 CPUs
+Physics-based simulations 
+Physics-based simulations are still the mainstay of product design and development. From planes and trains to bridges, silicon chips, and even pharmaceuticals, testing and improving products through simulation saves billions of dollars.
+Application-specific integrated circuits are designed almost exclusively on CPUs in a long and complex workflow, including analog analysis to identify voltages and currents. The Cadence SpectreX simulator is one example of a solver. SpectreX circuit simulations are projected to run 13x quicker on a GB200 Grace Blackwell Superchip—which connects Blackwell GPUs and Grace CPUs — than on a traditional CPU.
+Figure 6. Cadence simulation results
+Cadence SpectreX (Spice simulator) | CPU: 16 cores x86 CPU dataset: KeithC Design TSMC N5 | Cadence Fidelity (LES CFD Solver) | CPU: 16 cores x86 CPU Dataset: GearPump 2M cells | Performance projections for GB200 subject to change
+Over the last two years, the industry has increasingly turned to GPU-accelerated computational fluid dynamics (CFD) as a key tool. Engineers and equipment designers use it to study and predict the behavior of their designs. Cadence Fidelity runs CFD simulations that are projected as much as 22x faster on GB200 systems than on traditional CPU-powered systems. 
+We look forward to exploring the possibilities of Cadence Fidelity on the GB200 NVL72. With parallel scalability and 30 TB of memory per rack, we aim to capture flow details that have never been captured before.
+Summary
+To recap, we reviewed the GB200 NVL72 rack-scale design and, in particular, learned about its unique capability to connect 72 Blackwell GPUs over a single NVIDIA NVLink domain. This reduces the communications overhead experienced when scaling over traditional networks. As a result, real-time inference for a 1.8T parameter MoE LLM is possible and training that model is 4x faster.
+The operation of 72 NVLink-connected Blackwell GPUs with 30 TB of unified memory over a 130 TB/s compute fabric creates an exaFLOP AI supercomputer in a single rack. That is NVIDIA GB200 NVL72.
+ Discuss (13)
+  Like
+Tags
+Agentic AI / Generative AI
+ | 
+Data Center / Cloud
+ | 
+Simulation / Modeling / Design
+ | 
+HPC / Scientific Computing
+ | 
+Blackwell
+ | 
+Grace CPU
+ | 
+NVLink
+ | 
+NVSwitch
+ | 
+Intermediate Technical
+ | 
+Deep dive
+ | 
+AI Inference
+ | 
+Data Analytics / Processing
+ | 
+featured
+ | 
+News
+ | 
+Physics
+ | 
+technical walkthrough
+                About the Authors
+                  About Ivan Goldwasser
+                          Ivan leads product marketing for the Data Center CPU products for NVIDIA. Previously, Ivan worked in various marketing and strategy roles in the technology sector. Ivan has an MBA from Georgetown’s McDonough School of Business and a bachelor’s degree in chemical engineering from Texas A&M University.
+                                            View all posts by Ivan Goldwasser
+                  About Harry Petty
+                          Harry Petty is a senior technical marketing manager for HPC and AI edge applications at NVIDIA. Previously, he was a principal engineer and marketing director at Cisco Systems where he brought SDN innovations to market for hybrid cloud, multitenant security, and data center application performance. Harry has an MBA from Booth Graduate School of Business and a BS in mathematics and computer science from the University of Dayton.
+                                            View all posts by Harry Petty
+                  About Pradyumna Desale
+                          As a product lead in Enterprise Product Group at NVIDIA, Pradyumna Desale spearheads the scale up NVLink systems that leverage NVIDIA cutting-edge technology to address biggest customer challenges. He started his career at NVIDIA as a design engineer and later led a global engineering team that optimized the performance and power of high-speed IOs in NVIDIA GPUs and SoCs. He holds an MS degree in Electrical Engineering from Pennsylvania State University, State College and an MBA from University of California, Berkeley.
+                                            View all posts by Pradyumna Desale
+                  About Kirthi Devleker
+                          Kirthi K. Devleker is a technology marketing leader at NVIDIA, where he drives the launch and positioning of transformative AI platforms and the GPU architectures that power them. He played a pivotal role in bringing NVIDIA’s groundbreaking Grace Blackwell architecture to market, including the Grace Blackwell and Grace Blackwell Ultra platforms—redefining performance, scalability, and efficiency for generative AI at global scale. Kirthi specializes in crafting compelling messages around NVIDIA’s datacenter GPU technologies, highlighting their performance advantages and ROI for enterprise AI adoption.
+Previously, at MathWorks, he led the global Medical Devices business unit and spearheaded strategic product management initiatives that guided the Signal Processing group’s roadmap towards AI. His leadership accelerated machine learning integration across medical devices, aerospace and defense and automotive sectors. As a recognized industry voice, Kirthi has delivered keynotes and technical talks at international conferences on AI-driven engineering and simulation. He holds a Master of Science in Electrical Engineering from San Jose State University, with a specialization in signal and image processing.
+                                            View all posts by Kirthi Devleker
+Comments
+Related posts
+          Unlock Exascale Performance on NVIDIA GB200 NVL72 with Slurm Topology-Aware Job Scheduling
+Unlock Exascale Performance on NVIDIA GB200 NVL72 with Slurm Topology-Aware Job Scheduling
+          Scaling Large MoE Models with Wide Expert Parallelism on NVL72 Rack Scale Systems
+Scaling Large MoE Models with Wide Expert Parallelism on NVL72 Rack Scale Systems
+          New Open Source Qwen3-Next Models Preview Hybrid MoE Architecture Delivering Improved Accuracy and Accelerated Parallel Processing across NVIDIA Platform 
+New Open Source Qwen3-Next Models Preview Hybrid MoE Architecture Delivering Improved Accuracy and Accelerated Parallel Processing across NVIDIA Platform 
+          Scaling AI Inference Performance and Flexibility with NVIDIA NVLink and NVLink Fusion
+Scaling AI Inference Performance and Flexibility with NVIDIA NVLink and NVLink Fusion
+          Announcing NVIDIA DGX GH200: The First 100 Terabyte GPU Memory System
+Announcing NVIDIA DGX GH200: The First 100 Terabyte GPU Memory System
+Related posts
+          How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo
+How to Run an Autoresearch Workflow with RL Agent Skills and NVIDIA NeMo
+          Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills
+Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills
+          Accelerating End-to-End Co-Folding Performance with NVIDIA BioNeMo Agent Toolkit
+Accelerating End-to-End Co-Folding Performance with NVIDIA BioNeMo Agent Toolkit
+          Develop Humanoid Robot Policies End-to-End with NVIDIA Isaac GR00T
+Develop Humanoid Robot Policies End-to-End with NVIDIA Isaac GR00T
+          Enhancing Goodput in Large-Scale LLM Training with Nonuniform Tensor Parallelism
+Enhancing Goodput in Large-Scale LLM Training with Nonuniform Tensor Parallelism
+Close
+Previous
+Next
+L
+T
+F
+R
+E

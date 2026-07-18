@@ -1,0 +1,95 @@
+
+NVIDIA DGX SuperPOD: Next Generation Scalable Infrastructure for AI Leadership Reference Architecture Featuring NVIDIA DGX B200 — NVIDIA DGX SuperPOD: Next Generation Scalable Infrastructure for AI Leadership Reference Architecture Featuring NVDIA DGX B200
+Skip to main content
+Back to top
+Ctrl
++
+K
+NVIDIA DGX SuperPOD: Next Generation Scalable Infrastructure for AI Leadership Reference Architecture Featuring NVDIA DGX B200
+Search
+Ctrl
++
+K
+Search
+Ctrl
++
+K
+NVIDIA DGX SuperPOD: Next Generation Scalable Infrastructure for AI Leadership Reference Architecture Featuring NVDIA DGX B200
+Table of Contents
+Reference Architecture
+Abstract
+Key Components of the DGX SuperPOD
+DGX SuperPOD Architecture
+Network Fabrics
+Storage Architecture
+DGX SuperPOD Software
+Summary
+Major Components
+Notices
+Notices
+Is this page helpful?
+NVIDIA DGX SuperPOD: Next Generation Scalable Infrastructure for AI Leadership Reference Architecture Featuring NVIDIA DGX B200
+#
+Document Number
+RA-11334-001 V08
+Publication Date
+2025-04-24
+Tip
+The NVIDIA DGX SuperPOD: Next Generation Scalable Infrastructure for AI Leadership Reference Architecture Featuring NVIDIA DGX B200 is also available as a 
+PDF
+.
+Reference Architecture
+Abstract
+Key Components of the DGX SuperPOD
+NVIDIA DGX B200 System
+NVIDIA InfiniBand Technology
+Runtime and System Management
+Components
+Design Requirements
+System Design
+Compute Fabric
+Storage Fabric (High Speed Storage)
+In-Band Management Network
+Out-of-Band Management Network
+Storage Requirements
+High-Performance Storage
+User Storage
+DGX SuperPOD Architecture
+Network Fabrics
+Compute Fabric
+InfiniBand Storage Fabric
+Ethernet Storage Fabric
+In-Band Management Network
+Out-of-Band Management Network
+Storage Architecture
+DGX SuperPOD Software
+NVIDIA Mission Control
+NVIDIA Base Command Manager
+NVIDIA Run:ai
+NVIDIA NGC
+NVIDIA AI Enterprise
+Summary
+Major Components
+Notices
+Notices
+Notice
+Trademarks
+Copyright
+next
+Abstract
+ so the DOM is not blocked -->
+Privacy Policy
+   | 
+Your Privacy Choices
+   | 
+Terms of Service
+   | 
+Accessibility
+   | 
+Corporate Policies
+   | 
+Product Security
+   | 
+Contact
+      Copyright © 2024-2025, NVIDIA Corporation.
+  Last updated on Nov 19, 2025.

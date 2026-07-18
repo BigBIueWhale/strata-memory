@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serving Kimi K3 at 1M tokens &mdash; the VRAM-per-user math and what it costs</title>
+<style>
+  :root{--ink:#1b1f24;--paper:#fbfaf7;--muted:#5d6571;--rule:#e2ddd2;--accent:#7a4cc4;--accent2:#1f7a5a;--amber:#9a6a00;--red:#9a2f2f;--code-bg:#f1ede4;--code-ink:#3a2f5a;--blue:#1f5d7a;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:940px;margin:0 auto;padding:44px 24px 120px}
+  header.hero{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:8px}
+  .kicker{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:30px;line-height:1.1;margin:.2em 0 .12em}
+  .sub{font-size:18px;color:var(--muted);margin:0}
+  .meta{font-size:12.5px;color:var(--muted);margin-top:12px}
+  h2{font-size:22px;margin:2em 0 .45em;padding-top:.3em;border-top:1px solid var(--rule);line-height:1.18}
+  h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;font-size:15px;vertical-align:.18em;margin-right:.5em}
+  h3{font-size:16.5px;margin:1.3em 0 .3em;color:var(--accent2)}
+  p{margin:.65em 0}
+  code{font-family:"SFMono-Regular",Consolas,Menlo,monospace;font-size:.84em;background:var(--code-bg);color:var(--code-ink);padding:1px 5px;border-radius:4px;white-space:nowrap}
+  strong{font-weight:700}
+  ul,ol{margin:.5em 0 .8em;padding-left:1.3em}
+  li{margin:.3em 0}
+  .lede{font-size:18px;color:#33373d}
+  .callout{margin:1.1em 0;padding:13px 17px;border-radius:9px;border-left:5px solid var(--accent);background:#f4f0fb}
+  .callout .lab{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:4px;color:var(--accent)}
+  .callout.punch{border-left-color:var(--accent2);background:#e9f5ef}.callout.punch .lab{color:var(--accent2)}
+  .callout.catch{border-left-color:var(--amber);background:#fbf4e4}.callout.catch .lab{color:var(--amber)}
+  .callout.stop{border-left-color:var(--red);background:#fbecec}.callout.stop .lab{color:var(--red)}
+  .callout.spec{border-left-color:var(--blue);background:#e8f2f7}.callout.spec .lab{color:var(--blue)}
+  table{border-collapse:collapse;width:100%;margin:1em 0;font-size:13px}
+  th,td{border:1px solid var(--rule);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:#efe9dd;font-size:12px}
+  tbody tr:nth-child(even){background:#f6f2ea}
+  .verdict{font-size:19px;font-weight:800;color:var(--accent2)}
+  .flag{color:var(--amber);font-weight:700}
+  .win{color:var(--accent2);font-weight:700}
+  footer{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">serving economics &middot; the off-the-shelf path</div>
+  <h1>Serving Kimi K3 at 1M tokens &mdash; the VRAM-per-user math and what it costs</h1>
+  <p class="sub">How many users a machine can <em>actively</em> serve at a full 1M-token context is a pure VRAM-capacity question: a fixed model cost, plus a per-user KV-cache cost. Here is the arithmetic, the machines that can do it, and the cost per active user.</p>
+  <p class="meta">Companion to <code>kimi_k3_1m_full_quality.html</code> (the single-instance footprint) and <code>strata_v_design.html</code> (the custom-silicon alternative). Model facts from Moonshot&rsquo;s K3 announcement; hardware facts from NVIDIA&rsquo;s current datasheets; Israel prices at FX 3.05&nbsp;&#8362;/USD, VAT 18%. Point-in-time, DRAM-crunch pricing &mdash; not quotes. Compiled 2026-07.</p>
+</header>
+
+<p class="lede">&ldquo;How many users can I serve at once?&rdquo; is not a compute question first &mdash; it is a <strong>capacity</strong> question. Every actively-decoding user must have their <em>entire</em> KV cache resident in VRAM alongside the one shared copy of the model. So the count is just: <code>(VRAM &minus; model) &divide; KV-per-user</code>. Everything else is a footnote.</p>
+
+<div class="callout punch"><span class="lab">The point &mdash; state it first</span>
+<p style="margin-top:2px"><span class="verdict">Inference is a shared-silicon economy. The model is a fixed cost paid once; each user is a variable cost. So cost-per-user <em>falls</em> as you pack more users onto one memory pool.</span></p>
+<p>Kimi K3 is a fixed <strong>~1.45&nbsp;TiB</strong> resident once, no matter how many users. Each active 1M-token user then adds only <strong>~28&nbsp;GiB</strong> of KV cache. Because the big cost is shared, the <em>same</em> machine serves its 40th user far cheaper than its 1st &mdash; and a <em>bigger</em> shared pool is cheaper still per user: <strong>~&#8362;80k/user</strong> on a 16-GPU box &rarr; <strong>~&#8362;39k</strong> on NVL36 &rarr; <strong>~&#8362;28k</strong> on NVL72. That is the entire economic case for large shared inference silicon &mdash; and it is exactly the case that cheap-capacity DDR5 (the STRATA-V converter) pushes to its logical end.</p>
+</div>
+
+<h2 id="math"><span class="num">01</span>The per-user arithmetic</h2>
+<p>Two numbers decide everything, both established from Moonshot&rsquo;s announced K3 (2.8&nbsp;T params, native MXFP4, 96 layers, 3:1 KDA:MLA hybrid, 1M context):</p>
+<table>
+<thead><tr><th>Cost</th><th>Size</th><th>Paid&hellip;</th></tr></thead>
+<tbody>
+<tr><td><strong>Fixed &mdash; the model</strong>: MXFP4 weights (1,431) + MTP module (18) + vision (1)</td><td><strong>~1,450 GiB</strong></td><td><strong>once</strong>, shared by all users</td></tr>
+<tr><td><strong>Variable &mdash; per active user</strong>: KV cache @ 1M tokens, un-quantized FP16</td><td><strong>~28 GiB</strong></td><td>per simultaneously-decoding user</td></tr>
+</tbody>
+</table>
+<div class="callout spec"><span class="lab">Why the per-user KV is only 28 GiB &mdash; the load-bearing fact</span>A 1M-token context sounds ruinous, but K3&rsquo;s <strong>KDA:MLA hybrid</strong> is what makes serving viable: only <strong>24 of 96 layers are MLA</strong> (the other 72 are Kimi Delta Attention &mdash; recurrent, near-zero fixed state). <code>24 &times; (512+64) &times; 2&nbsp;B &times; 1,048,576 &asymp; 28&nbsp;GiB</code>. An all-MLA model would be ~108&nbsp;GiB/user (&rarr; ~4&times; fewer users); a naive multi-head model would be hundreds of GiB/user (&rarr; you could not seat <em>one</em> user at 1M/FP16). The architecture, not the hardware, is what makes concurrency affordable.</div>
+<p><strong>The count:</strong> <code>users = (total&nbsp;VRAM &times; ~0.9&nbsp;overhead &minus; 1,450) &divide; 28</code>. The <code>~0.9</code> reserves ~8&ndash;10% for activations, NVLink/NCCL comm buffers, KV paging, and fragmentation. Note this counts users <strong>each actively generating at a full 1M-token context, right now</strong> &mdash; the worst case. It excludes multi-turn KV parked in ordinary DDR between turns (a separate, much larger pool).</p>
+
+<h2 id="floor"><span class="num">02</span>Why 8&times; B200 is a non-starter &mdash; the model won&rsquo;t even fit</h2>
+<p>Shipping HGX/DGX B200 carries <strong>180&nbsp;GB per GPU</strong> (NVIDIA&rsquo;s DGX B200 spec: 1,440&nbsp;GB &divide; 8; the 192&nbsp;GB figure was the 2024 launch &ldquo;up to&rdquo; number &mdash; see flags). So an 8-GPU node is <strong>8 &times; 180 = 1,440&nbsp;GiB</strong> &mdash; <em>less than the 1,450&nbsp;GiB model itself.</em> A single 8&times; B200 box cannot hold Kimi K3 at all, let alone one user&rsquo;s KV. That is the precise reason the off-the-shelf answer starts at <strong>sixteen</strong> GPUs, and why K3 is forced to span more than one 8-GPU NVLink island.</p>
+
+<h2 id="machines"><span class="num">03</span>The three machines that can serve K3 &mdash; and the cost per user</h2>
+<table>
+<thead><tr><th>Machine</th><th>GPUs &times; HBM</th><th>Fabric across all GPUs</th><th>KV pool</th><th>Active users @ 1M</th><th>Israel price (incl. VAT)</th><th>&#8362; / active user</th></tr></thead>
+<tbody>
+<tr><td><strong>2&times; DGX/HGX B200</strong> + InfiniBand</td><td>16 &times; 180 = 2,880&nbsp;GiB</td><td><span class="flag">two 8-GPU NVLink islands</span> joined by 400&nbsp;Gb/s IB &mdash; an ~18&times; cross-island cliff</td><td>~1,200&nbsp;GiB</td><td><strong>~42</strong></td><td><strong>~&#8362;2.6M</strong> import &middot; ~&#8362;3.35M local</td><td>~&#8362;63&ndash;80k</td></tr>
+<tr><td><strong>GB200 NVL36</strong></td><td>36 &times; 186 = 6,696&nbsp;GiB</td><td><span class="win">one NVLink domain</span> &mdash; 1.8&nbsp;TB/s any pair</td><td>~4,700&nbsp;GiB</td><td><strong>~165</strong></td><td>~&#8362;6.5M <span class="flag">[analyst]</span></td><td>~&#8362;39k</td></tr>
+<tr><td><strong>GB200 NVL72</strong></td><td>72 &times; 186 = 13,392&nbsp;GiB</td><td><span class="win">one NVLink domain</span> &mdash; 130&nbsp;TB/s aggregate</td><td>~10,500&nbsp;GiB</td><td><strong>~380</strong></td><td>~&#8362;10.8M <span class="flag">[analyst]</span></td><td>~&#8362;28k</td></tr>
+</tbody>
+</table>
+<p><strong>Cheapest 16&times; B200</strong> is a self&#8209;import build &mdash; 2&times; Exxact&#8209;class 8&#8209;GPU nodes (listed <strong>$338k</strong> each: 8&times; B200 + 2&nbsp;TB DDR5) + NDR InfiniBand fabric &asymp; <strong>$715&ndash;755k</strong> &rarr; <strong>~&#8362;2.6&ndash;2.7M</strong> landed (&times;3.05 FX, &times;1.18 VAT; servers are 0% duty). Through an <strong>Israeli reseller</strong> with local support it scales the verified <strong>&#8362;1.6M</strong>/node anchor to <strong>~&#8362;3.35M</strong> &mdash; the ~24% premium is margin + warranty + AI&#8209;Enterprise licensing (the anchor back&#8209;checks to ~$445k ex&#8209;VAT, US street parity for a Supermicro 8&times; B200). The <strong>NVL36 / NVL72</strong> lines are analyst estimates (Morgan Stanley / TrendForce: ~$1.8M and ~$3M per rack &mdash; no vendor lists a price); treat &plusmn;25%.</p>
+
+<h2 id="scale"><span class="num">04</span>Why users scale <em>faster</em> than price &mdash; the super-linear win</h2>
+<p>From 16&times; B200 to NVL36 the price roughly <strong>doubles</strong>, but the user count roughly <strong>quadruples</strong> (42 &rarr; 165). That is not a rounding artefact &mdash; it is the fixed cost amortizing:</p>
+<table>
+<thead><tr><th>Machine</th><th>Pool</th><th>Model eats&hellip;</th><th>&hellip;leaving for KV</th><th>Users</th></tr></thead>
+<tbody>
+<tr><td>16&times; B200</td><td>2,880</td><td><strong>50%</strong> (1,450)</td><td>1,200</td><td>~42</td></tr>
+<tr><td>NVL36</td><td>6,696</td><td>22%</td><td>4,700</td><td>~165</td></tr>
+<tr><td>NVL72</td><td>13,392</td><td>11%</td><td>10,500</td><td>~380</td></tr>
+</tbody>
+</table>
+<p>The 1.45&nbsp;TiB model is a <em>fixed tax</em> paid once. On the small box it swallows half the VRAM; on the big box it is a rounding error &mdash; so the KV pool (and thus users) grows faster than the GPU count. Cost-per-user falls <strong>&#8362;80k &rarr; &#8362;39k &rarr; &#8362;28k</strong> (from ~&#8362;63k if you self&#8209;import the 16&times; box). <strong>This is exactly the observation that &ldquo;serving more users on the same silicon is more economical&rdquo;</strong> &mdash; quantified. The optimal machine for a serving business is the <em>largest single memory pool you can afford</em>, not the cheapest box that technically runs the model.</p>
+
+<h2 id="topo"><span class="num">05</span>The topology fork &mdash; why there is no clean &ldquo;16&times; B200&rdquo;</h2>
+<p>Your two goals &mdash; cheapest, and highest shared bandwidth between <em>all</em> GPUs &mdash; genuinely conflict, because NVIDIA offers NVLink domains in exactly two sizes:</p>
+<ul>
+<li><strong>NVLink domain sizes are 8 or 72 &mdash; nothing between.</strong> There is no &ldquo;NVL16&rdquo; for B200 (verified against NVIDIA&rsquo;s NVLink spec table and the absence of any such SKU across NVIDIA, Supermicro, Dell, Gigabyte). To exceed 8 Blackwell GPUs in one NVLink domain you must step to the GB200 <strong>NVL36 / NVL72</strong> rack (Grace + Blackwell superchips).</li>
+<li><strong>Cheapest 16&times; B200 = two 8-GPU islands + InfiniBand.</strong> Within each island every GPU pair runs at 1.8&nbsp;TB/s; <em>between</em> islands it drops to one 400&nbsp;Gb/s IB rail per GPU &mdash; an ~18&times; bandwidth cliff. Since K3 (1.45&nbsp;TiB) cannot fit in one 1,440&nbsp;GiB island, the model <em>must</em> straddle that seam, and every forward pass crosses it. The 42 users are VRAM-resident but throughput-throttled.</li>
+<li><strong>The literal 16-GPU single-domain box that exists is HGX B300 NVL16</strong> &mdash; but that is Blackwell <em>Ultra</em> (B300, ~2.1&nbsp;TB HBM3e across 8 packages), not sixteen physical B200s. It is the &ldquo;16 in one NVLink fabric&rdquo; product; it is simply a different (newer, denser) part.</li>
+</ul>
+<p>So for genuinely sharing memory across all the GPUs &mdash; which is what sharding a 2.8&nbsp;T model actually needs &mdash; the honest options are <strong>accept the IB seam (16&times; B200, cheap)</strong> or <strong>buy a single NVLink domain (NVL36+, pricier but cheaper per user)</strong>.</p>
+
+<h2 id="israel"><span class="num">06</span>The Israel cost basis</h2>
+<ul>
+<li><strong>FX: 3.05&nbsp;&#8362;/USD</strong> &mdash; Bank of Israel official rate, cross-checked against ECB/others (all 3.04&ndash;3.05). The shekel is historically <em>strong</em> right now (vs ~3.6&ndash;3.7 in 2023&ndash;24), which flattens ILS prices ~15% below older intuition.</li>
+<li><strong>Import stack = price &times; 1.18, nothing else.</strong> VAT is <strong>18%</strong> (raised from 17% on 2025-01-01). Servers (HS 8471) enter at <strong>0% customs duty</strong> on two independent bases &mdash; the WTO Information Technology Agreement (Israel is a participant) and the US&ndash;Israel FTA. VAT is recoverable input tax for a registered buyer.</li>
+<li><strong>Anchor check:</strong> &#8362;1.6M incl. VAT for an 8&times; B200 + 2&nbsp;TB server &divide; 1.18 = &#8362;1.356M ex-VAT &asymp; <strong>$445k</strong> at 3.05 &mdash; essentially US street parity for a Supermicro-class 8&times; B200 build (~$449k). The anchor is credible and, at today&rsquo;s strong shekel, tight (not inflated).</li>
+<li><strong>Global 8&times; B200 price band the anchor sits in:</strong> cheapest listed web config <strong>$338k</strong> (Exxact, 2&nbsp;TB, no fabric NICs); realistic band <strong>$340&ndash;450k</strong>; DGX&#8209;branded <strong>$515&ndash;580k</strong>; the bare HGX B200 8&#8209;GPU baseboard alone ~$306&ndash;325k (&asymp; $38&ndash;40k/GPU). So the &#8362;1.6M local anchor (~$445k) runs ~24% above the cheapest US self&#8209;import (~$338k &rarr; ~&#8362;1.22M landed) &mdash; the price of buying local.</li>
+</ul>
+
+<h2 id="strata"><span class="num">07</span>The point, finished &mdash; and where STRATA comes in</h2>
+<p>All three machines above pay for their capacity in <strong>HBM3e</strong> &mdash; the most expensive memory per gigabyte in existence. Yet look at what the per-user cost actually <em>buys</em>: ~28&nbsp;GiB of KV cache, which is just <strong>capacity that must be read at a bandwidth the GPU can hide latency behind</strong>. It does not need HBM&rsquo;s bandwidth density; a GPU hides memory latency under thousands of threads regardless. That is precisely the gap the rest of this repository exploits:</p>
+<div class="callout spec"><span class="lab">Why cheap DDR5 is the endgame of this economics</span>The KV cache and the weights both need <em>capacity at adequate, latency-hideable bandwidth</em> &mdash; exactly what commodity DDR5 delivers at <strong>~5&ndash;10&times; lower cost per GB</strong> than HBM/GDDR7. A custom converter that fronts a DDR5 warehouse behind a GPU-facing memory interface (<code>strata_v_design.html</code>) serves the same K3 KV pool for a fraction of the per-GB cost &mdash; turning the &#8362;28&ndash;80k/user of the HBM machines into something far lower. And DDR5 gives this up nothing on latency: at the device level it is <em>equal-or-lower</em> latency than GDDR7 (see <code>strata_v_design.html</code> &sect;12).</div>
+<p><strong>So the WhatsApp-thread claim &mdash; &ldquo;NVIDIA could easily build a 2&nbsp;TiB card to run K3, and it comes out cheap&rdquo; &mdash; is directionally right about the <em>physics</em></strong> (capacity is depth behind the pins; bandwidth is parallelism across many cheap chips; 1.79&nbsp;TB/s is a <em>low</em> bandwidth). The word doing unfair work is <em>easily</em>: it requires a controller you own (custom silicon, ~$50M+ NRE) and a deterministic converter &mdash; you cannot retrofit a stock card (<code>rtx5090_strata_v_retrofit_verdict.html</code>). But the <em>economic</em> prize the thread is reaching for is real and large: <strong>the cost of serving a frontier MoE is dominated by memory <em>capacity</em>, and capacity is the one axis where HBM is worst and DDR5 is best.</strong> The off-the-shelf NVIDIA path prices that lesson at &#8362;28&ndash;80k per user; the custom-DDR5 path is the argument for driving it far lower.</p>
+
+<h2 id="flags"><span class="num">08</span>Honest flags</h2>
+<ul>
+<li><strong>180 vs 192 GB:</strong> shipping HGX/DGX B200 is 180&nbsp;GB/GPU per NVIDIA&rsquo;s current DGX B200 spec and Dell&rsquo;s OEM listing; 192&nbsp;GB was the 2024 launch &ldquo;up to&rdquo; figure (a documented NVIDIA inconsistency; GB200 rack parts are binned ~186&nbsp;GB). At 192&nbsp;GB the 16&times; count rises to ~48. Confirm the actual parts on any quote.</li>
+<li><strong>NVL36 / NVL72 pricing</strong> is analyst estimate (Morgan Stanley / TrendForce ~$1.8M / ~$3M per rack), not a vendor quote &mdash; no vendor lists a price; treat &plusmn;25%.</li>
+<li><strong>VRAM-resident &ne; throughput-servable.</strong> This is the capacity ceiling, not a tokens/s promise: 165&ndash;380 users each at a full 1M-token context is an enormous prefill/attention compute load. VRAM lets them <em>reside</em>; sustaining good tokens/s for all of them at once is a separate, compute- and bandwidth-bound question.</li>
+<li><strong>MTP (+18 GiB)</strong> assumes K3 ships an MTP module (no K2-line model did); its per-user cost is negligible (speculation-window only). Vision adds ~1&nbsp;GiB resident, zero extra KV.</li>
+<li><strong>Prices</strong> are point-in-time, DRAM-crunch, FX 3.05 &mdash; volatile.</li>
+</ul>
+
+<footer>
+  <p><strong>Bottom line.</strong> Serving Kimi K3 at 1M-token full quality is a VRAM-capacity game: ~1.45&nbsp;TiB fixed + ~28&nbsp;GiB per active user. A cheap 16&times; B200 (2 islands + IB) seats <strong>~42</strong> users for <strong>~&#8362;3.35M</strong> but throttles them across an InfiniBand seam; a single-NVLink-domain <strong>GB200 NVL36</strong> seats <strong>~165</strong> for <strong>~&#8362;6.5M</strong> &mdash; and, because the model is a fixed cost amortized once, that is <strong>~half the cost per user</strong> (~&#8362;39k vs ~&#8362;80k), with NVL72 lower still (~&#8362;28k). The economic lesson &mdash; the cost of frontier inference is dominated by memory capacity &mdash; is the whole reason the custom-DDR5 converter in this repository exists.</p>
+  <p style="color:var(--muted)">Point-in-time analysis, 2026-07. Hardware from NVIDIA datasheets; K3 from Moonshot&rsquo;s announcement; prices at FX 3.05&nbsp;&#8362;/USD, VAT 18%, not quotes. Capacity in GiB/TiB, bandwidth in GB/s.</p>
+</footer>
+
+</div>
+</body>
+</html>
