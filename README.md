@@ -29,6 +29,8 @@ real, shipping reference, and estimates are flagged as such.
 - **At multi-TiB scale, bandwidth is nearly free.** 2 TiB of commodity DDR5 already contains multiple TB/s of latent parallelism; a converter just exposes the slice you want.
 - **A converter can front cheap-and-deep DDR5 as a fast, huge virtual device** — the catch is a fixed ~5–10% latency tax and a hard requirement that the backing stay *deterministic* (a fixed-beat memory protocol has no "please wait").
 - **You can't retrofit this onto a shipped GPU** — GDDR7 has no capacity-expansion signaling, the timing is training-frozen, and 28 Gb/s PAM3 can't leave the board. Integration is *design-in*, not *bolt-on*.
+- **It provably serves on time — because you *author* the deadline, not race it.** `CL`, `tRCD`, and the refresh interval are parameters you program into the controller you design; set them to what the backing can meet and no legal command stream — peak streaming, row-miss floods, prefetch — can be served late. Correctness reduces to two paper checks: an *encodable* read latency and a *schedulable* refresh budget. (First-principles derivation: `strata_v_design.html` Part II.)
+- **Functionally it's a strict superset** of the memory it replaces (every operation + 64× the capacity). The one inherent cost is a ~10–30% latency premium that bites *only* latency-bound, low-parallelism (CPU-style) access — which GPUs, and MoE inference, structurally don't run.
 
 ## Sources
 

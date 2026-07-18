@@ -148,6 +148,67 @@
 <li>The refresh&#8209;scheduling worst case (all&#8209;channel refresh collision under a full&#8209;bandwidth stream) needs a worked timing budget before commit.</li>
 </ul>
 
+<hr style="border:none;border-top:3px solid var(--ink);margin:2.6em 0 0">
+<p class="kicker" style="margin-top:1.4em">Part&nbsp;II &mdash; protocol &amp; correctness, from first principles</p>
+<p class="lede">Sections&nbsp;01&ndash;07 fixed <em>what</em> STRATA&#8209;V is. This part asks whether it can <em>correctly and robustly</em> present itself as the memory device it claims to be &mdash; derived from scratch, assuming nothing obvious, and grounded in the specific (and partly arbitrary) choices already made: a 512&#8209;pin, 28&nbsp;Gb/s front matching an RTX&nbsp;5090; ~18&ndash;24 MRDIMM&#8209;class DDR5 channels behind the converter hierarchy; <strong>2.25&nbsp;TiB at 1.79&nbsp;TB/s</strong>. Those two numbers are arbitrary anchors &mdash; 1.79&nbsp;TB/s only to match a 5090, 2.25&nbsp;TiB only to clear 2&nbsp;TiB &mdash; and the reasoning holds for any target picked the same way.</p>
+
+<h2 id="pins"><span class="num">08</span>The interface, from first principles: two buses, one contract</h2>
+<p>Assume nothing. A DRAM interface is not one bus &mdash; it is <strong>two</strong>, on wildly different clocks, plus housekeeping. On the 5090&#8209;class front we chose, the pins fall into:</p>
+<table>
+<thead><tr><th>Bus</th><th>Pins (per device)</th><th>Rate</th><th>Carries</th></tr></thead>
+<tbody>
+<tr><td><strong>Data</strong> (fast, hard)</td><td>DQ[31:0] + WCK (write clock) + RCK (read clock)</td><td><strong>28&nbsp;Gb/s</strong> PAM3</td><td>the 1.79&nbsp;TB/s payload &mdash; and the only part with tight signal integrity</td></tr>
+<tr><td><strong>Command / address</strong> (slow, easy)</td><td>CA[n:0] + CK (command clock)</td><td>~1&ndash;2&nbsp;GHz</td><td>the commands (ACTIVATE, READ, WRITE, PRECHARGE, REFRESH, mode&#8209;register set) <em>and</em> the bank/row/column address, multiplexed over cycles</td></tr>
+<tr><td>Housekeeping</td><td>CKE, RESET, ZQ, EDC</td><td>slow</td><td>enable, reset, impedance calibration, error feedback</td></tr>
+</tbody>
+</table>
+<p>One rule governs all of it, and it follows from what DRAM <em>is</em>: a DRAM array has a fixed physical access time and cannot negotiate, so the interface has <strong>no flow control</strong>. The controller issues <code>READ</code> and samples the data an exact, pre&#8209;agreed <code>CL</code> cycles later &mdash; no &ldquo;data&nbsp;ready&rdquo; wire, no way to stall. <strong>This single fact is the whole problem</strong>: everything the converter must do reduces to honoring one fixed&#8209;latency contract, and every risk reduces to missing a beat under it.</p>
+
+<h2 id="addr"><span class="num">09</span>Extending the address space to our (arbitrary) 2.25&nbsp;TiB</h2>
+<p>Capacity is <em>not</em> carried by the data pins &mdash; it is carried by <strong>address bits on the slow CA bus</strong>. A 512&#8209;bit word bus of capacity <em>C</em> needs <code>log&#8322;(C&nbsp;/&nbsp;64&nbsp;bytes)</code> word&#8209;address bits:</p>
+<ul>
+<li>Our 5090 anchor, 32&nbsp;GiB &rarr; ~<strong>29</strong> word&#8209;address bits.</li>
+<li>Our chosen 2.25&nbsp;TiB &rarr; ~<strong>35</strong> bits &mdash; exactly <strong>+6 bits</strong> (2&#8310;&nbsp;=&nbsp;64&times;, matching the arbitrary 64&times; capacity jump).</li>
+</ul>
+<p>Those 6 bits ride the CA bus (more row/bank address, over a few extra CA pins or cycles). Because CA is the <strong>slow</strong> bus, adding pins there is electrically free &mdash; nothing like routing another 28&nbsp;Gb/s PAM3 lane. <strong>The fast data pins stay byte&#8209;for&#8209;byte a 5090.</strong> The whole capacity extension lands in the easy domain. It makes the front a GDDR7&#8209;<em>derived</em> protocol rather than stock GDDR7 &mdash; free here, because we own both ends of the link.</p>
+
+<h2 id="ontime"><span class="num">10</span>Can it always serve on time? The core proof</h2>
+<p class="lede">The reframe that settles it: the converter does <strong>not race</strong> the interface&rsquo;s native deadline hoping to win &mdash; it <strong>authors</strong> the deadline.</p>
+<p>From first principles, <code>CL</code>, <code>tRCD</code>, <code>tRC</code>, and the refresh interval are not constants of physics &mdash; they are <strong>parameters we program into the controller we designed</strong>. So we set them to values our specific backing (~18&ndash;24 MRDIMM channels) can always satisfy, and the controller can then only ever issue command streams <em>legal under that contract</em>. On&#8209;time service stops being a race and becomes a property of construction. The ~10&ndash;30% latency premium (&sect;05) is exactly the size of the margin we buy to make this true.</p>
+<h3>Proof against the worst&#8209;case legal stream</h3>
+<p>The nastiest thing the controller can legally emit: peak <code>READ</code>s (<code>tCCD</code>&#8209;apart, bank&#8209;interleaved), a row&#8209;miss on every access (max activate rate), refresh interspersed. Each demand is already answered by a choice tied to our architecture:</p>
+<table>
+<thead><tr><th>Worst&#8209;case demand</th><th>Why it is already covered</th></tr></thead>
+<tbody>
+<tr><td>Sustained read rate = 1.79&nbsp;TB/s</td><td>backing over&#8209;provisioned (this is <em>why</em> ~20&ndash;24 channels, not 18) &rarr; sustains 1.79&nbsp;TB/s <em>net of refresh</em></td></tr>
+<tr><td>Max activate rate (<code>tRRD</code>/<code>tFAW</code>)</td><td>DDR5 aggregate has <em>hundreds</em> of banks; set virtual <code>tRRD</code>/<code>tFAW</code> &ge; DDR5&rsquo;s</td></tr>
+<tr><td>Same&#8209;bank cycling (<code>tRC</code>)</td><td>set virtual <code>tRC</code> &ge; DDR5 <code>tRC</code> &rarr; the row is always ready by the beat</td></tr>
+<tr><td>Bank aliasing</td><td><strong>bijective</strong> address map: distinct virtual banks &rarr; distinct physical banks &mdash; aliasing impossible by design</td></tr>
+<tr><td>A read landing during refresh</td><td><strong>cannot happen</strong>: the controller respects <em>its own</em> refresh schedule (which we set) and does not read during the window; the converter refreshes DDR5 <em>then</em></td></tr>
+<tr><td>Prefetch at full tilt</td><td>just more reads at the same <code>CL</code> &mdash; no new deadline; if anything it helps (predictable)</td></tr>
+</tbody>
+</table>
+<div class="callout punch"><span class="lab">The two &mdash; and only two &mdash; ways it can fail</span>Both are <strong>design&#8209;time bounded checks</strong>, verified on paper before tape&#8209;out, never runtime surprises:
+<ol style="margin:.4em 0 0">
+<li><strong>The required <code>CL</code> must fit the controller&rsquo;s <code>CL</code> field.</strong> Our serviceable <code>CL</code> (&asymp; backing access + converter hop + margin, ~50&ndash;100&nbsp;ns) must be encodable &mdash; within range for our short backing path, and since we design the controller we can widen the field.</li>
+<li><strong>The DDR5 refresh demand must fit the schedulable refresh budget.</strong> The tight one: our 256&nbsp;GiB 3DS parts have a large <code>tRFC</code>, so a higher refresh tax than a 24&nbsp;Gb GDDR7 die. Mitigate with per&#8209;bank refresh (one DDR5 bank busy at a time), lower&#8209;density parts, more channels, or a wider custom refresh range.</li>
+</ol>
+Pass those two and <strong>no runtime command stream &mdash; peak streaming, worst&#8209;case row&#8209;miss flood, aggressive prefetch, refresh &mdash; can produce a late serve.</strong></div>
+
+<h2 id="equiv"><span class="num">11</span>Functional equivalence &mdash; and the one inherent gap</h2>
+<p>The general question, not tied to our MoE target: is there anything the memory we replace (a 5090&rsquo;s 32&nbsp;GiB GDDR7) can do that STRATA&#8209;V cannot, for <em>any</em> use case?</p>
+<table>
+<thead><tr><th>Capability</th><th>Reproduced?</th></tr></thead>
+<tbody>
+<tr><td>Every operation: R / W / ACT / PRE / REF / MRS / training</td><td><strong>Yes</strong> &mdash; plain DRAM ops; atomics live in the GPU&rsquo;s L2, not the array</td></tr>
+<tr><td>Sustained bandwidth, any access pattern</td><td><strong>Yes</strong> &mdash; over&#8209;provision the backing</td></tr>
+<tr><td>Bank parallelism, small&#8209;access granularity, writes</td><td><strong>Yes</strong> &mdash; bijective map / single&#8209;channel routing / write buffer</td></tr>
+<tr><td>Deterministic fixed&#8209;beat timing</td><td><strong>Yes</strong> &mdash; by the &sect;10 construction</td></tr>
+</tbody>
+</table>
+<p><strong>Functionally, STRATA&#8209;V is a strict superset:</strong> everything the 32&nbsp;GiB does, plus our 64&times; capacity. There is exactly <em>one</em> inherent difference &mdash; a <strong>latency premium</strong> (~10&ndash;30%), from the translation hop and physically&#8209;further, denser DDR5. By Little&rsquo;s law (<code>throughput&nbsp;=&nbsp;concurrency&nbsp;&divide;&nbsp;latency</code>) it reduces effective bandwidth <em>only</em> for <strong>latency&#8209;bound, low&#8209;parallelism</strong> access &mdash; a CPU&#8209;style pattern (pointer&#8209;chasing a dependency chain). GPUs, and our MoE inference target, run <strong>high memory&#8209;level parallelism</strong> and hide it completely.</p>
+<div class="callout spec"><span class="lab">The honest bottom line of the equivalence</span>For every workload a GPU actually runs, STRATA&#8209;V is <strong>&ge; the memory it replaces on every axis</strong> &mdash; same bandwidth, same protocol, 64&times; the capacity. The only thing real GDDR7 wins is the last sliver of latency in a regime GPUs are <em>built</em> to avoid &mdash; and that premium is the <em>price</em> of the trade (bandwidth from many cheap DDR5 chips instead of graphics DRAM), not a capability surrendered.</div>
+
 <footer>
   <p><span style="font-weight:700">Bottom line.</span> STRATA&#8209;V is a silicon interface that pretends to be a single 2.25&nbsp;TiB / 1.79&nbsp;TB/s DRAM chip that cannot physically exist &mdash; synthesized from ~576 ordinary DDR5 dies by an interleaving converter hierarchy. To a GPU it is indistinguishable from a colossal GDDR device: same 512 pins, same bandwidth, same fixed&#8209;beat protocol, prefetch and bursts intact, latency comparable. The bandwidth is real aggregation, the capacity is real depth, and the only genuinely hard part is the converter&rsquo;s refresh/conflict scheduling &mdash; the discipline that keeps the illusion deterministic.</p>
   <p style="color:var(--muted)">A hypothetical, pre&#8209;silicon design record. Nothing here was built; every wall is anchored to a shipping existence&#8209;proof, and estimates are flagged. Capacity in GiB/TiB, bandwidth in GB/s.</p>
