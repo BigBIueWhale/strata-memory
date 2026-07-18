@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can STRATA&#8209;V retrofit a stock RTX&nbsp;5090? &mdash; decision record</title>
+<style>
+  :root{--ink:#1b1f24;--paper:#fbfaf7;--muted:#5d6571;--rule:#e2ddd2;--accent:#7a4cc4;--accent2:#1f7a5a;--amber:#9a6a00;--red:#9a2f2f;--code-bg:#f1ede4;--code-ink:#3a2f5a;--blue:#1f5d7a;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:44px 24px 120px}
+  header.hero{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:8px}
+  .kicker{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:32px;line-height:1.1;margin:.2em 0 .12em}
+  .sub{font-size:18px;color:var(--muted);margin:0}
+  .meta{font-size:12.5px;color:var(--muted);margin-top:12px}
+  h2{font-size:22px;margin:2em 0 .45em;padding-top:.3em;border-top:1px solid var(--rule);line-height:1.18}
+  h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;font-size:15px;vertical-align:.18em;margin-right:.5em}
+  h3{font-size:16.5px;margin:1.3em 0 .3em;color:var(--accent2)}
+  p{margin:.65em 0}
+  code{font-family:"SFMono-Regular",Consolas,Menlo,monospace;font-size:.85em;background:var(--code-bg);color:var(--code-ink);padding:1px 5px;border-radius:4px;white-space:nowrap}
+  strong{font-weight:700}
+  em.t{font-style:normal;font-weight:600;color:var(--accent2)}
+  ul,ol{margin:.5em 0 .8em;padding-left:1.3em}
+  li{margin:.3em 0}
+  .lede{font-size:18px;color:#33373d}
+  .callout{margin:1.1em 0;padding:13px 17px;border-radius:9px;border-left:5px solid var(--accent);background:#f4f0fb}
+  .callout .lab{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:4px;color:var(--accent)}
+  .callout.stop{border-left-color:var(--red);background:#fbecec}.callout.stop .lab{color:var(--red)}
+  .callout.punch{border-left-color:var(--accent2);background:#e9f5ef}.callout.punch .lab{color:var(--accent2)}
+  .callout.catch{border-left-color:var(--amber);background:#fbf4e4}.callout.catch .lab{color:var(--amber)}
+  .callout.spec{border-left-color:var(--blue);background:#e8f2f7}.callout.spec .lab{color:var(--blue)}
+  table{border-collapse:collapse;width:100%;margin:1em 0;font-size:13.6px}
+  th,td{border:1px solid var(--rule);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:#efe9dd;font-size:12.3px}
+  tbody tr:nth-child(even){background:#f6f2ea}
+  .verdict{font-size:21px;font-weight:800;color:var(--red)}
+  footer{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">decision record &middot; negative result</div>
+  <h1>Can STRATA&#8209;V retrofit a <em>stock</em> RTX&nbsp;5090?</h1>
+  <p class="sub">Whether the DDR5 memory&#8209;virtualizer can replace a shipped 5090&rsquo;s soldered GDDR7 and trick it into 2&nbsp;TiB &mdash; at the same characteristics.</p>
+  <p class="meta">Companion to <code>strata_v_design.html</code> (the DDR5 virtualizer) and a device&#8209;mode&#8209;PHY signal&#8209;integrity analysis this leans on. Verdict is protocol&#8209;determined; NVIDIA&rsquo;s GB202 controller/PCB/training design is not public and is not needed to reach it. Compiled 2026&#8209;07&#8209;18.</p>
+</header>
+
+<p class="lede">STRATA&#8209;V works &mdash; behind a controller <em>you own</em>. This record answers the different question: can you take a <strong>finished, shipped RTX&nbsp;5090</strong>, remove its 16 soldered GDDR7 devices, wire STRATA&#8209;V in their place, and have the card believe it now has 2&nbsp;TiB with a 5090&rsquo;s exact behaviour? The answer is no, and it fails on four independent walls, any one of which is disqualifying.</p>
+
+<div class="callout stop"><span class="lab">Verdict</span>
+<p style="margin-top:2px"><span class="verdict">No &mdash; not on a stock 5090. Not at any effort.</span></p>
+<p>A shipped GPU&rsquo;s memory is defined by its <strong>controller</strong>, not its chips. The GB202 controller is hard&#8209;configured for <strong>32&nbsp;GiB</strong> of GDDR7, and <strong>GDDR7 has no rank / chip&#8209;select / capacity&#8209;expansion signalling</strong> &mdash; so the card <em>physically never issues an address past 32&nbsp;GiB</em>. Even the 32&nbsp;GiB it can address it samples on a <strong>training&#8209;frozen beat with no flow control</strong>, which a converter hop misses; and the 28&nbsp;Gb/s PAM3 net cannot be routed off&#8209;board to reach STRATA&#8209;V at all. STRATA&#8209;V is a <em>custom&#8209;controller</em> design; the stock 5090 is the one thing it can&rsquo;t be bolted onto &mdash; the same reason you can&rsquo;t add RAM to a soldered phone.</p>
+</div>
+
+<h2 id="q"><span class="num">01</span>The exact question</h2>
+<p>Given a working STRATA&#8209;V (the DDR5 memory&#8209;virtualizer: ~18 MRDIMM channels aggregated by a converter hierarchy into one virtual 2.25&nbsp;TiB / 1.79&nbsp;TB/s device), and a retail RTX&nbsp;5090: <strong>desolder the sixteen GDDR7 packages, connect STRATA&#8209;V to the freed 512&#8209;bit bus, and obtain a 5090 that reports and uses &gt;2&nbsp;TiB with unchanged latency/bandwidth/protocol.</strong> This is a <em>retrofit</em> of an immutable device &mdash; not a co&#8209;design.</p>
+
+<h2 id="crux"><span class="num">02</span>The crux: whose controller is it?</h2>
+<p>Every earlier &ldquo;yes&rdquo; for STRATA&#8209;V carried one precondition &mdash; <em>you design the memory controller</em>. That is the whole difference:</p>
+<table>
+<thead><tr><th></th><th>Custom controller (STRATA&#8209;V as designed)</th><th>Stock RTX&nbsp;5090 (this question)</th></tr></thead>
+<tbody>
+<tr><td>Address map</td><td>you set it to 41 bits &rarr; 2&nbsp;TiB</td><td>fixed at 35 bits &rarr; 32&nbsp;GiB, unchangeable</td></tr>
+<tr><td>Read latency (<code>CL</code>)</td><td>you program a higher, fixed <code>CL</code> for the hop</td><td>frozen at boot against real GDDR7</td></tr>
+<tr><td>Training</td><td>you define the sequence</td><td>fixed NVIDIA GDDR7 sequence, must be passed exactly</td></tr>
+<tr><td>Front placement</td><td>PHY designed for the converter link</td><td>28&nbsp;Gb/s PAM3 in a fixed BGA footprint</td></tr>
+<tr><td><strong>Result</strong></td><td><strong>works</strong></td><td><strong>fails on all four</strong></td></tr>
+</tbody>
+</table>
+<p>The memory a GPU has is a property of the controller that names and times it &mdash; not of whatever silicon happens to sit on the wires. Change the chips without changing the controller and the controller still lives in its old world.</p>
+
+<h2 id="wallA"><span class="num">03</span>Wall&nbsp;A &mdash; Addressing (the fatal one)</h2>
+<p><strong>Proof it is real:</strong> the GB202 controller is configured at boot for 16&nbsp;&times;&nbsp;2&nbsp;GiB GDDR7 devices and emits bank/row/column addresses inside <em>that</em> geometry. Naming 2&nbsp;TiB needs <strong>+6 address bits</strong> (2<sup>35</sup>&rarr;2<sup>41</sup>). In DDR&#8209;family memory those bits arrive as extra <em>ranks</em> (chip&#8209;select) or via an RCD &mdash; but <strong>GDDR7 has no rank, no chip&#8209;select, and no capacity&#8209;expansion mechanism</strong>; it deleted them for speed (confirmed against the Micron GDDR7 brief and JESD239 structure in the fast&#8209;tier research). There is <em>no bit pattern</em> the 5090 can put on the bus that addresses the other ~2&nbsp;TiB. The VBIOS, driver, and OS enumerate 32&nbsp;GiB and never ask for more. A converter cannot present capacity through an interface that has no way to <em>name</em> it. <strong>This wall alone ends the retrofit.</strong></p>
+
+<h2 id="wallB"><span class="num">04</span>Wall&nbsp;B &mdash; Frozen timing / latency</h2>
+<p><strong>Proof it is real:</strong> the controller trains its <code>DQS</code>&#8209;gate and read eye against the chips, <strong>freezes</strong> the taps, and thereafter samples read data on an exact beat <code>CL</code> cycles after each <code>READ</code> &mdash; with <strong>no wait&#8209;states and no flow control</strong> (the mechanism any device&#8209;mode&#8209;PHY emulator must live within). STRATA&#8209;V&rsquo;s read path is a pipeline &mdash; front deserialise &rarr; address translate &rarr; DDR5 access &rarr; reserialise &rarr; launch &mdash; which lands <em>later</em> than a native GDDR7 die. Late data on a frozen beat is <strong>silently latched garbage</strong>. Making a fabric pipeline land inside a foreign controller&rsquo;s already&#8209;frozen window is the frozen&#8209;window launch problem, the deepest <em>unsolved</em> device&#8209;mode&#8209;PHY question &mdash; and inserting a DDR5 access makes it strictly worse.</p>
+
+<h2 id="wallC"><span class="num">05</span>Wall&nbsp;C &mdash; Boot training</h2>
+<p><strong>Proof it is real:</strong> before a single normal access, the 5090 runs its GDDR7 bring&#8209;up &mdash; CA training, <code>WCK2CK</code> levelling, per&#8209;<code>DQ</code> read/write training, per&#8209;pin <code>VREF</code>, <code>ZQ</code> calibration &mdash; each step demanding a protocol&#8209;exact response in hard real time. STRATA&#8209;V&rsquo;s front PHY would have to <em>be</em> a perfect GDDR7 device through all of it or the card does not POST. That is the exact&#8209;training&#8209;responder problem (a device&#8209;mode PHY that answers every training step perfectly), and it must be flawless, not approximate.</p>
+
+<h2 id="wallD"><span class="num">06</span>Wall&nbsp;D &mdash; Physical / signal integrity</h2>
+<p><strong>Proof it is real:</strong> the GDDR7 bus is 28&nbsp;Gb/s PAM3, point&#8209;to&#8209;point, on ultra&#8209;short (&le;~45&nbsp;mm) length&#8209;matched, low&#8209;loss traces. You cannot desolder the chips and route those nets <em>off&#8209;board</em> to an external STRATA&#8209;V: a connector stub plus cable destroys a PAM3 eye that already has ~50% margin over two stacked sub&#8209;eyes (the well&#8209;documented absence of any deployable &ge;2.4&nbsp;GHz DDR probe front&#8209;end). STRATA&#8209;V&rsquo;s front PHY would have to live <em>in the exact GDDR7 BGA footprints</em>, with identical trace lengths &mdash; i.e. become a device&#8209;mode PHY in the DRAM&rsquo;s place, which is precisely the full set of device&#8209;mode&#8209;PHY open problems, all <em>unsolved</em>.</p>
+
+<h2 id="escape"><span class="num">07</span>The one escape &mdash; and why it collapses</h2>
+<p>The only way to touch 2&nbsp;TiB through a 32&nbsp;GiB&#8209;bound controller is to keep a 32&nbsp;GiB window and <strong>page</strong> a larger backing store in and out of it. But nothing in the GDDR7 protocol lets the host request a page swap, so STRATA&#8209;V would need a <strong>modified driver</strong> to issue swaps through a side channel (magic addresses). That is no longer transparent, the swaps run at DDR5&#8209;copy speed (<em>not</em> &ldquo;same characteristics&rdquo;), and it still faces Walls&nbsp;B&ndash;D for even the 32&nbsp;GiB window. It is software&#8209;managed offloading with extra steps &mdash; which a stock 5090 can already do over PCIe today, more simply. It does not deliver a 2&nbsp;TiB 5090.</p>
+
+<h2 id="integration"><span class="num">08</span>What integration would actually take &mdash; the Mellanox lesson</h2>
+<p>The Mellanox analogy points the right way if read correctly. NVIDIA&rsquo;s Mellanox tie&#8209;up was an <strong>acquisition</strong> (~2019, ~$6.9&nbsp;B) of a <em>networking</em> company (InfiniBand / ConnectX), whose silicon was then <strong>designed into</strong> the platform. Nobody desoldered a shipped product. The transferable lesson is exactly the custom&#8209;controller path:</p>
+<div class="callout punch"><span class="lab">Design&#8209;in, not bolt&#8209;on</span>Your converter gets into an NVIDIA GPU the same way HBM, NVLink&#8209;C2C, or a CXL controller does: the memory controller is <strong>co&#8209;designed</strong> to speak to it. That means a partnership/IP deal (or acquisition) where the <em>next</em> silicon is built with STRATA&#8209;V&rsquo;s address map, relaxed&#8209;but&#8209;fixed timing, and deterministic backing in mind &mdash; the STRATA&#8209;V we specified. It is never a retrofit of a finished card. Mellanox is the argument <em>for</em> the custom&#8209;die route and <em>against</em> the stock&#8209;5090 hack.</div>
+
+<h2 id="scope"><span class="num">09</span>Sourcing &amp; scope</h2>
+<ul>
+<li><strong>Design docs.</strong> NVIDIA does not publish the GB202 memory&#8209;controller specification, PCB schematics, or GDDR7 training RTL &mdash; all proprietary/NDA. The authoritative GDDR7 standard, JEDEC <strong>JESD239</strong>, is member&#8209;gated. None were downloadable; none are needed, because the verdict is fixed by the GDDR7 <em>protocol</em> (no capacity&#8209;expansion signalling) and the shipped controller&rsquo;s <em>immutability</em>, both established earlier in this project.</li>
+<li><strong>What we do have</strong> (in <code>pdfs/</code> and <code>images/</code>): the Micron GDDR7 brief, the RTX&nbsp;PRO&nbsp;6000 datasheet + Blackwell&#8209;PRO architecture whitepaper, and the RTX&nbsp;6000D clamshell teardown photos &mdash; enough to fix every GDDR7 fact this record relies on.</li>
+<li><strong>Scope.</strong> This concerns a <em>stock</em> 5090 retrofit only. The custom&#8209;controller STRATA&#8209;V (a die you design) is unaffected and remains valid.</li>
+</ul>
+
+<footer>
+  <p><strong>Bottom line.</strong> A finished GPU&rsquo;s memory is set by its controller, and the 5090&rsquo;s is frozen at 32&nbsp;GiB of GDDR7 &mdash; an interface with no way to <em>name</em> more capacity, no slack to absorb a converter&rsquo;s delay, a boot&#8209;time training gate, and a 28&nbsp;Gb/s PAM3 net that can&rsquo;t leave the board. STRATA&#8209;V&rsquo;s home is a controller you own; you get it into NVIDIA silicon by design&#8209;in, not by desoldering a card. Negative result, recorded.</p>
+</footer>
+
+</div>
+</body>
+</html>

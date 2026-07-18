@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STRATA&#8209;V &mdash; a DDR5 memory&#8209;virtualizer: one impossible chip from ~600 real dies</title>
+<style>
+  :root{--ink:#1b1f24;--paper:#fbfaf7;--muted:#5d6571;--rule:#e2ddd2;--accent:#7a4cc4;--accent2:#1f7a5a;--amber:#9a6a00;--red:#9a2f2f;--code-bg:#f1ede4;--code-ink:#3a2f5a;--blue:#1f5d7a;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:920px;margin:0 auto;padding:44px 24px 120px}
+  header.hero{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:8px}
+  .kicker{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:32px;line-height:1.1;margin:.2em 0 .12em}
+  .sub{font-size:18px;color:var(--muted);margin:0}
+  .meta{font-size:12.5px;color:var(--muted);margin-top:12px}
+  h2{font-size:22px;margin:2em 0 .45em;padding-top:.3em;border-top:1px solid var(--rule);line-height:1.18}
+  h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;font-size:15px;vertical-align:.18em;margin-right:.5em}
+  h3{font-size:16.5px;margin:1.3em 0 .3em;color:var(--accent2)}
+  p{margin:.65em 0}
+  code{font-family:"SFMono-Regular",Consolas,Menlo,monospace;font-size:.85em;background:var(--code-bg);color:var(--code-ink);padding:1px 5px;border-radius:4px;white-space:nowrap}
+  strong{font-weight:700}
+  em.t{font-style:normal;font-weight:600;color:var(--accent2)}
+  ul,ol{margin:.5em 0 .8em;padding-left:1.3em}
+  li{margin:.3em 0}
+  .lede{font-size:18px;color:#33373d}
+  .callout{margin:1.1em 0;padding:13px 17px;border-radius:9px;border-left:5px solid var(--accent);background:#f4f0fb}
+  .callout .lab{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:4px;color:var(--accent)}
+  .callout.stop{border-left-color:var(--red);background:#fbecec}.callout.stop .lab{color:var(--red)}
+  .callout.punch{border-left-color:var(--accent2);background:#e9f5ef}.callout.punch .lab{color:var(--accent2)}
+  .callout.catch{border-left-color:var(--amber);background:#fbf4e4}.callout.catch .lab{color:var(--amber)}
+  .callout.spec{border-left-color:var(--blue);background:#e8f2f7}.callout.spec .lab{color:var(--blue)}
+  table{border-collapse:collapse;width:100%;margin:1em 0;font-size:13.6px}
+  th,td{border:1px solid var(--rule);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:#efe9dd;font-size:12.3px}
+  tbody tr:nth-child(even){background:#f6f2ea}
+  .big{font-size:20px;font-weight:700}
+  .verdict{font-size:20px;font-weight:800;color:var(--accent2)}
+  footer{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;color:var(--muted);font-size:13px}
+  .diagram{border:1px solid var(--rule);border-radius:10px;padding:16px;margin:1.1em 0;background:#fff;font-size:12.5px}
+  .box{border-radius:7px;padding:9px 11px;margin:6px 0;text-align:center}
+  .bv{background:#101010;color:#fff;font-weight:700}
+  .b0{background:#f4f0fb;border:1px solid #d9c9f0;color:#4b2f78;font-weight:600}
+  .b1{background:#e9f5ef;border:1px solid #bfe3d2;color:#12503a}
+  .b2{background:#e8f2f7;border:1px solid #bcd8e6;color:#144b63}
+  .lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">committed engineering design &middot; codename STRATA&#8209;V</div>
+  <h1>A DDR5 memory&#8209;virtualizer</h1>
+  <p class="sub">A silicon converter hierarchy that makes ~600 ordinary DDR5 dies appear to a GPU as a single, impossible <strong>2.25&nbsp;TiB / 1.79&nbsp;TB/s</strong> memory chip &mdash; that no real device could be.</p>
+  <p class="meta">Backing: 18&nbsp;&times;&nbsp;MRDIMM&#8209;12800 (128&nbsp;GiB). Front: a 512&#8209;pin, 28&nbsp;Gb/s interface identical in pin count and bandwidth to an RTX&nbsp;5090&rsquo;s. Assumes custom 3&#8209;nm converter silicon that can emulate any transfer at the memory&#8209;controller clock. A hypothetical design record. Compiled 2026&#8209;07&#8209;18.</p>
+</header>
+
+<p class="lede">The realization behind this design: <strong>pins buy bandwidth, capacity is depth, and 1.79&nbsp;TB/s is a <em>low</em> bandwidth.</strong> Once you accept those, a converter can aggregate a huge pool of cheap, deep DDR5 and present it to a GPU as one flat, fast, impossibly&#8209;large device &mdash; because no single DDR5 chip provides this bandwidth, but ~18 channels interleaved do.</p>
+
+<div class="callout punch"><span class="lab">What it is</span>
+<p style="margin-top:2px"><span class="verdict">One virtual chip. ~600 real dies. The converter is the illusion.</span></p>
+<p>To the GPU, STRATA&#8209;V is a single memory device with a flat 41&#8209;bit address space, <strong>2.25&nbsp;TiB</strong>, <strong>1.79&nbsp;TB/s</strong>, and GDDR&#8209;class fixed&#8209;beat timing. Inside, a converter hierarchy stripes that address space across <strong>18 DDR5 channels</strong> (~576 &times; 32&nbsp;Gb dies), interleaving so a sequential read fans across all channels at once. It does not make DDR5 faster; it <em>parallelizes</em> it &mdash; 18&times; a channel, 287&times; a single die &mdash; and hides DDR5&rsquo;s variability so the front can run a deterministic beat.</p>
+</div>
+
+<h2 id="arch"><span class="num">01</span>The architecture &mdash; four tiers</h2>
+<div class="diagram">
+  <div class="lbl">Tier&nbsp;V &mdash; what the GPU sees</div>
+  <div class="box bv">ONE virtual device &mdash; 41&#8209;bit flat address &middot; 2.25&nbsp;TiB &middot; 1.79&nbsp;TB/s &middot; fixed&#8209;beat GDDR&#8209;class protocol</div>
+  <div class="lbl">Tier&nbsp;0 &mdash; root converter (custom N3E)</div>
+  <div class="box b0">512&#8209;pin @ 28&nbsp;Gb/s front PHY &middot; global address de&#8209;interleave &middot; refresh orchestration</div>
+  <div class="lbl">Tier&nbsp;1 &mdash; channel converters</div>
+  <div class="box b1">~6 dies &times; 3 controllers &mdash; per&#8209;channel MRDIMM scheduling + deterministic&#8209;latency reorder buffer</div>
+  <div class="lbl">Tier&nbsp;2 &mdash; DRAM</div>
+  <div class="box b2">18 &times; MRDIMM&#8209;12800, 128&nbsp;GiB each = 2.25&nbsp;TiB &asymp; ~576 &times; 32&nbsp;Gb dies</div>
+</div>
+<p>The <strong>root converter</strong> presents the impossible&#8209;chip face and stripes the flat address across channels (a RAID&#8209;0 stripe over DRAM). The <strong>channel converters</strong> each schedule ~3 DDR5 channels and, crucially, hide refresh and bank conflicts behind a small reorder buffer so the front sees <em>deterministic</em> timing. The whole thing can collapse onto one large converter die if pin/thermal budgets allow (fewer hops, lower latency), or split into the root+leaf hierarchy shown (+~5&nbsp;ns/level).</p>
+
+<h2 id="choices"><span class="num">02</span>Specific choices &amp; physical dimensions</h2>
+<table>
+<thead><tr><th>Element</th><th>Committed choice</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>Backing DRAM</td><td>18 &times; MRDIMM&#8209;12800, 128&nbsp;GiB (Micron/Samsung 3DS, 32&nbsp;Gb die)</td><td>102.4&nbsp;GB/s &times; 18 = <strong>1.84&nbsp;TB/s</strong>; 2.25&nbsp;TiB</td></tr>
+<tr><td>Ships&#8209;today fallback</td><td>35 &times; DDR5&#8209;6400 RDIMM, 64&nbsp;GiB</td><td>51.2 &times; 35 = 1.79&nbsp;TB/s; 2.19&nbsp;TiB; mature parts</td></tr>
+<tr><td>Front interface</td><td>512&#8209;pin, 28&nbsp;Gb/s PAM3 = <strong>1.79&nbsp;TB/s</strong></td><td>identical pin count &amp; bandwidth to an RTX&nbsp;5090</td></tr>
+<tr><td>Converter die(s)</td><td>custom TSMC N3E, ~6,000&#8209;ball FCBGA</td><td>~512 front + ~2,000 DDR5 + power balls</td></tr>
+<tr><td>DIMM mechanical</td><td>288&#8209;pin, 133.35&nbsp;&times;&nbsp;31.25&nbsp;mm, 0.85&nbsp;mm pitch (MO&#8209;329)</td><td>MRDIMM&#8209;12800 128&nbsp;GiB is tall/~20&nbsp;W &mdash; check height</td></tr>
+<tr><td>Footprint</td><td>18 DIMMs &asymp; 0.075&nbsp;m&sup2; + converters + compute module</td><td>a server baseboard (~40&nbsp;&times;&nbsp;40&nbsp;cm) &mdash; an appliance, not a card</td></tr>
+<tr><td>DRAM power</td><td>~360&nbsp;W (18 &times; ~20&nbsp;W) + converter</td><td>server&#8209;class thermal</td></tr>
+</tbody>
+</table>
+
+<h2 id="spec"><span class="num">03</span>Final spec sheet &mdash; the impossible chip</h2>
+<table>
+<thead><tr><th>Spec</th><th>Value</th><th>Why no real chip can be this</th></tr></thead>
+<tbody>
+<tr><td>Capacity</td><td><strong>2.25&nbsp;TiB</strong></td><td>560&times; the densest real DRAM die (~4&nbsp;GiB)</td></tr>
+<tr><td>Bandwidth (front)</td><td><strong>1.79&nbsp;TB/s</strong> (backing 1.84)</td><td>287&times; a single DDR5 die (6.4&nbsp;GB/s); 18&times; a channel</td></tr>
+<tr><td>Interface</td><td>1 device, flat 41&#8209;bit address</td><td>no real device is remotely this large</td></tr>
+<tr><td>Latency (GPU&#8209;visible)</td><td>~200&ndash;300&nbsp;ns</td><td>DDR5 array + one converter hop</td></tr>
+<tr><td>Protocol</td><td>GDDR&#8209;class fixed&#8209;beat, deterministic</td><td>synthesized by the converter, not native</td></tr>
+<tr><td>Composition</td><td>~576 &times; 32&nbsp;Gb DDR5 dies</td><td>aggregated behind one face</td></tr>
+</tbody>
+</table>
+
+<h2 id="bw"><span class="num">04</span>Where the bandwidth comes from &mdash; honestly</h2>
+<p>The converter does not overclock DDR5. It <strong>interleaves</strong>:</p>
+<ul>
+<li>1 DDR5 die = <strong>6.4&nbsp;GB/s</strong>; 1 MRDIMM channel = <strong>102&nbsp;GB/s</strong>; 18 channels striped = <strong>1.84&nbsp;TB/s</strong>.</li>
+<li>The root converter maps consecutive cache lines onto <em>different</em> channels, so a sequential read fans across all 18 at once &mdash; the sum of their bandwidth.</li>
+<li><strong>Ceiling = the sum of the backing, minus overhead.</strong> A buffer can burst briefly above that; sustained bandwidth is exactly the aggregate. The converter aggregates bandwidth &mdash; it can never manufacture it. Front 1.79&nbsp;TB/s &lt; backing 1.84 &rArr; the front is the steady throttle.</li>
+</ul>
+<p>So &ldquo;higher bandwidth than DDR5 provides&rdquo; is true <em>per component</em> (18&ndash;287&times;) and comes entirely from quantity + interleave &mdash; not from any single chip doing more than it can.</p>
+<p><strong>The 1.79&nbsp;TB/s target is arbitrary</strong> &mdash; chosen only to match the RTX&nbsp;5090. Bandwidth and capacity are independent knobs: set any front bandwidth by the channel count (N&nbsp;&times;&nbsp;per&#8209;channel), and any capacity by the depth (channels&nbsp;&times;&nbsp;3DS&nbsp;stack). 1.79&nbsp;TB/s and 2.25&nbsp;TiB are simply the point we picked.</p>
+
+<h2 id="cmp"><span class="num">05</span>Comparison &mdash; vs. a 32&nbsp;GiB GDDR7 GPU and one DDR5 channel</h2>
+<table>
+<thead><tr><th>Characteristic</th><th>32&nbsp;GiB GDDR7 GPU (e.g. RTX&nbsp;5090)</th><th>STRATA&#8209;V (virtual DDR5 device)</th><th>one real MRDIMM channel</th></tr></thead>
+<tbody>
+<tr><td>Capacity</td><td>32&nbsp;GiB</td><td><strong>2.25&nbsp;TiB (70&times;)</strong></td><td>128&nbsp;GiB</td></tr>
+<tr><td>Bandwidth (front)</td><td>1.79&nbsp;TB/s</td><td><strong>1.79&nbsp;TB/s</strong> (backing 1.84)</td><td>102&nbsp;GB/s</td></tr>
+<tr><td>BW vs single component</td><td>&mdash;</td><td><strong>18&times; a channel &middot; 287&times; a die</strong></td><td>1&times;</td></tr>
+<tr><td>GPU&#8209;visible latency</td><td>~335&nbsp;ns</td><td><strong>~200&ndash;300&nbsp;ns &mdash; comparable</strong></td><td>&mdash;</td></tr>
+<tr><td>Protocol</td><td>native GDDR7 fixed&#8209;beat</td><td>GDDR&#8209;emulated fixed&#8209;beat, transparent</td><td>native DDR5</td></tr>
+<tr><td>Prefetch / burst / open&#8209;page</td><td>native</td><td><strong>preserved</strong> (1:1 pass&#8209;through)</td><td>native</td></tr>
+<tr><td>Flow control</td><td>none</td><td>none &mdash; needs deterministic backing</td><td>none</td></tr>
+<tr><td>Front pins</td><td>512</td><td>512 (identical)</td><td>80</td></tr>
+<tr><td>Backing pins</td><td>&mdash;</td><td>~2,000 (on converters)</td><td>80</td></tr>
+<tr><td>Physical footprint</td><td>~16 chips, on&#8209;card</td><td>~18 DIMMs &mdash; appliance</td><td>1 DIMM</td></tr>
+<tr><td>DRAM cost (2026 crunch)</td><td>~$600</td><td>~$6&ndash;12k</td><td>~$400</td></tr>
+</tbody>
+</table>
+<div class="callout spec"><span class="lab">The pleasant surprise: latency</span>DDR5&rsquo;s array/interface latency (~16&ndash;33&nbsp;ns) is <em>lower</em> than GDDR7&rsquo;s, so it largely <strong>cancels</strong> the converter&rsquo;s ~15&ndash;25&nbsp;ns hop. Net GPU&#8209;visible latency lands <em>comparable</em> to a 32&nbsp;GiB GDDR7 card &mdash; you do not pay a latency penalty for 70&times; the capacity, within ~&plusmn;20%.</div>
+
+<h2 id="catch"><span class="num">06</span>The catches &mdash; the honest accounting</h2>
+<ol>
+<li><strong>Determinism / refresh is THE engineering problem</strong> &mdash; not latency, not bandwidth. A fixed&#8209;beat front has no &ldquo;please wait,&rdquo; so every channel&rsquo;s <code>tRFC</code> refresh (~hundreds of ns) and bank conflicts must be <em>scheduled or buffered out of the demand path</em> by the channel converters (stagger refresh across channels; keep a few&#8209;&micro;s reorder buffer). Solvable, but it is the part you actually have to engineer &mdash; and get wrong and you silently latch stale data.</li>
+<li><strong>It is an appliance, not a card.</strong> 18 tall MRDIMMs + converters + compute module &asymp; a ~40&nbsp;&times;&nbsp;40&nbsp;cm baseboard, ~360&nbsp;W of DRAM. That is the price of 2.25&nbsp;TiB.</li>
+<li><strong>Front pins = a 5090; total system pins &ne; a 5090.</strong> The compute die keeps 512 pins; the ~2,000 backing pins live on the converters. The pin count did not vanish &mdash; it moved to where it is short and cheap.</li>
+<li><strong>MRDIMM&#8209;12800 is DDR5 Gen2</strong> (sampling as of 2026); the ships&#8209;today build uses DDR5&#8209;6400 RDIMM across 35 channels instead of 18.</li>
+</ol>
+
+<h2 id="open"><span class="num">07</span>Open questions &amp; unverified items</h2>
+<ul>
+<li>Absolute RCD / data&#8209;buffer / reorder&#8209;buffer latency adders (only &ldquo;RCD ~1&nbsp;nCK&rdquo; is firm; the rest are estimates).</li>
+<li>The GPU&#8209;visible ~200&ndash;300&nbsp;ns figure is an estimate for this configuration, not a measurement.</li>
+<li>Exact 128/256&nbsp;GiB MRDIMM part numbers and the tall&#8209;module height/thermal fit.</li>
+<li>The refresh&#8209;scheduling worst case (all&#8209;channel refresh collision under a full&#8209;bandwidth stream) needs a worked timing budget before commit.</li>
+</ul>
+
+<footer>
+  <p><span style="font-weight:700">Bottom line.</span> STRATA&#8209;V is a silicon interface that pretends to be a single 2.25&nbsp;TiB / 1.79&nbsp;TB/s DRAM chip that cannot physically exist &mdash; synthesized from ~576 ordinary DDR5 dies by an interleaving converter hierarchy. To a GPU it is indistinguishable from a colossal GDDR device: same 512 pins, same bandwidth, same fixed&#8209;beat protocol, prefetch and bursts intact, latency comparable. The bandwidth is real aggregation, the capacity is real depth, and the only genuinely hard part is the converter&rsquo;s refresh/conflict scheduling &mdash; the discipline that keeps the illusion deterministic.</p>
+  <p style="color:var(--muted)">A hypothetical, pre&#8209;silicon design record. Nothing here was built; every wall is anchored to a shipping existence&#8209;proof, and estimates are flagged. Capacity in GiB/TiB, bandwidth in GB/s.</p>
+</footer>
+
+</div>
+</body>
+</html>

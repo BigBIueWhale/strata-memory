@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STRATA&#8209;2T &mdash; a two&#8209;tier&#8209;memory AI accelerator: 1.79 TB/s + 2 TiB, buildable</title>
+<style>
+  :root{--ink:#1b1f24;--paper:#fbfaf7;--muted:#5d6571;--rule:#e2ddd2;--accent:#7a4cc4;--accent2:#1f7a5a;--amber:#9a6a00;--red:#9a2f2f;--code-bg:#f1ede4;--code-ink:#3a2f5a;--blue:#1f5d7a;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:920px;margin:0 auto;padding:44px 24px 120px}
+  header.hero{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:8px}
+  .kicker{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:33px;line-height:1.1;margin:.2em 0 .12em}
+  .sub{font-size:18px;color:var(--muted);margin:0}
+  .meta{font-size:12.5px;color:var(--muted);margin-top:12px}
+  h2{font-size:23px;margin:2em 0 .45em;padding-top:.3em;border-top:1px solid var(--rule);line-height:1.18}
+  h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;font-size:16px;vertical-align:.18em;margin-right:.5em}
+  h3{font-size:17px;margin:1.4em 0 .3em;color:var(--accent2)}
+  p{margin:.65em 0}
+  code{font-family:"SFMono-Regular",Consolas,Menlo,monospace;font-size:.85em;background:var(--code-bg);color:var(--code-ink);padding:1px 5px;border-radius:4px;white-space:nowrap}
+  strong{font-weight:700}
+  em.t{font-style:normal;font-weight:600;color:var(--accent2)}
+  ul,ol{margin:.5em 0 .8em;padding-left:1.3em}
+  li{margin:.3em 0}
+  .lede{font-size:18px;color:#33373d}
+  .callout{margin:1.1em 0;padding:13px 17px;border-radius:9px;border-left:5px solid var(--accent);background:#f4f0fb}
+  .callout .lab{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:4px;color:var(--accent)}
+  .callout.stop{border-left-color:var(--red);background:#fbecec}.callout.stop .lab{color:var(--red)}
+  .callout.punch{border-left-color:var(--accent2);background:#e9f5ef}.callout.punch .lab{color:var(--accent2)}
+  .callout.catch{border-left-color:var(--amber);background:#fbf4e4}.callout.catch .lab{color:var(--amber)}
+  .callout.spec{border-left-color:var(--blue);background:#e8f2f7}.callout.spec .lab{color:var(--blue)}
+  table{border-collapse:collapse;width:100%;margin:1em 0;font-size:13.6px}
+  th,td{border:1px solid var(--rule);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:#efe9dd;font-size:12.3px}
+  tbody tr:nth-child(even){background:#f6f2ea}
+  .big{font-size:20px;font-weight:700}
+  .verdict{font-size:20px;font-weight:800;color:var(--accent2)}
+  footer{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;color:var(--muted);font-size:13px}
+  .toc{background:#f4f0fb;border:1px solid #e3d9f4;border-radius:10px;padding:12px 18px;margin:22px 0 8px}
+  .toc h4{margin:.2em 0 .5em;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .toc ol{columns:2;column-gap:30px;font-size:13.6px;margin:.2em 0}
+  .flag{color:var(--amber);font-weight:700}
+  /* block diagram */
+  .diagram{border:1px solid var(--rule);border-radius:10px;padding:16px;margin:1.1em 0;background:#fff;font-size:13px}
+  .die{background:#101010;color:#fff;border-radius:8px;padding:12px;text-align:center;font-weight:700}
+  .ring{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:8px 0}
+  .g7{background:#e9f5ef;border:1px solid #bfe3d2;border-radius:5px;padding:5px 7px;font-size:11.5px;color:#12503a}
+  .fab{background:#f4f0fb;border:1px dashed var(--accent);border-radius:6px;padding:8px;text-align:center;margin:8px 0;color:#4b2f78;font-weight:600}
+  .ddr{background:#e8f2f7;border:1px solid #bcd8e6;border-radius:5px;padding:6px 8px;font-size:11.5px;color:#144b63}
+  .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">committed engineering design &middot; codename STRATA&#8209;2T</div>
+  <h1>A two&#8209;tier&#8209;memory AI accelerator</h1>
+  <p class="sub">1.79&nbsp;TB/s and 2&nbsp;TiB on one module &mdash; a literal RTX&nbsp;5090&#8209;class fast tier fronting a coherent 2&nbsp;TiB bulk tier, specified to the part number, the pin budget, the picosecond, and the nanosecond.</p>
+  <p class="meta">Compute die: custom TSMC&nbsp;<code>N3E</code>, GB202&#8209;class. Fast tier: 512&#8209;bit GDDR7 (RTX&nbsp;PRO&nbsp;6000 subsystem). Bulk tier: 8&#8209;channel DDR5 3DS&nbsp;RDIMM. Method: specify, don&rsquo;t speculate; every wall closed with a shipping existence&#8209;proof; open questions flagged, not buried. Compiled 2026&#8209;07&#8209;18.</p>
+</header>
+
+<p class="lede">The requirement is exact and it is <em>not</em> the impossible one. Not &ldquo;2&nbsp;TiB of GDDR7 at 115&nbsp;TB/s&rdquo; (that dies on shoreline physics). The ask is <strong>1.79&nbsp;TB/s of bandwidth</strong> &mdash; one 5090&rsquo;s worth &mdash; on a hot working set, with <strong>2&nbsp;TiB physically resident</strong> so a trillion&#8209;parameter MoE runs. That is a <em>tiering</em> problem, and tiering is a shipping, measured art (NVIDIA Grace&nbsp;Hopper). This document commits every choice.</p>
+
+<div class="callout punch"><span class="lab">Verdict up front</span>
+<p style="margin-top:2px"><span class="verdict">Buildable today, from catalog parts, on ~6,000 balls.</span></p>
+<p>A custom <code>N3E</code> die carries a native <strong>512&#8209;bit GDDR7</strong> interface (96&nbsp;GiB clamshell, <strong>1,792&nbsp;GB/s</strong> &mdash; byte&#8209;identical to the RTX&nbsp;PRO&nbsp;6000&rsquo;s subsystem) <em>and</em> eight native <strong>DDR5</strong> channels driving <strong>2&nbsp;TiB</strong> of 3DS&nbsp;RDIMM (8&nbsp;&times;&nbsp;256&nbsp;GiB). One coherent address space of <strong>~2.09&nbsp;TiB</strong>. At &le;96&nbsp;GiB working set it <em>is</em> a 5090/PRO&nbsp;6000; past that, cold weights stream from the bulk tier. The signal integrity is two <em>already&#8209;shipping</em> SI regimes composed side by side; the total ball count (~6,000) is proven by AMD&rsquo;s socketed <code>MI300A</code> (LGA&#8209;6096). Nothing here needs a new transistor or a new standard.</p>
+</div>
+
+<div class="toc"><h4>Contents</h4>
+<ol>
+<li><a href="#ask">The requirement, made exact</a></li>
+<li><a href="#sys">System overview &amp; the block diagram</a></li>
+<li><a href="#t1">Tier&nbsp;1 &mdash; the fast GDDR7 subsystem</a></li>
+<li><a href="#t1si">Tier&nbsp;1 signal integrity (PAM3)</a></li>
+<li><a href="#t2">Tier&nbsp;2 &mdash; the 2&nbsp;TiB DDR5 bulk tier</a></li>
+<li><a href="#t2si">Tier&nbsp;2 signal integrity (registered)</a></li>
+<li><a href="#coh">Coherence &amp; the tiering engine</a></li>
+<li><a href="#lat">The latency budget</a></li>
+<li><a href="#phys">Physical realization &amp; ball budget</a></li>
+<li><a href="#why">Why this closes when 2&nbsp;TiB&#8209;of&#8209;GDDR7 didn&rsquo;t</a></li>
+<li><a href="#work">Workload proof &mdash; Kimi&nbsp;K2/K3</a></li>
+<li><a href="#ledger">Requirements ledger</a></li>
+<li><a href="#open">Open questions &amp; unverified items</a></li>
+<li><a href="#bom">Bill of materials &amp; bottom line</a></li>
+</ol></div>
+
+<h2 id="ask"><span class="num">01</span>The requirement, made exact</h2>
+<table>
+<thead><tr><th>Requirement</th><th>Committed target</th><th>How it is met</th></tr></thead>
+<tbody>
+<tr><td>Hot bandwidth</td><td><strong>1,792&nbsp;GB/s</strong> (= 512&#8209;bit &times; 28&nbsp;Gb/s &divide; 8)</td><td>Tier&nbsp;1: native 512&#8209;bit GDDR7, exactly a 5090/PRO&nbsp;6000</td></tr>
+<tr><td>&ldquo;No worse than a 5090 at &le;32&nbsp;GiB, in any characteristic&rdquo;</td><td>identical GDDR7 path, un&#8209;buffered</td><td>the fast tier <em>is</em> a 5090&#8209;class subsystem; the bulk tier hangs off <em>separate</em> controllers and never touches the fast path (&sect;07)</td></tr>
+<tr><td>Physically resident capacity</td><td><strong>2&nbsp;TiB</strong> (+96&nbsp;GiB fast = ~2.09&nbsp;TiB unified)</td><td>Tier&nbsp;2: 8&nbsp;&times;&nbsp;256&nbsp;GiB DDR5 3DS&nbsp;RDIMM</td></tr>
+<tr><td>Run a ~1T&#8209;param 4&#8209;bit MoE + full KV</td><td>Kimi&nbsp;K2 (1.04T/32.6B active) fits with room</td><td>520&nbsp;GB of 4&#8209;bit weights = 25% of the bulk tier; KV pinned hot (&sect;11)</td></tr>
+</tbody>
+</table>
+<p>The key architectural fact that shapes everything: <strong>1.79&nbsp;TB/s is a <em>single</em> 512&#8209;bit GDDR7 interface, and that interface caps at 96&nbsp;GiB</strong> (clamshell 3&nbsp;GB devices &mdash; the RTX&nbsp;PRO&nbsp;6000 ceiling). So 2&nbsp;TiB cannot be one uniform GDDR7 pool. It doesn&rsquo;t need to be: the spec asks for 5090 <em>bandwidth</em> on the hot set and 2&nbsp;TiB of <em>residence</em>, which is precisely a two&#8209;tier machine.</p>
+
+<h2 id="sys"><span class="num">02</span>System overview</h2>
+<div class="diagram">
+  <div class="lbl" style="text-align:center">On&#8209;module &mdash; ultra&#8209;short GDDR7 (Tier&nbsp;1)</div>
+  <div class="ring">
+    <span class="g7">GDDR7&times;5</span><span class="g7">GDDR7&times;3</span>
+    <div class="die">Custom N3E compute die (GB202&#8209;class, ~800&nbsp;mm&sup2;)<br><span style="font-weight:400;font-size:11px">GPU cores &ge; RTX&nbsp;5090 &middot; 512&#8209;bit GDDR7 PHY &middot; 8&times; DDR5 ctrl &middot; PCIe&nbsp;5</span></div>
+    <span class="g7">GDDR7&times;3</span><span class="g7">GDDR7&times;5</span>
+  </div>
+  <div class="lbl" style="text-align:center">16 devices front + 16 back (clamshell) = 32 &times; 3&nbsp;GB = <strong>96&nbsp;GiB @ 1,792&nbsp;GB/s</strong></div>
+  <div class="fab">coherent unified address space &mdash; hardware access&#8209;counter migration (ATS)</div>
+  <div class="lbl" style="text-align:center">On baseboard &mdash; latency&#8209;tolerant DDR5 (Tier&nbsp;2)</div>
+  <div class="ring">
+    <span class="ddr">256&nbsp;GiB RDIMM</span><span class="ddr">256</span><span class="ddr">256</span><span class="ddr">256</span><span class="ddr">256</span><span class="ddr">256</span><span class="ddr">256</span><span class="ddr">256&nbsp;GiB RDIMM</span>
+  </div>
+  <div class="lbl" style="text-align:center">8 channels &times; 256&nbsp;GiB 3DS&nbsp;RDIMM = <strong>2&nbsp;TiB @ 410&ndash;819&nbsp;GB/s</strong> &nbsp;|&nbsp; host: PCIe&nbsp;5.0 &times;16</div>
+</div>
+<p>Two tiers, one coherent pool. The fast tier lives <strong>on the accelerator module</strong> (GDDR7 must be millimetres from the die); the bulk tier lives in <strong>DIMM slots on the baseboard</strong> (DDR5 tolerates the reach). This is the NVIDIA Grace&nbsp;Hopper division of labour &mdash; HBM for bandwidth, a large coherent DRAM tier for capacity &mdash; with the tiers re&#8209;cast as <strong>GDDR7 + DDR5</strong>.</p>
+
+<h2 id="t1"><span class="num">03</span>Tier&nbsp;1 &mdash; the fast GDDR7 subsystem</h2>
+<p>This tier is not a research risk: it is the <strong>RTX&nbsp;PRO&nbsp;6000 Blackwell memory subsystem</strong>, which ships today at exactly these numbers (96&nbsp;GiB, 512&#8209;bit, 1,792&nbsp;GB/s, 28&nbsp;Gb/s, 32&#8209;device clamshell &mdash; 16 counted on the PCB back in teardown).</p>
+<table>
+<thead><tr><th>Parameter</th><th>Committed value</th><th>Source / note</th></tr></thead>
+<tbody>
+<tr><td>Device</td><td>Micron <code>MT68A768M32DF-28-A</code> (alt: Samsung <code>K4VCF325ZC-SC28</code>)</td><td>24&nbsp;Gb, &times;32, 266&#8209;ball FBGA, 28&nbsp;Gb/s. <code>768M32</code> = 768&nbsp;Meg&nbsp;&times;&nbsp;32 = 24&nbsp;Gb</td></tr>
+<tr><td>Package</td><td>266&#8209;ball FBGA, 12.0&nbsp;&times;&nbsp;14.0&nbsp;&times;&nbsp;1.1&nbsp;mm, 0.75&nbsp;mm pitch</td><td>Micron GDDR7 brief</td></tr>
+<tr><td>Count / topology</td><td><strong>32 devices</strong> &mdash; 16 front + 16 back, clamshell</td><td>512&#8209;bit &divide; 32 = 16 channels &times; 2 clamshell; each device &times;16</td></tr>
+<tr><td>Capacity</td><td>32 &times; 3&nbsp;GB = <strong>96&nbsp;GiB</strong> (with on&#8209;die ECC)</td><td>16 &times; 3&nbsp;GB single&#8209;sided = only 48&nbsp;GiB &rArr; 96 needs clamshell</td></tr>
+<tr><td>Signalling</td><td>PAM3, 4 &times; (8&nbsp;data + 2&nbsp;error) &ldquo;10&#8209;bit&rdquo; channels, 1.2&nbsp;V</td><td>JEDEC JESD239; not a further sub&#8209;channel split</td></tr>
+<tr><td>Per&#8209;device BW</td><td>112&nbsp;GB/s (32&nbsp;&times;&nbsp;28&nbsp;Gb/s&nbsp;&divide;&nbsp;8)</td><td>&times;16 in clamshell = 56&nbsp;GB/s each, 2 per channel</td></tr>
+<tr><td>Aggregate</td><td><strong>1,792&nbsp;GB/s = 1.79&nbsp;TB/s</strong></td><td>512&nbsp;&times;&nbsp;28&nbsp;&divide;&nbsp;8; exactly the RTX&nbsp;5090</td></tr>
+<tr><td>Memory power</td><td>~130&ndash;190&nbsp;W (32&nbsp;&times;&nbsp;~4&ndash;6&nbsp;W) <span class="flag">[est]</span></td><td>pJ/bit not publicly published; estimate only</td></tr>
+</tbody>
+</table>
+
+<h2 id="t1si"><span class="num">04</span>Tier&nbsp;1 signal integrity &mdash; the hard interface, kept short</h2>
+<p>GDDR7 at 28&nbsp;Gb/s PAM3 is the tightest interface on the board, so the design does exactly what every shipping GDDR7 GPU does: <strong>point&#8209;to&#8209;point, on&#8209;module, millimetres from the die, no buffer.</strong></p>
+<table>
+<thead><tr><th>SI parameter</th><th>Committed value</th><th>Basis</th></tr></thead>
+<tbody>
+<tr><td>Line code / rate</td><td>PAM3 (&minus;1/0/+1), 1.5&nbsp;bit/symbol, 28&nbsp;Gb/s</td><td>Micron/JEDEC (&ldquo;3&nbsp;bits over 2&nbsp;cycles&rdquo;)</td></tr>
+<tr><td>Unit interval / Nyquist</td><td><strong>UI&nbsp;&asymp;&nbsp;53.6&nbsp;ps</strong> (18.667&nbsp;GBaud), f<sub>Nyq</sub>&nbsp;&asymp;&nbsp;9.33&nbsp;GHz</td><td>28&nbsp;&divide;&nbsp;1.5&nbsp;bit/sym; two stacked half&#8209;height eyes</td></tr>
+<tr><td>DQ impedance / drive</td><td>40&nbsp;&Omega; single&#8209;ended POD, R<sub>ON</sub> 40/48/60&nbsp;&Omega;</td><td>Achronix GDDR6 UG091 (applies closely)</td></tr>
+<tr><td>WCK/CK impedance</td><td>80&ndash;85&nbsp;&Omega; differential</td><td>same</td></tr>
+<tr><td>On&#8209;die termination / ZQ</td><td>ODT 60/120/240&nbsp;&Omega;; ZQ 240&nbsp;&Omega; master/slave</td><td>same</td></tr>
+<tr><td>Reach (die&rarr;device)</td><td><strong>&le;~40&ndash;50&nbsp;mm</strong> routed <span class="flag">[est]</span></td><td>very&#8209;short by design; hard mm budget is in gated JESD239</td></tr>
+<tr><td>Laminate</td><td>ultra&#8209;low&#8209;loss (Megtron&nbsp;6/7 class); FR&#8209;4 invalid at 28&nbsp;Gb/s</td><td>PAM3 loss/ISI budget</td></tr>
+<tr><td>Skew match</td><td>intra&#8209;pair &lt;&nbsp;~1&nbsp;mil; per&#8209;byte&#8209;group routing</td><td>each 8&#8209;bit channel carries its own WCK</td></tr>
+<tr><td>Training</td><td>CA training, WCK2CK levelling, per&#8209;DQ read+write, per&#8209;pin V<sub>REF</sub>, periodic Z re&#8209;cal</td><td>internal RCK read&#8209;clock; host&#8209;driven</td></tr>
+</tbody>
+</table>
+<div class="callout spec"><span class="lab">Existence proof, not a simulation</span>Every number above is realised on a shipping product: the RTX&nbsp;PRO&nbsp;6000 Blackwell rings a ~750&nbsp;mm&sup2; GB202 die with 32 clamshell GDDR7 devices at 28&nbsp;Gb/s and closes at 1,792&nbsp;GB/s. STRATA&#8209;2T reuses that PCB/substrate SI verbatim &mdash; same clamshell, same short reach, same laminate class. The SI risk on this tier is a <em>solved</em> problem.</div>
+
+<h2 id="t2"><span class="num">05</span>Tier&nbsp;2 &mdash; the 2&nbsp;TiB DDR5 bulk tier</h2>
+<p>2&nbsp;TiB lands cleanly as <strong>8&nbsp;channels &times; 256&nbsp;GiB</strong> (8&nbsp;&times;&nbsp;256&nbsp;GiB&nbsp;=&nbsp;2&nbsp;TiB exactly). The controllers are <strong>native on the die</strong> (not CXL) so the tier is DRAM&#8209;class latency and coherent as a NUMA node &mdash; the Grace approach, but with DIMMs for capacity and service.</p>
+<table>
+<thead><tr><th>Parameter</th><th>Committed value</th><th>Source / note</th></tr></thead>
+<tbody>
+<tr><td>Module</td><td>256&nbsp;GiB DDR5&#8209;6400 3DS&nbsp;RDIMM &mdash; Samsung <code>M321RBJA0M22-CLP</code> (4Rx4, 32&nbsp;Gb die)</td><td>alt: Samsung <code>M321RBGA0B40-CWK</code> (DDR5&#8209;4800, 8Rx4 4H&nbsp;3DS)</td></tr>
+<tr><td>Why RDIMM not LRDIMM</td><td>at 128/256&nbsp;GiB the class is <strong>3DS&nbsp;RDIMM / MRDIMM</strong> &mdash; DDR5 has <em>no</em> 256&nbsp;GiB LRDIMM</td><td>DQ path direct/un&#8209;buffered; RCD registers CA only</td></tr>
+<tr><td>Channels &times; DIMMs</td><td>8 &times; 1 (1&nbsp;DPC) &rarr; <strong>2&nbsp;TiB</strong></td><td>alt 16 &times; 128&nbsp;GiB (2&nbsp;DPC); 8&#8209;ch is the balanced target</td></tr>
+<tr><td>Registering</td><td>1 RCD/DIMM (Renesas <code>RG5R364</code> / Montage <code>M88DR5RCD03</code>)</td><td>re&#8209;drives CA+CK fly&#8209;by; +~1&nbsp;nCK (~0.4&nbsp;ns)</td></tr>
+<tr><td>Per&#8209;DIMM BW</td><td>DDR5&#8209;6400 &rarr; 51.2&nbsp;GB/s</td><td>MRDIMM&#8209;12800 &rarr; 102.4&nbsp;GB/s (2&times;)</td></tr>
+<tr><td>Aggregate (baseline)</td><td><strong>409.6&nbsp;GB/s</strong> (8&nbsp;&times;&nbsp;DDR5&#8209;6400)</td><td>upgrade path below</td></tr>
+<tr><td>Aggregate (MRDIMM upgrade)</td><td><strong>819&nbsp;GB/s</strong> (8&nbsp;&times;&nbsp;MRDIMM&#8209;12800)</td><td>1 MRCD + 10 MDB/DIMM; muxes two ranks 16b&rarr;8b@2&times;</td></tr>
+<tr><td>Capacity discipline</td><td>label capacity in <strong>GiB/TiB</strong>, bandwidth in GB/s</td><td>8&nbsp;&times;&nbsp;256&nbsp;GiB = 2&nbsp;TiB exactly (not &ldquo;1.86&rdquo;)</td></tr>
+</tbody>
+</table>
+<div class="callout punch"><span class="lab">Your buffering instinct &mdash; realised, legally</span>Three conversations ago the idea was &ldquo;silicon that presents itself as higher&#8209;capacity DDR.&rdquo; That is <em>exactly</em> what a 256&nbsp;GiB 3DS&nbsp;RDIMM is: an <strong>RCD</strong> re&#8209;registers the command/address bus and <strong>TSV&#8209;stacked (3DS)</strong> dies pack 256&nbsp;GiB behind one channel. The buffering that was fatal on the GDDR7 fast tier (frozen, latency&#8209;starved) is <em>native and standard</em> on the DDR5 bulk tier (latency&#8209;tolerant). The instinct was right; it just belongs on this tier.</div>
+
+<h2 id="t2si"><span class="num">06</span>Tier&nbsp;2 signal integrity &mdash; registered, so the reach is legal</h2>
+<p>The bulk tier is standard server DDR5 SI &mdash; the reason DIMM slots on a baseboard work at DDR5&#8209;6400 is the <em>register</em>. The RCD captures the command/address bus and re&#8209;drives it fly&#8209;by to the ranks, cutting the controller&rsquo;s electrical load so the longer, socketed, multi&#8209;rank net closes. The <strong>DQ lanes stay point&#8209;to&#8209;point and un&#8209;buffered</strong> on an RDIMM (that is the RDIMM&#8209;vs&#8209;LRDIMM latency win). Every DDR5 server on earth is the existence proof.</p>
+<ul>
+<li><strong>Data path:</strong> two independent 32&#8209;bit sub&#8209;channels/DIMM; server ECC = 40&nbsp;bit each (32&nbsp;DQ + 8&nbsp;CB) &rarr; 80&nbsp;bit; BL16 &rarr; 64&nbsp;B/sub&#8209;channel.</li>
+<li><strong>CA path:</strong> host 7&#8209;bit DDR edge CA &rarr; RCD de&#8209;muxes to the 14&#8209;bit SDR DRAM&#8209;side CA; fly&#8209;by to all ranks.</li>
+<li><strong>Mechanical:</strong> 288&#8209;pin module, 133.35&nbsp;&times;&nbsp;31.25&nbsp;mm, 0.85&nbsp;mm contact pitch (JEDEC MO&#8209;329, socket SO&#8209;023).</li>
+<li><strong>Slot pitch</strong> ~7.5&ndash;8&nbsp;mm typical <span class="flag">[not a JEDEC constant &mdash; board choice]</span>.</li>
+</ul>
+
+<h2 id="coh"><span class="num">07</span>Coherence &amp; the tiering engine</h2>
+<p>The two tiers are one hardware&#8209;coherent address space, surfaced as two NUMA nodes &mdash; the GH200 model. Hot data is kept in GDDR7 by a hardware access&#8209;counter migrator; the fast path is never buffered, which is what preserves the &ldquo;5090 at &le;96&nbsp;GiB&rdquo; guarantee.</p>
+<ul>
+<li><strong>Address translation:</strong> a single per&#8209;process page table (ATS), so the GPU can touch bulk&#8209;tier lines coherently with <em>no page&#8209;fault handler</em> in the path &mdash; exactly how Grace&nbsp;Hopper reaches remote LPDDR5X.</li>
+<li><strong>Migration:</strong> access&#8209;counter promotion of hot 2&nbsp;MB pages GDDR7&larr;&rarr;DDR5 (Grace uses a threshold of 256). KV cache and always&#8209;on weights are <strong>pinned</strong> to GDDR7; cold expert weights are demand&#8209;streamed from DDR5.</li>
+<li><strong>Isolation of the fast path:</strong> the DDR5 controllers are physically separate blocks; a &le;96&nbsp;GiB resident workload issues zero DDR5 traffic, so its latency/bandwidth are bit&#8209;identical to a stand&#8209;alone GDDR7 GPU.</li>
+</ul>
+
+<h2 id="lat"><span class="num">08</span>The latency budget</h2>
+<table>
+<thead><tr><th>Path</th><th>Raw DRAM</th><th>GPU&#8209;visible (through L2 + fabric)</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>Tier&nbsp;1 GDDR7 (hot)</td><td>t<sub>CL</sub>&nbsp;class</td><td><strong>~335&nbsp;ns</strong></td><td>measured RTX&nbsp;5080 GDDR7 (876&nbsp;cyc); = a 5090</td></tr>
+<tr><td>Tier&nbsp;2 DDR5 (bulk), page&#8209;hit</td><td>t<sub>CL</sub>&nbsp;&asymp;&nbsp;16.6&nbsp;ns</td><td><strong>~150&ndash;250&nbsp;ns</strong> <span class="flag">[est]</span></td><td>native controller; +RCD ~1&nbsp;nCK</td></tr>
+<tr><td>Tier&nbsp;2 DDR5, row&#8209;empty</td><td>t<sub>RCD</sub>+t<sub>CL</sub>&nbsp;&asymp;&nbsp;33&nbsp;ns</td><td>+~17&nbsp;ns</td><td>ACT&rarr;READ</td></tr>
+<tr><td>(rejected) CXL bulk</td><td>&mdash;</td><td>~400&ndash;550&nbsp;ns loaded</td><td>why native DDR5, not CXL, for the bulk tier</td></tr>
+<tr><td>(what a 5090 must do) PCIe&nbsp;5 host offload</td><td>&mdash;</td><td>63&nbsp;GB/s, ms&#8209;scale</td><td>the cliff this design removes</td></tr>
+</tbody>
+</table>
+<p>The decisive latency choice is <strong>native DDR5 controllers over CXL</strong>: the bulk tier stays DRAM&#8209;class (~150&ndash;250&nbsp;ns GPU&#8209;visible) rather than paying CXL&rsquo;s serial ~400&ndash;550&nbsp;ns under load. The bulk tier is <em>slower</em> than GDDR7, but only by a fraction &mdash; and only cold&#8209;expert misses ever see it.</p>
+
+<h2 id="phys"><span class="num">09</span>Physical realization &amp; ball budget</h2>
+<p>The form factor is <strong>forced</strong> by one measurement: a DDR5 DIMM is <strong>133.35&nbsp;mm</strong> long &mdash; taller than a PCIe card&rsquo;s 111.15&nbsp;mm full height &mdash; and a card has no host memory controller anyway. So 2&nbsp;TiB of DIMMs cannot ride a PCIe card. STRATA&#8209;2T is therefore an <strong>OCP&nbsp;OAM module</strong> (102&nbsp;&times;&nbsp;165&nbsp;mm) that carries the die + GDDR7 clamshell on&#8209;module, mounted onto a <strong>server baseboard whose DIMM field holds the 8 DDR5 slots</strong> &mdash; the natural home the industry already builds.</p>
+<table>
+<thead><tr><th>Element</th><th>Committed spec</th><th>Existence proof</th></tr></thead>
+<tbody>
+<tr><td>Compute die</td><td>TSMC <code>N3E</code>, ~800&nbsp;mm&sup2; monolithic (&lt;858&nbsp;mm&sup2; reticle) <span class="flag">[or chiplet on CoWoS&#8209;L]</span></td><td>GB202 = 750&nbsp;mm&sup2;; reticle = 26&times;33&nbsp;mm</td></tr>
+<tr><td>Package</td><td>~6,000&#8209;ball FCBGA, ~72&ndash;77&nbsp;mm body, 0.8&ndash;1.0&nbsp;mm pitch</td><td>AMD <code>MI300A</code> LGA&#8209;6096 (72&times;75.4&nbsp;mm); Intel LGA&#8209;7529</td></tr>
+<tr><td>Module</td><td>OCP&nbsp;OAM, 102&nbsp;&times;&nbsp;165&nbsp;mm, Mirror&nbsp;Mezz, &le;700&nbsp;W/48&nbsp;V</td><td>OAM base spec; MI300X ships as OAM</td></tr>
+<tr><td>Baseboard</td><td>module + 8 DDR5 DIMM slots + PCIe&nbsp;5.0 &times;16 host</td><td>UBB = 585&times;417&nbsp;mm hosts 8 OAMs</td></tr>
+<tr><td>Fast&#8209;tier placement</td><td>32&times; GDDR7 clamshell ring, on&#8209;module, &le;~45&nbsp;mm to die</td><td>RTX&nbsp;PRO&nbsp;6000 PCB</td></tr>
+</tbody>
+</table>
+<h3>Ball budget &mdash; does it close? Yes.</h3>
+<table>
+<thead><tr><th>Interface</th><th>Signal balls</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>GDDR7 512&#8209;bit</td><td>~760&ndash;800</td><td>512 DQ + WCK/DQS + CA/CK + EDC, per byte&#8209;group</td></tr>
+<tr><td>DDR5 &times;8 channels</td><td>~700&ndash;880</td><td>640 DQ (80&nbsp;&times;&nbsp;8) + CA/CS/CK/sidebands</td></tr>
+<tr><td>PCIe&nbsp;5.0 &times;16</td><td>~64&ndash;70</td><td>16 lanes &times; 2 pairs &times; 2 + refclk/sideband</td></tr>
+<tr><td>Coherent D2D / mgmt</td><td>~200&ndash;400</td><td>optional scale&#8209;out fabric</td></tr>
+<tr><td><strong>Signal subtotal</strong></td><td><strong>~1,750&ndash;2,000</strong></td><td></td></tr>
+<tr><td>+ power / ground (~65%)</td><td>&rarr; <strong>~5,000&ndash;6,200 total</strong></td><td>self&#8209;consistent with SP5&rsquo;s 6,096 (~2,000 signal)</td></tr>
+</tbody>
+</table>
+
+<h2 id="why"><span class="num">10</span>Why this closes when &ldquo;2&nbsp;TiB of GDDR7&rdquo; didn&rsquo;t</h2>
+<p>The earlier analysis proved a single die cannot host 2&nbsp;TiB of GDDR7 at full per&#8209;chip bandwidth: 1,024 point&#8209;to&#8209;point devices demanded ~130,000 balls, ~115&nbsp;TB/s across one shoreline, ~10&nbsp;kW, and PAM3 reach that can&rsquo;t span the parts. STRATA&#8209;2T evades every one of those walls <em>because it stopped asking for 115&nbsp;TB/s</em>:</p>
+<table>
+<thead><tr><th>Wall (the impossible design)</th><th>Impossible version</th><th>STRATA&#8209;2T</th></tr></thead>
+<tbody>
+<tr><td>Ball count</td><td>~130,000</td><td><strong>~6,000</strong> (fast tier only 512&#8209;bit; bulk tier pin&#8209;efficient 3DS&nbsp;RDIMM)</td></tr>
+<tr><td>Shoreline BW</td><td>~115&nbsp;TB/s</td><td><strong>~1.79&nbsp;TB/s</strong> hot + ~0.4&ndash;0.8&nbsp;TB/s bulk</td></tr>
+<tr><td>Memory devices on the fast, short net</td><td>1,024 GDDR7</td><td><strong>32 GDDR7</strong> (a 5090&rsquo;s count)</td></tr>
+<tr><td>Bulk capacity attach</td><td>impossible (GDDR7 caps at 96&nbsp;GiB)</td><td><strong>3DS&nbsp;RDIMM</strong>: 256&nbsp;GiB behind each of 8 channels</td></tr>
+</tbody>
+</table>
+<p class="lede">The bulk capacity moved off the hard, short, wide GDDR7 net and onto a <em>latency&#8209;tolerant, registered, TSV&#8209;stacked</em> DDR5 net &mdash; which is precisely the memory technology built to pack terabytes behind a handful of pins. That single relocation is the whole design.</p>
+
+<h2 id="work"><span class="num">11</span>Workload proof &mdash; Kimi&nbsp;K2/K3</h2>
+<p>Kimi&nbsp;K2 is the concrete target: <strong>1.04&nbsp;T total / 32.6&nbsp;B activated per token</strong>, 61 layers, 384&nbsp;routed&nbsp;+&nbsp;1&nbsp;shared experts (8 active), <strong>MLA</strong> attention, 128K context.</p>
+<table>
+<thead><tr><th>Quantity</th><th>Value</th><th>Derivation</th></tr></thead>
+<tbody>
+<tr><td>4&#8209;bit weight footprint</td><td><strong>520&nbsp;GB</strong> (484&nbsp;GiB)</td><td>1.04T &times; 0.5&nbsp;B/param &mdash; <strong>25% of the 2&nbsp;TiB bulk</strong> (FP8&nbsp;1.04&nbsp;TB also fits)</td></tr>
+<tr><td>Per&#8209;token weight traffic</td><td><strong>16.3&nbsp;GB</strong> (3.13%)</td><td>32.6&nbsp;B active &times; 0.5&nbsp;B &mdash; MoE sparsity is the whole game</td></tr>
+<tr><td>Always&#8209;on (every token)</td><td>~5.8&nbsp;GB</td><td>MLA attn + shared expert + dense layer + embeddings &rarr; <strong>pin to GDDR7</strong></td></tr>
+<tr><td>KV cache @128K &mdash; <strong>MLA</strong></td><td><strong>4.29&nbsp;GiB FP8</strong> / 8.58&nbsp;GiB FP16</td><td>(512+64) &times; 61 = 35,136 elem/token; <strong>~28&times; smaller than the naive MHA formula</strong></td></tr>
+<tr><td>KV cache @1M &mdash; MLA</td><td>34.3&nbsp;GiB FP8</td><td>still fits the 96&nbsp;GiB hot tier</td></tr>
+<tr><td>Hot working set</td><td>~10&ndash;15&nbsp;GiB</td><td>always&#8209;on + one sequence&rsquo;s KV &rarr; leaves <strong>~80&nbsp;GiB</strong> to cache hottest experts</td></tr>
+<tr><td>Token&#8209;rate ceiling (hot)</td><td>16.3&nbsp;GB &divide; 1.79&nbsp;TB/s &asymp; 9&nbsp;ms &rarr; <strong>~87&ndash;110&nbsp;tok/s</strong></td><td>fast tier carries the per&#8209;token bandwidth</td></tr>
+<tr><td><strong>What a plain RTX&nbsp;5090 does</strong></td><td>520&nbsp;GB &Gt; 32&nbsp;GB &rarr; PCIe offload 63&nbsp;GB/s &rarr; <strong>&lt;4&nbsp;tok/s</strong></td><td><strong>~28&times; gap</strong> &mdash; the difference between running and not</td></tr>
+</tbody>
+</table>
+<div class="callout catch"><span class="lab">The load&#8209;bearing correction</span>Kimi uses <strong>MLA</strong>, not MHA, so its KV cache caches a single joint latent &mdash; <code>(kv_lora_rank + qk_rope_head_dim) = 576</code> elements per token per layer, <em>no</em> &times;2 and <em>no</em> &times;heads. The naive formula gives ~262&nbsp;GB at 128K; MLA gives <strong>4.29&nbsp;GiB</strong>. Size the KV tier with the MLA formula or you over&#8209;provision by ~28&times;.</div>
+
+<h2 id="ledger"><span class="num">12</span>Requirements ledger</h2>
+<table>
+<thead><tr><th>Requirement</th><th>Met?</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>1.79&nbsp;TB/s hot bandwidth</td><td><strong>Yes, exactly</strong></td><td>512&#8209;bit GDDR7 @ 28&nbsp;Gb/s = 1,792&nbsp;GB/s</td></tr>
+<tr><td>No worse than a 5090 at &le;32&nbsp;GiB, any characteristic</td><td><strong>Yes</strong></td><td>fast tier is a 5090&#8209;class subsystem, un&#8209;buffered; bulk tier dormant &amp; isolated below 96&nbsp;GiB</td></tr>
+<tr><td>2&nbsp;TiB physically resident</td><td><strong>Yes</strong></td><td>8&nbsp;&times;&nbsp;256&nbsp;GiB DDR5, coherent, ~2.09&nbsp;TiB unified</td></tr>
+<tr><td>Runs Kimi&nbsp;K3&#8209;class 4&#8209;bit MoE + full KV</td><td><strong>Yes, and &Gt; a 5090</strong></td><td>weights fit (25% of bulk); hot path ~87&ndash;110&nbsp;tok/s vs a 5090&rsquo;s &lt;4</td></tr>
+<tr><td>Buildable from real parts, real package</td><td><strong>Yes</strong></td><td>catalog GDDR7/DDR5; ~6,000 balls (MI300A&#8209;class); OAM module</td></tr>
+</tbody>
+</table>
+
+<h2 id="open"><span class="num">13</span>Open questions &amp; unverified items</h2>
+<p>As a pre&#8209;silicon decision record: the plan is internally consistent and every wall has a shipping existence&#8209;proof, but these specific numbers are estimates or gated behind paywalled standards and must be pinned before tape&#8209;out.</p>
+<ul>
+<li><span class="flag">GDDR7 eye height (mV) / width (ps)</span> and the hard max trace length (mm) / insertion&#8209;loss (dB) budget live in gated JESD239; the &le;45&nbsp;mm reach and ~53.6&nbsp;ps UI are computed/estimated.</li>
+<li><span class="flag">GDDR7 pJ/bit &amp; per&#8209;device watts</span> (~4&ndash;5.5&nbsp;pJ/bit, ~4&ndash;6&nbsp;W) are estimates &mdash; only % efficiency claims are public.</li>
+<li><span class="flag">DDR5 RCD/DB absolute&#8209;ns latency</span>: only &ldquo;RCD ~1&nbsp;nCK&rdquo; is solid; the DB adder (~1.5&nbsp;ns) and the GPU&#8209;visible DDR5 figure (~150&ndash;250&nbsp;ns) are estimates for this configuration.</li>
+<li><span class="flag">Exact 256&nbsp;GiB PN</span>: Samsung <code>M321RBJA0M22-CLP</code> is verified for capacity/speed/rank (die derived); no clean Micron/SK&nbsp;Hynix 256&nbsp;GiB PN was confirmable. 256&nbsp;GiB MRDIMM is a tall/double&#8209;height ~20&nbsp;W module &mdash; check the 31.25&nbsp;mm envelope.</li>
+<li><span class="flag">Migration hit&#8209;rate for fine&#8209;grained MoE</span> (384 experts, 8 active) can be as low as ~33&ndash;44% in adversarial cases; the design leans on pinning always&#8209;on + KV and on CXL&#8209;3.2&#8209;style hot&#8209;page monitoring / access&#8209;counter migration.</li>
+<li><span class="flag">N3E ~800&nbsp;mm&sup2; monolithic</span>: no shipping N3E die is that large; if logic+SRAM overflow the reticle, split to chiplets on CoWoS&#8209;L (3.5&times; reticle shipping).</li>
+</ul>
+
+<h2 id="bom"><span class="num">14</span>Bill of materials &amp; bottom line</h2>
+<table>
+<thead><tr><th>Item</th><th>Chosen part / spec</th><th>Qty</th></tr></thead>
+<tbody>
+<tr><td>Compute die</td><td>custom TSMC&nbsp;<code>N3E</code>, GB202&#8209;class, ~800&nbsp;mm&sup2;, ~6,000&#8209;ball FCBGA</td><td>1</td></tr>
+<tr><td>Fast&#8209;tier DRAM</td><td>Micron <code>MT68A768M32DF-28-A</code> (24&nbsp;Gb GDDR7, clamshell)</td><td>32</td></tr>
+<tr><td>Bulk&#8209;tier DRAM</td><td>256&nbsp;GiB DDR5&#8209;6400 3DS&nbsp;RDIMM (Samsung <code>M321RBJA0M22-CLP</code>)</td><td>8</td></tr>
+<tr><td>Registering</td><td>DDR5 RCD (Renesas <code>RG5R364</code> / Montage <code>M88DR5RCD03</code>)</td><td>8 (on&#8209;DIMM)</td></tr>
+<tr><td>Module / carrier</td><td>OCP&nbsp;OAM (102&times;165&nbsp;mm) + server baseboard, 8 DDR5 slots + PCIe&nbsp;5.0&nbsp;&times;16</td><td>1</td></tr>
+<tr><td>Upgrade path</td><td>MRDIMM&#8209;12800 (Renesas <code>RRG50120</code> MRCD + <code>RRG51020</code> MDB) &rarr; ~819&nbsp;GB/s bulk</td><td>opt</td></tr>
+</tbody>
+</table>
+<p class="lede">STRATA&#8209;2T is one custom <code>N3E</code> die that is a 5090 when the work is small and a 2&nbsp;TiB memory server when the work is Kimi&#8209;sized &mdash; a 96&nbsp;GiB GDDR7 fast tier at 1,792&nbsp;GB/s soldered clamshell&#8209;short beside the die, and 2&nbsp;TiB of registered, TSV&#8209;stacked DDR5 hanging off eight native channels on the baseboard, fused into one coherent address space. The fast tier&rsquo;s SI is the shipping RTX&nbsp;PRO&nbsp;6000; the bulk tier&rsquo;s SI is every DDR5 server; the ~6,000&#8209;ball package is AMD&rsquo;s <code>MI300A</code>. It needs no new memory type, no new standard, and no new transistor &mdash; only the discipline to put each tier where its physics allows it to live.</p>
+
+<footer>
+  <p><span style="font-weight:700">Method</span> &mdash; name the exact part; close every wall with a shipping existence&#8209;proof; compute the budgets; flag the estimates. Capacity in GiB/TiB, bandwidth in GB/s.</p>
+  <p><span style="font-weight:700">Primary sources</span> in <code>pdfs/</code> &mdash; Micron GDDR7 brief; NVIDIA RTX&nbsp;PRO&nbsp;6000 datasheet + Blackwell&#8209;PRO architecture whitepaper; Achronix GDDR6 UG091 (SI); arXiv 2410.12990 (PAM3 SI); NVIDIA Grace&nbsp;Hopper whitepaper + arXiv 2411.02814 / 2407.07850 (coherent tiering, measured C2C); Kimi&nbsp;K2 report (arXiv 2507.20534) + DeepSeek&#8209;V2 MLA (2405.04434); CXL&nbsp;3.0 whitepaper; TPP (2206.02878); OCP OAM spec; PCIe CEM r3.0; AMD MI300A datasheet; Micron 128&nbsp;GB RDIMM brief; Unisemicon DDR5 RDIMM. Full manifest in <code>pdfs/MANIFEST.md</code>.</p>
+  <p style="color:var(--muted)">Committed design &amp; decision record. Nothing here was built on hardware; the walls are computed and each is anchored to a shipping product. Estimates and gated&#8209;standard values are flagged in &sect;13.</p>
+</footer>
+
+</div>
+</body>
+</html>

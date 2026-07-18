@@ -1,0 +1,7 @@
+# Do not redistribute vendor-copyrighted datasheets / papers / teardown photos.
+# Their source URLs are in SOURCES.md — download from the original hosts.
+pdfs/
+images/
+
+# Local scratch working notes
+notes.md
