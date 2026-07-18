@@ -51,9 +51,19 @@
 
 <p class="lede">The goal shifted from &ldquo;2 TiB&rdquo; to &ldquo;the memory to <em>run the model</em> at 1M full quality, as cheaply as an official-brand build allows.&rdquo; Answer: it fits far under 2 TiB &mdash; and the whole thing turns on what &ldquo;full quality&rdquo; actually means for this model family.</p>
 
-<div class="callout punch"><span class="lab">Verdict</span>
-<p style="margin-top:2px"><span class="verdict">~₪25&ndash;28k landed &mdash; won, narrowly, at native precision + MSRP import.</span></p>
-<p>Running Kimi at its <strong>native INT4-QAT</strong> precision (which <em>is</em> full quality &mdash; FP16 is a phantom that adds VRAM, not quality) with the <strong>KV cache un-quantized (FP16)</strong>, the <strong>MTP module</strong>, and the <strong>full vision stack</strong> all included, a K2-scale model @ 1M fits in <strong>~700 GiB</strong>. That is <strong>45 &times; 16 GiB DDR5-5600 UDIMM (Crucial <code>CT16G56C46U5</code>) = 720 GiB @ 1.79 TB/s = $6,525 &asymp; ₪20k</strong>, ~₪25&ndash;28k landed in Israel with 18% VAT. Under the ₪30k line &mdash; with three honest asterisks: it needs native INT4 (not FP8), Crucial-US MSRP sourcing (Israeli retail is ~2&times; &rarr; ₪40&ndash;46k), and it is DRAM-only (the converter silicon is separate).</p>
+<div class="callout punch"><span class="lab">Verdict &mdash; the target is Kimi K3</span>
+<p style="margin-top:2px"><span class="verdict">K3 clears ₪30k only at ~1.5&times; scale + native INT4 (~₪26&ndash;31k, on the line).</span></p>
+<p><strong>Kimi K3 is not public</strong> (verified: absent from HF/arXiv/GitHub 2026-07-18; K2.5/2.6/2.7 all reuse the 1.04&nbsp;T backbone), so its size is a <strong>stated assumption of 1.5&ndash;2&times; K2</strong>. Everything-included (native precision + un-quantized FP16 KV + MTP + vision + 8%):</p>
+<table style="margin:.4em 0 .2em">
+<thead><tr><th>K3 (assumed)</th><th>Precision</th><th>All-in</th><th>Config</th><th>&asymp; ₪ landed</th></tr></thead>
+<tbody>
+<tr><td><strong>1.5&times;</strong></td><td><strong>native INT4</strong></td><td>~0.96 TiB</td><td>45&times;24 GiB</td><td><strong>₪26&ndash;31k</strong> (at the line)</td></tr>
+<tr><td>2&times;</td><td>native INT4</td><td>~1.25 TiB</td><td>45&times;32 GiB</td><td>₪38&ndash;44k</td></tr>
+<tr><td>1.5&times;</td><td>FP8</td><td>~1.65 TiB</td><td>45&times;48 GiB</td><td>₪51&ndash;60k</td></tr>
+<tr><td>2&times;</td><td>FP8</td><td>~2.2 TiB</td><td>45&times;64 GiB</td><td>₪72&ndash;84k</td></tr>
+</tbody>
+</table>
+<p>So for <strong>K3</strong> the ₪30k line clears <em>only</em> if it lands near 1.5&times; <em>and</em> runs at native INT4 (which <em>is</em> full quality &mdash; FP16 is a phantom that adds VRAM, not quality). A 2&times; K3, an FP8 basis, or Israeli-retail sourcing (~2&times; MSRP) each push it over. The <strong>~700 GiB / ₪25&ndash;28k</strong> figure below is the <strong>K2-scale floor</strong> &mdash; the smallest case, not K3.</p>
 </div>
 
 <h2 id="cap"><span class="num">01</span>The requirement, everything included (evidence-backed)</h2>
@@ -127,7 +137,7 @@
 </ul>
 
 <footer>
-  <p><strong>Bottom line.</strong> At the model&rsquo;s genuine full-quality native precision (INT4-QAT), with the KV cache un-quantized, MTP resident, and the full vision stack &mdash; all measured, not assumed &mdash; a 1M-context Kimi-K2-scale machine needs <strong>~700 GiB</strong>, which is <strong>45 &times; 16 GiB DDR5-5600 UDIMM at 1.79 TB/s for ~$6,525 &asymp; ₪25&ndash;28k landed</strong>: under the ₪30k line. It passes both correctness checks (per-bank refresh mandatory; add converter CRC for the non-ECC UDIMMs) and is buildable as a ~9-leaf hierarchical appliance (~0.2 m&sup2;, ~0.5 kW), never one package. The hat is off &mdash; provided you run native INT4, buy at MSRP, and count the memory alone. FP8, Israeli-retail sourcing, or a 2&times; multimodal K3 each push it back over.</p>
+  <p><strong>Bottom line.</strong> The target is <strong>Kimi K3</strong> &mdash; not yet public, assumed 1.5&ndash;2&times; K2. At genuine full-quality native precision (INT4-QAT), with the KV cache un-quantized, MTP resident, and the full vision stack, a 1M-context K3 needs <strong>~0.96 TiB (1.5&times;) to ~1.25 TiB (2&times;)</strong> &rarr; <strong>45 &times; 24&ndash;32 GiB DDR5-5600 UDIMM @ 1.79 TB/s &asymp; ₪26&ndash;44k landed</strong>. The ₪30k line clears <em>only</em> for a ~1.5&times; K3 at native INT4 (~₪26&ndash;31k, on the line); a 2&times; K3, an FP8 basis, or Israeli-retail sourcing each push it over (up to ₪72&ndash;84k). Both correctness checks pass (per-bank refresh mandatory; add converter CRC for the non-ECC UDIMMs); buildable only as a ~9-leaf hierarchical appliance (~0.2 m&sup2;, ~0.5 kW), never one package. The <strong>~700 GiB / ₪25&ndash;28k</strong> case is the <strong>K2 floor</strong> &mdash; the smallest scenario, not K3.</p>
   <p style="color:var(--muted)">Compiled from four Fable-5 research passes, 2026-07-18. Evidence archived in <code>pricing_evidence/</code>; sources appended to <code>SOURCES.md</code>. Point-in-time crunch prices, not quotes.</p>
 </footer>
 
