@@ -35,3 +35,55 @@ structure, and CSET's 33.48% ATP share), per-die test seconds/$ (anchored to the
 rule), D0 for mature-2026 N5 (anchored to the 2020 ramp measurement 0.10-0.11 and TSMC's
 trajectory), GDDR7-device/DDR5 PHY mm² (anchored to the LPDDR5 bump map, MCD 37.5 mm², and
 GB202/AD102 die facts), bump counts per die (from ball counts given in the design spec).
+
+---
+
+# v2 refinement (2026-07-19): test/screening + server-class substrate
+
+Scope unchanged (recurring per-unit manufacturing only; NRE/masks/design excluded).
+v2 model: `cost_model_v2.py` / `cost_model_v2_output.txt`. v1 files retained above.
+v2 working archive: /tmp/strata_silicon_cost_v2/evidence/. All v2 files fetched
+2026-07-19 (curl w/ browser UA; teradyne + two roadmap PDFs via Wayback Machine
+because the live hosts block scripted fetches).
+
+What v2 changes vs v1 (central, at 10k-system volume):
+system $571.98 -> $906.11. Movers: substrate $270->$412/sys (root $90->$150,
+leaf $20->$29 -- server/AI ABF class), test+screening $33->$164/sys (explicit
+sort / at-speed FT / burn-in / SLT / interface-hardware amortization),
++ $36/sys explicit package-stage test-yield scrap, assembly $115->$143/sys,
+silicon +$2.3/sys (wafer finishing). Steady-state floor $813/sys; low $539;
+high $1,685.
+
+| # | File | Load-bearing claim (exact figure) | Source URL |
+|---|---|---|---|
+| S15 | HIR_2023_ch17_test.pdf | IEEE Heterogeneous Integration Roadmap 2023, Ch.17 Test: cost of test now <2-3% of IC revenue; tester depreciation "typically 5 or 6 years", useful life 15-20 yr, depreciation < half of complete test-cell operating cost; since 2015 consumables (probe cards, sockets, SLT device-specific hardware) are the leading test capex for large SOC; SOC tested 2-16 sites, memory >1,000; multi-die drives more SLT ("mission mode") + more exhaustive wafer probe; sockets ">20 GHz" for high-ball-count devices at engineering limit; "KGD does not mean that 100% of the bare dies will pass" | https://eps.ieee.org/images/files/HIR_2023/ch17_test.pdf (via web.archive.org/web/20240507035517) |
+| S16 | itrs_2001_test.pdf | ITRS 2001 Test chapter, Table 21 ATE cost: high-performance ASIC/MPU tester = base $250-400k + $2,700-6,000 per pin at 512 pins (=> $1.6M-$3.5M class); "test may account for more than 70% of the total manufacturing cost" in some segments | http://public.itrs.net/Files/2001ITRS/Test.pdf (via web.archive.org/web/20060509104611) |
+| S17 | se_screening_silent_data_errors.html | SemiEngineering "Screening For Silent Data Errors" (Meixner): server-market microprocessors get longer test patterns at wafer probe AND package test; "every part receives a system-level function test, often requiring between 40 minutes to an hour"; Meta 6-month/15-day fleet screens; SDEs escape all screens (100% containment not economically feasible) | https://semiengineering.com/screening-for-silent-data-errors/ |
+| S18 | se_mission_critical_slt_expansion.html | SemiEngineering (Advantest Reichart): "SLT requires longer test times -- on the order of minutes to more than an hour, versus tens of seconds for ATE"; SLT cost-of-test-per-device driven by site count/floor area | https://semiengineering.com/mission-critical-devices-drive-system-level-test-expansion/ |
+| S19 | se_adaptive_test_hpc_ai.html | SemiEngineering (Advantest's Davette Berry, 2025): "Most commercial products have gotten away from doing burn-in, but most of these high-performance compute devices are having to put it back in to the product test flow, because having it fail six hours after it's been installed in the data center is much worse" | https://semiengineering.com/adaptive-test-gaining-ground-for-hpc-and-ai-chips/ |
+| S20 | se_package_level_burn_in.html | SemiEngineering: production burn-in on assembled packages "typically 24 to 48 hours (potentially longer depending on quality target)"; automotive HTOL qual 125C/1,000h context | https://semiengineering.com/easing-the-stress-for-package-level-burn-in/ |
+| S21 | se_hbm_test_left.html | SemiEngineering "HBM Shifts Testing Left": advanced probe cards up to "$500,000"; DRAM tested 64-128 sites in parallel; DRAM flows include wafer-level burn-in + hot/cold insertions; KGD before stacking; DFT can save up to 80% of probe-card cost | https://semiengineering.com/hbm-shifts-testing-left-to-preserve-ai-chip-yield/ |
+| S22 | advantest_t5801_gddr7.html | Advantest T5801 memory tester: "up to 36Gbps PAM3 and 18Gbps NRZ" for GDDR7/LPDDR6/DDR6 -- the production instrument class for exactly the root's device-mode 28G PAM3 interface exists | https://www.advantest.com/en/products/semiconductor-test-system/memory/t5801/ |
+| S23 | teradyne_ultraflexplus_wayback.html | Teradyne UltraFLEXplus: UltraPHY 224G "test data rates up to 112 Gb/s NRZ and 224 Gb/s (112 Gbaud) PAM4"; UltraPHY 112G 64G NRZ/112G PAM4; targets high-speed SERDES; PACE/Broadside architecture | https://www.teradyne.com/products/ultraflexplus/ (via web.archive.org/web/20260514141046) |
+| S24 | advantest_v93000_exa_scale.html | Advantest V93000 EXA Scale: "Pin Scale Multilevel Serial" = fully-integrated HSIO ATE with multilevel (PAM) capability; Pin Scale 5000 digital; platform targets HPC & AI | https://www.advantest.com/en/products/semiconductor-test-system/soc/v93000/ |
+| S25 | advantest_b6700_burnin.html | Advantest B6700 memory burn-in system: "as many as 48 burn-in boards in parallel", test-while-burn-in | https://www.advantest.com/en/products/semiconductor-test-system/memory/b6700/ |
+| S26 | aehr_10k_fy2025.htm | Aehr Test Systems 10-K (FY2025): burn-in times "minutes to hours or even days" by application; FOX-XP for wafer/die/module test+burn-in measured in hours-to-days; NAND enterprise mission-critical = 100% test and burn-in | https://www.sec.gov/Archives/edgar/data/1040470/000165495425008553/aehr_10k.htm |
+| S27 | trendforce_2023_chiplet_substrates.html | TrendForce 2023-04-26: server platforms drive "higher-layer-count and larger-area ABF substrates"; 2020-22 ABF prices rose with record margins; growth = layer count + area | https://www.trendforce.com/news/2023/04/26/chiplet-design-a-real-game-changer-for-substrates/ |
+| S28 | trendforce_2025_bt_fiberglass_20pct.html | TrendForce 2025-07-22 (Commercial Times): BT/T-glass substrate prices +up-to-20%; high-end fiberglass +20%; ABF shipments surging, "medium- to long-term price increases" expected for high-end ABF as sizes expand; T-glass tight until 2H26 capacity | https://www.trendforce.com/news/2025/07/22/news-bt-substrate-fiberglass-prices-reportedly-eye-20-hike-amid-ai-boom-and-supply-shortage/ |
+| S29 | se_kgd_singulated_die_screening.html | SemiEngineering: singulated-die screening insertion for KGD (Intel Foundry); active thermal control merges 3 temperature insertions into 1 | https://semiengineering.com/quest-for-kgd-drives-singulated-die-screening/ |
+| S30 | se_wafer_probe_multi_die.html | SemiEngineering: wafer probe struggles to deliver at-speed coverage for multi-die assemblies (supports loopback/DFT-based sort + package-level at-speed strategy) | https://semiengineering.com/wafer-probe-struggles-to-adapt-to-multi-die-assemblies/ |
+| -- | arxiv_chiplet_actuary.pdf | Feng & Ma, DAC'22 (arXiv:2203.12268): RE-cost structure = raw chips + chip defects + raw packages + package defects + bonding-yield-driven KGD waste (structural cross-check for the staged scrap model) | https://arxiv.org/abs/2203.12268 |
+| -- | arxiv_chiplet_cloud.pdf | Chiplet Cloud (arXiv:2307.02666): cost-per-die = (wafer/DPW + cost_test)/yield -- test cost belongs inside per-die cost (structural cross-check) | https://arxiv.org/abs/2307.02666 |
+
+v2 estimate-only inputs (flagged [E] in cost_model_v2.py, all anchored to the
+sources above): $/(cm2*layer) band 0.11-0.18 calibrated to S11 low-end +
+S12/S27/S28 server-class premium; insertion times (sort 150s root / FT 300s
+root central) anchored to S17 "longer patterns" + S15 parallelism limits;
+cell-overhead multiplier 2.0-2.5x from S15's "depreciation < half of cell
+cost"; interface-set totals ($600k root / $280k leaf central) from S21's
+$500k probe-card ceiling + S15 consumables-dominance; burn-in slots/board
+from package sizes; package-stage yields (FT 97% / BI 99.3% / SLT 99% root
+central) are engineering estimates consistent with S15's KGD caveat and S17's
+escape data. WebSearch was quota-exhausted this session; all discovery was
+done via curl on site archives/sitemaps, Wayback CDX, Google News RSS, and
+WebFetch -- every load-bearing figure above is in a saved file in this folder.

@@ -92,4 +92,6 @@ original hosts below. All URLs verified live in July 2026.
 - N5 SRAM bitcell 0.021 µm² — WikiChip 5nm
 - FCBGA package cost anchors (chiplet-class ~$10–20; ABF server-substrate market) — SemiEngineering / TrendForce; test ~2%-of-cost, rising for complex parts — SemiEngineering
 - ~6,000-ball package class exists (Socket SP5, 6,096 contacts) — Wikipedia
-- Full cost model + evidence (74 files) + re-runnable `cost_model.py` + `MANIFEST.md`: `pricing_evidence/silicon_cost/`
+- Full cost model + evidence + re-runnable `cost_model.py` / `cost_model_v2.py` + `MANIFEST.md`: `pricing_evidence/silicon_cost/`
+- v2 test/screening refinement (why per-system is ~$906, not ~$572): Advantest T5801 (36 Gb/s PAM3 GDDR7 test); Teradyne UltraFLEXplus / UltraPHY; ITRS test-cost tables; HIR 2023 ch.17 (consumable interface hardware — probe cards to ~$500k — is the leading test capex); System-Level Test 40–60 min + burn-in 24–48 h for server parts + silent-data-error screening (SemiEngineering); Aehr burn-in (10-K)
+- v2 substrate refinement: server/AI-class ABF layer/area pricing + 2025–26 tight-supply increases (TrendForce, BT/T-glass +20%); Socket SP5 6,096-contact body class (Wikipedia)
