@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cerebras MemoryX &mdash; cheap DDR, decoupled from the wafer</title>
+<style>
+  :root{--ink:#1b1f24;--paper:#fbfaf7;--muted:#5d6571;--rule:#e2ddd2;--accent:#7a4cc4;--accent2:#1f7a5a;--amber:#9a6a00;--red:#9a2f2f;--code-bg:#f1ede4;--code-ink:#3a2f5a;--blue:#1f5d7a;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:940px;margin:0 auto;padding:44px 24px 120px}
+  header.hero{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:8px}
+  .kicker{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:31px;line-height:1.1;margin:.2em 0 .12em}
+  .sub{font-size:18px;color:var(--muted);margin:0}
+  .meta{font-size:12.5px;color:var(--muted);margin-top:12px}
+  h2{font-size:22px;margin:2em 0 .45em;padding-top:.3em;border-top:1px solid var(--rule);line-height:1.18}
+  h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;font-size:15px;vertical-align:.18em;margin-right:.5em}
+  h3{font-size:16.5px;margin:1.3em 0 .3em;color:var(--accent2)}
+  p{margin:.65em 0}
+  code{font-family:"SFMono-Regular",Consolas,Menlo,monospace;font-size:.84em;background:var(--code-bg);color:var(--code-ink);padding:1px 5px;border-radius:4px;white-space:nowrap}
+  strong{font-weight:700}
+  ul,ol{margin:.5em 0 .8em;padding-left:1.3em}
+  li{margin:.3em 0}
+  .lede{font-size:18px;color:#33373d}
+  .callout{margin:1.1em 0;padding:13px 17px;border-radius:9px;border-left:5px solid var(--accent);background:#f4f0fb}
+  .callout .lab{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:4px;color:var(--accent)}
+  .callout.punch{border-left-color:var(--accent2);background:#e9f5ef}.callout.punch .lab{color:var(--accent2)}
+  .callout.catch{border-left-color:var(--amber);background:#fbf4e4}.callout.catch .lab{color:var(--amber)}
+  .callout.spec{border-left-color:var(--blue);background:#e8f2f7}.callout.spec .lab{color:var(--blue)}
+  table{border-collapse:collapse;width:100%;margin:1em 0;font-size:12.7px}
+  th,td{border:1px solid var(--rule);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:#efe9dd;font-size:11.8px}
+  tbody tr:nth-child(even){background:#f6f2ea}
+  .verdict{font-size:19px;font-weight:800;color:var(--accent2)}
+  .flag{color:var(--amber);font-weight:700}
+  .no{color:var(--red);font-weight:700}
+  .yes{color:var(--accent2);font-weight:700}
+  .big{font-variant-numeric:tabular-nums;font-weight:800}
+  footer{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">adjacent architecture &middot; existence-proof record</div>
+  <h1>Cerebras MemoryX &mdash; cheap DDR, decoupled from the wafer</h1>
+  <p class="sub">The one shipping architecture built on STRATA-V&rsquo;s thesis &mdash; commodity DRAM capacity split from expensive compute &mdash; and why it&rsquo;s the <em>opposite</em> mechanism, which is exactly what makes it a clean proof-point.</p>
+  <p class="meta">Compiled 2026-07 from Cerebras primary disclosures (weight-streaming whitepaper, Hot&nbsp;Chips 33/34/36, IEEE&nbsp;Micro, CS-2/WSE-3/CS-3 datasheets, SEC Form S-1), Cerebras press/blog, and third-party analysis (The Next Platform, ServeTheHome, SemiAnalysis, IEEE&nbsp;Spectrum). Vendor claims flagged; confirmed-vs-reported noted. ~90 source artifacts and a full manifest in <code>pricing_evidence/cerebras/</code>.</p>
+</header>
+
+<p class="lede">Cerebras is the strongest real-world evidence that the STRATA-V thesis is right &mdash; <em>at hyperscale, you buy capacity with cheap commodity DRAM and decouple it from the compute you can&rsquo;t afford to over-provision.</em> Their MemoryX appliance does exactly that. But they reach it from the far side of the memory hierarchy: not by making DRAM <em>impersonate</em> fast memory, but by <em>removing the random-access contract entirely</em> and streaming weights over a network. Reading how &mdash; and where it breaks &mdash; both validates the economics and confirms the niche STRATA-V occupies is empty.</p>
+
+<div class="callout punch"><span class="lab">Verdict, split cleanly</span>
+<p style="margin-top:2px"><span class="verdict">The economics is proven and shipping. The mechanism is the opposite of ours &mdash; and it abandons external DRAM the moment latency matters.</span></p>
+<p><strong>Proven:</strong> Cerebras trains 24-trillion-parameter models against a <em>commodity-DDR5</em> memory box (Sandia, Dec 2024) and shares one weight copy across many wafers &mdash; capacity scaled independently of compute, at 82&nbsp;TB / 64-system scale in production. <strong>Opposite:</strong> the wafer has <em>no memory interface at all</em>; weights are pushed to it as a scheduled dataflow stream, never read like memory. <strong>The tell:</strong> when Cerebras built latency-critical <em>inference</em>, they threw external DRAM out and went back to on-wafer SRAM &mdash; which is precisely the regime STRATA-V&rsquo;s bus-level impersonation targets.</p>
+</div>
+
+<h2 id="what"><span class="num">01</span>What MemoryX actually is</h2>
+<p>MemoryX is an external appliance that holds a model&rsquo;s <strong>weights and optimizer state off the wafer</strong> and streams them in on demand. It is <em>active</em> memory &mdash; it also computes the weight update between iterations &mdash; and it attaches over <strong>standard datacenter Ethernet</strong> (100&nbsp;GbE in the CS-2 era; 400G/800G links for CS-3), not a memory bus. The wafer itself has no DRAM controller and no memory PHY; its only external pipe is ~1.2&nbsp;Tb/s of system I/O.</p>
+<table>
+<thead><tr><th>&nbsp;</th><th>CS-2 era (2021&ndash;2023)</th><th>CS-3 era (2024&ndash;present)</th></tr></thead>
+<tbody>
+<tr><td><strong>Memory technology</strong></td><td>&ldquo;DRAM <em>and</em> flash storage in a hybrid fashion&rdquo; (whitepaper, HC33, IEEE&nbsp;Micro); DRAM generation never named</td><td>&ldquo;<strong>commodity DDR5 memory in a 1U server format</strong>&rdquo; (Sandia PR); flash tier likely retained on the largest SKUs <span class="flag">[not confirmed per-SKU]</span></td></tr>
+<tr><td><strong>Marketed capacity</strong></td><td>4&nbsp;TB &ndash; 2.4&nbsp;PB envelope; &ldquo;up to 120 trillion parameters&rdquo;</td><td>24 / 36 / 120 / 1,200&nbsp;TB SKUs (blog); &ldquo;1.5TB, 12TB, or 1.2PB&rdquo; (PR spec box); up to <strong>24T params</strong></td></tr>
+<tr><td><strong>Shipped / observed</strong></td><td>1.5&nbsp;TB &amp; 12&nbsp;TB units; Condor&nbsp;Galaxy-1 = <strong>82&nbsp;TB</strong> across 64 CS-2s</td><td>Sandia = one <strong>55&nbsp;TB</strong> DDR5 box &rarr; 1&rarr;16 CS-3s; 3 MemoryX enclosures per rack</td></tr>
+<tr><td><strong>Params supported</strong></td><td>200B &ndash; 120T (marketing); CG-1 real: 600B base</td><td>30B &ndash; 24T (SEC S-1)</td></tr>
+<tr><td><strong>Stream-out bandwidth</strong></td><td colspan="2"><strong>1.2&nbsp;Tb/s = 150&nbsp;GB/s per system</strong> (12&times;100GbE), one weight copy fanned out to N wafers by SwarmX. Internal model-memory bandwidth cited at ~4&nbsp;TB/s (2022). Per-unit DRAM bandwidth never disclosed.</td></tr>
+</tbody>
+</table>
+
+<h2 id="why"><span class="num">02</span>Why comparatively slow external DRAM doesn&rsquo;t starve the wafer</h2>
+<p>This is the crux, and it&rsquo;s where the architecture diverges hardest from ours. Cerebras does not try to deliver VRAM-class bandwidth from DRAM. It restructures the <em>workload</em> so it doesn&rsquo;t need to:</p>
+<ul>
+<li><strong>Weight streaming.</strong> Weights live in MemoryX and are streamed <em>layer-by-layer</em> onto the wafer, used, and discarded &mdash; &ldquo;the weights are never stored on the system, not even temporarily.&rdquo; Only <strong>activations</strong> stay resident, in the wafer&rsquo;s 40/44&nbsp;GB of SRAM.</li>
+<li><strong>Reuse hides the gap.</strong> Each streamed FP16 weight triggers compute across a batch of <em>hundreds of thousands</em> of resident tokens &mdash; arithmetic intensity of order 10<sup>5</sup>&ndash;10<sup>6</sup> FLOP/byte. That is how ~150&nbsp;GB/s of egress feeds a multi-PFLOPS wafer; the high-intensity operand traffic never leaves SRAM.</li>
+<li><strong>SwarmX shares one copy.</strong> The broadcast-reduce fabric sends <em>one</em> weight copy out and reduces gradients in-fabric on the way back, so a single MemoryX store feeds any number of wafers &mdash; &ldquo;a single MemoryX unit can be used to target any number of CS-2 systems.&rdquo; Capacity and compute scale on independent axes.</li>
+<li><strong>Latency is engineered away.</strong> Streaming is pipelined under compute; the round-trip to MemoryX is fully hidden as long as a layer&rsquo;s compute exceeds it. The only synchronization point is the end-of-iteration weight update &mdash; performed inside MemoryX.</li>
+</ul>
+<div class="callout spec"><span class="lab">The load-bearing distinction</span>The wafer never issues a &ldquo;memory read&rdquo; to MemoryX. It receives a self-describing, compiler-scheduled tensor stream. Cerebras solved capacity-decoupling <em>above</em> the memory interface &mdash; by deleting random access &mdash; whereas STRATA-V solves it <em>at</em> the interface, by emulating random access so faithfully the engine can&rsquo;t tell. Same goal; opposite layer of the stack.</div>
+
+<h2 id="ddr"><span class="num">03</span>The DDR verdict, kept honest</h2>
+<p>Is it &ldquo;actual DDR&rdquo;? Yes &mdash; and the record is precise about it:</p>
+<ul>
+<li><strong>CS-2 era:</strong> an explicit <strong>DRAM + NAND-flash hybrid</strong> (verbatim in three primary docs). ServeTheHome&rsquo;s Hot&nbsp;Chips 2023 read of the internals: ~12 MemoryX nodes, up to ~1&nbsp;TB DRAM + ~500&nbsp;TB flash each, 32-core CPUs, 100&nbsp;GbE. The DRAM is the streaming tier; flash is the capacity tier (Cerebras never assigns the roles explicitly, but the layer-order access pattern is what makes a flash tier tolerable).</li>
+<li><strong>CS-3 era:</strong> named outright as <strong>commodity DDR5 in ordinary 1U servers</strong> &mdash; the 55&nbsp;TB Sandia unit was &ldquo;procured and configured in mere days.&rdquo; The capacity tier is now off-the-shelf DIMMs, not a custom memory device.</li>
+</ul>
+<div class="callout catch"><span class="lab">The over-claim to avoid</span>No Cerebras document states the DRAM technology <em>per SKU</em>, and the SEC S-1 never says &ldquo;DDR&rdquo; at all. &ldquo;1.2&nbsp;PB of DDR5&rdquo; is <em>not</em> supported &mdash; the petabyte-class SKUs almost certainly keep a flash tier behind the DRAM. The defensible statement is: <strong>MemoryX is a commodity-DDR5-based appliance, with flash behind it in the largest historical configs.</strong></div>
+
+<h2 id="marketing"><span class="num">04</span>Marketing vs. what shipped</h2>
+<p>Worth internalizing before citing any headline number: the famous 2021 <strong>&ldquo;2.4&nbsp;PB / 120 trillion parameters&rdquo;</strong> was an <em>architecture envelope that never shipped at petabyte scale</em>. The real, documented builds are one to three orders smaller:</p>
+<ul>
+<li>Shipped MemoryX SKUs in the CS-2 era: <strong>1.5&nbsp;TB and 12&nbsp;TB</strong>.</li>
+<li>Largest disclosed real deployment: <strong>Condor&nbsp;Galaxy-1 = 82&nbsp;TB across 64 CS-2s</strong> (386&nbsp;Tb/s fabric, ~$100M).</li>
+<li>Cleanest single proof-point: <strong>Sandia&rsquo;s 55&nbsp;TB commodity-DDR5 box feeding 1&rarr;16 CS-3s</strong> with zero code change (15.3&times; on 16 systems).</li>
+<li>CS-3 re-based the ceiling to 1.2&nbsp;PB / 24T params (~50 bytes/param &mdash; sized for full training state, not raw weights).</li>
+</ul>
+<p>Independent analysts flag the 2,048-system / 256-exaFLOP cluster as catalog-only &mdash; ServeTheHome: &ldquo;this seems to be a theoretical Cerebras CS-3 cluster at this point&rdquo;; IEEE&nbsp;Spectrum: &ldquo;nothing quite that big is in the works.&rdquo; <span class="flag">[vendor envelope vs. shipped reality &mdash; flagged]</span></p>
+
+<h2 id="tell"><span class="num">05</span>The tell &mdash; where Cerebras abandons external DRAM</h2>
+<p>The most useful finding for STRATA-V is what Cerebras <em>stopped</em> doing. Their 2024 <strong>inference</strong> product &mdash; the latency-critical regime &mdash; does not use MemoryX at all:</p>
+<ul>
+<li>Weights <em>and</em> KV cache go <strong>SRAM-resident on the wafer</strong>; models too big for one wafer are split at layer boundaries across multiple CS-3s (4&times; WSE-3 = 176&nbsp;GB of SRAM to hold a 70B model).</li>
+<li>Cerebras&rsquo;s own words: storing the model on-chip &ldquo;<strong>eliminat[es] the need for external memory and for the slow lanes linking external memory to compute.</strong>&rdquo;</li>
+<li>The SEC S-1 files MemoryX strictly under <em>&ldquo;training parameter storage&rdquo;</em>; for inference, &ldquo;model parameters are stored in on-chip memory for ultra-low latency.&rdquo;</li>
+</ul>
+<div class="callout punch"><span class="lab">Why this vindicates the design</span>Cerebras&rsquo;s own product line demonstrates that <strong>fabric-attached DRAM streaming is a training technique that does not survive the latency-critical path</strong>. When tokens must come out fast, they pay for on-wafer SRAM by the wafer rather than stream from DRAM. STRATA-V attacks exactly that gap from the other side: keep commodity DRAM&rsquo;s depth <em>and</em> serve it under a native, low-latency memory interface &mdash; the thing Cerebras&rsquo;s architecture structurally cannot do without abandoning DRAM.</div>
+
+<h2 id="hierarchy"><span class="num">06</span>Two extremes of the memory hierarchy &mdash; 44 GB of on-wafer SRAM vs. commodity DDR5</h2>
+<p>Cerebras&rsquo;s most advanced chip, the <strong>WSE-3</strong> (2024, TSMC 5&nbsp;nm, 46,225&nbsp;mm&sup2;, 4&nbsp;trillion transistors, 900,000 cores), carries <strong>44&nbsp;GB of on-wafer SRAM</strong> (WSE-2 had 40&nbsp;GB) at a headline <strong>21&nbsp;PB/s</strong> of bandwidth. That SRAM and the DDR5 STRATA-V fronts are the two <em>opposite corners</em> of the memory hierarchy &mdash; and the contrast is the whole reason each architecture is shaped the way it is.</p>
+<table>
+<thead><tr><th>Metric (per unit)</th><th>WSE-3 on-wafer SRAM</th><th>DDR5-5600 (STRATA-V build)</th><th>Who flexes</th></tr></thead>
+<tbody>
+<tr><td><strong>Bandwidth</strong></td><td class="big">21 PB/s</td><td class="big">~2.0 TB/s</td><td class="yes">SRAM &mdash; ~10,000&times;</td></tr>
+<tr><td><strong>Random-access latency</strong></td><td>~1&ndash;2 ns (single-cycle, on-die)</td><td>~80 ns (CL46 + row/bank + controller)</td><td class="yes">SRAM &mdash; ~50&times;</td></tr>
+<tr><td><strong>Capacity</strong></td><td>44 GB (an <em>entire</em> 300&nbsp;mm wafer)</td><td>48 GiB per DIMM; <strong>2.11 TiB</strong> per box (45 DIMMs)</td><td class="yes">DDR5 &mdash; ~50&times;/box</td></tr>
+<tr><td><strong>Bandwidth per byte of capacity</strong></td><td class="big">~477 TB/s per GB</td><td class="big">~0.9 GB/s per GB</td><td class="yes">SRAM &mdash; ~540,000&times;</td></tr>
+<tr><td><strong>Cost per GB</strong></td><td>a full TSMC 5&nbsp;nm wafer yields ~44 GB (effectively $thousands/GB)</td><td>~$3&ndash;5 / GB commodity</td><td class="yes">DDR5 &mdash; ~1,000&times;</td></tr>
+<tr><td><strong>Depth</strong></td><td>fixed &mdash; shallow, non-expandable</td><td>bottomless &mdash; add DIMMs</td><td class="yes">DDR5</td></tr>
+</tbody>
+</table>
+<div class="callout spec"><span class="lab">The giga-chad line, both ways</span><strong>SRAM&rsquo;s flex:</strong> one WSE-3 moves <strong>21&nbsp;PB/s</strong> &mdash; ~10,000&times; a whole box of DDR5 and ~12,000&times; an RTX&nbsp;5090&rsquo;s 1.79&nbsp;TB/s &mdash; and can re-read its <em>entire</em> contents ~477,000 times per second. <strong>DDR5&rsquo;s flex:</strong> a single <strong>$200 DDR5 DIMM (48&nbsp;GiB) out-capacities the entire most-advanced-chip-ever&rsquo;s 44&nbsp;GB of SRAM</strong> &mdash; and does it at ~1/1,000th the $/GB. On-wafer SRAM is the widest, fastest, shallowest, most expensive memory that exists; DDR5 is deep, cheap, and &ldquo;merely&rdquo; VRAM-adequate.</div>
+<p><strong>This single table explains both architectures.</strong> Cerebras spends a whole wafer to get 44&nbsp;GB at 21&nbsp;PB/s &mdash; so fast per byte that they <em>must</em> stream weights through it from cheap DRAM, because 44&nbsp;GB can&rsquo;t hold a frontier model. STRATA-V goes the other way: it doesn&rsquo;t need 21&nbsp;PB/s &mdash; a 5090 asks for only 1.79&nbsp;TB/s &mdash; so 45 commodity DDR5 sticks deliver that bandwidth <em>and</em> 2.11&nbsp;TiB of depth for ~$8k. The bandwidth-per-byte gap (~540,000&times;) is exactly why Cerebras streams and STRATA-V doesn&rsquo;t have to.</p>
+
+<h2 id="contrast"><span class="num">07</span>MemoryX vs. STRATA-V &mdash; same goal, opposite pole</h2>
+<table>
+<thead><tr><th>Axis</th><th>Cerebras MemoryX</th><th>STRATA-V</th></tr></thead>
+<tbody>
+<tr><td><strong>Attach point</strong></td><td>Ethernet / fabric to a wafer with <em>no memory PHY at all</em></td><td><em>On</em> the engine&rsquo;s native memory PHY (512-pin GDDR7)</td></tr>
+<tr><td><strong>Transparency</strong></td><td>explicit, compiler-scheduled stream; no memory read is ever issued</td><td>transparent random access; the engine cannot tell</td></tr>
+<tr><td><strong>Far side</strong></td><td><em>active</em> &mdash; holds optimizer, computes the weight update itself</td><td><em>passive</em> &mdash; must preserve plain memory semantics</td></tr>
+<tr><td><strong>Latency contract</strong></td><td>engineered to be <em>tolerant</em> (execution restructured around it)</td><td>must <em>meet</em> the native interface&rsquo;s fixed-beat timing</td></tr>
+<tr><td><strong>Bandwidth shelter</strong></td><td>training weight-reuse hides a ~140,000:1 SRAM:egress gap</td><td>none &mdash; must deliver ~native bandwidth on demand</td></tr>
+<tr><td><strong>Scope</strong></td><td>training only, whole-model granularity, proprietary stack</td><td>any workload the engine runs, unmodified</td></tr>
+</tbody>
+</table>
+<p>Both decouple capacity from compute &mdash; &ldquo;something you cannot do with any GPUs&rdquo; (The Next Platform). But Cerebras does it only for training, by owning the entire execution model; STRATA-V does it for anything, by speaking the memory interface the engine already has. (For the head-to-head against the impersonation peer group &mdash; Credo, Majestic, Celestial, Eliyan &mdash; see <code>prior_art.html</code>.)</p>
+
+<h2 id="converge"><span class="num">08</span>The convergence worth watching</h2>
+<p>Analysts now argue the WSE&rsquo;s <em>compute-to-SRAM ratio is &ldquo;wrong for low-latency inference&rdquo;</em> (The Next Platform, 2026) &mdash; 44&nbsp;GB/wafer forces multi-wafer serving for anything much above ~20B params in FP16. The <em>speculated</em> WSE-4 remedy is telling: &ldquo;<strong>optical links coming out of the wafer to shared DRAM memory trays</strong> to significantly expand the MemoryX capacity.&rdquo; That is Cerebras drifting <em>toward</em> natively-attached external DRAM &mdash; the very problem STRATA-V attacks from the interface side. <span class="flag">[analyst speculation, not announced]</span> (Context: Cerebras IPO&rsquo;d in May 2026 at a ~$95B fully-diluted valuation; an OpenAI 750&nbsp;MW inference deal landed Jan 2026.)</p>
+
+<h2 id="flags"><span class="num">09</span>Honest flags</h2>
+<ul>
+<li><strong>Confirmed vs. reported.</strong> Verbatim-primary: DRAM+flash hybrid (CS-2), commodity-DDR5 1U (CS-3), 1.2&nbsp;Tb/s per-system egress, single-copy broadcast, MemoryX-runs-the-optimizer, inference is SRAM-resident, 44&nbsp;GB WSE-3 SRAM at 21&nbsp;PB/s. Report-level or estimate: per-unit DRAM bandwidth, DRAM:flash split of the big SKUs, MemoryX standalone power/price (SEC exhibits redacted), the OpenAI deal size ($10B&ndash;$20B, evolving), most cluster $ figures.</li>
+<li><strong>Qualcomm is not a MemoryX datapoint.</strong> The 2024 &ldquo;train-on-Cerebras, infer-on-Qualcomm AI&nbsp;100 Ultra&rdquo; partnership uses <em>Qualcomm&rsquo;s</em> 128&nbsp;GB LPDDR4x &mdash; a conventional DRAM-behind-NPU design, unrelated to MemoryX; the route vanished from later messaging.</li>
+<li><strong>Numbers moved.</strong> 386 vs 388&nbsp;Tb/s (CG-1); &ldquo;1.5/12/1200&nbsp;TB&rdquo; (PR) vs &ldquo;24/36/120/1200&nbsp;TB&rdquo; (same-day blog) vs &ldquo;12 to 1,200&nbsp;TB&rdquo; (datasheet). Cite with a date.</li>
+<li><strong>Stealth / roadmap.</strong> WSE-4 memory is unannounced; CS-3-era per-SKU DRAM technology is not fully published. Absence of a public teardown of a MemoryX enclosure is itself a gap.</li>
+</ul>
+
+<footer>
+  <p><strong>Bottom line.</strong> MemoryX is the clearest proof that <em>cheap commodity DDR5, decoupled from a very expensive compute engine, is the right way to buy capacity at scale</em> &mdash; Cerebras trains 24T-param models against exactly that. It is simultaneously the clearest proof that <em>their</em> way of doing it &mdash; stream over a fabric, restructure the workload, tolerate latency &mdash; <strong>breaks in the latency-critical path</strong>, where they retreat to on-wafer SRAM bought by the wafer. The economics vindicates STRATA-V; the mechanism leaves the native-interface-impersonation niche genuinely unoccupied. Two opposite corners of the memory hierarchy, aimed at the same wall.</p>
+  <p style="color:var(--muted)">Adjacent-architecture / existence-proof record, 2026-07. Sourced from Cerebras primary disclosures, SEC filings, and trade press; vendor claims attributed, confidence flagged; figures as disclosed. Not legal or investment advice. Evidence and manifest in <code>pricing_evidence/cerebras/</code>.</p>
+</footer>
+
+</div>
+</body>
+</html>
