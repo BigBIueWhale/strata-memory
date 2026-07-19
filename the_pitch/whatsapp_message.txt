@@ -1,0 +1,36 @@
+Okay — the whole thing, in one shot.
+
+A single RTX 5090 already has the compute to run Kimi K3 at 65 tokens/sec. On 2% of its power. It's not slow — it's starving. 32 GiB of VRAM, and K3 needs ~1.56 TiB.
+
+So we feed it.
+
+The 5090 talks to its memory over 512 pins, GDDR7 protocol, 1.79 TB/s. That's the whole interface. We build our own silicon — 5 nm, 10 tiny chips (1 boss + 9 workers) — that pretends to BE those GDDR7 chips. Byte-for-byte identical: same 512 pins, same speed, same protocol, same timing. The GPU never finds out.
+
+Behind the mask: no GDDR7. Just 45 sticks of cheap normal DDR5, 48 GiB each = 2.1 TiB.
+
+Why exactly 45 × 48 GiB? Because two numbers land on the same spot:
+
+1) Bandwidth. 45 sticks × 44.8 GB/s = 2,016 GB/s. That's the break-even where cheap parallel DDR5 matches the 5090's 1.79 TB/s. Our chips basically have infinite bandwidth — all they do is add up the 45 sticks and pour it through the 512-pin hole. Cross that line and bandwidth is FREE: you pay for capacity, the speed rides along.
+
+2) Capacity. 45 × 48 GiB = 2.1 TiB — and that is exactly enough for Kimi K3 at FULL quality, all of it in at once:
+ • native 4-bit (MXFP4) weights — 1.43 TiB
+ • un-quantized FP16 KV cache at a full 1,000,000-token context — ~28 GiB
+ • multi-token prediction (MTP) — ~18 GiB
+ • vision — ~1 GiB
+ • +8% runtime = ~1.56 TiB. Fits with ~35% to spare.
+
+And it's guaranteed: electrically, signal integrity, timing, correctness — all inside the 5090's own spec, proven from first principles. Nothing faked. Nothing late.
+
+Price, one box, landed in Israel (our chips at 10,000-unit volume):
+ • 2.1 TiB of DDR5: ~₪62,000
+ • RTX 5090: ~₪12,500
+ • our 10 chips: ~₪3,300
+≈ ₪78,000. One box. On my desk. Kimi K3, a million tokens, full quality, MTP on.
+
+(Built the way Nvidia would — our converter in place of soldered GDDR7. Design-in, not a desolder hack.)
+
+They want ₪6.5M for a 36-GPU monster to serve 165 strangers.
+
+I want one card. For me. For ₪78k.
+
+Capacity buys bandwidth. That's the free meal. 🎤

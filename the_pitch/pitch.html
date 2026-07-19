@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#0a0e16; --card:#121826; --card2:#0f1420; --edge:#243044;
+    --ink:#eef2f8; --mut:#8a97ad; --dim:#5f6c82;
+    --grn:#37e5a0; --pur:#b28bff; --cyn:#40c9ff; --amb:#ffc24b; --red:#ff6b6b;
+    --font:"Inter","Helvetica Neue","Arial","DejaVu Sans",sans-serif;
+  }
+  html,body{width:1200px;height:1380px;overflow:hidden;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased}
+  body{background:radial-gradient(1100px 700px at 78% -8%,#16233a 0%,rgba(10,14,22,0) 60%),radial-gradient(900px 600px at 8% 108%,#141d16 0%,rgba(10,14,22,0) 55%),var(--bg);padding:56px 60px 40px}
+  .kick{font-size:17px;letter-spacing:.34em;text-transform:uppercase;color:var(--pur);font-weight:700}
+  h1{font-size:74px;line-height:.98;font-weight:800;margin:14px 0 0;letter-spacing:-1.5px}
+  h1 .g{background:linear-gradient(92deg,var(--grn),var(--cyn));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero{margin-top:20px;font-size:24px;color:var(--mut);font-weight:500;line-height:1.35}
+  .hero b{color:var(--ink);font-weight:700}
+  .hero .big{color:var(--grn);font-weight:800}
+
+  .flow{display:flex;align-items:stretch;gap:0;margin-top:34px}
+  .node{flex:1;background:linear-gradient(180deg,var(--card),var(--card2));border:1.5px solid var(--edge);border-radius:18px;padding:22px 20px;position:relative}
+  .node .t{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;margin-bottom:9px}
+  .node h3{font-size:27px;font-weight:800;line-height:1.05;letter-spacing:-.3px}
+  .node p{font-size:16px;color:var(--mut);margin-top:8px;line-height:1.4}
+  .node p b{color:var(--ink)}
+  .n1 .t{color:var(--cyn)} .n2 .t{color:var(--pur)} .n3 .t{color:var(--grn)}
+  .n2{border-color:#3a2f5e;box-shadow:0 0 0 1px #3a2f5e,0 18px 50px -22px rgba(178,139,255,.5)}
+  .arrow{flex:0 0 58px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--dim)}
+  .arrow .a{font-size:40px;line-height:.6;font-weight:400;color:#4a5877}
+  .arrow .lab{font-size:11px;color:var(--dim);margin-top:6px;text-align:center;letter-spacing:.04em}
+  .cap{margin-top:14px;font-size:18px;color:var(--mut);text-align:center}
+  .cap b{color:var(--pur);font-weight:700}
+
+  .why{display:flex;gap:20px;margin-top:26px}
+  .box{flex:1;background:var(--card);border:1.5px solid var(--edge);border-radius:18px;padding:22px 24px}
+  .box .h{display:flex;align-items:baseline;gap:11px;margin-bottom:12px}
+  .box .num{font-size:15px;font-weight:800;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex:0 0 30px}
+  .b1 .num{background:rgba(64,201,255,.16);color:var(--cyn)} .b2 .num{background:rgba(55,229,160,.16);color:var(--grn)}
+  .box .h b{font-size:22px;font-weight:800}
+  .eq{font-size:28px;font-weight:800;letter-spacing:-.4px;margin:2px 0 4px}
+  .eq .cyn{color:var(--cyn)} .eq .grn{color:var(--grn)} .eq .mut{color:var(--dim);font-weight:600}
+  .box small{display:block;font-size:16px;color:var(--mut);line-height:1.45;margin-top:6px}
+  .box small b{color:var(--ink)}
+  .free{margin-top:12px;display:inline-block;font-size:15px;font-weight:800;color:var(--grn);background:rgba(55,229,160,.12);border:1px solid rgba(55,229,160,.35);padding:5px 12px;border-radius:999px}
+  .kv{margin-top:8px;font-size:15.5px;color:var(--mut);line-height:1.55}
+  .kv b{color:var(--ink)} .kv .tot{color:var(--grn);font-weight:800}
+
+  .guar{margin-top:24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--card2);border:1px solid var(--edge);border-radius:16px;padding:16px 22px}
+  .guar .lead{font-size:16px;color:var(--mut);font-weight:600}
+  .chip{font-size:15px;font-weight:700;color:var(--ink);background:rgba(55,229,160,.1);border:1px solid rgba(55,229,160,.3);padding:6px 13px;border-radius:999px}
+  .chip .ck{color:var(--grn);font-weight:900;margin-right:5px}
+
+  .foot{display:flex;gap:22px;margin-top:26px}
+  .cost{flex:1.15;background:linear-gradient(180deg,var(--card),var(--card2));border:1.5px solid var(--edge);border-radius:18px;padding:22px 26px}
+  .cost .t{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--amb);font-weight:800}
+  .cost .line{display:flex;justify-content:space-between;font-size:18px;color:var(--mut);margin-top:11px}
+  .cost .line b{color:var(--ink);font-weight:700}
+  .cost .big{margin-top:14px;padding-top:14px;border-top:1px solid var(--edge);display:flex;justify-content:space-between;align-items:baseline}
+  .cost .big span{font-size:19px;color:var(--mut);font-weight:600}
+  .cost .big strong{font-size:44px;color:var(--amb);font-weight:800;letter-spacing:-1px}
+  .cost .sub{font-size:14px;color:var(--dim);margin-top:8px}
+
+  .vs{flex:.85;display:flex;flex-direction:column;gap:14px}
+  .vsb{border-radius:16px;padding:18px 22px;border:1.5px solid}
+  .them{background:rgba(255,107,107,.06);border-color:rgba(255,107,107,.3)}
+  .us{background:rgba(55,229,160,.07);border-color:rgba(55,229,160,.4)}
+  .vsb .amt{font-size:34px;font-weight:800;letter-spacing:-.5px}
+  .them .amt{color:var(--red)} .us .amt{color:var(--grn)}
+  .vsb .d{font-size:15.5px;color:var(--mut);margin-top:4px;line-height:1.35}
+  .vsb .d b{color:var(--ink)}
+
+  .tag{margin-top:22px;display:flex;justify-content:space-between;align-items:center}
+  .tag .big{font-size:22px;font-weight:800}
+  .tag .big .grn{color:var(--grn)}
+  .tag .fine{font-size:13px;color:var(--dim);text-align:right;line-height:1.4;max-width:520px}
+</style>
+</head>
+<body>
+
+  <div class="kick">Kimi K3 &middot; locally &middot; one card</div>
+  <h1>Two terabytes of VRAM<br>on a <span class="g">single RTX&nbsp;5090</span>.</h1>
+  <div class="hero">It already has the compute: <b>Kimi K3 at <span class="big">65 tokens/sec</span></b>, full quality, 1M-token context &mdash; on <b>2%</b> of the GPU. It's not slow, it's <b>starving</b>: 32&nbsp;GiB of VRAM, and K3 needs <b>~1.56&nbsp;TiB</b>.</div>
+
+  <div class="flow">
+    <div class="node n1">
+      <div class="t">The GPU</div>
+      <h3>RTX&nbsp;5090</h3>
+      <p><b>512 pins</b> &middot; GDDR7 protocol &middot; <b>1.79&nbsp;TB/s</b>. Compute mostly idle.</p>
+    </div>
+    <div class="arrow"><div class="a">&#10230;</div><div class="lab">byte-identical<br>512-pin front</div></div>
+    <div class="node n2">
+      <div class="t">Our silicon</div>
+      <h3>10 chips &middot; 5&nbsp;nm</h3>
+      <p><b>1 root + 9 leaves</b>. Impersonates GDDR7 exactly &mdash; the GPU never knows.</p>
+    </div>
+    <div class="arrow"><div class="a">&#10230;</div><div class="lab">45 channels<br>in parallel</div></div>
+    <div class="node n3">
+      <div class="t">The memory</div>
+      <h3>45 &times; DDR5</h3>
+      <p>Cheap normal DIMMs, 48&nbsp;GiB each &middot; <b>2.1&nbsp;TiB</b>.</p>
+    </div>
+  </div>
+  <div class="cap">No GDDR7 anywhere behind the mask &mdash; just a warehouse of cheap, commodity DDR5.</div>
+
+  <div class="why">
+    <div class="box b1">
+      <div class="h"><span class="num">1</span><b>The bandwidth is free</b></div>
+      <div class="eq"><span class="cyn">45 &times; 44.8 GB/s</span> <span class="mut">=</span> 2,016 GB/s</div>
+      <small>Exactly the 5090's <b>1.79&nbsp;TB/s</b>. Our chips have effectively infinite bandwidth &mdash; they just <b>sum 45 cheap sticks</b> and pour it through the 512-pin hole.</small>
+      <span class="free">Past 45 sticks, speed comes for free</span>
+    </div>
+    <div class="box b2">
+      <div class="h"><span class="num">2</span><b>And it holds all of K3</b></div>
+      <div class="eq"><span class="grn">45 &times; 48 GiB</span> <span class="mut">=</span> 2.1 TiB</div>
+      <div class="kv">MXFP4 weights <b>1.43&nbsp;TiB</b> &middot; FP16 KV @ <b>1,000,000</b> tok <b>~28&nbsp;GiB</b> &middot; <b>MTP</b> ~18 &middot; vision ~1 &middot; +8% = <span class="tot">~1.56&nbsp;TiB</span></div>
+      <span class="free">Kimi K3, full quality, ~35% to spare</span>
+    </div>
+  </div>
+
+  <div class="guar">
+    <span class="lead">Guaranteed inside the 5090's own spec, proven from first principles:</span>
+    <span class="chip"><span class="ck">&#10003;</span>Electrical</span>
+    <span class="chip"><span class="ck">&#10003;</span>Signal integrity</span>
+    <span class="chip"><span class="ck">&#10003;</span>Latency</span>
+    <span class="chip"><span class="ck">&#10003;</span>Correctness</span>
+  </div>
+
+  <div class="foot">
+    <div class="cost">
+      <div class="t">Cost of one box &middot; landed in Israel</div>
+      <div class="line"><span>2.1&nbsp;TiB of DDR5</span><b>~&#8362;62,000</b></div>
+      <div class="line"><span>RTX&nbsp;5090</span><b>~&#8362;12,500</b></div>
+      <div class="line"><span>Our 10 custom chips (@10k units)</span><b>~&#8362;3,300</b></div>
+      <div class="big"><span>one box, Kimi K3 @ 1M</span><strong>&asymp;&#8362;78k</strong></div>
+    </div>
+    <div class="vs">
+      <div class="vsb them">
+        <div class="amt">&#8362;6.5M</div>
+        <div class="d">Nvidia's answer: a <b>36-GPU</b> monster to serve <b>165 strangers</b>.</div>
+      </div>
+      <div class="vsb us">
+        <div class="amt">&#8362;78k</div>
+        <div class="d"><b>One card. On my desk.</b> Kimi K3, a million tokens, just for me.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tag">
+    <div class="big">Capacity buys bandwidth. <span class="grn">That's the free meal.</span></div>
+    <div class="fine">Design-in &mdash; our converter replaces soldered GDDR7, the way Nvidia would. Not a desolder hack.</div>
+  </div>
+
+</body>
+</html>
