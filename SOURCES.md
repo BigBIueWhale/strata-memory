@@ -83,3 +83,13 @@ original hosts below. All URLs verified live in July 2026.
 - d-Matrix / Positron / SambaNova SN40L / SanDisk–SK hynix HBF / Enfabrica EMFASYS / Skymizer — captures in `pricing_evidence/prior_art/`
 - arXiv: "The Economics of AI Decoding Chips" (2607.13068); SambaNova SN40L (2405.07518); MemExplorer (2604.16007)
 - Archived research evidence (154 files: vendor/patent/press/arXiv captures across OpenAI+hyperscalers, US startups, China, memory vendors, academic/patents, accelerators): `pricing_evidence/prior_art/`
+
+## Converter silicon per-unit cost (TSMC N5, NRE/masks excluded) (2026-07)
+- N5 300 mm wafer ~$16,988 — CSET "AI Chips: What They Are and Why They Matter" (Table 9) — https://cset.georgetown.edu/wp-content/uploads/AI-Chips%E2%80%94What-They-Are-and-Why-They-Matter-1.pdf ; 4/5nm ~$15–16k, 2nm price doubling — TrendForce 2024-10-04
+- N5 defect density D0 ~0.10/cm² at ramp (heading below 0.10) — AnandTech, TSMC Symposium 2020
+- UCIe-S die-to-die module geometry (1.76 mm²/×32 link; 224 GB/s/mm) + LPDDR5 bump-map density — Das Sharma et al., arXiv:2510.06513
+- Die-area anchors: NVIDIA GB202 750 mm² / 512-bit GDDR7 (RTX Blackwell whitepaper); AMD Navi31 MCD 37.5 mm² N6 = 64-bit GDDR6 PHY + 16 MB SRAM (Angstronomics); AD102 608.44 mm² (Locuza)
+- N5 SRAM bitcell 0.021 µm² — WikiChip 5nm
+- FCBGA package cost anchors (chiplet-class ~$10–20; ABF server-substrate market) — SemiEngineering / TrendForce; test ~2%-of-cost, rising for complex parts — SemiEngineering
+- ~6,000-ball package class exists (Socket SP5, 6,096 contacts) — Wikipedia
+- Full cost model + evidence (74 files) + re-runnable `cost_model.py` + `MANIFEST.md`: `pricing_evidence/silicon_cost/`

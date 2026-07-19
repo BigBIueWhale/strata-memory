@@ -1,0 +1,48 @@
+====================================================================================================
+A. DIE AREAS (mm2): max(IP sum, bump field); root-high also covers strict shoreline closure
+  low      ROOT: IP=  99.4  bump-floor=  72.7  ->   99.4 | LEAF: IP= 33.1  bump-floor= 23.7  ->  33.1
+  central  ROOT: IP= 124.9  bump-floor=  98.0  ->  124.9 | LEAF: IP= 42.8  bump-floor= 33.3  ->  42.8
+  high     ROOT: IP= 175.5  bump-floor= 135.0  ->  180.0 | LEAF: IP= 57.0  bump-floor= 45.0  ->  57.0
+
+B. WAFER ECONOMICS PER DIE  (300mm N5, 3mm edge excl., Murphy yield x parametric)
+  case     die     area gross/waf  yield good/waf $/good die
+  low      ROOT    99.4       604  93.3%      563      26.63
+           LEAF    33.1      1869  96.4%     1802       8.33
+  central  ROOT   124.9       476  88.9%      423      38.97
+           LEAF    42.8      1439  94.1%     1355      12.18
+  high     ROOT   180.0       323  79.6%      257      70.04
+           LEAF    57.0      1074  89.8%      964      18.67
+
+C. STEADY-STATE PER-UNIT (silicon + package + test, assembly-yield adjusted)
+  low      ROOT: die  26.63 + pkg   75.0 + test   3.0  =>  105.14   | LEAF: die  8.33 + pkg  18.0 + test  1.5 =>  27.96
+           SYSTEM (1 root + 9 leaves) =   356.76 USD
+  central  ROOT: die  38.97 + pkg  115.0 + test   6.0  =>  161.53   | LEAF: die 12.18 + pkg  30.0 + test  3.0 =>  45.61
+           SYSTEM (1 root + 9 leaves) =   571.98 USD
+  high     ROOT: die  70.04 + pkg  180.0 + test  12.0  =>  267.14   | LEAF: die 18.67 + pkg  48.0 + test  5.0 =>  73.03
+           SYSTEM (1 root + 9 leaves) =   924.43 USD
+
+D. GB202 MODEL VALIDATION: 750mm2 [S5] on same wafer/yield model (central):
+   gross/wafer=66, defect yield=60.5%, $/good die=413 (street estimates ~$300-400 -> model sane)
+
+E. VOLUME CURVE (central case). Wafer-quantized; pkg/test small-lot multipliers.
+   systems per ROOT wafer = 423;  systems per LEAF wafer = 150.5  (leaf wafers per root wafer for balance = 2.81)
+    systems rootWfr leafWfr silicon/sys  pkg/sys test/sys TOTAL/sys
+         10       1       1     3300.00   972.22    49.50   4321.72
+        100       1       1      330.00   583.33    39.60    952.93
+       1000       3       7      165.00   447.22    34.65    646.87
+      10000      24      67      150.15   388.89    33.00    572.04
+   infinity       -       -      148.59   388.89    33.00    571.98
+
+   Same, if foundry enforces a 25-wafer minimum production lot per die type:
+         10      25      25   82,500.00   972.22    49.50 83,521.72
+        100      25      25    8,250.00   583.33    39.60  8,872.93
+       1000      25      25      825.00   447.22    34.65  1,306.87
+      10000      25      67      151.80   388.89    33.00    573.69
+
+F. COMBINED-RETICLE OPTION (1 root + 9 leaves per 26x33mm field, one mask set/stream):
+   fields/wafer=56, matched systems/wafer=50, silicon $/system=331 (vs 149 separate-wafer floor) -> use for <~400-system runs
+
+G. L/C/H SYSTEM SUMMARY (steady-state floor):
+   low      silicon  101.56 + packages  238.19 + test  16.50 =   356.76 $/system
+   central  silicon  148.59 + packages  388.89 + test  33.00 =   571.98 $/system
+   high     silicon  238.09 + packages  624.49 + test  57.00 =   924.43 $/system
