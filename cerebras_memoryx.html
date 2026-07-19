@@ -190,6 +190,10 @@
 </tbody>
 </table>
 <p><strong>The trade, stated plainly:</strong> ~45&times; the capex and ~800&times; less long-context concurrency per dollar &mdash; bought for ~10&times; the per-user speed. Cerebras wins where latency <em>compounds</em> (agentic loops, long reasoning chains) and loses on bulk tokens and on packing many long-context users per dollar &mdash; which is why it sells <em>tokens</em> ($0.25&ndash;$12 per M) and amortizes the silicon across a fleet rather than selling you the box. It is also how Cerebras crossed the <strong>trillion-parameter</strong> line without pooling: Kimi-K2.6 (1.06T) fits on ~18 wafers <em>only</em> because it is stored at native INT4, with prefill given to Trainium and just the memory-bound decode kept on-wafer. The endgame is the STRATA-V shape at datacenter scale &mdash; an expensive fast-memory decode engine, fronted by cheap-memory everything-else.</p>
+<div class="callout punch"><span class="lab">The million-dollar test</span>
+<p style="margin-top:2px">You can buy Cerebras chips and pay <strong>a million dollars for every additional 17.5&nbsp;GB of SRAM</strong> &#129315;. Or pay <strong>a million dollars to NVIDIA for every additional 3.2&nbsp;TB of VRAM</strong> (a B200-based NVLink supercomputer). Or pay <strong>just ~$25K for 2.11&nbsp;TiB of DDR5</strong> &#128128;.</p>
+<p style="margin:.45em 0 0">That is <strong>~$57,000/GB</strong> vs <strong>~$310/GB</strong> vs <strong>~$11/GB</strong> &mdash; three orders of magnitude from the fast corner of the memory hierarchy to the cheap one, and the RTX&nbsp;5090 can&rsquo;t tell the difference.</p>
+</div>
 
 <h2 id="contrast"><span class="num">09</span>MemoryX vs. STRATA-V &mdash; same goal, opposite pole</h2>
 <table>
