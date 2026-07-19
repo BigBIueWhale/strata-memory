@@ -55,3 +55,29 @@ Undisclosed anywhere: MemoryX internal DRAM bandwidth per unit, DRAM:flash split
 120 TB / 1.2 PB SKUs, per-SKU DRAM generation, and MemoryX standalone power/price (SEC
 exhibits redacted). Marketing envelope figures (2.4 PB / 120T; 2048-system / 256-EF
 clusters) are flagged as never-shipped in the write-up.
+
+## Follow-on passes (2026-07): interconnect (§07) & huge-model inference (§08)
+
+Two further Fable-5 research passes extended this corpus (full notes live in the /tmp
+research corpus under `E_`/`F_` prefixes; key sources here + in top-level `SOURCES.md`).
+
+**Newly archived here (freely-distributable):**
+
+| File | What it anchors |
+|---|---|
+| `glm52_config.json`, `glm52_README.md` | GLM-5.2 = 753.33B, 256+1 experts, MLA 512+64, 78 layers, 1,048,576 ctx (HuggingFace, 2026-07-20) — the priced-config source for §08 |
+| `cerebras_2026_disaggregated_inference_blog.html` | AWS Bedrock disaggregation — Trainium prefill → CS-3 decode (KV handed off; decode never leaves SRAM) |
+| `cerebras_2026_kimi_k26_blog.html` | Kimi-K2.6 (1.06T) served on-chip at native INT4 — "stores the entire model on-chip" |
+| `cerebras_2026_glm47_blog.html` | GLM-4.7 (358B) on Cerebras inference |
+| `cerebras_inference_dedicated_endpoints.md` | dedicated-endpoint model menu incl. GLM-5 / GLM-5.1 (contract-priced) |
+
+**Key cited-not-redistributed sources** (URLs in top-level `SOURCES.md`): NVIDIA HC2024 Blackwell
+deck + NVSwitch HC34 (NVLink-5 / NVL72 pooling semantics — 1.8 TB/s/GPU, 130 TB/s, 13.4 TB shared);
+Tesla Dojo HC34 + TTPoE HC2024 (flat-address DMA, SRAM "private"); Groq ISCA 2022 (logically-shared
+distributed SRAM); SambaNova SN40L (arXiv:2405.07518); Lightmatter Passage M1000 (114 Tb/s);
+Marvell–Celestial completion PR (2026-02-02); UALink 1.0; The Register 2024-08-27 (405B on ~12
+wafers); TNP 2026-04-22 / 2026-05-15 (derived CS-3 ASP ~$2.26M, wafer-count opacity, WSE-4 optics).
+
+**Confidence (follow-on).** Architecture/param counts and quoted mechanism are verbatim-primary.
+Flagged estimates: the **CS-3 unit price ($2–3M, never published)**, the 79.5% SRAM packing factor
+(calibrated on the single disclosed Llama-70B/4-wafer mapping), and NVL72 pricing (~$3–4M, trade press).
