@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1720px;height:1080px;overflow:hidden;background:#0a0e17}
+  svg{display:block}
+</style>
+</head>
+<body>
+<svg width="1720" height="1080" viewBox="0 0 1720 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text{font-family:'Inter','Helvetica Neue','Arial','DejaVu Sans',sans-serif;fill:#e9eef7}
+      .mono{font-family:'DejaVu Sans Mono','Consolas',monospace}
+      .tt{font-weight:800;font-size:30px}
+      .tdim{fill:#67748c;font-weight:500}
+      .sub{font-size:15px;fill:#93a0b6;font-weight:500}
+      .leg{font-size:12.5px;font-weight:700;letter-spacing:.05em}
+      .bname{font-weight:800;font-size:22px}
+      .btag{font-weight:700;font-size:10.5px;letter-spacing:.22em;fill:#7d8aa1}
+      .meta{font-size:11.5px;fill:#8b98af}
+      .st{font-weight:700;font-size:13px}
+      .sd{font-size:11px;fill:#98a5bb}
+      .busn{font-weight:800;font-size:13px}
+      .buss{font-size:11.5px;fill:#8b98af}
+      .busbig{font-weight:800;font-size:21px}
+      .ch{font-weight:800;font-size:15.5px}
+      .k{font-size:12.5px;fill:#7f8ca2;font-weight:600}
+      .v{font-size:12.5px;fill:#dfe6f1}
+      .vb{font-size:12.5px;font-weight:700}
+      .fbig{font-weight:800;font-size:31px}
+      .fd{font-size:12.5px;fill:#8b98af;font-weight:500}
+      .cyn{fill:#45cbff}.pur{fill:#b78dff}.grn{fill:#3ee5a3}.amb{fill:#ffca55}.ink{fill:#e9eef7}
+    </style>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0 H0 V34" fill="none" stroke="#141d2e" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#15203a" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#0a0e17" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rootGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#6b4bd0" stop-opacity=".33"/>
+      <stop offset="1" stop-color="#6b4bd0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gRoot" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#45cbff"/><stop offset="1" stop-color="#b78dff"/>
+    </linearGradient>
+    <linearGradient id="gLeaf" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b78dff"/><stop offset="1" stop-color="#3ee5a3"/>
+    </linearGradient>
+    <marker id="aC" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="18" refX="16" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 Z" fill="#45cbff"/></marker>
+    <marker id="aP" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="18" refX="16" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 Z" fill="#b78dff"/></marker>
+    <marker id="aG" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="18" refX="16" refY="9" orient="auto"><path d="M0,1 L17,9 L0,17 Z" fill="#3ee5a3"/></marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1720" height="1080" fill="#0a0e17"/>
+  <rect width="1720" height="1080" fill="url(#grid)"/>
+  <rect width="1720" height="1080" fill="url(#bgGlow)"/>
+
+  <!-- title -->
+  <text x="48" y="52" class="tt"><tspan class="ink">STRATA&#8209;V</tspan><tspan class="tdim">&#8195;&#183;&#8195;memory&#8209;converter electrical block diagram</tspan></text>
+  <text x="48" y="80" class="sub">512&#8209;pin GDDR7 device&#8209;mode front&#8195;&#8594;&#8195;1 root + 9 leaf converters (TSMC N5)&#8195;&#8594;&#8195;45 &#215; DDR5&#8209;5600 UDIMM&#8195;&#183;&#8195;2.11 TiB @ 1.79 TB/s</text>
+
+  <!-- legend -->
+  <g transform="translate(1245,38)">
+    <rect x="0" y="0" width="11" height="11" rx="2.5" fill="#45cbff"/><text x="17" y="10" class="leg cyn">GDDR7 PAM3 front</text>
+    <rect x="0" y="22" width="11" height="11" rx="2.5" fill="#b78dff"/><text x="17" y="32" class="leg pur">die&#8209;to&#8209;die (UCIe&#8209;S)</text>
+    <rect x="243" y="0" width="11" height="11" rx="2.5" fill="#3ee5a3"/><text x="260" y="10" class="leg grn">DDR5&#8209;5600 back</text>
+    <rect x="243" y="22" width="11" height="11" rx="2.5" fill="#ffca55"/><text x="260" y="32" class="leg amb">timing contract</text>
+  </g>
+
+  <!-- ================= MAIN FLOW ================= -->
+
+  <!-- GPU -->
+  <g transform="translate(48,168)">
+    <rect width="212" height="256" rx="14" fill="#121a28" stroke="#26324a" stroke-width="1.5"/>
+    <text x="20" y="30" class="btag cyn">MEMORY MASTER</text>
+    <text x="20" y="58" class="bname">GPU</text>
+    <rect x="20" y="70" width="172" height="3" rx="1.5" fill="#45cbff"/>
+    <text x="20" y="104" class="st">GB202&#8209;class</text>
+    <text x="20" y="132" class="sd mono">512&#8209;bit GDDR7 controller</text>
+    <text x="20" y="150" class="sd mono">+ PHY &#183; training master</text>
+    <text x="20" y="186" class="sd">Issues a fixed read beat.</text>
+    <text x="20" y="204" class="sd">No flow control on the bus.</text>
+    <text x="20" y="238" class="st cyn">Sees ONE GDDR7 device.</text>
+  </g>
+
+  <!-- ROOT (hero) -->
+  <ellipse cx="608" cy="300" rx="210" ry="180" fill="url(#rootGlow)"/>
+  <g transform="translate(452,150)">
+    <rect width="300" height="308" rx="16" fill="#131b2b" stroke="#3b3a63" stroke-width="1.5"/>
+    <text x="22" y="32" class="btag"><tspan class="cyn">FRONT&#8209;PHY</tspan><tspan class="tdim">&#8195;&#183;&#8195;TIER&#8201;0</tspan></text>
+    <text x="22" y="60" class="bname">ROOT CONVERTER</text>
+    <rect x="22" y="72" width="256" height="3" rx="1.5" fill="url(#gRoot)"/>
+    <text x="22" y="96" class="meta mono">TSMC N5 &#183; ~125 mm&#178; &#183; ~6,000&#8209;ball FCBGA</text>
+    <!-- sub-blocks -->
+    <g transform="translate(22,110)">
+      <rect width="256" height="52" rx="9" fill="#0e1626" stroke="#2a3d55" stroke-width="1.2"/>
+      <rect x="0" y="0" width="4" height="52" rx="2" fill="#45cbff"/>
+      <text x="16" y="22" class="st">Device&#8209;mode GDDR7 PHY &#215;512</text>
+      <text x="16" y="40" class="sd mono">28G PAM3 &#183; training responder</text>
+    </g>
+    <g transform="translate(22,168)">
+      <rect width="256" height="52" rx="9" fill="#0e1626" stroke="#2a3d55" stroke-width="1.2"/>
+      <rect x="0" y="0" width="4" height="52" rx="2" fill="#6b7890"/>
+      <text x="16" y="22" class="st">De&#8209;interleave &#183; addr 35&#8594;41 bit</text>
+      <text x="16" y="40" class="sd mono">refresh orchestration &#183; reorder</text>
+    </g>
+    <g transform="translate(22,226)">
+      <rect width="256" height="52" rx="9" fill="#0e1626" stroke="#2a3d55" stroke-width="1.2"/>
+      <rect x="0" y="0" width="4" height="52" rx="2" fill="#b78dff"/>
+      <text x="16" y="22" class="st">Die&#8209;to&#8209;die PHY &#215;9</text>
+      <text x="16" y="40" class="sd mono">one short&#8209;reach link per leaf</text>
+    </g>
+  </g>
+
+  <!-- LEAF x9 -->
+  <g transform="translate(918,150)">
+    <rect x="14" y="14" width="270" height="308" rx="16" fill="#101827" stroke="#233149" stroke-width="1.2"/>
+    <rect x="7" y="7" width="270" height="308" rx="16" fill="#111a29" stroke="#28374f" stroke-width="1.2"/>
+    <rect width="270" height="308" rx="16" fill="#131b2b" stroke="#2f3f57" stroke-width="1.5"/>
+    <text x="20" y="32" class="btag"><tspan class="pur">CONVERTER</tspan><tspan class="tdim">&#8195;&#183;&#8195;TIER&#8201;1</tspan></text>
+    <text x="20" y="60" class="bname">LEAF <tspan class="pur">&#215;9</tspan></text>
+    <rect x="20" y="72" width="230" height="3" rx="1.5" fill="url(#gLeaf)"/>
+    <text x="20" y="96" class="meta mono">N5 &#183; ~43 mm&#178; &#183; ~1,800&#8209;ball &#183; identical die</text>
+    <g transform="translate(20,110)">
+      <rect width="230" height="52" rx="9" fill="#0e1626" stroke="#2a3d55" stroke-width="1.2"/>
+      <rect x="0" y="0" width="4" height="52" rx="2" fill="#b78dff"/>
+      <text x="16" y="22" class="st">Die&#8209;to&#8209;die PHY</text>
+      <text x="16" y="40" class="sd mono">uplink to root</text>
+    </g>
+    <g transform="translate(20,168)">
+      <rect width="230" height="52" rx="9" fill="#0e1626" stroke="#2a3d55" stroke-width="1.2"/>
+      <rect x="0" y="0" width="4" height="52" rx="2" fill="#6b7890"/>
+      <text x="16" y="22" class="st">5&#215; scheduler + reorder SRAM</text>
+      <text x="16" y="40" class="sd mono">hides DDR5 bank/refresh variance</text>
+    </g>
+    <g transform="translate(20,226)">
+      <rect width="230" height="52" rx="9" fill="#0e1626" stroke="#2a3d55" stroke-width="1.2"/>
+      <rect x="0" y="0" width="4" height="52" rx="2" fill="#3ee5a3"/>
+      <text x="16" y="22" class="st">DDR5&#8209;5600 PHY &#215;5</text>
+      <text x="16" y="40" class="sd mono">5 independent channels</text>
+    </g>
+  </g>
+
+  <!-- DDR5 x45 -->
+  <g transform="translate(1400,182)">
+    <rect x="14" y="14" width="256" height="244" rx="14" fill="#101827" stroke="#233149" stroke-width="1.2"/>
+    <rect x="7" y="7" width="256" height="244" rx="14" fill="#111a29" stroke="#28374f" stroke-width="1.2"/>
+    <rect width="256" height="244" rx="14" fill="#131b2b" stroke="#2c4a3d" stroke-width="1.5"/>
+    <text x="20" y="30" class="btag grn">COMMODITY MEMORY</text>
+    <text x="20" y="58" class="bname">DDR5 UDIMM <tspan class="grn">&#215;45</tspan></text>
+    <rect x="20" y="70" width="216" height="3" rx="1.5" fill="#3ee5a3"/>
+    <!-- die row motif -->
+    <g transform="translate(20,84)">
+      <rect width="216" height="26" rx="4" fill="#0e1626" stroke="#243a30" stroke-width="1"/>
+      <g fill="#2a6f52">
+        <rect x="8" y="6" width="16" height="14" rx="2"/><rect x="30" y="6" width="16" height="14" rx="2"/>
+        <rect x="52" y="6" width="16" height="14" rx="2"/><rect x="74" y="6" width="16" height="14" rx="2"/>
+        <rect x="96" y="6" width="16" height="14" rx="2"/><rect x="118" y="6" width="16" height="14" rx="2"/>
+        <rect x="140" y="6" width="16" height="14" rx="2"/><rect x="162" y="6" width="16" height="14" rx="2"/>
+        <rect x="184" y="6" width="16" height="14" rx="2"/>
+      </g>
+    </g>
+    <text x="20" y="140" class="sd mono">48 GiB/DIMM &#183; 288&#8209;pin &#183; non&#8209;ECC</text>
+    <text x="20" y="160" class="sd mono">16 &#215; 24 Gb dies &#183; 2 sub&#8209;channels</text>
+    <text x="20" y="180" class="sd mono">DDR5&#8209;5600 &#183; CL46 &#183; 1.1 V</text>
+    <text x="20" y="222" class="ch grn">&#931; 2.11 TiB</text>
+  </g>
+
+  <!-- ================= BUSES ================= -->
+
+  <!-- Bus A: GDDR7 front -->
+  <g>
+    <text x="356" y="212" text-anchor="middle" class="busn cyn">GDDR7 FRONT</text>
+    <text x="356" y="230" text-anchor="middle" class="buss mono">512 lanes &#183; device&#8209;mode</text>
+    <line x1="262" y1="296" x2="448" y2="296" stroke="#45cbff" stroke-width="5" stroke-linecap="round" marker-end="url(#aC)"/>
+    <line x1="352" y1="286" x2="366" y2="306" stroke="#45cbff" stroke-width="2.5"/>
+    <text x="356" y="278" text-anchor="middle" class="mono cyn" font-size="12" font-weight="700">512</text>
+    <text x="356" y="330" text-anchor="middle" class="busbig cyn">1.792 TB/s</text>
+    <text x="356" y="350" text-anchor="middle" class="buss mono">28 Gb/s &#215; 512 &#247; 8</text>
+  </g>
+
+  <!-- Bus B: die-to-die -->
+  <g>
+    <text x="835" y="212" text-anchor="middle" class="busn pur">DIE&#8209;TO&#8209;DIE</text>
+    <text x="835" y="230" text-anchor="middle" class="buss mono">9 links &#183; UCIe&#8209;S</text>
+    <line x1="754" y1="296" x2="912" y2="296" stroke="#b78dff" stroke-width="5" stroke-linecap="round" marker-end="url(#aP)"/>
+    <line x1="828" y1="286" x2="842" y2="306" stroke="#b78dff" stroke-width="2.5"/>
+    <text x="835" y="278" text-anchor="middle" class="mono pur" font-size="12" font-weight="700">9</text>
+    <text x="835" y="330" text-anchor="middle" class="busbig pur">2.02 TB/s</text>
+    <text x="835" y="350" text-anchor="middle" class="buss mono">224 GB/s / leaf</text>
+  </g>
+
+  <!-- Bus C: DDR5 back -->
+  <g>
+    <text x="1294" y="212" text-anchor="middle" class="busn grn">DDR5&#8209;5600 BACK</text>
+    <text x="1294" y="230" text-anchor="middle" class="buss mono">45 channels &#183; 5 / leaf</text>
+    <line x1="1190" y1="296" x2="1396" y2="296" stroke="#3ee5a3" stroke-width="5" stroke-linecap="round" marker-end="url(#aG)"/>
+    <line x1="1287" y1="286" x2="1301" y2="306" stroke="#3ee5a3" stroke-width="2.5"/>
+    <text x="1294" y="278" text-anchor="middle" class="mono grn" font-size="12" font-weight="700">45</text>
+    <text x="1294" y="330" text-anchor="middle" class="busbig grn">2.016 TB/s</text>
+    <text x="1294" y="350" text-anchor="middle" class="buss mono">44.8 GB/s &#215; 45</text>
+  </g>
+
+  <!-- ================= DETAIL CARDS ================= -->
+
+  <!-- (1) FRONT -->
+  <g transform="translate(48,500)">
+    <rect width="560" height="292" rx="14" fill="#0f1726" stroke="#26324a" stroke-width="1.5"/>
+    <rect x="0" y="0" width="4" height="292" rx="2" fill="#45cbff"/>
+    <text x="22" y="38" class="ch"><tspan class="cyn">&#9312;&#8195;GDDR7 FRONT</tspan><tspan class="tdim" font-size="12">&#8195;&#183;&#8195;device&#8209;mode PHY, the impersonated interface</tspan></text>
+    <line x1="22" y1="52" x2="538" y2="52" stroke="#22304a" stroke-width="1"/>
+    <g class="mono">
+      <text x="22"  y="84"  class="k">DATA</text><text x="132" y="84"  class="v">DQ[511:0] &#183; PAM3 (&#8722;1/0/+1) &#183; 28 Gb/s &#183; UI 53.6 ps</text>
+      <text x="22"  y="112" class="k">I/O DRIVE</text><text x="132" y="112" class="v">POD&#8209;135 &#183; R<tspan baseline-shift="sub" font-size="9">ON</tspan> 40&#8486; &#183; ODT 60/120/240&#8486; &#183; ZQ 240&#8486;</text>
+      <text x="22"  y="140" class="k">CLOCKS</text><text x="132" y="140" class="v">WCK&#177; / RCK&#177; &#215;32 &#183; 80&#8211;85&#8486; diff &#183; quarter&#8209;rate</text>
+      <text x="22"  y="168" class="k">INTEGRITY</text><text x="132" y="168" class="v">EDC &#215;64 &#183; on&#8209;die ECC + link CRC (poison&#8209;clean)</text>
+      <text x="22"  y="196" class="k">CMD / ADDR</text><text x="132" y="196" class="v">CA + CK&#177; ~1.7 GHz &#183; address 35&#8594;41 bit (+6)</text>
+      <text x="22"  y="224" class="k">TERMINALS</text><text x="132" y="224" class="v">&#8776;760 signal balls &#183; timing training&#8209;frozen</text>
+    </g>
+    <line x1="22" y1="244" x2="538" y2="244" stroke="#22304a" stroke-width="1"/>
+    <text x="22" y="274" class="vb cyn mono">= 1.792 TB/s</text>
+    <text x="152" y="274" class="sd">byte&#8209;identical to what the RTX&#8201;5090 already drives</text>
+  </g>
+
+  <!-- (2) D2D -->
+  <g transform="translate(628,500)">
+    <rect width="360" height="292" rx="14" fill="#0f1726" stroke="#26324a" stroke-width="1.5"/>
+    <rect x="0" y="0" width="4" height="292" rx="2" fill="#b78dff"/>
+    <text x="22" y="38" class="ch"><tspan class="pur">&#9313;&#8195;DIE&#8209;TO&#8209;DIE</tspan><tspan class="tdim" font-size="12">&#8195;&#183;&#8195;root &#8596; 9 leaves</tspan></text>
+    <line x1="22" y1="52" x2="338" y2="52" stroke="#22304a" stroke-width="1"/>
+    <g class="mono">
+      <text x="22" y="84"  class="k">LINKS</text><text x="120" y="84"  class="v">9 &#215; (root &#8594; leaf)</text>
+      <text x="22" y="112" class="k">PHY</text><text x="120" y="112" class="v">UCIe&#8209;S &#183; 2&#215;32 lanes</text>
+      <text x="22" y="140" class="k">RATE</text><text x="120" y="140" class="v">32 GT/s / lane</text>
+      <text x="22" y="168" class="k">BW / LEAF</text><text x="120" y="168" class="v">224 GB/s (112 / dir)</text>
+      <text x="22" y="196" class="k">REACH</text><text x="120" y="196" class="v">110 &#181;m bump &#183; on&#8209;pkg</text>
+      <text x="22" y="224" class="k">FLOW</text><text x="120" y="224" class="v">credited, loss&#8209;free</text>
+    </g>
+    <line x1="22" y1="244" x2="338" y2="244" stroke="#22304a" stroke-width="1"/>
+    <text x="22" y="274" class="vb pur mono">&#931; 9 &#215; 224 = 2.02 TB/s</text>
+  </g>
+
+  <!-- (3) BACK -->
+  <g transform="translate(1008,500)">
+    <rect width="664" height="292" rx="14" fill="#0f1726" stroke="#26324a" stroke-width="1.5"/>
+    <rect x="0" y="0" width="4" height="292" rx="2" fill="#3ee5a3"/>
+    <text x="22" y="38" class="ch"><tspan class="grn">&#9314;&#8195;DDR5&#8209;5600 BACK</tspan><tspan class="tdim" font-size="12">&#8195;&#183;&#8195;45 channels &#215; 5 per leaf &#183; JEDEC&#8209;native</tspan></text>
+    <line x1="22" y1="52" x2="642" y2="52" stroke="#22304a" stroke-width="1"/>
+    <g class="mono">
+      <text x="22" y="84"  class="k">PER CHANNEL</text><text x="168" y="84"  class="v">DQ[63:0] &#183; DQS&#177; &#215;8 &#183; CA &#183; CK&#177; &#183; per&#8209;DIMM</text>
+      <text x="22" y="112" class="k">RATE</text><text x="168" y="112" class="v">5600 MT/s &#183; 44.8 GB/s/ch &#183; CL46 &#183; 1.1 V</text>
+      <text x="22" y="140" class="k">TERMINATION</text><text x="168" y="140" class="v">ODT / RTT_PARK &#183; on&#8209;die ECC &#183; 288&#8209;pin UDIMM</text>
+      <text x="22" y="168" class="k">DEVICE</text><text x="168" y="168" class="v">48 GiB/DIMM &#183; 16 &#215; 24 Gb dies &#183; 2 sub&#8209;ch</text>
+      <text x="22" y="196" class="k">COUNT</text><text x="168" y="196" class="v">45 DIMMs &#215; 48 GiB = 2.11 TiB</text>
+      <text x="22" y="224" class="k">DETERMINISM</text><text x="168" y="224" class="v">per&#8209;bank refresh + reorder &#8594; bounded latency</text>
+    </g>
+    <line x1="22" y1="244" x2="642" y2="244" stroke="#22304a" stroke-width="1"/>
+    <text x="22" y="274" class="vb grn mono">&#931; 45 &#215; 44.8 = 2.016 TB/s</text>
+    <text x="290" y="274" class="sd">held to 1.79 TB/s net &#8212; refresh headroom kept in reserve</text>
+  </g>
+
+  <!-- ================= FOOTER ================= -->
+  <g transform="translate(48,832)">
+    <rect width="1624" height="200" rx="16" fill="#0d1524" stroke="#243149" stroke-width="1.5"/>
+    <!-- three headline stats -->
+    <g transform="translate(40,30)">
+      <text x="0" y="34" class="fbig cyn">1.792 TB/s</text>
+      <text x="0" y="60" class="fd"><tspan class="ink" font-weight="700">FRONT</tspan> &#8212; 512 &#215; 28 Gb/s &#247; 8, the exact number</text>
+      <text x="0" y="78" class="fd">a stock RTX&#8201;5090 already presents on its bus.</text>
+    </g>
+    <line x1="540" y1="24" x2="540" y2="118" stroke="#223049" stroke-width="1"/>
+    <g transform="translate(576,30)">
+      <text x="0" y="34" class="fbig grn">2.11 TiB</text>
+      <text x="0" y="60" class="fd"><tspan class="ink" font-weight="700">CAPACITY</tspan> &#8212; 45 &#215; 48 GiB. Kimi K3 at full</text>
+      <text x="0" y="78" class="fd">quality @ 1M ctx &#8776; 1.56 TiB &#8594; ~35% to spare.</text>
+    </g>
+    <line x1="1076" y1="24" x2="1076" y2="118" stroke="#223049" stroke-width="1"/>
+    <g transform="translate(1112,30)">
+      <text x="0" y="34" class="fbig ink">10 dies</text>
+      <text x="0" y="60" class="fd"><tspan class="ink" font-weight="700">SILICON</tspan> &#8212; 1 root + 9 identical leaves,</text>
+      <text x="0" y="78" class="fd">TSMC N5. No GDDR7 anywhere behind the mask.</text>
+    </g>
+    <!-- contract strip -->
+    <line x1="24" y1="140" x2="1600" y2="140" stroke="#223049" stroke-width="1"/>
+    <rect x="40" y="158" width="4" height="22" rx="2" fill="#ffca55"/>
+    <text x="58" y="176" class="btag amb" font-size="11">TIMING CONTRACT</text>
+    <text x="220" y="176" class="fd" font-size="12.5"><tspan class="ink">Fixed&#8209;beat, no flow control.</tspan> CL / tRCD / refresh are <tspan class="amb">programmed, not raced</tspan> &#8212; so served&#8209;on&#8209;time is deterministic by construction, not best&#8209;effort.</text>
+  </g>
+</svg>
+</body>
+</html>
