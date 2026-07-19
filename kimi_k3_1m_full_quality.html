@@ -141,7 +141,7 @@
 <li><strong>Pre-weights:</strong> K3 open weights land 2026-07-27; the MXFP4/BF16 byte-split, exact layer/KV geometry, and MTP presence are from the blog + lineage inference &mdash; firm within the 1.51&ndash;1.77 TiB range, exact at release.</li>
 <li><strong>MTP flagged:</strong> no K2-line model shipped an MTP module; the +17.8 GiB assumes K3 does. If not, subtract it.</li>
 <li><strong>Price:</strong> Crucial <code>CP48G56C46U5</code> MSRP is a Wayback snapshot and the page flags EOL (Micron exited consumer Crucial DRAM) &mdash; a last-published paper floor; live/IL prices run higher. US retail was bot-walled.</li>
-<li><strong>Scope:</strong> DRAM only. The converter silicon (custom N3E ASIC ~$50M NRE, or FPGA prototype) is separate.</li>
+<li><strong>Scope:</strong> DRAM only. The converter silicon is separate &mdash; a custom <strong>TSMC N7/N6&#8209;class</strong> ASIC (<em>not</em> N3E; the die is pad-limited, so the leading node buys nothing &mdash; see <code>strata_v_design.html</code>&nbsp;&sect;14), or an FPGA prototype.</li>
 </ul>
 
 <footer>

@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<title>Accelerating Frontier MoE Training with 3D Integrated Optics</title>
+<!--Generated on Wed Sep  3 21:08:58 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/browse/0.3.4/css/ar5iv.0.8.2.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/browse/0.3.4/css/ar5iv-fonts.0.8.2.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/browse/0.3.4/css/latexml_styles.0.8.2.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+<script src="/static/browse/0.3.4/js/addons_new.js"></script>
+<script src="/static/browse/0.3.4/js/feedbackOverlay.js"></script>
+<base href="/html/2510.15893v1/"/></head>
+<body>
+<nav class="ltx_page_navbar">
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S1" title="In Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">I </span><span class="ltx_text ltx_font_smallcaps">Introduction</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2" title="In Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II </span><span class="ltx_text ltx_font_smallcaps">Background</span></span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.SS1" title="In II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-A </span><span class="ltx_text ltx_font_italic">LLM Training</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.SS2" title="In II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-B </span><span class="ltx_text ltx_font_italic">Scale-up Networking</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.SS3" title="In II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-C </span><span class="ltx_text ltx_font_italic">Motivation for 3D Integrated Optics</span></span></a>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.SS3.SSS1" title="In II-C Motivation for 3D Integrated Optics ‣ II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-C1 </span>Package Growth and Shoreline Limitations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.SS3.SSS2" title="In II-C Motivation for 3D Integrated Optics ‣ II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-C2 </span>Electrical Reach Limitations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection">
+<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.SS3.SSS3" title="In II-C Motivation for 3D Integrated Optics ‣ II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">II-C3 </span>Challenges for Existing Optical Solutions</span></a>
+<ol class="ltx_toclist ltx_toclist_subsubsection">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.SS3.SSS3.Px1" title="In II-C3 Challenges for Existing Optical Solutions ‣ II-C Motivation for 3D Integrated Optics ‣ II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">Optical Modules</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.SS3.SSS3.Px2" title="In II-C3 Challenges for Existing Optical Solutions ‣ II-C Motivation for 3D Integrated Optics ‣ II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">Linear Pluggable Optics</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.SS3.SSS3.Px3" title="In II-C3 Challenges for Existing Optical Solutions ‣ II-C Motivation for 3D Integrated Optics ‣ II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">Co-packaged Optics</span></a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S3" title="In Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">III </span><span class="ltx_text ltx_font_smallcaps">Passage</span></span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S3.SS0.SSS0.Px1" title="In III Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">Passage Modulators and Wavelength Division Multiplexing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S3.SS0.SSS0.Px2" title="In III Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">Datapath in Passage</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S3.SS0.SSS0.Px3" title="In III Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">Waveguide Routing and Optical Circuit Switching (OCS)</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S3.SS0.SSS0.Px4" title="In III Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">External Laser</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4" title="In Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV </span><span class="ltx_text ltx_font_smallcaps">System Design with Passage</span></span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.SS0.SSS0.Px1" title="In IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">Port Definition</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.SS1" title="In IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV-A </span><span class="ltx_text ltx_font_italic">Energy Efficiency</span></span></a>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.SS1.SSS0.Px1" title="In IV-A Energy Efficiency ‣ IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">SerDes estimate</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.SS1.SSS0.Px2" title="In IV-A Energy Efficiency ‣ IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">LPO</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.SS1.SSS0.Px3" title="In IV-A Energy Efficiency ‣ IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">2.5D, 2D integrated CPO</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.SS1.SSS0.Px4" title="In IV-A Energy Efficiency ‣ IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">Passage</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.SS2" title="In IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV-B </span><span class="ltx_text ltx_font_italic">Area Estimates</span></span></a>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.SS2.SSS0.Px1" title="In IV-B Area Estimates ‣ IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">LPO</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.SS2.SSS0.Px2" title="In IV-B Area Estimates ‣ IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">2.5D, 2D integrated CPO</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.SS2.SSS0.Px3" title="In IV-B Area Estimates ‣ IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">Passage</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.SS3" title="In IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">IV-C </span><span class="ltx_text ltx_font_italic">Impact on GPU and Switch Design</span></span></a>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.SS3.SSS0.Px1" title="In IV-C Impact on GPU and Switch Design ‣ IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">GPU</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.SS3.SSS0.Px2" title="In IV-C Impact on GPU and Switch Design ‣ IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title">Switch</span></a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S5" title="In Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">V </span><span class="ltx_text ltx_font_smallcaps">Application Modeling</span></span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S5.SS1" title="In V Application Modeling ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">V-A </span><span class="ltx_text ltx_font_italic">Analytical modeling tool</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S5.SS2" title="In V Application Modeling ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">V-B </span><span class="ltx_text ltx_font_italic">Mixture-of-Experts workload scenarios</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S5.SS3" title="In V Application Modeling ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">V-C </span><span class="ltx_text ltx_font_italic">Scaling MoE architectures: expert count and fine-grained segmentation</span></span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S6" title="In Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">VI </span><span class="ltx_text ltx_font_smallcaps">Results</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S7" title="In Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">VII </span><span class="ltx_text ltx_font_smallcaps">Conclusions and Future Work</span></span></a></li>
+</ol></nav>
+</nav>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">Accelerating Frontier MoE Training with 3D Integrated Optics</h1>
+<div class="ltx_authors">
+<span class="ltx_creator ltx_role_author">
+<span class="ltx_personname">Mikhail Bernadskiy, Peter Carson, Thomas Graham, Taylor Groves, Ho John Lee, Eric Yeh
+</span><span class="ltx_author_notes">
+<span class="ltx_contact ltx_role_affiliation"><span class="ltx_text ltx_font_italic">Lightmatter</span>
+<br class="ltx_break"/>
+</span></span></span>
+</div>
+<div class="ltx_abstract">
+<h6 class="ltx_title ltx_title_abstract">Abstract</h6>
+<p class="ltx_p">The unabated growth in AI workload demands is driving the need for concerted advances in compute, memory, and interconnect performance. As traditional semiconductor scaling slows, high-speed interconnects have emerged as the new scaling engine, enabling the creation of larger logical GPUs by linking many GPUs into a single, low-latency, high-bandwidth compute domain. While initial scale-up fabrics leveraged copper interconnects for their power and cost advantages, the maximum reach of passive electrical interconnects (approximately 1 meter) effectively limits the scale-up domain to within a single rack. The advent of 3D-stacked optics and logic offers a transformative, power-efficient scale-up solution for connecting hundreds of GPU packages (thousands of GPUs) across multiple data center racks.</p>
+<p class="ltx_p">This work explores the design tradeoffs of scale-up technologies and demonstrates how frontier LLMs necessitate novel photonic solutions to achieve aggressive power and performance targets. We model the benefits of 3D CPO (Passage) enabled GPUs and switches within the scale-up domain when training Frontier Mixture of Experts (MoE) models exceeding one trillion parameters. Our results show that the substantial increases in bandwidth and radix enabled by 3D CPO allow for an 8X increase in scale-up capability. This affords new opportunities for multi-dimensional parallelism within the scale-up domain and results in a 2.7X reduction in time-to-train, unlocking unprecedented model scaling.</p>
+</div>
+<section class="ltx_section" id="S1">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">I </span><span class="ltx_text ltx_font_smallcaps">Introduction</span>
+</h2>
+<div class="ltx_para" id="S1.p1">
+<p class="ltx_p">The race to build larger, more sophisticated AI models is pushing the limits of existing infrastructure.
+At the chip and package level, GPUs are constrained by shoreline, yields and power. These challenges have led to the development of large high-bandwidth, low-latency scale-up pods. These pods effectively combine hundreds of GPUs into a single logical GPU to facilitate a variety of parallelism strategies (e.g. Data, Tensor, Expert) for large AI models. Approaches like Mixture of Experts (MoE) <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx1" title="">1</a>]</cite> have pushed scale-up networks to their limits due to copper reach (1 meter), which constrains the number of GPUs that can be connected within a single network hop.</p>
+</div>
+<div class="ltx_para" id="S1.p2">
+<p class="ltx_p">With MoEs, an ensemble of specialized sub-networks work together through sparse activations to increase model capacity without significantly increasing computational requirements. The output of the selected experts are combined to create the final result. MoE allows models to scale and learn more nuanced representations, but adds additional communications overhead as each set of top-k experts use costly all-to-all operations. Studies have shown that the communication involved in expert parallelism can account for 47% of the forward pass latency, even when utilizing a high-bandwidth scale-up interconnect (7200 Gbps) <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx2" title="">2</a>]</cite>. Larger scale-up domains directly translate into the capability to deploy a larger number of experts and improve model performance.</p>
+</div>
+<div class="ltx_para" id="S1.p3">
+<p class="ltx_p">This paper explores the limitations of current approaches and presents a paradigm shift: the transition from copper to integrated 3D photonics in order to create a more scalable and efficient high-bandwidth domain across racks in the data center. In this work, we show:</p>
+<ul class="ltx_itemize" id="S1.I1">
+<li class="ltx_item" id="S1.I1.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S1.I1.i1.p1">
+<p class="ltx_p">Passage has the unique combination of bandwidth density, port count, reach and energy efficiency to enable multiple generations of innovation in AI infrastructure bringing a <span class="ltx_text ltx_font_bold">8X increase to scale-up pod bandwidth using half the energy of conventional CPO</span>.</p>
+</div>
+</li>
+<li class="ltx_item" id="S1.I1.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S1.I1.i2.p1">
+<p class="ltx_p">Comparisons of system design tradeoffs using electrical, pluggable optics modules, CPO and 3D integrated optics, showing impressive advantages in area and density resulting in a <span class="ltx_text ltx_font_bold">6X reduction in package area expansion compared to CPO</span>.</p>
+</div>
+</li>
+<li class="ltx_item" id="S1.I1.i3" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S1.I1.i3.p1">
+<p class="ltx_p">Application benefit of an expanded scale-up domain for LLM training, demonstrating <span class="ltx_text ltx_font_bold">2.7X</span> speedup in training time compared to electrical designs.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ltx_para" id="S1.p4">
+<p class="ltx_p">We begin with a background on LLM training, scale-up networking and motivation for 3D integrated optics (3D). We then provide an overview of the Passage platform, highlighting the benefits of Passage in terms of bandwidth density, energy efficiency. (Section <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S3" title="III Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">III</span></a>). In Section <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4" title="IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">IV</span></a> we examine how system architects could construct a scale-up domain out of different technologies (LPO, CPO and 3D optics) highlighting the tradeoffs of each approach. We use these systems designs to model performance of frontier LLM training using Mixture of Experts in Sections <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S5" title="V Application Modeling ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">V</span></a> and  <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S6" title="VI Results ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">VI</span></a>. Finally, we provide conclusions and discuss future directions for innovation.</p>
+</div>
+</section>
+<section class="ltx_section" id="S2">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">II </span><span class="ltx_text ltx_font_smallcaps">Background</span>
+</h2>
+<section class="ltx_subsection" id="S2.SS1">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">II-A </span><span class="ltx_text ltx_font_italic">LLM Training</span>
+</h3>
+<div class="ltx_para" id="S2.SS1.p1">
+<p class="ltx_p">Since 2017, transformer-based language models have steadily increased in size, with higher parameter counts enabling increasingly powerful model capabilities. The original 65M parameter transformer <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx3" title="">3</a>]</cite> was trained on a single 8-GPU node, while recent frontier models have on the order of 1 trillion parameters and are trained on datacenter-scale clusters <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx4" title="">4</a>]</cite> <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx5" title="">5</a>]</cite>.
+Models are trained using gradient descent methods, each step requiring a forward pass on a batch of training input, evaluation of a loss metric, and a backward pass computing loss gradients and parameter updates.
+The compute and memory requirements for training a transformer are dominated by the attention block and the feed-forward network (FFN) in each layer, which are mostly matrix multiplication operations. Tensor parallelism <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx6" title="">6</a>]</cite> is commonly used to distribute a single layer across multiple GPUs to speed up compute throughput and increase the memory available for model parameters, activations, and optimizer state.</p>
+</div>
+<div class="ltx_para" id="S2.SS1.p2">
+<p class="ltx_p">In sparse Mixture of Experts (MoE) transformer models <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx1" title="">1</a>]</cite> <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx7" title="">7</a>]</cite>, the FFN layer in the original (now referred to as ”dense”) transformer is replaced by multiple ”experts” (Figure <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.F1" title="Figure 1 ‣ II-A LLM Training ‣ II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">1</span></a>), which are frequently identical to the original FFN network, and a small additional routing network selects which and how many alternatives should be activated for each token. This enables a larger, potentially more expressive model size at a given amount of compute, and the opportunity to ”upcycle” <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx8" title="">8</a>]</cite>
+previously trained dense models into larger sparse MoE models. The compute and data patterns mostly remain as before, but with an additional pattern for routing tokens to selected experts within an MoE layer (”expert parallelism”).</p>
+</div>
+<figure class="ltx_figure" id="S2.F1">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure class="ltx_figure ltx_figure_panel ltx_align_center" id="S2.F1.sf1"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_square" height="685" id="S2.F1.sf1.g1" src="figs/standard_transformer_v2.png" width="598"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">(a)</span> </span><span class="ltx_text" style="font-size:90%;">Dense Model</span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure class="ltx_figure ltx_figure_panel ltx_align_center" id="S2.F1.sf2"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_portrait" height="776" id="S2.F1.sf2.g1" src="figs/moe_transformer_v2.png" width="598"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">(b)</span> </span><span class="ltx_text" style="font-size:90%;">Mixture of Experts (MoE) Model</span></figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 1</span>: </span><span class="ltx_text" style="font-size:90%;">Transformer architectures: (a) Dense model with self-attention and FFN. (b) Sparse MoE with top-k=2 routing selecting experts E<sub class="ltx_sub">2</sub> and E<sub class="ltx_sub">4</sub> based on highest scores shown for token x<sub class="ltx_sub">2</sub>.</span></figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="S2.SS2">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">II-B </span><span class="ltx_text ltx_font_italic">Scale-up Networking</span>
+</h3>
+<div class="ltx_para" id="S2.SS2.p1">
+<p class="ltx_p">Historically, the GPU interconnect bandwidth was limited by PCIe, and inter-GPU connectivity was limited by the network interface card. The advent of NVLink 1.0 for the Pascal generation of GPUs <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx9" title="">9</a>]</cite> allowed for a limited number of GPUs to create a high-bandwidth scale-up domain at 5X the PCIe bandwidth. This was a massive leap forward in bandwidth and effectively enabled the multi-GPU tensor parallelism prominent in modern training.</p>
+</div>
+<figure class="ltx_table" id="S2.T1">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table"><span class="ltx_text" style="font-size:90%;">TABLE I</span>: </span><span class="ltx_text" style="font-size:90%;">A comparison of scale-up vs scale-out networks</span></figcaption>
+<div class="ltx_inline-block ltx_align_center ltx_transformed_outer" style="width:433.6pt;height:58.3pt;vertical-align:-26.8pt;"><span class="ltx_transformed_inner" style="transform:translate(16.1pt,-1.2pt) scale(1.08004066477922,1.08004066477922) ;">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text ltx_font_bold">Network Type</span></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_r ltx_border_t"><span class="ltx_text ltx_font_bold">no. GPUs</span></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_r ltx_border_t"><span class="ltx_text ltx_font_bold">latency</span></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_r ltx_border_t"><span class="ltx_text ltx_font_bold">Tbps/GPU</span></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_r ltx_border_t"><span class="ltx_text ltx_font_bold">Energy</span></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t">Scale-out</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">&gt;100k</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">2-10 <math alttext="\mu" class="ltx_Math" display="inline" id="S2.T1.m1"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>s</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">1.6 Tb/s</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">16 pJ/bit <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx10" title="">10</a>]</cite>
+</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l ltx_border_r ltx_border_t">Scale-up</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r ltx_border_t">&lt;1024</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r ltx_border_t">100-250 ns</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r ltx_border_t">&gt;12.8 Tb/s</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r ltx_border_t">&lt;5 pJ/bit</td>
+</tr>
+</tbody>
+</table>
+</span></div>
+</figure>
+<figure class="ltx_figure" id="S2.F2"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="484" id="S2.F2.g1" src="x1.png" width="1135"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 2</span>: </span><span class="ltx_text" style="font-size:90%;">Single-layer Switch electrical scale-up topology. A single layer of switches (top) is connected to every GPU (bottom) in the pod (only three GPU-to-switch connections shown for brevity). This provides full bandwidth connectivity between any two GPUs in the pod over multiple rails.</span></figcaption>
+</figure>
+<div class="ltx_para" id="S2.SS2.p2">
+<p class="ltx_p">As the number of GPUs increased, switches were incorporated into the design to facilitate the increased bandwidth between a larger number of accelerators.
+Scale-up topologies generally follow one of two approaches. The first is a multi-dimensional torus such as those deployed by the Google TPU network <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx11" title="">11</a>]</cite>. A torus network provides efficient scaling, but incurs a large network diameter. This is fine for deterministic ring-based collective algorithms, such as those employed by tensor parallelism or pipeline parallelism, but can experience congestion and delay for more general traffic patterns, such as expert parallelism with a non-deterministic set of experts. The other commonly deployed topology is a single layer of switching (SLS), which uses multiple GPU rails to switch connections. This is inherently a low-latency network with deterministic routing and performance. This allows full bandwidth between any pair of GPUs, but the scale of the network is limited to the number of ports on the switch (i.e. a 512 port switch can support at most 512 GPUs – one port per GPU). Because of these characteristics, we focus on the SLS topology for the purposes of this paper.</p>
+</div>
+<div class="ltx_para" id="S2.SS2.p3">
+<p class="ltx_p">The size of the GPU scale-up domain has continued to increase over time. While the Nvidia Blackwell DGX pod supported 72 GPUs in 2024, 144 radix scale-up switches have been announced to support 144 GPU packages in 2027 <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx12" title="">12</a>]</cite>. The limiting factor in scaling the pod beyond 144 packages has been the reliance on copper and electrical networking. As was stated in Nvidia GTC 2024, using pluggable optics modules would have required 20 kW, just to drive the NVLink spine. This is a considerable amount of power, given a 120 kW rack budget <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx13" title="">13</a>]</cite>. While electrical networking provides benefits in terms of simplicity and energy efficiency, the reach limitations at high SerDes data rates mean an electrically connected GPU pod is effectively limited to one or two racks. For some, power is a secondary concern compared to the potential benefits of a larger scale-up domain. Huawei has announced a fully optical scale-up domain that supports up to 384 AI accelerators in their Cloud Matrix design <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx14" title="">14</a>]</cite> with over a petabit per second of bandwidth for a single pod. To construct this, they leverage pluggable optical modules, which we discuss further in Section <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.SS3.SSS3" title="II-C3 Challenges for Existing Optical Solutions ‣ II-C Motivation for 3D Integrated Optics ‣ II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">II-C3</span></a>. As the size and bandwidth demands of the scale-up network continue to increase over time, 3D integrated optics provide the ultimate solution, with the bandwidth density and energy efficiency of electrical networks but longer reach.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S2.SS3">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">II-C </span><span class="ltx_text ltx_font_italic">Motivation for 3D Integrated Optics</span>
+</h3>
+<section class="ltx_subsubsection" id="S2.SS3.SSS1">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">II-C1 </span>Package Growth and Shoreline Limitations</h4>
+<div class="ltx_para" id="S2.SS3.SSS1.p1">
+<p class="ltx_p">Slowdowns to Moore’s Law and Dennard Scaling have necessitated larger packages and increased power to deliver next-generation GPU performance. As packages grow, computational capability grows proportional to the area while the I/O is limited to the perimeter of the GPU. To complicate matters, large portions of the shoreline are reserved for HBM, which require short trace lengths for signal integrity.</p>
+</div>
+<figure class="ltx_figure" id="S2.F3"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="259" id="S2.F3.g1" src="figs/4X1_Package.png" width="568"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 3</span>: </span><span class="ltx_text" style="font-size:90%;">A GPU package in a 4 × 1 reticle configuration. Four logic reticles surrounded by HBM stacks on the north and south side in black, intra-package I/O in the middle and inter-package I/O on the east and west side. SerDes Shoreline is highlighted in orange.</span></figcaption>
+</figure>
+<div class="ltx_para" id="S2.SS3.SSS1.p2">
+<p class="ltx_p">Figure <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.F3" title="Figure 3 ‣ II-C1 Package Growth and Shoreline Limitations ‣ II-C Motivation for 3D Integrated Optics ‣ II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">3</span></a> shows an example of a GPU package where four logic chips, 16 stacks of HBM and I/O dies are all placed on a substrate. Both I/O and HBM compete for the shoreline of the chip, leaving only the east and west available for scale-up bandwidth.
+For each I/O die, the bandwidth is limited by the number of SerDes macros that can fit along an edge. Doubling the bandwidth of these SerDes from 224 Gb/s to 448 Gb/s creates signal integrity challenges which require sophisticated equalization and increased power.</p>
+</div>
+</section>
+<section class="ltx_subsubsection" id="S2.SS3.SSS2">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">II-C2 </span>Electrical Reach Limitations</h4>
+<div class="ltx_para" id="S2.SS3.SSS2.p1">
+<p class="ltx_p">As speeds of SerDes increase, electrical reach of the signal is reduced. At 224 Gb/s the reach of passive Direct Attached Copper (DAC) is approximately 1 m, and at 448 Gb/s the reach is expected to be tens of centimeters. To reduce the insertion loss, high-speed electrical solutions are moving towards co-packaged copper, and flyover cables to bypass lossy PCB traces.
+For longer distances retimers must be deployed, which increases power. The short reach of copper means GPUs and switches must be densely configured within a single rack. This creates rack-level power challenges and shifts costs to cooling and infrastructure. Current electrical systems are challenged to move beyond 72 GPU packages within a single pod.</p>
+</div>
+</section>
+<section class="ltx_subsubsection" id="S2.SS3.SSS3">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">II-C3 </span>Challenges for Existing Optical Solutions</h4>
+<div class="ltx_para" id="S2.SS3.SSS3.p1">
+<p class="ltx_p">Optics have been deployed successfully for decades for applications where the distance between endpoints surpasses the capability of electrical transmission. This includes long-haul (across continents), between
+datacenters (metro-regional) and within datacenters (hundreds of meters). For each environment, the technology is optimized for differing criteria. Since this work is focused on scale-up networks, we will discuss only the intra-datacenter application of optics.</p>
+</div>
+<div class="ltx_para" id="S2.SS3.SSS3.p2">
+<p class="ltx_p">The hurdles to deploying optics broadly within the datacenter have been cost, reliability and energy efficiency.
+While optics cost more than passive copper solutions, the benefits of expanded reach add the potential for increased GPUs in the scale-up domain and faster time to solution. We demonstrate this benefit in Section <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S6" title="VI Results ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">VI</span></a>.
+Optics typically use lasers to power the transmission. Lasers add cost, power, and can be temperature sensitive, failing at higher rates compared to copper connections. Laser solutions must have fault tolerance and field-replaceable features baked into the design when operating at datacenter scale. Also, the fiber connections are sensitive to contaminants or dust, making replacement a potential source of failure as well. All of these components must be tested to ensure they are known-good before incorporating into a system.</p>
+</div>
+<div class="ltx_para" id="S2.SS3.SSS3.p3">
+<p class="ltx_p">Optics enable disaggregation of the scale-up pod, creating an opportunity for power and cooling savings at the rack level, but given the massive amount of scale-up bandwidth (order of magnitude greater than scale-out), optics must be incredibly power efficient to fit within the GPU package and tray power budgets. At 5 pJ/bit, optics is effectively at parity with passive copper based solutions <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx15" title="">15</a>, <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx16" title="">16</a>]</cite> and 14.4 Tb/s of scale-up bandwidth results in 72 W of power per GPU. At 20 pJ/bit this increases to over 288 W per GPU and reduces power available to computation. 20 pJ/bit effectively makes higher levels of scale-up bandwidth infeasible. Energy efficiency of the scale-up network is paramount.</p>
+</div>
+<figure class="ltx_table" id="S2.T2">
+<div class="ltx_inline-block ltx_transformed_outer" style="width:433.6pt;height:268.4pt;vertical-align:-268.4pt;"><span class="ltx_transformed_inner" style="transform:translate(-21.5pt,0.0pt) scale(0.909902645093008,0.909902645093008) ;">
+<table class="ltx_tabular ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_border_l ltx_border_r ltx_border_t"></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Optical Module</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">LPO incl.</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">2/2.5D CPO incl.</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_border_l ltx_border_r"></td>
+<td class="ltx_td ltx_align_center ltx_border_r">incl. Host SerDes</td>
+<td class="ltx_td ltx_align_center ltx_border_r">Host SerDes</td>
+<td class="ltx_td ltx_align_center ltx_border_r">Host SerDes</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">Bandwidth</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">✗</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">✗</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Medium</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r">Density</td>
+<td class="ltx_td ltx_border_r"></td>
+<td class="ltx_td ltx_border_r"></td>
+<td class="ltx_td ltx_border_r"></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">Energy</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">21 pJ/bit</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">13 pJ/bit</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">12 pJ/bit</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r">Efficiency</td>
+<td class="ltx_td ltx_align_center ltx_border_r"><cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx10" title="">10</a>]</cite></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx17" title="">17</a>, <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx18" title="">18</a>, <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx19" title="">19</a>]</cite></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx20" title="">20</a>]</cite></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">Latency</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">High (Retimed)</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Medium</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Low</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_border_l ltx_border_r ltx_border_t"></td>
+<td class="ltx_td ltx_border_r ltx_border_t"></td>
+<td class="ltx_td ltx_border_r ltx_border_t"></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">with external</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r">Serviceability</td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math alttext="\char 51" class="ltx_Math" display="inline" id="S2.T2.m1"><semantics><mi mathvariant="normal">✓</mi><annotation encoding="application/x-tex">\char 51</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math alttext="\char 51" class="ltx_Math" display="inline" id="S2.T2.m2"><semantics><mi mathvariant="normal">✓</mi><annotation encoding="application/x-tex">\char 51</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r">laser and</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_border_l ltx_border_r"></td>
+<td class="ltx_td ltx_border_r"></td>
+<td class="ltx_td ltx_border_r"></td>
+<td class="ltx_td ltx_align_center ltx_border_r">plug. coupler</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">Std. Mechanical</td>
+<td class="ltx_td ltx_border_r ltx_border_t"></td>
+<td class="ltx_td ltx_border_r ltx_border_t"></td>
+<td class="ltx_td ltx_border_r ltx_border_t"></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r">Form Factor</td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math alttext="\char 51" class="ltx_Math" display="inline" id="S2.T2.m3"><semantics><mi mathvariant="normal">✓</mi><annotation encoding="application/x-tex">\char 51</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math alttext="\char 51" class="ltx_Math" display="inline" id="S2.T2.m4"><semantics><mi mathvariant="normal">✓</mi><annotation encoding="application/x-tex">\char 51</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r">✗</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r ltx_border_t">Link</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math alttext="\char 51" class="ltx_Math" display="inline" id="S2.T2.m5"><semantics><mi mathvariant="normal">✓</mi><annotation encoding="application/x-tex">\char 51</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Co-design</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">Co-design</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_l ltx_border_r">Interoperability</td>
+<td class="ltx_td ltx_border_r"></td>
+<td class="ltx_td ltx_align_center ltx_border_r">with host</td>
+<td class="ltx_td ltx_align_center ltx_border_r">with host</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_l ltx_border_r ltx_border_t">HVM</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math alttext="\char 51" class="ltx_Math" display="inline" id="S2.T2.m6"><semantics><mi mathvariant="normal">✓</mi><annotation encoding="application/x-tex">\char 51</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t"><math alttext="\char 51" class="ltx_Math" display="inline" id="S2.T2.m7"><semantics><mi mathvariant="normal">✓</mi><annotation encoding="application/x-tex">\char 51</annotation></semantics></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">2026</td>
+</tr>
+</tbody>
+</table>
+</span></div>
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_table"><span class="ltx_text" style="font-size:90%;">TABLE II</span>: </span><span class="ltx_text" style="font-size:90%;">Comparison of the key qualities associated with legacy optical technologies. Energy efficiency assumes 5 pJ/bit for LR class 112 Gb/s PAM-4 SerDes with DSP on the host  <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx15" title="">15</a>, <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx16" title="">16</a>]</cite> (e.g. GPU or switch) plus 16 pJ/bit for optical module, 8 pJ/bit for DR8 LPO and 7 pJ/bit for 2.5D CPO and laser.</span></figcaption>
+</figure>
+<section class="ltx_paragraph" id="S2.SS3.SSS3.Px1">
+<h5 class="ltx_title ltx_title_paragraph">Optical Modules</h5>
+<div class="ltx_para" id="S2.SS3.SSS3.Px1.p1">
+<p class="ltx_p">Typical pluggable optical modules (e.g., OSFP) often integrate power-hungry DSPs and retimers to overcome host-to-module signal loss, resulting in high aggregate power (e.g., 21 pJ/bit) and large form factors (<math alttext="&gt;2000" class="ltx_Math" display="inline" id="S2.SS3.SSS3.Px1.p1.m1"><semantics><mrow><mi></mi><mo>&gt;</mo><mn>2000</mn></mrow><annotation encoding="application/x-tex">&gt;2000</annotation></semantics></math> sqmm). While easily field-replaceable and interoperable across platforms, their inherent power consumption and significant area footprint limit density.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S2.SS3.SSS3.Px2">
+<h5 class="ltx_title ltx_title_paragraph">Linear Pluggable Optics</h5>
+<div class="ltx_para" id="S2.SS3.SSS3.Px2.p1">
+<p class="ltx_p">LPO transceivers are an optimization of conventional pluggable optics modules such that the DSP is removed from the module itself. It is a linear drive in the sense that the signal from one host to another host device does not require a retimer or incur the extra power and performance overheads. The expectation is that an LPO module is approximately 25-50% more power efficient than a conventional pluggable module <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx19" title="">19</a>, <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx17" title="">17</a>]</cite>. This creates a reliance on the host-side interface to do the heavy lifting and drive the signal without retimers. Therefore host SerDes in an LPO-based system are expected to rely on DSPs and be in the range of 4.5-6 pJ/bit <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx15" title="">15</a>, <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx16" title="">16</a>]</cite>. LPO solutions must be co-designed in consideration of the host platform capabilities and link budget specific to a given end device (GPU, CPU, Switch, etc). In some cases LPO optics utilize flyover cables between the host and the module to reduce losses further, but this adds expense and complexity. LPOs still leverage large form factors (e.g. OSFP-XD) resulting in low bandwidth density compared to integrated optics. As data rates and the number of channels per module increase the modules may require cold-plate cooling.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S2.SS3.SSS3.Px3">
+<h5 class="ltx_title ltx_title_paragraph">Co-packaged Optics</h5>
+<div class="ltx_para" id="S2.SS3.SSS3.Px3.p1">
+<p class="ltx_p">Co-packaged optics describes the process of taking the optical transceiver and moving it onto the same package as the device it is supporting (typically a processor or switch). It is compelling because you reduce the distance traveled electrically over a high loss medium such as a PCB, and decrease latency compared to a pluggable optical module. When discussing co-packaged optics it is helpful to distinguish between the approach taken to build the Optical Engine and how it’s integrated into the host package. In both contexts, the concepts of 2D, 2.5D and 3D design can apply.</p>
+</div>
+<div class="ltx_para" id="S2.SS3.SSS3.Px3.p2">
+<p class="ltx_p">The integration with the host may be 2D or 2.5D. A good overview of this topic has been provided by Lee, Nedovic, Greer and Gray <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx21" title="">21</a>]</cite>. In both 2D and 2.5D packaging, the host chip and OE are placed side by side, but 2D integration uses an organic substrate with further distance between the OE and host whereas 2.5D has higher bandwidth density and energy efficiency. 2D approaches can result in larger packages and greater beachfront expansion as traces fan-out from the host to OEs. The losses associated with the beachfront expansion translate into increased energy consumption on the host SerDes.
+In practice Table <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.T2" title="TABLE II ‣ II-C3 Challenges for Existing Optical Solutions ‣ II-C Motivation for 3D Integrated Optics ‣ II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">II</span></a> shows that CPO with large beachfront expansion does not deliver substantially different energy efficiency than linear pluggable optics, when accounting for the host based SerDes.</p>
+</div>
+<figure class="ltx_figure" id="S2.F4"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="362" id="S2.F4.g1" src="figs/2.5DV3DCPO.png" width="568"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 4</span>: </span><span class="ltx_text" style="font-size:90%;">Difference between 2D and 2.5D integration of optical engines (OEs). The left most approach shows larger 2.5D OEs with 2D host integration over an organic substrate and the resulting beachfront expansion. The rightmost approach shows smaller 3D OEs that are 2.5D-integrated in close proximity to the host on an interposer or bridge.</span></figcaption>
+</figure>
+<div class="ltx_para" id="S2.SS3.SSS3.Px3.p3">
+<p class="ltx_p">The optical engine itself may also be constructed in a variety of ways. 2D OEs lay out the electrical I/O and photonic components in a single plane rather than stacking a separate Electrical Integrated Circuit (EIC) and Photonic Integrated Circuit (PIC). This approach requires more area and is shoreline limited with respect to the number of electrical interfaces it can support. In a 2.5D approach the EIC and PIC may be stacked on top of each other, but have limited ability to pass power and signals from the substrate through the bottom die. This requires routing those traces around the chip using redistribution layers and through mold vias rather than through the PIC or EIC, resulting in a larger OE.</p>
+</div>
+<div class="ltx_para" id="S2.SS3.SSS3.Px3.p4">
+<p class="ltx_p">In the next section we discuss a different approach taken by Passage, a fully 3D design, where EIC and PIC are stacked with Passage supporting power and signal delivery through the PIC itself with TSVs. This allows for maximal design flexibility with respect to the placement of I/O, the lowest pJ/bit and highest and bandwidth density.</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section class="ltx_section" id="S3">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">III </span><span class="ltx_text ltx_font_smallcaps">Passage</span>
+</h2>
+<figure class="ltx_figure" id="S3.F5"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="298" id="S3.F5.g1" src="figs/PassageExplodedView.png" width="568"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 5</span>: </span><span class="ltx_text" style="font-size:90%;">Exploded view of a Passage Interposer Solution: (1) EIC, (2) PIC, (3) Fiber Attach Unit, (4) fibers and (5) substrate. Blue vertical lines distributed throughout package area represent I/O enabled without SerDes shoreline constraints.</span></figcaption>
+</figure>
+<div class="ltx_para" id="S3.p1">
+<p class="ltx_p">Lightmatter Passage is a 3D photonics platform. 3D stacking of electrical and optical interfaces places the optical elements directly underneath the footprint of electrical SerDes.
+This creates a tightly integrated, high-bandwidth, and low energy solution. The energy efficiency of current Passage products is 2.3 pJ/bit for PIC and laser <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx22" title="">22</a>]</cite> plus SerDes, which is design dependent. For short reach SerDes (e.g. XSR or VSR) this may be 1 pJ/bit <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx23" title="">23</a>]</cite> at 112 Gb/s PAM-4 or 2 pJ/bit with NRZ modulation. This results in substantially greater efficiency than competing solutions (4.3 pJ/bit PIC, EIC, Laser and SerDes) – and is lower than an electrical solution with DSP-based SerDes.</p>
+</div>
+<div class="ltx_para" id="S3.p2">
+<p class="ltx_p">Passage is offered as either (1) 3D OE with 2.5D integration or (2) an optical interposer that sits under the entirety of the processor or switch. An OE-based design is compatible with a variety of host designs provided they share a compatible die to die interface. A Passage OE is similar in concept to HBM technology – a set of 3D stacked dies, 2.5D-integrated with the host. The die to die interface of an OE chiplet adds a small amount of power (0.5 pJ/bit<cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx24" title="">24</a>]</cite>). An interposer design offers compelling advantages such as cross-reticle waveguide stitching to support larger multi-reticle or waferscale designs.
+To explain this in greater detail, Figure <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S3.F5" title="Figure 5 ‣ III Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">5</span></a> shows an exploded view of a Passage Interposer design, where an EIC (1) sits on top of the PIC (2). The EIC could be any computing device, but typical bandwidth hungry devices would be an GPU or a switch. The EIC consists of one or more reticles and can be as large as a waferscale. As discussed in Sec. <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2" title="II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">II</span></a>, a traditional EIC places I/O and SerDes along its perimeter, whereas a Passage-enabled EIC can utilize I/O from anywhere within the chip area as indicated by vertical blue bars (signals) in the image. The Passage PIC (2) is a combination of SiPh and conventional CMOS technology. In addition to enabling optics, the PIC contains Through-Silicon Vias (TSVs) to provide the EIC with power and signaling from the Substrate (5). The PIC integrates all the components necessary to convert electrical signals to optical signals.</p>
+</div>
+<section class="ltx_paragraph" id="S3.SS0.SSS0.Px1">
+<h5 class="ltx_title ltx_title_paragraph">Passage Modulators and Wavelength Division Multiplexing</h5>
+<div class="ltx_para" id="S3.SS0.SSS0.Px1.p1">
+<p class="ltx_p">Passage uses arrays of Microring Modulators (MRMs) to support high-bandwidth wavelength division multiplexing (WDM). MRMs are thermally controlled to resonate at different frequencies allowing for multiple wavelengths (also referred to as lambdas or colors) of light to share a single silicon waveguide or fiber. Passage supports up to 16 colors per fiber, resulting in up to 1.792 Tb/s bandwidth per fiber at 112 Gb/s PAM-4. This is 8 times higher density than CPO using single-lambda 224 Gb/s PAM-4 per fiber <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx20" title="">20</a>]</cite>. Alternatively, the WDM can utilize lower data rate SerDes for higher energy efficiency (such as 56 Gb/s NRZ). Data transmission can even be bidirectional where TX and RX signals share the same fiber to improve fiber utilization. Using WDM provides significantly greater bandwidth per fiber than single lambda approaches.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S3.SS0.SSS0.Px2">
+<h5 class="ltx_title ltx_title_paragraph">Datapath in Passage</h5>
+<figure class="ltx_figure" id="S3.F6"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="147" id="S3.F6.g1" src="figs/PassageCutThrough.png" width="538"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 6</span>: </span><span class="ltx_text" style="font-size:90%;">Illustration of Passage cut-through describing path of data through Passage. Data is transmitted from multiple rows of SerDes distributed throughout the area of the EIC (1) to the Microring Modulator (MRM) within the PIC (2). From the MRM arrays, multiple wavelengths of light travel along silicon waveguides (3). In the case of a multi-reticle Passage design, cross-reticle waveguide stitching (4) creates a continuous path across the EIC reticle boundaries. If the destination is a remote node, the waveguides egress through the Fiber Attach Unit (FAU) and transition to larger optical fibers (5). The receive side path mirrors this process but includes a photodetector and transimpedance amplifiers.</span></figcaption>
+</figure>
+<div class="ltx_para" id="S3.SS0.SSS0.Px2.p1">
+<p class="ltx_p">Figure <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S3.F6" title="Figure 6 ‣ Datapath in Passage ‣ III Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">6</span></a> shows an alternate view of the Passage design. It highlights multiple rows of SerDes modules (1) throughout the area of the EIC. The optical and electrical components of the Passage PIC (MRM, driver, waveguides, and transimpedance amplifier (TIA)) sit within the shadow of the EIC. The stacked EIC and PIC design creates efficient use of area and maximizes the bandwidth per square mm. The distance between the SerDes and the optical conversion (2) is under 100 <math alttext="\mu" class="ltx_Math" display="inline" id="S3.SS0.SSS0.Px2.p1.m1"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>m, enabling the use of energy-efficient short reach SerDes without requiring DSPs. Waveguides (3) allow optical transmission through silicon to another reticle within the same package or to FAUs.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S3.SS0.SSS0.Px3">
+<h5 class="ltx_title ltx_title_paragraph">Waveguide Routing and Optical Circuit Switching (OCS)</h5>
+<div class="ltx_para" id="S3.SS0.SSS0.Px3.p1">
+<p class="ltx_p">Waveguides provide flexible routing through the silicon, capable of bends, crossings and solid-state switching. Within Passage Mach-Zender Interferometers (MZIs) enable 2 <math alttext="\times" class="ltx_Math" display="inline" id="S3.SS0.SSS0.Px3.p1.m1"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math> 2 switching elements that are programmable and reconfigurable. This creates an OCS capability within the GPU or Packet Switch host itself. The OCS allows for (1) component-level resiliency to be built into the device, (2) multi-reticle designs, and (3) application-level optimizations via intra- and inter-Passage topology reconfigurations. For waferscale designs Passage has demonstrated cross-reticle waveguide stitching, enabling a direct path from the fiber at the edge of the chip to any reticle on the device. This is a key enabler for fully 3D devices.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S3.SS0.SSS0.Px4">
+<h5 class="ltx_title ltx_title_paragraph">External Laser</h5>
+<div class="ltx_para" id="S3.SS0.SSS0.Px4.p1">
+<p class="ltx_p">Another benefit of Passage compared to pluggable modules and LPOs is the use of an external laser module. The light generated by the laser is brought into Passage from a dedicated set of laser fibers before being split and directed to specific channels. External lasers provide the ability to place the laser module where it is easier to control for thermal variability and stress, but more importantly, it allows the laser module to be replaced as a standalone unit. This is crucial when the photonics are integrated into expensive packages such as a GPU. Another benefit of external lasers is that the power consumption is out of package, which allows for greater power delivery to compute resources.</p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="S4">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">IV </span><span class="ltx_text ltx_font_smallcaps">System Design with Passage</span>
+</h2>
+<div class="ltx_para" id="S4.p1">
+<p class="ltx_p">In this section we examine three different approaches to constructing an optical GPU solution that enable a 512 GPU package (2048 GPU die) scale-up Pod. The approaches are (1) LPO, (2) 2.5D CPO with 2D integration and (3) Passage optical interposer . For each approach we generate projections of the power and energy required as well as the growth in area (package and board). We assume a Single Layer of Switches (SLS) topology as explained in Section <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2" title="II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">II</span></a>, such that each switch has at least one port connected to every GPU in the pod.</p>
+</div>
+<section class="ltx_paragraph" id="S4.SS0.SSS0.Px1">
+<h5 class="ltx_title ltx_title_paragraph">Port Definition</h5>
+<div class="ltx_para" id="S4.SS0.SSS0.Px1.p1">
+<p class="ltx_p">We assume 448 Gb/s raw bandwidth per port which is the expected path of scale-up standards such as UALink <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx25" title="">25</a>]</cite>. Larger port designs make it challenging to build high radix switches as the aggregate bandwidth within the switch fabric increases. Smaller port designs lead to inefficient use of data fibers and poor bandwidth density. A 400 Gb/s port can be constructed differently dependent on the SerDes speed and number of lanes per port. For Passage this is 8 lambda at 56 Gb/s NRZ encoding. For other approaches this could be 4 lanes of 112 Gb/s PAM-4, or likely 2 lanes of 224 Gb/s PAM-4. For scenarios where we assume a dense module (e.g. 1.6T DR8 LPO) a 400 Gb/s port requires breakout cabling to bifurcate the links so that the 400 Gb/s port can act as a distinct rail from GPU to switch in the SLS topology.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S4.SS1">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">IV-A </span><span class="ltx_text ltx_font_italic">Energy Efficiency</span>
+</h3>
+<figure class="ltx_table" id="S4.T3">
+<div class="ltx_inline-block ltx_align_center ltx_transformed_outer" style="width:433.6pt;height:147.3pt;vertical-align:-70.8pt;"><span class="ltx_transformed_inner" style="transform:translate(53.2pt,-9.4pt) scale(1.32492746582397,1.32492746582397) ;">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_th ltx_th_row ltx_border_l ltx_border_r ltx_border_t"></th>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1.6T DR8 LPO</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">224G 2.5D</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">56GX8<math alttext="\lambda" class="ltx_Math" display="inline" id="S4.T3.m1"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math> Passage</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_th ltx_th_row ltx_border_l ltx_border_r"></th>
+<td class="ltx_td ltx_align_center ltx_border_r">224G/lane</td>
+<td class="ltx_td ltx_align_center ltx_border_r">CPO</td>
+<td class="ltx_td ltx_align_center ltx_border_r">Interposer</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_r ltx_border_t">In-package pJ/bit</th>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">5</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">9.7</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text ltx_font_bold">3.2</span></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_r ltx_border_t">Off-package pJ/bit</th>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">8</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">2.3</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text ltx_font_bold">1.1</span></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_r ltx_border_t">Total pJ/bit</th>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="position:relative; bottom:-8.6pt;">13</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text" style="position:relative; bottom:-8.6pt;">12</span></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><span class="ltx_text ltx_font_bold" style="position:relative; bottom:-8.6pt;">4.3</span></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_r">(Optics, Phy, Laser)</th>
+<td class="ltx_td ltx_border_b ltx_border_r"></td>
+<td class="ltx_td ltx_border_b ltx_border_r"></td>
+<td class="ltx_td ltx_border_b ltx_border_r"></td>
+</tr>
+</tbody>
+</table>
+</span></div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table"><span class="ltx_text" style="font-size:90%;">TABLE III</span>: </span><span class="ltx_text" style="font-size:90%;">Energy efficiency of (1) 1.6T 224G DR8 LPO, (2) 2.5D CPO with 2D integration, and Passage interposer design. Host could be GPU, Switch or similar device.</span></figcaption>
+</figure>
+<div class="ltx_para" id="S4.SS1.p1">
+<p class="ltx_p">In Table <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.T3" title="TABLE III ‣ IV-A Energy Efficiency ‣ IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">III</span></a> we highlight the energy efficiency of an LPO 2.5D CPO and Passage Interposer design.</p>
+</div>
+<section class="ltx_paragraph" id="S4.SS1.SSS0.Px1">
+<h5 class="ltx_title ltx_title_paragraph">SerDes estimate</h5>
+<div class="ltx_para" id="S4.SS1.SSS0.Px1.p1">
+<p class="ltx_p">We assume that both the LPO module and the 2.5D CPO with 2D integration are directly driven by host based SerDes. Existing 112G-LR SerDes provide estimates of 4.5-6 pJ/bit<cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx15" title="">15</a>, <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx16" title="">16</a>]</cite>. At 224G speeds there are fewer results of measured energy efficiency. Researchers at Synopsys published a 224Gb/s 3 pJ/bit 40 dB insertion loss design <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx26" title="">26</a>]</cite>, but this did not include the power dedicated to the DSP, which contributes significant additional power. For these reasons 5 pJ/bit is our assumed energy efficiency for 224G-LR SerDes. The SerDes power is included as part of the in-package power for GPU and switch estimates in this section.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S4.SS1.SSS0.Px2">
+<h5 class="ltx_title ltx_title_paragraph">LPO</h5>
+<div class="ltx_para" id="S4.SS1.SSS0.Px2.p1">
+<p class="ltx_p">For a DR8 class (500m reach) SiPh LPO device we see a range of power numbers given in literature (6.25 pJ/bit <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx27" title="">27</a>]</cite> to 10-11.25 pJ/bit 800G (112G PAM-4) <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx18" title="">18</a>, <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx28" title="">28</a>]</cite> in existing devices). OIF’s estimates suggest that LPO devices could provide up to a 50% savings in energy efficiency over traditional pluggable modules <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx17" title="">17</a>]</cite>. We use 8 pJ/bit for our estimates of a 1.6T DR8 module.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S4.SS1.SSS0.Px3">
+<h5 class="ltx_title ltx_title_paragraph">2.5D, 2D integrated CPO</h5>
+<div class="ltx_para" id="S4.SS1.SSS0.Px3.p1">
+<p class="ltx_p">We use the data from the 2024 HotChips presentation of the Bailly CPO architecture <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx20" title="">20</a>]</cite> as a reference point for a 2.5D Optical Engine. In this presentation, a 51.2 Tb/s switch design results in 241 Watts of power for optical engines and 118 Watts of power for external lasers. This is equivalent to 4.7 pJ/bit and 2.3 pJ/bit, respectively. We assume the same energy efficiency for PIC and laser in a 224G design. In  <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx20" title="">20</a>]</cite> the 112G SerDes Phy are located on the host and must drive a signal over a large beachfront distance. We assume the same 5 pJ/bit used in the LPO power estimates. If the SerDes I/O die is connected to the host die over an 2.5D die-to-die interconnect this would add another 0.5 pJ/bit <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx24" title="">24</a>]</cite>, but we assume a monolithic host with SerDes.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S4.SS1.SSS0.Px4">
+<h5 class="ltx_title ltx_title_paragraph">Passage</h5>
+<div class="ltx_para" id="S4.SS1.SSS0.Px4.p1">
+<p class="ltx_p">For a Passage based optical interposer design we use the 2.3 pJ/bit number provided at  <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx22" title="">22</a>]</cite> for PIC and laser. We further split this into 1.1 pJ/bit for the laser (off-package power) and 1.2 pJ/bit for the PIC (in-package power). For the SerDes we use 1 pJ/bit given by Tonietto <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx23" title="">23</a>]</cite> for a 112G PAM-4 XSR design and conservatively double that to 2 pJ/bit for 56G NRZ. Passage is able to utilize much lower power SerDes due to the short drive distance required (less than 100 <math alttext="\mu" class="ltx_Math" display="inline" id="S4.SS1.SSS0.Px4.p1.m1"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>m).</p>
+</div>
+</section>
+</section>
+<section class="ltx_subsection" id="S4.SS2">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">IV-B </span><span class="ltx_text ltx_font_italic">Area Estimates</span>
+</h3>
+<figure class="ltx_figure" id="S4.F7"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="352" id="S4.F7.g1" src="figs/GPUPowerCompare.png" width="568"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 7</span>: </span><span class="ltx_text" style="font-size:90%;">2.8<math alttext="\times" class="ltx_Math" display="inline" id="S4.F7.m2"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math> less power of Passage interposer over conventional optics for a 32 Tb/s unidirectional GPU. Calculations based on values from Table <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.T3" title="TABLE III ‣ IV-A Energy Efficiency ‣ IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">III</span></a>.</span></figcaption>
+</figure>
+<section class="ltx_paragraph" id="S4.SS2.SSS0.Px1">
+<h5 class="ltx_title ltx_title_paragraph">LPO</h5>
+<div class="ltx_para" id="S4.SS2.SSS0.Px1.p1">
+<p class="ltx_p">We use the specified 105.8 mm <math alttext="\times" class="ltx_Math" display="inline" id="S4.SS2.SSS0.Px1.p1.m1"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math> 22.58 mm dimensions <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx29" title="">29</a>]</cite> for a total area of 2,389 sqmm per module. We assume up to 16 channels (32 fibers) within a single extra dense module. For a 3.2T module this results in an areal bandwidth density of 1.3 Gb/s/sqmm.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S4.SS2.SSS0.Px2">
+<h5 class="ltx_title ltx_title_paragraph">2.5D, 2D integrated CPO</h5>
+<div class="ltx_para" id="S4.SS2.SSS0.Px2.p1">
+<p class="ltx_p">For this analysis we assume a 15 mm <math alttext="\times" class="ltx_Math" display="inline" id="S4.SS2.SSS0.Px2.p1.m1"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math> 25 mm footprint for an optical engine with 10 mm of beachfront and 12.8 Tbps unidirectional bandwidth (using 224G SerDes). This is reasonable given estimates of ”roughly 1 Tbps/mm” <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx30" title="">30</a>]</cite> and industry roadmaps <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx20" title="">20</a>]</cite>. This suggests areal density of approximately 34 Gb/s/sqmm or 24 Gb/s/sqmm when accounting for beachfront.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S4.SS2.SSS0.Px3">
+<h5 class="ltx_title ltx_title_paragraph">Passage</h5>
+<div class="ltx_para" id="S4.SS2.SSS0.Px3.p1">
+<p class="ltx_p">An optical interposer design sits under the host monolithic or multi-chip module. There is a small amount of area expansion typically to account for fiber attach mechanisms. We use 5 mm of Passage expansion beyond the host chip. The other dependency is the number of fibers being attached. These fibers are 127 <math alttext="\mu" class="ltx_Math" display="inline" id="S4.SS2.SSS0.Px3.p1.m1"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>m and can be estimated at 4 fibers per mm of shoreline. For a 56G 8<math alttext="\lambda" class="ltx_Math" display="inline" id="S4.SS2.SSS0.Px3.p1.m2"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math> design this means two TX and two RX fibers per 5 sqmm or 160 Gb/s/sqmm. This is particular to this design point as some Passage designs may (1) interleave TX and RX within the same fiber to increase this density and (2) utilize 112G PAM-4 modulation. <span class="ltx_text ltx_font_bold">For a 400 Gb/s port definition, this represents a 123<math alttext="\times" class="ltx_Math" display="inline" id="S4.SS2.SSS0.Px3.p1.m3"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math> and 6.6<math alttext="\times" class="ltx_Math" display="inline" id="S4.SS2.SSS0.Px3.p1.m4"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math> reduction in additional optical area compared to LPO and 2.5D/2D-integrated CPO, respectively</span></p>
+</div>
+</section>
+</section>
+<section class="ltx_subsection" id="S4.SS3">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">IV-C </span><span class="ltx_text ltx_font_italic">Impact on GPU and Switch Design</span>
+</h3>
+<section class="ltx_paragraph" id="S4.SS3.SSS0.Px1">
+<h5 class="ltx_title ltx_title_paragraph">GPU</h5>
+<div class="ltx_para" id="S4.SS3.SSS0.Px1.p1">
+<p class="ltx_p">GPU Packages continue to deliver 2-fold aggregate performance increases per generation. Much of these gains come from increases to package size and the number of GPU and memory dies with a modest 15% improvement in performance due to increases in process (e.g. N7 to N5 process with equivalent power)  <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx31" title="">31</a>]</cite>. In the 2028 timeframe, high-end GPUs will consist of 4 logic dies with stacks of HBM on two sides of package perimeter. The logic dies are configured in a 2X2 or 1X4 configuration. We assume a full reticle is 26 mm x 33 mm and that stacks of HBM are 13 X 11 mm.</p>
+</div>
+<div class="ltx_para" id="S4.SS3.SSS0.Px1.p2">
+<p class="ltx_p">Recent extensions of roadmaps <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx12" title="">12</a>]</cite> show a 2027-28 GPU in a configuration similar to Figure <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.F3" title="Figure 3 ‣ II-C1 Package Growth and Shoreline Limitations ‣ II-C Motivation for 3D Integrated Optics ‣ II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">3</span></a> with 16 stacks of HBM4 (north and south sides) totaling 209 Tb/s (26 TB/s) of memory bandwidth (6.4 GT/s). This leaves two sides of the package available for I/O. For I/O we assume 32 Tb/s RX and 32 Tb/s TX bandwidth which provides a ratio of 6.67:1 of HBM to scale-up bandwidth per GPU.</p>
+</div>
+<div class="ltx_para" id="S4.SS3.SSS0.Px1.p3">
+<p class="ltx_p">Achieving 32 Tb/s of bandwidth on a GPU would require 160 channels of 8<math alttext="\times" class="ltx_Math" display="inline" id="S4.SS3.SSS0.Px1.p3.m1"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math>400 Gb/s (224 Gb/s-PAM4). This is equivalent to 10 OSFP-XD modules. In aggregate this is over 20,000 sqmm of board area. The bandwidth required per device would likely lead to the use of co-packaged copper or copper flyover cables from the host to the modules to reduce PCB losses.</p>
+</div>
+<figure class="ltx_figure" id="S4.F8"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="336" id="S4.F8.g1" src="figs/AreaCompareBar.png" width="568"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 8</span>: </span><span class="ltx_text" style="font-size:90%;">Comparison of the area required to support 32 Tb/s unidirectional bandwidth on a four reticle GPU. Includes GPU package (logic and HBM), optics on-package, package beachfront expansion, and board expansion. </span></figcaption>
+</figure>
+<div class="ltx_para" id="S4.SS3.SSS0.Px1.p4">
+<p class="ltx_p">For a 2.5D CPO solution, this would require 3 12.8T OEs, but using the areal bandwidth densities previously calculated, this would result in  1312 mm of combined OE plus beachfront expansion. For a Passage interposer design, this is a relatively small 200 sqmm.
+Figure <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.F8" title="Figure 8 ‣ GPU ‣ IV-C Impact on GPU and Switch Design ‣ IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">8</span></a> shows LPO modules require a massive area of real estate on the board compared to co-packaged optics and interposer based designs. The CPO solution results in a 23% increase in package area of the GPU compared to a 3.5% increase for a optical interposer.</p>
+</div>
+</section>
+<section class="ltx_paragraph" id="S4.SS3.SSS0.Px2">
+<h5 class="ltx_title ltx_title_paragraph">Switch</h5>
+<div class="ltx_para" id="S4.SS3.SSS0.Px2.p1">
+<p class="ltx_p">For SLS topologies, the design point is a 200 Tb/s switch package (229 Tb/s raw bandwidth) with 512 ports. We expect for the switch fabric of these designs to be multi-reticle based on area required for memory, NoC and SerDes. For a switch fabric design using LPO or CPO the main constraint is shoreline available for SerDes. This requires enough shoreline to place 128 <math alttext="\times" class="ltx_Math" display="inline" id="S4.SS3.SSS0.Px2.p1.m1"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math>8-224G SerDes macros. Assuming aggressive 1.5D stacking of SerDes and 3 mm of shoreline per macro would result in 256 mm of required shoreline. Unfortunately, reticle size limits (33<math alttext="\times" class="ltx_Math" display="inline" id="S4.SS3.SSS0.Px2.p1.m2"><semantics><mo>×</mo><annotation encoding="application/x-tex">\times</annotation></semantics></math>26 mm) prevent this from fitting on the combined edges of two full reticles. LPO and CPO could require a 4 reticle design for this amount of bandwidth. Alternatively, <span class="ltx_text ltx_font_bold">Passage provides tremendous benefits to reducing the total package area by distributing the SerDes throughout the fabric die, rather than the shoreline.</span>
+From the perspective of pJ/bit, the values in Table <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S4.T3" title="TABLE III ‣ IV-A Energy Efficiency ‣ IV System Design with Passage ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">III</span></a> are identical. Accounting for the 200Tb/s per switch <span class="ltx_text ltx_font_bold">Passage results in 1.5KW of power savings per switch package.</span></p>
+</div>
+</section>
+</section>
+</section>
+<section class="ltx_section" id="S5">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">V </span><span class="ltx_text ltx_font_smallcaps">Application Modeling</span>
+</h2>
+<section class="ltx_subsection" id="S5.SS1">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">V-A </span><span class="ltx_text ltx_font_italic">Analytical modeling tool</span>
+</h3>
+<div class="ltx_para" id="S5.SS1.p1">
+<p class="ltx_p">To evaluate performance, we developed an analytical performance modeling tool for LLMs that enables rapid evaluation of different architectures and deployment strategies without the need for actual implementation or empirical testing. The tool models execution time as a combination of computation, memory access, and communication costs, expressing each component through analytical formulas that capture the key characteristics of LLM training <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx32" title="">32</a>]</cite>. Similar approaches have been developed for general LLM modeling <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx33" title="">33</a>, <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx34" title="">34</a>]</cite> and specifically focusing on MoE architectures <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx35" title="">35</a>]</cite>.</p>
+</div>
+<div class="ltx_para" id="S5.SS1.p2">
+<p class="ltx_p">Our methodology decomposes LLM execution into its constituent operations - including attention computation, feed-forward networks, and in the case of MoE, expert routing. For each operation, we implement analytical expressions that account for hardware capabilities (like compute throughput and memory bandwidth), system topology (including high-speed interconnects and slower inter-node networks) and various parallelization strategies. The tool provides modeling of key parallelization strategies for LLM training, including data parallelism (DP), tensor parallelism (TP), pipeline parallelism (PP), and expert parallelism (EP). This analytical approach allows us to model how different architectural choices and system configurations affect overall performance.</p>
+</div>
+<div class="ltx_para" id="S5.SS1.p3">
+<p class="ltx_p">We model collective communication operations using the widely-adopted Hockney model <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx36" title="">36</a>]</cite>. This model expresses the time for a communication operation as <math alttext="\alpha+\beta n" class="ltx_Math" display="inline" id="S5.SS1.p3.m1"><semantics><mrow><mi>α</mi><mo>+</mo><mrow><mi>β</mi><mo lspace="0em" rspace="0em">​</mo><mi>n</mi></mrow></mrow><annotation encoding="application/x-tex">\alpha+\beta n</annotation></semantics></math>, where <math alttext="\alpha" class="ltx_Math" display="inline" id="S5.SS1.p3.m2"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> represents the latency (startup time), <math alttext="\beta" class="ltx_Math" display="inline" id="S5.SS1.p3.m3"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> is the transfer time per byte, and <math alttext="n" class="ltx_Math" display="inline" id="S5.SS1.p3.m4"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> is the message size in bytes. This simple yet effective model captures both the fixed overhead of initiating communication and the bandwidth-dependent cost of data transfer. We implemented analytical models for key collective operations used in distributed LLM training including all-gather, reduce-scatter, all-reduce, and all-to-all operations on various topologies.</p>
+</div>
+<figure class="ltx_figure" id="S5.F9">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure class="ltx_figure ltx_figure_panel ltx_align_center" id="S5.F9.sf1"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="309" id="S5.F9.sf1.g1" src="figs/one_expert_per_dp_rank_v3.png" width="598"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">(a)</span> </span><span class="ltx_text" style="font-size:90%;">One expert per DP rank / TP group</span></figcaption>
+</figure>
+</div>
+<div class="ltx_flex_cell ltx_flex_size_2">
+<figure class="ltx_figure ltx_figure_panel ltx_align_center" id="S5.F9.sf2"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="309" id="S5.F9.sf2.g1" src="figs/two_experts_per_dp_rank_v3.png" width="598"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">(b)</span> </span><span class="ltx_text" style="font-size:90%;">Multiple experts per DP rank / TP group</span></figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 9</span>: </span><span class="ltx_text" style="font-size:90%;">Expert distribution strategies across DP ranks</span></figcaption>
+</figure>
+</section>
+<section class="ltx_subsection" id="S5.SS2">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">V-B </span><span class="ltx_text ltx_font_italic">Mixture-of-Experts workload scenarios</span>
+</h3>
+<div class="ltx_para" id="S5.SS2.p1">
+<p class="ltx_p">In MoE models, we increase the model parameters at a lower compute cost than a similarly sized dense model by selectively activating experts. In each layer, the attention blocks are shared by all experts, with tokens then routed to a subset of activated experts by a small linear model. Each expert is an identically dimensioned feedforward network taking the place of the single FFN in a dense transformer layer (Figure <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S2.F1" title="Figure 1 ‣ II-A LLM Training ‣ II Background ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">1</span></a>). In the dense transformer case, tensor parallelism is used to partition the single FFN computation across multiple GPUs. In the MoE case, we now need an instance of the FFN for each expert in a given layer, and communications between each expert and its corresponding routing layer (Figure <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S5.F9.sf1" title="In Figure 9 ‣ V-A Analytical modeling tool ‣ V Application Modeling ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">9(a)</span></a>). Typically, the entire available high-bandwidth domain is allocated to the tensor parallel group, and the expert parallelism communications goes over a slower path such as Ethernet or other data center networking.</p>
+</div>
+<div class="ltx_para" id="S5.SS2.p2">
+<p class="ltx_p">Passage has both higher aggregate bandwidth and higher radix, allowing expert parallel communications to move from the slower network onto the high-bandwidth domain. At typical tensor parallel sizes of 8 or 16 nodes, this leaves room for up to 64 full size experts or a larger number of smaller experts, which is often preferable<cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx37" title="">37</a>]</cite>.</p>
+</div>
+<div class="ltx_para" id="S5.SS2.p3">
+<p class="ltx_p">As discussed in the next section, we organize expert parallelism by allowing each DP rank to host multiple experts, with the original TP group subdivided into several expert TP groups - one for each expert in the DP rank (Figure <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S5.F9.sf2" title="In Figure 9 ‣ V-A Analytical modeling tool ‣ V Application Modeling ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">9(b)</span></a>). Following optimizations from <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx38" title="">38</a>]</cite>, we eliminate redundant token transfers in this hybrid scheme. The presence of experts also modifies traditional DP communication patterns. With sufficient DP ranks, multiple complete sets of experts exist in the system, where each complete set contains exactly one instance of every unique expert required to process any possible routing decision. Gradient synchronization occurs selectively between corresponding expert copies located in different complete expert sets, rather than across all DP ranks uniformly as it is done for the attention part.</p>
+</div>
+</section>
+<section class="ltx_subsection" id="S5.SS3">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">V-C </span><span class="ltx_text ltx_font_italic">Scaling MoE architectures: expert count and fine-grained segmentation</span>
+</h3>
+<div class="ltx_para" id="S5.SS3.p1">
+<p class="ltx_p">MoE architectures show a clear evolution in expert scaling and activation patterns. Early models like Switch Transformers <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx39" title="">39</a>]</cite> demonstrated the potential of sparse architectures with 64 experts and single expert activation per token. OLMoE <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx40" title="">40</a>]</cite> maintained the same expert count but increased activation to 8 experts per token, showing the benefits of combining multiple expert outputs. This trend toward higher expert counts continues with DeepSeek-V3 <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx41" title="">41</a>]</cite> and Pangu Ultra MoE <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx37" title="">37</a>]</cite>, both employing 256 experts while maintaining 8 expert activations per token. Notably, Pangu Ultra MoE’s ablation studies suggest diminishing returns beyond 256 experts, indicating a sweet spot for balancing performance and computational efficiency.</p>
+</div>
+<div class="ltx_para" id="S5.SS3.p2">
+<p class="ltx_p">This trend toward more experts is well-justified by the increased modeling capacity and flexibility it provides. With more experts and higher expert activation counts per token, the model can develop more specialized capabilities and combine them more effectively. While early MoE models like Switch Transformer activated only one expert per token, modern architectures activate multiple experts from a larger expert pool, enabling more sophisticated compositions of specialized knowledge. This combination of increased expert count and multiple expert activations per token allows models to leverage several specialists simultaneously while maintaining narrow, focused expertise within each expert.</p>
+</div>
+<div class="ltx_para" id="S5.SS3.p3">
+<p class="ltx_p">To make these larger expert pools computationally feasible, fine-grained expert segmentation <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx42" title="">42</a>, <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx43" title="">43</a>]</cite> has emerged as a crucial technique. The key insight is to partition the hidden dimension of each expert’s feed-forward layer - if the original expert had a hidden dimension of size <math alttext="d_{\mathit{ff}}" class="ltx_Math" display="inline" id="S5.SS3.p3.m1"><semantics><msub><mi>d</mi><mi>𝑓𝑓</mi></msub><annotation encoding="application/x-tex">d_{\mathit{ff}}</annotation></semantics></math> (typically <math alttext="4d_{\mathit{model}}" class="ltx_Math" display="inline" id="S5.SS3.p3.m2"><semantics><mrow><mn>4</mn><mo lspace="0em" rspace="0em">​</mo><msub><mi>d</mi><mi>𝑚𝑜𝑑𝑒𝑙</mi></msub></mrow><annotation encoding="application/x-tex">4d_{\mathit{model}}</annotation></semantics></math>), each fine-grained expert now operates on a smaller hidden dimension of size <math alttext="d_{\mathit{ff}}/m" class="ltx_Math" display="inline" id="S5.SS3.p3.m3"><semantics><mrow><msub><mi>d</mi><mi>𝑓𝑓</mi></msub><mo>/</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">d_{\mathit{ff}}/m</annotation></semantics></math>, where <math alttext="m" class="ltx_Math" display="inline" id="S5.SS3.p3.m4"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math> is the number of fine-grained experts created from each original expert. By activating <math alttext="m" class="ltx_Math" display="inline" id="S5.SS3.p3.m5"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math> times more experts per token while reducing each expert’s hidden dimension by a factor of <math alttext="m" class="ltx_Math" display="inline" id="S5.SS3.p3.m6"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>, this approach maintains constant computational costs while enabling the benefits of larger expert pools - effectively enabling access to sophisticated MoE architectures that would otherwise be computationally prohibitive.</p>
+</div>
+</section>
+</section>
+<section class="ltx_section" id="S6">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">VI </span><span class="ltx_text ltx_font_smallcaps">Results</span>
+</h2>
+<div class="ltx_para" id="S6.p1">
+<p class="ltx_p">We evaluate different MoE configurations in the context of a large-scale language model training setup. The base architecture is a 120-layer decoder-only transformer with model dimension (<math alttext="d_{\mathit{model}}" class="ltx_Math" display="inline" id="S6.p1.m1"><semantics><msub><mi>d</mi><mi>𝑚𝑜𝑑𝑒𝑙</mi></msub><annotation encoding="application/x-tex">d_{\mathit{model}}</annotation></semantics></math>) 12288 and 128 attention heads, following the GPT family of models. The model employs Megatron-style tensor parallelism <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx6" title="">6</a>]</cite> for both attention and feed-forward computations. The total parameter count of such model is 4.7T.</p>
+</div>
+<div class="ltx_para" id="S6.p2">
+<p class="ltx_p">The training configuration maintains consistent parallelization dimensions across all scenarios: tensor parallelism degree of 16, data parallelism degree of 256, and pipeline parallelism degree of 8, running on a fixed cluster size of 32,768 GPUs. Each GPU delivers 8.5 PFlops of compute performance using BF16 precision. Each Ethernet link provides 1600 Gb/s of unidirectional bandwidth. The training processes a global batch size of 4096 with sequence length 8192, targeting 13T tokens of training data.</p>
+</div>
+<div class="ltx_para" id="S6.p3">
+<p class="ltx_p">We evaluate these configurations across two distinct network scenarios:</p>
+<ul class="ltx_itemize" id="S6.I1">
+<li class="ltx_item" id="S6.I1.i1" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S6.I1.i1.p1">
+<p class="ltx_p">A network with a scale-up pod size of 144 GPU packages and 14.4 Tb/s unidirectional bandwidth per GPU, representing the limits of electrical scale-up solutions.</p>
+</div>
+</li>
+<li class="ltx_item" id="S6.I1.i2" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span>
+<div class="ltx_para" id="S6.I1.i2.p1">
+<p class="ltx_p">Passage: An optical network with a scale-up pod size of 512 GPU packages and 32 Tb/s unidirectional bandwidth per GPU.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ltx_para" id="S6.p4">
+<p class="ltx_p">Within these fixed infrastructure constraints, we explore different MoE scaling strategies as shown in Table <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S6.T4" title="TABLE IV ‣ VI Results ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">IV</span></a>. The expert granularity parameter m shows how each configuration implements fine-grained experts. Starting with m = 1 in Config 1 (standard experts with full <math alttext="d_{\mathit{ff}}" class="ltx_Math" display="inline" id="S6.p4.m1"><semantics><msub><mi>d</mi><mi>𝑓𝑓</mi></msub><annotation encoding="application/x-tex">d_{\mathit{ff}}</annotation></semantics></math> hidden dimension), each subsequent configuration splits the experts into progressively smaller units. For instance, Config 4 with m = 8 divides each original expert into 8 fine-grained experts, each with a hidden dimension of <math alttext="d_{\mathit{ff}}/8" class="ltx_Math" display="inline" id="S6.p4.m2"><semantics><mrow><msub><mi>d</mi><mi>𝑓𝑓</mi></msub><mo>/</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">d_{\mathit{ff}}/8</annotation></semantics></math>.</p>
+</div>
+<div class="ltx_para" id="S6.p5">
+<p class="ltx_p">The distribution of experts across data parallel (DP) ranks follows the same progression. This arrangement ensures efficient communication patterns, as the number of experts per DP rank increases proportionally with the total expert count and granularity. This systematic scaling of both expert count and granularity allows us to evaluate how different expert configurations perform under realistic hardware and networking constraints typical of large-scale AI training clusters.</p>
+</div>
+<figure class="ltx_table" id="S6.T4">
+<div class="ltx_inline-block ltx_align_center ltx_transformed_outer" style="width:433.6pt;height:92.5pt;vertical-align:-43.5pt;"><span class="ltx_transformed_inner" style="transform:translate(48.0pt,-5.4pt) scale(1.28416836355129,1.28416836355129) ;">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text ltx_font_bold">Parameter</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t"><span class="ltx_text ltx_font_bold">Config 1</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t"><span class="ltx_text ltx_font_bold">Config 2</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t"><span class="ltx_text ltx_font_bold">Config 3</span></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t"><span class="ltx_text ltx_font_bold">Config 4</span></th>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_l ltx_border_r ltx_border_t">Active / total experts</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t">1/32</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t">2/64</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t">4/128</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_t">8/256</th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_r ltx_border_t">Expert granularity (m)</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">2</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">4</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">8</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l ltx_border_r ltx_border_t">Experts per DP rank</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">1</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">2</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">4</td>
+<td class="ltx_td ltx_align_center ltx_border_b ltx_border_r ltx_border_t">8</td>
+</tr>
+</tbody>
+</table>
+</span></div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table"><span class="ltx_text" style="font-size:90%;">TABLE IV</span>: </span><span class="ltx_text" style="font-size:90%;">Cluster configuration parameters</span></figcaption>
+</figure>
+<figure class="ltx_figure" id="S6.F10"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="304" id="S6.F10.g1" src="figs/training_time_same_radix_v4.png" width="568"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 10</span>: </span><span class="ltx_text" style="font-size:90%;">Relative performance of both architectures assuming the same radix-512 (normalized to Config 1 Passage baseline)</span></figcaption>
+</figure>
+<figure class="ltx_figure" id="S6.F11"><img alt="Refer to caption" class="ltx_graphics ltx_centering ltx_img_landscape" height="304" id="S6.F11.g1" src="figs/training_time_different_radix_v4.png" width="568"/>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 11</span>: </span><span class="ltx_text" style="font-size:90%;">Relative performance with system-specific radix settings: Passage (512) vs Alternative (144) (normalized to Config 1 Passage baseline)</span></figcaption>
+</figure>
+<div class="ltx_para" id="S6.p6">
+<p class="ltx_p">We assume that tensor parallel groups are placed in the high bandwidth domain first, and expert parallel groups are placed in the high bandwidth domain if there is room to add them. Placing multiple smaller experts together can allow a larger number of experts to stay within the high bandwidth domain. In the Passage-based configuration, up to 512 GPU nodes can be placed in the high bandwidth domain. We assume a limit of 144 nodes for the alternate configuration.</p>
+</div>
+<div class="ltx_para" id="S6.p7">
+<p class="ltx_p">The performance comparison between Passage and the alternative solution reveals significant differences in how these architectures scale across different MoE configurations. Our analysis focuses on relative performance scaling, using Config 1 of Passage as the baseline reference point.</p>
+</div>
+<div class="ltx_para" id="S6.p8">
+<p class="ltx_p">To isolate the impact of network bandwidth differences between architectures, we first compare both systems using pod sizes of 512 GPU packages (Figure <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S6.F10" title="Figure 10 ‣ VI Results ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">10</span></a>). Even with identical network topology, the higher bandwidth of Passage (32 Tb/s vs 14.4 Tb/s) demonstrates clear advantages in scaling efficiency. Passage shows minimal overhead as configurations become more complex, with Config 4 requiring only 1.02x the training time of Config 1. The alternative requires 1.4x longer training time compared to Passage for Configs 1 and 2, and 1.3x longer for Configs 3 and 4. The change in the alternative system’s relative performance is explained by its communication bottleneck: as expert tensor parallelism distributes each expert across fewer GPUs in successive configurations while maintaining the same communication volume per GPU, the bandwidth pressure decreases. This highlights the significant impact of bandwidth differences even when network topologies are matched.</p>
+</div>
+<div class="ltx_para" id="S6.p9">
+<p class="ltx_p">When comparing systems with their architecture-specific network configurations (512 GPU Pod at 32 Tb/s uni-directional for Passage vs 144 GPU Pod at 14.4 Tb/s uni-directional for the alternative), the performance gap widens substantially (Figure <a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#S6.F11" title="Figure 11 ‣ VI Results ‣ Accelerating Frontier MoE Training with 3D Integrated Optics"><span class="ltx_text ltx_ref_tag">11</span></a>). This divergence becomes particularly pronounced with finer-grained expert configurations, where both the total expert count and active experts per token increase (from 1/32 experts in Config 1 to 8/256 in Config 4). The alternative system requires 1.6x longer training time than Passage for Config 1, increasing to 2.7x for Config 4, while Passage scales efficiently. The combination of lower radix and bandwidth in the alternative system amplifies the communication bottlenecks from expert routing, resulting in significantly degraded scaling efficiency.</p>
+</div>
+<div class="ltx_para" id="S6.p10">
+<p class="ltx_p">This scaling challenge manifests primarily through the expert all-to-all communication pattern, where tokens must be routed to their designated experts across the distributed system <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx44" title="">44</a>]</cite>. With more fine-grained experts and higher activation counts per token, each input effectively requires more network traversals to accumulate its computational results. The alternative architecture, which relies more heavily on scale-out networking for expert communication, becomes increasingly bottlenecked by this growing communication volume.</p>
+</div>
+<div class="ltx_para" id="S6.p11">
+<p class="ltx_p">Passage’s architecture alleviates this pressure by maintaining experts within high-bandwidth domains. This architectural choice means that even as we scale to more fine-grained experts with higher activation counts, the critical expert communication patterns remain within high-bandwidth pathways.</p>
+</div>
+<div class="ltx_para" id="S6.p12">
+<p class="ltx_p">This architectural efficiency has implications beyond pure
+performance metrics. Traditional MoE systems often require careful tuning of load balancing losses to prevent network congestion and ensure even expert utilization.
+For instance, <cite class="ltx_cite ltx_citemacro_cite">[<a class="ltx_ref" href="https://arxiv.org/html/2510.15893v1#bib.bibx45" title="">45</a>]</cite> uses device-limited routing restricting each token’s experts to at most M devices. Passage’s architecture keeps experts within high-bandwidth domains, eliminating strict routing constraints while maintaining stable performance at scale, thus simplifying training and enabling more flexible expert utilization.</p>
+</div>
+</section>
+<section class="ltx_section" id="S7">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">VII </span><span class="ltx_text ltx_font_smallcaps">Conclusions and Future Work</span>
+</h2>
+<div class="ltx_para" id="S7.p1">
+<p class="ltx_p">Our modeling demonstrates the profound impact of 3D integrated optics on the efficiency of MoE model training. The results show that the expanded radix and higher aggregate bandwidth of the 3D optical interconnect deliver substantial performance gains. When isolating bandwidth effects by comparing Passage against a hypothetical 512-radix version of the alternative system, the higher bandwidth alone delivers up to <span class="ltx_text ltx_font_bold">1.4x speedup</span>. The performance gap widens further when comparing actual system configurations - Passage’s 512-radix network versus the alternative’s 144-radix topology. Here, Passage achieves a <span class="ltx_text ltx_font_bold">2.7x speedup</span> for the most demanding configuration (Config 4) by accommodating more expert parallel communications within the high-bandwidth domain. Critically, Passage’s elimination of communication bottlenecks ensures that additional compute capacity can be fully utilized rather than sitting idle waiting for data transfers - enabling higher computational intensity that would be wasted in bandwidth- and radix-constrained architectures. These findings underscore that MoE workloads effectively leverage Passage’s expanded optical interconnect radix, accelerating traffic that would otherwise traverse slower scale-out networks. The combined benefits of higher bandwidth and connectivity enable Passage to maintain strong scaling efficiency even as expert counts and routing complexity increase. Future work will further optimize 3D integrated optics technology to leverage the full potential of high-radix optical interconnects and optical circuit switching.</p>
+</div>
+</section>
+<section class="ltx_bibliography" id="bib">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+<ul class="ltx_biblist">
+<li class="ltx_bibitem" id="bib.bibx1">
+<span class="ltx_tag ltx_tag_bibitem">[1]</span>
+<span class="ltx_bibblock">Noam Shazeer et al.
+</span>
+<span class="ltx_bibblock">“Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer”, 2017
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/1701.06538" title="">https://arxiv.org/abs/1701.06538</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx2">
+<span class="ltx_tag ltx_tag_bibitem">[2]</span>
+<span class="ltx_bibblock">Yan Li et al.
+</span>
+<span class="ltx_bibblock">“Speculative MoE: Communication Efficient Parallel MoE Inference with Speculative Token and Expert Pre-scheduling”, 2025
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/2503.04398" title="">https://arxiv.org/abs/2503.04398</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx3">
+<span class="ltx_tag ltx_tag_bibitem">[3]</span>
+<span class="ltx_bibblock">Ashish Vaswani et al.
+</span>
+<span class="ltx_bibblock">“Attention Is All You Need”, 2023
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/1706.03762" title="">https://arxiv.org/abs/1706.03762</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx4">
+<span class="ltx_tag ltx_tag_bibitem">[4]</span>
+<span class="ltx_bibblock">Gerald Wong Dylan Patel
+</span>
+<span class="ltx_bibblock">“GPT-4 Architecture, Infrastructure, Training Dataset, Costs, Vision, MoE”, 2023
+</span>
+<span class="ltx_bibblock">SemiAnalysis.com
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://semianalysis.com/2023/07/10/gpt-4-architecture-infrastructure/" title="">https://semianalysis.com/2023/07/10/gpt-4-architecture-infrastructure/</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx5">
+<span class="ltx_tag ltx_tag_bibitem">[5]</span>
+<span class="ltx_bibblock"> Meta
+</span>
+<span class="ltx_bibblock">“The Llama 4 herd: The beginning of a new era of natively multimodal AI innovation”, 2025
+</span>
+<span class="ltx_bibblock">Meta
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://https://ai.meta.com/blog/llama-4-multimodal-intelligence/" title="">https://https://ai.meta.com/blog/llama-4-multimodal-intelligence/</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx6">
+<span class="ltx_tag ltx_tag_bibitem">[6]</span>
+<span class="ltx_bibblock">Mohammad Shoeybi et al.
+</span>
+<span class="ltx_bibblock">“Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism”, 2020
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/1909.08053" title="">https://arxiv.org/abs/1909.08053</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx7">
+<span class="ltx_tag ltx_tag_bibitem">[7]</span>
+<span class="ltx_bibblock">Albert Q. Jiang et al.
+</span>
+<span class="ltx_bibblock">“Mixtral of Experts”, 2024
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/2401.04088" title="">https://arxiv.org/abs/2401.04088</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx8">
+<span class="ltx_tag ltx_tag_bibitem">[8]</span>
+<span class="ltx_bibblock">Ethan He et al.
+</span>
+<span class="ltx_bibblock">“Upcycling Large Language Models into Mixture of Experts”, 2024
+</span>
+<span class="ltx_bibblock">Nvidia
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/2410.07524" title="">https://arxiv.org/abs/2410.07524</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx9">
+<span class="ltx_tag ltx_tag_bibitem">[9]</span>
+<span class="ltx_bibblock">Denis Foley and John Danskin
+</span>
+<span class="ltx_bibblock">“Ultra-performance Pascal GPU and NVLink interconnect”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">IEEE Micro</em> <span class="ltx_text ltx_font_bold">37.2</span>
+</span>
+<span class="ltx_bibblock">IEEE, 2017, pp. 7–17
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx10">
+<span class="ltx_tag ltx_tag_bibitem">[10]</span>
+<span class="ltx_bibblock"> Naddod.com
+</span>
+<span class="ltx_bibblock">“Silicon Photonics for AI - Balancing Cost, Power, and Reliability”, 2024
+</span>
+<span class="ltx_bibblock">Naddod
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://www.naddod.com/blog/silicon-photonics-for-ai-balancing-cost-power-and-reliability" title="">https://www.naddod.com/blog/silicon-photonics-for-ai-balancing-cost-power-and-reliability</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx11">
+<span class="ltx_tag ltx_tag_bibitem">[11]</span>
+<span class="ltx_bibblock">Norm Jouppi et al.
+</span>
+<span class="ltx_bibblock">“Tpu v4: An optically reconfigurable supercomputer for machine learning with hardware support for embeddings”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">Proceedings of the 50th annual international symposium on computer architecture</em>, 2023, pp. 1–14
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx12">
+<span class="ltx_tag ltx_tag_bibitem">[12]</span>
+<span class="ltx_bibblock"> Nvidia
+</span>
+<span class="ltx_bibblock">“GTC March 2025 Keynote with NVIDIA CEO Jensen Huang”, 2025
+</span>
+<span class="ltx_bibblock">Nvidia
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx13">
+<span class="ltx_tag ltx_tag_bibitem">[13]</span>
+<span class="ltx_bibblock"> Nvidia
+</span>
+<span class="ltx_bibblock">“GTC March 2024 Keynote with NVIDIA CEO Jensen Huang”, 2024
+</span>
+<span class="ltx_bibblock">Nvidia
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://www.youtube.com/watch?v=Y2F8yisiS6E#t=2830" title="">https://www.youtube.com/watch?v=Y2F8yisiS6E#t=2830</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx14">
+<span class="ltx_tag ltx_tag_bibitem">[14]</span>
+<span class="ltx_bibblock">Dylan Patel et al.
+</span>
+<span class="ltx_bibblock">“Huawei AI CloudMatrix 384 – China’s Answer to Nvidia GB200 NVL72”, 2025
+</span>
+<span class="ltx_bibblock">SemiAnalysis.com
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://semianalysis.com/2025/04/16/huawei-ai-cloudmatrix-384-chinas-answer-to-nvidia-gb200-nvl72/" title="">https://semianalysis.com/2025/04/16/huawei-ai-cloudmatrix-384-chinas-answer-to-nvidia-gb200-nvl72/</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx15">
+<span class="ltx_tag ltx_tag_bibitem">[15]</span>
+<span class="ltx_bibblock">Ravi Shivnaraine et al.
+</span>
+<span class="ltx_bibblock">“11.2 A 26.5625-to-106.25 Gb/s XSR SerDes with 1.55 pJ/b Efficiency in 7nm CMOS”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">2021 IEEE International Solid-State Circuits Conference (ISSCC)</em> <span class="ltx_text ltx_font_bold">64</span>, 2021, pp. 181–183
+</span>
+<span class="ltx_bibblock">IEEE
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx16">
+<span class="ltx_tag ltx_tag_bibitem">[16]</span>
+<span class="ltx_bibblock">Z Guo et al.
+</span>
+<span class="ltx_bibblock">“A 112.5 Gb/s ADC-DSP-based PAM-4 long-reach transceiver with 50dB channel loss in 5nm FinFET”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">2022 IEEE International Solid-State Circuits Conference (ISSCC)</em> <span class="ltx_text ltx_font_bold">65</span>, 2022, pp. 116–118
+</span>
+<span class="ltx_bibblock">IEEE
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx17">
+<span class="ltx_tag ltx_tag_bibitem">[17]</span>
+<span class="ltx_bibblock"> OIF
+</span>
+<span class="ltx_bibblock">“OIF Physical &amp; Link Layer Common Electrical Interface (CEI) Interoperability Demo at OFC 2024”, 2024
+</span>
+<span class="ltx_bibblock">OIF
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://www.oiforum.com/wp-content/uploads/OIF_CEI_Demo_OFC2024_Final.pdf" title="">https://www.oiforum.com/wp-content/uploads/OIF_CEI_Demo_OFC2024_Final.pdf</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx18">
+<span class="ltx_tag ltx_tag_bibitem">[18]</span>
+<span class="ltx_bibblock"> Eoptolink
+</span>
+<span class="ltx_bibblock">“Eoptolink’s 800G Linear-drive Pluggable Optics (LPO) transceiver”, 2024
+</span>
+<span class="ltx_bibblock">EOptolink
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://www.oiforum.com/wp-content/uploads/OIF_PLL_Demo_Eoptolink_OFC2024.pdf" title="">https://www.oiforum.com/wp-content/uploads/OIF_PLL_Demo_Eoptolink_OFC2024.pdf</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx19">
+<span class="ltx_tag ltx_tag_bibitem">[19]</span>
+<span class="ltx_bibblock">Keivan Javadi Khasraghi
+</span>
+<span class="ltx_bibblock">“How Direct-Drive Electro-Optical Interfaces are Changing the Game for 800G and Beyond”, 2024
+</span>
+<span class="ltx_bibblock">Synopsys
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://www.synopsys.com/articles/direct-drive-electro-optical.html" title="">https://www.synopsys.com/articles/direct-drive-electro-optical.html</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx20">
+<span class="ltx_tag ltx_tag_bibitem">[20]</span>
+<span class="ltx_bibblock">Manish Mehta
+</span>
+<span class="ltx_bibblock">“An AI Compute ASIC with Optical Attach to Enable Next Generation Scale-Up Architectures”, 2024
+</span>
+<span class="ltx_bibblock">Broadcom
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://hc2024.hotchips.org/assets/program/conference/day1/61_HC2024.Broadcom.ManishMehta.v2-NO-VIDEO.pdf" title="">https://hc2024.hotchips.org/assets/program/conference/day1/61_HC2024.Broadcom.ManishMehta.v2-NO-VIDEO.pdf</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx21">
+<span class="ltx_tag ltx_tag_bibitem">[21]</span>
+<span class="ltx_bibblock">Benjamin G. Lee, Nikola Nedovic, Thomas H. Greer and C. Gray
+</span>
+<span class="ltx_bibblock">“Beyond CPO: A Motivation and Approach for Bringing Optics Onto the Silicon Interposer”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">Journal of Lightwave Technology</em> <span class="ltx_text ltx_font_bold">41.4</span>, 2023, pp. 1152–1162
+</span>
+<span class="ltx_bibblock">DOI: <a class="ltx_ref ltx_href" href="https://dx.doi.org/10.1109/JLT.2022.3219379" title="">10.1109/JLT.2022.3219379</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx22">
+<span class="ltx_tag ltx_tag_bibitem">[22]</span>
+<span class="ltx_bibblock">Nick Harris
+</span>
+<span class="ltx_bibblock">“Lightmatter InterConnect Launch Event at OFC 2025”, 2025
+</span>
+<span class="ltx_bibblock">Lightmatter
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://lightmatter.co/resource/lightmatter-interconnect-launch-event-at-ofc-2025/#" title="">https://lightmatter.co/resource/lightmatter-interconnect-launch-event-at-ofc-2025/#</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx23">
+<span class="ltx_tag ltx_tag_bibitem">[23]</span>
+<span class="ltx_bibblock">Davide Tonietto
+</span>
+<span class="ltx_bibblock">“Pushing Energy Efficiency Limits in Wireline Communication”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">SSCS Wireline Workshop</em>, 2022
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx24">
+<span class="ltx_tag ltx_tag_bibitem">[24]</span>
+<span class="ltx_bibblock">Debendra Das Sharma
+</span>
+<span class="ltx_bibblock">“Universal Chiplet Interconnect Express (UCIe): Building an open chiplet ecosystem”, 2023
+</span>
+<span class="ltx_bibblock">uciexpress.org
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://www.uciexpress.org/_files/ugd/0c1418_c5970a68ab214ffc97fab16d11581449.pdf" title="">https://www.uciexpress.org/_files/ugd/0c1418_c5970a68ab214ffc97fab16d11581449.pdf</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx25">
+<span class="ltx_tag ltx_tag_bibitem">[25]</span>
+<span class="ltx_bibblock"> UALink
+</span>
+<span class="ltx_bibblock">“UALink Consortium Specification”, 2025
+</span>
+<span class="ltx_bibblock">UALink Consortium
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://ualinkconsortium.org/" title="">https://ualinkconsortium.org/</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx26">
+<span class="ltx_tag ltx_tag_bibitem">[26]</span>
+<span class="ltx_bibblock">Dirk Pfaff et al.
+</span>
+<span class="ltx_bibblock">“A 224 Gb/s 3 pJ/bit 40 dB Insertion Loss Transceiver in 3-nm FinFET CMOS”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">IEEE Journal of Solid-State Circuits</em> <span class="ltx_text ltx_font_bold">60.1</span>, 2025, pp. 9–22
+</span>
+<span class="ltx_bibblock">DOI: <a class="ltx_ref ltx_href" href="https://dx.doi.org/10.1109/JSSC.2024.3466092" title="">10.1109/JSSC.2024.3466092</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx27">
+<span class="ltx_tag ltx_tag_bibitem">[27]</span>
+<span class="ltx_bibblock">Andy Bechtolsheim
+</span>
+<span class="ltx_bibblock">“Keynote: Can Interconnects Keep Up with AI?”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">IEEE HotInterconnects 2024</em>, 2024
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://www.youtube.com/watch?v=Rnwguy1Af_I" title="">https://www.youtube.com/watch?v=Rnwguy1Af_I</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx28">
+<span class="ltx_tag ltx_tag_bibitem">[28]</span>
+<span class="ltx_bibblock"> Hisense
+</span>
+<span class="ltx_bibblock">“Hisense Broadband OIF Interop. Demo”, 2025
+</span>
+<span class="ltx_bibblock">Hisense
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://www.oiforum.com/wp-content/uploads/OIF_PLL_Demo_promo_OFC2025-Hisense-Final.pdf" title="">https://www.oiforum.com/wp-content/uploads/OIF_PLL_Demo_promo_OFC2025-Hisense-Final.pdf</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx29">
+<span class="ltx_tag ltx_tag_bibitem">[29]</span>
+<span class="ltx_bibblock">Brian Park et al.
+</span>
+<span class="ltx_bibblock">“OSFP-XD, OCTAL SMALL FORM FACTOR eXtra Dense PLUGGABLE MODULE Revision 1.0”, 2023
+</span>
+<span class="ltx_bibblock">ofspmsa.org
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://osfpmsa.org/assets/pdf/OSFP-XD_Specification_Rev1.0.pdf" title="">https://osfpmsa.org/assets/pdf/OSFP-XD_Specification_Rev1.0.pdf</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx30">
+<span class="ltx_tag ltx_tag_bibitem">[30]</span>
+<span class="ltx_bibblock">Tzu Hao Chow
+</span>
+<span class="ltx_bibblock">“Co-packaged optics: Silicon Photonics for high density optical networking”, 2025
+</span>
+<span class="ltx_bibblock">Broadcom
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://www.semicontaiwan.org/en/node/11281" title="">https://www.semicontaiwan.org/en/node/11281</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx31">
+<span class="ltx_tag ltx_tag_bibitem">[31]</span>
+<span class="ltx_bibblock"> TSMC
+</span>
+<span class="ltx_bibblock">“TSMC Press Release”, 2020
+</span>
+<span class="ltx_bibblock">TSMC
+</span>
+<span class="ltx_bibblock">URL: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://pr.tsmc.com/english/news/2729" title="">https://pr.tsmc.com/english/news/2729</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx32">
+<span class="ltx_tag ltx_tag_bibitem">[32]</span>
+<span class="ltx_bibblock">Zhenhua Guo et al.
+</span>
+<span class="ltx_bibblock">“A Survey on Performance Modeling and Prediction for Distributed DNN Training ”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">IEEE Transactions on Parallel &amp; Distributed Systems</em> <span class="ltx_text ltx_font_bold">35.12</span>
+</span>
+<span class="ltx_bibblock">Los Alamitos, CA, USA: IEEE Computer Society, 2024, pp. 2463–2478
+</span>
+<span class="ltx_bibblock">DOI: <a class="ltx_ref ltx_href" href="https://dx.doi.org/10.1109/TPDS.2024.3476390" title="">10.1109/TPDS.2024.3476390</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx33">
+<span class="ltx_tag ltx_tag_bibitem">[33]</span>
+<span class="ltx_bibblock">Mikhail Isaev, Nic Mcdonald, Larry Dennison and Richard Vuduc
+</span>
+<span class="ltx_bibblock">“Calculon: a methodology and tool for high-level co-design of systems and large language models”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis</em>, SC ’23
+</span>
+<span class="ltx_bibblock">Denver, CO, USA: Association for Computing Machinery, 2023
+</span>
+<span class="ltx_bibblock">DOI: <a class="ltx_ref ltx_href" href="https://dx.doi.org/10.1145/3581784.3607102" title="">10.1145/3581784.3607102</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx34">
+<span class="ltx_tag ltx_tag_bibitem">[34]</span>
+<span class="ltx_bibblock">Samuel Hsia et al.
+</span>
+<span class="ltx_bibblock">“MAD-Max Beyond Single-Node: Enabling Large Machine Learning Model Acceleration on Distributed Systems”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">2024 ACM/IEEE 51st Annual International Symposium on Computer Architecture (ISCA)</em>, 2024, pp. 818–833
+</span>
+<span class="ltx_bibblock">DOI: <a class="ltx_ref ltx_href" href="https://dx.doi.org/10.1109/ISCA59077.2024.00064" title="">10.1109/ISCA59077.2024.00064</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx35">
+<span class="ltx_tag ltx_tag_bibitem">[35]</span>
+<span class="ltx_bibblock">Jiaao He et al.
+</span>
+<span class="ltx_bibblock">“FasterMoE: modeling and optimizing training of large-scale dynamic pre-trained models”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">Proceedings of the 27th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming</em>, PPoPP ’22
+</span>
+<span class="ltx_bibblock">Seoul, Republic of Korea: Association for Computing Machinery, 2022, pp. 120–134
+</span>
+<span class="ltx_bibblock">DOI: <a class="ltx_ref ltx_href" href="https://dx.doi.org/10.1145/3503221.3508418" title="">10.1145/3503221.3508418</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx36">
+<span class="ltx_tag ltx_tag_bibitem">[36]</span>
+<span class="ltx_bibblock">Roger W. Hockney
+</span>
+<span class="ltx_bibblock">“The communication challenge for MPP: Intel Paragon and Meiko CS-2”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">Parallel Computing</em> <span class="ltx_text ltx_font_bold">20.3</span>, 1994, pp. 389–398
+</span>
+<span class="ltx_bibblock">DOI: <a class="ltx_ref ltx_href" href="https://dx.doi.org/https://doi.org/10.1016/S0167-8191(06)80021-9" title="">https://doi.org/10.1016/S0167-8191(06)80021-9</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx37">
+<span class="ltx_tag ltx_tag_bibitem">[37]</span>
+<span class="ltx_bibblock">Yehui Tang et al.
+</span>
+<span class="ltx_bibblock">“Pangu Ultra MoE: How to Train Your Big MoE on Ascend NPUs”, 2025
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/2505.04519" title="">https://arxiv.org/abs/2505.04519</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx38">
+<span class="ltx_tag ltx_tag_bibitem">[38]</span>
+<span class="ltx_bibblock">Siddharth Singh et al.
+</span>
+<span class="ltx_bibblock">“A Hybrid Tensor-Expert-Data Parallelism Approach to Optimize Mixture-of-Experts Training”
+</span>
+<span class="ltx_bibblock">In <em class="ltx_emph ltx_font_italic">Proceedings of the 37th ACM International Conference on Supercomputing</em>, ICS ’23
+</span>
+<span class="ltx_bibblock">Orlando, FL, USA: Association for Computing Machinery, 2023, pp. 203–214
+</span>
+<span class="ltx_bibblock">DOI: <a class="ltx_ref ltx_href" href="https://dx.doi.org/10.1145/3577193.3593704" title="">10.1145/3577193.3593704</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx39">
+<span class="ltx_tag ltx_tag_bibitem">[39]</span>
+<span class="ltx_bibblock">William Fedus, Barret Zoph and Noam Shazeer
+</span>
+<span class="ltx_bibblock">“Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity”, 2022
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/2101.03961" title="">https://arxiv.org/abs/2101.03961</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx40">
+<span class="ltx_tag ltx_tag_bibitem">[40]</span>
+<span class="ltx_bibblock">Niklas Muennighoff et al.
+</span>
+<span class="ltx_bibblock">“OLMoE: Open Mixture-of-Experts Language Models”, 2025
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/2409.02060" title="">https://arxiv.org/abs/2409.02060</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx41">
+<span class="ltx_tag ltx_tag_bibitem">[41]</span>
+<span class="ltx_bibblock"> DeepSeek-AI
+</span>
+<span class="ltx_bibblock">“DeepSeek-V3 Technical Report”, 2025
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/2412.19437" title="">https://arxiv.org/abs/2412.19437</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx42">
+<span class="ltx_tag ltx_tag_bibitem">[42]</span>
+<span class="ltx_bibblock">Jakub Krajewski et al.
+</span>
+<span class="ltx_bibblock">“Scaling Laws for Fine-Grained Mixture of Experts”, 2024
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/2402.07871" title="">https://arxiv.org/abs/2402.07871</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx43">
+<span class="ltx_tag ltx_tag_bibitem">[43]</span>
+<span class="ltx_bibblock">Damai Dai et al.
+</span>
+<span class="ltx_bibblock">“DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models”, 2024
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/2401.06066" title="">https://arxiv.org/abs/2401.06066</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx44">
+<span class="ltx_tag ltx_tag_bibitem">[44]</span>
+<span class="ltx_bibblock">Dmitry Lepikhin et al.
+</span>
+<span class="ltx_bibblock">“GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding”, 2020
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/2006.16668" title="">https://arxiv.org/abs/2006.16668</a>
+</span>
+</li>
+<li class="ltx_bibitem" id="bib.bibx45">
+<span class="ltx_tag ltx_tag_bibitem">[45]</span>
+<span class="ltx_bibblock"> DeepSeek-AI
+</span>
+<span class="ltx_bibblock">“DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model”, 2024
+</span>
+<span class="ltx_bibblock">arXiv: <a class="ltx_ref ltx_url ltx_font_typewriter" href="https://arxiv.org/abs/2405.04434" title="">https://arxiv.org/abs/2405.04434</a>
+</span>
+</li>
+</ul>
+</section>
+<div class="ltx_pagination ltx_role_newpage"></div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Wed Sep  3 21:08:58 2025 by <a class="ltx_LaTeXML_logo" href="http://dlmf.nist.gov/LaTeXML/"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img alt="Mascot Sammy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg=="/></a>
+</div></footer>
+</div>
+</body>
+</html>

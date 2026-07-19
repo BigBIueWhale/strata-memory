@@ -1,0 +1,800 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>DesignWare® DDR5/4 PHY IP for TSMC 12FFC - Synopsys, Inc.</title>
+<meta name="description" content="Design and Reuse Embedded - From IP to SoC Solutions for dedicated applications such as IoT, Automotive, Avionics and Space, Security, RISC-V, AI, 3GPP 5G... and ASIC Design Platforms and Resources"/>
+<meta name="keywords" content="ip, system on chip, soc, systems on chip, design reuse, embedded, intellectual property, reuse blocks, saucier, ip catalyst, ip catalog, silicon, core, vhdl, soft, design, reuse, design and reuse, microprocessor, vsi, virtual, virtual component, synopsys, silicon, embedded, iot, automotive, risc, artificial intelligence"/>
+<link rel="shortcut icon" href="https://www.us.design-reuse.com/IMAGES/favicon.ico" />
+<script src="https://www.drgateway.com/dr-embedded/lib/jquery.min.js"></script>
+<script src="https://www.drgateway.com/dr-embedded/lib/jquery-ui/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://www.drgateway.com/dr-embedded/lib/jquery-ui/jquery-ui.css" />
+<link rel="stylesheet" href="https://www.drgateway.com/dr-embedded/modules/news.css?v=1.1"/>
+<link rel="stylesheet" href="https://www.drgateway.com/dr-embedded/index.css"/>
+
+<!-- Google analytics : to be activated -->
+<!--script type="text/javascript"> 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-118253-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })(); 
+</script-->
+</head>
+<body>
+<header class="classHeader" id='header'>
+
+
+<!-- top menu scripts -->
+<link rel="stylesheet" href="https://www.drgateway.com/dr-embedded/modules/menu.css?v=1.6"/>
+<script type="text/javascript" src="https://www.drgateway.com/dr-embedded/modules/menu.js?v=1.0"></script>
+
+<script type="text/javascript" src="https://www.design-reuse.com/jscript/menu13.js?3"></script> 
+<script type="text/javascript" src="https://www.us.design-reuse.com/adserver/www/delivery/spcjs.php?id=4"></script>
+<!-- END top menu scripts -->
+
+<!-- top menu -->
+<nav class="top_menu">
+<div>
+<ul>
+	<li id="home_link">
+		<a href="https://www.drgateway.com/dr-embedded">
+			<img src="https://www.drgateway.com/dr-embedded/IMAGES/Homepage/home3.png">
+		</a>
+	</li>
+	<li>
+		<a href="https://www.design-reuse.com/about/">
+			Company
+		</a>
+	</li>
+	<li>
+		<a href="https://www.design-reuse.com">
+			design-reuse.com
+		</a>
+	</li>
+	<li>
+		<a href="https://www.design-reuse-china.com">
+			D&amp;R China
+		</a>
+	</li>
+	<!--li>
+		<a href="https://www.design-reuse-enterprise.com/">
+			D&amp;R Products
+		</a>
+	</li-->
+	<li id="dr_events">
+		<a href="javascript:void(0);">
+			D&amp;R Events
+		</a>
+		<ul class="sub_menu">
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/2024/">
+					IP-SoC Days 2024
+				</a>
+			</li>
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/2023/">
+					IP-SoC Days 2023
+				</a>
+			</li>
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/2022/">
+					IP-SoC Days 2022
+				</a>
+			</li>
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/ipsocdays2021/">
+					IP-SoC Days 2021
+				</a>
+			</li>
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/ipsocdays2020/">
+					IP-SoC Days 2020
+				</a>
+			</li>
+			<!--li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/ipsocdays2019/">
+					IP-SoC Days 2019
+				</a>
+			</li-->
+			<!--li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/ipsocdays2018/">
+					IP-SoC Days 2018
+				</a>
+			</li-->
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/2023/grenoble/">
+					IP-SoC 2023
+				</a>
+			</li>
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/2022/grenoble/">
+					IP-SoC 2022
+				</a>
+			</li>
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/ipsocdays2021/grenoble2021/">
+					IP-SoC 2021
+				</a>
+			</li>
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/ipsocdays2020/grenoble2020/">
+					IP-SoC 2020
+				</a>
+			</li>
+			<!--li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/ipsocdays2019/grenoble2019/">
+					IP-SoC 2019
+				</a>
+			</li-->
+			<!--li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/ipsocdays2018/grenoble2018/program.jsp">
+					IP-SoC 2018
+				</a>
+			</li-->
+		</ul>
+	</li>
+<!--% if (uRights == null) { %-->
+	<li>
+		<a href="https://www.design-reuse.com/users/signup.php">
+			Join D&amp;R Community
+		</a>
+	</li>
+	<li>
+		<a href="https://www.design-reuse.com/users/signup.php">
+			Subscribe to D&amp;R SoC News Alert
+		</a>
+	</li>
+<!--% } %-->
+	<li id="lang_link">
+		<a href="javascript:void(0);">
+			<img src="https://www.drgateway.com/dr-embedded/IMAGES/Flags/en.png">
+		</a>
+		<ul class="sub_menu">
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/">
+					<img src="https://www.drgateway.com/dr-embedded/IMAGES/Flags/en.png">&nbsp;English
+				</a>
+			</li>
+			<li>
+				<a href="https://www.design-reuse-china.com/">
+					<img src="https://www.drgateway.com/dr-embedded/IMAGES/Flags/cn.png">&nbsp;Mandarin
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li id="sign_in_out_link">
+
+		<a href="https://www.drgateway.com/dr-embedded/signin.jsp">
+			Sign In
+		</a>
+
+	</li>
+</ul>
+</div>
+</nav>
+<!-- END top menu -->
+
+<!-- leaderboard -->
+<div class="leaderboard">
+	<div>
+		<a href="https://www.drgateway.com/dr-embedded">
+	   
+			<img src="https://www.drgateway.com/dr-embedded/IMAGES/Homepage/designreuse.gif" alt="Design & Reuse">
+		</a>
+	</div>
+	<div>
+		<!-- banner code from design-reuse.com -->
+		<script type='text/javascript'><!--
+				OA_show(11);
+		--></script>
+		<noscript>
+			<a target='_blank' href='https://www.us.design-reuse.com/adserver/www/delivery/ck.php?n=3fe82e3'>
+				<img border='0' alt='' src='https://www.us.design-reuse.com/adserver/www/delivery/avw.php?zoneid=11&amp;n=3fe82e3' />
+			</a>
+		</noscript>
+		<!-- END banner code from design-reuse.com -->
+	</div>
+</div>
+<div style="clear: both;"></div>
+<!-- END leaderboard -->
+
+<!-- top menu + leaderboard - smaller -->
+<nav class="small_top_menu">
+	<div>
+		<ul class="small_menu">
+		<li>
+		<div class="small_leaderboard">
+			<a href="https://www.drgateway.com/dr-embedded">
+				<div>
+					<img src="https://www.drgateway.com/dr-embedded/IMAGES/Homepage/designreuse.gif" alt="Design & Reuse">
+					<div>
+						www.drgateway.com/dr-embedded
+					</div>
+				</div>
+			</a>
+		</div>
+		</li>
+		<li>
+			<button class="menu_button">
+				<img src="https://www.drgateway.com/dr-embedded/IMAGES/Homepage/home_menu.png" alt="Menu" height="25">
+				Menu
+			</button>
+			<ul class="small_sub_menu">
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded">
+					Home
+				</a>
+			</li>
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded">
+					Search Product
+				</a>
+			</li>
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/dr-embedded/design_partners/">
+					Search Design Center
+				</a>
+			</li>
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/newsSearch.jsp">
+					Latest News
+				</a>
+			</li>
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/videos.jsp">
+					Videos
+				</a>
+			</li>
+			<li>
+				<a href="https://www.drgateway.com/dr-embedded/ipsocdays/2024/">
+					D&amp;R Events
+				</a>
+			</li>
+			<li>
+				<a href="https://www.design-reuse.com/users/signup.php">
+					Subscribe to D&amp;R SoC News Alert
+				</a>
+			</li>
+			<li>
+
+				<a href="https://www.drgateway.com/dr-embedded/foundry-gateway/signin.jsp">
+					Sign In
+				</a>
+
+			</li>
+			<!--li>
+				<a href="https://www.design-reuse-china.com/">
+					<img src="https://www.drgateway.com/dr-embedded/IMAGES/Flags/cn.png">&nbsp;Mandarin
+				</a>
+			</li-->
+			</ul>
+		</li>
+		</ul>
+	</div>
+</nav>
+<div style="clear: both;"></div>
+<!-- END top menu + leaderboard - smaller -->
+
+
+
+
+
+
+<!-- middle site menu scripts -->
+<link rel="stylesheet" href="https://www.drgateway.com/dr-embedded/modules/site_menu.css?v=1.14"/>
+<script type="text/javascript" src="https://www.drgateway.com/dr-embedded/modules/site_menu.js?v=1.6"></script>
+<!-- END middle site menu scripts -->
+
+<!-- middle site menu -->
+<nav class="middle_menu">
+	<div>
+		<div id="search_news_all" class="site_menu_link">
+          <div id="search_news_link">
+            <a href="https://www.drgateway.com/dr-embedded/newsSearch.jsp">News</a>
+          </div>
+        </div>
+		
+		<div class="menu_categories">
+			<div><a href="./browse/Memory+-+Logic+Library+IP">Foundation</a></div>
+			<div><a href="./browse/Analog+&+Mixed+Signal">Analog IP</a></div>
+			<div><a href="./browse/Interface+Controller+-+PHY+IP">Interface</a></div>
+			<div><a href="./browse/Interconnect,+D2D,+C2C">Interconnect</a></div>
+			<div><a href="./browse/General+Purpose+Processor+IP">Processor</a></div>
+			<div><a href="./browse/Memory+Controller+-+PHY+IP">Memory Controller</a></div>
+			<div><a href="./browse/Graphic+-+Peripheral+IP">Peripheral Controller</a></div>
+			<div><a href="./browse/Wireless+Communication">Wireless</a></div>
+			<div><a href="./browse/Wireline+Communication">Wireline</a></div>
+			<div><a href="./browse/RISC-V">RISC-V </a></div>
+			<div><a href="./browse/Artificial+Intelligence">AI</a></div>
+			<div><a href="./browse/Automotive">Automotive</a></div>
+			<div><a href="./browse/Security">Security</a></div>
+			<div><a href="./browse/IoT">IoT</a></div>
+			<div><a href="./browse/Multi+Media+Vision">Media</a></div>
+			<div><a href="./browse/Space+and+Avionics">Space</a></div>
+
+			<div class="menu_black"><a href="">Verification IP</a></div>
+			<div class="menu_black"><a href="">Monitoring</a></div>
+			<div class="menu_black"><a href="">Verification Platform</a></div>
+			<div class="menu_black"><a href="">Asic Design Center</a></div>
+		</div>
+		
+		<div id="search_dr_events_link" class="site_menu_link">
+          D&amp;R Events
+          <img class="drop_down" src="./IMAGES/Homepage/arrow_down_black.png">
+          <div id="events_div" class="sub_menu_div site_menu_div" style="display: none;">
+            <ul class="site_menu_section">
+              <li>
+                <ul class="site_menu_ul">
+                  <li onclick="goToEvents(&#39;2024&#39;);">
+                    IP-SoC Days 2024
+                  </li>
+                  <li onclick="goToEvents(&#39;2023&#39;);" class="li_highlight">
+                    IP-SoC Days 2023
+                  </li>
+                  <li onclick="goToEvents(&#39;2022&#39;);">
+                    IP-SoC Days 2022
+                  </li>
+                  <li onclick="goToEvents(&#39;ipsocdays2021&#39;);">
+                    IP-SoC Days 2021
+                  </li>
+                  <li onclick="goToEvents(&#39;ipsocdays2020&#39;);">
+                    IP-SoC Days 2020
+                  </li>
+                  <li onclick="goToEvents(&#39;2023/grenoble&#39;);">
+                    IP-SoC 2023
+                  </li>
+                  <li onclick="goToEvents(&#39;2022/grenoble&#39;);">
+                    IP-SoC 2022
+                  </li>
+                  <li onclick="goToEvents(&#39;ipsocdays2021/grenoble2021&#39;);">
+                    IP-SoC 2021
+                  </li>
+                  <li onclick="goToEvents(&#39;ipsocdays2020/grenoble2020&#39;);">
+                    IP-SoC 2020
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+	</div>
+</nav>
+<!-- END middle site menu -->
+
+</header>
+<div class="divContainer" id='div_contains'>
+
+
+<section class="sectionCenter2">
+	<div class="ip_location" style='margin-top:15px;margin-bottom:10px;'>You are here : 
+
+<a style="font-weight:bold;" href="https://www.drgateway.com/dr-embedded/sip//"></a>
+
+	</div>
+	
+
+	<h1 class="ip_title" style="margin-top: 30px;margin-bottom: 0px;">DesignWare® DDR5/4 PHY IP for TSMC 12FFC</h1>
+	<h1 class="vendor"></h1>
+
+</section>
+<section class="sectionRight"></section>
+</div>
+
+<div class="divContainer">
+<!--section class="sectionLeft" id='left'>
+
+</section-->
+<section class="sectionCenter2" id='center'>
+	<!--script type='text/javascript' src='https://www.drgateway.com/dr-embedded/lib/jQuery/js/jquery.min.js'></script-->
+	<!--link rel="stylesheet" type="text/css" href="https://www.drgateway.com/dr-embedded/lib/main.css"-->
+	<style>
+		ul {
+			margin: 0 0 0 10px;
+			padding: 0;
+		}
+		h3 {
+			margin: 10px auto 10px auto;
+		}
+		h1.ip_title {
+			/*color:#E41129;*/
+			color:#3399ee;
+			font-size:22px;
+			font-weight:bold;
+		}
+		h1.ip_title_logo {
+			/*color:#E41129;*/
+			color:#3399ee;
+			font-size:22px;
+			font-weight:bold;
+			margin:0 0 0 0;
+		}
+		h1.vendor {
+			font-size:18px;
+			font-weight:bold;
+		}
+		table.logo {
+			margin:0 0 10px 0;
+		}
+		h1.logo {
+			margin:0 0 0 0;
+		}
+		img.vendor_logo {
+			border:0;
+			max-height:90px;
+			max-width:210px;
+			box-shadow:2px 2px 6px #555555;
+		}
+		p.field_title {
+			font-size:14px;
+			font-weight:bold;
+			margin:10px;
+		}
+		p.content {
+			/*border:3px solid #3399ee;*/
+			border-radius: 3px;
+			padding:7px;
+			margin:10px;
+		}
+		p.device {
+			margin:0 0 0 0;
+			text-decoration: underline;
+		}
+		p.device_value {
+			margin:10px 0 10PX 10px;		
+		}
+		table.content {
+			/*border:3px solid #3399ee;*/
+			border-radius: 3px;
+			padding:7px;
+			margin:10px;
+		}
+		div.data {
+			border: 0;
+			border-radius: 3px;
+			padding:7px;
+			margin:10px;
+		}
+		.div_content {
+			border:1px solid #3399ee;
+			border-radius: 3px;
+			padding:7px;
+			margin:10px;
+		}
+		td.spec {
+			border-bottom: 1px solid #000000;
+		}
+		.spec_details {
+			font-weight: bold;
+			text-align: right;
+			padding: 0 4px 0 0;
+		}
+		.push_button {
+			display:inline-block;
+			padding:7px;
+			/*background-color:#3399ee;*/
+			background-color:#990000;
+			border:1px solid #cccccc;
+			border-radius:7px;
+			font-size:11px;
+			color:#ffffff;
+			cursor:pointer;
+		}
+		span.red {
+			background-color:#dd3333;
+		}
+		.highlight_blue {
+			border: 1px solid #dddddd;
+			background-color: #3399ee;
+			border-radius: 5px;
+			color: #ffffff;
+			padding: 5px;
+		}
+		.no_border {
+			border: 0 !important;
+		}
+		a.relatedLink, a.relatedLink:visited {
+			color: #0000ee;
+			/*font-weight: bold;*/
+			text-decoration: none;
+		}
+		a.relatedLink:hover {
+			color: #990000;
+		}
+		.signin_separator {
+			width: 80%;
+			margin: 10px auto 20px auto;
+			color: #eeeeee;
+		}
+		.signin_description {
+			width: 80%;
+			margin: 10px auto 5px auto;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		div.ip_location a {
+			display: inline-block;
+		}
+		a.inline {
+			display: inline-block;
+		}
+	</style>
+	<!--script type="text/javascript" src="https://www.drgateway.com/dr-embedded/lib/overlib.js"></script-->
+	<link rel="stylesheet" type="text/css" href="https://www.drgateway.com/dr-embedded/lib/signin.css" />
+	
+	
+
+<input type="hidden" id="version" name="version" value="">
+<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+
+<div class='main'>
+
+<div style="margin:auto;">
+
+
+
+<!-- LINKS -->
+<table style="width:820px;">
+<tr valign="top">
+<td style="width:60%;">
+<div>
+
+
+
+
+
+</div>
+</td>
+</tr>
+</table>
+
+
+<div>
+<p class='field_title'>Overview</p>
+<!-- publicSite.displayHomepage.truncateLongStrings(overview, 155) -->
+<div class='data'>The Synopsys DesignWare® DDR5/4 PHY is a complete physical layer IP interface (PHY) solution for ASIC, ASSP, and system-on-chip (SoC) applications requiring high-performance DDR5/4 SDRAM interfaces operating at up to 4800 Mbps. The DesignWare DDR5/4 PHY is ideal for systems that require highspeed DDR5/4 performance and high capacity memory solutions, typically using registered and load reduced memory modules (RDIMMs and LRDIMMs) with up to 4 physical ranks. Direct SDRAM on PCB systems are also supported. <br/>Optimized for high performance, low latency, low area, low power, and ease of integration, the DesignWare DDR5/4 PHY is provided as a hard DDR PHY that is primarily delivered as GDSII including integrated application-specific DDR5/4 I/ Os. Supporting the GDSII-based PHY is the RTL-based PHY Utility Block (PUB) that includes PHY control features such as read/write leveling, data eye training, per-bit data deskew control, PVT compensation, and support for production testing of the DDR5/4 PHY. The PUB also includes an embedded calibration processor to execute hardware-assisted, firmware-based training algorithms. The DDR5/4 PHY includes a DFI 5.0 interface to the memory controller and can be combined with Synopsys’ DDR5/4 controller for a complete DDR interface solution.</div>
+</div>
+
+
+
+	<!--div style="text-align:right;">
+		<button class="push_button" onclick="location.href='https://www.drgateway.com/dr-embedded/product/48073?signin=y';">More Info</button>
+	</div-->
+	
+
+	<hr class="signin_separator">
+	<div class="signin_description">
+		Please sign in to view full IP description :
+	</div>
+	<!-- sign in next -->
+	<form action='https://www.drgateway.com/dr-embedded/servlet/publicSite.SubmitSignIn' method='POST' id='userRegForm' name='userRegForm' onSubmit='return submitSignIn();'>
+	<input type='hidden' id='ipId' name='ipId' value='48073'>
+
+	<table class='signin_table' cellpadding='0' cellspacing='0'>
+	<tr>
+	<td valign='top' style='padding-right:15px;border-right:1px solid #cccccc;'>
+	<!--h2 class='signin_title'>
+		Sign In
+	</h2-->
+	<div class='signin_field'>
+		<label for='login'>Email</label>
+	</div>
+	<input type='text' class='signin_text' id='login' name='login'>
+	<div class='signin_field'>
+		<label for='password'>Password</label>
+		<div class='signin_forgot'>
+			<a href='https://www.design-reuse.com/users/forgot_password.php?nexturl=http%3A%2F%2Fwww.drgateway.com%2Fdr-embedded' class='signin_forgot_link'>Forgot your password ?</a>
+		</div>
+	</div>
+	<input type='password' class='signin_text' id='password' name='password'>
+	
+	<input type='submit' class='signin_submit' value='Sign in'>
+	<div class='signin_keep'>
+		<table>
+			<tr>
+				<td valign='middle'>
+					<input type='checkbox' id='keepme' name='keepme' checked>
+				</td>
+				<td valign='middle'>
+					<label for='keepme'>
+					Keep me signed in.
+					</label>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</td>
+	<td valign='top' style='padding-left:15px;'>
+	<table class='signin_new' style='margin-top:10px;'>
+		<tr>
+			<td valign='middle'>
+				<hr>
+			</td>
+			<td valign='middle'>
+				New to D&amp;R ?
+			</td>
+			<td valign='middle'>
+				<hr>
+			</td>
+		</tr>
+	</table>
+	<a href='https://www.design-reuse.com/users/signup.php' style='text-decoration : none;'>
+		<div class='signin_new_button'>
+			Create your D&amp;R account
+		</div>
+	</a>
+	</td>
+	</tr>
+	</table>
+	</form>
+	<!-- END sign in next -->
+
+
+<div>
+<p class='field_title'>Tech Specs</p>
+<table class='content' cellpadding='2'>
+	<tr><td class='spec_details spec'>Part Number</td><td class='spec'>dwc_ddr54_phy_tsmc12ffc</td></tr>
+	<tr><td class='spec_details spec'>Short Description</td><td class='spec'>DesignWare® DDR5/4 PHY IP for TSMC 12FFC</td></tr>
+	<tr><td class='spec_details spec'>Provider</td><td class='spec'></td></tr>
+	
+
+	<tr><td class='spec_details spec'>Foundry</td><td class='spec'>TSMC</td></tr>
+
+
+
+</table>
+</div>
+
+
+
+</div>
+
+</div>
+
+</section>
+
+
+</div>
+<div style="clear: both;"></div>
+<footer class="classFooter" id='footer'>
+<!-- menu footer scripts -->
+<link rel="stylesheet" href="https://www.drgateway.com/dr-embedded/modules/menu_footer.css?v=1.0"/>
+<!-- END menu footer scripts -->
+
+<!-- menu footer -->
+<div class="menu_footer">
+	<div>
+		<h4 class="bottom_title">
+			Partner with us
+		</h4>
+		<table class="bottom_button" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td>
+					<div class="bottom_button">
+						<a href="https://www.drgateway.com/dr-embedded/contactUs.jsp" title="Contact Us" class="bottom_button_link">
+							<img src="https://www.drgateway.com/dr-embedded/IMAGES/email.png">
+							Contact Us
+						</a>
+					</div>
+				</td>
+			</tr></tbody>
+		</table>
+		<table class="bottom_button" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td>
+					<div class="bottom_button">
+						<a href="https://www.drgateway.com/dr-embedded/join-dr/" title="Partnership" class="bottom_button_link bottom_button_link2">
+							<img src="https://www.drgateway.com/dr-embedded/IMAGES/Homepage/icon_add.png">
+							Partnership Offers
+						</a>
+				</div>
+				</td>
+			</tr></tbody>
+		</table>
+	</div>
+	<div>
+		<h4 class="bottom_title">
+			List your Products
+		</h4>
+		<p class="bottom_text">
+			Suppliers, list and add your products for free.
+		</p>
+		<table class="bottom_button" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td>
+					<div class="bottom_button">
+						<a href="https://www.drgateway.com/dr-embedded/add-products.jsp" title="List your products" class="bottom_button_link bottom_button_link2">
+							<img src="https://www.drgateway.com/dr-embedded/IMAGES/Homepage/icon_add.png">
+							List your Products
+						</a>
+				</div>
+				</td>
+			</tr></tbody>
+		</table>
+	</div>
+	<div>
+		<h4 class="bottom_title">
+			<a href="https://www.drgateway.com/dr-embedded/DOC/D&amp;R_Privacy_Policy.pdf" target="_blank" class="bottom_title">
+			More about <span class="bottom_title">D&amp;R Privacy Policy</span>
+			</a>
+		</h4>
+		<p class="bottom_subtitle">
+		&copy; 2024 Design And Reuse
+		</p>
+		<p class="bottom_subtitle">
+		All Rights Reserved.
+		</p>
+		<p class="bottom_text">
+			No portion of this site may be copied, retransmitted, reposted, duplicated or otherwise used without the express written permission of Design And Reuse.
+		</p>
+	</div>
+	<div style="clear: both"></div>
+</div>
+<!-- END menu footer -->
+</footer>
+
+<!-- cookies scripts -->
+<script src="https://www.drgateway.com/dr-embedded/lib/jQuery/js/js.cookie.js"></script>
+<link rel="stylesheet" href="https://www.drgateway.com/dr-embedded/modules/cookies.css?v1.0"/>
+<script type="text/javascript" src="https://www.drgateway.com/dr-embedded/modules/cookies.js?v1.0"></script>
+<!-- END cookies scripts -->
+
+<!-- cookies -->
+<div id='gdpr_b'></div>
+
+<!-- cookies : -->
+<div id="gdpr">
+	<div class="btn-content">
+		<a href="#" class="yes" id="acceptgdrp">
+		I understand</a> 
+	</div>
+	<div> This website uses cookies to store information on your computer/device.
+	By continuing to use our site, you consent to our cookies.
+	Please see our <a href="https://www.drgateway.com/dr-embedded/privacy.jsp" target='_blank'>Privacy Policy</a> to learn more about how we use cookies and how to change your settings if you do not want cookies on your computer/device.
+	<!--This site uses cookies to enhance your visitor experience. 
+	By continuing your visit to this site, you accept the use of 
+	cookies to offer services and offers tailored to your interests 
+	(<a href="https://www.drgateway.com/dr-embedded/DOC/D&R_Privacy_Policy.pdf">see our Privacy &amp; Data Protection Policy</a>).-->
+	</div>
+</div>
+<!-- END cookies -->
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+file	source_url	evidences
+cset_georgetown_2020_ai_chips_wafer_cost_model.pdf	https://cset.georgetown.edu/wp-content/uploads/AI-Chips%E2%80%94What-They-Are-and-Why-They-Matter-1.pdf	Table 9 foundry sale price/wafer: 28nm $2,891; 16/12 $3,984; 10nm $5,992; 7nm $9,346; 5nm $16,988 (2020 model)
+tomshardware_2020_tsmc_wafer_prices_n7_9346_n5_16988.html	https://www.tomshardware.com/news/tsmcs-wafer-prices-revealed-300mm-wafer-at-5nm-is-nearly-dollar17000	Press relay of CSET figures: N7 $9,346, N5 $16,988, 16/12nm $3,984 (Sep 2020)
+techpowerup_2022_digitimes_wafer_n7_10k_n5_16k_n3_20k.html	https://www.techpowerup.com/301393/tsmc-3-nm-wafer-pricing-to-reach-usd-20-000-next-gen-cpus-gpus-to-be-more-expensive	DigiTimes 2022: N7 $10k, N5 $16k, N3 $20k/wafer
+tomshardware_2022_per_node_wafer_price_table_n3_20k.html	https://www.tomshardware.com/news/tsmc-will-charge-20000-per-3nm-wafer	2022 table: N3 $20k / N5 $16k / N7 $10k / N10 $6k / N28 $3k / 40nm $2.6k / 90nm $2k
+tomshardware_2024_n2_over30k_n3_18500_n4n5_15000.html	https://www.tomshardware.com/tech-industry/tsmcs-2nm-will-reportedly-receive-a-price-hike-once-again-usd30-000-per-wafer	China Times Oct 2024: N2 >$30k; N3 ~$18.5k; N4/N5 ~$15k today
+tomshardware_2025_samsung_sf2_20k_undercuts_tsmc.html	https://www.tomshardware.com/tech-industry/samsung-takes-a-scalpel-to-its-2nm-wafer-price-tag-bringing-it-down-to-usd20-000-korean-chipmaker-now-undercuts-rival-tsmc-by-33-percent	Samsung SF2 wafer $20k vs TSMC ~$30k (2025, DigiTimes)
+igorslab_2026_samsung_4nm_5nm_plus15pct_hike.html	https://www.igorslab.de/en/samsung-foundry-4-5-nm-price-increase/	Samsung 4/5nm +15% price hike for new customers (2026)
+semiwiki_2020_scotten_jones_critique_cset_prices.html	https://semiwiki.com/semiconductor-manufacturers/tsmc/292760-leading-edge-foundry-wafer-prices/	Scotten Jones: CSET per-wafer values 'not very' accurate - treat as contested estimates
+dqindia_2026_n2_28k_30k_45pct_over_n3.html	https://www.dqindia.com/semiconductors/the-30000-wafer-why-tsmc-never-has-to-cut-its-price-12174306	2026: N2 $28-30k+, ~45-50% above 3nm wafers
+semiengineering_2018_ibs_design_cost_per_node.html	https://semiengineering.com/big-trouble-at-3nm/	IBS 2018 design cost: 28nm $51.3M, 16nm $106.3M, 7nm $297.8M, 5nm $542.2M, 3nm $500M-1.5B
+semiengineering_2018_ibs_design_cost_fig2_chart.png	https://semiengineering.com/big-trouble-at-3nm/	IBS Fig.2 chart with per-node design cost labels
+semiengineering_2023_real_world_7nm_160m_5nm_280m.html	https://semiengineering.com/what-will-that-chip-cost/	Bailey Oct 2023 reality-check: real-world ~$160M @7nm, ~$280M @5nm; Innovium 7nm counter-example
+wikichip_5nm_mask_counts_n7_87_n5_81_euv.html	https://en.wikichip.org/wiki/5_nm_lithography_process	Mask counts: N7 ~87; N5 ~81 with 11-13 EUV masks (would be ~115 w/o EUV) - WikiChip estimate
+anysilicon_2016_mask_set_cost_chart_to_28nm.html	https://anysilicon.com/semiconductor-wafer-mask-costs/	Crowdsourced 2016 mask-set cost chart topping out ~$1.5M @28nm (unlabeled bars)
+anysilicon_2016_mask_set_cost_chart.png	https://anysilicon.com/semiconductor-wafer-mask-costs/	The chart image itself
+ebeam_2025_luminaries_survey_euv_mask_costs.pdf	https://ebeam.org/docs/2025-ebeam-luminaries-survey-final-web.pdf	2025 survey: EUV mask blanks/inspection cost more than 193i (qualitative); no $ set figures exist
+europractice_2026_price_list_tsmc16ffc_gf12lp_22fdx.html	https://europractice-ic.com/schedules-prices-2026/	2026 MPW EUR prices: TSMC 16FFC RF 30,592/1mm2; GF 12LP+ 27,500/mm2 min4; GF 22FDX 17,820/mm2
+europractice_tsmc_n7_mpw_49050eur_2mm2.html	https://europractice-ic.com/tsmc-university-finfet-program/	TSMC N7 MPW published price: 49,050-51,000 EUR min 2mm2 (academic); N16 59,550 EUR min 4mm2
+tsmc_cybershuttle_2026_0p5um_to_2nm.html	https://www.tsmc.com/english/dedicatedFoundry/services/cyberShuttle	CyberShuttle spans 0.5um-2nm, up to 10 shuttles/month, pricing NDA (2026 capture)
+mosis2_2026_offerings_intel18a_tsmc_gf_samsung.html	https://mosis2.com/mpw-services	MOSIS 2.0: Intel 18A MPW 4/yr; TSMC 12-130nm; GF 22FDSOI/12LP+; Samsung 28/65/130nm; no public prices
+samsung_foundry_2026_mpw_sf4x_sf5_schedule.html	https://semiconductor.samsung.com/foundry/manufacturing/mpw-service/	Samsung MPW schedule incl SF4X (4nm) + SF5 (5nm); quote-only pricing
+innosilicon_gddr7_phy_32g_pam3_tsmc_7nm.html	https://us.design-reuse.com/sip/54232/gddr7-phy-controller/	Innosilicon GDDR7 PHY 32Gbps PAM3 tagged TSMC 7nm - 28G PAM3-class proven at N7
+cadence_2024_gddr7_phy_36g_various_nodes.html	https://semiengineering.com/gddr7-the-ideal-memory-solution-in-ai-inference/	Cadence GDDR7 PHYs up to 36Gb/s 'across various process nodes'
+credo_2018_112g_pam4_serdes_silicon_tsmc_7nm.html	https://credosemi.com/news/credo-first-to-publicly-demonstrate-112g-serdes-in-7nm-at-tsmcs-2018-china-oip-forum/	112G PAM4 SerDes silicon in TSMC 7nm back in 2018 - 3.5x the baud of 28G PAM3
+isscc_2024_wireline_pj_per_bit_28nm_vs_3nm.pdf	https://www.isscc.org/ (ISSCC 2024 press kit PDF)	pJ/bit by node: 5nm 212G 2.69pJ/b; 3nm 224G TX 0.92pJ/b, full 3pJ/b; 28nm 112G 2.16-2.77pJ/b
+isscc_2024_wireline_pj_per_bit_28nm_vs_3nm.txt	(text sidecar of the above)	grep-able text of the press kit
+micron_2024_gddr7_32g_pam3_on_1beta_dram_node.html	https://investors.micron.com/news-releases/news-release-details/micron-samples-next-gen-graphics-memory-gaming-and-ai	Device-mode proof: Micron GDDR7 does 32G PAM3 on 1-beta DRAM process
+wikipedia_gddr7_pam3_rates_samsung_d1z.html	https://en.wikipedia.org/wiki/GDDR7_SDRAM	GDDR7 PAM3 3bits/2UI, 32-48Gbps; Samsung GDDR7 on D1z (~15-14nm-equiv) node
+samsung_2023_gddr7_pam3_announcement.html	https://news.samsung.com/global/samsung-develops-industrys-first-gddr7-dram-to-unlock-the-next-generation-of-graphics-performance	PAM3 = 50% more data per cycle than NRZ; +20% power efficiency
+designreuse_gddr7_pam3_vs_pam4_3db_margin.html	https://www.design-reuse.com/article/61605-breaking-the-memory-bandwidth-boundary-gddr7-ip-design-challenges-solutions/	Why PAM3 over PAM4 (complexity/power/SI); PAM3 ~3dB margin cost vs NRZ
+eenews_2020_cadence_ddr5_silicon_proven_tsmc_n5.html	https://www.eenewseurope.com/en/complete-ddr5-lpddr5-memory-ip-for-tsmcs-5nm-process/	DDR5/LPDDR5 PHY+ctrl silicon-proven on TSMC N5 already in Oct 2020
+t2m_ddr5_combo_phy_silicon_proven_tsmc_12ffc.html	https://www.chipestimate.com/DDR5LPDDR5DDR4-Combo-PHY-and-Controller-IP-Core-in-12FFC-Eliminating-Memory-Interface-Risk/T2M/news/59444	DDR5 combo PHY silicon-proven at TSMC 12FFC (4800Mbps) - DDR5 easy at 12nm-class
+synopsys_gf_12lp_plus_ip_portfolio_ddr5_112g.html	https://www.prnewswire.com/news-releases/synopsys-and-globalfoundries-collaborate-to-develop-broad-portfolio-of-designware-ip-for-12lp-finfet-solution-301137483.html	GF 12LP+ has DDR5, LPDDR5, 112G SerDes IP - context cost-down node
+synopsys_ddr5_phy_tsmc_16_12_n6_n7_n5_listing.html	https://www.design-reuse.com/ (Synopsys DDR5/4 PHY listing)	Synopsys DDR5/4 PHY family spans TSMC 16nm, 12nm, N6, N7, N5
+ocp_odsa_bow_spec_beachfront_definition.html	https://opencomputeproject.github.io/ODSA-BoW/bow_specification.html	Formal definition: Beachfront = length of die edge required by a PHY implementation
+semianalysis_2021_pad_limited_designs.html	https://newsletter.semianalysis.com/p/advanced-packaging-part-1-pad-limited	Pad-limited economics: bump pitch scales ~2.35x while transistors scale orders of magnitude
+southampton_vlsi_pad_limited_vs_core_limited.pdf	https://www.southampton.ac.uk/~bim/notes/vlsi/lecture/pdf/vlsi05.pdf	Textbook: pad-limited = small core/many pads; die size set by pad ring
+arxiv_2025_io_perimeter_vs_compute_area.html	https://arxiv.org/html/2510.15893v1	Compute scales with area, I/O limited to perimeter / SerDes macros per edge
+semiengineering_2020_serdes_analog_hard_to_scale.html	https://semiengineering.com/re-architecting-serdes/	SerDes as analog circuit 'difficult to scale'
+semiengineering_analog_migration_from_scratch.html	https://semiengineering.com/accelerating-analog-design-migration/	Analog does not port between nodes; redesign from scratch; worse at smaller nodes
+synopsys_serdes_angstrom_era_scaling_limits.html	https://www.synopsys.com/articles/serdes-design-trends-angstrom-era.html	At 2nm-and-below, classical scaling laws face significant challenges for SerDes
+tsmc_2026_logic_node_status_official.html	https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_7nm	TSMC official: N7 HVM 2018; N6 HVM 2020 widely adopted + N6e 2024; N5/N4 excellent yields; N3 HVM 2022 + N3E; N2 4Q25
+anandtech_2019_n6_same_design_rules_as_n7.html	https://www.anandtech.com/show/14228/tsmc-reveals-6-nm-process-technology-7-nm-with-higher-transistor-density	N6 uses SAME design rules as N7 (ecosystem/IP reuse), +18% density, EUV layers, risk prod Q1 2020

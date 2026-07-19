@@ -1,0 +1,975 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5V1QKY3FD"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-S5V1QKY3FD');
+	</script>
+	
+    <title>GDDR7 IP Cores</title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link href="/css/main.css" rel="stylesheet" />
+    <link href="/css/header.css" rel="stylesheet" />
+    <link href="/css/footer.css" rel="stylesheet" />
+    <link href="/files/css/extra.css" rel="stylesheet" />
+    <script type="text/javascript" src="/scripts/header.js"></script>
+    
+    <link rel="stylesheet" href="/css/ip.css" />
+    <link rel="stylesheet" href="/css/pagination.css" />
+    <script type="text/javascript" src="/scripts/ip.js"></script>
+    <style>
+    .techno_values{
+    	list-style-type: none;
+    	padding-left: 10px;
+    	margin-top: 0px;
+    	font-size:12px;
+    	margin-top:5px;
+    	width:100%;
+  	}
+    .title_hardenedIp{
+    	font-size: 16px;
+   		font-family: Roboto, sans-serif;
+   		font-weight: bold;
+   		color: #990000; 
+   		text-decoration: none;
+    	padding-top: 3px;
+    	padding-bottom: 3px;
+    }
+    .refine{
+    		float:left;
+    		border: 1px solid #DDD;
+    		border-radius: 5px;
+    		padding: 10px 10px 10px 10px;
+    		margin: 5px 0px;
+    		width: 300px;
+    	}
+   	.refine_span{
+   		margin-left: 5px;
+   		font-size: 16px;
+   		font-family: Roboto, sans-serif;
+   		font-weight: bold;
+   		color: #000090; 
+   		text-decoration: none;
+   		padding-top:3px;
+   		padding-bottom:3px;
+   	}
+   	.refine p{
+   		margin-left: 5px;
+   		font-size: 15px;
+   		font-family: Roboto, sans-serif;
+   		font-weight: bold;
+   		color: #000090; 
+   		text-decoration: none;
+   	}
+   	.refine table tr td{
+   		font-size: 12px;
+   		font-family: Roboto, sans-serif;
+   		text-decoration-color: currentcolor;
+   		text-decoration-line: none;
+   		text-decoration-style: solid;
+   		text-decoration-thickness: auto;
+   		padding-top : 3px;
+   		padding-bottom : 3px;
+   	}
+   	
+   	.button_search{
+   		font-size: 14px;
+   		font-family: Roboto, sans-serif;
+   		font-weight: bold;
+   		color: #ffffff;
+  		background:#990000;
+  		border-radius: 5px;
+  		border: none;
+  		cursor: pointer;
+   	}
+   	
+	</style>
+	    <script>
+	    	let unavailableFoundries = null;
+	    	let availableFoundries = null;
+	    	let selectedFoundry = "TSMC";
+	    	function selectFoundry(foundry, init) {
+	    		let geometrySelect = document.getElementById("geometry_values");
+	    		geometrySelect.innerHTML = "";
+	    		
+	    		if (!init) {
+	    			selectedFoundry = foundry;
+	    			geometrySelect.style="";
+	        	}else{
+	    			return;
+	    		}
+	    		
+	    		let availableGeometries = availableFoundries[foundry];
+	    		let unavailableGeometries = unavailableFoundries[foundry];
+	    		let firstGeometry = -1;
+	    		if(foundry=="Intel"){
+	    			availableGeometries = {".14":"14A",".18":"18A",".20":"20A",".3":"3nm",".4":"4nm",".7":"7nm",".12":"12nm",".16":"16nm"};
+	    		}else if(foundry=="TSMC"){
+	    			availableGeometries = {".14A":"A14",".16A":"A16",".2":"N2",".3":"N3",".4":"N4",".5":"N5",".6":"N6",".7":"N7",".10":"10nm",".12":"12nm",".16":"16nm",".20":"20nm",".22":"22nm",".28":"28nm",".40":"40nm",".65":"65nm",".90":"90nm",".130":"130nm",".180":"180nm"};
+	    		}
+	    		
+	    		var option = document.createElement("option");
+	   		 	option.id = "-1";
+	   		 	option.value = "-1";
+	   	    	option.text = "";
+	   	    	option.selected = false; 
+	   	    	geometrySelect.add(option);
+	   	    	
+	   			for (geometry in availableGeometries) {
+	       			let readOnly = false;
+	       			if (init) {
+	       				readOnly = true;
+	       			}
+	       			else {
+	   	    			for(gg in unavailableGeometries){
+	   	    				if(!readOnly){
+	   	    					if(availableGeometries[geometry].includes("A") || unavailableGeometries[gg].includes("A")){
+	   	    						readOnly = availableGeometries[geometry]==unavailableGeometries[gg];
+	   	    					} else {
+	   	    						readOnly = geometry.replace(".","")==gg;
+	   	    					}
+	   	    				}
+	   	    			}
+	   	    			if (!readOnly && firstGeometry == -1) {
+	   	        			firstGeometry = geometry;
+	   	    			}
+	       			}
+	       			//geometryDiv.innerHTML += "<li><input name=\"geometry\" id=\"geometry_"+geometry.replace(".","")+"\" type=\"radio\" onchange=\"selectGeometry(this.value);\" value=\""+geometry.replace(".","")+"\" "+(readOnly ? "disabled readonly=\"readonly\"":"")+"><label for=\"geometry_"+geometry.replace(".","")+"\""+(readOnly ? " class=\"disabled\"" : "")+">"+availableGeometries[geometry]+"</label></li>";
+	       			
+	       		 	var option = document.createElement("option");
+	       		 	option.id = "geometry_"+geometry.replace(".","");
+	       		 	option.value = geometry.replace(".","");
+	       	    	option.text = availableGeometries[geometry];
+	       	    	option.selected = false; 
+	       	    	geometrySelect.add(option);
+	       	 		
+	   			}
+	    		if (firstGeometry > -1) {
+		    		//document.getElementById("geometry_"+firstGeometry).checked = true;// TODO check if available
+	    		}
+	    		
+	    		document.getElementById('foundry').value = foundry;
+	    	}
+	    	function selectGeometry(current){
+	    		document.getElementById('geometry').value = current;
+	    	}
+	    	window.addEventListener("DOMContentLoaded", function() {
+	    		// init values
+	       		if(document.getElementById("foundry_"+selectedFoundry.toLowerCase())){
+	//        			document.getElementById("foundry_"+selectedFoundry.toLowerCase()).checked = true;
+	           		selectFoundry(selectedFoundry, true);
+	           		selectedFoundry = "";
+	       		}
+	    	});
+	    	//window.addEventListener("pageshow", function() {
+	    		//document.getElementById("keywords").value = '';
+	    	//});
+	    	function onlyCheckOne(current){
+				var v = document.getElementsByName('checkbox_vendor');
+				var i;
+				for (i = 0; i < v.length; i++) {
+				  if(v[i].value != current) v[i].checked = false;
+				}
+				document.getElementById('vendor').value = current;
+			}
+			function submit(idform){
+				document.getElementById(idform).submit();
+			}
+			function selectVendor(current){
+	    		document.getElementById('vendor').value = current;
+	    	}
+			function submitVendor(){
+				var isVendorSelected = true;
+				if(!document.getElementById('vendor')){
+					isVendorSelected = false;
+				}else{
+					var v =	document.getElementById('vendor').value;
+					if(!v || v==null || v=='' || v=='0')isVendorSelected = false;
+				}
+				if (!isVendorSelected) {
+					alert("Please select your target vendor");
+					return false;
+				}
+				return true;
+			}
+			
+			function submitSearchTechno(){
+				var isTechnoSelected = true;
+				if(!document.getElementById('foundry')){
+					isTechnoSelected = false;
+				}else{
+					var f = document.getElementById('foundry').value;
+					if(!f || f==null || f=='' || f=='0')isTechnoSelected = false;
+				}
+				
+				if (isTechnoSelected){
+					if(!document.getElementById('geometry')){
+						isTechnoSelected = false;
+					}else{
+						var g = document.getElementById('geometry').value;
+						if(!g || g==null || g=='' || g=='0')isTechnoSelected = false;
+					}
+				}
+				
+				if (!isTechnoSelected) {
+					alert("Please select your target foundry and technology");
+					return false;
+				}else{
+					return true;
+				}
+			}
+	    </script>
+	</head>
+	<body>
+	    <header>
+		<!-- top menu -->
+		<nav class="top_menu">
+		<div>
+		<ul>
+			<li id="home_link">
+				<a href="/">
+					<img id="home_image" src="/images/home.png" alt="home">
+					<img id="home_white_image" src="/images/home_white.png" alt="home">
+				</a>
+			</li>
+			<li>
+				<a href="/about/">
+					Company
+				</a>
+			</li>
+			<li>
+				<a href="https://www.design-reuse.com">
+					design-reuse.com
+				</a>
+			</li>
+			<li>
+				<a href="https://www.design-reuse-china.com">
+					D&amp;R China
+				</a>
+			</li>
+			<li>
+				<a href="/blog/">
+					Blogs
+				</a>
+			</li>
+			<li>
+				<a href="/article/">
+					Industry Articles
+				</a>
+			</li>
+			<li id="dr_events">
+				<div>
+					D&amp;R Events
+				</div>
+				<ul class="sub_menu">
+					<li>
+						<a href="https://www.design-reuse-embedded.com/ipsocdays/2026/">
+							IP-SoC Days 2026
+						</a>
+					</li>
+					<li>
+						<a href="https://www.design-reuse-embedded.com/ipsocdays/2025/">
+							IP-SoC Days 2025
+						</a>
+					</li>
+					<li>
+						<a href="https://www.design-reuse-embedded.com/ipsocdays/2024/">
+							IP-SoC Days 2024
+						</a>
+					</li>
+					<li>
+						<a href="https://www.design-reuse-embedded.com/ipsocdays/2023/">
+							IP-SoC Days 2023
+						</a>
+					</li>
+					<li>
+						<a href="https://www.design-reuse-embedded.com/ipsocdays/2022/">
+							IP-SoC Days 2022
+						</a>
+					</li>
+					<li>
+						<a href="https://www.design-reuse-embedded.com/ipsocdays/2025/grenoble/">
+							IP-SoC 2025
+						</a>
+					</li>
+					<li>
+						<a href="https://www.design-reuse-embedded.com/ipsocdays/2024/grenoble/">
+							IP-SoC 2024
+						</a>
+					</li>
+					<li>
+						<a href="https://www.design-reuse-embedded.com/ipsocdays/2023/grenoble/">
+							IP-SoC 2023
+						</a>
+					</li>
+					<li>
+						<a href="https://www.design-reuse-embedded.com/ipsocdays/2022/grenoble/">
+							IP-SoC 2022
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="https://www.design-reuse-embedded.com/ipsocdays/videos.jsp">
+					Videos
+				</a>
+			</li>
+			<!--li>
+				<a href="https://www.design-reuse.com/users/signup.php">
+					Join D&amp;R Community
+				</a>
+			</li-->
+			<li>
+				<a href="/subscribe">
+					Subscribe to D&amp;R SoC News Alert
+				</a>
+			</li>
+			<li id="lang_link">
+				<div>
+					<img src="/images/en.png" alt="en">
+				</div>
+				<ul class="sub_menu">
+					<li>
+						<a href="/">
+							<img src="/images/en.png" alt="en">&nbsp;English
+						</a>
+					</li>
+					<li>
+						<a href="https://www.design-reuse-china.com/">
+							<img src="/images/cn.png" alt="cn">&nbsp;Mandarin
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li id="sign_in_out_link">
+				
+			</li>
+
+			<li id="profile_link">
+				
+			</li>
+
+			<li id="login_link">
+				<a href="/login">
+					Login
+				</a>
+			</li>
+		</ul>
+		</div>
+		</nav>
+		<!-- END top menu -->
+		
+		<!-- leaderboard -->
+		<div class="leaderboard">
+			<div>
+				<a href="/">
+					<img src="/images/designreuse.gif" alt="Design & Reuse">
+				</a>
+				<div>Catalog of SIP Cores<br>System on Chip design resources</div>
+			</div>
+
+			<div class="leaderboard-img">
+				<ins data-revive-zoneid="3" data-revive-id="ad0a248f25b445cf636ada378c22c876"></ins>
+				<script async src="//ad.design-reuse.com/adserver/www/delivery/asyncjs.php"></script>
+			</div>
+			
+			<div></div>
+		</div>
+		<div style="clear: both;"></div>
+		<!-- END leaderboard -->
+		
+		<!-- top menu + leaderboard - smaller -->
+		<nav class="small_top_menu">
+			<div>
+				<ul class="small_menu">
+				<li>
+				<div class="small_leaderboard">
+					<a href="/">
+						<div>
+							<img src="/images/designreuse.gif" alt="Design & Reuse">
+						</div>
+					</a>
+					<div>Catalog of SIP Cores<br>System on Chip design resources</div>
+				</div>
+				</li>
+				<li>
+					<button class="menu_button">
+						<img src="/images/home_menu.png" alt="Menu" width="28" height="25">
+						Menu
+					</button>
+					<ul class="small_sub_menu">
+					<li>
+						<a href="/">
+							Home
+						</a>
+					</li>
+					<li>
+						<a href="/">
+							Search IP Core
+						</a>
+					</li>
+					<li>
+						<a href="/news/list/">
+							News
+						</a>
+					</li>
+					<li>
+						<a href="/blog/">
+							Blogs
+						</a>
+					</li>
+					<li>
+						<a href="/article/">
+							Articles
+						</a>
+					</li>
+					<li>
+						<a href="https://www.design-reuse-embedded.com/ipsocdays/2026/">
+							D&amp;R Events
+						</a>
+					</li>
+					<li>
+						<a href="https://www.design-reuse-embedded.com/ipsocdays/videos.jsp">
+							Videos
+						</a>
+					</li>
+					<li>
+						<a href="/subscribe">
+							Subscribe to D&amp;R SoC News Alert
+						</a>
+					</li>
+					<li>
+						
+					</li>
+					<li>
+						
+					</li>
+		
+					<li>
+						<a href="/login">
+							Login
+						</a>
+					</li>
+					<!--li>
+						<a href="https://www.design-reuse-china.com/">
+							<img src="https://www.design-reuse-embedded.com/IMAGES/Flags/cn.png" alt="cn">&nbsp;Mandarin
+						</a>
+					</li-->
+					</ul>
+				</li>
+				</ul>
+			</div>
+		</nav>
+		
+		<!-- middle site menu -->
+		<nav class="middle_menu">
+			<div>
+				<div id="search_news_all" class="site_menu_link">
+		        	<div id="search_news_link">
+		        		<a href="/news/list/">News<br>Center</a>
+		        		<img class="drop_down" src="/images/arrows/arrow_down_black.png" alt="arrow_down">
+						<img class="drop_down_disabled" src="/images/arrows/arrow_down_black_transparent.png" alt="arrow_down">
+		        	</div>
+		        </div>
+				<div class="menu_categories">
+					<div>
+						<div><a href="/ip/108-foundation-ip">Foundation IP</a></div>
+						<div><a href="/ip/110-analog-mixed-signal">Analog IP</a></div>
+						<div><a href="/ip/116-interface-controller-phy-ip">Interface IP</a></div>
+						<div><a href="/ip/111-interconnect-d2d-c2c">Interconnect IP</a></div>
+						<div><a href="/ip/113-memory-controller-phy-ip">Memory Controller & PHY</a></div>
+						<div><a href="/ip/114-graphic-peripheral-ip">Peripheral Controller</a></div>
+						<div><a href="/ip/117-wireless-communication-ip">Wireless IP</a></div>
+						<div><a href="/ip/118-wireline-communication-ip">Wireline IP</a></div>
+					</div>
+					<div>
+						<div><a href="/ip/109-general-purpose-processor-ip">Processor IP</a></div>
+						<div><a href="/ip/112-risc-v">RISC-V</a></div>
+						<div><a href="/ip/122-artificial-intelligence">AI Core</a></div>
+						<div><a href="/ip/124-automotive">Automotive IP</a></div>
+						<div><a href="/ip/130-security">Security IP</a></div>
+						<div><a href="/ip/120-iot">IoT</a></div>
+						<div><a href="/ip/131-multi-media-vision">Media IP</a></div>
+						<div><a href="/ip/129-space-and-avionics">Avionics / Space IP</a></div>
+					</div>
+					<div>
+						<div class="verification_category"><a href="/ip/142-vip-catalog">Verification IP</a></div>
+						<div class="verification_category"><a href="/ip/143-verification-platform">Verification Platform</a></div>
+						<div class="verification_category"><a href="/ip/138-design-platform">Design Platform</a></div>
+						<div class="design_category"><a href="/design-partners">Asic & IP Design Center</a></div>
+					</div>
+				</div>
+				<div id="search_dr_events_link" class="site_menu_link">
+					IP-SoC Days
+					<img class="drop_down" src="/images/arrows/arrow_down_black.png" alt="arrow_down">
+					<img class="drop_down_disabled" src="/images/arrows/arrow_down_black_transparent.png" alt="arrow_down">
+					<div id="events_div" class="sub_menu_div site_menu_div" style="display: none;">
+		            	<ul class="site_menu_section">
+		              		<li>
+		                		<ul class="site_menu_ul">
+		                			<li onclick="goToEvents('2026');">
+		                    			IP-SoC Days 2026
+		                  			</li>
+		                			<li onclick="goToEvents('2025');" class="li_highlight">
+		                    			IP-SoC Days 2025
+		                  			</li>
+		                  			<li onclick="goToEvents('2024');">
+		                    			IP-SoC Days 2024
+		                  			</li>
+		                  			<li onclick="goToEvents('2023');">
+		                    			IP-SoC Days 2023
+		                  			</li>
+		                  			<li onclick="goToEvents('2022');">
+		                    			IP-SoC Days 2022
+		                  			</li>
+		                  			<li onclick="goToEvents('2025/grenoble');">
+		                    			IP-SoC 2025
+		                  			</li>
+		                  			<li onclick="goToEvents('2024/grenoble');">
+		                    			IP-SoC 2024
+		                  			</li>
+		                  			<li onclick="goToEvents('2023/grenoble');">
+		                    			IP-SoC 2023
+		                  			</li>
+		                  			<li onclick="goToEvents('2022/grenoble');">
+		                    			IP-SoC 2022
+		                  			</li>
+		                		</ul>
+		              		</li>
+		            	</ul>
+		          	</div>
+		        </div>
+			</div>
+		</nav>
+		<!-- END middle site menu -->
+	</header>
+	   <section class="sectionCenter1" id="sectionCenterEvent">
+		<div class="ip_list">
+				<div class="search_results" style="margin-top:5px;">
+					<div style="float:left;">
+						
+							<form id="search_form_1" action="/ip/search" method="GET" onsubmit="return submitSearchTechno();">
+								
+<!-- 								<div th:if="${availableFoundries==null || availableFoundries.size() == 0}" style="float:left;"> -->
+<!-- 									<div class="refine"> -->
+<!-- 										<img th:src="@{/images/arrows/taxo_pointer.gif}" alt="arrow" border="0"><span class="refine_span" >Filter by Technology</span><br> -->
+<!-- 										<span>No result found</span> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+							</form>
+					</div>
+					
+				
+				
+				<div class="ip_list_login">
+										<h3 style="font-weight: bold; margin-top: 5px; margin-bottom: 5px;">
+
+											&nbsp;You must be registered  with the D&amp;R website to view the full search results, including:
+
+										</h3>
+										<ul style="padding-bottom: 5px;">
+											<li style="padding-bottom: 2px;">
+												&nbsp;Complete datasheets for <b>GDDR7</b><b> IP Core</b>   products
+									    	</li>
+
+											<li style="padding-bottom: 2px;">
+												&nbsp;Contact information for <b>GDDR7</b> <b> IP Core</b> suppliers
+											</li>
+										</ul>
+									&nbsp;<img src="//static.designandreuse.com/IMG2002/hm_arrow.gif" width="12" height="14" alt="" border="0"> Please
+									&nbsp;<a href="/login"> log in</a>  here to your account.
+									&nbsp;<br>&nbsp;<img src="//static.designandreuse.com/IMG2002/hm_arrow.gif" width="12" height="14" alt="" border="0"> New user ?
+									&nbsp;<a href="/signup">Signup here</a>.
+
+								</div>
+					
+				<div style="float:right;">
+					<div class="header">12 IP</div>
+					<table class="ip"><tbody><tr>
+						<td style="width:40px;padding-left:10px;">
+							<span class="text_bold">1</span>
+							<div class="point-relevance-report">
+								
+								<span style="font-size:10px;">200.0</span>
+							</div>
+						</td>
+						<td>
+							<table class="inside_ip"><tbody>
+							<tr>
+								<td style="text-align:left;height:47px;vertical-align:middle;">
+									<a href="/ip/view/MCPI_657/gddr7-memory-controller/" class="text_bold">GDDR7 Memory Controller</a>
+									<div class="ip_description">The Rambus GDDR7 controller core is designed for use in applications requiring high memory throughput including graphics, high performance computing (...</div>
+								</td>
+								
+							</tr>
+							</tbody>
+							</table>
+						</td>
+						</tr></tbody>
+					</table>
+					<table class="ip"><tbody><tr>
+						<td style="width:40px;padding-left:10px;">
+							<span class="text_bold">2</span>
+							<div class="point-relevance-report">
+								
+								<span style="font-size:10px;">80.0</span>
+							</div>
+						</td>
+						<td>
+							<table class="inside_ip"><tbody>
+							<tr>
+								<td style="text-align:left;height:47px;vertical-align:middle;">
+									<a href="/ip/view/MCPI_582/gddr7-phy-controller/" class="text_bold">GDDR7 PHY &amp; Controller</a>
+									<div class="ip_description">The INNOSILICON™ GDDR7 PHY is fully compliant with the JEDEC GDDR7 standard, supporting data rates of up to 32 Gbps in PAM3 mode. In PAM3 mode, each b...</div>
+								</td>
+								
+							</tr>
+							</tbody>
+							</table>
+						</td>
+						</tr></tbody>
+					</table>
+					<table class="ip"><tbody><tr>
+						<td style="width:40px;padding-left:10px;">
+							<span class="text_bold">3</span>
+							<div class="point-relevance-report">
+								
+								<span style="font-size:10px;">5.0</span>
+							</div>
+						</td>
+						<td>
+							<table class="inside_ip"><tbody>
+							<tr>
+								<td style="text-align:left;height:47px;vertical-align:middle;">
+									<a href="/ip/view/prod215/gddr7-memory-phy-for-globalfoundries-at-16gbps/" class="text_bold">GDDR7 Memory PHY for GLOBALFOUNDRIES at 16Gbps</a>
+									<div class="ip_description">High performance for graphics, AI, and automotive products
+
+The Cadence IP solution for GDDR7 consists of high-performance hardened PHY, serving hig...</div>
+								</td>
+								
+							</tr>
+							</tbody>
+							</table>
+						</td>
+						</tr></tbody>
+					</table>
+					<table class="ip"><tbody><tr>
+						<td style="width:40px;padding-left:10px;">
+							<span class="text_bold">4</span>
+							<div class="point-relevance-report">
+								
+								<span style="font-size:10px;">0.7246</span>
+							</div>
+						</td>
+						<td>
+							<table class="inside_ip"><tbody>
+							<tr>
+								<td style="text-align:left;height:47px;vertical-align:middle;">
+									<a href="/ip/view/VC_144/gddr7-dfi-verification-ip/" class="text_bold">GDDR7 DFI Verification IP</a>
+									<div class="ip_description">GDDR7 DFI Verification IP provides an smart way to verify the GDDR7 DFI component of a SOC or a ASIC. The SmartDV s GDDR7 DFI Verification IP is fully...</div>
+								</td>
+								
+							</tr>
+							</tbody>
+							</table>
+						</td>
+						</tr></tbody>
+					</table>
+					<table class="ip"><tbody><tr>
+						<td style="width:40px;padding-left:10px;">
+							<span class="text_bold">5</span>
+							<div class="point-relevance-report">
+								
+								<span style="font-size:10px;">0.7246</span>
+							</div>
+						</td>
+						<td>
+							<table class="inside_ip"><tbody>
+							<tr>
+								<td style="text-align:left;height:47px;vertical-align:middle;">
+									<a href="/ip/view/VC_145/gddr7-memory-model/" class="text_bold">GDDR7 Memory Model</a>
+									<div class="ip_description">GDDR7 Memory Model provides an smart way to verify the GDDR7 component of a SOC or a ASIC. The SmartDV s GDDR7 memory model is fully compliant with dr...</div>
+								</td>
+								
+							</tr>
+							</tbody>
+							</table>
+						</td>
+						</tr></tbody>
+					</table>
+					<table class="ip"><tbody><tr>
+						<td style="width:40px;padding-left:10px;">
+							<span class="text_bold">6</span>
+							<div class="point-relevance-report">
+								
+								<span style="font-size:10px;">0.0</span>
+							</div>
+						</td>
+						<td>
+							<table class="inside_ip"><tbody>
+							<tr>
+								<td style="text-align:left;height:47px;vertical-align:middle;">
+									<a href="/ip/view/prod216/gddr7-memory-phy-for-samsung-at-16gbps/" class="text_bold">GDDR7 Memory PHY for Samsung at 16Gbps</a>
+									<div class="ip_description">High performance for graphics, AI, and automotive products
+
+The Cadence IP solution for GDDR7 consists of high-performance hardened PHY, serving hig...</div>
+								</td>
+								
+							</tr>
+							</tbody>
+							</table>
+						</td>
+						</tr></tbody>
+					</table>
+					<table class="ip"><tbody><tr>
+						<td style="width:40px;padding-left:10px;">
+							<span class="text_bold">7</span>
+							<div class="point-relevance-report">
+								
+								<span style="font-size:10px;">0.0</span>
+							</div>
+						</td>
+						<td>
+							<table class="inside_ip"><tbody>
+							<tr>
+								<td style="text-align:left;height:47px;vertical-align:middle;">
+									<a href="/ip/view/prod217/gddr7-memory-phy-for-tsmc/" class="text_bold">GDDR7 Memory PHY for TSMC</a>
+									<div class="ip_description">High performance for graphics, AI, and automotive products
+
+The Cadence IP solution for GDDR7 consists of high-performance hardened PHY, serving hig...</div>
+								</td>
+								
+							</tr>
+							</tbody>
+							</table>
+						</td>
+						</tr></tbody>
+					</table>
+					<table class="ip"><tbody><tr>
+						<td style="width:40px;padding-left:10px;">
+							<span class="text_bold">8</span>
+							<div class="point-relevance-report">
+								
+								<span style="font-size:10px;">0.0</span>
+							</div>
+						</td>
+						<td>
+							<table class="inside_ip"><tbody>
+							<tr>
+								<td style="text-align:left;height:47px;vertical-align:middle;">
+									<a href="/ip/view/prod218/gddr7-memory-phy-for-tsmc-at-16gbps/" class="text_bold">GDDR7 Memory PHY for TSMC at 16Gbps</a>
+									<div class="ip_description">High performance for graphics, AI, and automotive products
+
+The Cadence IP solution for GDDR7 consists of high-performance hardened PHY, serving hig...</div>
+								</td>
+								
+							</tr>
+							</tbody>
+							</table>
+						</td>
+						</tr></tbody>
+					</table>
+					<table class="ip"><tbody><tr>
+						<td style="width:40px;padding-left:10px;">
+							<span class="text_bold">9</span>
+							<div class="point-relevance-report">
+								
+								<span style="font-size:10px;">0.0</span>
+							</div>
+						</td>
+						<td>
+							<table class="inside_ip"><tbody>
+							<tr>
+								<td style="text-align:left;height:47px;vertical-align:middle;">
+									<a href="/ip/view/prod219/gddr7-memory-phy-for-tsmc-at-22gbps/" class="text_bold">GDDR7 Memory PHY for TSMC at 22Gbps</a>
+									<div class="ip_description">High performance for graphics, AI, and automotive products
+
+The Cadence IP solution for GDDR7 consists of high-performance hardened PHY, serving hig...</div>
+								</td>
+								
+							</tr>
+							</tbody>
+							</table>
+						</td>
+						</tr></tbody>
+					</table>
+					<table class="ip"><tbody><tr>
+						<td style="width:40px;padding-left:10px;">
+							<span class="text_bold">10</span>
+							<div class="point-relevance-report">
+								
+								<span style="font-size:10px;">0.0</span>
+							</div>
+						</td>
+						<td>
+							<table class="inside_ip"><tbody>
+							<tr>
+								<td style="text-align:left;height:47px;vertical-align:middle;">
+									<a href="/ip/view/MCPI_451/gddr7-memory-phy-for-tsmc-n3p/" class="text_bold">GDDR7 Memory PHY for TSMC N3P</a>
+									<div class="ip_description">High performance for graphics, AI, and automotive products
+
+The Cadence IP solution for GDDR7 consists of high-performance hardened PHY, serving hig...</div>
+								</td>
+								
+							</tr>
+							</tbody>
+							</table>
+						</td>
+						</tr></tbody>
+					</table>
+					<table class="ip"><tbody><tr>
+						<td style="width:40px;padding-left:10px;">
+							<span class="text_bold">11</span>
+							<div class="point-relevance-report">
+								
+								<span style="font-size:10px;">0.0</span>
+							</div>
+						</td>
+						<td>
+							<table class="inside_ip"><tbody>
+							<tr>
+								<td style="text-align:left;height:47px;vertical-align:middle;">
+									<a href="/ip/view/MCPI_452/gddr7-memory-phy-for-tsmc-n4p/" class="text_bold">GDDR7 Memory PHY for TSMC N4P</a>
+									<div class="ip_description">High performance for graphics, AI, and automotive products
+
+The Cadence IP solution for GDDR7 consists of high-performance hardened PHY, serving high-...</div>
+								</td>
+								
+							</tr>
+							</tbody>
+							</table>
+						</td>
+						</tr></tbody>
+					</table>
+					<table class="ip"><tbody><tr>
+						<td style="width:40px;padding-left:10px;">
+							<span class="text_bold">12</span>
+							<div class="point-relevance-report">
+								
+								<span style="font-size:10px;">0.0</span>
+							</div>
+						</td>
+						<td>
+							<table class="inside_ip"><tbody>
+							<tr>
+								<td style="text-align:left;height:47px;vertical-align:middle;">
+									<a href="/ip/view/MCPI_453/gddr7-memory-phy-for-tsmc-n5p/" class="text_bold">GDDR7 Memory PHY for TSMC N5P</a>
+									<div class="ip_description">High performance for graphics, AI, and automotive products
+
+The Cadence IP solution for GDDR7 consists of high-performance hardened PHY, serving high-...</div>
+								</td>
+								
+							</tr>
+							</tbody>
+							</table>
+						</td>
+						</tr></tbody>
+					</table>
+					<!-- end pagination -->
+					<div style="float:right;"><p><button class="button_search" onclick="history.back();">&lt;&lt;&nbsp;Back&nbsp;</button></p></div>
+				</div>	
+			</div>
+		</div>
+		<div class="rightbanners">
+			<div class="righttile">
+				<div>
+	                <ins data-revive-zoneid="5" data-revive-id="ad0a248f25b445cf636ada378c22c876"></ins>
+	            	<script async src="//ad.design-reuse.com/adserver/www/delivery/asyncjs.php"></script>
+	            </div>
+			</div>
+			<div class="skyscraper">
+				<div>
+				    <ins data-revive-zoneid="6" data-revive-id="ad0a248f25b445cf636ada378c22c876"></ins>
+				    <script async src="//ad.design-reuse.com/adserver/www/delivery/asyncjs.php"></script>
+				</div>
+			</div>
+			<div class="righttile">
+				<div>
+	               <ins data-revive-zoneid="7" data-revive-id="ad0a248f25b445cf636ada378c22c876"></ins>
+	               <script async src="//ad.design-reuse.com/adserver/www/delivery/asyncjs.php"></script>
+	             </div>
+			</div>
+		</div>
+	</section>
+    <footer class="classFooter" id='footer'>
+		<!-- menu footer -->
+		<div class="menu_footer">
+			<div>
+				<h3 class="bottom_title">
+					Partner with us
+				</h3>
+				<table class="bottom_button" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td>
+							<div class="bottom_button">
+								<a href="/contact" title="Contact Us" class="bottom_button_link">
+									<img src="/images/email.png" class="email-icon" alt="email">
+									Contact Us
+								</a>
+							</div>
+						</td>
+					</tr></tbody>
+				</table>
+				<table class="bottom_button" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td>
+							<div class="bottom_button">
+								<a href="/partnership/" title="Partnership" class="bottom_button_link bottom_button_link2">
+									<img src="/images/icon_add.png" class="add-icon" alt="plus">
+									Partnership Offers
+								</a>
+						</div>
+						</td>
+					</tr></tbody>
+				</table>
+			</div>
+			<div>
+				<h3 class="bottom_title">
+					List your Products
+				</h3>
+				<p class="bottom_text">
+					Suppliers, list and add your products for free.
+				</p>
+				<table class="bottom_button" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td>
+							<div class="bottom_button">
+								<a href="/add-products" title="List your products" class="bottom_button_link bottom_button_link2">
+									<img src="/images/icon_add.png" class="add-icon" alt="plus">
+									List your Products
+								</a>
+						</div>
+						</td>
+					</tr></tbody>
+				</table>
+			</div>
+			<div>
+				<h3 class="bottom_title">
+					<a href="/files/D&amp;R_Privacy_Policy.pdf" target="_blank" class="bottom_title">
+					More about <span class="bottom_title">D&amp;R Privacy Policy</span>
+					</a>
+				</h3>
+				<p class="bottom_subtitle">
+				&copy; 2025 Design And Reuse
+				</p>
+				<p class="bottom_subtitle">
+				All Rights Reserved.
+				</p>
+				<p class="bottom_text">
+					No portion of this site may be copied, retransmitted, reposted, duplicated or otherwise used without the express written permission of Design And Reuse.
+				</p>
+			</div>
+			<div style="clear: both"></div>
+		</div>
+		<!-- END menu footer -->
+	</footer>
+</body>
+</html>

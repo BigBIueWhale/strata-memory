@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Cadence GDDR6 Memory PHY for TSMC N7 | ChipEstimate.com IP Catalog</title>
+    <link rel="canonical" href="https://www.chipestimate.com/Cadence/GDDR6-Memory-PHY-for-TSMC-N7/datasheet/ip/60481" />
+    <meta name="description" content="Designed for high performance and low latency in AI/ML, graphics and networking">
+    <meta name="google-site-verification" content="7sfJB3INxUFatZOqEflynZ7Vdvvesi0-37nVWB23Aoo" />
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+	<link href="/css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+ <script src="/js/jQuery1.11.3.js"></script>
+
+<script type="text/javascript" src="/js/jquery.validate.js"></script>
+	
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+      <script src="js/ga.js"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-60MTWFFXC5"></script>
+      <script src="js/gtag.js"></script>
+
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  </head>
+  <body>
+    <a class="chip-signal" href="/chipsignal" style="display: none" aria-hidden="true">Chip Signal </a>
+    <div class="container">
+		<div class="header-wrapper">
+			<div class="row">
+				<div class="col-md-12">
+					<nav class="navbar navbar-default">
+					
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+						  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						  </button>
+						  <a href="/" class="navbar-brand" title="ChipEstimate.com"><img class="logo" src="/images/chipEstimate-logo.png" alt="ChipEstimate.com - Chip Planning Portal" title="" /></a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse setting-menu">
+<!--                      
+					<div class="header-techTalks">
+    <a href="/dac2019/">
+        <img src="/images/home_page_DAC_graphic_dac2019.jpg" class="img-responsive" />
+    </a>
+ </div>	
+ -->
+                        
+						  <ul class="nav navbar-nav navbar-right">
+							<li class="dropdown">
+							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							  aria-expanded="false">English <span class="caret"></span></a>
+							  <ul class="dropdown-menu">
+								<li><a href="/set_language.php?script=%2FCadence%2FGDDR6-Memory-PHY-for-TSMC-N7%2Fdatasheet%2Fip%2F60481%26from%3D%26%2347%3BCadence%26%2347%3BGDDR6%26%2345%3BMemory%26%2345%3BPHY%26%2345%3Bfor%26%2345%3BTSMC%26%2345%3BN7%26%2347%3Bdatasheet%26%2347%3Bip%26%2347%3B60481%26logerr%3D1&lang=English" title="English">English</a></li>
+								<li><a href="/set_language.php?script=%2FCadence%2FGDDR6-Memory-PHY-for-TSMC-N7%2Fdatasheet%2Fip%2F60481%26from%3D%26%2347%3BCadence%26%2347%3BGDDR6%26%2345%3BMemory%26%2345%3BPHY%26%2345%3Bfor%26%2345%3BTSMC%26%2345%3BN7%26%2347%3Bdatasheet%26%2347%3Bip%26%2347%3B60481%26logerr%3D1&lang=Japanese" title="Japanese">Japanese</a></li>
+								<li><a href="/set_language.php?script=%2FCadence%2FGDDR6-Memory-PHY-for-TSMC-N7%2Fdatasheet%2Fip%2F60481%26from%3D%26%2347%3BCadence%26%2347%3BGDDR6%26%2345%3BMemory%26%2345%3BPHY%26%2345%3Bfor%26%2345%3BTSMC%26%2345%3BN7%26%2347%3Bdatasheet%26%2347%3Bip%26%2347%3B60481%26logerr%3D1&lang=Chinese" title="Chinese">Chinese</a></li>
+							  </ul>
+							</li>
+							
+							<li class="dropdown">
+														  <a href="/log.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							  aria-expanded="false">Log In <span class="caret"></span></a>
+							  <ul class="dropdown-menu">
+								<li><a href="/log.php" title="Log in">Log In</a></li>
+								<li><a href="/account_step1.php" title="Register">Register</a></li>
+									<li><a href="/partnerlogin.php" title="Partner Login">Partner Login</a></li>
+							  </ul>
+							</li>
+						  </ul>
+						  						</div><!-- /.navbar-collapse -->
+						
+					 
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="menu hidden-xs">
+			<ul class="main-menu">
+				<li class="has-submenu"><a href="/advanced-search.php">Search IP</a>
+					<ul>
+						<li><a href="/advanced-search.php" >Advanced Search</a></li>
+						<li><a href="/ipconcierge.php" >Request IP</a></li>
+						<li><a href="/Semiconductor-IP-Catalog" >Browse IP</a></li>
+						<li><a href="/compare-ip-tool" >Compare IP</a></li>	
+						<li><a href="/IP-Core-Vendors" >IP Vendor List</a></li>
+						<li><a href="/Verification-IP/" >Verification IP</a></li>
+						<li><a href="/xilinx/" >FPGA</a></li>
+					</ul>
+												
+				</li>
+				<li class="has-submenu"><a href="/IP-Core-Vendors" >IP Vendors</a>
+					<ul>
+						<li><a href="/IP-Core-Vendors" >IP Vendors</a></li>
+						<li><a href="/tsmc/" >TSMC</a></li>
+						<li><a href="/globalfoundries/" class="fs-14">GLOBALFOUNDRIES</a></li>	
+						<li><a href="/commonplatform/" >Common Platform</a></li>
+						<li><a href="/Verification-IP/" >Verification IP</a></li>
+						<li><a href="/cadence/" >Cadence</a></li>
+						<li><a href="/xilinx/" >FPGA</a></li>
+                        <li><a href="/non-commercial-ip/" >Non-Commercial IP</a></li>
+					</ul>
+				</li>
+				<li class="has-submenu"><a href="/advanced-search.php">IP Resources</a>
+					<ul>
+						<li><a href="/compare-ip-tool" >Compare IP</a></li>
+						<li><a href="/IP-Core-White-Paper" >White Papers</a></li>
+						<li><a href="/IP-Core-Technical-Article" >Tech Talks</a></li>
+						<li><a href="/IP-Core-Video" >Videos</a></li>	
+						<li><a href="/IP-Core-Blogs/" >Blogs</a></li>
+						<li><a href="/IP-Connections-Newsletter" >Newsletters</a></li>
+						<li><a href="/IP-Core-News" >Headline News</a></li>
+						<li><a href="/dac2022/" >DAC - IP Talks</a></li>
+						<li><a href="/Semiconductor-IP-Core/Industry-Trends" >Industry Trends</a></li>
+						
+					</ul>
+												
+				</li>
+				<li class="has-submenu"><a href="/partneroverview.php">Partners</a>
+					<ul>
+						<li><a href="/partneroverview.php" >Overview</a></li>
+						<li><a href="/becomepartner.php" >Join</a></li>
+						<li><a href="/partnerlogin.php" >Login</a></li>	
+									
+					</ul>
+												
+				</li>
+				<li class="has-submenu"><a href="/support.php">Support</a>
+					<ul>
+						<li><a href="/support.php" >Support</a></li>
+						<li><a href="/contact.php" >Contact Us</a></li>
+						<li><a href="/account.php" >My Account</a></li>	
+									
+					</ul>
+												
+				</li>
+				<li class="has-submenu"><a href="/aboutus.php">About Us</a>
+					<ul>
+						<li><a href="/aboutus.php" >Overview</a></li>
+						<li><a href="/contact.php" >Contact Us</a></li>
+									
+					</ul>
+												
+				</li>
+			</ul>
+		</div>
+		<div class="menu-xs hidden-lg hidden-md" id="bs-example-navbar-collapse-1">
+			<ul>
+		<!--<li><a href="/dac2019/"><img src="/images/home_page_DAC_graphic_dac2019.jpg" class="img-responsive" /></a></li>-->
+                				<li><a href="/log.php">Log In</a></li>
+                				<li class="has-submenu-xs">English					<ul>
+						<li><a href="/set_language.php?script=%2FCadence%2FGDDR6-Memory-PHY-for-TSMC-N7%2Fdatasheet%2Fip%2F60481%26from%3D%26%2347%3BCadence%26%2347%3BGDDR6%26%2345%3BMemory%26%2345%3BPHY%26%2345%3Bfor%26%2345%3BTSMC%26%2345%3BN7%26%2347%3Bdatasheet%26%2347%3Bip%26%2347%3B60481%26logerr%3D1&lang=English" >English</a></li>
+						<li><a href="/set_language.php?script=%2FCadence%2FGDDR6-Memory-PHY-for-TSMC-N7%2Fdatasheet%2Fip%2F60481%26from%3D%26%2347%3BCadence%26%2347%3BGDDR6%26%2345%3BMemory%26%2345%3BPHY%26%2345%3Bfor%26%2345%3BTSMC%26%2345%3BN7%26%2347%3Bdatasheet%26%2347%3Bip%26%2347%3B60481%26logerr%3D1&lang=Japanese" >Japanese</a></li>
+						<li><a href="/set_language.php?script=%2FCadence%2FGDDR6-Memory-PHY-for-TSMC-N7%2Fdatasheet%2Fip%2F60481%26from%3D%26%2347%3BCadence%26%2347%3BGDDR6%26%2345%3BMemory%26%2345%3BPHY%26%2345%3Bfor%26%2345%3BTSMC%26%2345%3BN7%26%2347%3Bdatasheet%26%2347%3Bip%26%2347%3B60481%26logerr%3D1&lang=Chinese" >Chinese</a></li>	
+					</ul>
+				</li>                  
+				<li class="has-submenu-xs">Search IP
+					<ul>
+						<li><a href="/advanced-search.php" >Advanced Search</a></li>
+						<li><a href="/ipconcierge.php" >Request IP</a></li>
+						<li><a href="/Semiconductor-IP-Catalog" >Browse IP</a></li>	
+						<li><a href="/compare-ip-tool" >Compare IP</a></li>
+						<li><a href="/IP-Core-Vendors" >IP Vendor List</a></li>
+						<li><a href="/Verification-IP/" >Verification IP</a></li>
+						<li><a href="/xilinx/" >FPGA</a></li>
+					</ul>
+				</li>                  
+				<li class="has-submenu-xs">IP Vendors
+					<ul>
+						<li><a href="/IP-Core-Vendors" >IP Vendors</a></li>
+						<li><a href="/commonplatform/" >Common Platform</a></li>
+						<li><a href="/globalfoundries/" >GLOBALFOUNDRIES</a></li>	
+						<li><a href="/tsmc/" >TSMC</a></li>
+						<li><a href="/cadence/" >Cadence</a></li>
+						<li><a href="/xilinx/" >FPGA</a></li>
+                        <li><a href="/non-commercial-ip/" >Non-Commercial IP</a></li>
+					</ul>
+				</li>
+				<li class="has-submenu-xs">IP Resources
+					<ul>
+						<li><a href="/compare-ip-tool" >Compare IP</a></li>
+						<li><a href="/IP-Core-White-Paper" >White Papers</a></li>
+						<li><a href="/IP-Core-Technical-Article" >Tech Talks</a></li>
+						<li><a href="/IP-Core-Video" >Videos</a></li>	
+						<li><a href="/IP-Core-Blogs/" >Blogs</a></li>
+						<li><a href="/IP-Connections-Newsletter" >Newsletters</a></li>
+						<li><a href="/IP-Core-News" >Headline News</a></li>
+						<li><a href="/dac2022/" >DAC - IP Talks</a></li>
+						<li><a href="/Semiconductor-IP-Core/Industry-Trends" >Industry Trends</a></li>
+					</ul>
+				</li>
+				<li class="has-submenu-xs">Partners
+					<ul>
+						<li><a href="/partneroverview.php" >Overview</a></li>
+						<li><a href="/becomepartner.php" >Join</a></li>
+						<li><a href="/partnerlogin.php" >Login</a></li>	
+									
+					</ul>
+				</li>
+				<li class="has-submenu-xs">Support
+					<ul>
+						<li><a href="/support.php" >Support</a></li>
+						<li><a href="/contact.php" >Contact Us</a></li>
+						<li><a href="/account.php" >My Account</a></li>	
+						<li><a href="/ce_ccpa_lp.php" >
+                            Do Not Sell My Info                        </a></li>	
+									
+					</ul>
+				</li>
+				<li class="has-submenu-xs">About Us
+					<ul>
+						<li><a href="/aboutus.php" >Overview</a></li>
+						<li><a href="/contact.php" >Contact Us</a></li>
+									
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="login-banner">
+			<div class="row">
+				<div class="col-md-9 col-sm-8  banner-image-div">
+					<div style="min-height:138px">
+						<div class="login-banner-text">
+						 Access<br/>
+						 <span class="login-banner-txt-b">the world's leading IP portal</span>
+						</div>
+					</div>
+				</div>
+                <div class="col-md-3 col-sm-4 banner-search-div">
+                    <div class="search-ip-block">
+                        <label>Search IP here</label>   
+                        <form name="search" action="/search.php?res=1" method="post">
+                            <div class="input-group">
+                              <input type="text" id="keywordTxtBx" class="form-control"  value="Search by keyword" name="keywords" onblur="
+                              if (this.value == '') {
+                                  this.value = 'Search by keyword';
+                              }
+                              " onfocus="
+                              if (this.value == 'Search by keyword') {
+                                  this.value = '';
+                              }
+                              " placeholder="">
+                              <span class="input-group-addon"><a id="searchSubmit" href="javascript:document.search.submit()"><img src="/images/btn-arrow.png" title="Search" alt="Search"/></a></span>
+                            </div>
+                        </form>
+                        World’s Most Trusted IP Resource
+                    </div>
+                </div>
+			</div>
+		</div>
+		<div class="content-divider"></div>
+		<div class="content-wrapper">
+			<div class="bread-crum">
+				<div class="vcs_bread_crumb">
+ <a title="" href="/index.php" class="vcs_bread_crumb_link">Home</a>&nbsp; > &nbsp;Log In
+</div>	
+			</div>
+			
+
+			<div class="row top-banner">
+				<div class="col-md-9 col-sm-9" >
+					<div class="row">
+						<div class="col-md-12">
+                            <script type="text/javascript">if (!window.AdButler){(function(){var s = document.createElement("script"); s.async = true; s.type = "text/javascript";s.src = 'https://servedbyadbutler.com/app.js';var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(s, n);}());}</script><script type="text/javascript">
+var AdButler = AdButler || {}; AdButler.ads = AdButler.ads || [];
+var abkw = '';
+var plc189753 = window.plc189753 || 0;
+document.write('<'+'div id="placement_189753_'+plc189753+'"></'+'div>');
+AdButler.ads.push({handler: function(opt){ AdButler.register(167067, 189753, [728,90], 'placement_189753_'+opt.place, opt); }, opt: { place: plc189753++, keywords: abkw, domain: 'servedbyadbutler.com' }});
+</script>						</div>
+						<div class="col-md-12">
+							<img src="/images/b1.png" class="blue-banner img-responsive" />
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-3 hidden-xs">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-6">
+                            <script type="text/javascript">if (!window.AdButler){(function(){var s = document.createElement("script"); s.async = true; s.type = "text/javascript";s.src = 'https://servedbyadbutler.com/app.js';var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(s, n);}());}</script>
+<script type="text/javascript">
+var AdButler = AdButler || {}; AdButler.ads = AdButler.ads || [];
+var abkw = '';
+var plc189754 = window.plc189754 || 0;
+document.write('<'+'div id="placement_189754_'+plc189754+'"></'+'div>');
+AdButler.ads.push({handler: function(opt){ AdButler.register(167067, 189754, [120,120], 'placement_189754_'+opt.place, opt); }, opt: { place: plc189754++, keywords: abkw, domain: 'servedbyadbutler.com' }});
+</script>						</div>
+						
+						<div class="col-md-6 col-sm-6 col-xs-6">
+                            <script type="text/javascript">if (!window.AdButler){(function(){var s = document.createElement("script"); s.async = true; s.type = "text/javascript";s.src = 'https://servedbyadbutler.com/app.js';var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(s, n);}());}</script>
+<script type="text/javascript">
+var AdButler = AdButler || {}; AdButler.ads = AdButler.ads || [];
+var abkw = '';
+var plc189754 = window.plc189754 || 0;
+document.write('<'+'div id="placement_189754_'+plc189754+'"></'+'div>');
+AdButler.ads.push({handler: function(opt){ AdButler.register(167067, 189754, [120,120], 'placement_189754_'+opt.place, opt); }, opt: { place: plc189754++, keywords: abkw, domain: 'servedbyadbutler.com' }});
+</script>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="results-block col-md-7 col-sm-8 mt-10">
+					<div class="featured-block login">
+						<div class="heading-arrow"><img src="/images/heading.jpg"></div>
+                            <div class="log-login">Log In</div>
+						<div class="row">
+	<div class="col-md-12">
+			<h1 class="macroname-preview">
+					GDDR6 Memory PHY for TSMC N7								</h1>
+	</div>
+</div>
+	<div class="row">
+			<div class="col-md-12 preview-txt">
+					IP Preview
+			</div>
+	</div>
+	<div class="row">
+			<div class="col-md-3 col-sm-3 col-xs-3 label-blue">
+					Name:
+			</div>
+			<div class="col-md-9 col-sm-9 col-xs-9 label-black">
+					GDDR6 Memory PHY for TSMC N7			</div>
+	</div>
+	<div class="row">
+			<div class="col-md-3 col-sm-3 col-xs-3 label-blue">
+					Provider:
+			</div>
+
+			<div class="col-md-9 col-sm-9 col-xs-9 label-black">
+					Cadence			</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-3  col-xs-3 label-blue">
+				Description:
+		</div>
+		<div class="col-md-9 col-sm-9 col-xs-9 label-black">
+				Designed for high performance and low latency in AI/ML, graphics and networking		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-3  col-xs-3 label-blue">
+				Overview:
+		</div>
+		<div class="col-md-9 col-sm-9 col-xs-9 label-black">
+				The latest, the Denali PHY IP for GDDR6, is comprised of architectural improvements drawn from previous-generation DDR PHYs and Cadence’s 10G, 16G, and 25G SerDes, achieving breakthrough ...		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-3 col-xs-3 label-blue">
+				Category:
+		</div>
+		<div class="col-md-8 col-sm-9 col-xs-9 label-blue-roboto">
+				<a class='link' href='https://www.chipestimate.com//Semiconductor-IP-Catalog'> IP Catalog </a> : <a class='link' href='https://www.chipestimate.com//Analog-Mixed-Signal-IP/catalog/27'> Analog & Mixed Signal IP </a> : <a class='link' href='https://www.chipestimate.com//PHY-IP/catalog/48'> PHY </a><br/>		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 listing-login-note">
+				<span>Additional data available!</span> Portability, process node, maturity, features, and more can be viewed by logging in with your ChipEstimate.com account.		</div>
+	</div>
+ <div class="seperator-blue">&nbsp;</div>
+<div class="row">
+		<div class="col-md-12 listing-login">
+				To see the entire IP datasheet from Cadence please log in or register.		</div>
+</div>
+						<div class="row">
+							
+							<div class="col-md-8 col-sm-9 login-lt" style="position:relative; padding-right:25px; padding-bottom:25px">
+								<div class="gradient-seperator hidden-sm hidden-xs"></div>
+								<h2>Please log in to continue</h2>
+																<font color="red"><b>Please log in to continue</b></font>								<form name ="portalLogin" action="&#47;Cadence&#47;GDDR6&#45;Memory&#45;PHY&#45;for&#45;TSMC&#45;N7&#47;datasheet&#47;ip&#47;60481" method="post">
+									<div class="row input-row" style="margin-top:12px">
+										<div class="col-md-4 col-sm-4 col-xs-4"><label for="email">Email address</label></div>
+										<div class="col-md-8 col-sm-8 col-xs-8"><input id="emailLogin" class="form-control" type="text" name="email" size="25" value="" tabindex="1"></div>
+									</div>
+									
+									<div class="row input-row">
+										<div class="col-md-4 col-sm-4 col-xs-4"><label for="password">Password</label></div>
+										<div class="col-md-8 col-sm-8 col-xs-8"><input id="passLogin" class="form-control" type="password" name="password" size="25" value="" tabindex="2"></div>
+									</div>
+									<div class="row">
+										<div class="col-md-12 forgot-pwd"><a href="forgetpassword.php">Forgot your password?</a></div>
+									</div>
+                                    <div class="row input-row">
+                                        <div class="col-md-12"><label>By logging in I agree to these <a href="/terms_of_use.php" target="_blank">Terms of Use</a></label></div>
+                                    </div>
+									<div class="row input-row">
+										<div class="col-md-4 col-sm-4 col-xs-5"><label for="remember-me">Remember me </label></div>
+										<div class="col-md-8 col-sm-8 col-xs-7 chk-options">
+											<label><input type="checkbox" id="remember-me" name="rememberme" value="1" tabindex="3" checked="checked" /><span class="checkbox">&nbsp;</span></label>
+											<button type="submit" class="pull-right lg-small">Login <img src="/images/button-arrow.png"></button>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="col-md-4  col-sm-12 login-rt">
+								<div class="new-user-block">
+								<div class="new-user">New user?</div>
+								<button onclick="goToRegister();" type="button" class="register-btn">Register for Free <img src="/images/button-arrow.png"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            				<div class="block-2 col-md-3 col-sm-4 mt-10" >
+										<div class="block-2-content mt-10">
+						<div class="view-all"><a href="search.php?new=1&nb=20&page=1&IP=IP">View All</a></div>
+						<div class="heading-div">
+						  Latest Semiconductor IP 
+						</div>
+						<div class="block-2-padding">
+						<ul><div class="semiconductor-block"><h3 class="latest-ip-seo"><a href="https://www.chipestimate.com/Arasan-Chip-Systems/eUSB2V20-PHY-IP/datasheet/ip/61611" title="Arasan Chip Systems eUSB2V2.0 PHY IP">eUSB2V2.0 PHY IP</a></h3><div> Arasan Chip Systems</div></div><div class="semiconductor-block"><h3 class="latest-ip-seo"><a href="https://www.chipestimate.com/Arasan-Chip-Systems/eUSB2V20-Controller/datasheet/ip/61610" title="Arasan Chip Systems eUSB2V2.0 Controller">eUSB2V2.0 Controller</a></h3><div> Arasan Chip Systems</div></div><div class="semiconductor-block"><h3 class="latest-ip-seo"><a href="https://www.chipestimate.com/Arasan-Chip-Systems/USB-20-OTG-Dual-Role-Device--and-40DRD-and-41-Controller/datasheet/ip/61609" title="Arasan Chip Systems USB 2.0 OTG Dual Role Device &#40;DRD&#41; Controller">USB 2.0 OTG Dual Role Device &#4...</a></h3><div> Arasan Chip Systems</div></div><div class="semiconductor-block"><h3 class="latest-ip-seo"><a href="https://www.chipestimate.com/Arasan-Chip-Systems/16-and-45Bit-xSPI-PSRAM-PHY/datasheet/ip/61608" title="Arasan Chip Systems 16&#45;Bit xSPI PSRAM PHY">16&#45;Bit xSPI PSRAM PHY</a></h3><div> Arasan Chip Systems</div></div><div class="semiconductor-block"><h3 class="latest-ip-seo"><a href="https://www.chipestimate.com/Synopsys/dwc-and-95usbc32dptxphy-and-95tsmc/datasheet/ip/58626" title="Synopsys dwc&#95;usbc32dptxphy&#95;tsmc">dwc&#95;usbc32dptxphy&#95;tsmc</a></h3><div> Synopsys</div></div>
+						</div>
+					</div> 
+					<div class="block-2-content mt-10">
+						
+<div class="view-all"><a title="View All Most Popular IP" href="/search.php?pop=1&nb=20&page=1&IP=IP">View All</a></div>
+<div class="heading-div">
+    Most Popular IP</div>
+<div class="block-2-padding">
+        <div class="semiconductor-block">
+             <a title="dwc&#95;224g&#95;ethernet&#95;phy&#95;tsmc" href="https://www.chipestimate.com/Synopsys/dwc-and-95224g-and-95ethernet-and-95phy-and-95tsmc/datasheet/ip/61283">dwc&#95;224g&#95;ethernet&#95;phy&#95;tsmc</a><div>Synopsys</div>        </div>
+        <div class="semiconductor-block">
+             <a title="A12B100M&#45;XF180" href="https://www.chipestimate.com/Alphacore/A12B100M-and-45XF180/datasheet/ip/47214">A12B100M&#45;XF180</a><div>Alphacore</div>        </div>
+        <div class="semiconductor-block">
+             <a title="eUSB2V2 PHY for TSMC" href="https://www.chipestimate.com/Cadence/eUSB2V2-PHY-for-TSMC/datasheet/ip/61515">eUSB2V2 PHY for TSMC</a><div>Cadence</div>        </div>
+        <div class="semiconductor-block">
+             <a title="12bit 1Msps&#126;3Msps SAR ADC IP core" href="https://www.chipestimate.com/T2M/12bit-1Msps-and-1263Msps-SAR-ADC-IP-core/datasheet/ip/55682">12bit 1Msps&#126;3Msps SAR ADC IP core</a><div>T2M</div>        </div>
+        <div class="semiconductor-block">
+             <a title="12bit 160Msps ULP SAR slice ADC IP Core" href="https://www.chipestimate.com/T2M/12bit-160Msps-ULP-SAR-slice-ADC-IP-Core/datasheet/ip/55667">12bit 160Msps ULP SAR slice ADC IP Core</a><div>T2M</div>        </div>
+        <div class="semiconductor-block">
+             <a title="250iHP&#95;ADC&#95;02" href="https://www.chipestimate.com/NTLab/250iHP-and-95ADC-and-9502/datasheet/ip/34421">250iHP&#95;ADC&#95;02</a><div>NTLab</div>        </div>
+</div>
+
+					</div>
+				</div>	
+            
+
+				<div class="promo-block col-md-1 hidden-xs hidden-sm mt-10">
+                    <!-- Skyscraper Sub-Page [async] -->
+<script type="text/javascript">if (!window.AdButler){(function(){var s = document.createElement("script"); s.async = true; s.type = "text/javascript";s.src = 'https://servedbyadbutler.com/app.js';var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(s, n);}());}</script>
+<script type="text/javascript">
+var AdButler = AdButler || {}; AdButler.ads = AdButler.ads || [];
+var abkw = '';
+var plc189755 = window.plc189755 || 0;
+document.write('<'+'div id="placement_189755_'+plc189755+'"></'+'div>');
+AdButler.ads.push({handler: function(opt){ AdButler.register(167067, 189755, [120,600], 'placement_189755_'+opt.place, opt); }, opt: { place: plc189755++, keywords: abkw, domain: 'servedbyadbutler.com' }});
+</script>                    <div class="mt-10">
+                        <script type="text/javascript">if (!window.AdButler){(function(){var s = document.createElement("script"); s.async = true; s.type = "text/javascript";s.src = 'https://servedbyadbutler.com/app.js';var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(s, n);}());}</script>
+<script type="text/javascript">
+var AdButler = AdButler || {}; AdButler.ads = AdButler.ads || [];
+var abkw = '';
+var plc189754 = window.plc189754 || 0;
+document.write('<'+'div id="placement_189754_'+plc189754+'"></'+'div>');
+AdButler.ads.push({handler: function(opt){ AdButler.register(167067, 189754, [120,120], 'placement_189754_'+opt.place, opt); }, opt: { place: plc189754++, keywords: abkw, domain: 'servedbyadbutler.com' }});
+</script>                    </div>
+                    <div class="mt-10">
+                        <script type="text/javascript">if (!window.AdButler){(function(){var s = document.createElement("script"); s.async = true; s.type = "text/javascript";s.src = 'https://servedbyadbutler.com/app.js';var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(s, n);}());}</script>
+<script type="text/javascript">
+var AdButler = AdButler || {}; AdButler.ads = AdButler.ads || [];
+var abkw = '';
+var plc189754 = window.plc189754 || 0;
+document.write('<'+'div id="placement_189754_'+plc189754+'"></'+'div>');
+AdButler.ads.push({handler: function(opt){ AdButler.register(167067, 189754, [120,120], 'placement_189754_'+opt.place, opt); }, opt: { place: plc189754++, keywords: abkw, domain: 'servedbyadbutler.com' }});
+</script>                    </div>
+				</div>	
+			</div>
+			
+			
+			
+		</div>
+		<script>
+			$(document).ready(function(){
+				setContentHeight()
+			});
+			
+			$( window ).resize(function() {
+				setContentHeight();
+			});
+			
+			function setContentHeight(){
+				$('.login').css('height','');
+				if($(window).width()>=768){
+					var ht = $('.login').height();
+					var ht1 = $('.block-2').height();
+					if(ht1>ht){
+						$('.login').css('height',ht1);
+					}
+				}
+			}
+			function goToRegister(){
+				window.location = "/account_step1.php";
+			}
+		</script>
+		        <div class="related-links hidden-xs">
+			<div class="row">
+				<div class="col-md-1 col-sm-1 links">
+					<div class="related-links-head">Search IP</div>
+					<div><a href="/advanced-search.php" title="Advanced">Advanced</a></div> 
+					<div><a href="/ipconcierge.php" title="Request IP">Request IP </a></div> 
+					<div><a href="/Semiconductor-IP-Catalog" title="Browse IP">Browse IP</a></div> 
+					<div><a href="/compare-ip-tool" title="Compare IP">Compare IP</a></div>
+
+					<div><a href="/IP-Core-Vendors" title="IP Vendor List">IP Vendor List</a></div> 
+					<div><a href="/Verification-IP/" title="Verification IP">Verification IP</a></div> 
+					<div><a href="/xilinx/" title="FPGA">FPGA</a></div> 
+				</div>
+				<div class="col-md-1 col-sm-1 links">
+					<div class="related-links-head">IP Vendors</div>
+					<div><a href="/IP-Core-Vendors" title="All Vendors">All Vendors</a></div> 
+					<div><a href="/xilinx/" title="FPGA">FPGA</a></div> 
+				    <div><a href="/non-commercial-ip/" title="Non-Commercial IP">Non-Commercial IP</a></div>
+                </div>
+				<div class="col-md-1 col-sm-1 links">
+					<div class="related-links-head">Foundries</div>
+					<div><a href="/tsmc/" title="TSMC">TSMC</a></div> 
+					<div class="break-all-word" ><a href="/globalfoundries/" title="GLOBALFOUNDRIES">GLOBALFOUNDRIES</a></div> 
+					<div><a href="/commonplatform/" title="Common Platform">Common Platform</a></div>
+				</div>
+				<div class="col-md-1 col-sm-1 links">
+					<div class="related-links-head">IP Resources</div>
+					<div><a href="/compare-ip-tool" title="Compare IP">Compare IP</a></div>
+
+					<div><a href="/IP-Core-White-Paper" title="White Papers">White Papers</a></div> 
+					<div><a href="/IP-Core-Technical-Article" title="Tech Talks">Tech Talks</a></div> 
+					<div><a href="/IP-Core-Video" title="Videos">Videos</a></div> 
+					<div><a href="/IP-Core-Blogs/" title="Blogs">Blogs</a></div>
+					<div><a href="/IP-Connections-Newsletter" title="Newsletter">Newsletter</a></div>
+					<div><a href="/IP-Core-News" title="Headline News">Headline News</a></div>
+					<div><a href="/dac2022/" title="DAC - IP Talks">DAC - IP Talks</a></div>
+					<div><a href="/Semiconductor-IP-Core/Industry-Trends" title="Industry Trends">Industry Trends</a></div>
+				</div>
+				<div class="col-md-1 col-sm-1 links">
+					<div class="related-links-head">Partners </div>
+					<div><a href="/partneroverview.php" title="Overview">Overview</a></div> 
+					<div><a href="/becomepartner.php" title="Join">Join</a></div> 
+					<div><a href="/partnerlogin.php" title="Login">Login</a></div> 
+				</div>
+				<div class="col-md-1 col-sm-1 links">
+					<div class="related-links-head">Support </div>
+					<div><a href="/support.php" title="Support">Support</a></div> 
+					<div><a href="/contact.php" title="Contact Us">Contact Us</a></div> 
+					<div><a href="/account.php" title="My Account">My Account</a></div> 
+					<div><a href="/ce_ccpa_lp.php" title="Do not sell my info">Do Not Sell My Info</a></div> 
+				</div>
+				<div class="col-md-1 col-sm-1 links" style="width:10%">
+					<div class="related-links-head">About Us </div>
+					<div><a href="/aboutus.php" title="Overview">Overview</a></div> 
+					<div><a href="/contact.php" title="Contact Us">Contact Us</a></div> 				
+				</div>
+			</div>
+		</div>
+		<div class="footer-wrapper">
+			<div class="row hidden-xs">
+				<div class="col-md-12 text-center">
+					<a class="instagram" target="_blank" title="Linked In" href="https://www.linkedin.com/company/152132?trk=tyah&trkInfo=clickedVertical%3Acompany%2Cidx%3A1-1-1%2CtarId%3A1427749653782%2Ctas%3Achipestimate.com"></a>
+					<a class="fb" target="_blank" title="Facebook" href="http://facebook.com/chipestimate"></a>
+					<a class="youtube" target="_blank" title="Youtube"href="http://www.youtube.com/user/chipestimate"></a>
+					<a class="twitter" target="_blank" title="Twitter" href="http://twitter.com/chipestimate"><a>
+				</div>
+			</div>
+			<div class="row">
+                <div class="col-md-12 copy-right">
+                    ChipEstimate.com Chip Planning & IP Portal -- Copyright &copy; 2026                    ChipEstimate.com. All rights reserved.
+                </div>
+				<div class="terms hidden-xs">
+					<a href="/privacy.php" title="Privacy policy">Privacy Policy</a>     
+					<a href="/terms_of_use.php" title="Terms of Use">Terms of Use</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+	<script src="/js/jquery-ui.min.js"></script>
+	<script src="/js/jquery.bxslider.min.js"></script>
+	<script src="/js/common.js"></script>
+	<script src="/js/cookie_policy.js"></script>
+		
+	<script>
+		
+		
+		$( window ).resize(function() {
+			setHeight();
+		});
+		$( window ).load(function() {
+			setHeight();
+		});
+		
+		function setHeight(){
+			// Set min height of left content to match the height of the right content
+			$('.featured-block').css('height','')
+			if($(window).width()>=768){
+				
+				var resultsBlockHt = $('.featured-block').height();
+				var advSearchBlockHt = $('.block-2-content').height();
+					
+				if(advSearchBlockHt > resultsBlockHt){
+					$('.featured-block').css('height',advSearchBlockHt+10);
+				}
+			}
+		}
+		
+		
+	</script>
+		</body>
+</html>

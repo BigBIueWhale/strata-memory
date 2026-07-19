@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S5V1QKY3FD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S5V1QKY3FD');
+  //gtag('config', 'G-C2H6EE41EC');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<title>GDDR7 PHY &amp; Controller IP Core</title>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="shortcut icon" href="//static.designandreuse.com/IMAGES/favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="All D and R Feeds" href="https://us.design-reuse.com/xml/1/1/all/rss.xml"/>
+<link rel="alternate" type="application/rss+xml" title="D and R Headline News" href="https://us.design-reuse.com/xml/1/1/news/rss.xml"/>
+<link rel="alternate" type="application/rss+xml" title="D and R Industry Articles" href="https://us.design-reuse.com/xml/1/1/articles/rss.xml"/>
+<link rel="alternate" type="application/rss+xml" title="D and R New Products" href="https://us.design-reuse.com/xml/1/1/products/rss.xml"/>
+<link rel="alternate" type="application/rss+xml" title="D and R Wanted IPs" href="https://us.design-reuse.com/xml/1/1/wanted/rss.xml"/>
+<link rel="alternate" type="application/rss+xml" title="D and R Industry Expert Blogs" href="https://us.design-reuse.com/xml/1/1/blogs/rss.xml"/>
+<link rel="dns-prefetch" href="https://static.designandreuse.com/">
+<link rel="dns-prefetch" href="https://staticad.designandreuse.com/">
+<link rel="dns-prefetch" href="https://www.us.design-reuse.com/">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+
+<meta name="description" content="Innosilicon GDDR7 PHY is fully compliant to the JEDEC GDDR7 standard, supporting up to 32Gbps for PAM3 GDDR7. In pam3 mode, the byte consists of ten DQ ..."/>
+<meta name="keywords" content="gddr7，32gbps，finfet，from a to z support，tsmc，7nm, gddr7 phy &amp; controller, inno ddr phy &amp; controller, ip core, silicon ip, semiconductor ip"/>
+	<meta property="og:type" content="article"/>
+			<meta property="og:image" content="//static.designandreuse.com//img12/dr-logo_2.jpg"/>
+			<meta property="og:url" content="https://www.design-reuse.com/sip/gddr7-phy-controller-ip-54232/"/>
+		
+	<meta property="og:site_name" content="Design And Reuse"/>
+<link rel="canonical" href="https://www.design-reuse.com/sip/gddr7-phy-controller-ip-54232/" />
+ 
+
+<!--sphider_noindex--> 
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta name="Expires" content="Fri, 01 Jan 1990 00:00:00 GMT"/>
+<meta name="robots" content="noarchive"/><!--[if lte IE 8]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+<script src="https://us.design-reuse.com//jscript/respond.min.js"></script>
+<![endif]-->
+	<link rel="stylesheet" type="text/css" href="https://static.designandreuse.com/staticcatalog-20220105.css"/>
+
+</head>
+<body>
+
+<form>
+<input id="menu-toggle" class="menu-toggle" type="checkbox">
+<nav>
+	<div class="menu">
+	<ul>
+		<li><a href="https://us.design-reuse.com/">Home</a></li>
+		<li><a href="https://us.design-reuse.com/sip/">Search Silicon IP</a></li>
+		<li><a href="https://us.design-reuse.com/vip/">Search Verification IP</a></li>
+		<li><a href="https://us.design-reuse.com/news/">Latest News</a></li>
+		<li><a href="https://us.design-reuse.com/articles/">Industry Articles</a></li>
+		<li><a href="https://us.design-reuse.com/industryexpertblogs/">Industry Expert Blogs</a></li>
+		<li><a href="https://us.design-reuse.com/video/">Videos</a></li>
+		<li><a href="https://www.design-reuse-embedded.com/ipsocdays/2025/"  rel="nofollow">Events</a></li>
+ 
+	</ul>
+  </div> 
+</nav>
+<section id="contentfull">
+<div class="top-bar">
+  <label for="menu-toggle" id="toggle">&equiv; <span>Menu</span></label> 
+  
+  <a id="drlogoS" href="https://us.design-reuse.com/">Design And Reuse</a>
+
+<ul id="top-bar-subscribe" style="margin-right:15px; margin-top:5px">
+
+			<li class="d-inline" >
+		<a class="login c7 sz11" href="https://us.design-reuse.com/login2.php?nexturl=https%3A%2F%2Fus.design-reuse.com%2Fsip%2Fgddr7-phy-controller-ip-54232%2F">Login</a>
+		</li>
+		<li class="c5 sz11 d-inline">|</li>
+		
+
+	<li id="nav-login167156" class="d-inline">
+	<a class="login c7 sz11" href="https://us.design-reuse.com/users/signup.php">Subscribe</a>
+	</li>
+
+
+</ul>
+  </div> 
+</form>
+<div id="bandeau-nav167156">
+<div class="list grid-980">
+
+<ul id="nav-right167156" class="nav-right">
+
+<li class="c5 sz11 d-inline">|</li>
+
+<li class="d-inline">
+<a class="c7 sz11" href="https://us.design-reuse.com/about/"> Company</a>
+</li>
+<li class="c5 sz11 d-inline">|</li>
+
+<li class="d-inline">
+<a class="c7 sz11" href="https://us.design-reuse.com/foundry/siliconip/cn.php">D&amp;R China</a>
+</li>
+<li class="c5 sz11 d-inline">|</li>
+<li class="d-inline">
+<a class="c7 sz11" href="https://us.design-reuse.com/foundry/siliconip/drembedded3.php" rel="nofollow">dr-embedded.com</a>
+</li>
+<li class="c5 sz11 d-inline">|</li>
+
+<li class="d-inline">
+<a class="c7 sz11" href="https://us.design-reuse.com/wiki/" >Wiki</a>
+</li>
+<li class="c5 sz11 d-inline">|</li>
+ 
+<li class="d-inline dropdown">
+<span class="c7 sz11" ><img src="https://static.designandreuse.com/img16/cn.png" width="21" height="16" style="margin-top:4px; margin-right:10px"></span>
+  <div class="dropdown-content">
+    <a href="https://us.design-reuse.com/" class="c5 sz11 d-inline"> <img src="https://static.designandreuse.com/img16/en.png" width="16" height="12" style="margin-top:4px;"> English</a>
+    <a href="https://us.design-reuse.com/foundry/siliconip/cn.php" class="c5 sz11 d-inline"><img src="https://static.designandreuse.com/img16/cn.png" width="16" height="12" style="margin-top:4px"> Chinese</a>
+  </div>
+</li>
+
+ 
+<style>
+.dropdown {
+    position: relative;
+    display: inline-block;
+	cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 2px;
+	z-index: 99999;
+	margin-top: -8px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 1px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+</style>
+			<li class="d-inline" >
+		<a class="login c7 sz11" href="https://us.design-reuse.com/login2.php?nexturl=https%3A%2F%2Fus.design-reuse.com%2Fsip%2Fgddr7-phy-controller-ip-54232%2F">Login</a>
+		</li>
+		<li class="c5 sz11 d-inline">|</li>
+		
+
+	<li id="nav-login167156" class="d-inline">
+	<a class="login c7 sz11" href="https://us.design-reuse.com/users/signup.php">Subscribe to D&amp;R SoC News Alert</a>
+	</li>
+
+
+</ul>
+</div>
+</div>
+<div id="leadeboard"><div id="leadeboard-in" >
+	<a href="https://us.design-reuse.com/" id="drlogo">Design And Reuse</a>
+	
+</div></div> 
+<div id="center">
+    <div class="outter"></div>
+    <div id="mainmenu" class="navigation navigation2012">
+        <ul id="menu-bar">
+            <li id="nav_onglet_1" class=" actu">
+                <a href="https://us.design-reuse.com/sip/" class="imaged"><span class="text">Search IP</span><span class="drop"></span></a>
+				<ul class="ombrage">
+				
+                    <li class="first">
+					     <span>Categories</span>
+                        <div class="ul">
+                            <ul>
+                                <li class="first"><a href="https://us.design-reuse.com/sip/"><strong>Silicon IP</strong></a></li>
+                                <li><a href="https://us.design-reuse.com/sip/analog-mixed-signal-c-3/">Analog & Mixed Signal</a></li>
+                                <li><a href="https://us.design-reuse.com/sip/storage-controller-phy-c-5/">Storage Controller &amp; PHY</a></li>
+                                <li><a href="https://us.design-reuse.com/sip/graphic-peripheral-c-6/">Graphic &amp; Peripheral</a></li>
+                                <li><a href="https://us.design-reuse.com/sip/interfaces-c-7/">Interface Controller &amp; PHY</a></li>
+                                <li><a href="https://us.design-reuse.com/sip/processors-microcontrollers-c-9/">Processors &amp; Microcontrollers</a></li>
+                                <li><a href="https://us.design-reuse.com/sip/memory-logic-library-c-10/">Memory &amp; Logic Library</a></li>
+                                <li><a href="https://us.design-reuse.com/sip/security-c-11/">Security</a></li>
+                                <li><a href="https://us.design-reuse.com/sip/multimedia-c-12/">Multimedia</a></li>
+                                <li><a href="https://us.design-reuse.com/sip/wireline-communication-c-13/">Wireline Communication</a></li>
+                                <li><a href="https://us.design-reuse.com/sip/wireless-communication-c-14/">Wireless Communication</a></li>
+                                <li class="first">
+                                    <a href="https://us.design-reuse.com/sip/provider.php"><strong>Silicon IP Vendors</strong></a>
+                                </li>
+
+
+
+								
+                            </ul>
+                        </div>
+                    </li>
+
+					
+                   <li>
+						<span>&nbsp;</span>
+
+                        <div class="ul">
+							<ul>
+                                <li class="first">
+                                    <a href="https://us.design-reuse.com/vip/"><strong>Verification IP</strong></a>
+                                </li>
+                                <li>
+                                    <a href="https://us.design-reuse.com/vip/">Search / Browse</a>
+                                </li>
+                                <li>
+                                    <a href="https://us.design-reuse.com/vip/provider.php">Verification IP Vendors</a>
+                                </li>
+
+	
+					
+									<li class="first">
+                                    <a href="https://us.design-reuse.com/hds/"><strong>Software IP</strong></a>
+                                </li>
+                                <li>
+                                    <a href="https://us.design-reuse.com/hds/">Search / Browse</a>
+                                </li>
+                                <li>
+                                    <a href="https://us.design-reuse.com/hds/provider.php">Software IP Vendors</a>
+                                </li>
+   	  		
+                         
+                                <li>
+                                    <strong>&nbsp;</strong>
+                                </li>
+                                <li style="border-top:0px">
+                                    <strong>&nbsp;</strong>
+                                </li>
+                                <li>
+                                    <strong>Additional Services</strong>
+                                </li>
+
+                                <li>
+                                    <a href="https://us.design-reuse.com/sip/wanted/">Wanted IPs</a>
+                                </li>
+								
+																					
+					                                <li>
+                                    <a href="https://us.design-reuse.com/ipanalytics/">IP Analytics</a>
+                                </li>
+								
+					  	
+
+                            </ul>
+                        </div>
+                    </li>
+					
+					<li>
+						<a href="https://us.design-reuse.com/sip/">	
+						Featured Products</a> 
+						<div class="ul articles">	
+						<ul>
+						<li><div class="media"><a href="https://www.design-reuse.com/sip/10-bit-64mhz-1-2v-1-9mw-delta-sigma-adc-cmos-130nm-ip-14062/"><img src="https://static.designandreuse.com/sip/logo/nsilition.webp" alt="nSilition" height="27" width="64" class="logo" loading="lazy"/></a></div><div class="article product"><p><a href="https://www.design-reuse.com/sip/10-bit-64mhz-1-2v-1-9mw-delta-sigma-adc-cmos-130nm-ip-14062/">10-Bit 64MHz 1.2V 1.9mW delta-sigma ADC, CMOS 130nm</a></p></div></li>	<li><div class="media"><a href="https://www.design-reuse.com/sip/i3c-dual-controller-v1-2-ip-56168/"><img src="https://static.designandreuse.com/sip/logo/arasan.webp" alt="Arasan Chip Systems Inc." height="27" width="64" class="logo" loading="lazy"/></a></div><div class="article product"><p><a href="https://www.design-reuse.com/sip/i3c-dual-controller-v1-2-ip-56168/">I3C Dual Controller v1.2</a></p></div></li>	<li><div class="media"><a href="https://www.design-reuse.com/sip/media-access-control-security-macsec-ip-48712/"><img src="https://static.designandreuse.com/sip/logo/comira.webp" alt="CoMira Solutions Inc." height="27" width="64" class="logo" loading="lazy"/></a></div><div class="article product"><p><a href="https://www.design-reuse.com/sip/media-access-control-security-macsec-ip-48712/">Media Access Control Security (MACSec)</a></p></div></li>	<li><div class="media"><a href="https://www.design-reuse.com/sip/vesa-display-stream-compression-dsc-ip-core-ip-43234/"><img src="https://static.designandreuse.com/sip/logo/bitec.webp" alt="Bitec" height="27" width="64" class="logo" loading="lazy"/></a></div><div class="article product"><p><a href="https://www.design-reuse.com/sip/vesa-display-stream-compression-dsc-ip-core-ip-43234/">VESA Display Stream Compression (DSC) IP Core</a></p></div></li>	     
+						</ul></div>
+						
+                    </li>
+
+                </ul>
+				
+            </li>
+  		
+
+	
+					
+	
+            <li id="nav_onglet_3" class=" actu">
+                <a href="https://us.design-reuse.com/news/" class="imaged"><span class="text">News</span><span class="drop"></span></a>
+              <ul>
+                    <li class="first">
+                        <span>Categories</span>
+                        <div class="ul">
+                            <ul>
+                                <li class="first">
+                                    <a href="https://us.design-reuse.com/news/semiconductor-ip-soc-0.html">IP/SoC Products </a>
+                                </li>
+                                <li>
+                                    <a href="https://us.design-reuse.com/news/embedded-systems-0.html">Embedded Systems </a>
+                                </li>
+                                <li>
+                                    <a href="https://us.design-reuse.com/news/foundries-0.html">Foundries</a>
+                                </li>
+                                <li>
+                                    <a href="https://us.design-reuse.com/news/chiplet-0.html">Chiplet </a>
+                                </li>
+                                <li>
+                                    <a href="https://us.design-reuse.com/news/fpga-0.html">FPGA </a>
+                                </li>
+                                <li>
+                                    <a href="https://us.design-reuse.com/news/fabless-0.html">Fabless / IDM </a>
+                                </li>
+                               <li>
+                                    <a href="https://us.design-reuse.com/news/deals-0.html">Deals</a>
+                                </li>
+                               <li>
+                                    <a href="https://us.design-reuse.com/news/legal-0.html">Legal</a>
+                                </li>
+                               <li>
+                                    <a href="https://us.design-reuse.com/news/business-0.html">Business</a>
+                                </li>
+                               <li>
+                                    <a href="https://us.design-reuse.com/news/financial-0.html">Financial Results</a>
+                                </li>
+                               <li>
+                                    <a href="https://us.design-reuse.com/news/people-0.html">People</a>
+                                </li>
+                                <li>
+                                    <a href="https://us.design-reuse.com/news/commentary-analysis-0.html">Commentary / Analysis</a>
+                                </li> 
+								<li>
+                                    <a href="https://us.design-reuse.com/news/mostpopular"><strong>20 Most Popular News</strong></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+					<li>
+                        <a href="https://us.design-reuse.com/news/">					
+						Latest News</a> 
+						<div class="ul articles">	
+						<ul>
+						<li><div class="media"><a href="//www.design-reuse.com/news/57802/imagination-e-series-gpu.html"><img src="//static.designandreuse.com/news_img2/news57802/a.jpg.webp"  alt="imagination-e-series-gpu" width="73" height="50"  loading="lazy"></a></div><div class="article product"><p><a href="//www.design-reuse.com/news/57802/imagination-e-series-gpu.html">Imagination Announces E-Series: A New Era of On-Device AI and Graphics</a></p><div class="meta">Friday May. 09, 2025</div></div></li>	<li><div class="media"><a href="//www.design-reuse.com/news/57777/movellus-on-die-power-delivery-network-analyzer.html"><img src="//static.designandreuse.com/news_img2/news57777/a.jpg.webp"  alt="movellus-on-die-power-delivery-network-analyzer" width="73" height="50"  loading="lazy"></a></div><div class="article product"><p><a href="//www.design-reuse.com/news/57777/movellus-on-die-power-delivery-network-analyzer.html">Movellus Debuts Industry-First On-Die Power Delivery Network Analyzer</a></p><div class="meta">Thursday May. 01, 2025</div></div></li>	<li><div class="media"><a href="//www.design-reuse.com/news/57770/arteris-intel-foundry-accelerator-ecosystem-alliance-program.html"><img src="//static.designandreuse.com/news_img2/news57770/a.jpg.webp"  alt="arteris-intel-foundry-accelerator-ecosystem-alliance-program" width="73" height="50"  loading="lazy"></a></div><div class="article product"><p><a href="//www.design-reuse.com/news/57770/arteris-intel-foundry-accelerator-ecosystem-alliance-program.html">Arteris Joins Intel Foundry Accelerator Ecosystem Alliance Program to Support Advanced Semiconductor Designs</a></p><div class="meta">Wednesday Apr. 30, 2025</div></div></li>	     
+						</ul></div>
+
+						
+                    </li>
+                </ul>
+
+            </li>
+            <li id="nav_onglet_4" class=" actu">
+                <a href="https://us.design-reuse.com/articles/" class="imaged"><span class="text">Industry Articles</span><span class="drop"></span></a>
+              <ul>
+                    <li class="first">
+                        <span>Categories</span>
+                        <div class="ul">
+                            <ul>
+                                <li class="first">
+                                    <a href="https://us.design-reuse.com/articles/semiconductor-ip-soc-0.html">IP/SoC Products </a>
+                                </li>
+                                <li>
+                                    <a href="https://us.design-reuse.com/articles/embedded-systems-0.html">Embedded Systems </a>
+                                </li>
+                                <li>
+                                    <a href="https://us.design-reuse.com/articles/foundries-0.html">Foundries</a>
+                                </li>
+                                <li>
+                                    <a href="https://us.design-reuse.com/articles/fpga-0.html">FPGA </a>
+                                </li>
+                               <li>
+                                    <a href="https://us.design-reuse.com/articles/business-0.html">Business</a>
+                                </li>
+								<li>
+                                    <a href="https://us.design-reuse.com/articles/mostpopular"><strong>20 Most Popular Articles</strong></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+					<li>
+                        <a href="https://us.design-reuse.com/articles/">					
+						Featured Articles</a> 
+						<div class="ul articles">	
+						<ul>
+						<li><div class="media"><a href="https://us.design-reuse.com/articles/57814/how-to-design-secure-socs--part-ii-key-management.html"><img src="//static.designandreuse.com/news_img2/news57814/a.jpg.webp"  alt="how-to-design-secure-socs--part-ii-key-management" width="73" height="50"  loading="lazy"></a></div><div class="article product"><p><a href="https://us.design-reuse.com/articles/57814/how-to-design-secure-socs--part-ii-key-management.html">How to design secure SoCs,    Part II: Key Management</a></p><div class="meta">Monday May. 12, 2025</div></div></li>	<li><div class="media"><a href="https://us.design-reuse.com/articles/57780/mipi-in-fpgas-for-mobile-influenced-devices.html"><img src="//static.designandreuse.com/news_img2/news57780/a.jpg.webp"  alt="mipi-in-fpgas-for-mobile-influenced-devices" width="73" height="50"  loading="lazy"></a></div><div class="article product"><p><a href="https://us.design-reuse.com/articles/57780/mipi-in-fpgas-for-mobile-influenced-devices.html">MIPI in FPGAs for mobile-influenced devices</a></p><div class="meta">Monday May. 05, 2025</div></div></li>	<li><div class="media"><a href="https://us.design-reuse.com/articles/57756/optimizing-16-bit-unsigned-multipliers-with-reversible-logic-gates-for-an-enhanced-performance.html"><img src="//static.designandreuse.com/news_img2/news57756/a.jpg.webp"  alt="optimizing-16-bit-unsigned-multipliers-with-reversible-logic-gates-for-an-enhanced-performance" width="73" height="50"  loading="lazy"></a></div><div class="article product"><p><a href="https://us.design-reuse.com/articles/57756/optimizing-16-bit-unsigned-multipliers-with-reversible-logic-gates-for-an-enhanced-performance.html">Optimizing 16-Bit Unsigned Multipliers with Reversible Logic Gates for an Enhanced Performance</a></p><div class="meta">Monday Apr. 28, 2025</div></div></li>	     
+						</ul></div>
+
+						
+                    </li>
+                </ul> 
+            </li>
+            <li id="nav_onglet_5" class=" actu">
+                <a href="https://us.design-reuse.com/industryexpertblogs/" class="imaged"><span class="text">Blogs</span><span class="drop"></span></a>
+               <ul>
+ 					<li>
+                        <a href="https://us.design-reuse.com/industryexpertblogs/">					
+						Industry Expert Blogs</a> 
+						<div class="ul articles">	
+						<ul>
+						<li><div class="media"><a href="https://us.design-reuse.com/industryexpertblogs/57791/silicon-creations-soc-clocking-architectures-ip.html"><img src="//static.designandreuse.com/industryexpertblogs/images/semiwiki.jpg"  alt="silicon-creations-soc-clocking-architectures-ip" width="64" height="64"  loading="lazy"></a></div><div class="article product"><p><a href="https://us.design-reuse.com/industryexpertblogs/57791/silicon-creations-soc-clocking-architectures-ip.html">Silicon Creations Presents Architectures and IP for SoC Clocking</a></p><div class="meta">SemiWiki - Mike Gianfagna</div></div></li>	<li><div class="media"><a href="https://us.design-reuse.com/industryexpertblogs/57786/ethernet-evolution.html"><img src="//static.designandreuse.com/industryexpertblogs/images/synopsys.gif"  alt="ethernet-evolution" width="64" height="64"  loading="lazy"></a></div><div class="article product"><p><a href="https://us.design-reuse.com/industryexpertblogs/57786/ethernet-evolution.html">Ethernet Evolution: Trends, Challenges, and the Future of Interoperability</a></p><div class="meta">Synopsys Blog - Synopsys </div></div></li>	<li><div class="media"><a href="https://us.design-reuse.com/industryexpertblogs/57800/connected-ai-is-more-than-the-sum-of-its-parts.html"><img src="//static.designandreuse.com/industryexpertblogs/images/ceva23.jpg"  alt="connected-ai-is-more-than-the-sum-of-its-parts" width="64" height="64"  loading="lazy"></a></div><div class="article product"><p><a href="https://us.design-reuse.com/industryexpertblogs/57800/connected-ai-is-more-than-the-sum-of-its-parts.html">Connected AI is More Than the Sum of its Parts</a></p><div class="meta">Ceva's Experts blog - Moshe Sheier, Ceva</div></div></li>	     
+						</ul></div>
+
+						
+                    </li>
+                </ul>     
+            </li>
+			 <li id="nav_onglet_6" class=" cols">
+                <a href="https://us.design-reuse.com/video/" class="imaged nodrop"><span class="text">Videos</span></a>
+
+            </li>
+			
+			
+
+
+           <li id="nav_onglet_7" class=" cols">
+
+					<a  rel="nofollow" href="https://www.design-reuse-embedded.com/ipsocdays/2025/" class="imaged"><span class="text">Events</span><span class="drop"></span></a>
+					<ul>
+                    <li class="first">
+					
+					
+					  <a rel="nofollow" href="https://www.design-reuse-embedded.com/ipsocdays/2025/">IP-SOC  2025</a>
+
+
+						<span>Archives</span>
+                        <div class="ul">
+                            <ul>
+
+								<li class="first">
+                                    <a rel="nofollow" href="https://www.design-reuse-embedded.com/ipsocdays/2024/">IP-SoC Days 2024</a>
+                                </li>
+								<li>
+                                    <a rel="nofollow" href="https://www.design-reuse-embedded.com/ipsocdays/2023/">IP-SoC Days 2023</a>
+                                </li>
+		
+								<li >
+                                    <a rel="nofollow" href="https://www.design-reuse-embedded.com/ipsocdays/2022/">IP-SoC Days 2022</a>
+                                </li>
+								<li >
+                                    <a rel="nofollow" href="https://www.design-reuse-embedded.com/ipsocdays/ipsocdays2021/">IP-SoC Days 2021</a>
+                                </li>
+								<li >
+                                    <a rel="nofollow" href="https://www.design-reuse-embedded.com/ipsocdays/ipsocdays2020/">IP-SoC Days 2020</a>
+                                </li>
+								<li >
+                                    <a rel="nofollow" href="https://www.design-reuse-embedded.com/ipsocdays/ipsocdays2019/">IP-SoC Days 2019</a>
+                                </li>
+
+                          
+                            </ul>
+                        </div>
+                    </li>
+
+                </ul>
+				
+            </li>
+ 
+        </ul>
+		
+<div id="search">
+		<form method="get" action="https://us.design-reuse.com/search/"  style="top:0px; width:250px">
+<ul id="searchFilter"><li class="filterBtn" onclick="return true" title="search filter">
+<div class="searchDropdown">
+<fieldset>
+<legend>Choose a filter </legend>
+<ul id="searchOptions">
+<li><input id="areafull" type="radio" value="full" name="area"/><label for="areafull">Full Site Search</label></li>
+<li><input id="areasip" type="radio" value="sip" checked="checked" name="area"/><label for="areasip">Silicon IP</label></li>
+<li><input id="areavip" type="radio" value="vip" name="area"/><label for="areavip">Verification IP</label></li>
+<li><input id="areahds" type="radio" value="hds" name="area"/><label for="areahds">Software IP</label></li>
+<li><input id="areanews" type="radio" value="news" name="area"/><label for="areanews">News</label></li>
+<li><input id="areaarticle" type="radio" value="articles" name="area"/><label for="areaarticle">Industry Articles</label></li>
+</ul>
+</fieldset>
+</div>
+</li>
+</ul>
+<input id="i" name="i" class="inset " type="text" maxlength="255" value="" placeholder="Search Silicon IP"  required>
+<input class="magBtn" type="submit" value="Search D&amp;R site" title="search"/>
+</form></div>
+
+    </div>
+</div>
+
+
+<div id="section">
+<div id="global" class="viewip">
+
+
+<!--/sphider_noindex--> 
+
+<div id="content">
+
+
+<div id="left800" class="bluelink">
+
+	<span style="font-size: 11px; font-weight: bold;">You are here:</span>  
+	<ul class="path">
+	<li><a href="/sip/">Silicon IP Catalog</a></li> &gt; <li><a href='/sip/memory-controller-phy-c-5/'> Memory Controller & PHY </a></li> &gt; <li><a href='/sip/ddr-c-454/'> DDR </a></li> &gt; <li><a href='/sip/ddr-phy-c-342/'> DDR PHY  </a></li>	</ul><br/><br/>
+		
+	
+
+	<h1  style="margin: 0px; padding:0px;">
+
+	
+	GDDR7 PHY &amp; Controller 	
+	
+	</h1>
+
+
+	<div id="wrapleft500"  class=" clearfix" >
+
+	<div id="left500" class="bluelink " >
+	<div id="preview">
+
+		<div style="margin-top:10px; margin-bottom:10px">
+	Innosilicon GDDR7 PHY is fully compliant to the JEDEC GDDR7 standard, supporting up to 32Gbps for PAM3 GDDR7. In pam3 mode, the byte consists of ten DQ and one DQE signals, the GDDR7 also supports the NRZ IO signaling mode for low power operation. With Speeds up to 32 Gbps per pin the Innosilicon GDDR7 PHY will offer a maximum bandwidth of up to 128GB/s per memory device. This PHY will be available in advanced FinFET nodes for leading-edge customer integration. <br/>The Innosilicon system-aware design methodology used for IP Cores delivers a customer focused experience with improved time-to-market and first-time-right quality. Innosilicon offers flexible delivery of IP cores and will work directly with the customer to provide a full system signal and power integrity analysis, creating an optimized chip layout. In the end, the customer receives a hard macro solution with a full suite of test software for quick turn-on, characterization and debug.</div> 
+		
+
+<br/>
+<hr/>
+</div>
+
+
+	<h2 style="font-weight:normal; font-size: 14px;">
+	View	
+	  <b>GDDR7 PHY &amp; Controller</b> 
+	  	full description to...
+	</h2>
+	<div>
+	<div style="float: left; width:270px; margin-right:20px">
+	<ul><li>
+	see the entire
+	 <b>GDDR7 PHY &amp; Controller</b> 
+	datasheet		
+		
+	</li>
+	<li> 
+	get in contact with 
+	  <b>GDDR7 PHY &amp; Controller</b>  
+	Supplier	
+	</li>
+	</ul>
+	</div>
+	
+	<div style="float: left; width:185px; margin-top:20px">
+
+	<style type="text/css">
+	.btn-more-2, .hd li.on em, div.hd li.sparkle a, .hd, #mastheadbd .top, #mastheadbd, #doors li a, #today .ft li.on a{
+	background-image:url(//www.us.design-reuse.com/img06/grd-1px_1.1.gif);
+	background-repeat:repeat-x;
+	}
+
+
+
+	.btn-more-2{
+	padding:1px 10px 2px;
+	*padding:1px 5px 0;
+	font:bold 100% arial;
+	color:#000;
+	cursor:pointer;
+	width:180px;
+	white-space:nowrap;
+	border:1px solid #999b9a;
+	background-color:#ce9200;
+	background-position:0 -450px;
+	cursor: pointer
+	}
+
+
+	</style>
+
+	
+	<form action="//us.design-reuse.com/users/join.php" name="contactprovider" method="get">
+	<input type="hidden" name="productid" value="54232"/> 
+	<input type="hidden" name="target" value="sip"/> 
+	<input type="hidden" name="nexturl" value="https://us.design-reuse.com/sip/gddr7-phy-controller-ip-54232/"/> 
+	<input type="submit" class="btn-more-2" value="View Full Description"/><br/><br/>
+	</form>
+	
+		
+
+</div>
+</div>
+
+
+
+
+	
+
+</div>
+</div>
+<div id="middle300" class="bluelink">
+		<div class="bloc300 gradient">
+		<h2 class="oswald"  style="margin-bottom: 15px;margin-top: 0px;">
+		 GDDR7，32Gbps，FinFET，From A to Z Support，TSMC，7nm 
+		 IP 
+		 
+		</h2>
+			<div><div class="type1">
+			<ul class="arrowList1" style="line-height: 13px; height: auto; border-bottom: 0px; padding: 0">
+			
+				<li><a href="//us.design-reuse.com/sip/51870/latch-up-detector/"  title="View Latch-Up Detector IP Description">  
+		Latch-Up Detector		</a></li>
+				<li><a href="//us.design-reuse.com/sip/48138/tsmc-cln7ff-pre-search-and-pipeline-ternary-content-addressable-memory-compiler/"  title="View TSMC CLN7FF Pre-search and Pipeline Ternary Content Addressable Memory Compiler IP Description">  
+		TSMC CLN7FF Pre-search and Pipeline Ternary Content Addressable Memory Compiler		</a></li>
+				<li><a href="//us.design-reuse.com/sip/45119/onfi-4-io-pad-set/"  title="View ONFI_4 IO Pad Set IP Description">  
+		ONFI_4 IO Pad Set		</a></li>
+				<li><a href="//us.design-reuse.com/sip/55780/phy-for-pcie-5-0-and-cxl-for-tsmc/"  title="View PHY for PCIe 5.0 and CXL for TSMC IP Description">  
+		PHY for PCIe 5.0 and CXL for TSMC		</a></li>
+				<li><a href="//us.design-reuse.com/sip/50483/tsmc-cln7ff-synchronous-one-port-register-file-compiler/"  title="View TSMC CLN7FF Synchronous One Port Register File Compiler IP Description">  
+		TSMC CLN7FF Synchronous One Port Register File Compiler		</a></li>
+				<li><a href="//us.design-reuse.com/sip/50484/tsmc-cln7ff-ternary-content-addressable-memory-compiler-with-column-redundancy/"  title="View TSMC CLN7FF Ternary Content Addressable Memory Compiler with Column Redundancy IP Description">  
+		TSMC CLN7FF Ternary Content Addressable Memory Compiler with Column Redundancy		</a></li>
+				</ul></div>
+		</div>
+		<div class="spaceboy" style="clear:both"> </div>
+		<div  class="txtR" >
+		<a  class="fcTheme ud"   style="color:#E41129;" href="//us.design-reuse.com/sip?q=gddr7%EF%BC%8C32gbps%EF%BC%8Cfinfet%EF%BC%8Cfrom+a+to+z+support%EF%BC%8Ctsmc%EF%BC%8C7nm">See more GDDR7，32Gbps，FinFET，From A to Z Support，TSMC，7nm 
+				 IP 
+		 &gt;&gt;</a>
+		</div>
+		</div>
+		
+
+</div>
+</div>
+</div>
+
+
+	<div id="right135">
+	<!--sphider_noindex-->
+	<ins data-revive-zoneid="5" data-revive-id="ad0a248f25b445cf636ada378c22c876"></ins>
+	<br/><br/>
+	<ins data-revive-zoneid="6" data-revive-id="ad0a248f25b445cf636ada378c22c876"></ins>
+	<br/><br/>
+	
+<ins data-revive-zoneid="7" data-revive-id="ad0a248f25b445cf636ada378c22c876"></ins>
+	<br/><br/>
+		<!--/sphider_noindex-->
+	</div>
+
+<div class="clearBoth"></div>
+<div id="leaderboard2015">
+<ins data-revive-zoneid="3" data-revive-id="ad0a248f25b445cf636ada378c22c876"></ins>
+</div> 
+
+</div>
+
+
+ <div class="clearLeft"></div> 
+  </div>
+  
+  
+<div id="bandeauBasFooter"><div id="bandeauBasFooter2">
+    <div id="copyright">
+	<!--sphider_noindex-->
+	<p><strong>© 2024 Design And Reuse</strong></p> <p>All Rights Reserved.</p>
+	<p style="font-weight: normal;">No portion of this site may be copied, retransmitted, reposted, duplicated or otherwise used without the express written permission of Design And Reuse.</p> 
+	</div>
+<!--
+	<div class="colonne sansBordure">
+    <h4 style="font-size: 16px;">Give us your feedback</h4>
+	<p style="height:50px">Was this page helpful?<br/>Ask us a question or get help<br/><br/></p>
+		<div class="sitebutton">
+		<a href="/contact/" title="Talk to us" id="talktous"  rel="nofollow">Talk to us</a>					
+        </div>
+	</div>
+	-->
+                
+	<div class="colonne sansBordure">
+	<h4 style="font-size: 16px;">Partner with us</h4>
+	<p style="height:50px">
+	<br/>
+	<br/><br/></p>
+				<div class="sitebutton">
+				<a href="https://www.design-reuse-embedded.com/join-dr/" id="talktous"  rel="nofollow">Partner with us</a>
+				</div>
+	</div>             
+	
+	<div class="colonne hid980">
+	<h4 style="font-size: 16px;">List your Products</h4>
+	<p style="height:50px">Suppliers, list
+	your IPs for free.<br/><br/></p>
+				<div class="sitebutton">
+									<a href="/map/providers/" id="addproducts">List your Products</a>
+
+						</div>
+	</div>
+
+	<div class="colonne">
+	<h4 style="font-size: 16px;">Design-Reuse.com</h4>
+	<ul>
+	<li class="puceBlancheMini"><a href="https://www.design-reuse.com/contact/">Contact Us</a></li>
+	<li class="puceBlancheMini"><a href="https://www.design-reuse.com/about/">About us</a></li>
+	<li class="puceBlancheMini"><a href="https://www.design-reuse.com/partners/">D&amp;R Partner Program</a></li>
+	<li class="puceBlancheMini"><a href="https://www.design-reuse.com/ads/">Advertise with Us</a></li>
+	<li class="puceBlancheMini"><a href="https://www.design-reuse.com/privacy/">Privacy Policy</a></li>
+	</ul>
+	
+
+	</div>
+
+
+</div></div>
+
+
+
+</section>
+
+
+	<script type="application/javascript" src="https://static.designandreuse.com/staticdefault-20210423a.js"></script>
+	
+
+
+
+<script type="text/javascript">
+var pathurl = "https://www.design-reuse.com/sip/";
+var thispageid= "0";
+var backurl= "%2Fsip%2Fgddr7-phy-controller-ip-54232%2F";
+</script> 
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('ul#iplist li').mouseover(function(){
+          $(this).find('div.data div.ipdetail').css('display','inline');
+    });
+    $('ul#iplist li').mouseout(function(){
+          $(this).find('div.data div.ipdetail').css('display','none');
+    });
+});
+
+</script> 
+	<script type="text/javascript" src="https://static.designandreuse.com/jscript/jquery.qtip.min.js"></script>
+	<script type="text/javascript" src="https://static.designandreuse.com/jscript/catalog12.js?5"></script>
+	
+			
+<script type="text/javascript" src="https://static.designandreuse.com/jscript/anylinkcssmenu.js">
+/***********************************************
+* AnyLink CSS Menu script v2.0- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Project Page at http://www.dynamicdrive.com/dynamicindex1/anylinkcss.htm for full source code
+***********************************************/
+</script>
+<script type="text/javascript">
+
+$(document).ready(function () {
+    $('#showrefine').click(function () {
+    $('#left200').toggle('500');
+    $('#showrefine').toggle();
+    });    
+    $('#closerefine').click(function () {
+    $('#left200').toggle('500');
+    $('#showrefine').toggle();
+    });    
+});
+</script>
+
+
+
+
+					<div id="flosensing"></div>
+	<script type="text/javascript">
+	$( "#flosensing" ).append( "<img src=\"//www.design-reuse.com/flosensing/lg.php?url=%2Fsip%2Fgddr7-phy-controller-ip-54232%2F&c=sip&action=preview&prod=54232&prov=999&ref=\" width=\"1\" height=\"1\">");
+
+	</script>
+			
+		
+	
+
+<script async src="//ad.design-reuse.com/adserver/www/delivery/asyncjs.php"></script>
+</body>
+</html>
