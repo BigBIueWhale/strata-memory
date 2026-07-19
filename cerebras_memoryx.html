@@ -58,7 +58,7 @@
 </div>
 
 <h2 id="what"><span class="num">01</span>What MemoryX actually is</h2>
-<p>MemoryX is an external appliance that holds a model&rsquo;s <strong>weights and optimizer state off the wafer</strong> and streams them in on demand. It is <em>active</em> memory &mdash; it also computes the weight update between iterations &mdash; and it attaches over <strong>standard datacenter Ethernet</strong> (100&nbsp;GbE in the CS-2 era; 400G/800G links for CS-3), not a memory bus. The wafer itself has no DRAM controller and no memory PHY; its only external pipe is ~1.2&nbsp;Tb/s of system I/O.</p>
+<p>MemoryX is an external appliance that holds a model&rsquo;s <strong>weights and optimizer state off the wafer</strong> and streams them in on demand. It is <em>active</em> memory &mdash; it also computes the weight update between iterations &mdash; and it attaches over <strong>standard datacenter Ethernet</strong>, not a memory bus &mdash; the wafer&rsquo;s attach pipe is 12&times;100&nbsp;GbE in <em>both</em> generations; only the cluster fabric (the SwarmX switches) moved to 400G/800G for CS-3. The wafer itself has no DRAM controller and no memory PHY; its only external pipe is ~1.2&nbsp;Tb/s of system I/O.</p>
 <table>
 <thead><tr><th>&nbsp;</th><th>CS-2 era (2021&ndash;2023)</th><th>CS-3 era (2024&ndash;present)</th></tr></thead>
 <tbody>
@@ -123,7 +123,48 @@
 <div class="callout spec"><span class="lab">The giga-chad line, both ways</span><strong>SRAM&rsquo;s flex:</strong> one WSE-3 moves <strong>21&nbsp;PB/s</strong> &mdash; ~10,000&times; a whole box of DDR5 and ~12,000&times; an RTX&nbsp;5090&rsquo;s 1.79&nbsp;TB/s &mdash; and can re-read its <em>entire</em> contents ~477,000 times per second. <strong>DDR5&rsquo;s flex:</strong> a single <strong>$200 DDR5 DIMM (48&nbsp;GiB) out-capacities the entire most-advanced-chip-ever&rsquo;s 44&nbsp;GB of SRAM</strong> &mdash; and does it at ~1/1,000th the $/GB. On-wafer SRAM is the widest, fastest, shallowest, most expensive memory that exists; DDR5 is deep, cheap, and &ldquo;merely&rdquo; VRAM-adequate.</div>
 <p><strong>This single table explains both architectures.</strong> Cerebras spends a whole wafer to get 44&nbsp;GB at 21&nbsp;PB/s &mdash; so fast per byte that they <em>must</em> stream weights through it from cheap DRAM, because 44&nbsp;GB can&rsquo;t hold a frontier model. STRATA-V goes the other way: it doesn&rsquo;t need 21&nbsp;PB/s &mdash; a 5090 asks for only 1.79&nbsp;TB/s &mdash; so 45 commodity DDR5 sticks deliver that bandwidth <em>and</em> 2.11&nbsp;TiB of depth for ~$8k. The bandwidth-per-byte gap (~540,000&times;) is exactly why Cerebras streams and STRATA-V doesn&rsquo;t have to.</p>
 
-<h2 id="contrast"><span class="num">07</span>MemoryX vs. STRATA-V &mdash; same goal, opposite pole</h2>
+<h2 id="nvlink"><span class="num">07</span>Can you NVLink the wafers together?</h2>
+<p>The obvious rescue for &ldquo;44&nbsp;GB isn&rsquo;t enough&rdquo; is NVIDIA&rsquo;s own answer to the same wall: <strong>pool it.</strong> NVLink + NVSwitch weld 72 Blackwell GPUs into one domain where any GPU fires loads, stores, and atomics straight into any other&rsquo;s HBM &mdash; <em>&ldquo;a single, massive GPU&rdquo;</em> with ~13.4&nbsp;TB of shared fast memory at 130&nbsp;TB/s. So &mdash; can you NVLink Cerebras wafers into one giant fast-memory pool?</p>
+<div class="callout punch"><span class="lab">The answer</span>
+<p style="margin-top:2px"><span class="verdict">No. And not for want of trying &mdash; on-wafer SRAM is the one memory tier physics forbids you to pool.</span></p>
+<p>There is no NVLink for wafer SRAM: none shipped, none announced, none coherent even as a <em>goal</em>. What Cerebras actually runs between wafers is <strong>RDMA over Ethernet</strong> &mdash; and for inference it moves <em>only activations</em> wafer-to-wafer (Hot&nbsp;Chips 2024, verbatim: &ldquo;&lt;5&nbsp;&micro;s latency, 4 hops, ~100&nbsp;Gb/s, &lt;10% of the pipe&rdquo;). That is message-passing DMA, not a load/store into a neighbor&rsquo;s memory. One wafer never sees another wafer&rsquo;s SRAM.</p>
+</div>
+<h3>The law &mdash; poolability = local bandwidth &divide; the fastest off-die link you can build</h3>
+<p>Whether a memory tier can be pooled at all reduces to a single ratio: how far <em>remote</em> access falls below <em>local</em>. A few&times; and &ldquo;one big shared pool&rdquo; is honest; a thousand&times; and it&rsquo;s a lie.</p>
+<table>
+<thead><tr><th>Memory tier</th><th>Local bandwidth</th><th>Best off-die link</th><th>Remote-vs-local gap</th><th>Poolable?</th></tr></thead>
+<tbody>
+<tr><td><strong>HBM</strong> (Blackwell GPU)</td><td>8 TB/s</td><td>NVLink-5 &mdash; 1.8 TB/s</td><td><strong>~4.4&times;</strong></td><td class="yes">YES &mdash; NVL72 is honestly &ldquo;one massive GPU&rdquo;</td></tr>
+<tr><td><strong>DDR5 / DRAM</strong></td><td>~0.1&ndash;0.5 TB/s</td><td>any modern fabric keeps up</td><td><strong>~1&ndash;5&times;</strong></td><td class="yes">YES &mdash; the free-trade zone: pool it, stream it, <em>or impersonate it</em></td></tr>
+<tr><td><strong>On-wafer SRAM</strong> (WSE-3)</td><td class="big">21,000 TB/s</td><td>Cerebras today &mdash; 0.15 TB/s</td><td class="big">~140,000&times;</td><td class="no">NO &mdash; un-poolable</td></tr>
+</tbody>
+</table>
+<div class="callout spec"><span class="lab">The 340&times;-short punchline</span>To pool WSE-3 SRAM at NVLink&rsquo;s honest &ldquo;within ~4.4&times;&rdquo; bar, each wafer would have to <em>emit</em> ~38&nbsp;Pb/s. The <strong>best photonic interposer ever built</strong> &mdash; Lightmatter&rsquo;s M1000, at a record 114&nbsp;Tb/s &mdash; supplies <strong>1/340th</strong> of that; Cerebras&rsquo;s shipping wafer supplies <strong>1/32,000th</strong>. SRAM&rsquo;s entire value <em>is</em> locality; a remote wafer&rsquo;s SRAM reached over any cable isn&rsquo;t fast memory anymore &mdash; it&rsquo;s slow, absurdly expensive remote memory. No link, optical or otherwise, closes a gap like that.</div>
+<h3>The clincher: the two teams who <em>did</em> unify addressing still refused to pool SRAM</h3>
+<p>This isn&rsquo;t only arithmetic. The two architectures that actually built a flat address space across the die boundary <em>chose not to share the fast memory anyway</em>:</p>
+<ul>
+<li><strong>Tesla Dojo</strong> built a flat address space with hardware DMA into any endpoint (TCP-over-Ethernet cast into silicon) and a mere 2:1 off-tile bandwidth cliff &mdash; and <em>still</em> kept each tile&rsquo;s 11&nbsp;GB of SRAM <strong>&ldquo;private,&rdquo;</strong> pooling only the DRAM behind it. (Dojo was disbanded Aug&nbsp;2025; a &ldquo;Dojo&nbsp;3&rdquo; restarted Jan&nbsp;2026.)</li>
+<li><strong>Groq</strong> &ldquo;pools&rdquo; 220&nbsp;MiB &times; up to 10,440 chips into ~2&nbsp;TB of <em>&ldquo;logically shared, physically distributed SRAM&rdquo;</em> &mdash; but only by <em>compiling away all dynamism</em>: the hardware is forbidden from ever asserting backpressure. It&rsquo;s a compile-time fiction, not a fabric; the physical cliff is still ~1,600&times;.</li>
+</ul>
+<p>Everyone who can pool, pools the tier <em>below</em> the fast one. The one company selling genuinely memory-semantic <em>optical</em> pooling &mdash; Celestial&nbsp;AI &mdash; was absorbed by <strong>Marvell</strong> (closed Feb&nbsp;2026), which promptly joined <strong>NVLink Fusion</strong>; and it pooled the DRAM/HBM tier, never SRAM. Cerebras&rsquo;s own $45M DARPA co-packaged-optics program (with Ranovus) widens the <em>streaming</em> pipe by ~100&times; &mdash; more MemoryX reach, not a pooling fabric. Even the speculative WSE-4 fix (&sect;09) is <em>shared DRAM trays</em>, not shared SRAM.</p>
+<h3>The taxonomy of &ldquo;give a fast engine more memory&rdquo;</h3>
+<table>
+<thead><tr><th>Architecture</th><th>Strategy</th><th>What it actually pools / adds</th><th>Pools the <em>fast</em> memory?</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA NVL72</td><td><strong>POOL</strong></td><td>13.4 TB HBM, rack-wide, load/store-coherent</td><td class="yes">yes (HBM, ~4.4&times;)</td></tr>
+<tr><td>UALink 1.0 / CXL</td><td><strong>POOL</strong> (spec)</td><td>host HBM/DRAM tier, native memory semantics &le;100 GB/s/port</td><td class="yes">yes (DRAM/HBM)</td></tr>
+<tr><td>Cerebras &mdash; training</td><td><strong>STREAM</strong></td><td>weights from MemoryX DRAM+flash over an Ethernet broadcast tree</td><td class="no">no</td></tr>
+<tr><td>Cerebras &mdash; inference</td><td><strong>PARTITION</strong></td><td>model split across wafers by layer; activations over RDMA</td><td class="no">no</td></tr>
+<tr><td>Tesla Dojo</td><td><strong>PARTITION</strong> (flat-addr)</td><td>shared DIP <em>DRAM</em>; tile SRAM stays private</td><td class="no">no (SRAM private)</td></tr>
+<tr><td>Groq</td><td><strong>PARTITION</strong> as logical pool</td><td>compiler-scheduled global SRAM &mdash; a compile-time fiction</td><td class="flag">logically, not physically</td></tr>
+<tr><td>SambaNova SN40L</td><td><strong>ON-PACKAGE TIER</strong></td><td>SRAM + HBM + DDR stacked in one socket</td><td class="no">no</td></tr>
+<tr><td>Celestial &rarr; Marvell</td><td><strong>POOL</strong> (optical)</td><td>DDR behind HBM semantics, to co-designed hosts</td><td class="no">no (DRAM tier)</td></tr>
+<tr><td><strong>STRATA-V</strong></td><td><strong>IMPERSONATE</strong></td><td>2.11 TiB DDR5 <em>as</em> the GPU&rsquo;s own GDDR7 memory</td><td class="yes">serves the fast interface from a deep tier</td></tr>
+</tbody>
+</table>
+<p><strong>Where STRATA-V lands, honestly:</strong> in the DRAM free-trade zone with everyone else &mdash; but attacking the <em>frozen native interface</em> of a merchant GPU instead of a co-designed fabric. Above the SRAM boundary you stream or pipeline; below it you pool or impersonate. That cell &mdash; <em>impersonate &times; unmodified-GPU host</em> &mdash; is the one nobody occupies (see <code>prior_art.html</code>).</p>
+
+<h2 id="contrast"><span class="num">08</span>MemoryX vs. STRATA-V &mdash; same goal, opposite pole</h2>
 <table>
 <thead><tr><th>Axis</th><th>Cerebras MemoryX</th><th>STRATA-V</th></tr></thead>
 <tbody>
@@ -137,10 +178,10 @@
 </table>
 <p>Both decouple capacity from compute &mdash; &ldquo;something you cannot do with any GPUs&rdquo; (The Next Platform). But Cerebras does it only for training, by owning the entire execution model; STRATA-V does it for anything, by speaking the memory interface the engine already has. (For the head-to-head against the impersonation peer group &mdash; Credo, Majestic, Celestial, Eliyan &mdash; see <code>prior_art.html</code>.)</p>
 
-<h2 id="converge"><span class="num">08</span>The convergence worth watching</h2>
+<h2 id="converge"><span class="num">09</span>The convergence worth watching</h2>
 <p>Analysts now argue the WSE&rsquo;s <em>compute-to-SRAM ratio is &ldquo;wrong for low-latency inference&rdquo;</em> (The Next Platform, 2026) &mdash; 44&nbsp;GB/wafer forces multi-wafer serving for anything much above ~20B params in FP16. The <em>speculated</em> WSE-4 remedy is telling: &ldquo;<strong>optical links coming out of the wafer to shared DRAM memory trays</strong> to significantly expand the MemoryX capacity.&rdquo; That is Cerebras drifting <em>toward</em> natively-attached external DRAM &mdash; the very problem STRATA-V attacks from the interface side. <span class="flag">[analyst speculation, not announced]</span> (Context: Cerebras IPO&rsquo;d in May 2026 at a ~$95B fully-diluted valuation; an OpenAI 750&nbsp;MW inference deal landed Jan 2026.)</p>
 
-<h2 id="flags"><span class="num">09</span>Honest flags</h2>
+<h2 id="flags"><span class="num">10</span>Honest flags</h2>
 <ul>
 <li><strong>Confirmed vs. reported.</strong> Verbatim-primary: DRAM+flash hybrid (CS-2), commodity-DDR5 1U (CS-3), 1.2&nbsp;Tb/s per-system egress, single-copy broadcast, MemoryX-runs-the-optimizer, inference is SRAM-resident, 44&nbsp;GB WSE-3 SRAM at 21&nbsp;PB/s. Report-level or estimate: per-unit DRAM bandwidth, DRAM:flash split of the big SKUs, MemoryX standalone power/price (SEC exhibits redacted), the OpenAI deal size ($10B&ndash;$20B, evolving), most cluster $ figures.</li>
 <li><strong>Qualcomm is not a MemoryX datapoint.</strong> The 2024 &ldquo;train-on-Cerebras, infer-on-Qualcomm AI&nbsp;100 Ultra&rdquo; partnership uses <em>Qualcomm&rsquo;s</em> 128&nbsp;GB LPDDR4x &mdash; a conventional DRAM-behind-NPU design, unrelated to MemoryX; the route vanished from later messaging.</li>
