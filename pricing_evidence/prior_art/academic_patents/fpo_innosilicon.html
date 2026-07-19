@@ -1,0 +1,600 @@
+	
+		<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/fpo_9.css" />
+<script type="text/javascript">
+var plstart = new Date();
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-174791-1']);
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="title" content="High-bandwidth DDR DIMM, memory system, and operation method thereof - INNOSILICON MICROELECTRONICS (ZHUHAI) CO., LTD." />
+<meta name="description" content="&lt;div p-id=&quot;p-0001&quot;&gt;The present disclosure discloses a high-bandwidth double data rate (DDR) dual-in-line memory module (DIMM), a memory system, and an operation method of the memory system. The high-b" />
+<meta name="robots" content="index, follow" />
+<title>High-bandwidth DDR DIMM, memory system, and operation method thereof - INNOSILICON MICROELECTRONICS (ZHUHAI) CO., LTD.</title>
+<link rel="canonical" href="https://www.freepatentsonline.com/12147713.html" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link rel="shortcut icon" href="/images/favicon_1.ico"/>
+    <meta name='DC.identifier' content='US12147713' />
+<meta name='DC.type' content='Patent' />
+<meta name='DC.title' content='High-bandwidth DDR DIMM, memory system, and operation method thereof' />
+<meta name='DC.contributor' scheme='assignee' content='INNOSILICON MICROELECTRONICS' />
+<meta name='DC.coverage' content='US' />
+<meta name='DC.date' scheme='issued' content='2024-11-19' />
+<meta name='DC.date' scheme='submitted' content='2022-12-14' />
+<meta name='citation_patent_application_number' content='18/081640' />
+<meta name='DC.relation' scheme='references' content='US20230418772' />
+<meta name='DC.relation' scheme='references' content='US20230178121' />
+<meta name='DC.relation' scheme='references' content='US20230136996' />
+<meta name='DC.relation' scheme='references' content='US20230071117' />
+<meta name='DC.relation' scheme='references' content='US20220229790' />
+<meta name='DC.relation' scheme='references' content='US20210225418' />
+<meta name='DC.relation' scheme='references' content='US20210216238' />
+<meta name='DC.relation' scheme='references' content='US20190043552' />
+<meta name='DC.relation' scheme='references' content='US20090106460' />
+</head>
+<body class="fullWidthContainer">
+
+<div>
+    <a name="top"></a>
+
+    <div class="container-fluid">
+        
+<div class="header">
+    <div class="row-fluid top">
+
+        <div class="pull-left figure">
+            <a href="/" onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Logo']);"></a>
+        </div>
+
+
+        <div class="pull-right" style="width: 750px;">
+                        <div class="loginForm">
+                <form class="form-inline form-mini pull-right" action="/login.html" method="post">
+                    <input type="hidden" name="src" value="header_login">
+                    <input id="UID-top" name="UID" type="text" class="input-large" placeholder="Email">
+                    <input id="PWD-top" name="PWD" type="password" class="input-small" placeholder="Password">
+                    <button type="submit" class="btn btn-mini btn-primary"
+                            onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Login']);">Login
+                    </button>
+                    <a class="btn btn-mini btn-info" href="/register.html"
+                            onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Create']);">Sign up
+                    </a>
+                </form>
+            </div>
+            
+
+            <div class="searchForm well">
+                <form id="quick_result" name="quick_result" class="form-inline" action="/result.html" method="get">
+
+                    <input type="hidden" name="sort" value="relevance">
+                    <input type="hidden" name="srch" value="top">
+
+
+                    <div class="searchBox pull-left">
+                        <input type="text" name="query_txt" placeholder="Enter your search here"
+                               class="search-query" id="topSearchBox">
+
+                        <div class="btn-group">
+                            <button name="submit" class="btn btn-primary" type="submit"
+                                    onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Search']);">Search
+                            </button>
+                            <button id="searchBox_dropdown" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/search.html"
+                                       onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'SearchExpert']);document.cookie = 'searchTab=#expert';">
+                                    Expert Search</a>
+                                </li>
+                                <li><a href="/search.html"
+                                       onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'SearchQuick']);document.cookie = 'searchTab=#quick';">
+                                    Quick Search</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sideCollections pull-right">
+                        <ul id="header_search_top" class="borderBottom ul-mini ">
+                            <li>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="patents_us" name="patents_us"
+                                           value="on" checked="checked">US Patents/Apps
+                                </label>
+                            </li>
+
+                            <li>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="patents_other" name="patents_other"
+                                           value="on">Other
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </form>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse center" id="primaryNavBar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li><a href="/"></a></li>
+                    <li><a href="/search.html">SEARCH</a></li>
+                    <li>
+                        <a href="/tools-resources.html"
+                           onclick="_gaq.push(['_trackEvent', 'Navbar', 'Click', 'Resources']);">
+                            TOOLS &amp; RESOURCES
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+<div class="clearfix"></div>        <div class="fixed-width document-details-wrapper">
+
+            <div id="dhtmltooltip"></div>
+            
+    <style type="text/css">
+        #refs {
+            margin-left: 450px;
+            padding-left: 5px;
+            border-left: 1px solid;
+        }
+
+        #fixed_height {
+            clear: both;
+            height: 6em;
+        }
+    </style>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <form name="biblio" action="">
+        <input type="hidden" name="patent" value="12147713"/>
+        <input type="hidden" name="title" value="High-bandwidth DDR DIMM, memory system, and operation method thereof"/>
+        <input type="hidden" name="number" value="12147713"/>
+        <input type="hidden" name="author" value=""/>
+        <input type="hidden" name="author_end" value=""/>
+        <input type="hidden" name="year" value="2024"/>
+        <input type="hidden" name="month" value="November"/>
+        <input type="hidden" name="url" value="https://www.freepatentsonline.com/12147713.html"/>
+        <input type="hidden" name="assignee" value="INNOSILICON MICROELECTRONICS (ZHUHAI) CO., LTD."/>
+        <input type="hidden" name="country" value="United States"/>
+    </form>
+
+
+
+    <!--	TITLE  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Title:</div>
+        <div class="disp_elm_text">
+            <font size="+1"><b>
+                    High-bandwidth DDR DIMM, memory system, and operation method thereof                </b></font>
+        </div>
+    </div>
+
+    <!--	Document Type   -->
+    <div class="disp_doc2">
+                        <div class="disp_elm_text" style="clear: none;">
+                    United States Patent 12147713                </div>
+            
+                </div>
+    <div style="clear: both"></div>
+
+    <div class="disp_doc2">
+        <div class="disp_elm_text">
+            <br clear="all"/><!-- 728x90 Responsive 1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1586334167197709"
+     data-ad-slot="2270521617"
+     data-ad-format="auto">
+</ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br clear="all"/>        </div>
+    </div>
+
+    <!--	Abstract  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Abstract:</div>
+        <div class="disp_elm_text">
+            <div p-id="p-0001">The present disclosure discloses a high-bandwidth double data rate (DDR) dual-in-line memory module (DIMM), a memory system, and an operation method of the memory system. The high-bandwidth DDR DIMM includes a first sub-channel, a second sub-channel, a register and divided clock driver, and a combined data buffer, where each of the sub-channels includes a first pseudo channel and a second pseudo channel, each pseudo channel including a plurality of dynamic random-access memory (DRAM) chips; the register and divided clock driver is configured to determine a command mode in response to a command sent by a host and send the command to the first pseudo channel and/or the second pseudo channel according to the command mode; and the combined data buffer is configured to interleave data of the first pseudo channel and the second pseudo channel According to the present disclosure, without having to change the original command sending approach, the register and divided clock driver determines various command modes in response to received commands, and then sends each command to a plurality of pseudo channels simultaneously or separately, thus achieving faster and more effective reading of data.</div>        </div>
+    </div>
+
+
+    <div class="disp_doc2">
+        <div class="disp_elm_title"></div>
+
+        <div class="disp_elm_text" style="clear: none;">
+
+            <br clear="all"/><!-- Responsive sidebar -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1586334167197709"
+     data-ad-slot="5590698414"
+     data-ad-format="auto">
+</ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        </div>
+    </div>
+    <div id="fixed_height" class="disp_elm_text"></div><br id="break"/>
+    <div id="fixed_height" class="disp_elm_text"></div><br id="break"/>
+
+    <!-- Representative Image -->
+
+    <!--	Inventors  -->
+
+    <!--	Application Number  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Application Number:</div>
+        <div class="disp_elm_text">
+            18/081640        </div>
+    </div>
+
+    <!--    Publication Date  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Publication Date:</div>
+        <div class="disp_elm_text">
+            11/19/2024        </div>
+    </div>
+
+    <!--	Filing Date  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Filing Date:</div>
+        <div class="disp_elm_text">
+            12/14/2022        </div>
+    </div>
+
+    <!--	Export Citation  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Export Citation:</div>
+        <div class="disp_elm_text">
+            <a href="javascript:openpopup('/bibliography.html')"
+               onClick="_gaq.push(['_trackEvent', 'Body', 'Click', 'Biblio']);"> Click for automatic bibliography
+                generation </a>
+        </div>
+    </div>
+
+    <!--	Assignee  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Assignee:</div>
+        <div class="disp_elm_text">
+                            INNOSILICON MICROELECTRONICS (ZHUHAI) CO., LTD.                <br/>
+                    </div>
+    </div>
+
+    <!--	Primary Classes  -->
+    
+    <!--	Other Classes  -->
+            
+
+    <!--	International Classes  -->
+
+    <div class="disp_doc2">
+        <div class="disp_elm_title">International Classes:</div>
+        <div class="disp_elm_text">
+            <i><b>G06F3/06</b></i>; <i><b>G06F1/12</b></i>; <i><b>G11C7/10</b></i>; <i><b>G11C11/4093</b></i>; <i><b>G11C11/4096</b></i>        </div>
+    </div>
+
+
+    <!--	Ecla Classes  -->
+
+    <!--	Field of Search  -->
+
+    <!--    View Patent Images  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">View Patent Images:</div>
+        <div class="disp_elm_text">
+            <a href='/12147713.pdf' rel="nofollow"
+               onclick="_gaq.push(['_trackEvent', 'Body', 'Click', 'PDF']);">Download PDF 12147713                &nbsp;<span class="inline-pdf-image"></span></a>
+        </div>
+    </div>
+
+    <!--	US Patent References  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">US Patent References:</div>
+                <div class="disp_elm_text">
+                                <table cellpadding="0" cellspacing="0" class="patent_detail__table">
+                <tbody>
+                <tr><td>20230418772</td><td>N/A</td><td>2023-12-28</td><td>Kanayama</td><td></td></tr><tr><td>20230178121</td><td>N/A</td><td>2023-06-08</td><td>Nygren</td><td>365/189.05</td></tr><tr><td>20230136996</td><td>N/A</td><td>2023-05-04</td><td>Thoziyoor</td><td>711/154</td></tr><tr><td>20230071117</td><td>N/A</td><td>2023-03-09</td><td>Alameer</td><td></td></tr><tr><td>20220229790</td><td>N/A</td><td>2022-07-21</td><td>Nale</td><td></td></tr><tr><td>20210225418</td><td>N/A</td><td>2021-07-22</td><td>Kwon</td><td></td></tr><tr><td>20210216238</td><td>N/A</td><td>2021-07-15</td><td>Nale</td><td></td></tr><tr><td>20190043552</td><td>N/A</td><td>2019-02-07</td><td>Alameer</td><td></td></tr><tr><td>20090106460</td><td>N/A</td><td>2009-04-23</td><td>Suenaga</td><td>710/13</td></tr>                </tbody>
+            </table>
+        </div>
+    </div>
+<br clear='all'><br clear="all"/><!-- 728x90 Responsive 2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1586334167197709"
+     data-ad-slot="4118051210"
+     data-ad-format="auto">
+</ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br clear="all"/>
+    <!--	Foreign Patent References:  -->
+
+    <!--		Other References  -->
+
+    <!--	Primary Examiner  -->
+
+    <!--	Assistant Examiner  -->
+
+    <!--	Attorney, Agent or Firm  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Attorney, Agent or Firm:</div>
+        <div class="disp_elm_text">
+                            ipPivot IP Agency                <br/>
+                    </div>
+    </div>
+
+    <!--		Parent Case Data  -->
+
+    <!--	Claims  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Claims:</div>
+        <div class="disp_elm_text">
+            The invention claimed is:<br clear="all"/><br clear="all"/>
+                1. <claim-text>A high-bandwidth double data rate (DDR) dual-in-line memory module (DIMM), comprising: a first sub-channel, a second sub-channel, a register and divided clock driver, and a combined data buffer, wherein the first sub-channel comprises a first pseudo channel and a second pseudo channel, the second sub-channel comprises a third pseudo channel and a fourth pseudo channel, each pseudo channel comprising a plurality of dynamic random-access memory (DRAM) chips; the register and divided clock driver is configured to determine a command mode in response to a command sent by a host and send the command to the first pseudo channel, the second pseudo channel, the third pseudo channel, and/or the fourth pseudo channel according to the command mode; and the combined data buffer is configured to interleave data of the first pseudo channel and the second pseudo channel.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    2. <claim-text>The high-bandwidth DDR DIMM of claim 1, wherein the register and divided clock driver is further configured to perform, in response to an input clock cycle thereof, odd/even phase synchronization with the host, wherein an odd-numbered input clock cycle of the register and divided clock driver corresponds to an odd-numbered phase of the host, and an even-numbered input clock cycle of the register and divided clock driver corresponds to an even-numbered phase of the host.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    3. <claim-text>The high-bandwidth DDR DIMM of claim 2, wherein in the case where a double-UI command is sent by the host, the register and divided clock driver is further configured to select a command mode from a plurality of different command modes according to at least one flag bit in the double-UI command; and in the case where a single-UI command is sent by the host, the register and divided clock driver is further configured to send the single-UL command to the first pseudo channel and/or the second pseudo channel according to an odd/even phase in which the single-UI command is located.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    4. <claim-text>The high-bandwidth DDR DIMM of claim 2, wherein the command mode comprises a broadcast mode, and the register and divided clock driver is further configured to send the command to the first pseudo channel and the second pseudo channel simultaneously in the broadcast mode.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    5. <claim-text>The high-bandwidth DDR DIMM of claim 4, wherein in the broadcast mode, the first pseudo channel and the second pseudo channel are configured to send data to the combined data buffer simultaneously in response to the command.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    6. <claim-text>The high-bandwidth DDR DIMM of claim 4, wherein in the broadcast mode, the combined data buffer is configured to interleave the data of the first pseudo channel and the second pseudo channel directly.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    7. <claim-text>The high-bandwidth DDR DIMM of claim 2, wherein the command mode comprises a directional mode, and the register and divided clock driver is further configured to send the command to the first pseudo channel or the second pseudo channel separately in the directional mode.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    8. <claim-text>The high-bandwidth DDR DIMM of claim 7, wherein in the directional mode, the first pseudo channel and the second pseudo channel are configured to send the data to the combined data buffer separately in response to the command.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    9. <claim-text>The high-bandwidth DDR DIMM of claim 7, wherein in the directional mode, the combined data buffer is configured to interleave data of one of the pseudo channels with dummy data when data of the other pseudo channel has not arrived.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    10. <claim-text>The high-bandwidth DDR DIMM of claim 7, wherein in the directional mode, the register and divided clock driver is further configured to determine, according to an odd/even phase in which the command is located and/or at least one flag bit, to send the command to the first pseudo channel or the second pseudo channel.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    11. <claim-text>The high-bandwidth DDR DIMM of claim 2, wherein the command mode comprises a dynamic mode, and the register and divided clock driver is further configured to determine in the dynamic mode according to an odd/even phase to send the command to the first pseudo channel and the second pseudo channel simultaneously or send the command to the first pseudo channel or the second pseudo channel separately.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    12. <claim-text>The high-bandwidth DDR DIMM of claim 1, wherein the register and divided clock driver comprises a flag bit register, wherein other devices perform odd/even phase synchronization with the register and divided clock driver via the flag bit register when the devices need to send commands to the register and divided clock driver.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    13. <claim-text>The high-bandwidth DDR DIMM of claim 12, wherein during a test stage of the high-bandwidth DDR DIMM, a test is performed on the high-bandwidth DDR DIMM in response to a command sent by a test bench; the flag bit register is configured prior to the start of the test, and the register and divided clock driver starts to perform odd/even phase synchronization in response to a NOP command sent by the test bench; and after the odd/even phase synchronization, a corresponding test is performed in response to a formal command that the test bench starts to send after a preset clock cycle.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    14. <claim-text>A memory system, comprising a central processing unit (CPU) and a high-bandwidth double data rate (DDR) dual-in-line memory module (DIMM), wherein
+<claim-text>the high-bandwidth DDR DIMM comprises: a first sub-channel, a second sub-channel, a register and divided clock driver, and a combined data buffer, wherein the first sub-channel comprises a first pseudo channel and a second pseudo channel, the second sub-channel comprises a third pseudo channel and a fourth pseudo channel, each pseudo channel comprising a plurality of dynamic random-access memory (DRAM) chips; the register and divided clock driver is configured to determine a command mode in response to a command sent by the CPU and send the command to the first pseudo channel and/or the second pseudo channel according to the command mode; and the combined data buffer is configured to interleave data of the first pseudo channel and the second pseudo channel.</claim-text>
+</claim-text>                    <br clear="all"/><br clear="all"/>
+                    15. <claim-text>An operation method of a memory system comprising a host and a high-bandwidth double data rate (DDR) dual-in-line memory module (DIMM), the operation method comprising:
+<claim-text>performing, by the host, odd/even phase synchronization with a register and divided clock driver of the high-bandwidth DDR DIMM;</claim-text>
+<claim-text>sending, by the host, a command to the register and divided clock driver; and</claim-text>
+<claim-text>determining, by the register and divided clock driver, a command mode according to the command, and sending the command to a first pseudo channel and/or a second pseudo channel of the high-bandwidth DDR DIMM according to the command mode or an odd/even phase in which the command is located, wherein each of the pseudo channels comprises a plurality of DRAM chips.</claim-text>
+</claim-text>                    <br clear="all"/><br clear="all"/>
+                    16. <claim-text>The operation method of claim 15, wherein when the register and divided clock driver works in a broadcast mode, the host sends a command to the register and divided clock driver in an even phase, and after waiting for an input clock cycle that lasts as long as the command, continues to send another command to the register and divided clock driver in an even phase; and the register and divided clock driver sends the received commands to the first pseudo channel and the second pseudo channel simultaneously, wherein an even-numbered input clock cycle of the register and divided clock driver corresponds to an even-numbered phase of the host.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    17. <claim-text>The operation method of claim 15, wherein when the register and divided clock driver works in a directional mode or dynamic mode, the register and divided clock driver determines, according to an odd/even phase in which a single-UI command is located, to send the single-UI command to the first pseudo channel or the second pseudo channel.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    18. <claim-text>The operation method of claim 15, wherein the host configures at least one reserved bit in a double-UI command as a flag bit to indicate the command mode of the register and divided clock driver, and/or to instruct the register and divided clock driver to send the command to the first pseudo channel or the second pseudo channel.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    19. <claim-text>The operation method of claim 15, wherein when the register and divided clock driver works in a dynamic mode, the host interleaves/de-interleaves data of the first pseudo channel and the second pseudo channel.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    20. <claim-text>The operation method of claim 15, wherein during an initialization stage of the high-bandwidth DDR DIMM or a self-refresh stage of clock-off, the host performs odd/even phase synchronization with the register and divided clock driver.</claim-text>                    <br clear="all"/><br clear="all"/>
+                            </div>
+    </div>
+
+    <!--	Description  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Description:</div>
+        <div class="disp_elm_text">
+            <h1>TECHNICAL FIELD</h1>
+<div p-id="p-0002" num="0001">The present disclosure belongs to the field of memory technology and, more specifically to a high-bandwidth double data rate (DDR) dual-in-line memory module (DIMM), a memory system, and an operation method thereof.</div>
+<h1>BACKGROUND</h1>
+<div p-id="p-0003" num="0002">The widely used DDR synchronous dynamic random access memory (SDRAM) (also known as DRAM) standard is applicable to DDR4 and DDR5 memories, and provides a channel that can support DIMM devices, which can record data at the rising edges and falling edges of clocks.</div>
+<div p-id="p-0004" num="0003">Due to the continuous development of DRAM technology, the I/O speed gap between the DRAM and the host/controller is gradually increasing. However, adding more DDR channels to increase the DIMM bandwidth is not an effective solution due to limited routing resources on packages, DIMMs and PCBs.</div>
+<div p-id="p-0005" num="0004">In a standard Loaded Reduced DIMM (LRDIMM) system, the frequency of a input command and address (DCA) interface (i.e., an interface between the host and the register clock driver (RCD)) is equal to that of an output command and address (QCA) interface (i.e., an interface between the RCD and DRAM). A data buffer (DB) forwards data directly between DRAM and host interfaces.</div>
+<div p-id="p-0006" num="0005">The industry has proposed a high-bandwidth DIMM (HBDIMM) that doubles the data rate of the DCA interface, while halving the frequency of the QCA interface relative to the frequency of the DCA interface. One same channel of the HBDIMM is divided into an A-side and a B-side, which are called pseudo channels (PCs), and QCA interfaces of the two pseudo channels are logically controlled by the DCA, so that the width of the QCA is twice that of the DCA, thus balancing the bandwidth of DCA/QCA. The frequency halving of the QCA makes it possible to double the bandwidth of the existing DRAM system. However, since the I/O speed of the DRAM is still limited by the development process of the existing DRAM, it is difficult to further reduce the I/O speed gap between the DRAM and the host/controller.</div>
+<h1>SUMMARY</h1>
+<div p-id="p-0007" num="0006">In view of the above defects or need for improvement of the prior art, the present disclosure provides a high-bandwidth DDR DIMM that can effectively improve data transmission efficiency, thus effectively solving the problem of the I/O speed gap between DRAM and a host/controller.</div>
+<div p-id="p-0008" num="0007">In order to achieve the above objective, according to one aspect of the present disclosure, there is provided a high-bandwidth DDR DIMM, including: a first sub-channel, a second sub-channel, a register and divided clock driver, and a combined data buffer, where each of the sub-channels comprises a first pseudo channel and a second pseudo channel, each pseudo channel comprising a plurality of dynamic random-access memory (DRAM) chips; the register and divided clock driver is configured to determine a command mode in response to a command sent by a host and send the command to the first pseudo channel and/or the second pseudo channel according to the command mode; and the combined data buffer is configured to interleave data of the first pseudo channel and the second pseudo channel.</div>
+<div p-id="p-0009" num="0008">In some embodiments, the register and divided clock driver is further configured to perform, in response to an input clock cycle thereof, odd/even phase synchronization with the host, where an odd-numbered input clock cycle of the register and divided clock driver corresponds to an odd-numbered phase of the host, and an even-numbered input clock cycle of the register and divided clock driver corresponds to an even-numbered phase of the host.</div>
+<div p-id="p-0010" num="0009">In some embodiments, in the case where a double-UI command is sent by the host, the register and divided clock driver is further configured to select a command mode from a plurality of different command modes according to at least one flag bit in the double-UI command.</div>
+<div p-id="p-0011" num="0010">In some embodiments, in the case where a single-UI command is sent by the host, the register and divided clock driver is further configured to send the command to the first pseudo channel and/or the second pseudo channel according to an odd/even phase in which the single-UI command is located.</div>
+<div p-id="p-0012" num="0011">In some embodiments, the command mode includes a broadcast mode, and the register and divided clock driver is further configured to send the command to the first pseudo channel and the second pseudo channel simultaneously in the broadcast mode.</div>
+<div p-id="p-0013" num="0012">In some embodiments, in the broadcast mode, the first pseudo channel and the second pseudo channel work simultaneously.</div>
+<div p-id="p-0014" num="0013">In some embodiments, in the broadcast mode, two single-UI commands are sent to the pseudo channels in an odd phase and a consecutive even phases.</div>
+<div p-id="p-0015" num="0014">In some embodiments, in the broadcast mode, a single-UI command is sent to the first pseudo channel in an odd phase and the single-UI command is sent to the second pseudo channel in a consecutive even phase.</div>
+<div p-id="p-0016" num="0015">In some embodiments, in the broadcast mode, the first pseudo channel and the second pseudo channel are configured to send data to the combined data buffer simultaneously in response to the command.</div>
+<div p-id="p-0017" num="0016">In some embodiments, in the broadcast mode, the combined data buffer is configured to interleave the data of the first pseudo channel and the second pseudo channel directly.</div>
+<div p-id="p-0018" num="0017">In some embodiments, the command mode includes a directional mode, and the register and divided clock driver is further configured to send the command to the first pseudo channel or the second pseudo channel separately in the directional mode.</div>
+<div p-id="p-0019" num="0018">In some embodiments, in the directional mode, the first pseudo channel and the second pseudo channel are configured to send the data to the combined data buffer separately in response to the command.</div>
+<div p-id="p-0020" num="0019">In some embodiments, in the directional mode, the combined data buffer is configured to interleave the data of the first pseudo channel and the second pseudo channel.</div>
+<div p-id="p-0021" num="0020">In some embodiments, in the directional mode, the combined data buffer is configured to interleave data of one of the pseudo channels with dummy data when data of the other pseudo channel has not arrived.</div>
+<div p-id="p-0022" num="0021">In some embodiments, in the directional mode, the register and divided clock driver is further configured to determine, according to an odd/even phase in which the command is located, to send the command to the first pseudo channel or the second pseudo channel.</div>
+<div p-id="p-0023" num="0022">In some embodiments, in the directional mode, the register and divided clock driver sends a command received in an even phase to the first pseudo channel and a command received in an odd phase to the second pseudo channel.</div>
+<div p-id="p-0024" num="0023">In some embodiments, in the directional mode, the register and divided clock driver is further configured to determine, according to the flag bit of the double-UI command, to send the double-UI command to the first pseudo channel or the second pseudo channel.</div>
+<div p-id="p-0025" num="0024">In some embodiments, in the directional mode, the command is sent separately.</div>
+<div p-id="p-0026" num="0025">In some embodiments, in the directional mode, the first pseudo channel and the second pseudo channel work separately.</div>
+<div p-id="p-0027" num="0026">In some embodiments, the command mode includes a dynamic mode, and the register and divided clock driver is further configured to send, in the dynamic mode, the command to the first pseudo channel and the second pseudo channel simultaneously or separately.</div>
+<div p-id="p-0028" num="0027">In some embodiments, in the dynamic mode, the first pseudo channel and the second pseudo channel work simultaneously or separately.</div>
+<div p-id="p-0029" num="0028">In some embodiments, in the dynamic mode, the register and divided clock driver is further configured to determine according to an odd/even phase to send the command to the first pseudo channel or the second pseudo channel.</div>
+<div p-id="p-0030" num="0029">In some embodiments, in the dynamic mode, two single-UI commands are sent to the pseudo channels in an odd phase and a consecutive even phase.</div>
+<div p-id="p-0031" num="0030">In some embodiments, in the dynamic mode, a single-UI command is sent to the first pseudo channel in an odd phase and the single-cycle command is sent to the second pseudo channel in a consecutive even phase.</div>
+<div p-id="p-0032" num="0031">In some embodiments, for a write command, the combined data buffer is further configured to de-interleave data that need to be written to the first pseudo channel and/or the second pseudo channel.</div>
+<div p-id="p-0033" num="0032">In some embodiments, the first sub-channel and the second sub-channel share one said register and divided clock driver, and each group of the first pseudo channel and the second pseudo channel corresponds to one said combined data buffer.</div>
+<div p-id="p-0034" num="0033">In some embodiments, the command modes include a broadcast mode, a directional mode, and a dynamic mode, and the register and divided clock driver switches among the command modes.</div>
+<div p-id="p-0035" num="0034">In some embodiments, the register and divided clock driver include a flag bit register, where other devices perform odd/even phase synchronization with the register and divided clock driver via the flag bit register when the devices need to send commands to the register and divided clock driver.</div>
+<div p-id="p-0036" num="0035">In some embodiments, during a test stage of the high-bandwidth DDR DIMM, a test is performed on the high-bandwidth DDR DIMM in response to a command sent by a test bench.</div>
+<div p-id="p-0037" num="0036">In some embodiments, the flag bit register is configured prior to the start of the test, and the register and divided clock driver starts to perform odd/even phase synchronization in response to a NOP command sent by the test bench.</div>
+<div p-id="p-0038" num="0037">In some embodiments, after the odd/even phase synchronization, a corresponding test is performed in response to a formal command that the test bench starts to send after a preset clock cycle.</div>
+<div p-id="p-0039" num="0038">In accordance with another aspect of the present disclosure, there is provided a memory system including a central processing unit (CPU) and a high-bandwidth DDR DIMM described above, wherein the CPU is used as the host.</div>
+<div p-id="p-0040" num="0039">In accordance with yet another aspect of the present disclosure, there is provided an operation method of a memory system including a host and a high-bandwidth DDR DIMM, the operation method including:
+<ul style="list-style: none">
+    <li>
+    <ul style="list-style: none">
+        <li num="0040">performing, by the host, odd/even phase synchronization with a register and divided clock driver of the high-bandwidth DDR DIMM;</li>
+        <li num="0041">sending, by the host, a command to the register and divided clock driver; and</li>
+        <li num="0042">determining, by the register and divided clock driver, a command mode according to the command, and sending the command to a first pseudo channel and/or a second pseudo channel of the high-bandwidth DDR DIMM according to the command mode or an odd/even phase in which the command is located, where each of the pseudo channels includes a plurality of DRAM chips.</li>
+    </ul>
+    </li>
+</ul>
+</div>
+<div p-id="p-0041" num="0043">In some embodiments, the host and the register and divided clock driver are both in odd phases or in even phases.</div>
+<div p-id="p-0042" num="0044">In some embodiments, when the register and divided clock driver works in the broadcast mode, the host sends a command to the register and divided clock driver in an even phase, and after waiting for an input clock cycle that lasts as long as the command, continues to send another command to the register and divided clock driver in an even phase.</div>
+<div p-id="p-0043" num="0045">In some embodiments, the register and divided clock driver sends the received commands to the first pseudo channel and the second pseudo channel simultaneously, where an even-numbered input clock cycle of the register and divided clock driver corresponds to an even-numbered phase of the host.</div>
+<div p-id="p-0044" num="0046">In some embodiments, when the register and divided clock driver works in a directional mode or dynamic mode, the register and divided clock driver determines, according to an odd/even phase in which a single-UI command is located, to send the single-UI command to the first pseudo channel or the second pseudo channel.</div>
+<div p-id="p-0045" num="0047">In some embodiments, the host configures at least one reserved bit in a double-UI command as a flag bit to indicate the command mode of the register and divided clock driver, and/or to instruct the register and divided clock driver to send the command to the first pseudo channel or the second pseudo channel.</div>
+<div p-id="p-0046" num="0048">In some embodiments, when the register and divided clock driver works in a dynamic mode, the host interleaves/de-interleaves data of the first pseudo channel and the second pseudo channel.</div>
+<div p-id="p-0047" num="0049">In some embodiments, during an initialization stage of the high-bandwidth DDR DIMM or a self-refresh stage of clock-off, the host performs odd/even phase synchronization with the register and divided clock driver.</div>
+<div p-id="p-0048" num="0050">Overall, the above technical schemes conceived in the present disclosure have the following beneficial effects compared to the prior art: according to different command modes and/or the odd/even phase where the command is located, the register and divided clock driver correspondingly sends the command to a plurality of pseudo channels simultaneously or separately, thus realizing faster and more effective data reading; by performing odd/even phase synchronization with the host, accurate response to the command is achieved according to the odd/even phase of the received command, and the command can be sent to the corresponding pseudo channel according to the odd/even phase or flag bit of the command, thus improving the overall performance of signal reading and transmission; and the above technical schemes of the present disclosure are applicable to more application scenarios without changing the original command format and sending approach, thus having good compatibility.</div>
+<h1>BRIEF DESCRIPTION OF DRAWINGS</h1>
+<div p-id="p-0049" num="0051">FIG. <b>1</b> is a schematic diagram of a high-bandwidth DDR DIMM <b>100</b> of an embodiment of the present disclosure;</div>
+<div p-id="p-0050" num="0052">FIG. <b>2</b> is a schematic diagram of signal transmission in a broadcast mode of an embodiment of the present disclosure;</div>
+<div p-id="p-0051" num="0053">FIG. <b>3</b> is a schematic diagram of signal transmission in a directional mode of an embodiment of the present disclosure;</div>
+<div p-id="p-0052" num="0054">FIG. <b>4</b> is a schematic diagram of a high-bandwidth memory system of an embodiment of the present disclosure; and</div>
+<div p-id="p-0053" num="0055">FIG. <b>5</b> is a flowchart of an operation method of a high-bandwidth memory system of an embodiment of the present disclosure.</div>
+<h1>DETAILED DESCRIPTION</h1>
+<div p-id="p-0054" num="0056">In order to make the objectives, technical schemes and advantages of the present disclosure more apparent, the present disclosure is further described in detail in conjunction with the accompanying drawings and embodiments. It should be understood that the specific embodiments described here are intended only to explain the present disclosure and are not intended to limit the present disclosure. As can be recognized by those skilled in the art, the described embodiments may be modified in a variety of different ways without departing from the principle or scope of the present application. Accordingly, the accompanying drawings and description are considered to be exemplary rather than limiting in nature.</div>
+<div p-id="p-0055" num="0057">FIG. <b>1</b> illustrates a schematic diagram of a high-bandwidth DDR DIMM <b>100</b> of an embodiment of the present disclosure. As shown in FIG. <b>1</b>, each high-bandwidth DDR DIMM <b>100</b> is divided left and right into two sub-channels, and each sub-channel is further divided into two sides, and each side is referred to as a pseudo channel (PC), i.e., PC<b>0</b> and PC<b>1</b> in FIG. <b>1</b>. Each pseudo channel includes a plurality of DRAM chips (not shown in FIG. <b>1</b>) for operations such as data writing and reading. In the embodiments of the present disclosure, since the frequency (e.g., 6.4 GHz) of the DCA is twice the frequency (e.g., 3.2 GHz) of the QCA, the name register clock driver (RCD) is no longer appropriate and the following more specific name will be used below to avoid confusion: register and divided clock driver (RDCD). In addition, the name of combined data buffer (CDB) will also be used below to emphasize the combined functionality of the data buffer.</div>
+<div p-id="p-0056" num="0058">In the embodiments of the present disclosure, the high-bandwidth DDR DIMM <b>100</b> further includes a register and divided clock driver configured to determine a command mode in response to a command sent by a host and send the received command to pseudo channel(s) PC<b>0</b> and/or PC<b>1</b> according to different command modes. The high-bandwidth DDR DIMM <b>100</b> further includes a combined data buffer configured to interleave data of pseudo channels PC<b>0</b> and PC<b>1</b>. It can be understood that for a write command, the combined data buffer is further configured to de-interleave data that need to be written to pseudo channel(s) PC<b>0</b> and/or PC<b>1</b>. In the embodiments of the present disclosure, the two sub-channels of the high-bandwidth DDR DIMM <b>100</b> share one register and divided clock driver, and each group of pseudo channels PC<b>0</b> and PC<b>1</b> correspond to one combined data buffer, where the two sub-channels have the same structure. It can be understood that the schematic diagram given here is only an example, and the present disclosure does not limit other structure variations that can be used.</div>
+<div p-id="p-0057" num="0059">Since in the high-bandwidth DDR DIMM <b>100</b>, the frequency of the DCA interface is twice that of the QCA interface, to ensure the accuracy of command response, the host needs to know exactly from which clock cycle the command was sent. In some embodiments, an odd-numbered input clock cycle of the register and divided clock driver is referred to as an odd phase, and an even-numbered input clock cycle thereof is referred to as an even phase. An odd-numbered input clock cycle of the register and divided clock driver corresponds to an odd-numbered phase of the host, and an even-numbered input clock cycle of the register and divided clock driver corresponds to an even-numbered phase of the host. Specifically, for an output clock (QCK) cycle, the first input clock (DCK) cycle (cycle 0) corresponds to an even phase, the second DCK cycle (cycle 1) corresponds to an odd phase, and so on. In some embodiments, it is required that the host and the register and divided clock driver maintain a synchronized odd/even phase, that is, the host and the register and divided clock driver are both in an odd phase or in an even phase.</div>
+<div p-id="p-0058" num="0060">In some embodiments, a double-unit interval (UI) command sent by the host has at least one flag bit, and the register and divided clock driver selects a command mode from a plurality of different command modes according to the flag bit. In some embodiments, the register and divided clock driver further sends the command to pseudo channel(s) PC<b>0</b> and/or PC<b>1</b> according to an odd/even phase in which a single-UI command sent from the host is located. In the embodiments of the present disclosure, the command modes specifically include a broadcast mode, a directional mode, and a dynamic mode. The register and divided clock driver may be switched among the variety of different command modes to select an appropriate command mode according to the actual needs so as to improve the efficiency of signal transmission, thus enhancing the overall system performance.</div>
+<div p-id="p-0059" num="0061">FIG. <b>2</b> illustrates a schematic diagram of signal transmission in the broadcast mode of an embodiment of the present disclosure. In the embodiments of the present disclosure, the first DCK cycle is an even phase and the second DCK cycle is an odd phase, and the two DCK cycles may be referred to as one big cycle that corresponds to one output clock (QCK) cycle. The register and divided clock driver is further configured to send the command to the first pseudo channel and the second pseudo channel simultaneously in the broadcast mode. Specifically, when the register and divided clock driver receives a command sent from the host and determines based on a flag bit therein that it is in the broadcast mode, the register and divided clock driver sends the received command to pseudo channels PC<b>0</b> and PC<b>1</b> simultaneously. That is, in the broadcast mode, pseudo channels PC<b>0</b> and PC<b>1</b> work simultaneously.</div>
+<div p-id="p-0060" num="0062">As shown in FIG. <b>2</b>, in the broadcast mode, when the register and divided clock driver receives a read command (RD) in big cycle 0, it sends the read command (referred to CMD PC<b>0</b> for pseudo channel PC<b>0</b> and CMD PC<b>1</b> for pseudo channel PC<b>1</b>) to pseudo channels PC<b>0</b> and PC<b>1</b> simultaneously. In response to this read command, data (e.g., D<b>0</b>, D<b>1</b>, etc.) of pseudo channels PC<b>0</b> and PC<b>1</b> are sent to the combined data buffer simultaneously. The combined data buffer interleaves the data from pseudo channels PC<b>0</b> and PC<b>1</b>. Since the data of pseudo channels PC<b>0</b> and PC<b>1</b> are sent simultaneously in the broadcast mode, the combined data buffer interleaves the first data (D<b>0</b>) received from pseudo channel PC<b>0</b> and the first data (D<b>0</b>) received from pseudo channel PC<b>1</b>, and interleaves the second data (D<b>1</b>) received from pseudo channel PC<b>0</b> and the second data (D<b>1</b>) received from pseudo channel PC<b>1</b>, and so on.</div>
+<div p-id="p-0061" num="0063">FIG. <b>3</b> illustrates a schematic diagram of signal transmission in the directional mode of an embodiment of the present disclosure. When the register and divided clock driver receives a command sent from the host and determines based on a flag bit therein that it is in the directional mode, the register and divided clock driver is further configured to send the command to the first pseudo channel or the second pseudo channel separately. In response to this command, the first pseudo channel PC<b>0</b> and the second pseudo channel PC<b>1</b> send data to the combined data buffer separately. Specifically, when the register and divided clock driver receives a read command (RD), it sends the read command (referred to CMD PC<b>0</b> for pseudo channel PC<b>0</b> and CMD PC<b>1</b> for pseudo channel PC<b>1</b>) to pseudo channels PC<b>0</b> and PC<b>1</b> separately, and pseudo channels PC<b>0</b> and PC<b>1</b> send the data to the combined data buffer separately in response to the read command In the directional mode, pseudo channels PC<b>0</b> and PC<b>1</b> may work separately.</div>
+<div p-id="p-0062" num="0064">As shown in FIG. <b>3</b>, in the directional mode, the command RD PC<b>0</b> to read pseudo channel PC<b>0</b> is sent in the first even phase (within big cycle 0), and the command RD PC<b>1</b> to read pseudo channel PC<b>1</b> is sent in the second even phase (within big cycle 1). When the register and divided clock driver receives the command RD PC<b>0</b> in big cycle 0, it sends the command to pseudo channel PC<b>0</b>, and when it receives the command RD PC<b>1</b> in big cycle 1, it sends the command to pseudo channel PC<b>1</b>. In response to this read command, the data (e.g., D<b>0</b>, D<b>1</b>, etc.) of pseudo channel PC<b>0</b> is sent to the combined data buffer from big cycle 0, and the data (e.g. D<b>0</b>, D<b>1</b>, etc.) on the pseudo channel PC<b>1</b> is sent to the combined data buffer from big cycle 1.</div>
+<div p-id="p-0063" num="0065">The combined data buffer interleaves the data from pseudo channels PC<b>0</b> and PC<b>1</b>. Since the data of pseudo channels PC<b>0</b> and PC<b>1</b> are sent separately in the directional mode, the time to reach the combined data buffer is not consistent. When data of one pseudo channel (e.g., PC<b>1</b>) has not arrived, the combined data buffer interleaves data of the other pseudo channel (e.g., PC<b>0</b>) with dummy data to ensure the correct format of data transmission. As shown in FIG. <b>3</b>, in big cycle 0, the combined data buffer receives the data D<b>0</b> and D<b>1</b> of pseudo channel PC<b>0</b>, while the data of pseudo channel PC<b>1</b> has not arrived yet, so it interleaves the data D<b>0</b> and D<b>1</b> of pseudo channel PC<b>0</b> with dummy data separately. Within big cycle 1, the data of pseudo channel PC<b>1</b> begins to arrive, then the data D<b>2</b> and D<b>3</b> of pseudo channel PC<b>0</b> is interleaved with the data D<b>0</b> and D<b>1</b> of pseudo channel PC<b>1</b>, respectively, and so on. In some embodiments, when one pseudo channel (e.g., PC<b>0</b>) has finished data transmission and the other pseudo channel (e.g., PC<b>1</b>) is still in the middle of data transmission, the combined data buffer interleaves the data received from pseudo channel PC<b>1</b> with dummy data. It can be understood that the dummy data used for interleaving may be any data, for example, all-1 data, and the present disclosure is not limited in this regard.</div>
+<div p-id="p-0064" num="0066">In some embodiments, in response to a write command, the combined data buffer is further configured to de-interleave the data and then write the de-interleaved data to the corresponding pseudo channel(s) PC<b>0</b> and/or PC<b>1</b>.</div>
+<div p-id="p-0065" num="0067">Unlike the broadcast mode described above, in the directional mode, the register and divided clock driver needs to send the command to the corresponding pseudo channel PC<b>0</b> or PC<b>1</b>, so as to ensure the accuracy of the sending of the command/data. In some embodiments, in the directional mode, the register and divided clock driver is further configured to determine according to an odd/even phase to send the command to the first pseudo channel or the second pseudo channel. For example, a command received by the register and divided clock driver in an even phase will be sent to pseudo channel PC<b>0</b>, and a command received in an odd phase will be sent to pseudo channel PC<b>1</b>. In the directional mode, the register and divided clock driver is further configured to use a reserved or idle bit in the command as a flag bit, and send the command to different pseudo channels according to this flag bit. For example, when the flag bit is 0, the register and divided clock driver sends the command to pseudo channel PC<b>0</b>, and when the flag bit is 1, the register and divided clock driver sends the command to pseudo channel PC<b>1</b>. This enables the correct sending of the command without changing the original command format.</div>
+<div p-id="p-0066" num="0068">In some embodiments, the command mode of the register and divided clock driver further includes a dynamic mode. In the dynamic mode, the register and divided clock driver sends the received command to pseudo channels PC<b>0</b> and PC<b>1</b> simultaneously or separately, and pseudo channels PC<b>0</b> and PC<b>1</b> can work simultaneously or separately, thus maximizing the overall system performance.</div>
+<div p-id="p-0067" num="0069">It can be understood that for a double-UI command, like for a standard DDR5 command, a continuous sending approach is maintained. For a double-UI command, there are relatively more flag bits that can be used because of the higher number of reserved or idle bits. In some embodiments, the register and divided clock driver determines the command mode according to at least one flag bit in the double-UI command and determines, according to another flag bit, to send the command to pseudo channel PC<b>0</b> or PC<b>1</b>. In some other embodiments, the register and divided clock driver determines the command mode according to at least one flag bit in the double-UI command and determines, according to an odd/even phase in which the double-UI command is located, to send the command to pseudo channel PC<b>0</b> or PC<b>1</b>. For a single-UI command, it is possible to not set a flag bit to indicate its command mode, and for the directional mode, the register and divided clock driver determines, according to an odd/even phase in which the single-UI command is located, to send the command to pseudo channel PC<b>0</b> or PC<b>1</b>. For the broadcast/dynamic mode, if a single-UI command requires the command be sent to both pseudo channels simultaneously, it is only necessary to send two single-UI commands at odd and even phases within one big cycle. The specific way of setting the command mode may be adjusted according to the actual application scenarios, and the present disclosure is not limited in this regard.</div>
+<div p-id="p-0068" num="0070">In some embodiments, the register and divided clock driver includes a flag bit register. Other devices perform odd/even phase synchronization with the register and divided clock driver via the flag bit register when the devices need to send commands to the register and divided clock driver. For example, during a test stage of the high-bandwidth DDR DIMM <b>100</b>, a test bench board needs to send a command to the high-bandwidth DDR DIMM <b>100</b> to test whether the functionality of the high-bandwidth DDR DIMM <b>100</b> is intact. Before the test bench master sends the command to the high-bandwidth DDR DIMM <b>100</b>, it needs to configure this flag bit register via a system management bus (SMBUS) and then send a NOP command to the register and divided clock driver to start performing odd/even phase synchronization, and then starts to send a formal command after a preset clock cycle to perform the corresponding test.</div>
+<div p-id="p-0069" num="0071">Using the high-bandwidth DDR DIMM of the embodiments of the present disclosure, by correspondingly sending a command to a plurality of pseudo channels simultaneously or separately depending on different command modes, data can be read faster and more effectively; and by performing odd/even phase synchronization with the host, accurate response to the command is achieved according to the odd/even phase of the received command, and the command can be sent to the corresponding pseudo channel according to the odd/even phase in which the command is located or the flag bit without having to change the original command format and sending approach, thus improving the overall performance of signal reading and transmission and effectively solving the problem of the I/O speed gap between the DRAM and the host/controller.</div>
+<div p-id="p-0070" num="0072">FIG. <b>4</b> illustrates a schematic diagram of a high-bandwidth memory system <b>300</b> of an embodiment of the present disclosure, which includes a CPU <b>200</b> and a high-bandwidth DDR DIMM <b>100</b> as described above. It can be understood that this FIG. <b>4</b> provides only exemplary connection and signal transmission relationships for some modules, and other modules such as the memory controller (MC) are not shown in the drawing. In some embodiments, CPU <b>200</b> is used as a host to send to the high-bandwidth DDR DIMM <b>100</b> a command as well as data to be written to DRAM chips, and further to receive data read from the high-bandwidth DDR DIMM <b>100</b>. The register and divided clock driver of the high-bandwidth DDR DIMM <b>100</b> is configured to determine different command modes according to the command sent from the host, and to send the command to the corresponding pseudo channels simultaneously or separately according to the corresponding command modes. The combined data buffer of the high-bandwidth DDR DIMM <b>100</b> is configured to interleave the data of the two pseudo channels according to the corresponding command mode. It can be understood that for a write command, the combined data buffer is further configured to de-interleave data that need to be written to the two pseudo channels.</div>
+<div p-id="p-0071" num="0073">For more specific implementations of the various modules of the high-bandwidth memory system, reference can be made to the description of the high-bandwidth DDR DIMM of the present disclosure, which have similar beneficial effects and will not be repeated here.</div>
+<div p-id="p-0072" num="0074">FIG. <b>5</b> illustrates a flowchart of an operation method of a high-bandwidth memory system of an embodiment of the present disclosure, which specifically includes the following steps.</div>
+<div p-id="p-0073" num="0075">At S<b>1</b>, the host performs odd/even phase synchronization with a register and divided clock driver of the high-bandwidth DDR DIMM. In some embodiments, since the frequency of the DCA interface is twice that of the QCA interface, to ensure the accuracy of command response, the host needs to know exactly whether the command is sent from an even phase (e.g., the first input clock cycle, cycle 0) or from an odd phase (e.g., the first input clock cycle, cycle 1). Therefore, the host needs to perform odd/even phase synchronization with the register and divided clock driver of the high-bandwidth DDR DIMM, so that the host and the register and divided clock driver are both in an odd phase or in an even phase.</div>
+<div p-id="p-0074" num="0076">At S<b>2</b>, the host sends a command to the register and divided clock driver. In some embodiments, the host selects, according to the actual command sending requirements, one of the command modes including a broadcast mode, a directional mode, and a dynamic mode, the register and divided clock driver is to work in. The host uses at least one bit that is reserved/idle in the command as a flag bit to indicate the command mode of the register and divided clock driver without changing the original command format and sending approach. Specifically, for example, CID3 reserved in high bits of the existing command is used to indicate whether the register and divided clock driver is to work in the broadcast mode or the directional mode, and an odd/even phase of the sent command is used to indicate that this command is to be sent to pseudo channel(s) PC<b>0</b> and/or PC<b>1</b>. It can be understood that the host may also indicate more different command modes using more reserved/idle bits in a double-UI command, and for a single-UI command, may or may not use a flag bit to indicate its command mode, and the present disclosure is not limited in this regard.</div>
+<div p-id="p-0075" num="0077">In some embodiments, when the command that needs to be sent is in the broadcast mode, the host sends the command to the register and divided clock driver in an even phase, and after waiting for an input clock cycle that lasts as long as the command, continues to send the command to the register and divided clock driver in an even phase. Specifically, taking FIG. <b>2</b> as an example, in the broadcast mode, after sending a read command (RD) in an even phase, the host needs to wait for one big cycle (Big Cycle 1) and continues to send other commands (e.g., ACT) in an even phase in the next big cycle (Big Cycle 2).</div>
+<div p-id="p-0076" num="0078">In some embodiments, when the command that needs to be sent is in the directional mode, the host does not need to specify that the command be sent to the register and divided clock driver at an even phase, nor does it need to wait for an input clock cycle that lasts as long as the command before sending the next command Therefore, the host needs to know the order in which the commands are sent and selects the valid data according to preset timing parameters, that is, the host selects the valid data corresponding to the command from the returned data based on the timing parameters, so as to ensure the accuracy of data transmission.</div>
+<div p-id="p-0077" num="0079">In some embodiments, when the command that needs to be sent is in the dynamic mode, the host needs to interleave/de-interleave the data of the two pseudo channels so that the data can be subsequently accessed separately in the directional mode.</div>
+<div p-id="p-0078" num="0080">In some embodiments, the command sent by the host also needs to specify to which pseudo channel it is to be sent by the register and divided clock driver. Specifically, for a single-UI command, the host uses an odd/even phase or 1 flag bit to indicate that the command is to be sent to a corresponding pseudo channel. For example, after the host has performed odd/even phase synchronization with the register and divided clock driver, in either the directional mode or dynamic mode, commands sent by the host in even phases are all sent to pseudo channel PC<b>0</b> by the register and divided clock driver, and commands sent by the host in odd phases are all sent to pseudo channel PC<b>1</b> by the register and divided clock driver. Alternatively, the host uses a reserved or idle bit in the command as a flag bit, and the command is sent to pseudo channel PC<b>0</b> by the register and divided clock driver when the flag bit is 0, and to pseudo channel PC<b>1</b> by the register and divided clock driver when the flag bit is 1.</div>
+<div p-id="p-0079" num="0081">For a double-UI command, since such a command has more data bits, the host may use one of the reserved or idle bits of the command as a flag bit to indicate which pseudo channel to send the command to, and use another bit as a flag bit to indicate the working mode. For example, for a double-UI command, CID2 in the command may be selected as the flag bit to make the selection of a pseudo channel; and CID3 may be selected as another flag bit to indicate the dynamic mode.</div>
+<div p-id="p-0080" num="0082">At S<b>3</b>, the register and divided clock driver determines a command mode according to the command, and sends the command to a first pseudo channel and/or a second pseudo channel of the high-bandwidth DDR DIMM according to the command mode or an odd/even phase in which the command is located, where each of the pseudo channels includes a plurality of DRAM chips. In some embodiments, in the broadcast mode, the first pseudo channel and the second pseudo channel work simultaneously; in the directional mode, the first pseudo channel and the second pseudo channel work separately; and in the dynamic mode, the first pseudo channel and the second pseudo channel may work simultaneously or separately.</div>
+<div p-id="p-0081" num="0083">In some embodiments, in different command modes, the register and divided clock driver sends a command to the first pseudo channel and/or the second pseudo channel in different manners. In the broadcast mode, the register and divided clock driver sends the command to pseudo channels PC<b>0</b> and PC<b>1</b> simultaneously; in the directional mode, the register and divided clock driver sends the command to pseudo channels PC<b>0</b> and PC<b>1</b> separately; and in the dynamic mode, the register and divided clock driver sends the command to pseudo channels PC<b>0</b> and PC<b>1</b> simultaneously or separately.</div>
+<div p-id="p-0082" num="0084">In some embodiments, in the directional or dynamic mode, the register and divided clock driver determines, according to the odd/even phase in which the command is sent, or the reserved/idle bit in the command as the flag bit, to send the command to pseudo channel PC<b>0</b> or PC<b>1</b>.</div>
+<div p-id="p-0083" num="0085">In some embodiments, the combined data buffer interleaves data of pseudo channels PC<b>0</b> and PC<b>1</b>. In the broadcast mode, for pseudo channels PC<b>0</b> and PC<b>1</b>, there are no dummy data in data that have been interleaved by the combined data buffer; and in the directional mode, for pseudo channels PC<b>0</b> and PC<b>1</b>, there may exist dummy data in the data that have been interleaved by the combined data buffer.</div>
+<div p-id="p-0084" num="0086">In some embodiments, during an initialization stage of the high-bandwidth DDR DIMM or a self-refresh stage of clock-off, the host performs an operation of odd/even phase synchronization with the register and divided clock driver. It can be understood that the host and the register and divided clock driver may also re-perform odd/even phase synchronization when otherwise necessary, and the present disclosure is not limited in this regard.</div>
+<div p-id="p-0085" num="0087">In the embodiments of the present disclosure, the DRAM chips may be DDR4, DDR5, DDR6, LPDDR or GDDR, and may also be LPDDR4, LPDDR5 or LPDDR5×, and may also be other forms of DRAM chips, and the present disclosure is not limited in this regard.</div>
+<div p-id="p-0086" num="0088">Using the operation method of the memory system of an embodiment of the present disclosure, the host performs odd/even phase synchronization with the register and divided clock driver of the high-bandwidth DDR DIMM to ensure the accuracy of responding to commands sent by the host. After the odd/even phase synchronization, by means of at least one flag bit of a to-be-sent command or an odd/even phase in which the command is located, the host achieves a variety of different allocation methods for the command, thus enabling more effective command transmission and faster data reading. In addition, by using a preset or idle data bit in the command as a flag bit, and/or using an odd/even phase of the command, to accurately instruct the register and divided clock driver to send the command to a corresponding pseudo channel, the accuracy of signal response is ensured, so that the operation method is applicable to more application scenarios without changing the existing command format and sending approach, thus having good compatibility.</div>
+<div p-id="p-0087" num="0089">In this specification, the description with reference to terms such as “one embodiment”, “some embodiments”, “example”, “specific example”, and “some examples” means that the specific features, structures, materials or features described in conjunction with the embodiment(s) or example(s) are included in at least one embodiment or example of the present application. Moreover, the specific features, structures, materials or characteristics described can be combined in any one or more embodiments or examples in any suitable manner. In addition, those skilled in the art can integrate and combine different embodiments or examples and features of different embodiments or examples described in this specification without contradicting each other.</div>
+<div p-id="p-0088" num="0090">In addition, the terms “first” and “second” are for the purpose of description only and should not be construed as indicating or implying relative importance or implicitly indicating the number of technical features indicated. Therefore, the features defined with “first” and “second” may explicitly or implicitly include at least one of the features. In the description of the present application, the term “plurality” means two or more, unless otherwise explicitly and specifically defined.</div>
+<div p-id="p-0089" num="0091">Any process or method description described in a flowchart or otherwise described herein may be understood as representing a module, fragment, or portion of code including one or more (two or more) executable commands for implementing specific logical functions or steps of the process. In addition, the scope of the preferred embodiments of the present application includes additional implementations in which the functions may be performed not in the order shown or discussed, including in a substantially simultaneous manner or in the reverse order depending on the functions involved.</div>
+<div p-id="p-0090" num="0092">The logic and/or steps denoted in the flowchart or otherwise described herein, for example, may be considered as an order-defined list of executable commands for implementing the logical functions, and may be specifically implemented in any computer-readable medium for use by a command execution system, apparatus, or device (e.g., a computer-based system, a system including a processor, or other system that can read commands from the command execution system, apparatus, or device and execute the command) or use in combination with such a command execution system, apparatus, or device.</div>
+<div p-id="p-0091" num="0093">It should be understood that the various parts of the present application may be implemented in hardware, software, firmware, or a combination thereof. In the above embodiments, a plurality of steps or methods may be implemented using software or firmware that is stored in memory and executed by a suitable instruction execution system. All or some of the steps of the methods of the above embodiments may be accomplished by instructing the relevant hardware by means of a program which may be stored in a computer-readable storage medium and, when executed, includes one of the steps of the method embodiments or a combination thereof.</div>
+<div p-id="p-0092" num="0094">Further, the functional units in each embodiment of the present application may be integrated into one processing module, or each unit may be physically separate, or two or more units may be integrated into one module. The integration module can be realized either in the form of hardware or in the form of a software functional module. The above integrated modules may also be stored in a computer-readable storage medium when implemented in the form of functional modules of software and sold or used as an independent product. The storage medium may be a read-only memory, a magnetic disk, an optical disk, etc.</div>
+<div p-id="p-0093" num="0095">Only some specific embodiments of the present application are described above, and the scope of protection of the present application is not limited thereto. Any changes or substitutions that can be readily conceived by those skilled in the art within the technical scope disclosed by the present application shall fall within the scope of protection of the present application. Therefore, the scope of protection of the present application should be subject to the scope of protection of the claims.</div>
+        </div>
+    </div>
+
+    <br clear="all"/><br/>
+
+
+    <br clear="all"/><br/>
+    <div class="disp_doc2">
+
+            <center>
+    
+    <a onClick="_gaq.push(['_trackEvent', 'Bottom', 'Click', 'Previous']);" href="/12147712.html">&lt;- Previous Patent (Memory performance u...)</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a onClick="_gaq.push(['_trackEvent', 'Bottom', 'Click', 'Next']);" href="/12147714.html">Next Patent (Organizing informati...) -&gt;</a>
+            </center>
+        <br clear="all"/><br/>
+</div>
+    <br clear="all"/><br/>
+        </div>
+
+        <div class="pageFooter">
+    <div class="row-fluid top">
+        <div class="figure"></div>
+        <ul>
+            <li>
+                <a href="/" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Home']);">Home</a>
+            </li>
+            <li>
+                <a href="/search.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Search']);">Search</a>
+            </li>
+            <li>
+                <a href="/services.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Services']);">Services</a>
+            </li>
+        </ul>
+        <ul class="socialIcons">
+            <li><a href="https://twitter.com/FPOCommunity" class="twitter"
+                   onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'social twitter']);"></a></li>
+            <li><a href="http://www.linkedin.com/groups/FPO-Community-4524797" class="linkedin"
+                   onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'social linkedin']);"></a></li>
+        </ul>
+    </div>
+    <div class="row-fluid bot">
+        <p>
+            &copy; 2004-2026 FreePatentsOnline.com. All rights reserved.
+            <a href="/privacy.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Privacy']);">Privacy Policy
+                &amp; Terms of Use.</a>
+        </p>
+    </div>
+</div>    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    _gaq.push(['_setCustomVar', 2, 'User Origin Source', 'no referer', 2]);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+<script type="text/javascript">
+    function trackPageLoad() {
+        var plend = new Date();
+        var plload = plend.getTime() - plstart.getTime();
+        var pn = document.location.pathname;
+        var lc = 'slow';
+        var la = new Array(200, 300, 400, 500, 1000, 1500, 2000, 2500, 5000);
+        for (var i = 0, len = la.length; i < len; i++) {
+            if (plload <= la[i]) {
+                lc = String(la[i]);
+                break;
+            }
+        }
+        _gaq.push(['onLoadTracker._setAccount', 'UA-174791-5']);
+        _gaq.push(['onLoadTracker._trackEvent', "LoadTime", lc, pn, plload]);
+        }
+</script>
+<script type="text/javascript">
+    try {
+        if (window.onload != null) {
+            var oldOnload = window.onload;
+            window.onload = function (e) {
+                oldOnload(e);
+                trackPageLoad();
+            };
+        }
+        else {
+            window.onload = trackPageLoad();
+        }
+    } catch (err) {
+    }
+</script>
+<script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/js/fpo_3.js"></script>
+
+</body>
+</html>

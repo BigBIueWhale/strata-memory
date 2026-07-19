@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/fpo_9.css" />
+<script type="text/javascript">
+var plstart = new Date();
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-174791-1']);
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="title" content="FPO IP Research &amp; Communities" />
+<meta name="robots" content="index, follow" />
+<meta name="description" content="Complete Patent Searching Database and Patent Data Analytics Services." />
+<title>FPO IP Research &amp; Communities</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link rel="shortcut icon" href="/images/favicon_1.ico"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-1586334167197709",
+        enable_page_level_ads: true
+    });
+</script></head>
+<body>
+
+<div>
+    <a name="top"></a>
+
+    <div class="container">
+        
+<div class="header">
+    <div class="row-fluid top">
+
+        <div class="pull-left figure">
+            <a href="/" onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Logo']);"></a>
+        </div>
+
+
+        <div class="pull-right" style="width: 750px;">
+                        <div class="loginForm">
+                <form class="form-inline form-mini pull-right" action="/login.html" method="post">
+                    <input type="hidden" name="src" value="header_login">
+                    <input id="UID-top" name="UID" type="text" class="input-large" placeholder="Email">
+                    <input id="PWD-top" name="PWD" type="password" class="input-small" placeholder="Password">
+                    <button type="submit" class="btn btn-mini btn-primary"
+                            onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Login']);">Login
+                    </button>
+                    <a class="btn btn-mini btn-info" href="/register.html"
+                            onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Create']);">Sign up
+                    </a>
+                </form>
+            </div>
+            
+
+            <div class="searchForm well">
+                <form id="quick_result" name="quick_result" class="form-inline" action="/result.html" method="get">
+
+                    <input type="hidden" name="sort" value="relevance">
+                    <input type="hidden" name="srch" value="top">
+
+
+                    <div class="searchBox pull-left">
+                        <input type="text" name="query_txt" placeholder="Enter your search here"
+                               class="search-query" id="topSearchBox">
+
+                        <div class="btn-group">
+                            <button name="submit" class="btn btn-primary" type="submit"
+                                    onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Search']);">Search
+                            </button>
+                            <button id="searchBox_dropdown" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/search.html"
+                                       onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'SearchExpert']);document.cookie = 'searchTab=#expert';">
+                                    Expert Search</a>
+                                </li>
+                                <li><a href="/search.html"
+                                       onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'SearchQuick']);document.cookie = 'searchTab=#quick';">
+                                    Quick Search</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sideCollections pull-right">
+                        <ul id="header_search_top" class="borderBottom ul-mini ">
+                            <li>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="patents_us" name="patents_us"
+                                           value="on" checked="checked">US Patents/Apps
+                                </label>
+                            </li>
+
+                            <li>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="patents_other" name="patents_other"
+                                           value="on">Other
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </form>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse center" id="primaryNavBar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li><a href="/"></a></li>
+                    <li><a href="/search.html">SEARCH</a></li>
+                    <li>
+                        <a href="/tools-resources.html"
+                           onclick="_gaq.push(['_trackEvent', 'Navbar', 'Click', 'Resources']);">
+                            TOOLS &amp; RESOURCES
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+<div class="clearfix"></div>        <div>
+
+            <div id="dhtmltooltip"></div>
+            
+<form id="results" name="results" method="post" class="form-horizontal" action="/result.html"><input type="hidden" name="p" id="p" value="1" /><input type="hidden" name="query_txt" id="query_txt" value="AN/&quot;Celestial AI&quot;" /><input type="hidden" name="stemming" id="quickstemming" value="on" /><input type="hidden" name="sort" id="quicksort" value="chron" /><input type="hidden" name="patents" id="quickpatents" value="" /><input type="hidden" name="patents_us" id="quickpatentsus" value="" /><input type="hidden" name="patents_other" id="quickpatentsother" value="" /><input type="hidden" name="uspat" id="quickuspat" value="on" /><input type="hidden" name="usapp" id="quickusapp" value="on" /><input type="hidden" name="pct" id="quickpct" value="" /><input type="hidden" name="jp" id="quickjp" value="" /><input type="hidden" name="eupat" id="quickeu" value="" /><input type="hidden" name="depat" id="quickde" value="" /><input type="hidden" name="srch" id="quicksearch" value="xprtsrch" /><input type="hidden" name="date_range" id="quickdaterange" value="all" /><input type="hidden" name="hits" id="hits" value="162" /><input type="hidden" name="srch_name" id="srch_name" value="" /><input type="hidden" name="search_name" id="search_name" value="" /><input type="hidden" name="selected_doc_flag" id="selected_doc_flag" value="" /><input type="hidden" name="selected_portfolio" id="selected_portfolio" value="" /><input type="hidden" name="portfolio_name" id="portfolio_name" value="" />
+
+<div class="well well-small" style="margin-top:10px; margin-bottom: 0">
+    <table width="100%" border="0">
+        <tr>
+            <td width="36%">
+                Matches 1 - 50 out of 162            </td>
+            <td align="right" valign="middle" width="70%" colspan="3" class="paginate_spacing">
+                 <span margin-left:3px;'><b>1</b></span><a href='result.html?p=2&amp;srch=xprtsrch&amp;query_txt=AN%2F%22Celestial+AI%22&amp;uspat=on&amp;usapp=on&amp;date_range=all&amp;stemming=on&amp;sort=chron'> 2 </a><a href='result.html?p=3&amp;srch=xprtsrch&amp;query_txt=AN%2F%22Celestial+AI%22&amp;uspat=on&amp;usapp=on&amp;date_range=all&amp;stemming=on&amp;sort=chron'> 3 </a><a href='result.html?p=4&amp;srch=xprtsrch&amp;query_txt=AN%2F%22Celestial+AI%22&amp;uspat=on&amp;usapp=on&amp;date_range=all&amp;stemming=on&amp;sort=chron'> 4 </a><a href='result.html?p=2&amp;srch=xprtsrch&amp;query_txt=AN%2F%22Celestial+AI%22&amp;uspat=on&amp;usapp=on&amp;date_range=all&amp;stemming=on&amp;sort=chron'> &gt; </a>                <br clear="all"/>
+            </td>
+        </tr>
+    </table>
+</div><br clear="all"/><!-- 728x90 Responsive 1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1586334167197709"
+     data-ad-slot="2270521617"
+     data-ad-format="auto">
+</ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br clear="all"/>
+
+<div class="legacy-container" style="margin-top: 0">
+    <div class="container_white" style="padding-top:3px;  padding-bottom:10px;">
+        <div align="center">
+            <table width="100%" border="0" cellpadding="2" cellspacing="1" class="listing_table">
+                <tr>
+                                        <th style="text-align:left;" width="10%">
+                        Match
+                    </th>
+                                        <th style="text-align:left;" width="15%"> Document</th>
+                    <th style="text-align:left;">Document Title</th>
+                                    </tr>
+                <tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                1            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260206356    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0206356.html">TWO-STAGE MANUFACTURING FOR ELECTRO-ABSORPTION MODULATOR AND PHOTODIODE</a>
+        &nbsp;
+                            <br/>
+                A two-stage manufacturing process is disclosed for photodiodes (PDs), electro-absorption modulators (EAMs), and waveguides, disposed on a common silicon substrate (i.e., a single chip), for use in...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                2            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12650563    </td>
+    <td  width="60%" valign="top">
+        <a href="/12650563.html">Packaging optical components in a circuit package</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to example implementations of optically accessible circuit packages. For example, this disclosure includes implementations for creating a circuit package with a...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                3            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260129321    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0129321.html">SYSTEMS AND METHODS FOR SWITCHING</a>
+        &nbsp;
+                            <br/>
+                Systems and methods for switching are disclosed. In an example, a switching system includes a photonic integrated circuit (PIC) having optical ports, an electric integrated circuit (EIC) stacked...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                4            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260128853    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0128853.html">METHODS AND SYSTEMS FOR ADJUSTING DIFFERENTIAL CLOCK SIGNALS</a>
+        &nbsp;
+                            <br/>
+                The present invention is directed to electrical circuits. In an embodiment, the present invention provides a clock compensation device configured to correct timing discrepancies in differential...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                5            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260126699    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0126699.html">FIDELITY-RESTORABLE PHOTONIC LINEAR OPERATOR</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to implementations of a photonic circuit, and particularly to a photonic circuit that includes one or more matrix circuits. For example, the present disclosure...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                6            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12615087    </td>
+    <td  width="60%" valign="top">
+        <a href="/12615087.html">Coherent photonic computing architectures</a>
+        &nbsp;
+                            <br/>
+                Disclosed are coherent photonic circuit architectures that optically implement linear algebraic computations. In neuromorphic applications of such photonic circuit architectures, individual neural...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                7            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260113125    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0113125.html">CLOCK SIGNAL DISTRIBUTION USING PHOTONIC FABRIC</a>
+        &nbsp;
+                            <br/>
+                Various embodiments provide for clock signal distribution within a processor, such as a machine learning (ML) processor, using a photonic fabric.    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                8            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260110862    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0110862.html">OPTICALLY ACCESSIBLE CIRCUIT PACKAGE HAVING BACKSIDE FIBER ATTACHMENT</a>
+        &nbsp;
+                            <br/>
+                A circuit package includes a photonic integrated circuit (PIC) and four electronic integrated circuits (EIC) electrically connected to and physically overlapping a first surface of the PIC. An...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                9            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260107845    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0107845.html">OPTICAL MODULATOR DRIVER FOR PHOTONIC INTERCONNECT PLATFORMS</a>
+        &nbsp;
+                            <br/>
+                Methods, devices, and systems for driving optical modulators. An example integrated circuit includes a driver including a first circuit having a first switch coupled between a first input and a...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                10            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260107844    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0107844.html">OPTICAL MODULATOR DRIVER FOR PHOTONIC INTERCONNECT PLATFORMS</a>
+        &nbsp;
+                            <br/>
+                Methods, devices, and systems for driving optical modulators. An example integrated circuit includes a driver including: a first circuit having a first switch coupled between a first input and a...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                11            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260104798    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0104798.html">MULTI-CHIP ELECTRO-PHOTONIC NETWORKS AND PHOTONIC MEMORY FABRICS FOR INTERCONNECTING MULTIPLE CIRCUIT PACKAGES</a>
+        &nbsp;
+                            <br/>
+                Multi-chip electro-photonic networks for interconnecting multiple circuit packages via photonic channels. Examples of a computing system include a first circuit package, a second circuit package,...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                12            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260099454    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0099454.html">OPTICAL MEMORY MODULE, CACHE MANAGER FOR AN OPTICAL MEMORY MODULE</a>
+        &nbsp;
+                            <br/>
+                Systems and methods that include an optical memory module and cache manager for an optical memory module are disclosed. In an example, a memory module includes a photonic integrated circuit (PIC),...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                13            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260093974    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0093974.html">NEUROMORPHIC PHOTONICS WITH COHERENT LINEAR NEURONS</a>
+        &nbsp;
+                            <br/>
+                Neuromorphic computing can employ coherent linear optical neurons implemented with multipath optical interferometers in which optical amplitude modulators and phase shifters impart neuron input...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                14            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12571971    </td>
+    <td  width="60%" valign="top">
+        <a href="/12571971.html">Converting processing dimensions of a wafer package</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                15            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12568809    </td>
+    <td  width="60%" valign="top">
+        <a href="/12568809.html">Via formed using a partial plug that stops before a substrate</a>
+        &nbsp;
+                            <br/>
+                A method is described. The method includes creating a partial through-substrate via (TSV) plug in a front side of a wafer, the partial TSV having a front side and a back side. The back side of the...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                16            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12566551    </td>
+    <td  width="60%" valign="top">
+        <a href="/12566551.html">Multi-chip electro-photonic networks and photonic memory fabrics for interconnecting multiple circuit packages</a>
+        &nbsp;
+                            <br/>
+                Multi-chip electro-photonic networks for interconnecting multiple circuit packages via photonic channels. Examples of a computing system include a first circuit package, a second circuit package,...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                17            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12566305    </td>
+    <td  width="60%" valign="top">
+        <a href="/12566305.html">Preserving access to edge coupling components on a wafer package</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                18            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12564047    </td>
+    <td  width="60%" valign="top">
+        <a href="/12564047.html">Thermal control of an optical component</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to thermal control systems, photonic memory fabrics, and electro-absorption modulators (EAMs). For example, the thermal control systems efficiently move data in a...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                19            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12561059    </td>
+    <td  width="60%" valign="top">
+        <a href="/12561059.html">Multi-chip electro-photonic networks and photonic memory fabrics for interconnecting multiple circuit packages</a>
+        &nbsp;
+                            <br/>
+                Multi-chip electro-photonic networks for interconnecting multiple circuit packages via photonic channels. Examples of a computing system include a first circuit package, a second circuit package,...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                20            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260041015    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0041015.html">ELECTRICAL INTERCONNECTS FOR PACKAGES CONTAINING PHOTONIC INTEGRATED CIRCUITS</a>
+        &nbsp;
+                            <br/>
+                A system-in-package includes: a photonic integrated circuit (PIC) including an active photonic component; and an electronic integrated circuit (EIC) stacked on the PIC, the EIC including: an...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                21            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260039089    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0039089.html">OPTOELECTRONIC DEVICE AND METHOD OF MANUFACTURE OF VIA-FIRST METALLIZATION SCHEME</a>
+        &nbsp;
+                            <br/>
+                A method of fabricating an optoelectronic component, performed on a multi-layered wafer disposed on a substrate. The method comprises the steps of: etching the multi-layered wafer, thereby...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                22            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260031597    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0031597.html">PLATFORM MOUNTED COPLANAR PAD ARCHITECTURE</a>
+        &nbsp;
+                            <br/>
+                A method of fabricating an optoelectronic component, performed on a multi-layered wafer disposed on a substrate. The method comprises the steps of: etching the multi-layered wafer, thereby...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                23            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260026412    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0026412.html">ELECTRICAL INTERCONNECTS FOR PACKAGES CONTAINING PHOTONIC INTEGRATED CIRCUITS</a>
+        &nbsp;
+                            <br/>
+                A method includes: providing an active photonic component of a photonic integrated circuit (PIC); attaching two electrodes to the active photonic component of the PIC; providing a first landing...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                24            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12525595    </td>
+    <td  width="60%" valign="top">
+        <a href="/12525595.html">Electrical bridge package with integrated off-bridge photonic channel interface</a>
+        &nbsp;
+                            <br/>
+                A method of manufacturing a circuit package is described that includes connecting a photonic interposer and a second interposer, connecting a die to both the photonic interposer and the second...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                25            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260011705    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0011705.html">ELECTRICAL INTERCONNECTS FOR PACKAGES CONTAINING PHOTONIC INTEGRATED CIRCUITS</a>
+        &nbsp;
+                            <br/>
+                A semiconductor chip includes: a photonic integrated circuit (PIC) comprising an active component electrically connected to a first landing pad at a surface of the PIC, wherein the first landing...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                26            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250391822    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0391822.html">ELECTRICAL INTERCONNECTS FOR PACKAGES CONTAINING PHOTONIC INTEGRATED CIRCUITS</a>
+        &nbsp;
+                            <br/>
+                A system-in-package includes: a photonic integrated circuit (PIC) including an active photonic component; and an electronic integrated circuit (EIC) stacked on the PIC, the EIC including: an...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                27            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12494403    </td>
+    <td  width="60%" valign="top">
+        <a href="/12494403.html">Preserving access to optical components on a wafer package with sacrificial die</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                28            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12493155    </td>
+    <td  width="60%" valign="top">
+        <a href="/12493155.html">Preserving access to optical components on a wafer package with sacrificial cap</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                29            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250372590    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0372590.html">ELECTRO-OPTICAL MEMORY CIRCUIT PACKAGE</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                30            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250372587    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0372587.html">ELECTRO-OPTICAL MEMORY CIRCUIT PACKAGE</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                31            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250372586    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0372586.html">PRESERVING ACCESS TO OPTICAL COMPONENTS ON A WAFER PACKAGE WITH SACRIFICIAL DIE</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                32            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250372470    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0372470.html">PRESERVING ACCESS TO OPTICAL COMPONENTS ON A WAFER PACKAGE WITH SACRIFICIAL DIE</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                33            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250370749    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0370749.html">LOAD / STORE UNIT FOR A TENSOR ENGINE AND METHODS FOR LOADING OR STORING A TENSOR</a>
+        &nbsp;
+                            <br/>
+                A method for processing a tensor is described including obtaining a first register for a number of items in the tensor. One or more second registers for a number of items in a first and a second...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                34            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250370206    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0370206.html">CONVERTING PROCESSING DIMENSIONS OF A WAFER PACKAGE</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                35            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250370205    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0370205.html">PACKAGING OPTICAL COMPONENTS IN A CIRCUIT PACKAGE</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to example implementations of optically accessible circuit packages. For example, this disclosure includes implementations for creating a circuit package with a...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                36            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250370204    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0370204.html">PRESERVING ACCESS TO OPTICAL COMPONENTS ON A WAFER PACKAGE WITH SACRIFICIAL CAP</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                37            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250370203    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0370203.html">PRESERVING ACCESS TO OPTICAL COMPONENTS ON A WAFER PACKAGE WITH SACRIFICIAL CAP</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                38            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250370202    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0370202.html">PACKAGING OPTICAL COMPONENTS IN A CIRCUIT PACKAGE</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to example implementations of optically accessible circuit packages. For example, this disclosure includes implementations for creating a circuit package with a...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                39            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250370201    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0370201.html">CONVERTING PROCESSING DIMENSIONS OF A WAFER PACKAGE</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                40            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250370199    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0370199.html">PRESERVING ACCESS TO EDGE COUPLING COMPONENTS ON A WAFER PACKAGE</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                41            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250370198    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0370198.html">PRESERVING ACCESS TO EDGE COUPLING COMPONENTS ON A WAFER PACKAGE</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                42            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250370183    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0370183.html">ELECTRO-OPTICAL MEMORY CIRCUIT PACKAGE</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to packaging techniques in connection with packaging electrical and optical components within circuit packages. For example, one or more examples described herein...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                43            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250362467    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0362467.html">Optically Bridged Multicomponent Package with Extended Temperature Range</a>
+        &nbsp;
+                            <br/>
+                A package comprises a photonic integrated circuit (PIC) with a modulator having a first modulator input, and a PIC interconnect region within two millimeters or fifty microns from the modulator....    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                44            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250362466    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0362466.html">Optically Bridged Multicomponent Package with Extended Temperature Range</a>
+        &nbsp;
+                            <br/>
+                A package comprises a photonic integrated circuit (PIC) with a modulator having a first modulator input, and a PIC interconnect region within two millimeters or fifty microns from the modulator....    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                45            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250362465    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0362465.html">EMBEDDING A PHOTONIC INTEGRATED CIRCUIT IN A SEMICONDUCTOR PACKAGE FOR HIGH BANDWIDTH MEMORY AND COMPUTE</a>
+        &nbsp;
+                            <br/>
+                A photonic integrated circuit (PIC) disposed on a substrate and comprising a semiconductor die hosting an active portion and a passive portion mutually coupled, the active portion being configured...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                46            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250355205    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0355205.html">Optically Bridged Multicomponent Package with Extended Temperature Range</a>
+        &nbsp;
+                            <br/>
+                A package comprises a photonic integrated circuit (PIC) with a modulator having a first modulator input, and a PIC interconnect region within two millimeters or fifty microns from the modulator....    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                47            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12468103    </td>
+    <td  width="60%" valign="top">
+        <a href="/12468103.html">Optically bridged multicomponent package with extended temperature range</a>
+        &nbsp;
+                            <br/>
+                A package comprises a photonic integrated circuit (PIC) with a modulator having a first modulator input, and a PIC interconnect region within two millimeters or fifty microns from the modulator....    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                48            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12443000    </td>
+    <td  width="60%" valign="top">
+        <a href="/12443000.html">Optically bridged multicomponent package with extended temperature range</a>
+        &nbsp;
+                            <br/>
+                A package comprises a photonic integrated circuit (PIC) with a modulator having a first modulator input, and a PIC interconnect region within two millimeters or fifty microns from the modulator....    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                49            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12442999    </td>
+    <td  width="60%" valign="top">
+        <a href="/12442999.html">Optically bridged multicomponent package with extended temperature range</a>
+        &nbsp;
+                            <br/>
+                A package comprises a photonic integrated circuit (PIC) with a modulator having a first modulator input, and a PIC interconnect region within two millimeters or fifty microns from the modulator....    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                50            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12442998    </td>
+    <td  width="60%" valign="top">
+        <a href="/12442998.html">Optically bridged multicomponent package with extended temperature range</a>
+        &nbsp;
+                            <br/>
+                A package comprises a photonic integrated circuit (PIC) with a modulator having a first modulator input, and a PIC interconnect region within two millimeters or fifty microns from the modulator....    </td>
+    </tr>            </table>
+        </div>
+    </div>
+</div>
+</form>
+<!-- 728x90 Responsive 2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1586334167197709"
+     data-ad-slot="4118051210"
+     data-ad-format="auto">
+</ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br clear="all"/><form id="botSearch" name="botSearch" method="get" class="form-inline" action="/result.html"><input type="hidden" name="srch" id="" value="xprtsrch" /><input type="hidden" name="uspat" id="" value="on" /><input type="hidden" name="usapp" id="" value="on" /><input type="hidden" name="date_range" id="" value="all" /><input type="hidden" name="stemming" id="" value="on" /><input type="hidden" name="sort" id="" value="chron" /><br/>
+<div class="well well-small">
+    <table>
+        <tr>
+            <td>Search</td>
+            <td style="width: 100%;padding: 0 14px 0 5px;"><input type="text" name="query_txt" id="query_txt" value="AN/&quot;Celestial AI&quot;" style="width: 100%;padding: 4px 0 4px 6px" /></td>
+            <td><input type="submit" name="search" value="Search" /></td>
+        </tr>
+    </table>
+</div>
+</form>
+<div class="well well-small" style="margin-top:10px; margin-bottom: 0">
+    <table width="100%" border="0">
+        <tr>
+            <td width="36%">
+                Matches 1 - 50 out of 162            </td>
+            <td align="right" valign="middle" width="70%" colspan="3" class="paginate_spacing">
+                 <span margin-left:3px;'><b>1</b></span><a href='result.html?p=2&amp;srch=xprtsrch&amp;query_txt=AN%2F%22Celestial+AI%22&amp;uspat=on&amp;usapp=on&amp;date_range=all&amp;stemming=on&amp;sort=chron'> 2 </a><a href='result.html?p=3&amp;srch=xprtsrch&amp;query_txt=AN%2F%22Celestial+AI%22&amp;uspat=on&amp;usapp=on&amp;date_range=all&amp;stemming=on&amp;sort=chron'> 3 </a><a href='result.html?p=4&amp;srch=xprtsrch&amp;query_txt=AN%2F%22Celestial+AI%22&amp;uspat=on&amp;usapp=on&amp;date_range=all&amp;stemming=on&amp;sort=chron'> 4 </a><a href='result.html?p=2&amp;srch=xprtsrch&amp;query_txt=AN%2F%22Celestial+AI%22&amp;uspat=on&amp;usapp=on&amp;date_range=all&amp;stemming=on&amp;sort=chron'> &gt; </a>                <br clear="all"/>
+            </td>
+        </tr>
+    </table>
+</div> « <a href="/search.html">search again</a>
+        </div>
+
+        <div class="pageFooter">
+    <div class="row-fluid top">
+        <div class="figure"></div>
+        <ul>
+            <li>
+                <a href="/" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Home']);">Home</a>
+            </li>
+            <li>
+                <a href="/search.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Search']);">Search</a>
+            </li>
+            <li>
+                <a href="/services.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Services']);">Services</a>
+            </li>
+        </ul>
+        <ul class="socialIcons">
+            <li><a href="https://twitter.com/FPOCommunity" class="twitter"
+                   onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'social twitter']);"></a></li>
+            <li><a href="http://www.linkedin.com/groups/FPO-Community-4524797" class="linkedin"
+                   onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'social linkedin']);"></a></li>
+        </ul>
+    </div>
+    <div class="row-fluid bot">
+        <p>
+            &copy; 2004-2026 FreePatentsOnline.com. All rights reserved.
+            <a href="/privacy.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Privacy']);">Privacy Policy
+                &amp; Terms of Use.</a>
+        </p>
+    </div>
+</div>    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    _gaq.push(['_setCustomVar', 2, 'User Origin Source', 'no referer', 2]);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+<script type="text/javascript">
+    function trackPageLoad() {
+        var plend = new Date();
+        var plload = plend.getTime() - plstart.getTime();
+        var pn = document.location.pathname;
+        var lc = 'slow';
+        var la = new Array(200, 300, 400, 500, 1000, 1500, 2000, 2500, 5000);
+        for (var i = 0, len = la.length; i < len; i++) {
+            if (plload <= la[i]) {
+                lc = String(la[i]);
+                break;
+            }
+        }
+        _gaq.push(['onLoadTracker._setAccount', 'UA-174791-5']);
+        _gaq.push(['onLoadTracker._trackEvent', "LoadTime", lc, pn, plload]);
+        }
+</script>
+<script type="text/javascript">
+    try {
+        if (window.onload != null) {
+            var oldOnload = window.onload;
+            window.onload = function (e) {
+                oldOnload(e);
+                trackPageLoad();
+            };
+        }
+        else {
+            window.onload = trackPageLoad();
+        }
+    } catch (err) {
+    }
+</script>
+<script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/js/fpo_3.js"></script>
+
+</body>
+</html>

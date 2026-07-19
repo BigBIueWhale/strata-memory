@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/gaqayMM7/jphFPRLzcjoXYw6etg</id>
+  <title>arXiv Query: search_query=abs:"high-bandwidth memory" AND abs:"commodity"&amp;id_list=&amp;start=0&amp;max_results=10</title>
+  <updated>2026-07-19T00:11:13Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=abs:%22high-bandwidth+memory%22+AND+abs:%22commodity%22&amp;start=0&amp;max_results=10&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>4</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2607.13068v1</id>
+    <title>The Economics of AI Decoding Chips: Rebalancing Compute, Capacity, and Bandwidth for Efficient LLM Inference</title>
+    <updated>2026-07-10T23:33:57Z</updated>
+    <link href="https://arxiv.org/abs/2607.13068v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.13068v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Every mainstream GPU is built compute-heavy and capacity-light: it pairs enormous arithmetic throughput with too little memory to hold a modern model. In contrast, large language model decoding requires little compute and a large amount of memory: a GPU's floating-point units run at single-digit-percent utilization during decoding, and the memory the workload does need is sold only bundled with yet more compute. The compute is recovered only at hyperscale, where Mixture-of-Experts (MoE) models are spread across 96--320-GPU expert-parallel clusters serving thousands of concurrent users, a scale available to a handful of operators. We formalize the inefficiency with two fixed per-chip constants. F/B, the roofline ridge point, determines whether the compute can be utilized; F/S, the compute bundled with each GB of memory, determines how much compute must be bought. We then argue for a rebalanced decode accelerator: less compute, far more commodity memory, and a deliberately lower and cheaper bandwidth. The Skymizer HTX-301, a purpose-built 28nm PCIe accelerator using commodity DDR5, occupies that design point. Its entry cost is low. A single eight-chip card holds DeepSeek-R1 671B for about \$19,000, and a 4U server of four four-chip cards serves two users at a deterministic 20.3 tokens per second each for about \$28,000. Either costs less than a single H100, while the minimum GPU deployment for the model is an eight-GPU node near \$350,000. Concurrency then scales out by adding hardware: eight 4U servers carry sixteen users for about \$224,000, two-thirds of the node's price, with the cost per token unchanged at about \$12 per million against the node's \$21. The HTX-301's decisive advantage is a supply chain free of every rationed input: it uses no high-bandwidth memory, no CoWoS, and no leading-edge logic.</summary>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-10T23:33:57Z</published>
+    <arxiv:primary_category term="cs.AR"/>
+    <author>
+      <name>Michael J. Yuan</name>
+    </author>
+    <author>
+      <name>Ju Long</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.19932v1</id>
+    <title>Efficient Page Migration in Hybrid Memory Systems</title>
+    <updated>2026-04-21T19:21:18Z</updated>
+    <link href="https://arxiv.org/abs/2604.19932v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.19932v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Heterogeneous Memory Architecture (HMA) aims to optimize memory usage by leveraging a combination of memory types, such as high-bandwidth memory (HBM), commodity DRAM, and non-volatile memory (NVM), when utilized as main memory. To achieve maximum performance benefits, frequently accessed data pages are prioritized for storage in the faster HBM, while less frequently accessed pages are stored in slower memory types like DRAM or NVM. This enables a more efficient allocation of memory resources and improves overall system performance. In a Flat Address Space memory organization, all memory types, both fast and slow, are treated as a unified memory pool. This approach increases the overall memory capacity accessible to the system. In Flat Address Space organization, frequently accessed data pages may need to be remapped from slower memory to faster memory to improve memory access times. Such relocation requires changes to the data/states in the TLB (TLB shootdown) and the processor cache (cache line invalidations), leading to performance degradation. To address these inefficiencies, we propose a novel solution called Duon. The goal of Duon is to eliminate the overheads associated with page migration in systems using Extended TLB and Page Table. Specifically, our approach ensures that the updated mapping information for remapped pages is carefully stored directly in the TLB and page table itself. By doing so, the need for TLB shootdown and cache line invalidation after page migration is eliminated. Consequently, our proposal results in an overall improvement in IPC by 3.87% over existing state-of-the-art techniques, enhancing the efficiency and performance of heterogeneous memory systems. Further, our approach can work with any of the existing page migration policies and improve the performance.</summary>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-21T19:21:18Z</published>
+    <arxiv:primary_category term="cs.AR"/>
+    <author>
+      <name> Upasna</name>
+    </author>
+    <author>
+      <name>Venkata Kalyan Tavva</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2312.03134v1</id>
+    <title>A Hardware Evaluation Framework for Large Language Model Inference</title>
+    <updated>2023-12-05T21:01:33Z</updated>
+    <link href="https://arxiv.org/abs/2312.03134v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2312.03134v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The past year has witnessed the increasing popularity of Large Language Models (LLMs). Their unprecedented scale and associated high hardware cost have impeded their broader adoption, calling for efficient hardware designs. With the large hardware needed to simply run LLM inference, evaluating different hardware designs becomes a new bottleneck.
+  This work introduces LLMCompass, a hardware evaluation framework for LLM inference workloads. LLMCompass is fast, accurate, versatile, and able to describe and evaluate different hardware designs. LLMCompass includes a mapper to automatically find performance-optimal mapping and scheduling. It also incorporates an area-based cost model to help architects reason about their design choices. Compared to real-world hardware, LLMCompass' estimated latency achieves an average 10.4% error rate across various operators with various input sizes and an average 4.1% error rate for LLM inference. With LLMCompass, simulating a 4-NVIDIA A100 GPU node running GPT-3 175B inference can be done within 16 minutes on commodity hardware, including 26,400 rounds of the mapper's parameter search.
+  With the aid of LLMCompass, this work draws architectural implications and explores new cost-effective hardware designs. By reducing the compute capability or replacing High Bandwidth Memory (HBM) with traditional DRAM, these new designs can achieve as much as 3.41x improvement in performance/cost compared to an NVIDIA A100, making them promising choices for democratizing LLMs.
+  LLMCompass is planned to be fully open-source.</summary>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-12-05T21:01:33Z</published>
+    <arxiv:primary_category term="cs.AR"/>
+    <author>
+      <name>Hengrui Zhang</name>
+    </author>
+    <author>
+      <name>August Ning</name>
+    </author>
+    <author>
+      <name>Rohan Prabhakar</name>
+    </author>
+    <author>
+      <name>David Wentzlaff</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1901.01328v2</id>
+    <title>StreamBox-HBM: Stream Analytics on High Bandwidth Hybrid Memory</title>
+    <updated>2019-01-28T15:50:56Z</updated>
+    <link href="https://arxiv.org/abs/1901.01328v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1901.01328v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Stream analytics have an insatiable demand for memory and performance. Emerging hybrid memories combine commodity DDR4 DRAM with 3D-stacked High Bandwidth Memory (HBM) DRAM to meet such demands. However, achieving this promise is challenging because (1) HBM is capacity-limited and (2) HBM boosts performance best for sequential access and high parallelism workloads. At first glance, stream analytics appear a particularly poor match for HBM because they have high capacity demands and data grouping operations, their most demanding computations, use random access. This paper presents the design and implementation of StreamBox-HBM, a stream analytics engine that exploits hybrid memories to achieve scalable high performance. StreamBox-HBM performs data grouping with sequential access sorting algorithms in HBM, in contrast to random access hashing algorithms commonly used in DRAM. StreamBox-HBM solely uses HBM to store Key Pointer Array (KPA) data structures that contain only partial records (keys and pointers to full records) for grouping operations. It dynamically creates and manages prodigious data and pipeline parallelism, choosing when to allocate KPAs in HBM. It dynamically optimizes for both the high bandwidth and limited capacity of HBM, and the limited bandwidth and high capacity of standard DRAM. StreamBox-HBM achieves 110 million records per second and 238 GB/s memory bandwidth while effectively utilizing all 64 cores of Intel's Knights Landing, a commercial server with hybrid memory. It outperforms stream engines with sequential access algorithms without KPAs by 7x and stream engines with random access algorithms by an order of magnitude in throughput. To the best of our knowledge, StreamBox-HBM is the first stream engine optimized for hybrid memories.</summary>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-01-04T22:14:14Z</published>
+    <arxiv:primary_category term="cs.DB"/>
+    <author>
+      <name>Hongyu Miao</name>
+    </author>
+    <author>
+      <name>Myeongjae Jeon</name>
+    </author>
+    <author>
+      <name>Gennady Pekhimenko</name>
+    </author>
+    <author>
+      <name>Kathryn S. McKinley</name>
+    </author>
+    <author>
+      <name>Felix Xiaozhu Lin</name>
+    </author>
+    <arxiv:doi>10.1145/3297858.3304031</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3297858.3304031" title="doi"/>
+  </entry>
+</feed>

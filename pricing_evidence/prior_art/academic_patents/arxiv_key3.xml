@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api//KChiZStVgMoIIJUTXvUVcwsvmY</id>
+  <title>arXiv Query: search_query=&amp;id_list=2607.13068,2604.16007,2405.07518&amp;start=0&amp;max_results=3</title>
+  <updated>2026-07-19T00:16:15Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=3&amp;id_list=2607.13068,2604.16007,2405.07518" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>3</opensearch:itemsPerPage>
+  <opensearch:totalResults>3</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2405.07518v2</id>
+    <title>SambaNova SN40L: Scaling the AI Memory Wall with Dataflow and Composition of Experts</title>
+    <updated>2024-11-05T02:53:00Z</updated>
+    <link href="https://arxiv.org/abs/2405.07518v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2405.07518v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Monolithic large language models (LLMs) like GPT-4 have paved the way for modern generative AI applications. Training, serving, and maintaining monolithic LLMs at scale, however, remains prohibitively expensive and challenging. The disproportionate increase in compute-to-memory ratio of modern AI accelerators have created a memory wall, necessitating new methods to deploy AI. Composition of Experts (CoE) is an alternative modular approach that lowers the cost and complexity of training and serving. However, this approach presents two key challenges when using conventional hardware: (1) without fused operations, smaller models have lower operational intensity, which makes high utilization more challenging to achieve; and (2) hosting a large number of models can be either prohibitively expensive or slow when dynamically switching between them.
+  In this paper, we describe how combining CoE, streaming dataflow, and a three-tier memory system scales the AI memory wall. We describe Samba-CoE, a CoE system with 150 experts and a trillion total parameters. We deploy Samba-CoE on the SambaNova SN40L Reconfigurable Dataflow Unit (RDU) - a commercial dataflow accelerator architecture that has been co-designed for enterprise inference and training applications. The chip introduces a new three-tier memory system with on-chip distributed SRAM, on-package HBM, and off-package DDR DRAM. A dedicated inter-RDU network enables scaling up and out over multiple sockets. We demonstrate speedups ranging from 2$\times$ to 13$\times$ on various benchmarks running on eight RDU sockets compared with an unfused baseline. We show that for CoE inference deployments, the 8-socket RDU Node reduces machine footprint by up to 19$\times$, speeds up model switching time by 15$\times$ to 31$\times$, and achieves an overall speedup of 3.7$\times$ over a DGX H100 and 6.6$\times$ over a DGX A100.</summary>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-05-13T07:32:45Z</published>
+    <arxiv:comment>2024 57th IEEE/ACM International Symposium on Microarchitecture (MICRO)</arxiv:comment>
+    <arxiv:primary_category term="cs.AR"/>
+    <author>
+      <name>Raghu Prabhakar</name>
+    </author>
+    <author>
+      <name>Ram Sivaramakrishnan</name>
+    </author>
+    <author>
+      <name>Darshan Gandhi</name>
+    </author>
+    <author>
+      <name>Yun Du</name>
+    </author>
+    <author>
+      <name>Mingran Wang</name>
+    </author>
+    <author>
+      <name>Xiangyu Song</name>
+    </author>
+    <author>
+      <name>Kejie Zhang</name>
+    </author>
+    <author>
+      <name>Tianren Gao</name>
+    </author>
+    <author>
+      <name>Angela Wang</name>
+    </author>
+    <author>
+      <name>Karen Li</name>
+    </author>
+    <author>
+      <name>Yongning Sheng</name>
+    </author>
+    <author>
+      <name>Joshua Brot</name>
+    </author>
+    <author>
+      <name>Denis Sokolov</name>
+    </author>
+    <author>
+      <name>Apurv Vivek</name>
+    </author>
+    <author>
+      <name>Calvin Leung</name>
+    </author>
+    <author>
+      <name>Arjun Sabnis</name>
+    </author>
+    <author>
+      <name>Jiayu Bai</name>
+    </author>
+    <author>
+      <name>Tuowen Zhao</name>
+    </author>
+    <author>
+      <name>Mark Gottscho</name>
+    </author>
+    <author>
+      <name>David Jackson</name>
+    </author>
+    <author>
+      <name>Mark Luttrell</name>
+    </author>
+    <author>
+      <name>Manish K. Shah</name>
+    </author>
+    <author>
+      <name>Edison Chen</name>
+    </author>
+    <author>
+      <name>Kaizhao Liang</name>
+    </author>
+    <author>
+      <name>Swayambhoo Jain</name>
+    </author>
+    <author>
+      <name>Urmish Thakker</name>
+    </author>
+    <author>
+      <name>Dawei Huang</name>
+    </author>
+    <author>
+      <name>Sumti Jairath</name>
+    </author>
+    <author>
+      <name>Kevin J. Brown</name>
+    </author>
+    <author>
+      <name>Kunle Olukotun</name>
+    </author>
+    <arxiv:doi>10.1109/MICRO61859.2024.00100</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/MICRO61859.2024.00100" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.13068v1</id>
+    <title>The Economics of AI Decoding Chips: Rebalancing Compute, Capacity, and Bandwidth for Efficient LLM Inference</title>
+    <updated>2026-07-10T23:33:57Z</updated>
+    <link href="https://arxiv.org/abs/2607.13068v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.13068v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Every mainstream GPU is built compute-heavy and capacity-light: it pairs enormous arithmetic throughput with too little memory to hold a modern model. In contrast, large language model decoding requires little compute and a large amount of memory: a GPU's floating-point units run at single-digit-percent utilization during decoding, and the memory the workload does need is sold only bundled with yet more compute. The compute is recovered only at hyperscale, where Mixture-of-Experts (MoE) models are spread across 96--320-GPU expert-parallel clusters serving thousands of concurrent users, a scale available to a handful of operators. We formalize the inefficiency with two fixed per-chip constants. F/B, the roofline ridge point, determines whether the compute can be utilized; F/S, the compute bundled with each GB of memory, determines how much compute must be bought. We then argue for a rebalanced decode accelerator: less compute, far more commodity memory, and a deliberately lower and cheaper bandwidth. The Skymizer HTX-301, a purpose-built 28nm PCIe accelerator using commodity DDR5, occupies that design point. Its entry cost is low. A single eight-chip card holds DeepSeek-R1 671B for about \$19,000, and a 4U server of four four-chip cards serves two users at a deterministic 20.3 tokens per second each for about \$28,000. Either costs less than a single H100, while the minimum GPU deployment for the model is an eight-GPU node near \$350,000. Concurrency then scales out by adding hardware: eight 4U servers carry sixteen users for about \$224,000, two-thirds of the node's price, with the cost per token unchanged at about \$12 per million against the node's \$21. The HTX-301's decisive advantage is a supply chain free of every rationed input: it uses no high-bandwidth memory, no CoWoS, and no leading-edge logic.</summary>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-10T23:33:57Z</published>
+    <arxiv:primary_category term="cs.AR"/>
+    <author>
+      <name>Michael J. Yuan</name>
+    </author>
+    <author>
+      <name>Ju Long</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.16007v1</id>
+    <title>MemExplorer: Navigating the Heterogeneous Memory Design Space for Agentic Inference NPUs</title>
+    <updated>2026-04-17T12:29:54Z</updated>
+    <link href="https://arxiv.org/abs/2604.16007v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.16007v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Emerging agentic LLM workloads are driving rapidly growing demand on both memory capacity and bandwidth, with different phases of inference (e.g., prefill and decode) imposing distinct requirements. Industry is responding by composing heterogeneous accelerators into single interconnected systems, as exemplified by NVIDIA's Vera Rubin platform, where each device brings its own memory architecture.
+  This heterogeneity is further compounded by a widening landscape of available memory technologies: high-density on-chip SRAM, HBM, LPDDR, GDDR, and emerging options such as high-bandwidth flash (HBF), each offering different capacity, bandwidth, and power trade-offs.
+  Identifying the right memory architecture for next-generation inference accelerators requires navigating a vast and rapidly evolving design space, in which the interplay between workload characteristics, NPU design dimensions, and memory system design remains largely underexplored.
+  To address this challenge, we present MemExplorer, a new memory system synthesizer for heterogeneous NPU systems. MemExplorer provides a unified abstraction for modeling diverse memory technologies across different hierarchy levels (e.g., on-chip and off-chip) and automatically determines an efficient heterogeneous memory system together with NPU design choices (e.g., matrix engine size) to balance throughput and power between prefilling and decoding devices in a multi-device NPU system.
+  Experimental results show that, under the same power budget for agentic workloads, MemExplorer achieves up to 2.3x higher energy efficiency than the baseline NPU and 3.23x higher than H100 in the prefill-only setting. Under equivalent performance targets in the decode setting, it further delivers up to 1.93x and 2.72x higher power efficiency over the baseline NPU and H100, respectively.</summary>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-17T12:29:54Z</published>
+    <arxiv:primary_category term="cs.AR"/>
+    <author>
+      <name>Haoran Wu</name>
+    </author>
+    <author>
+      <name>Zeyu Cao</name>
+    </author>
+    <author>
+      <name>Yao Lai</name>
+    </author>
+    <author>
+      <name>Binglei Lou</name>
+    </author>
+    <author>
+      <name>Jiayi Nie</name>
+    </author>
+    <author>
+      <name>Can Xiao</name>
+    </author>
+    <author>
+      <name>Timi Adeniran</name>
+    </author>
+    <author>
+      <name>Przemyslaw Forys</name>
+    </author>
+    <author>
+      <name>Kauser Johar</name>
+    </author>
+    <author>
+      <name>Catriona Wright</name>
+    </author>
+    <author>
+      <name>Junyi Liu</name>
+    </author>
+    <author>
+      <name>Kai Shi</name>
+    </author>
+    <author>
+      <name>Nicholas D. Lane</name>
+    </author>
+    <author>
+      <name>Rika Antonova</name>
+    </author>
+    <author>
+      <name>Jianyi Cheng</name>
+    </author>
+    <author>
+      <name>Timothy Jones</name>
+    </author>
+    <author>
+      <name>Aaron Zhao</name>
+    </author>
+    <author>
+      <name>Robert Mullins</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/fpo_9.css" />
+<script type="text/javascript">
+var plstart = new Date();
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-174791-1']);
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="title" content="FPO IP Research &amp; Communities" />
+<meta name="robots" content="index, follow" />
+<meta name="description" content="Complete Patent Searching Database and Patent Data Analytics Services." />
+<title>FPO IP Research &amp; Communities</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link rel="shortcut icon" href="/images/favicon_1.ico"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-1586334167197709",
+        enable_page_level_ads: true
+    });
+</script></head>
+<body>
+
+<div>
+    <a name="top"></a>
+
+    <div class="container">
+        
+<div class="header">
+    <div class="row-fluid top">
+
+        <div class="pull-left figure">
+            <a href="/" onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Logo']);"></a>
+        </div>
+
+
+        <div class="pull-right" style="width: 750px;">
+                        <div class="loginForm">
+                <form class="form-inline form-mini pull-right" action="/login.html" method="post">
+                    <input type="hidden" name="src" value="header_login">
+                    <input id="UID-top" name="UID" type="text" class="input-large" placeholder="Email">
+                    <input id="PWD-top" name="PWD" type="password" class="input-small" placeholder="Password">
+                    <button type="submit" class="btn btn-mini btn-primary"
+                            onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Login']);">Login
+                    </button>
+                    <a class="btn btn-mini btn-info" href="/register.html"
+                            onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Create']);">Sign up
+                    </a>
+                </form>
+            </div>
+            
+
+            <div class="searchForm well">
+                <form id="quick_result" name="quick_result" class="form-inline" action="/result.html" method="get">
+
+                    <input type="hidden" name="sort" value="relevance">
+                    <input type="hidden" name="srch" value="top">
+
+
+                    <div class="searchBox pull-left">
+                        <input type="text" name="query_txt" placeholder="Enter your search here"
+                               class="search-query" id="topSearchBox">
+
+                        <div class="btn-group">
+                            <button name="submit" class="btn btn-primary" type="submit"
+                                    onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Search']);">Search
+                            </button>
+                            <button id="searchBox_dropdown" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/search.html"
+                                       onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'SearchExpert']);document.cookie = 'searchTab=#expert';">
+                                    Expert Search</a>
+                                </li>
+                                <li><a href="/search.html"
+                                       onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'SearchQuick']);document.cookie = 'searchTab=#quick';">
+                                    Quick Search</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sideCollections pull-right">
+                        <ul id="header_search_top" class="borderBottom ul-mini ">
+                            <li>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="patents_us" name="patents_us"
+                                           value="on" checked="checked">US Patents/Apps
+                                </label>
+                            </li>
+
+                            <li>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="patents_other" name="patents_other"
+                                           value="on">Other
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </form>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse center" id="primaryNavBar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li><a href="/"></a></li>
+                    <li><a href="/search.html">SEARCH</a></li>
+                    <li>
+                        <a href="/tools-resources.html"
+                           onclick="_gaq.push(['_trackEvent', 'Navbar', 'Click', 'Resources']);">
+                            TOOLS &amp; RESOURCES
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+<div class="clearfix"></div>        <div>
+
+            <div id="dhtmltooltip"></div>
+            
+<form id="results" name="results" method="post" class="form-horizontal" action="/result.html"><input type="hidden" name="p" id="p" value="1" /><input type="hidden" name="query_txt" id="query_txt" value="ABST/&quot;gearbox&quot; AND ABST/&quot;memory&quot;" /><input type="hidden" name="stemming" id="quickstemming" value="on" /><input type="hidden" name="sort" id="quicksort" value="chron" /><input type="hidden" name="patents" id="quickpatents" value="" /><input type="hidden" name="patents_us" id="quickpatentsus" value="" /><input type="hidden" name="patents_other" id="quickpatentsother" value="" /><input type="hidden" name="uspat" id="quickuspat" value="on" /><input type="hidden" name="usapp" id="quickusapp" value="on" /><input type="hidden" name="pct" id="quickpct" value="" /><input type="hidden" name="jp" id="quickjp" value="" /><input type="hidden" name="eupat" id="quickeu" value="" /><input type="hidden" name="depat" id="quickde" value="" /><input type="hidden" name="srch" id="quicksearch" value="xprtsrch" /><input type="hidden" name="date_range" id="quickdaterange" value="all" /><input type="hidden" name="hits" id="hits" value="36" /><input type="hidden" name="srch_name" id="srch_name" value="" /><input type="hidden" name="search_name" id="search_name" value="" /><input type="hidden" name="selected_doc_flag" id="selected_doc_flag" value="" /><input type="hidden" name="selected_portfolio" id="selected_portfolio" value="" /><input type="hidden" name="portfolio_name" id="portfolio_name" value="" />
+
+<div class="well well-small" style="margin-top:10px; margin-bottom: 0">
+    <table width="100%" border="0">
+        <tr>
+            <td width="36%">
+                Matches 1 - 36 out of 36            </td>
+            <td align="right" valign="middle" width="70%" colspan="3" class="paginate_spacing">
+                                <br clear="all"/>
+            </td>
+        </tr>
+    </table>
+</div><br clear="all"/><!-- 728x90 Responsive 1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1586334167197709"
+     data-ad-slot="2270521617"
+     data-ad-format="auto">
+</ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br clear="all"/>
+
+<div class="legacy-container" style="margin-top: 0">
+    <div class="container_white" style="padding-top:3px;  padding-bottom:10px;">
+        <div align="center">
+            <table width="100%" border="0" cellpadding="2" cellspacing="1" class="listing_table">
+                <tr>
+                                        <th style="text-align:left;" width="10%">
+                        Match
+                    </th>
+                                        <th style="text-align:left;" width="15%"> Document</th>
+                    <th style="text-align:left;">Document Title</th>
+                                    </tr>
+                <tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                1            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260071557    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0071557.html">Hybrid Electric Propulsion System With Pitch Change Mechanism Operation</a>
+        &nbsp;
+                            <br/>
+                A hybrid electric propulsion system for an aircraft is provided that includes a thermal engine, an electric motor, a gearbox, an electric power storage unit, a propulsion unit, and a controller....    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                2            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12473843    </td>
+    <td  width="60%" valign="top">
+        <a href="/12473843.html">Hybrid electric propulsion system with pitch change mechanism operation</a>
+        &nbsp;
+                            <br/>
+                A hybrid electric propulsion system for an aircraft is provided that includes a thermal engine, an electric motor, a gearbox, an electric power storage unit, a propulsion unit, and a controller....    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                3            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250244204    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0244204.html">ACOUSTIC SENSOR MONITORING FOR TURBINE ENGINE GEARBOX</a>
+        &nbsp;
+                            <br/>
+                A system may include a first acoustic sensor, a processor operatively connected to the first acoustic sensor, and a memory operatively connected to the processor. The memory has stored therein a...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                4            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250109695    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0109695.html">SYSTEM AND METHOD FOR OVERSPEED DETECTION AND PROTECTION IN AN ENGINE</a>
+        &nbsp;
+                            <br/>
+                An engine includes a gearbox coupled to a first element and a second element. The engine may include a first speed sensor positioned on an input side of the gearbox, the first speed sensor...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                5            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12173660    </td>
+    <td  width="60%" valign="top">
+        <a href="/12173660.html">Method and system for mitigating ring gear misalignment within a reduction gearbox</a>
+        &nbsp;
+                            <br/>
+                A reduction gearbox is provided that includes a sun gear, planet gear assemblies, first and second ring gears, and a ring gear positional alignment system. Each planet gear assembly includes a...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                6            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20240271547    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2024/0271547.html">Hybrid Electric Propulsion System With Pitch Change Mechanism Operation</a>
+        &nbsp;
+                            <br/>
+                A hybrid electric propulsion system for an aircraft is provided that includes a thermal engine, an electric motor, a gearbox, an electric power storage unit, a propulsion unit, and a controller....    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                7            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12058874    </td>
+    <td  width="60%" valign="top">
+        <a href="/12058874.html">Universal network-attached memory architecture</a>
+        &nbsp;
+                            <br/>
+                Semiconductor devices, packaging architectures and associated methods are disclosed. In one embodiment, a multi-chip module (MCM) is disclosed. The MCM includes a common substrate and a first...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                8            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12043374    </td>
+    <td  width="60%" valign="top">
+        <a href="/12043374.html">Hybrid propulsion system of a helicopter</a>
+        &nbsp;
+                            <br/>
+                A hybrid propulsion system with controllers and a drive shaft of a helicopter with a main rotor connected to a gearbox which can keep a flight attitude set by a pilot stable. It includes a pilot...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                9            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20240159608    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2024/0159608.html">SYSTEM AND METHOD FOR DETERMINING TORQUE IN A TURBOMACHINE</a>
+        &nbsp;
+                            <br/>
+                A power transmission gearbox system for a turbomachine is provided. the power transmission gearbox system includes a drivetrain having one or more rotating components. The system further includes...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                10            </label>
+        </td>
+    <td width="15%"  valign="top">
+      11850894    </td>
+    <td  width="60%" valign="top">
+        <a href="/11850894.html">Agricultral prime mover and system and method for operating an agricultural prime mover</a>
+        &nbsp;
+                            <br/>
+                A prime mover, such as a tractor, is disclosed. The prime mover includes a drivetrain, a driver assistance system, and a tire pressure control system. The tire pressure control system is equipped...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                11            </label>
+        </td>
+    <td width="15%"  valign="top">
+      11828235    </td>
+    <td  width="60%" valign="top">
+        <a href="/11828235.html">Gearbox for a gas turbine engine utilizing shape memory alloy dampers</a>
+        &nbsp;
+                            <br/>
+                An epicyclic gearbox is configured to transfer rotational motion between a first rotating component and a second rotating component of the gas turbine engine. The gearbox includes a centrally...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                12            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20230086049    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2023/0086049.html">SYSTEMS AND METHODS OF PREDICTING THE REMAINING USEFUL LIFE OF INDUSTRIAL MECHANICAL POWER TRANSMISSION EQUIPMENT USING A MACHINE LEARNING MODEL</a>
+        &nbsp;
+                            <br/>
+                A life prediction system for industrial mechanical power transmission equipment is provided. The system includes a life prediction computing device, the life prediction computing device including...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                13            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20230078649    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2023/0078649.html">HYBRID PROPULSION SYSTEM OF A HELICOPTER</a>
+        &nbsp;
+                            <br/>
+                A hybrid propulsion system with controllers and a drive shaft of a helicopter with a main rotor connected to a gearbox which can keep a flight attitude set by a pilot stable. It includes a pilot...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                14            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20220178310    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2022/0178310.html">GEARBOX FOR A GAS TURBINE ENGINE UTILIZING SHAPE MEMORY ALLOY DAMPERS</a>
+        &nbsp;
+                            <br/>
+                An epicyclic gearbox is configured to transfer rotational motion between a first rotating component and a second rotating component of the gas turbine engine. The gearbox includes a centrally...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                15            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20210237520    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2021/0237520.html">AGRICULTRAL PRIME MOVER AND SYSTEM AND METHOD FOR OPERATING AN AGRICULTURAL PRIME MOVER</a>
+        &nbsp;
+                            <br/>
+                A prime mover, such as a tractor, is disclosed. The prime mover includes a drivetrain, a driver assistance system, and a tire pressure control system. The tire pressure control system is equipped...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                16            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20210163005    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2021/0163005.html">PRIME MOVER AND METHOD FOR OPERATING A PRIME MOVER</a>
+        &nbsp;
+                            <br/>
+                A prime mover and a method for operating a prime mover are disclosed. The prime mover, which may be a tractor, includes a drivetrain and is configured to attach to an attachment. The drivetrain...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                17            </label>
+        </td>
+    <td width="15%"  valign="top">
+      10995859    </td>
+    <td  width="60%" valign="top">
+        <a href="/10995859.html">Thermally actuated grommet</a>
+        &nbsp;
+                            <br/>
+                A tunable, thermally actuate, self-sealing grommet for sealing a hole in a vehicle panel through which a steering gearbox protrudes from an engine room to a passenger compartment. The grommet...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                18            </label>
+        </td>
+    <td width="15%"  valign="top">
+      10982748    </td>
+    <td  width="60%" valign="top">
+        <a href="/10982748.html">Adapter plate</a>
+        &nbsp;
+                            <br/>
+                Adapter plate (1) for connecting a gearbox to a motor, having a plate (3) having a continuous through opening (11) for introducing an output shaft of a motor capable of being assembled on the...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                19            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20200361374    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2020/0361374.html">A DEVICE FOR OPERATING A SOUNDER TO PRODUCE A PLURALITY OF DIFFERENT SOUNDS, AND A METHOD FOR OPERATING A SOUNDER TO PRODUCE A PLURALITY OF DIFFERENT SOUNDS</a>
+        &nbsp;
+                            <br/>
+                A vehicle includes an alarm system for producing an alarm signal in response to reversing of the vehicle. The system includes a device including a memory for storing a plurality of selectable...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                20            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20200263778    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2020/0263778.html">ADAPTER PLATE</a>
+        &nbsp;
+                            <br/>
+                Adapter plate (1) for connecting a gearbox to a motor, having a plate (3) having a continuous through opening (11) for introducing an output shaft of a motor capable of being assembled on the...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                21            </label>
+        </td>
+    <td width="15%"  valign="top">
+      10655607    </td>
+    <td  width="60%" valign="top">
+        <a href="/10655607.html">Systems and methods for detecting damage in wind turbine bearings</a>
+        &nbsp;
+                            <br/>
+                A method for detecting damage in a bearing of a wind turbine includes collecting vibration data relating to the bearing. Another step includes storing the vibration data in a memory device. The...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                22            </label>
+        </td>
+    <td width="15%"  valign="top">
+      10605235    </td>
+    <td  width="60%" valign="top">
+        <a href="/10605235.html">Shape-memory alloy power-assist apparatus</a>
+        &nbsp;
+                            <br/>
+                A power-assist apparatus includes a shape-memory alloy (SMA) rod, a power source, an actuator, and a differential gearbox. The SMA rod configured to rotate at an end of the SMA rod. The power...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                23            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20190331226    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2019/0331226.html">THERMALLY ACTUATED GROMMET</a>
+        &nbsp;
+                            <br/>
+                A tunable, thermally actuate, self-sealing grommet for sealing a hole in a vehicle panel through which a steering gearbox protrudes from an engine room to a passenger compartment. The grommet...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                24            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20190293057    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2019/0293057.html">SHAPE-MEMORY ALLOY POWER-ASSIST APPARATUS</a>
+        &nbsp;
+                            <br/>
+                A power-assist apparatus includes a shape-memory alloy (SMA) rod, a power source, an actuator, and a differential gearbox. The SMA rod configured to rotate at an end of the SMA rod. The power...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                25            </label>
+        </td>
+    <td width="15%"  valign="top">
+      10421050    </td>
+    <td  width="60%" valign="top">
+        <a href="/10421050.html">Utilization of a mobile agricultural weighing system to monitor and store ancillary operational data for diagnostic purposes on trailed and truck-mounted equipment</a>
+        &nbsp;
+                            <br/>
+                A method of operation of a machine control indicator located on a first machine includes the step of monitoring operational parameters of a second machine operationally associated with a first...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                26            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20180347548    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2018/0347548.html">Systems and Methods for Detecting Damage in Wind Turbine Bearings</a>
+        &nbsp;
+                            <br/>
+                A method for detecting damage in a bearing of a wind turbine includes collecting vibration data relating to the bearing. Another step includes storing the vibration data in a memory device. The...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                27            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20160339405    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2016/0339405.html">Utilization of a Mobile Agricultural Weighing System to Monitor and Store Ancillary Operational Data for Diagnostic Purposes on Trailed and Truck-Mounted Equipment</a>
+        &nbsp;
+                            <br/>
+                A method of operation of a machine control indicator located on a first machine includes the step of monitoring operational parameters of a second machine operationally associated with a first...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                28            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20160031505    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2016/0031505.html">Auto-extending stabilizer wheel system for a child's bicycle</a>
+        &nbsp;
+                            <br/>
+                An auto-extending stabilizer wheel system for a child's provides a circular aperture, enabling the mounting of the wheel on the bicycle's rear axle or an existing structural bolt. Within the...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                29            </label>
+        </td>
+    <td width="15%"  valign="top">
+      9080669    </td>
+    <td  width="60%" valign="top">
+        <a href="/9080669.html">System and method of selecting optimum gear of automobile</a>
+        &nbsp;
+                            <br/>
+                A system and method of selecting optimum gear of automobile is provided. The system includes a data processor; a running vehicle data collection module; an output module; and a memory. The memory...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                30            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20150012192    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2015/0012192.html">System and method of selecting optimum gear of automobile</a>
+        &nbsp;
+                            <br/>
+                A system and method of selecting optimum gear of automobile is provided. The system includes a data processor; a running vehicle data collection module; an output module; and a memory. The memory...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                31            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20090095526    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2009/0095526.html">Method and Apparatus for Managing Rod Changes in Horizontal Directional Drill</a>
+        &nbsp;
+                            <br/>
+                This disclosure concerns methods and apparatuses for managing drill rods in horizontal direction drilling, among other things. Various embodiments concern a horizontal directional drilling machine...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                32            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20070250293    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2007/0250293.html">Motor vehicle control device</a>
+        &nbsp;
+                            <br/>
+                A motor vehicle control device, in particular an engine control device or gearbox controller, has an interface for receiving at least one measured variable, a device for calculating at least one...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                33            </label>
+        </td>
+    <td width="15%"  valign="top">
+      6711486    </td>
+    <td  width="60%" valign="top">
+        <a href="/6711486.html">Drive unit for a motor vehicle and method of identifying the engagement position of an automatic clutch being part of the drive unit</a>
+        &nbsp;
+                            <br/>
+                Drive unit for motor vehicles, comprising an engine and an automated friction clutch arranged between the engine and its gearbox, the engagement and disengagement of the clutch being controlled by...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                34            </label>
+        </td>
+    <td width="15%"  valign="top">
+      6434434    </td>
+    <td  width="60%" valign="top">
+        <a href="/6434434.html">Electronic control for a transmission control system</a>
+        &nbsp;
+                            <br/>
+                An electro-hydraulic control system with electronic control for a gearbox includes at least one actuator element device for receiving an analog measuring signal from the actuator element(s), a...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                35            </label>
+        </td>
+    <td width="15%"  valign="top">
+      5038901    </td>
+    <td  width="60%" valign="top">
+        <a href="/5038901.html">Clutch control system in which the clutch actuation is initiated by control of the gear shift lever</a>
+        &nbsp;
+                            <br/>
+                A motor vehicle having a transmission comprising a clutch (14), a clutch control (18, 20) and a change-speed gearbox (12). The gearbox (12) has a plurality of mutually exclusively engageable gear...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                36            </label>
+        </td>
+    <td width="15%"  valign="top">
+      4079638    </td>
+    <td  width="60%" valign="top">
+        <a href="/4079638.html">Device for the automatic or manual selection of the ratio of a gearbox on a motor vehicle</a>
+        &nbsp;
+                            <br/>
+                A device for selecting the ratio of the gearbox on a vehicle. The ratio is selected by electronic means which include a system for putting the engine speed under the control of the shaft speed, a...    </td>
+    </tr>            </table>
+        </div>
+    </div>
+</div>
+</form>
+<!-- 728x90 Responsive 2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1586334167197709"
+     data-ad-slot="4118051210"
+     data-ad-format="auto">
+</ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br clear="all"/><form id="botSearch" name="botSearch" method="get" class="form-inline" action="/result.html"><input type="hidden" name="srch" id="" value="xprtsrch" /><input type="hidden" name="uspat" id="" value="on" /><input type="hidden" name="usapp" id="" value="on" /><input type="hidden" name="date_range" id="" value="all" /><input type="hidden" name="stemming" id="" value="on" /><input type="hidden" name="sort" id="" value="chron" /><br/>
+<div class="well well-small">
+    <table>
+        <tr>
+            <td>Search</td>
+            <td style="width: 100%;padding: 0 14px 0 5px;"><input type="text" name="query_txt" id="query_txt" value="ABST/&quot;gearbox&quot; AND ABST/&quot;memory&quot;" style="width: 100%;padding: 4px 0 4px 6px" /></td>
+            <td><input type="submit" name="search" value="Search" /></td>
+        </tr>
+    </table>
+</div>
+</form>
+<div class="well well-small" style="margin-top:10px; margin-bottom: 0">
+    <table width="100%" border="0">
+        <tr>
+            <td width="36%">
+                Matches 1 - 36 out of 36            </td>
+            <td align="right" valign="middle" width="70%" colspan="3" class="paginate_spacing">
+                                <br clear="all"/>
+            </td>
+        </tr>
+    </table>
+</div> « <a href="/search.html">search again</a>
+        </div>
+
+        <div class="pageFooter">
+    <div class="row-fluid top">
+        <div class="figure"></div>
+        <ul>
+            <li>
+                <a href="/" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Home']);">Home</a>
+            </li>
+            <li>
+                <a href="/search.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Search']);">Search</a>
+            </li>
+            <li>
+                <a href="/services.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Services']);">Services</a>
+            </li>
+        </ul>
+        <ul class="socialIcons">
+            <li><a href="https://twitter.com/FPOCommunity" class="twitter"
+                   onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'social twitter']);"></a></li>
+            <li><a href="http://www.linkedin.com/groups/FPO-Community-4524797" class="linkedin"
+                   onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'social linkedin']);"></a></li>
+        </ul>
+    </div>
+    <div class="row-fluid bot">
+        <p>
+            &copy; 2004-2026 FreePatentsOnline.com. All rights reserved.
+            <a href="/privacy.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Privacy']);">Privacy Policy
+                &amp; Terms of Use.</a>
+        </p>
+    </div>
+</div>    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    _gaq.push(['_setCustomVar', 2, 'User Origin Source', 'no referer', 2]);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+<script type="text/javascript">
+    function trackPageLoad() {
+        var plend = new Date();
+        var plload = plend.getTime() - plstart.getTime();
+        var pn = document.location.pathname;
+        var lc = 'slow';
+        var la = new Array(200, 300, 400, 500, 1000, 1500, 2000, 2500, 5000);
+        for (var i = 0, len = la.length; i < len; i++) {
+            if (plload <= la[i]) {
+                lc = String(la[i]);
+                break;
+            }
+        }
+        _gaq.push(['onLoadTracker._setAccount', 'UA-174791-5']);
+        _gaq.push(['onLoadTracker._trackEvent', "LoadTime", lc, pn, plload]);
+        }
+</script>
+<script type="text/javascript">
+    try {
+        if (window.onload != null) {
+            var oldOnload = window.onload;
+            window.onload = function (e) {
+                oldOnload(e);
+                trackPageLoad();
+            };
+        }
+        else {
+            window.onload = trackPageLoad();
+        }
+    } catch (err) {
+    }
+</script>
+<script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/js/fpo_3.js"></script>
+
+</body>
+</html>

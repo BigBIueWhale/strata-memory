@@ -69,3 +69,17 @@ original hosts below. All URLs verified live in July 2026.
 - Israel VAT 18% (from 2025-01-01; Israel Tax Authority Directive 01/2025; PwC Tax Summaries) — https://taxsummaries.pwc.com/israel/corporate/other-taxes
 - 0% customs duty on servers (HS 8471) — WTO Information Technology Agreement (Israel participant) + US–Israel FTA — https://www.wto.org/english/tratop_e/inftec_e/itapart_e.htm
 - Archived research evidence (NVIDIA datasheets, FX JSONs, VAT/customs pages, reseller captures): `pricing_evidence/b200_gb200_serving/` (124 files)
+
+## Prior art / competitive landscape (2026-07)
+- OpenAI–Broadcom custom inference chip announcement (memory config undisclosed) — https://openai.com/index/openai-broadcom-jalapeno-inference-chip
+- OpenAI HBM-bridge patent WO 2026/075822 (up to 20 HBM stacks via embedded bridges) — patent search + trade coverage
+- Credo "Weaver" memory-fanout gearbox (16 TB/s + 6.4 TB LPDDR5X per xPU) — https://www.businesswire.com/news/home/20251103560324/en/
+- Majestic Labs "Prometheus" (>100 TB LPDDR pooling; custom memory-interface chiplet) — EE Times, Business Wire, TechSpot
+- Celestial AI photonic memory (DDR5 fronted with HBM semantics + write-through cache) — https://www.nextplatform.com/2024/04/04/celestial-ai-wants-to-break-the-memory-wall-fuse-hbm-with-ddr5/
+- Qualcomm "High Bandwidth Compute" (compute-under-DRAM; investor day 2026) — https://www.forbes.com/sites/stevemcdowell/2026/06/25/qualcomms-ai-data-center-bet-inside-the-dragonfly-strategy/
+- Eliyan converter-chiplet patent US 12,058,874 ("peripheral gearbox chiplet / interface conversion circuitry") — https://www.freepatentsonline.com/12058874.html
+- MetaRAM (now Google) impersonation patent US 8,949,519 "Simulating a memory circuit" (freedom-to-operate reference) — https://www.freepatentsonline.com/8949519.html
+- Huawei self-developed HBM (HiBL/HiZQ) + CXMT domestic HBM — Wccftech HC2025 roadmap; DigiTimes; SemiAnalysis
+- d-Matrix / Positron / SambaNova SN40L / SanDisk–SK hynix HBF / Enfabrica EMFASYS / Skymizer — captures in `pricing_evidence/prior_art/`
+- arXiv: "The Economics of AI Decoding Chips" (2607.13068); SambaNova SN40L (2405.07518); MemExplorer (2604.16007)
+- Archived research evidence (154 files: vendor/patent/press/arXiv captures across OpenAI+hyperscalers, US startups, China, memory vendors, academic/patents, accelerators): `pricing_evidence/prior_art/`

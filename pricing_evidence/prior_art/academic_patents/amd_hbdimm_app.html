@@ -1,0 +1,607 @@
+	
+		<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/fpo_9.css" />
+<script type="text/javascript">
+var plstart = new Date();
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-174791-1']);
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="title" content="HIGH-BANDWIDTH MEMORY MODULE ARCHITECTURE - Advanced Micro Devices, Inc." />
+<meta name="description" content="&lt;div p-id=&quot;p-0001&quot;&gt;A high-bandwidth dual-inline memory module (HB-DIMM) includes a plurality of memory chips, a plurality of data buffer chips, and a register clock driver (RCD) circuit. The data buff" />
+<meta name="robots" content="index, follow" />
+<title>HIGH-BANDWIDTH MEMORY MODULE ARCHITECTURE - Advanced Micro Devices, Inc.</title>
+<link rel="canonical" href="https://www.freepatentsonline.com/y2025/0279125.html" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link rel="shortcut icon" href="/images/favicon_1.ico"/>
+    <meta name='DC.identifier' content='US20250279125' />
+<meta name='DC.type' content='Patent' />
+<meta name='DC.title' content='HIGH-BANDWIDTH MEMORY MODULE ARCHITECTURE' />
+<meta name='DC.contributor' scheme='assignee' content='Advanced Micro Devices, Inc.' />
+<meta name='DC.coverage' content='US' />
+<meta name='DC.date' scheme='issued' content='2025-09-04' />
+<meta name='DC.date' scheme='submitted' content='2025-05-07' />
+<meta name='citation_patent_application_number' content='19/201497' />
+</head>
+<body class="fullWidthContainer">
+
+<div>
+    <a name="top"></a>
+
+    <div class="container-fluid">
+        
+<div class="header">
+    <div class="row-fluid top">
+
+        <div class="pull-left figure">
+            <a href="/" onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Logo']);"></a>
+        </div>
+
+
+        <div class="pull-right" style="width: 750px;">
+                        <div class="loginForm">
+                <form class="form-inline form-mini pull-right" action="/login.html" method="post">
+                    <input type="hidden" name="src" value="header_login">
+                    <input id="UID-top" name="UID" type="text" class="input-large" placeholder="Email">
+                    <input id="PWD-top" name="PWD" type="password" class="input-small" placeholder="Password">
+                    <button type="submit" class="btn btn-mini btn-primary"
+                            onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Login']);">Login
+                    </button>
+                    <a class="btn btn-mini btn-info" href="/register.html"
+                            onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Create']);">Sign up
+                    </a>
+                </form>
+            </div>
+            
+
+            <div class="searchForm well">
+                <form id="quick_result" name="quick_result" class="form-inline" action="/result.html" method="get">
+
+                    <input type="hidden" name="sort" value="relevance">
+                    <input type="hidden" name="srch" value="top">
+
+
+                    <div class="searchBox pull-left">
+                        <input type="text" name="query_txt" placeholder="Enter your search here"
+                               class="search-query" id="topSearchBox">
+
+                        <div class="btn-group">
+                            <button name="submit" class="btn btn-primary" type="submit"
+                                    onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Search']);">Search
+                            </button>
+                            <button id="searchBox_dropdown" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/search.html"
+                                       onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'SearchExpert']);document.cookie = 'searchTab=#expert';">
+                                    Expert Search</a>
+                                </li>
+                                <li><a href="/search.html"
+                                       onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'SearchQuick']);document.cookie = 'searchTab=#quick';">
+                                    Quick Search</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sideCollections pull-right">
+                        <ul id="header_search_top" class="borderBottom ul-mini ">
+                            <li>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="patents_us" name="patents_us"
+                                           value="on" checked="checked">US Patents/Apps
+                                </label>
+                            </li>
+
+                            <li>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="patents_other" name="patents_other"
+                                           value="on">Other
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </form>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse center" id="primaryNavBar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li><a href="/"></a></li>
+                    <li><a href="/search.html">SEARCH</a></li>
+                    <li>
+                        <a href="/tools-resources.html"
+                           onclick="_gaq.push(['_trackEvent', 'Navbar', 'Click', 'Resources']);">
+                            TOOLS &amp; RESOURCES
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+<div class="clearfix"></div>        <div class="fixed-width document-details-wrapper">
+
+            <div id="dhtmltooltip"></div>
+            
+    <style type="text/css">
+        #refs {
+            margin-left: 450px;
+            padding-left: 5px;
+            border-left: 1px solid;
+        }
+
+        #fixed_height {
+            clear: both;
+            height: 6em;
+        }
+    </style>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <form name="biblio" action="">
+        <input type="hidden" name="patent" value="20250279125"/>
+        <input type="hidden" name="title" value="HIGH-BANDWIDTH MEMORY MODULE ARCHITECTURE"/>
+        <input type="hidden" name="number" value="20250279125"/>
+        <input type="hidden" name="author" value=""/>
+        <input type="hidden" name="author_end" value=""/>
+        <input type="hidden" name="year" value="2025"/>
+        <input type="hidden" name="month" value="September"/>
+        <input type="hidden" name="url" value="https://www.freepatentsonline.com/y2025/0279125.html"/>
+        <input type="hidden" name="assignee" value="Advanced Micro Devices, Inc."/>
+        <input type="hidden" name="country" value="United States"/>
+    </form>
+
+
+
+    <!--	TITLE  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Title:</div>
+        <div class="disp_elm_text">
+            <font size="+1"><b>
+                    HIGH-BANDWIDTH MEMORY MODULE ARCHITECTURE                </b></font>
+        </div>
+    </div>
+
+    <!--	Document Type   -->
+    <div class="disp_doc2">
+                <div class="disp_elm_text" style="clear: none;"><label class="float_left">
+                United States Patent Application 20250279125            </label>
+            
+                        <div class="disp_elm_name_kcode float_left" style="margin-left:100px;margin-top:-5px;margin-bottom:-5px;">
+                Kind
+                Code:
+            </div>
+            <div class="float_left">
+                A1            </div>
+        </div>
+        </div>
+    <div style="clear: both"></div>
+
+    <div class="disp_doc2">
+        <div class="disp_elm_text">
+            <br clear="all"/><!-- 728x90 Responsive 1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1586334167197709"
+     data-ad-slot="2270521617"
+     data-ad-format="auto">
+</ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br clear="all"/>        </div>
+    </div>
+
+    <!--	Abstract  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Abstract:</div>
+        <div class="disp_elm_text">
+            <div p-id="p-0001">A high-bandwidth dual-inline memory module (HB-DIMM) includes a plurality of memory chips, a plurality of data buffer chips, and a register clock driver (RCD) circuit. The data buffer chips are coupled to respective sets of the memory chips and transmit data from the memory chips over a host bus at a data rate twice that of the memory chips. The RCD circuit includes a host bus interface and a memory interface coupled to the plurality of memory chips. The RCD circuit implements commands received over the host bus by routing command/address (C/A) signals to the memory chips for providing at least two independently addressable pseudo-channels, the RCD circuit addressing each respective pseudo-channel based on a chip identifier (CID) bit derived from the C/A signals.</div>        </div>
+    </div>
+
+
+    <div class="disp_doc2">
+        <div class="disp_elm_title"></div>
+
+        <div class="disp_elm_text" style="clear: none;">
+
+            <br clear="all"/><!-- Responsive sidebar -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1586334167197709"
+     data-ad-slot="5590698414"
+     data-ad-format="auto">
+</ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        </div>
+    </div>
+    <div id="fixed_height" class="disp_elm_text"></div><br id="break"/>
+    <div id="fixed_height" class="disp_elm_text"></div><br id="break"/>
+
+    <!-- Representative Image -->
+
+    <!--	Inventors  -->
+
+    <!--	Application Number  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Application Number:</div>
+        <div class="disp_elm_text">
+            19/201497        </div>
+    </div>
+
+    <!--    Publication Date  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Publication Date:</div>
+        <div class="disp_elm_text">
+            09/04/2025        </div>
+    </div>
+
+    <!--	Filing Date  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Filing Date:</div>
+        <div class="disp_elm_text">
+            05/07/2025        </div>
+    </div>
+
+    <!--	Export Citation  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Export Citation:</div>
+        <div class="disp_elm_text">
+            <a href="javascript:openpopup('/bibliography.html')"
+               onClick="_gaq.push(['_trackEvent', 'Body', 'Click', 'Biblio']);"> Click for automatic bibliography
+                generation </a>
+        </div>
+    </div>
+
+    <!--	Assignee  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Assignee:</div>
+        <div class="disp_elm_text">
+                            Advanced Micro Devices, Inc.                <br/>
+                    </div>
+    </div>
+
+    <!--	Primary Classes  -->
+    
+    <!--	Other Classes  -->
+            
+
+    <!--	International Classes  -->
+
+    <div class="disp_doc2">
+        <div class="disp_elm_title">International Classes:</div>
+        <div class="disp_elm_text">
+            <i><b>G11C7/10</b></i>; <i><b>G11C7/22</b></i>        </div>
+    </div>
+
+
+    <!--	Ecla Classes  -->
+
+    <!--	Field of Search  -->
+
+    <!--    View Patent Images  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">View Patent Images:</div>
+        <div class="disp_elm_text">
+            <a href='/20250279125.pdf' rel="nofollow"
+               onclick="_gaq.push(['_trackEvent', 'Body', 'Click', 'PDF']);">Download PDF 20250279125                &nbsp;<span class="inline-pdf-image"></span></a>
+        </div>
+    </div>
+
+    <!--	US Patent References  -->
+<br clear='all'><br clear="all"/><!-- 728x90 Responsive 2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1586334167197709"
+     data-ad-slot="4118051210"
+     data-ad-format="auto">
+</ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br clear="all"/>
+    <!--	Foreign Patent References:  -->
+
+    <!--		Other References  -->
+
+    <!--	Primary Examiner  -->
+
+    <!--	Assistant Examiner  -->
+
+    <!--	Attorney, Agent or Firm  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Attorney, Agent or Firm:</div>
+        <div class="disp_elm_text">
+                            Polansky & Associates, P.L.L.C.                <br/>
+                    </div>
+    </div>
+
+    <!--		Parent Case Data  -->
+
+    <!--	Claims  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Claims:</div>
+        <div class="disp_elm_text">
+            1. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    2. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    3. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    4. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    5. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    6. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    7. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    8. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    9. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    10. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    11. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    12. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    13. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    14. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    15. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    16. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    17. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    18. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    19. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    20. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    21. <claim-text>(canceled)</claim-text>                    <br clear="all"/><br clear="all"/>
+                    22. <claim-text>A memory module adapted for coupling to a host bus and comprising:
+<claim-text>a plurality of memory chips;</claim-text>
+<claim-text>a plurality of data buffers coupled to respective sets of the plurality of memory chips and capable of transmitting data from the memory chips over the host bus at a data rate twice that of the memory chips; and</claim-text>
+<claim-text>a register clock driver (RCD) circuit including a host bus interface for coupling to the host bus and a memory interface coupled to the plurality of memory chips, the RCD circuit capable of implementing memory access commands received over the host bus by routing command/address (C/A) signals to the memory chips and having a first mode for providing at least two independently addressable pseudo-channels for the plurality of memory chips, and a second mode for providing a single channel without pseudo channels for the plurality of memory chips, wherein the RCD circuit is programmable to operate in the first mode with a data clock (DCK) and C/A pins of the host bus operate at a half-rate speed with the C/A pins operated in a double-data-rate (DDR) mode, and the second mode with the DCK pins of the host bus operate at a full-rate speed with the C/A pins of the host bus operated in a single-data-rate (SDR) mode.</claim-text>
+</claim-text>                    <br clear="all"/><br clear="all"/>
+                    23. <claim-text>The memory module of claim 22 wherein the RCD circuit does not re-order memory access commands received over the host bus.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    24. <claim-text>The memory module of claim 22 wherein the RCD circuit causes read responses for the at least two independently addressable pseudo-channels to be transmitted over the host bus in a non-interleaved format.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    25. <claim-text>The memory module of claim 22 wherein:
+<claim-text>the RCD circuit is also capable of implementing memory access commands received over the host bus by routing C/A signals to the memory chips in a quad-rank (QR) format; and</claim-text>
+<claim-text>the plurality of data buffers, responsive to commands from the RCD, are capable of transmitting data from the memory chips over the host bus at the data rate of the memory chips.</claim-text>
+</claim-text>                    <br clear="all"/><br clear="all"/>
+                    26. <claim-text>The memory module of claim 22 wherein the RCD circuit produces and transmits a command code to at least one of the data buffers indicating a pseudo-channel selection for a memory access.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    27. <claim-text>The memory module of claim 22 wherein the RCD circuit includes a first RCD for distributing commands to a first set of the memory chips, and a second RCD for implementing commands to a second set of memory chips, wherein one of the first and second RCDs acts as a primary RCD for controlling the data buffers for transmitting data for both sets of memory chips over the host bus.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    28. <claim-text>The memory module of claim 22 wherein the RCD circuit supports a directed refresh management (DRFM) command by translating a precharge per-bank (PREpb) signal to a precharge per-bank signal for a first one of the pseudo-channels, and translating a signal on a reserved for future use (RFU) bit derived from the command/address (C/A) signals to a PREpb signal for a second one of the pseudo-channels.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    29. <claim-text>A method of operating a memory module comprising:
+<claim-text>at a register clock driver (RCD) circuit, receiving a memory access command over a memory interface bus;</claim-text>
+<claim-text>at the RCD circuit, routing command/address (C/A) signals for the memory access command to a selected memory chip in a plurality of memory chips for providing at least two independently addressable pseudo-channels;</claim-text>
+<claim-text>configuring the memory module to operate in a first mode in which a data clock (DCK) and C/A pins of the memory interface bus operate at a half-rate speed with the C/A pins operated in a double-data-rate (DDR) mode, and a second mode in which the DCK pins of the memory interface bus operate at a full-rate speed with the C/A pins of the memory interface bus operated in a single-data-rate (SDR) mode; and</claim-text>
+<claim-text>at the RCD circuit, preparing a data buffer command code indicating a pseudo-channel associated with a selected memory access command for which the memory access command is to be fulfilled.</claim-text>
+</claim-text>                    <br clear="all"/><br clear="all"/>
+                    30. <claim-text>The method of claim 29 further comprising receiving and fulfilling a plurality of memory access commands wherein the RCD circuit does not re-order the plurality of memory access commands from an order of commands received from the memory interface bus.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    31. <claim-text>The method of claim 29 further comprising transmitting read responses for the at least two independently addressable pseudo-channels over the memory interface bus in a non-interleaved format.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    32. <claim-text>The method of claim 29, wherein the RCD circuit includes a first RCD for implementing commands to a first set of the memory chips for a first one of the pseudo-channels, and a second RCD for implementing commands to a second set of memory chips for a second one of the pseudo-channels, wherein one of the first and second RCDs acts as a primary RCD for controlling a plurality of data buffers for transmitting data for the first one of the pseudo-channels and the second one of the pseudo-channels.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    33. <claim-text>A data processing system comprising:
+<claim-text>a host bus;</claim-text>
+<claim-text>a memory controller coupled to the host bus for fulfilling memory access commands over at least two independently addressable pseudo-channels;</claim-text>
+<claim-text>a memory module coupled to the host bus and comprising:
+<claim-text>a plurality of memory chips;</claim-text>
+<claim-text>a plurality of data buffers coupled to respective sets of the plurality of memory chips and capable of transmitting data from the memory chips over the host bus at a data rate twice that of the memory chips; and</claim-text>
+<claim-text>a register clock driver (RCD) circuit including a host bus interface for coupling to the host bus and a memory interface coupled to the plurality of memory chips, the RCD circuit capable of implementing memory access commands received over the host bus by routing command/address (C/A) signals to the memory chips and having a first mode for providing at least two independently addressable pseudo-channels for the plurality of memory chips, and a second mode for providing a single channel without pseudo channels for the plurality of memory chips, wherein the RCD circuit is programmable to operate in the first mode with a data clock (DCK) and C/A pins of the host bus operate at a half-rate speed with the C/A pins operated in a double-data-rate (DDR) mode, and the second mode with the DCK pins of the host bus operate at a full-rate speed with the C/A pins of the host bus operated in a single-data-rate (SDR) mode.</claim-text>
+</claim-text>
+</claim-text>                    <br clear="all"/><br clear="all"/>
+                    34. <claim-text>The data processing system of claim 33 wherein the RCD circuit does not re-order memory access commands received over the host bus.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    35. <claim-text>The data processing system of claim 33 wherein the RCD circuit causes read responses for the at least independently addressable two pseudo-channels to be transmitted over the host bus in a non-interleaved format.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    36. <claim-text>The data processing system of claim 33 wherein the RCD circuit produces and transmits a command code to at least one of the data buffers indicating a pseudo-channel selection for a memory access command.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    37. <claim-text>The data processing system of claim 33 wherein the RCD circuit includes a first RCD for implementing commands to a first set of the memory chips, and a second RCD for implementing commands to a second set of memory chips, wherein one of the first and second RCDs acts as a primary RCD for controlling the data buffers for transmitting data for both sets of memory chips.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    38. <claim-text>The data processing system of claim 33, wherein the memory controller is programmable to access ranks of memory chips based on a chip identifier (CID) bit.</claim-text>                    <br clear="all"/><br clear="all"/>
+                    39. <claim-text>The data processing system of claim 33, wherein:
+<claim-text>the memory module comprises a first half providing a first memory channel including a first set of the plurality of memory chips, and a second half providing a second memory channel including a second set of the plurality of memory chips; and</claim-text>
+<claim-text>the memory controller provides a first data clock (DCK) signal for the first memory channel and a second DCK signal for the second memory channel.</claim-text>
+</claim-text>                    <br clear="all"/><br clear="all"/>
+                            </div>
+    </div>
+
+    <!--	Description  -->
+    <div class="disp_doc2">
+        <div class="disp_elm_title">Description:</div>
+        <div class="disp_elm_text">
+            <div p-id="p-0002" num="0001">This application claims priority to U.S. provisional application 63/314,856, filed Feb. 28, 2022, U.S. provisional application 63/310,883, filed Feb. 16, 2022, U.S. provisional application 63/286,342, filed Dec. 6, 2021, and U.S. non-provisional application Ser. No. 17/849,089, filed Jun. 24, 2022, the entire contents of each of which are incorporated herein by reference.</div>
+<h1>BACKGROUND</h1>
+<div p-id="p-0003" num="0002">Modern dynamic random-access memory (DRAM) provides high memory bandwidth by increasing the speed of data transmission on the bus connecting the DRAM and one or more data processors, such as graphics processing units (GPUs), central processing units (CPUs), and the like. DRAM is typically inexpensive and high density, thereby enabling large amounts of DRAM to be integrated per device. Most DRAM chips sold today are compatible with various double data rate (DDR) DRAM standards promulgated by the Joint Electron Devices Engineering Council (JEDEC). Typically, several DDR DRAM chips are combined onto a single printed circuit board substrate to form a memory module that can provide not only relatively high speed but also scalability.</div>
+<div p-id="p-0004" num="0003">However, while these enhancements have improved the speed of DDR memory used for computer systems' main memory, further improvements are desirable. In particular, because the memory bandwidth required for applications such as high-performance graphics processors and servers, which have multiple cores and a corresponding increase in bandwidth-per-core requirement, are outpacing the roadmap of bandwidth improvements for DDR DRAM chips. Improved DIMM architectures are needed to meet such requirements with current DDR chip technologies such as DDR5.</div>
+<div p-id="p-0005" num="0004">One such architecture is the load-reduced dual inline memory module (LRDIMM). LRDIMM is a load-reduction (LR) DIMM (typically employed in servers) that supports higher densities than existing DIMMs. An LRDIMM contains a memory buffer (MB) chip, rather than a register, in order to reduce the load on the memory bus. The memory buffer reduces each clock, command/address and data input to a single impedance load on the memory bus data line, which increases the memory speed.</div>
+<div p-id="p-0006" num="0005">Another proposed architecture for improving bandwidth performance is the high-bandwidth DIMM (HB-DIMM). This approach seeks to use the benefits of the high-bandwidth memory (HBM) format in a DIMM form-factor.</div>
+<h1>BRIEF DESCRIPTION OF THE DRAWINGS</h1>
+<div p-id="p-0007" num="0006">FIG. <b>1</b> illustrates in block diagram for a data processing system according to some embodiments;</div>
+<div p-id="p-0008" num="0007">FIG. <b>2</b> illustrates in block diagram form a DDR5 load-reduced dual-inline memory module (LRDIMM) according to the prior art;</div>
+<div p-id="p-0009" num="0008">FIG. <b>3</b> illustrates in block diagram form a high-bandwidth DIMM (HB-DIMM) according to some embodiments;</div>
+<div p-id="p-0010" num="0009">FIG. <b>4</b> shows a timing diagram showing a number of signals depicting operation of the HB-DIMM of FIG. <b>3</b>;</div>
+<div p-id="p-0011" num="0010">FIG. <b>5</b> illustrates in block diagram form an HB-DIMM according to some other embodiments;</div>
+<div p-id="p-0012" num="0011">FIG. <b>6</b> illustrates in block diagram form an HB-DIMM according to some other embodiments;</div>
+<div p-id="p-0013" num="0012">FIG. <b>7</b> shows a timing diagram illustrating a number of signals depicting operation of the HB-DIMM of FIG. <b>5</b> in a 1N mode of operation;</div>
+<div p-id="p-0014" num="0013">FIG. <b>8</b> shows a timing diagram illustrating a number of signals depicting operation of the HB-DIMM of FIG. <b>5</b> in a 2N mode of operation;</div>
+<div p-id="p-0015" num="0014">FIG. <b>9</b> shows a table including various options available for configuration of HB-DIMMs according to various embodiments;</div>
+<div p-id="p-0016" num="0015">FIG. <b>10</b> shows a table including exemplary clock speeds and data rates for an HB-DIMM according to some embodiments;</div>
+<div p-id="p-0017" num="0016">FIG. <b>11</b> shows a table including exemplary speed limitations for various configurations of HB-DIMM according to various embodiments;</div>
+<div p-id="p-0018" num="0017">FIG. <b>12</b> shows a table including module configurations for various HB-DIMMs according to various embodiments;</div>
+<div p-id="p-0019" num="0018">FIG. <b>13</b> illustrates in block diagram form a module register clock driver (MRCD) according to some embodiments;</div>
+<div p-id="p-0020" num="0019">FIG. <b>14</b> illustrates in mixed circuit and block diagram from a module data buffer (MDB) according to some embodiments;</div>
+<div p-id="p-0021" num="0020">FIG. <b>15</b> shows a flowchart for a process of operating an HB-DIMM according to some embodiments;</div>
+<div p-id="p-0022" num="0021">FIG. <b>16</b> shows illustrates in block diagram form an HB-DIMM according to some additional embodiments.</div>
+<div p-id="p-0023" num="0022">In the following description, the use of the same reference numerals in different drawings indicates similar or identical items. Unless otherwise noted, the word “coupled” and its associated verb forms include both direct connection and indirect electrical connection by means known in the art, and unless otherwise noted any description of direct connection implies alternate embodiments using suitable forms of indirect electrical connection as well.</div>
+<h1>DETAILED DESCRIPTION OF ILLUSTRATIVE EMBODIMENTS</h1>
+<div p-id="p-0024" num="0023">A high-bandwidth dual-inline memory module (HB-DIMM) is adapted for coupling to a host bus and includes a plurality of memory chips, a plurality of data buffer chips, and a register clock driver (RCD) circuit. The plurality of data buffer chips are coupled to respective sets of the memory chips and capable of transmitting data from the memory chips over a host bus at a data rate twice that of the memory chips. The RCD circuit includes a host bus interface for coupling to the host bus and a memory interface coupled to the plurality of memory chips. The RCD circuit is capable of implementing memory access commands received over the host bus by routing command/address (C/A) signals to the memory chips for providing at least two independently addressable pseudo-channels, the RCD circuit addressing each respective pseudo-channel based on a chip identifier (CID) bit derived from the C/A signals.</div>
+<div p-id="p-0025" num="0024">A method for operating an HB-DIMM includes, at a register clock driver (RCD) circuit, receiving a memory access command over a memory interface bus. At the RCD circuit, the method includes routing command/address (C/A) signals for the memory access command to a selected memory chip in a plurality of memory chips for providing at least two independently addressable pseudo-channels, the RCD circuit addressing each respective pseudo-channel based on a chip identifier (CID) bit of the C/A signals. At the RCD circuit, the method includes preparing a data buffer command code indicating a pseudo-channel associated with a selected memory access command for which the command is to be fulfilled.</div>
+<div p-id="p-0026" num="0025">A data processing system includes a host bus, a memory controller, and an HB-DIMM. The memory controller is coupled to the host bus for fulfilling memory access commands over at least two independently addressable pseudo-channels. The HB-DIMM is coupled to the host bus and includes a plurality of memory chips, a plurality of data buffer chips, and a register clock driver. The plurality of data buffer chips are coupled to respective sets of the memory chips and capable of transmitting data from the memory chips over a host bus at a data rate twice that of the memory chips. The register clock driver (RCD) circuit includes a host bus interface for coupling to the host bus and a memory interface coupled to the plurality of memory chips The RCD circuit implements memory access commands received over the host bus by routing command/address (C/A) signals to the memory chips for the at least two independently addressable pseudo-channels. The RCD circuit addresses each respective pseudo-channel based on a chip identifier (CID) bit of the C/A signals.</div>
+<div p-id="p-0027" num="0026">FIG. <b>1</b> illustrates in block diagram for a data processing system <b>100</b> according to some embodiments. Data processing system <b>100</b> includes generally a data processor in the form of a graphics processing unit (GPU) <b>110</b>, a host central processing unit (CPU) <b>120</b>, a double data rate (DDR) memory <b>130</b>, and a HB-DIMM memory <b>140</b>.</div>
+<div p-id="p-0028" num="0027">GPU <b>110</b> is a discrete graphics processor that has extremely high performance for optimized graphics processing, rendering, and display, but requires a high memory bandwidth for performing these tasks. GPU <b>110</b> includes generally a set of command processors <b>111</b>, a graphics single instruction, multiple data (SIMD) core <b>112</b>, a set of caches <b>113</b>, a memory controller <b>114</b>, a DDR physical interface circuit (DDR PHY) <b>115</b>, and a HB-DIMM PHY <b>116</b>.</div>
+<div p-id="p-0029" num="0028">Command processors <b>111</b> are used to interpret high-level graphics instructions such as those specified in the OpenGL programming language. Command processors <b>111</b> have a bidirectional connection to memory controller <b>114</b> for receiving high-level graphics instructions such as OpenGL instructions, a bidirectional connection to caches <b>113</b>, and a bidirectional connection to graphics SIMD core <b>112</b>. In response to receiving the high-level instructions, command processors issue low-level instructions for rendering, geometric processing, shading, and rasterizing of data, such as frame data, using caches <b>113</b> as temporary storage. In response to the graphics instructions, graphics SIMD core <b>112</b> performs low-level instructions on a large data set in a massively parallel fashion. Command processors <b>111</b> and caches <b>113</b> are used for temporary storage of input data and output (e.g., rendered and rasterized) data. Caches <b>113</b> also have a bidirectional connection to graphics SIMD core <b>112</b>, and a bidirectional connection to memory controller <b>114</b>.</div>
+<div p-id="p-0030" num="0029">Memory controller <b>114</b> has a first upstream port connected to command processors <b>111</b>, a second upstream port connected to caches <b>113</b>, a first downstream bidirectional port to DDR PHY <b>115</b>, and a second downstream bidirectional port to HB-DIMM PHY <b>116</b>. As used herein, “upstream” ports are on a side of a circuit toward a data processor and away from a memory, and “downstream” ports are in a direction away from the data processor and toward a memory. Memory controller <b>114</b> controls the timing and sequencing of data transfers to and from DDR memory <b>130</b> and HB-DIMM <b>140</b>. DDR memory has asymmetric accesses, that is, accesses to open pages in the memory are faster than accesses to closed pages. Memory controller <b>114</b> stores memory access commands and processes them out-of-order for efficiency by, e.g., favoring accesses to open pages, while observing certain quality-of-service objectives.</div>
+<div p-id="p-0031" num="0030">DDR PHY <b>115</b> has an upstream port connected to the first downstream port of memory controller <b>114</b>, and a downstream port bidirectionally connected to DDR memory <b>130</b>. DDR PHY <b>115</b> meets all specified timing parameters of the version of DDR memory <b>130</b>, such as DDR version five (DDR5), and performs timing calibration operations at the direction of memory controller <b>114</b>. Likewise, HB-DIMM PHY <b>116</b> has an upstream port connected to the second downstream port of memory controller <b>114</b>, and a downstream port bidirectionally connected to HB-DIMM <b>140</b>. HB-DIMM PHY <b>116</b>, in this embodiment, employs DDR5 DRAM chips and employs a new, high speed PHY interface standard in which data rates over the PHY are twice that of the memory chips, while the form factor and connectors of the HB-DIMM is compatible with existing LRDIMM specifications. HB-DIMM <b>140</b> includes a set of mode registers <b>141</b> programmable over the HB-DIMM PHY <b>116</b> to configure HB-DIMM <b>140</b> for operation.</div>
+<div p-id="p-0032" num="0031">In operation, data processing system can be used as a graphics card or accelerator because of the high bandwidth graphics processing performed by graphics SIMD core <b>112</b>. Host CPU <b>120</b>, running an operating system or an application program, sends graphics processing commands to GPU <b>110</b> through DDR memory <b>130</b>, which serves as a unified memory for GPU <b>110</b> and host CPU <b>120</b>. It may send the commands using, for example, as OpenGL commands, or through any other host CPU to GPU interface. OpenGL was developed by the Khronos Group, and is a cross-language, cross-platform application programming interface for rendering 2D and 3D vector graphics. Host CPU <b>120</b> uses an application programming interface (API) to interact with GPU <b>110</b> to provide hardware-accelerated rendering.</div>
+<div p-id="p-0033" num="0032">FIG. <b>2</b> illustrates in block diagram form a DDR5 load-reduced dual-inline memory module (LRDIMM) <b>250</b> (“LRDIMM <b>250</b>”) according to the prior art. LRDIMM <b>250</b> is generally embodied on a printed circuit board (PCB) or other module format and includes a number of DRAM chips <b>252</b>, a number of data buffers (DBs) <b>254</b>, and a register clock driver (RCD) <b>256</b>.</div>
+<div p-id="p-0034" num="0033">Depicted are operating speeds for the data (DQ) lines of the memory bus (6.4 Gbps), the host clock DCK (3.2 GHz), and the command/address (“DCA_a”) lines operating in a “IN” mode at 6.4 Gbps or a “2N” mode at 3.2 Gbps. There are four ranks of DRAM chips <b>252</b>, and DBs <b>254</b> cooperate with RCD buffer <b>256</b> allow LRDIMM <b>250</b> to appear as a dual-rank DIMM to the system by isolating the electrical loading of DRAM chips <b>252</b> from the memory bus. As can be seen, LRDIMM <b>250</b> transmits and receives data over the memory bus at the speed of the DRAM chips (6.4 Gbps) and does not provide for increased memory bandwidth. Data and C/A signaling are sent at a 1:1 ratio to the speeds employed in the DDR5 standard. RCD <b>256</b> and DBs <b>254</b> do not handle quad-rank logic or timings.</div>
+<div p-id="p-0035" num="0034">FIG. <b>3</b> illustrates in block diagram form a high-bandwidth DIMM (HB-DIMM) <b>300</b> according to some embodiments. HB-DIMM <b>300</b> is embodied on a PCB or other module format and includes a number of DRAM chips <b>302</b>, a number of data buffers (DBs) <b>304</b>, and a register clock driver (RCD) <b>306</b>, interfacing to the memory bus over pins generally depicted along the bottom of the module. HB-DIMM <b>300</b> includes two independently addressable pseudo-channels labelled “PC0” and “PC1”. Generally, HB-DIMM <b>300</b> provides a data (DQ) rate of 12.8 Gbps in this embodiment, twice the data rate of DRAM chips <b>302</b> (6.4 Gbps). Depicted is an “×4” configuration including one physical rank (only half of a module, one side of the HB-DIMM, is shown), while an “×8” configuration with two physical ranks is used in some other embodiments as shown by the dotted lines showing an additional rank of DRAM chips <b>302</b>.</div>
+<div p-id="p-0036" num="0035">As shown, pseudo-channels PC0 and PC1 connect to DBs <b>304</b> with a separate 6.4 Gbps link of 4 pins, with 8 data pins connecting to each DB <b>304</b>. DBs <b>304</b>, therefore, are able to provide a 12.8 Gbps capacity over the memory bus. RCD <b>306</b> circuit includes a memory bus (host memory bus) interface for coupling to the memory bus and a memory interface connected to each of DRAM chips <b>302</b>. RCD <b>306</b> is capable of implementing memory access commands received over the host bus by routing command/address (C/A) signals to the DRAM chips for providing at least two independently addressable pseudo-channels. RCD <b>306</b> addresses each respective pseudo-channel based on a chip identifier (CID) bit derived from the C/A signals.</div>
+<div p-id="p-0037" num="0036">HB-DIMM <b>300</b> has operating speeds for the data (DQ) lines of the memory bus of 12.8 Gbps, while the command/address (“DCA_a”) lines operate in a “IN” mode at 12.8 Gbps or a “2N” mode at 6.4 Gbps. In this implementation, the host clock DCK is also able to operate more slowly in 2N mode, a capability not provided by LRDIMM or other prior DDRx DIMMS, with DCK operating at 6.4 GHz in 1N mode, but operating at 3.2 GHz in 2N mode, a 2:1 ratio to the data rate on the DCA lines. This 2N mode for the DCK is enabled by clocking the C/A bus at a double data rate rather than a single data rate as is employed in LRDIMMs, for example.</div>
+<div p-id="p-0038" num="0037">FIG. <b>4</b> shows a timing diagram <b>400</b> showing a number of signals depicting operation of the HB-DIMM <b>300</b> of FIG. <b>3</b>. The horizontal axis depicts time. Shown are a host clock signal “DCK”, a C/A command sequence “DCA”, a local clock signal and buffer command bus clock signal labelled “QCK/BCK”, a C/A command sequence for PC0 labelled “QCA PC0”, a C/A sequence for PC1 labelled “QCA PC1”, a data sequence for PC0 labelled “MDQ PC0”, a data sequence for PC1 labelled “MDQ PC1”, and a data sequence for the memory bus data (DQ) lines labelled “DQ”. Commands and data for PC1 are shown with a hatched background in diagram <b>400</b>. Bytes or commands in the various sequences are labeled with “C” and their ordinal number, while data bytes are labeled with “D” and their ordinal number.</div>
+<div p-id="p-0039" num="0038">While other proposed HB-DIMM architectures transmit and receive data interleaved in time between the pseudo-channels, the depicted scheme keeps 64-byte data responses together, as shown in data sequence DQ. This scheme provides simplifyied signaling and enables the optional use of a “2N” C/A signaling mode supported by DDR5 DRAM chips as further described below.</div>
+<div p-id="p-0040" num="0039">FIG. <b>5</b> illustrates in block diagram form a high-bandwidth DIMM (HB-DIMM) <b>500</b> according to some embodiments. HB-DIMM <b>500</b> is embodied on a PCB or other module format and includes a number of DRAM chips <b>502</b>, a number of module data buffers (MDBs) <b>504</b>, and a module register clock driver (MRCD) <b>506</b>, interfacing to the memory bus over pins generally depicted along the bottom of the module. HB-DIMM <b>500</b> includes two independently addressable pseudo-channels labelled “PC0” and “PC1”, with two ranks in pseudo-channel PC0 labeled “R0” and “R1”, and two ranks in pseudo-channel PC1 labeled “R0” and “R1”.</div>
+<div p-id="p-0041" num="0040">Generally, HB-DIMM <b>500</b> provides a data (DQ) rate of 12.8 Gbps in this embodiment, twice the data rate of DRAM chips <b>502</b> (6.4 Gbps).</div>
+<div p-id="p-0042" num="0041">As shown, pseudo-channels PC0 and PC1 connect to MDBs <b>504</b> with a separate 6.4 Gbps link of 8 pins, with 16 data pins connecting to each MDB <b>504</b>. MDBs <b>504</b>, therefore, are able to provide a 12.8 Gbps capacity over the memory bus. MRCD <b>506</b> is a circuit that includes a memory bus (host memory bus) interface for coupling to the memory bus and a memory interface connected to each of DRAM chips <b>502</b>. MRCD <b>506</b> is capable of implementing memory access commands received over the host bus by routing command/address (C/A) signals to the DRAM chips for providing at least two independently addressable pseudo-channels. MRCD <b>506</b> addresses each respective pseudo-channel based on a chip identifier (CID) bit derived from the C/A signals.</div>
+<div p-id="p-0043" num="0042">HB-DIMM <b>500</b> has operating speeds for the data (DQ) lines of the memory bus (12.8 Gbps), the command/address (“DCA_a”) lines operating in a “1N” mode at 12.8 Gbps or a “2N” mode at 6.4 Gbps, and the host clock DCK supports a slower speed in the 2N mode, as described with respect to FIG. <b>4</b>, by using double data rate clocking for the C/A bus (6.4 GHz in 1N mode with single data rate clocking, and 3.2 GHz in 2N mode with double data rate clocking).</div>
+<div p-id="p-0044" num="0043">HB-DIMM <b>500</b> has a number of advantages over a similarly sized LRDIMM. First, the data lines from DRAM chips <b>502</b> to MDBs <b>504</b> do not require decision feedback equalization (DFE) for higher frequencies of operation because the QCA, QCS, and QCK signals from MRCD <b>506</b> to DRAM chips <b>502</b> are clocked more slowly than comparable signals on an LRDIMM, as shown by the depicted frequencies of 3.2 Gbps in 1N mode and 1.6 Gbps in 2N mode. Second, IN frequencies for expected end-of-life (EOL) operating frequencies of the DDR5 standard are achievable for the QCA, QCS, and QCK signals because of the number of loads on each signal leaving MRCD <b>506</b> (QCA has 20 loads in this arrangement, and QCS and QCK both have 10 loads), while such frequencies are not achievable with an LRDIMM configuration because of the increased number of loads. Third, both MRCD <b>506</b> and MDBs <b>504</b> are configured to implement both two-rank per channel logic and timing control, or quad-rank logic and timing control, allowing HB-DIMM <b>500</b> to be configured with quad-ranks and no pseudo channels (as shown in FIG. <b>6</b>).</div>
+<div p-id="p-0045" num="0044">FIG. <b>6</b> illustrates in block diagram form a high-bandwidth DIMM (HB-DIMM) <b>600</b> according to some embodiments. HB-DIMM <b>600</b> illustrates an HB-DIMM <b>500</b> of FIG. <b>5</b> configured in a quad-rank mode. HB-DIMM <b>600</b> is embodied on a PCB or other module format and includes a number of DRAM chips <b>602</b>, a number of data buffers (MDBs) <b>604</b>, and a module register clock driver (MRCD) <b>606</b>, interfacing to a memory bus over pins generally depicted along the bottom of the module. Generally, HB-DIMM <b>600</b> provides a data (DQ) rate of 8.4 Gbps in this embodiment, twice the data rate of DRAM chips <b>602</b> (4.2 Gbps).</div>
+<div p-id="p-0046" num="0045">As shown, the quad-rank mode connects four ranks of DRAM chips <b>602</b> (labelled “R0”, “R1”, “R2”, and “R3”), to MDBs <b>604</b> with a separate 4.2 Gbps link of 4 pins, for a total of 16 data pins connecting to each MDB <b>604</b>. MRCD <b>606</b> circuit including a memory bus (host memory bus) interface for coupling to the memory bus and a memory interface connected to each of DRAM chips <b>602</b>. MRCD <b>606</b> is capable of implementing memory access commands received over the host bus by routing command/address (C/A) signals to the DRAM chips <b>601</b> for implementing a quad-rank signaling arrangement, and represents a programmable configuration of HB-DIMM <b>500</b> (FIG. <b>5</b>). Both MRCD <b>606</b> and MDBs <b>604</b> are programmable to operate in the depicted quad-rank format or the dual-channel format of FIG. <b>5</b>.</div>
+<div p-id="p-0047" num="0046">FIG. <b>7</b> shows a timing diagram <b>700</b> illustrating a number of signals depicting operation of the HB-DIMM <b>500</b> of FIG. <b>5</b> in a 1N mode of operation. The first column shows the clock speed or data rate for each signal, and the second column shows the signal name. Shown are a host clock signal “DCK”, a command sequence labelled “CMD”, a host to MRCD C/A command sequence “DCA[6:0]”, a local MRCD clock signal to the DRAM chips labelled “QCK”, a command sequence for PC0 labelled “CMD PC0”, a command sequence for PC1 labelled “CMD PC1”, a data sequence from the MRCD to the DRAM chips of PC0 labelled “QACA[13:0]”, a data sequence from the MRCD to the DRAM chips of PC0 labelled “QBCA[13:0]”, a data sequence from the DRAM chips of PC to the MDB labelled “MDQ”, another data sequence from the DRAM chips of PC1 to the MDB labelled “MDQ”, and a data sequence for the memory bus data (DQ) lines labelled “DQ”. Data bytes are labeled with “D” and their ordinal number.</div>
+<div p-id="p-0048" num="0047">FIG. <b>8</b> shows a timing diagram <b>800</b> illustrating a number of signals depicting operation of the HB-DIMM <b>500</b> of FIG. <b>5</b> in a 2N mode of operation. The signal names are the same as those of FIG. <b>7</b>. Depicted are two options for frequency of the DCK clock, labelled “DCK opt1” and “DCK opt2”. For DCK opt1, the DCK frequency of DCK is half that of DCK opt2 at 3.2 GHz in this example, versus 6.4 GHz. For DCK opt1, the C/A bus is clocked at a double data rate, at a 1:1 ratio to QCK, while for DCK opt2, the C/A bus is clocked at a single data rate.</div>
+<div p-id="p-0049" num="0048">FIG. <b>9</b> shows a table <b>900</b> including various options available for configuration of HB-DIMMs according to various embodiments. Options are shown for using combinations of chip select values (“CS”) and chip identifier (“CID”) values for accessing ranks of DRAM chips on the modules in various configurations. Shown are three configurations with two pseudo-channels “PC0” and “PC1”, and a quad-rank configuration without pseudo-channels. The first column lists the rank of DRAM chips, and the second column lists the pseudo-channel (“PC”).</div>
+<div p-id="p-0050" num="0049">A 1 rank-per-channel (“RPC”) with 4 data lines per DRAM chip (“1RPC×4”) uses CS0 and CS1 to select between pseudo-channels. A configuration with 1 RPC and 8 data lines per DRAM chip (“1RPC×8”) uses CS0 and CID values of 0 or 1 to select between pseudo-channels. A 2 RPC with 8 data lines per DRAM chip configuration (“2RPC×8”) uses CS0 and CID values of 0 or 1 to select between pseudo-channels on Rank 0, and CS1 with CID values of 0 or 1 to select between pseudo-channels on Rank 1. The quad-rank with 4 data lines per DRAM chip (“QR×4”) configuration uses CS0, CS1, and CID values of 0 or 1 to select between ranks.</div>
+<div p-id="p-0051" num="0050">FIG. <b>10</b> shows a table <b>1000</b> including exemplary clock speeds and data rates for an HB-DIMM according to some embodiments. The depicted configurations are shown for an 8800 MT/s (mega-transfers/second) capability HB-DIMM implemented like that of FIG. <b>5</b>. The first column lists the signal or data rate. The second column shows speeds for a two RPC HB-DIMM in a 1N mode with a 2:1 ratio of QCK to DCK (i.e., FIG. <b>7</b>). The third column shows speeds for a two RPC HB-DIMM in 2N mode with a 2:1 ratio of QCK to DCK (i.e., FIG. <b>8</b> DCK opt1). The fourth column shows speeds for a QR HB-DIMM in 2N mode with a 1:1 ratio of QCK to DCK (i.e., FIG. <b>8</b>, DCK opt1). The configurable 2N mode allows for greater timing margins in systems where C/A timing is challenging, allowing DDR5 DRAM chips to be used in a variety of high-capacity DIMM modules that help extend the useful lifetime of the DDR5 standard.</div>
+<div p-id="p-0052" num="0051">FIG. <b>11</b> shows a table <b>1100</b> including exemplary speed limitations for various configurations of HB-DIMM according to various embodiments. The first row shows values for a QR LRDIMM (without HB-DIMM features) as a baseline for comparison. The other rows show HB-DIMM configurations including a set of high-capacity, or “Tall”, configurations labelled on the left. Configurations labelled “gear” include a gear-down mode in which the HB-DIMM is configurable to cause the DRAM Address/Command bus to use every other rising clock of the DDR5 memory bus clock. In the quad-rank (QR) Tall configuration, no pseudo-channels are used, and a preferred implementation employs the CID bit to map addresses to ranks on the module.</div>
+<div p-id="p-0053" num="0052">FIG. <b>12</b> shows a table <b>1200</b> including module configurations for various HB-DIMMs according to various embodiments. The final two rows show module configurations enabled by the techniques herein, including modules providing quad-rank (QR) capability. As can be understood from the variety of speed and capacity options shown in FIGS. <b>9</b>-<b>13</b>, the techniques herein allows flexible configuration for a variety of modes that accommodate different application requirements.</div>
+<div p-id="p-0054" num="0053">FIG. <b>13</b> illustrates in block diagram form a module register clock driver (MRCD) <b>1300</b> according to some embodiments. MRCD <b>1300</b> is generally embodied as an RCD chip on an HB-DIMM module, and is suitable for use in the HB-DIMMs of FIG. <b>3</b>, FIG. <b>5</b>, FIG. <b>6</b>, FIG. <b>16</b>, and other HB-DIMM module configurations herein.</div>
+<div p-id="p-0055" num="0054">MRCD <b>1300</b> includes a reference voltage input labelled “Vref”, C/A bus and parity input labelled “DCA[6:0]_A, DPAR_A”, a chip select input labelled “DCS[1:0]_A_n”, a reset input labelled “DRST_n”, a differential pair of DCK inputs labelled “DCK_t” and “DCK_c”, a first DRAM C/A output labelled “QACA[13:0]_A”, a second DRAM C/A output labelled “QBCA[13:0]_A”, a buffer command bus output labelled “BCOM[2:0]_A, BCS_A_n”, a first DRAM chip select output labeled “QACS[1:0]_A_n”, a second DRAM chip select output labeled “QBCS[1:0]_A_n”, a pair of differential back side QCK clock outputs labeled “Q(O A)CK_A_t” and “Q(O A)CK_A_c”, and a reset output labeled “QRST_[0 A]_n, BRST_[0 A]_n”. Generally, MRCD <b>1300</b> includes an RCD for a first pseudo-channel labeled “Channel A”, and an MRCD <b>1320</b> for a second pseudo-channel labeled “Channel B”. The Channel A RCD includes a control word state machine with control logic and chip select logic (“state machine <b>1302</b>”), a clock circuit <b>1310</b>.</div>
+<div p-id="p-0056" num="0055">State machine <b>1302</b> includes a host bus interface which receives C/A bus and parity input DCA[6:0]_A, DPAR_A and chip select input DCS[1:0]_A_n. State machine <b>1302</b> also includes an input receiving a clock signal QCK from clock circuit <b>1310</b>. The first DRAM C/A output QACA[13:0]_A and the first DRAM chip select output QACS[1:0]_A_n are connected to a first rank of DRAM chips (for example, R0 of PC0, FIG. <b>5</b>), and the second DRAM C/A output QBCA[13:0]_A and second DRAM chip select output QBCS[1:0]_A_n are connected to a second rank of DRAM chips (for example, R1 of PC0, FIG. <b>5</b>). Buffer command bus output BCOM[2:0]_A, BCS_A_n is connected to connected to the HB-DIMM's MDBs (for example, <b>504</b>, FIG. <b>5</b>).</div>
+<div p-id="p-0057" num="0056">Clock circuit <b>1310</b> receives reset input “DRST_n” and differential DCK inputs labelled “DCK_t” and “DCK_c”, and produces clock signal QCK which is fed to state machine <b>1302</b> and, optionally, to another identical state machine for Channel B. Clock circuit <b>1310</b> includes a differential receiver <b>1314</b> and a phase-locked loop (PLL) <b>1316</b>. In operation, differential receives <b>1314</b> receives a differential clock signal DCK from the host memory bus, which is fed to an input of PLL <b>1316</b>. The output of PLL <b>1316</b> provides the QCK (back side) clock for operating the MRCDs and DBs of the HB-DIMM. As depicted by the labels, PLL <b>1316</b> is configurable to operate in two modes, one in which the DCK and QCK clock signals have a 2:1 ratio, and one in which they have a 1:1 ratio. In the 2:1 mode, PLL <b>1316</b> acts as a clock divider. While example DCK frequencies of 3.2 GHz and 6.4 GHz are shown, these ratios are used for embodiments with various frequencies of DCK.</div>
+<div p-id="p-0058" num="0057">MRCD <b>1320</b> for Channel B generally includes a second state machine <b>1302</b> also receiving the Vref input, C/A bus and parity input “DCA[6:0]_A, DPAR_A”, chip select input “DCS[1:0]_A_n”, and reset input labelled “DRST_n” from the host controller interface. As shown, an optional 2<sup>nd </sup>DCK may be received as an input if the host interface supports separate DCK signals for the different pseudo-channels. In such implementations, a second clock circuit <b>1310</b> is present for Channel B, producing its own QCK signal for driving the DRAM chips for the second pseudo-channel.</div>
+<div p-id="p-0059" num="0058">In operation, MRCD <b>1300</b> implements memory access commands received over the host bus through the host connector interface by routing command/address (C/A) signals to the memory chips for providing at least two independently addressable pseudo-channels, the RCD circuit addressing each respective pseudo-channel based on a chip identifier (CID) bit derived from the C/A signals. In various implementations, state machine <b>1302</b> interprets and remaps a selected CID bit of the C/A signals for producing the output signals to access DRAM chips according to the configurations discussed above. State machine <b>1302</b> also produces the MDB command signals for the HB-DIMM data buffers to correctly provide results of memory access commands to each pseudo channel (for configurations with multiple pseudo-channels) or to each rank (for quad-rank configurations), as further described below with respect to FIG. <b>14</b>. Specifically, MRCD <b>1300</b> produces and transmits a command code to the MDBs indicating a pseudo-channel selection for a memory access command based on the CID bit for the memory access command. MRCD <b>1300</b> also includes a differential driver (not shown) for producing the QCK clock outputs Q(O A)CK_A_t and Q(O A)CK_A_c for operating the DRAM chips of the HB-DIMM.</div>
+<div p-id="p-0060" num="0059">As depicted in the timing diagrams of FIG. <b>4</b>, FIG. <b>7</b>, and FIG. <b>8</b>, MRCD <b>1300</b> does not re-order memory access commands received over the host bus, but instead provides responses for each pseudo-channel in order. MRCD <b>1300</b> causes read responses for the at least two pseudo-channels to be transmitted over the data bus in a non-interleaved format. In some implementations, MRCD <b>1300</b> is programmable to operate in a first mode in which a data clock (DCK) and C/A pins of the host bus operate at a half-rate (2N) speed with the C/A pins operated in a double-data-rate (DDR) mode, and a second mode in which the DCK and C/A pins of the host bus operate at a full-rate (1N) speed with the C/A pins of the host bus operated in a single-data-rate (SDR) mode.</div>
+<div p-id="p-0061" num="0060">In some implementations, MRCD <b>1300</b> supports a directed refresh management (DRFM) command by translating a precharge per-bank (PREpb) signal to a precharge per-bank signal for a first one of the pseudo-channels, and translating a signal on a reserved for future use (RFU) bit derived from the C/A signals to a PREpb signal for a second one of the pseudo-channels.</div>
+<div p-id="p-0062" num="0061">In some implementations, MRCD <b>1300</b> is programmable to operate in a quad-rank configuration in which it implements memory access commands received over the host bus by routing C/A signals to the memory chips in a quad-rank (QR) format. In such cases, a CID bit and chip select signals are mapped to logical ranks of DRAM chips as shown, for example, in FIG. <b>9</b>.</div>
+<div p-id="p-0063" num="0062">FIG. <b>14</b> illustrates in mixed circuit and block diagram from a module data buffer (MDB) <b>1400</b> according to some embodiments. MDB <b>1400</b> is generally embodied in an MDB chip on an HB-DIMM module, and is suitable for use in the HB-DIMMs of FIG. <b>3</b>, FIG. <b>5</b>, FIG. <b>6</b>, FIG. <b>16</b>, and other HB-DIMM module configurations herein. MDB <b>1400</b> generally includes a buffer controller <b>1410</b>, a first DRAM interface <b>1430</b>, a second DRAM interface <b>1440</b>, and a host connector interface <b>1450</b>.</div>
+<div p-id="p-0064" num="0063">Buffer controller <b>1410</b> has a first pair of differential clock inputs labelled “BCK_t” and “BCK_c”, a control bus input labelled “BCOM[2:0]”, a chip select input labelled “BCS_n”, a reset input labelled “BRST_n”, an impedance calibration output labelled “ZQCAL”, and a number of outputs connected to host connector interface <b>1450</b>.</div>
+<div p-id="p-0065" num="0064">DRAM interfaces <b>1430</b> and <b>1440</b> each have a differential pair of data strobe input/outputs labelled “MDQS0_t” and “MDQS0_c”, and a DRAM data bus input/output labelled MDQ[3:0], an reference voltage input, and a number of input outputs connected to host connector interface <b>1450</b>. Host connector interface <b>1450</b> has a first differential pair of data strobe input/outputs labelled “DQS0_t” and “DQS0_c”, a second differential pair of data strobe input/outputs labelled “DQS1_t” and “DQS1_c”, and a DRAM data bus input/output labelled “DQ[3:0], DQ[7:4]” (separated by lower and upper nibble as shown to use separate data strobe signals for the upper and lower nibbles). Host connector interface <b>1450</b> also has a number of connections to buffer controller <b>1410</b>, as further described below.</div>
+<div p-id="p-0066" num="0065">Generally, MDB <b>1400</b> receives control signals over the buffer command bus for synchronizing operation of the MDBs in fulfilling memory access commands. MDB <b>1400</b> implements an additional BCOM (buffer command) code to identify the pseudo-channel for each command, and based on that BCOM code selects which of DRAM interfaces <b>1430</b> or <b>1440</b> are used. Similarly, for configurations that provide a quad-rank capability for the HB-DIMM, MDB implements selecting logical ranks of devices based on the additional BCOM code, for example as depicted in FIG. <b>9</b>. As shown by the label “Additional BCOM code for PC”, MDB <b>1400</b> receives and implements a command code indicating a pseudo-channel selection for a memory access command based on the CID bit for the memory access command by host connector interface <b>1450</b> and one of DRAM interfaces <b>1430</b> or <b>1440</b> to connect to DRAM chips for the indicated pseudo-channel.</div>
+<div p-id="p-0067" num="0066">DRAM interfaces <b>1430</b> and <b>1440</b> each connect to DRAM chips on the HB-DIMM. For configurations supporting pseudo-channels, DRAM interface <b>1430</b> connects to a DRAM chips for a first pseudo-channel, and second DRAM interface <b>1440</b> connects to DRAM chips for a second pseudo-channel. As shown, host connector interface <b>1450</b> operates a clock rate twice that of DRAM interfaces <b>1430</b> and <b>1440</b> and the control bus, in this example 6.4 GHz versus 3.2 GHz. Generally, an HB-DIMM includes a number of MDBs <b>1400</b>, which operates responsive to commands from the MRCD to transmits and receive data from and to the DRAM chips over the host bus at the data rate of the DRAM chips.</div>
+<div p-id="p-0068" num="0067">Buffer controller <b>1410</b> includes a differential receiver <b>1411</b>, a number of other receivers <b>1412</b>, <b>1413</b>, and <b>1414</b>, a PLL <b>1415</b>, a number of latches <b>1416</b>, <b>1417</b>, and <b>1418</b>, a buffer control words block <b>1420</b>, a command decoder and power management block <b>1422</b>, a termination control block <b>1424</b>, an impedance calibration block <b>1426</b>, and a delay element <b>1428</b>. Differential receiver <b>1411</b> receives a buffer block signal (generally BCK) from the MRCD and provides it to PLL <b>1415</b>, and to latches <b>1416</b>, <b>1417</b>, and <b>1418</b>. In this implementation, PLL <b>1415</b> includes a frequency multiplier to provide a clock signal for operating circuits within MDB <b>1400</b> at double the frequency of BCK, as shown by the example frequencies of 3.2 GHz for BCK and 6.4 GHz for the output of PLL <b>1415</b>. Receiver <b>1412</b> receives the control bus input BCOM[2:0] and feeds it to latch <b>1416</b>, which forwards it to command decoder and power management block <b>1422</b>. Receiver <b>1413</b> receives the chip select input BCS_n and feeds it to latches <b>1417</b> and <b>1418</b>, which then feeds it to block <b>1422</b>. Receiver <b>1414</b> receives the reset input BRST_n and feeds it to the reset input of latch <b>1418</b>.</div>
+<div p-id="p-0069" num="0068">Command decoder and power management block <b>1422</b> has an input receiving the control bus signals on input BCOM[2:0], an input receiving the chip select signal on input BCS_n, a bidirectional connection to buffer control words block <b>1420</b>, and an output connected to a transaction controller <b>1451</b> of host connection interface <b>1450</b>. Buffer control words block <b>1422</b> has a bidirectional connection to command decoder and power management block <b>1422</b>, an output connected to termination control block <b>1424</b>, a bidirectional connection to impedance calibration block <b>1426</b>, and an output connected to transaction control block <b>1451</b>.</div>
+<div p-id="p-0070" num="0069">Termination controller <b>1424</b> generally controls a termination resistance <b>1460</b> of host connector interface <b>1450</b>. Termination controller <b>1424</b> has a first input connected to the output of latch <b>1418</b>, a second input connected to PLL <b>1415</b>, and a third input connected to buffer control words block <b>1420</b>. Impedance calibration block <b>1426</b> has a bidirectional connection to buffer control words block <b>1420</b>, and an output providing a signal to impedance calibration output ZQCAL.</div>
+<div p-id="p-0071" num="0070">DRAM interfaces <b>1430</b> and <b>1440</b> each include a pair of differential transmitters <b>1431</b>, a differential receiver <b>1432</b>, a termination resistance <b>1435</b>, a receiver <b>1433</b>, a transmitter <b>1434</b>, a delay element <b>1436</b>, and a latch <b>1437</b>. Differential transmitters <b>1431</b> each have an input connected to a respective output transaction controller <b>1451</b>, a control input connected to an output of transaction controller <b>1451</b>, and an output connected to the input/outputs MDQS0_t and MDQS0_c, respectively. Differential receiver <b>1432</b> has two inputs connected to the input/outputs MDQS0_t and MDQS0_c, respectively, an enable input connected to transaction controller <b>1451</b>, and an output connected to a clock input of latch <b>1437</b> through delay element <b>1436</b>. Termination resistance <b>1435</b> selectively applies a termination to input/outputs to MDQS0_t and MDQS0_c, and MDQ[3:0]. Receivers <b>1433</b> (only one of four is shown) each have an input connected to input/output MDQ[3:0], an input connected to a MDQ reference voltage generation circuit <b>1438</b>, and an output coupled to a read first-in-first-out buffer <b>1452</b> through latch <b>1437</b>. Transmitters <b>1434</b> (only one is shown) each have an input connected to write FIFO buffer <b>1453</b>, an output connected to input/output MDQ[3:0], and an enable input connected to transaction controller <b>1451</b>.</div>
+<div p-id="p-0072" num="0071">Host connector interface <b>1450</b> includes transaction controller <b>1451</b>, read FIFO buffer <b>1542</b>, write FIFO buffer <b>1453</b>, a pair of differential transmitters <b>1455</b>, a differential receiver <b>1456</b>, a termination resistance <b>1460</b>, a transmitter <b>1457</b>, a receiver <b>1458</b>, a latch <b>1454</b>. Differential transmitters <b>1455</b> each have an input connected to a respective output transaction controller <b>1451</b>, a control input connected to an output of transaction controller <b>1451</b>, and an output connected to the input/outputs DQSn_t and DQSn_c, respectively (“n” here indicates 0 or 1 to show that a separate DQS signal is provided for the lower and upper nibbles of the data byte handled by MDB <b>1400</b>). Only one transmitter/receiver paid is shown for DQS in order to simplify the drawing. Differential receiver <b>1456</b> two inputs connected to the input/outputs MDQS0_t and MDQS0_c, respectively, an enable input connected to transaction controller <b>1451</b>, and an output connected to a clock input of latch <b>1454</b>. Termination resistance <b>1460</b> selectively applies a termination to input/outputs DQSn_t and MDQSn_c, and DQ[3:0], DQ[7:4]. Receivers <b>1458</b> (only one of eight is shown) each have an input connected to input/output DQ[3:0], DQ[7:4] an input connected to a MDQ reference voltage generation circuit <b>1459</b>, and an output coupled to a write FIFO buffer <b>1452</b> through latch <b>1454</b>. Transmitters <b>1457</b> (only one is shown) each have an input connected to read FIFO buffer <b>1453</b>, an output connected to input/output MDQ[3:0], and an enable input connected to transaction controller <b>1451</b>.</div>
+<div p-id="p-0073" num="0072">As depicted, DRAM interfaces <b>1430</b> and <b>144</b> operate at half the frequency of DCK. In operation, commands from an MRCD on the HB-DIMM are received over input BCOM[2:0], and decoded by command decoder and power management block <b>1422</b>. The command decoder interprets the received command, and accesses buffer control word block <b>1420</b> to provide a suitable control word for transaction controller <b>1451</b>. Responsive to the buffer control words, transaction controller <b>1451</b> configures the various transmitters, receivers, and buffers to either receive read data over one of DRAM interfaces <b>1430</b> and <b>1440</b> and transmit it over the host connector interface at twice the DRAM data rate, or receive write data over the host connector interface and write it to DRAM over one of DRAM interfaces <b>1430</b> or <b>1440</b> at half the data rate it was received. Command decoder and power management circuit <b>1422</b> implements decode logic to map CID and CS bits to DRAM chips as shown, for example, in FIG. <b>9</b>, in order to implement pseudo-channel configurations or quad-rank configurations as described above.</div>
+<div p-id="p-0074" num="0073">FIG. <b>15</b> shows a flowchart <b>1500</b> for a process of operating an HB-DIMM according to some embodiments. The depicted process is suitable for use with those HB-DIMM configurations provided herein that employ pseudo-channels.</div>
+<div p-id="p-0075" num="0074">At block <b>1502</b>, the process includes at a register clock driver (RCD) receiving a memory access command over a memory interface bus. At block <b>1504</b>, based on a chip identifier (CID) bit of the C/A signal for the command, the RCD maps the memory access command to a selected memory chip of a plurality of memory chips providing at least two pseudo-channels. The RCD routs command/address (C/A) signals for the memory access command to the selected memory chip.</div>
+<div p-id="p-0076" num="0075">At block <b>1506</b>, the RCD prepares and transmits a data buffer command code (BCOM) indicating a pseudo-channel associated with a selected memory access command for which the command is to be fulfilled. Generally, block <b>1506</b> may be performed concurrently with block <b>1504</b>.</div>
+<div p-id="p-0077" num="0076">At block <b>1508</b>, the data buffer is configured according to the data buffer command code and receives responsive data from memory. Then at block <b>1510</b>, the received data is driven onto the host memory interface bus on the appropriate data pins targeted for the specified pseudo-channel. While a sequence including reading from the memory is shown, the same process applies in the reverse direction for write commands.</div>
+<div p-id="p-0078" num="0077">Generally, the process of operating an HB-DIMM according to the implementations described herein may include receiving and fulfilling a plurality of memory access commands, where the RCD circuit does not re-order the plurality memory access commands from the order of commands received from the host bus. As described above with respect to FIG. <b>7</b> and FIG. <b>8</b>, the process in some implementations may include transmitting read responses for the at least two pseudo-channels over the memory interface bus in a non-interleaved format.</div>
+<div p-id="p-0079" num="0078">According to some implementations, the method may include entering a training mode with a different mapping of ranks. There is an issue that known HB-DIMM designs in that cannot properly train the four ranks of the quad-rank modules due to hardware constraints, because current hardware is limited to comprehend only two ranks. According to some embodiments, a mode is added to the RCD and DB circuits of the various embodiments herein whereby during training, each of the two host-side CS inputs is assigned to map to one of the two backside ranks to avoid the logical rank limitation. During training, the process is able change the mode to progress to all four ranks. In normal mode, the process employs the CS/CID signals to address the ranks.</div>
+<div p-id="p-0080" num="0079">FIG. <b>16</b> shows illustrates in block diagram form an HB-DIMM <b>1600</b> according to some embodiments. Generally, HB-DIMM <b>1600</b> is arranged in a two-ranks per pseudo-channel arrangement like that of FIG. <b>5</b>, but includes two RCDs rather than a single RCD. In particular, HB-DIMM <b>1600</b> has a primary RCD <b>1602</b> and a secondary RCD <b>1604</b>.</div>
+<div p-id="p-0081" num="0080">Generally, proposed HB-DIMM configurations suffer from an issue related to the loading of signals. The problem is related to the expansion of capacity and the related double loading on all the module signals. To help overcome this problem, a second RCD buffer is added. This addition puts more load on the external host-facing interface, but that additional loading is likely acceptable. An additional problem addressed by the implementation of FIG. <b>16</b> is the connectivity between the RCD buffer and the DBs. The DBs are controlled by the RCD. Using two RCDs, however, the HB-DIMM module determines which one controls the data buffers by designating a primary RCD and a secondary RCD. Both RCDs are connected to the host interface and therefore are aware of what commands are implemented by the other RCD. This allows the primary RCD to control the DBs for both itself and the secondary, while the secondary RCD communicates with the DRAM chips for PC1. Another method to solve the problem is to add an auxiliary communication bus between the RCDs. Such a configuration is depicted by the optional bidirectional connection labelled “DB Coordination”, however it requires more resources than the first solution.</div>
+<div p-id="p-0082" num="0081">The HB-DIMM <b>1600</b> RCD circuit employs primary RCD <b>1602</b> for implementing commands to a first set of the DRAM chips for first one of the pseudo-channels (PC0), and secondary RCD <b>1604</b> for implementing commands to a second set of DRAM chips for the second one of the pseudo-channels. Primary RCD <b>1602</b> controls the data buffer chips (MDB) to direct transmitting data for the first and second pseudo-channels, while secondary RCD <b>1604</b>.</div>
+<div p-id="p-0083" num="0082">An integrated circuit or integrated circuits containing the reference voltage generation circuits described herein, or any portions thereof, may be described or represented by a computer accessible data structure in the form of a database or other data structure which can be read by a program and used, directly or indirectly, to fabricate integrated circuits. For example, this data structure may be a behavioral-level description or register-transfer level (RTL) description of the hardware functionality in a high-level design language (HDL) such as Verilog or VHDL. The description may be read by a synthesis tool which may synthesize the description to produce a netlist including a list of gates from a synthesis library. The netlist includes a set of gates that also represent the functionality of the hardware including integrated circuits. The netlist may then be placed and routed to produce a data set describing geometric shapes to be applied to masks. The masks may then be used in various semiconductor fabrication steps to produce the integrated circuits. Alternatively, the database on the computer accessible storage medium may be the netlist (with or without the synthesis library) or the data set, as desired, or Graphic Data System (GDS) II data.</div>
+<div p-id="p-0084" num="0083">While particular embodiments have been described, various modifications to these embodiments will be apparent to those skilled in the art. For example, the particular timing of commands as depicted in FIGS. <b>4</b>, <b>7</b>, and <b>8</b> may be varied. Furthermore, various features herein may be employed in various sub-combinations. An RCD may be embodied in a circuit as a single RCD chip or a cooperating pair of RCDs. HB-DIMMs may be constructed with RCD and DB circuits that are programmable to change modes between the quad-rank configurations and pseudo-channel configurations herein, or may be constructed to perform only one or the other.</div>
+<div p-id="p-0085" num="0084">Accordingly, it is intended by the appended claims to cover all modifications of the disclosed embodiments that fall within the scope of the disclosed embodiments.</div>
+        </div>
+    </div>
+
+    <br clear="all"/><br/>
+
+
+    <br clear="all"/><br/>
+    <div class="disp_doc2">
+
+            <div class="disp_doc2">
+        <div class="disp_elm_title">&nbsp;</div>
+        <div class="disp_elm_text" style="height:70px;">
+    
+    <b>Previous Patent:</b> <a onClick="_gaq.push(['_trackEvent', 'Bottom', 'Click', 'Previous']);" href="/y2025/0279124.html">BITLINE SENSE AMPLIFIERS AND SEMICONDUCTOR DEVICES INCLUDING THE SAME</a><br clear='all'/><br clear='all'/><b>Next Patent:</b> <a onClick="_gaq.push(['_trackEvent', 'Bottom', 'Click', 'Next']);" href="/y2025/0279126.html">READ DATA CAPTURE FOR A HIGH-SPEED DOUBLE DATA RATE INTERFACE</a>
+            </div>
+        </div>
+        <br clear="all"/><br/>
+</div>
+    <br clear="all"/><br/>
+        </div>
+
+        <div class="pageFooter">
+    <div class="row-fluid top">
+        <div class="figure"></div>
+        <ul>
+            <li>
+                <a href="/" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Home']);">Home</a>
+            </li>
+            <li>
+                <a href="/search.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Search']);">Search</a>
+            </li>
+            <li>
+                <a href="/services.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Services']);">Services</a>
+            </li>
+        </ul>
+        <ul class="socialIcons">
+            <li><a href="https://twitter.com/FPOCommunity" class="twitter"
+                   onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'social twitter']);"></a></li>
+            <li><a href="http://www.linkedin.com/groups/FPO-Community-4524797" class="linkedin"
+                   onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'social linkedin']);"></a></li>
+        </ul>
+    </div>
+    <div class="row-fluid bot">
+        <p>
+            &copy; 2004-2026 FreePatentsOnline.com. All rights reserved.
+            <a href="/privacy.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Privacy']);">Privacy Policy
+                &amp; Terms of Use.</a>
+        </p>
+    </div>
+</div>    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    _gaq.push(['_setCustomVar', 2, 'User Origin Source', 'no referer', 2]);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+<script type="text/javascript">
+    function trackPageLoad() {
+        var plend = new Date();
+        var plload = plend.getTime() - plstart.getTime();
+        var pn = document.location.pathname;
+        var lc = 'slow';
+        var la = new Array(200, 300, 400, 500, 1000, 1500, 2000, 2500, 5000);
+        for (var i = 0, len = la.length; i < len; i++) {
+            if (plload <= la[i]) {
+                lc = String(la[i]);
+                break;
+            }
+        }
+        _gaq.push(['onLoadTracker._setAccount', 'UA-174791-5']);
+        _gaq.push(['onLoadTracker._trackEvent', "LoadTime", lc, pn, plload]);
+        }
+</script>
+<script type="text/javascript">
+    try {
+        if (window.onload != null) {
+            var oldOnload = window.onload;
+            window.onload = function (e) {
+                oldOnload(e);
+                trackPageLoad();
+            };
+        }
+        else {
+            window.onload = trackPageLoad();
+        }
+    } catch (err) {
+    }
+</script>
+<script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/js/fpo_3.js"></script>
+
+</body>
+</html>

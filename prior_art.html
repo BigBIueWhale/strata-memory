@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is anyone building STRATA-V? &mdash; prior art &amp; competitive landscape</title>
+<style>
+  :root{--ink:#1b1f24;--paper:#fbfaf7;--muted:#5d6571;--rule:#e2ddd2;--accent:#7a4cc4;--accent2:#1f7a5a;--amber:#9a6a00;--red:#9a2f2f;--code-bg:#f1ede4;--code-ink:#3a2f5a;--blue:#1f5d7a;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:940px;margin:0 auto;padding:44px 24px 120px}
+  header.hero{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:8px}
+  .kicker{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:31px;line-height:1.1;margin:.2em 0 .12em}
+  .sub{font-size:18px;color:var(--muted);margin:0}
+  .meta{font-size:12.5px;color:var(--muted);margin-top:12px}
+  h2{font-size:22px;margin:2em 0 .45em;padding-top:.3em;border-top:1px solid var(--rule);line-height:1.18}
+  h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;font-size:15px;vertical-align:.18em;margin-right:.5em}
+  h3{font-size:16.5px;margin:1.3em 0 .3em;color:var(--accent2)}
+  p{margin:.65em 0}
+  code{font-family:"SFMono-Regular",Consolas,Menlo,monospace;font-size:.84em;background:var(--code-bg);color:var(--code-ink);padding:1px 5px;border-radius:4px;white-space:nowrap}
+  strong{font-weight:700}
+  ul,ol{margin:.5em 0 .8em;padding-left:1.3em}
+  li{margin:.3em 0}
+  .lede{font-size:18px;color:#33373d}
+  .callout{margin:1.1em 0;padding:13px 17px;border-radius:9px;border-left:5px solid var(--accent);background:#f4f0fb}
+  .callout .lab{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:4px;color:var(--accent)}
+  .callout.punch{border-left-color:var(--accent2);background:#e9f5ef}.callout.punch .lab{color:var(--accent2)}
+  .callout.catch{border-left-color:var(--amber);background:#fbf4e4}.callout.catch .lab{color:var(--amber)}
+  .callout.spec{border-left-color:var(--blue);background:#e8f2f7}.callout.spec .lab{color:var(--blue)}
+  table{border-collapse:collapse;width:100%;margin:1em 0;font-size:12.7px}
+  th,td{border:1px solid var(--rule);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:#efe9dd;font-size:11.8px}
+  tbody tr:nth-child(even){background:#f6f2ea}
+  .verdict{font-size:19px;font-weight:800;color:var(--accent2)}
+  .flag{color:var(--amber);font-weight:700}
+  .no{color:var(--red);font-weight:700}
+  .yes{color:var(--accent2);font-weight:700}
+  footer{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">competitive landscape &middot; prior-art record</div>
+  <h1>Is anyone building STRATA-V?</h1>
+  <p class="sub">A far-and-wide hunt for a device-mode, commodity-DRAM-fronting, GPU-impersonating converter &mdash; and what the answer says about this design.</p>
+  <p class="meta">Compiled from a wide research pass (2026-07): vendor/investor disclosures, patents (USPTO/WO/CN), arXiv, and trade press, cross-checked across channels; ~154 source artifacts archived in <code>pricing_evidence/prior_art/</code>. Product names, dates, and figures are as disclosed by the parties and press; company performance numbers are claims unless marked. Confirmed-vs-reported ledger in &sect;07.</p>
+</header>
+
+<p class="lede">STRATA-V&rsquo;s distinguishing move is <em>not</em> &ldquo;cheap DRAM for inference&rdquo; &mdash; that is now a crowded, well-funded thesis. It is one specific act: a converter that <strong>impersonates a standard GDDR7 device to a GPU</strong>. This record asks whether anyone builds that, and reads the answer honestly &mdash; including the part that <em>vindicates</em> the design.</p>
+
+<div class="callout punch"><span class="lab">Verdict</span>
+<p style="margin-top:2px"><span class="verdict">Nobody builds the impersonation. The thesis around it is crowded. And it&rsquo;s unclaimed <em>not</em> because it can&rsquo;t be done &mdash; we proved it&rsquo;s within spec &mdash; but because a shipped GPU&rsquo;s controller is frozen.</span></p>
+<p>The device-mode front &mdash; silicon that answers a GPU&rsquo;s memory training and presents a JEDEC GDDR7 device interface to it &mdash; is claimed by no company, patent, or paper found anywhere. But that gap is <em>not</em> an electrical dead end: Part II of <code>strata_v_design.html</code> establishes the impersonation of the 512-DQ front is byte-identical and deterministic, within spec on latency and signal integrity. <strong>Give the RTX&nbsp;5090 its due: its 512-lane interface is provably impersonable &mdash; only its <em>shipped, frozen</em> controller says no, and design-in removes that.</strong></p>
+</div>
+
+<h2 id="axes"><span class="num">01</span>The five axes &mdash; and the one that is the signature</h2>
+<p>Every candidate was scored on how much of the idea it actually implements:</p>
+<table>
+<thead><tr><th>Axis</th><th>What it means</th></tr></thead>
+<tbody>
+<tr><td><strong>A1</strong> converter</td><td>a separate converter/ASIC between accelerator and memory</td></tr>
+<tr><td><strong>A2</strong> commodity DRAM</td><td>backed by ordinary DDR5/LPDDR, not new media or proprietary stacks</td></tr>
+<tr><td><strong>A3</strong> VRAM-class BW</td><td>~1.79 TB/s (RTX-5090-class 512-bit GDDR7) via massive channel interleave</td></tr>
+<tr><td><strong>A4</strong> multi-TiB depth</td><td>capacity from depth, not width</td></tr>
+<tr><td><strong>A5</strong> <em>impersonation</em></td><td><strong>the signature:</strong> answer memory training and present a standard GDDR/HBM device interface to a GPU</td></tr>
+</tbody>
+</table>
+<p>A1&ndash;A4 are the <em>economics and mechanism</em>. A5 is the <em>move</em> &mdash; and the whole question is who, if anyone, does A5.</p>
+
+<h2 id="verdict"><span class="num">02</span>The verdict, split cleanly</h2>
+<ul>
+<li><strong>A5 &mdash; impersonating an <em>unmodified</em> GPU &mdash; is unclaimed.</strong> No company, lab, or patent (US, China, Israel, Japan, Korea, Taiwan, EU) builds a device-mode GDDR/HBM converter that lets an unmodified merchant GPU see commodity DRAM as its own VRAM at ~1.8 TB/s. The research also independently confirmed our own finding: <strong>no commercial device-mode GDDR/HBM PHY IP exists</strong> &mdash; only host-mode.</li>
+<li><strong>A1&ndash;A4 &mdash; commodity DRAM fanned out by custom silicon at HBM-class bandwidth for inference &mdash; is a crowded, well-funded field.</strong> At least six credible efforts, one already shipping. <em>Every one owns or co-designs the host side</em> (their own SerDes / die-to-die / optical port, or their own accelerator) instead of impersonating a JEDEC device to someone else&rsquo;s GPU.</li>
+</ul>
+
+<h2 id="peers"><span class="num">03</span>The peer group &mdash; who does A1&ndash;A4, and how they dodge A5</h2>
+<table>
+<thead><tr><th>Who</th><th>What</th><th>A1</th><th>A2</th><th>A3</th><th>A4</th><th>A5</th><th>How they avoid impersonation</th></tr></thead>
+<tbody>
+<tr><td><strong>Credo &ldquo;Weaver&rdquo;</strong> (merchant silicon; ships 2H&rsquo;26)</td><td>&ldquo;memory fanout gearbox&rdquo;: 16 TB/s + 6.4 TB LPDDR5X per xPU</td><td class="yes">Y</td><td class="yes">Y</td><td class="yes">Y</td><td class="yes">Y</td><td class="no">no</td><td>host side is Credo 112G VSR SerDes &mdash; the accelerator designs in its lanes</td></tr>
+<tr><td><strong>Majestic Labs &ldquo;Prometheus&rdquo;</strong> ($100M; 2027)</td><td>custom memory-interface chiplet + own AIU; &gt;100 TB standard LPDDR, striped flat</td><td class="yes">Y</td><td class="yes">Y</td><td>claim</td><td class="yes">Y</td><td class="no">no</td><td>the pool feeds <em>their own</em> processors over <em>their own</em> fabric</td></tr>
+<tr><td><strong>Celestial AI</strong> (photonic; 2026&ndash;27)</td><td>DDR5 (2 TB) fronted with <em>HBM semantics</em> (32 pseudo-channels) + HBM write-through cache, over optics</td><td class="yes">Y</td><td>part</td><td class="yes">Y</td><td class="yes">Y</td><td class="no">no</td><td>needs Celestial&rsquo;s optical chiplet <em>in the package</em> &mdash; a willing, co-designed host</td></tr>
+<tr><td><strong>Qualcomm &ldquo;HBC&rdquo;</strong> (AI250/AI300; 2027+)</td><td>compute die <em>under</em> a DRAM stack; claimed 133 TB/s/card</td><td class="no">integ.</td><td>part</td><td class="yes">Y</td><td class="yes">Y</td><td class="no">no</td><td>fully integrated own accelerator; no external interface at all</td></tr>
+<tr><td><strong>Eliyan</strong> (IP + granted patent)</td><td>US 12,058,874: &ldquo;peripheral gearbox chiplet&rdquo; with &ldquo;interface conversion circuitry&rdquo; &mdash; memory-agnostic in, any memory PHY out</td><td class="yes">Y</td><td class="yes">Y</td><td>claim</td><td>poss.</td><td class="no">no</td><td>host side is a die-to-die link (UMI/BoW) for co-designed SiPs</td></tr>
+<tr><td><strong>d-Matrix</strong> / <strong>Positron</strong> / <strong>Huawei</strong></td><td>own accelerators on LPDDR5X (d-Matrix 3D-stacked; Positron 2.3 TB/chip; Huawei self-built HBM 128&ndash;144 GB)</td><td class="no">no</td><td>part</td><td class="yes">Y</td><td>part</td><td class="no">no</td><td>each owns the whole chip; Huawei even builds its <em>own HBM</em></td></tr>
+</tbody>
+</table>
+<p>The pattern is uniform: the economics is validated by serious money, the bandwidth mechanism is real, and <strong>everyone routes <em>around</em> the GPU&rsquo;s native memory interface rather than speaking it.</strong> A5 is the empty column.</p>
+
+<h2 id="two"><span class="num">04</span>The two directions of special interest</h2>
+<p><strong>OpenAI &mdash; the opposite of the idea.</strong> Its custom inference chip (&ldquo;Jalapeño,&rdquo; with Broadcom, announced mid-2026) does not disclose its memory config, but OpenAI&rsquo;s patents are <em>HBM-maximalist</em> &mdash; a bridge architecture for up to <strong>20 real HBM stacks</strong> (WO 2026/075822) &mdash; and it has locked up enormous HBM/DRAM-wafer supply. It is buying the most HBM anyone ever has, not substituting commodity DRAM. <span class="flag">[chip confirmed; memory config not disclosed; exclusive-HBM-supply reports are press-level]</span></p>
+<p><strong>China &mdash; builds HBM itself, doesn&rsquo;t impersonate it.</strong> The response to export controls is domestic HBM: Huawei&rsquo;s self-developed <strong>HiBL/HiZQ</strong> stacks (128 GB @ 1.6 TB/s shipping; 144 GB @ 4 TB/s coming) and <strong>CXMT</strong>&rsquo;s domestic HBM ramp. Deep zh-CN sweeps (自研HBM / 堆叠DRAM / 存算一体) found <em>no</em> &ldquo;DDR-fronted-as-HBM converter&rdquo; program anywhere.</p>
+
+<h2 id="reconcile"><span class="num">05</span>The reconciliation &mdash; why this <em>vindicates</em> the design</h2>
+<p>The tempting reading of &sect;01&ndash;04 is bleak: the one thing nobody does (A5, impersonate an unmodified GPU) is the very thing this project&rsquo;s own <code>rtx5090_strata_v_retrofit_verdict.html</code> calls impossible on a stock card. That reading conflates two different walls, and prising them apart is the whole point.</p>
+<div class="callout spec"><span class="lab">The electrical wall does not exist &mdash; we proved it</span>Part II of <code>strata_v_design.html</code> (&sect;08&ndash;11) establishes from first principles that impersonating the 512-DQ GDDR7 front is <strong>within spec</strong>: the data path is <em>byte-identical</em> to a 5090 (same 512 pins, 28 Gb/s PAM3, 1.79 TB/s); capacity is extended on the <em>slow</em> CA bus (+6 bits, electrically free); and the fixed-beat read contract is honored <em>deterministically by construction</em> (you author the deadline &mdash; &sect;10&rsquo;s two paper checks). Electrically, in latency, and in signal integrity, the impersonation holds. <strong>That is a positive result: it proves a 5090-class 512-lane interface <em>could</em> host this.</strong> The GPU&rsquo;s own memory interface &mdash; the thing every peer abandons &mdash; is demonstrably impersonable.</div>
+<p><strong>The wall that <em>does</em> exist is the frozen stock controller &mdash; a design-in problem, not a physics one.</strong> A <em>shipped</em> 5090 can&rsquo;t be tricked because its controller is frozen at 32 GiB with no way to <em>name</em> more, its timing is training-frozen, and 28 Gb/s PAM3 can&rsquo;t leave the board (the four walls of the retrofit verdict). None of those are failures of the impersonation; they are properties of a <em>finished card</em>. A 5090-<em>class</em> device whose controller is co-designed to issue the extended addresses and accept the relaxed-but-fixed timing dissolves every one of them.</p>
+<div class="callout punch"><span class="lab">Where STRATA-V actually sits</span>Its buildable, design-in form is a <strong>peer of Credo / Majestic / Celestial / Eliyan</strong> &mdash; same commodity-DRAM-for-inference economics. But it is the <em>only</em> design in the field that keeps the GPU&rsquo;s <em>native</em> memory interface instead of routing around it, and the only one that has <em>shown</em> that interface can be impersonated within spec. The others own a host link precisely to <em>avoid</em> the impersonation; STRATA-V proves you don&rsquo;t have to. What&rsquo;s unclaimed (A5) is unclaimed because of frozen controllers, closed training firmware, warranty/qual, and a dense patent thicket &mdash; <strong>not because the electricals fail.</strong></div>
+<div class="callout catch"><span class="lab">The freedom-to-operate caveat, kept honest</span>&ldquo;Unclaimed&rdquo; is not &ldquo;unpatented territory.&rdquo; The impersonation <em>lane</em> is densely claimed &mdash; MetaRAM (now Google) &ldquo;Simulating a memory circuit&rdquo; (US 8,949,519), Eliyan&rsquo;s conversion chiplet (US 12,058,874), and Netlist / AMD / Innosilicon interleaving-buffer families. The specific GDDR7-device-to-a-GPU move is unclaimed, but a freedom-to-operate pass is mandatory before anyone builds it.</div>
+
+<h2 id="open"><span class="num">06</span>What is genuinely open</h2>
+<ol>
+<li><strong>The device-mode front to a co-designed GPU (A5).</strong> Silicon that impersonates a standard GDDR7 device &mdash; answers training, presents fixed-beat deterministic reads &mdash; with interleaved commodity DDR5/LPDDR behind it. Proven within spec here; built by no one.</li>
+<li><strong>Commodity DRAM behind a custom HBM4 base die.</strong> The industry already lets customer logic move <em>into</em> the HBM base die &mdash; but always fronting real HBM DRAM. Putting commodity DRAM behind that sanctioned front is the nearest legitimized on-ramp to A5, and is unproposed publicly.</li>
+<li><strong>The consumer / prosumer angle.</strong> Every peer targets data-center xPUs; nobody targets giving an RTX-class GPU a multi-TiB VRAM illusion.</li>
+</ol>
+
+<h2 id="flags"><span class="num">07</span>Honest flags</h2>
+<ul>
+<li><strong>Confirmed vs reported.</strong> Confirmed by primary disclosure: the existence of OpenAI&rsquo;s chip, the OpenAI 20-HBM-stack patent, Credo Weaver, Majestic&rsquo;s LPDDR pooling, Qualcomm HBC&rsquo;s existence, Eliyan&rsquo;s patent, Huawei&rsquo;s HBM roadmap. Report-level (press, unconfirmed): OpenAI&rsquo;s exclusive-HBM-supply and memory config, most per-chip <em>bandwidth</em> figures (company claims), CXMT ramp timing. Details and links in <code>pricing_evidence/prior_art/</code>.</li>
+<li><strong>Why A5 may be structurally unclaimed</strong> (not merely overlooked): closed GPU training firmware, warranty/qualification, device-mode PAM3 signal-integrity difficulty, latency vs. soldered VRAM, and the fact that everyone capable (Broadcom, Marvell, Credo, memory vendors) has higher-margin adjacent businesses. Our own analysis addresses the first two by design-in and the third/fourth by the &sect;08&ndash;11 proof &mdash; but the market reasons are real.</li>
+<li><strong>Stealth risk.</strong> Absence of public evidence cannot rule out stealth efforts; several parties&rsquo; interconnect details are opaque.</li>
+</ul>
+
+<footer>
+  <p><strong>Bottom line.</strong> The idea&rsquo;s <em>economics</em> (commodity DRAM for frontier inference) is now consensus and crowded; its <em>bandwidth mechanism</em> (custom fanout silicon) is shipping or funded; its <em>signature move</em> &mdash; device-mode impersonation of a GDDR7 device to a GPU &mdash; is claimed by no one. But that last gap is the <em>vindication</em>, not the flaw: this project already <em>proved</em> the 512-lane front can be impersonated within spec, electrically and in latency and signal integrity. The RTX&nbsp;5090&rsquo;s interface <em>could</em> host this; only its shipped, frozen controller says no &mdash; and that is a controller you design, not a law of physics. Every peer routes around the GPU&rsquo;s memory interface; STRATA-V is the one design that speaks it.</p>
+  <p style="color:var(--muted)">Prior-art / competitive-landscape record, 2026-07. Sourced from public disclosures, patents, arXiv, and trade press; claims attributed, confidence flagged. Not legal advice; a freedom-to-operate review is required before building. Evidence in <code>pricing_evidence/prior_art/</code>.</p>
+</footer>
+
+</div>
+</body>
+</html>

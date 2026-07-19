@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/fpo_9.css" />
+<script type="text/javascript">
+var plstart = new Date();
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-174791-1']);
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="title" content="FPO IP Research &amp; Communities" />
+<meta name="robots" content="index, follow" />
+<meta name="description" content="Complete Patent Searching Database and Patent Data Analytics Services." />
+<title>FPO IP Research &amp; Communities</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link rel="shortcut icon" href="/images/favicon_1.ico"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-1586334167197709",
+        enable_page_level_ads: true
+    });
+</script></head>
+<body>
+
+<div>
+    <a name="top"></a>
+
+    <div class="container">
+        
+<div class="header">
+    <div class="row-fluid top">
+
+        <div class="pull-left figure">
+            <a href="/" onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Logo']);"></a>
+        </div>
+
+
+        <div class="pull-right" style="width: 750px;">
+                        <div class="loginForm">
+                <form class="form-inline form-mini pull-right" action="/login.html" method="post">
+                    <input type="hidden" name="src" value="header_login">
+                    <input id="UID-top" name="UID" type="text" class="input-large" placeholder="Email">
+                    <input id="PWD-top" name="PWD" type="password" class="input-small" placeholder="Password">
+                    <button type="submit" class="btn btn-mini btn-primary"
+                            onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Login']);">Login
+                    </button>
+                    <a class="btn btn-mini btn-info" href="/register.html"
+                            onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Create']);">Sign up
+                    </a>
+                </form>
+            </div>
+            
+
+            <div class="searchForm well">
+                <form id="quick_result" name="quick_result" class="form-inline" action="/result.html" method="get">
+
+                    <input type="hidden" name="sort" value="relevance">
+                    <input type="hidden" name="srch" value="top">
+
+
+                    <div class="searchBox pull-left">
+                        <input type="text" name="query_txt" placeholder="Enter your search here"
+                               class="search-query" id="topSearchBox">
+
+                        <div class="btn-group">
+                            <button name="submit" class="btn btn-primary" type="submit"
+                                    onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'Search']);">Search
+                            </button>
+                            <button id="searchBox_dropdown" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/search.html"
+                                       onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'SearchExpert']);document.cookie = 'searchTab=#expert';">
+                                    Expert Search</a>
+                                </li>
+                                <li><a href="/search.html"
+                                       onclick="_gaq.push(['_trackEvent', 'Header', 'Click', 'SearchQuick']);document.cookie = 'searchTab=#quick';">
+                                    Quick Search</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sideCollections pull-right">
+                        <ul id="header_search_top" class="borderBottom ul-mini ">
+                            <li>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="patents_us" name="patents_us"
+                                           value="on" checked="checked">US Patents/Apps
+                                </label>
+                            </li>
+
+                            <li>
+                                <label class="checkbox">
+                                    <input type="checkbox" id="patents_other" name="patents_other"
+                                           value="on">Other
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </form>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse center" id="primaryNavBar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li><a href="/"></a></li>
+                    <li><a href="/search.html">SEARCH</a></li>
+                    <li>
+                        <a href="/tools-resources.html"
+                           onclick="_gaq.push(['_trackEvent', 'Navbar', 'Click', 'Resources']);">
+                            TOOLS &amp; RESOURCES
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+<div class="clearfix"></div>        <div>
+
+            <div id="dhtmltooltip"></div>
+            
+<form id="results" name="results" method="post" class="form-horizontal" action="/result.html"><input type="hidden" name="p" id="p" value="1" /><input type="hidden" name="query_txt" id="query_txt" value="AN/&quot;OpenAI&quot;" /><input type="hidden" name="stemming" id="quickstemming" value="on" /><input type="hidden" name="sort" id="quicksort" value="chron" /><input type="hidden" name="patents" id="quickpatents" value="" /><input type="hidden" name="patents_us" id="quickpatentsus" value="" /><input type="hidden" name="patents_other" id="quickpatentsother" value="" /><input type="hidden" name="uspat" id="quickuspat" value="on" /><input type="hidden" name="usapp" id="quickusapp" value="on" /><input type="hidden" name="pct" id="quickpct" value="" /><input type="hidden" name="jp" id="quickjp" value="off" /><input type="hidden" name="eupat" id="quickeu" value="" /><input type="hidden" name="depat" id="quickde" value="off" /><input type="hidden" name="srch" id="quicksearch" value="xprtsrch" /><input type="hidden" name="date_range" id="quickdaterange" value="all" /><input type="hidden" name="hits" id="hits" value="186" /><input type="hidden" name="srch_name" id="srch_name" value="" /><input type="hidden" name="search_name" id="search_name" value="" /><input type="hidden" name="selected_doc_flag" id="selected_doc_flag" value="" /><input type="hidden" name="selected_portfolio" id="selected_portfolio" value="" /><input type="hidden" name="portfolio_name" id="portfolio_name" value="" />
+
+<div class="well well-small" style="margin-top:10px; margin-bottom: 0">
+    <table width="100%" border="0">
+        <tr>
+            <td width="36%">
+                Matches 1 - 50 out of 186            </td>
+            <td align="right" valign="middle" width="70%" colspan="3" class="paginate_spacing">
+                 <span margin-left:3px;'><b>1</b></span><a href='result.html?p=2&amp;srch=xprtsrch&amp;query_txt=AN%2F%22OpenAI%22&amp;uspat=on&amp;usapp=on&amp;depat=off&amp;jp=off&amp;date_range=all&amp;stemming=on&amp;sort=chron'> 2 </a><a href='result.html?p=3&amp;srch=xprtsrch&amp;query_txt=AN%2F%22OpenAI%22&amp;uspat=on&amp;usapp=on&amp;depat=off&amp;jp=off&amp;date_range=all&amp;stemming=on&amp;sort=chron'> 3 </a><a href='result.html?p=4&amp;srch=xprtsrch&amp;query_txt=AN%2F%22OpenAI%22&amp;uspat=on&amp;usapp=on&amp;depat=off&amp;jp=off&amp;date_range=all&amp;stemming=on&amp;sort=chron'> 4 </a><a href='result.html?p=2&amp;srch=xprtsrch&amp;query_txt=AN%2F%22OpenAI%22&amp;uspat=on&amp;usapp=on&amp;depat=off&amp;jp=off&amp;date_range=all&amp;stemming=on&amp;sort=chron'> &gt; </a>                <br clear="all"/>
+            </td>
+        </tr>
+    </table>
+</div><div>
+    <br/>
+    <center>
+        <a onclick="_gaq.push(['_trackEvent', 'SERP', 'Click', 'AcclaimIP_FreeTrial']);" target="_blank" href="https://app.acclaimip.com/signup/acclaimip-free-trial"><img src="/images/acclaim/acclaimIP-ad.png" alt="AcclaimIP-ad" /></a>    </center>
+    <br/>
+</div>
+
+<div class="legacy-container" style="margin-top: 0">
+    <div class="container_white" style="padding-top:3px;  padding-bottom:10px;">
+        <div align="center">
+            <table width="100%" border="0" cellpadding="2" cellspacing="1" class="listing_table">
+                <tr>
+                                        <th style="text-align:left;" width="10%">
+                        Match
+                    </th>
+                                        <th style="text-align:left;" width="15%"> Document</th>
+                    <th style="text-align:left;">Document Title</th>
+                                    </tr>
+                <tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                1            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260205456    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0205456.html">LANGUAGE MODEL ACTING AS USERS DELEGATE FOR AUTOMATIONS AND OTHER APPLICATIONS</a>
+        &nbsp;
+                            <br/>
+                The present technology pertains to a generative response system that acts as a delegate of a user. In a conversation between the user and the system, the system receives a prompt from the user...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                2            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260203719    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0203719.html">TEMPORAL INFERENCE FOR LANGUAGE MODEL AUTOMATIONS AND OTHER APPLICATIONS</a>
+        &nbsp;
+                            <br/>
+                The present technology pertains to a system for using a temporal component in a prompt in a conversation thread between a user and a generative response system (the system) to determine when an...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                3            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260203521    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0203521.html">LANGUAGE MODEL AUTOMATIONS</a>
+        &nbsp;
+                            <br/>
+                The present technology pertains to a system for generating automations based on a request/prompt from a user to a language model. The language model receives a prompt in a conversation thread with...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                4            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260203082    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0203082.html">COMPUTER USING AGENT WITH HYBRID HUMAN AND GENERATIVE RESPONSE ENGINE CONTROL</a>
+        &nbsp;
+                            <br/>
+                Disclosed are systems, apparatuses, processes, and computer-readable media for executing a autonomous remote browser based on a generative response engine. For example, a method can be executed at...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                5            </label>
+        </td>
+    <td width="15%"  valign="top">
+      D1134390    </td>
+    <td  width="60%" valign="top">
+        <a href="/D1134390.html">Display screen or portion thereof with graphical user interface</a>
+        &nbsp;
+                </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                6            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12675519    </td>
+    <td  width="60%" valign="top">
+        <a href="/12675519.html">Summarizing context and conditioning a large language model to generate responses based on summarized context</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to systems, non-transitory computer-readable media, and methods for reducing context size for a large language model (LLM) by generating context summaries. In...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                7            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12675262    </td>
+    <td  width="60%" valign="top">
+        <a href="/12675262.html">Online development environment using generative response engine</a>
+        &nbsp;
+                            <br/>
+                Disclosed are systems, apparatuses, processes, and computer-readable media for real-time modes of a generative response engine. The present technology relates to an app generator for generating...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                8            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12671713    </td>
+    <td  width="60%" valign="top">
+        <a href="/12671713.html">Utilizing a multi-layer security architecture for agent reinforcement fine-tuning of a machine learning model</a>
+        &nbsp;
+                            <br/>
+                The present disclosure relates to systems, non-transitory computer-readable media, and methods for utilizing a reinforcement fine-tuning pipeline to fine tune an agent machine learning (ML) model...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                9            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12664708    </td>
+    <td  width="60%" valign="top">
+        <a href="/12664708.html">Multi-modal response generation</a>
+        &nbsp;
+                            <br/>
+                The present technology pertains to systems and methods for improving efficiency in multi-modal AI models, particularly when handling long token sequences. Aspects of the present technology...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                10            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260173298    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0173298.html">ADAPTIVE SHELVING FOR DEPLOYMENT OF NON-STANDARD INFORMATION TECHNOLOGY (IT) IN STANDARD RACKS</a>
+        &nbsp;
+                            <br/>
+                The technology is a chassis adapter to adopt a standardized rack (e.g., a 19-inch rack) to accommodate non-standard components/equipment. The chassis adapter includes a housing that attaches to...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                11            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12658272    </td>
+    <td  width="60%" valign="top">
+        <a href="/12658272.html">Parallel operations in compute systems</a>
+        &nbsp;
+                            <br/>
+                The disclosure is related to systems, apparatuses, devices, and methods for parallel operations in computing systems that may be useful for heavy AI training and inference workloads. The disclosed...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                12            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260161958    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0161958.html">DELIBERATIVE ALIGNMENT OF LANGUAGE MODELS TO COMPLY WITH POLICIES</a>
+        &nbsp;
+                            <br/>
+                Embodiments may involve a reasoning-capable language model receiving a prompt from a client. Embodiments may include reasoning about the prompt within a policy context. The reasoning-capable...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                13            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260161359    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0161359.html">HARDWARE ACCELERATORS FOR DOT-PRODUCT BASED LOOKUP ALGORITHMS INCLUDING HARDWARE ACCELERATORS FOR TRANSFORMER KEY-VALUE CACHES</a>
+        &nbsp;
+                            <br/>
+                A hardware accelerator is provided for dot-product based lookup algorithms including hardware accelerators for transformer key-value. The accelerator includes memory stacks that include memory...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                14            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260154218    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0154218.html">TILED IN-MEMORY COMPUTING ARCHITECTURE</a>
+        &nbsp;
+                            <br/>
+                A compute tile is described. The compute tile includes compute engines and a general-purpose (GP processor coupled with the compute engines. Each of the compute engines includes a...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                15            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260153911    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0153911.html">ADAPTIVE LIQUID COOLING SYSTEM</a>
+        &nbsp;
+                            <br/>
+                The present technology pertains to a system for cooling heat-producing systems (e.g., computing and information technology components) in a data center. The data center includes cells that have...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                16            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260148791    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0148791.html">PARALLEL OPERATIONS IN COMPUTE SYSTEMS</a>
+        &nbsp;
+                            <br/>
+                The disclosure is related to systems, apparatuses, devices, and methods for parallel operations in computing systems that may be useful for heavy AI training and inference workloads. The disclosed...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                17            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260147854    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0147854.html">FLOATING POINT MULTIPLICATIONS</a>
+        &nbsp;
+                            <br/>
+                Systems, apparatuses, and methods are disclosed for improved matrix-vector operations in accelerators that may be useful or heavy AI training and inference workloads. The disclosed technology...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                18            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260147536    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0147536.html">ALIGNMENT IN HARDWARE ACCELERATORS</a>
+        &nbsp;
+                            <br/>
+                Systems, apparatuses, and methods are disclosed for improved matrix-vector operations in accelerators that may be useful or heavy AI training and inference workloads. The disclosed technology...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                19            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260136933    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0136933.html">MICROCHIP PACKAGE WITH INTEGRATED COLD PLATE</a>
+        &nbsp;
+                            <br/>
+                The present technology pertains to a packaged microchip that includes an integrated cold plate. The packaged microchip includes a substrate and a die, which can be a semiconductor chip on which an...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                20            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260133855    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0133855.html">SCHEMA-BASED INTEGRATION OF EXTERNAL APIS WITH NATURAL LANGUAGE APPLICATIONS</a>
+        &nbsp;
+                            <br/>
+                Disclosed herein are methods, systems, and computer-readable media for integrating an application programming interface (API) with a natural language model user interface. In one embodiment, a...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                21            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12625732    </td>
+    <td  width="60%" valign="top">
+        <a href="/12625732.html">Systems and methods for generating and executing function calls using machine learning</a>
+        &nbsp;
+                            <br/>
+                The methods, systems, and computer networking apparatuses described herein enable language models to receive input (e.g., a query or a request) from a user or application, and without any...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                22            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260127368    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0127368.html">TECHNIQUES FOR ENFORCING STRUCTURED OUTPUT OF A GENERATIVE RESPONSE ENGINE</a>
+        &nbsp;
+                            <br/>
+                The present technology is directed to a method for constraining an output of a generative response engine to be a valid output for a structured format defined in a request received by the...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                23            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12619603    </td>
+    <td  width="60%" valign="top">
+        <a href="/12619603.html">Generating a distilled generative response engine trained on distillation data generated with a language model program</a>
+        &nbsp;
+                            <br/>
+                The present technology provides a distilled generative response engine for generating responses to Internet search queries. The present technology utilizes a language model program that is made up...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                24            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12608439    </td>
+    <td  width="60%" valign="top">
+        <a href="/12608439.html">System and method of transposed matrix-vector multiplication</a>
+        &nbsp;
+                            <br/>
+                A system including a memory and hardware compute logic is described. The memory includes memory cells storing weights corresponding to a matrix. Hardware compute logic is coupled with the memory...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                25            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12596764    </td>
+    <td  width="60%" valign="top">
+        <a href="/12596764.html">Prompt caching in generative response engines</a>
+        &nbsp;
+                            <br/>
+                Disclosed are systems, apparatuses, processes, and computer-readable media for caching prompts for a generative response engine. The present technology includes receiving, by a cloud computing...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                26            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260094016    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0094016.html">SELECTIVE INTERACTION WITH A PORTION OF CONTENT BY A GENERATIVE RESPONSE ENGINE</a>
+        &nbsp;
+                            <br/>
+                The present technology can integrate a generative response engine capable of dynamically determining and displaying generated content in appropriate user interface formats. In response to user...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                27            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260093899    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0093899.html">COLLABORATION ON AN ASSET USING A GENERATIVE RESPONSE ENGINE</a>
+        &nbsp;
+                            <br/>
+                The present technology can integrate a generative response engine capable of dynamically determining and displaying generated content in appropriate user interface formats. In response to user...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                28            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260093634    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0093634.html">NON-ADJACENT CONNECTION OF HIGH-BANDWIDTH MEMORY CHIPLETS, I/O CHIPLETS, AND COMPUTE CHIPLETS THROUGH EMBEDDED LOGIC BRIDGES</a>
+        &nbsp;
+                            <br/>
+                A system of high bandwidth memory (HBM) chiplets and compute chiplets includes embedded logic bridges that extend communication distances from the HBM chiplets to other chiplets beyond the ˜6 mm...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                29            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12591766    </td>
+    <td  width="60%" valign="top">
+        <a href="/12591766.html">Application programming interface with generative response engine state management</a>
+        &nbsp;
+                            <br/>
+                The present technology pertains to an API for state management and function chaining using a generative response engine. The present technology includes an API which takes a response ID as a...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                30            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260087598    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0087598.html">SYSTEMS AND METHODS FOR IMAGE GENERATION WITH MACHINE LEARNING MODELS</a>
+        &nbsp;
+                            <br/>
+                Disclosed herein are methods, systems, and computer-readable media for regenerating a region of an image with a machine learning model based on a text input. Disclosed embodiments involve...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                31            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260080016    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0080016.html">EFFICIENT EXECUTION OF DATABASE QUERIES ON STREAMING DATA</a>
+        &nbsp;
+                            <br/>
+                A database system receives a database language query specifying a grouping clause and one or more aggregate result values. The database system generates a pre-aggregation table based on the query....    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                32            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260073295    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0073295.html">GENERATIVE RESPONSE ENGINE USING CHAIN-OF-THOUGHT REASONING</a>
+        &nbsp;
+                            <br/>
+                The present technology pertains to a generative response system (system) that includes a chain-of-thought (CoT) reasoning model. The system receives a prompt for a response, wherein the response...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                33            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260073164    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0073164.html">MULTI-TASK AUTOMATIC SPEECH RECOGNITION SYSTEM</a>
+        &nbsp;
+                            <br/>
+                Disclosed herein are methods, systems, and computer-readable media for generating an output transcript from an input audio segment using a multi-task transformer model. In some embodiments, the...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                34            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260072718    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0072718.html">INTERPRETING COMPUTER CODE WITH A MULTIMODAL MACHINE LEARNING MODEL</a>
+        &nbsp;
+                            <br/>
+                Disclosed herein are methods, systems, servers, and computer-readable media for interpreting computer code with a multimodal machine learning model. In an embodiment, this comprises: receiving, an...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                35            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12554519    </td>
+    <td  width="60%" valign="top">
+        <a href="/12554519.html">Virtual assistants API</a>
+        &nbsp;
+                            <br/>
+                The present technology pertains to providing, configuring and operating of a virtual assistant that can be accessible via an application programming interface. The virtual assistant can be...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                36            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12547480    </td>
+    <td  width="60%" valign="top">
+        <a href="/12547480.html">Schema-based integration of external APIs with natural language applications</a>
+        &nbsp;
+                            <br/>
+                Disclosed herein are methods, systems, and computer-readable media for integrating an application programming interface (API) with a natural language model user interface. In one embodiment, a...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                37            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12541690    </td>
+    <td  width="60%" valign="top">
+        <a href="/12541690.html">Training optimization for low memory footprint</a>
+        &nbsp;
+                            <br/>
+                A method is described. The method includes profiling a model for a learning network having a plurality of layers and associated memory. The layers include weight layers and activation layers. The...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                38            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12536118    </td>
+    <td  width="60%" valign="top">
+        <a href="/12536118.html">Tiled in-memory computing architecture</a>
+        &nbsp;
+                            <br/>
+                A compute tile is described. The compute tile includes compute engines and a general-purpose (GP processor coupled with the compute engines. Each of the compute engines includes a...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                39            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260023718    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0023718.html">SYSTEMS AND METHODS FOR GENERATION OF METADATA BY AN ARTIFICIAL INTELLIGENCE MODEL BASED ON CONTEXT</a>
+        &nbsp;
+                            <br/>
+                Disclosed herein are methods and systems for generating metadata from content using one or more machine learning models. In an embodiment, a method may include receiving the content through a...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                40            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260017861    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0017861.html">SYSTEMS AND METHODS FOR HIERARCHICAL TEXT-CONDITIONAL IMAGE GENERATION</a>
+        &nbsp;
+                            <br/>
+                Disclosed herein are methods, systems, and computer-readable media for generating an image corresponding to a text input. In an embodiment, operations may include accessing a text description and...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                41            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260017023    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0017023.html">SYSTEMS AND METHODS FOR GENERATING NATURAL LANGUAGE USING LANGUAGE MODELS TRAINED ON COMPUTER CODE</a>
+        &nbsp;
+                            <br/>
+                Disclosed herein are methods, systems, and computer-readable media for generating natural language based on computer code input. In an embodiment, a method may comprise one or more of: accessing a...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                42            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12518352    </td>
+    <td  width="60%" valign="top">
+        <a href="/12518352.html">Systems and methods for image generation with machine learning models</a>
+        &nbsp;
+                            <br/>
+                Disclosed herein are methods, systems, and computer-readable media for regenerating a region of an image with a machine learning model based on a text input. Disclosed embodiments involve...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                43            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12518109    </td>
+    <td  width="60%" valign="top">
+        <a href="/12518109.html">Language model automations</a>
+        &nbsp;
+                            <br/>
+                The present technology pertains to a system for generating automations based on a request/prompt from a user to a language model. The language model receives a prompt in a conversation thread with...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                44            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20260004088    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2026/0004088.html">SYSTEMS AND METHODS FOR TARGETED INTERACTIONS WITH COMPUTATIONAL MODELS</a>
+        &nbsp;
+                            <br/>
+                Accurate prompting improves the operation, efficiency, and output of computer models, such as language models. The disclosed systems and methods improve interaction with computer models by...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                45            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250391028    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0391028.html">SYSTEMS AND METHODS FOR INTERACTING WITH A LARGE LANGUAGE MODEL</a>
+        &nbsp;
+                            <br/>
+                Disclosed embodiments may include a method of interacting with a multimodal machine learning model; the method may include providing a graphical user interface associated with a multimodal machine...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                46            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12505317    </td>
+    <td  width="60%" valign="top">
+        <a href="/12505317.html">Multi-task automatic speech recognition system</a>
+        &nbsp;
+                            <br/>
+                Disclosed herein are methods, systems, and computer-readable media for generating an output transcript from an input audio segment using a multi-task transformer model. In some embodiments, the...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                47            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250384222    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0384222.html">CUSTOM MODEL INSTRUCTIONS WITH LANGUAGE MODELS</a>
+        &nbsp;
+                            <br/>
+                Disclosed herein are methods, systems, and computer-readable media for interacting with a language model using custom instructions. In one embodiment a method includes receiving, through an...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                48            </label>
+        </td>
+    <td width="15%"  valign="top">
+      12498947    </td>
+    <td  width="60%" valign="top">
+        <a href="/12498947.html">Interpreting computer code with a multimodal machine learning model</a>
+        &nbsp;
+                            <br/>
+                Disclosed herein are methods, systems, servers, and computer-readable media for interpreting computer code with a multimodal machine learning model. In an embodiment, this comprises: receiving, an...    </td>
+    </tr><tr class=rowalt>
+        <td width="5%" valign="top" >
+            <label>
+                49            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250378279    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0378279.html">INTERACTIONS WITH A GENERATIVE RESPONSE ENGINE DURING A LONG RUNNING TASK</a>
+        &nbsp;
+                            <br/>
+                The present technology provides an interaction paradigm whereby a prompt source can continue to interact with the generative response engine through a conversational interface while the generative...    </td>
+    </tr><tr class=>
+        <td width="5%" valign="top" >
+            <label>
+                50            </label>
+        </td>
+    <td width="15%"  valign="top">
+      US20250378278    </td>
+    <td  width="60%" valign="top">
+        <a href="/y2025/0378278.html">INTERACTIONS WITH A GENERATIVE RESPONSE ENGINE DURING A LONG RUNNING TASK</a>
+        &nbsp;
+                            <br/>
+                The present technology provides an interaction paradigm whereby a prompt source can continue to interact with the generative response engine through a conversational interface while the generative...    </td>
+    </tr>            </table>
+        </div>
+    </div>
+</div>
+</form>
+<form id="botSearch" name="botSearch" method="get" class="form-inline" action="/result.html"><input type="hidden" name="srch" id="" value="xprtsrch" /><input type="hidden" name="uspat" id="" value="on" /><input type="hidden" name="usapp" id="" value="on" /><input type="hidden" name="depat" id="" value="off" /><input type="hidden" name="jp" id="" value="off" /><input type="hidden" name="date_range" id="" value="all" /><input type="hidden" name="stemming" id="" value="on" /><input type="hidden" name="sort" id="" value="chron" /><br/>
+<div class="well well-small">
+    <table>
+        <tr>
+            <td>Search</td>
+            <td style="width: 100%;padding: 0 14px 0 5px;"><input type="text" name="query_txt" id="query_txt" value="AN/&quot;OpenAI&quot;" style="width: 100%;padding: 4px 0 4px 6px" /></td>
+            <td><input type="submit" name="search" value="Search" /></td>
+        </tr>
+    </table>
+</div>
+</form>
+<div class="well well-small" style="margin-top:10px; margin-bottom: 0">
+    <table width="100%" border="0">
+        <tr>
+            <td width="36%">
+                Matches 1 - 50 out of 186            </td>
+            <td align="right" valign="middle" width="70%" colspan="3" class="paginate_spacing">
+                 <span margin-left:3px;'><b>1</b></span><a href='result.html?p=2&amp;srch=xprtsrch&amp;query_txt=AN%2F%22OpenAI%22&amp;uspat=on&amp;usapp=on&amp;depat=off&amp;jp=off&amp;date_range=all&amp;stemming=on&amp;sort=chron'> 2 </a><a href='result.html?p=3&amp;srch=xprtsrch&amp;query_txt=AN%2F%22OpenAI%22&amp;uspat=on&amp;usapp=on&amp;depat=off&amp;jp=off&amp;date_range=all&amp;stemming=on&amp;sort=chron'> 3 </a><a href='result.html?p=4&amp;srch=xprtsrch&amp;query_txt=AN%2F%22OpenAI%22&amp;uspat=on&amp;usapp=on&amp;depat=off&amp;jp=off&amp;date_range=all&amp;stemming=on&amp;sort=chron'> 4 </a><a href='result.html?p=2&amp;srch=xprtsrch&amp;query_txt=AN%2F%22OpenAI%22&amp;uspat=on&amp;usapp=on&amp;depat=off&amp;jp=off&amp;date_range=all&amp;stemming=on&amp;sort=chron'> &gt; </a>                <br clear="all"/>
+            </td>
+        </tr>
+    </table>
+</div> « <a href="/search.html">search again</a>
+        </div>
+
+        <div class="pageFooter">
+    <div class="row-fluid top">
+        <div class="figure"></div>
+        <ul>
+            <li>
+                <a href="/" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Home']);">Home</a>
+            </li>
+            <li>
+                <a href="/search.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Search']);">Search</a>
+            </li>
+            <li>
+                <a href="/services.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Services']);">Services</a>
+            </li>
+        </ul>
+        <ul class="socialIcons">
+            <li><a href="https://twitter.com/FPOCommunity" class="twitter"
+                   onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'social twitter']);"></a></li>
+            <li><a href="http://www.linkedin.com/groups/FPO-Community-4524797" class="linkedin"
+                   onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'social linkedin']);"></a></li>
+        </ul>
+    </div>
+    <div class="row-fluid bot">
+        <p>
+            &copy; 2004-2026 FreePatentsOnline.com. All rights reserved.
+            <a href="/privacy.html" onclick="_gaq.push(['_trackEvent', 'Footer', 'Click', 'Privacy']);">Privacy Policy
+                &amp; Terms of Use.</a>
+        </p>
+    </div>
+</div>    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    _gaq.push(['_setCustomVar', 2, 'User Origin Source', 'no referer', 2]);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+<script type="text/javascript">
+    function trackPageLoad() {
+        var plend = new Date();
+        var plload = plend.getTime() - plstart.getTime();
+        var pn = document.location.pathname;
+        var lc = 'slow';
+        var la = new Array(200, 300, 400, 500, 1000, 1500, 2000, 2500, 5000);
+        for (var i = 0, len = la.length; i < len; i++) {
+            if (plload <= la[i]) {
+                lc = String(la[i]);
+                break;
+            }
+        }
+        _gaq.push(['onLoadTracker._setAccount', 'UA-174791-5']);
+        _gaq.push(['onLoadTracker._trackEvent', "LoadTime", lc, pn, plload]);
+        }
+</script>
+<script type="text/javascript">
+    try {
+        if (window.onload != null) {
+            var oldOnload = window.onload;
+            window.onload = function (e) {
+                oldOnload(e);
+                trackPageLoad();
+            };
+        }
+        else {
+            window.onload = trackPageLoad();
+        }
+    } catch (err) {
+    }
+</script>
+<script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/js/fpo_3.js"></script>
+
+</body>
+</html>
