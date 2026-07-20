@@ -126,3 +126,13 @@ original hosts below. All URLs verified live in July 2026.
 - Wafer-count opacity + 405B "12 systems, 350 t/s projected" — The Register 2024-08-27 (https://www.theregister.com/2024/08/27/cerebras_ai_inference/); "first three, then four, then stopped" + WSE-4 optics wish-list — TNP 2026-05-15; CS-3 ASP ~$2.26M derived (G42 $434.5M / ~192 systems) — TNP 2026-04-22 [CS-3 unit price never published — flagged estimate]
 - Independent measured inference speeds — Artificial Analysis (artificialanalysis.ai/providers/cerebras)
 - Full interconnect + huge-model research notes: /tmp research corpus (`E_`/`F_` prefixes, ~150 artifacts); curated GLM-5.2 config/README + Cerebras blog snapshots in `pricing_evidence/cerebras/`
+
+## Why GPUs don't use DDR5 — bandwidth density + the design-in paradox (2026-07)
+- Bandwidth density (GB/s per mm of controller-die shoreline): DDR5-DIMM ~5–11 · GDDR7 ~23 · HBM3e ~190–205 · UCIe-A ~660 — derived from Das Sharma et al. UCIe/BoW shoreline analysis (arXiv:2510.06513) + AD102/GB202 die-shot geometry
+- Per-pin rate root cause — soldered point-to-point PAM3 vs socketed multi-drop NRZ: JESD239 (GDDR7 28–32 Gb/s PAM3) vs JESD79-5/5C (DDR5 5.6–8.8 Gb/s NRZ); the DIMM's virtues (socket, multi-drop, ranks) ARE the density cap (EE Stack Exchange; HN silicon-engineer commentary)
+- Energy per bit (pJ/b): Micron GDDR7 brief ~4.5; GDDR6 ~7.25 / GDDR6X ~7.5 / GDDR5 ~14; DDR5 subsystem ~12–22; O'Connor "Fine-Grained DRAM" MICRO-50 (GDDR5 14 / HBM2 3.9 pJ/b); Dally HC2023 keynote (DRAM ~20 pJ/b read); DATE'21 HBM-undervolting (~7 vs 25 pJ/b HBM-vs-DDRx); Rambus GDDR6-vs-HBM2E PHY-power WP; NVIDIA Grace ("one-eighth the power per GB/s", 8-ch DDR5 vs LPDDR5X)
+- Killer geometry: 1.79 TB/s of DDR5-class PHY ≈ 165–360 mm of die edge = 1.5–3.2× a GB202 perimeter (~111 mm, ~70% already GDDR7); 45 UDIMM channels ≈ 5,500 signal pins / 8–10k balls
+- DDR4-vs-GDDR5 natural experiment (−50–55% FPS, same GPU + bus width) — GamersNexus (GT 1030)
+- Design-in side-port precedents (why a co-designed host chooses a side-port over impersonation): NVIDIA Grace (LPDDR5X), AMD MI300, SambaNova SN40L (1.5 TB DDR @ ~200 GB/s beside 64 GB HBM @ 2 TB/s), Credo/Celestial/Eliyan host links
+- GPU memory system-visible latency (~226–335 ns) is the GPU hierarchy, not the DRAM — a GDDR-attached CPU would see ~133 ns (Chips and Cheese) — i.e. STRATA-V's latency story survives
+- Full adversarial report + 37 archived source artifacts (`G_` prefix, incl. O'Connor MICRO-50, Dally HC2023, Micron/Rambus/Samsung/SK hynix memory-power docs, JEDEC GDDR7 PR, AD102 die shot, community captures): /tmp research corpus
