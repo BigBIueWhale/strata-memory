@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apple&rsquo;s answer &mdash; 2.11&nbsp;TiB in LPDDR5X vs GB200 NVL36, per served user</title>
+<style>
+  :root{--ink:#1b1f24;--paper:#fbfaf7;--muted:#5d6571;--rule:#e2ddd2;--accent:#7a4cc4;--accent2:#1f7a5a;--amber:#9a6a00;--red:#9a2f2f;--code-bg:#f1ede4;--code-ink:#3a2f5a;--blue:#1f5d7a;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:920px;margin:0 auto;padding:44px 24px 120px}
+  header.hero{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:8px}
+  .kicker{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:32px;line-height:1.1;margin:.2em 0 .12em}
+  .sub{font-size:18px;color:var(--muted);margin:0}
+  .meta{font-size:12.5px;color:var(--muted);margin-top:12px}
+  h2{font-size:22px;margin:2em 0 .45em;padding-top:.3em;border-top:1px solid var(--rule);line-height:1.18}
+  h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;font-size:15px;vertical-align:.18em;margin-right:.5em}
+  h3{font-size:16.5px;margin:1.3em 0 .3em;color:var(--accent2)}
+  p{margin:.65em 0}
+  code{font-family:"SFMono-Regular",Consolas,Menlo,monospace;font-size:.85em;background:var(--code-bg);color:var(--code-ink);padding:1px 5px;border-radius:4px;white-space:nowrap}
+  strong{font-weight:700}
+  em.t{font-style:normal;font-weight:600;color:var(--accent2)}
+  ul,ol{margin:.5em 0 .8em;padding-left:1.3em}
+  li{margin:.3em 0}
+  .lede{font-size:18px;color:#33373d}
+  .callout{margin:1.1em 0;padding:13px 17px;border-radius:9px;border-left:5px solid var(--accent);background:#f4f0fb}
+  .callout .lab{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:4px;color:var(--accent)}
+  .callout.stop{border-left-color:var(--red);background:#fbecec}.callout.stop .lab{color:var(--red)}
+  .callout.punch{border-left-color:var(--accent2);background:#e9f5ef}.callout.punch .lab{color:var(--accent2)}
+  .callout.catch{border-left-color:var(--amber);background:#fbf4e4}.callout.catch .lab{color:var(--amber)}
+  .callout.spec{border-left-color:var(--blue);background:#e8f2f7}.callout.spec .lab{color:var(--blue)}
+  table{border-collapse:collapse;width:100%;margin:1em 0;font-size:13.6px}
+  th,td{border:1px solid var(--rule);padding:6px 9px;text-align:left;vertical-align:top}
+  th{background:#efe9dd;font-size:12.3px}
+  tbody tr:nth-child(even){background:#f6f2ea}
+  .big{font-size:20px;font-weight:700}
+  .verdict{font-size:20px;font-weight:800;color:var(--accent2)}
+  .win{color:var(--accent2);font-weight:700}
+  .flag{color:var(--amber);font-weight:700}
+  .apl{color:var(--red);font-weight:700}
+  footer{margin-top:56px;border-top:1px solid var(--rule);padding-top:16px;color:var(--muted);font-size:13px}
+  .diagram{border:1px solid var(--rule);border-radius:10px;padding:16px;margin:1.1em 0;background:#fff;font-size:12.5px}
+  .box{border-radius:7px;padding:9px 11px;margin:6px 0;text-align:center}
+  .bv{background:#101010;color:#fff;font-weight:700}
+  .b0{background:#f4f0fb;border:1px solid #d9c9f0;color:#4b2f78;font-weight:600}
+  .b1{background:#e9f5ef;border:1px solid #bfe3d2;color:#12503a}
+  .b2{background:#e8f2f7;border:1px solid #bcd8e6;color:#144b63}
+  .lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">power analysis &middot; the efficient&#8209;Apple counterfactual</div>
+  <h1>If Apple built the 2.11&nbsp;TiB machine &mdash; watts per served user vs GB200&nbsp;NVL36</h1>
+  <p class="sub">Same feat as the rest of this repo &mdash; hold Kimi&nbsp;K3 at 1M&#8209;token full&#8209;KV quality in 2.11&nbsp;TiB &mdash; but built the way Apple would: LPDDR5X unified memory instead of a DDR5&#8209;impersonation converter. Then the honest question: does it actually win on power?</p>
+  <p class="meta">Companion to <code>kimi_k3_1m_full_quality.html</code> (the 2.11&nbsp;TiB build), <code>kimi_k3_serving_economics.html</code> (the per&#8209;user KV math + NVL36), and <code>strata_v_design.html</code> (&sect;12 energy&#8209;per&#8209;bit). Two pinned constraints from the brief: <strong>(1)</strong> the Apple compute die is <em>identical to an RTX&nbsp;5090 on prefill</em> &mdash; not a real Apple part &mdash; and <strong>(2)</strong> Apple serves <em>one</em> running agent while NVL36 serves however many fit its VRAM (~165). First&#8209;principles estimates, <strong>&plusmn;30%</strong>. Compiled 2026&#8209;07.</p>
+</header>
+
+<p class="lede">The intuition &mdash; &ldquo;Apple sips, NVIDIA guzzles&rdquo; &mdash; is true in absolute watts and <strong>inverts the moment you divide by users</strong>. This document derives both numbers from the physics of where a joule actually goes, keeps prefill and decode strictly separate (they burn energy in different silicon), and does not let the Apple machine cheat with an efficiency lever the brief took away from it.</p>
+
+<div class="callout punch"><span class="lab">The answer, stated first</span>
+<p style="margin-top:2px"><span class="verdict">Per served user, at matched speed, NVL36 is <em>more</em> energy&#8209;efficient &mdash; ~2.0&times; on prefill, ~1.5&times; on decode. Apple wins ~100&times; on <em>absolute</em> power, on cost, and on single&#8209;user latency. They are optimized for different verbs.</span></p>
+<p>NVIDIA is built to <strong>move</strong> bits fast for many; Apple is built to <strong>hold</strong> bits at low power for one. A 1M&#8209;token conversation is <em>prefill&#8209;heavy</em> (ingesting the context is an O(N&sup2;) compute mountain), so most of its joules land in exactly the phase where the brief&rsquo;s &ldquo;5090&#8209;compute&rdquo; clamp makes Apple ~2&times; worse. Apple&rsquo;s genuinely beautiful LPDDR5X only wins the <em>smaller</em> (decode) slice &mdash; and even there only to a near&#8209;tie.</p>
+</div>
+
+<h2 id="why"><span class="num">01</span>First principles &mdash; why anything here burns a joule, and <em>when</em></h2>
+<p>Every watt in either machine is one of exactly four physical events. Naming them is the whole analysis, because two of them fire during <strong>prefill</strong> and two during <strong>decode</strong>, on different silicon &mdash; so a machine can win one phase and lose the other.</p>
+<table>
+<thead><tr><th>Mechanism</th><th>The physics</th><th>Paid mostly during&hellip;</th><th>Favors</th></tr></thead>
+<tbody>
+<tr><td><strong>Move a bit down a wire</strong></td><td><code>&frac12;&middot;C&middot;V&sup2;</code> per transition &mdash; charge the wire&rsquo;s capacitance <em>C</em> through voltage <em>V</em></td><td><strong>decode</strong> (stream weights + KV)</td><td>low <em>V</em>, short wire, <strong>few hops</strong></td></tr>
+<tr><td><strong>Activate a DRAM row</strong></td><td>dump a whole row into sense&#8209;amps to read any of it (amortized when streaming)</td><td>both</td><td>~everyone (same 1T1C array)</td></tr>
+<tr><td><strong>Refresh the array</strong></td><td>leaky cells must be topped up every ~32&ndash;64&nbsp;ms; scales with <em>capacity</em></td><td><strong>always</strong> &mdash; idle included</td><td>low&#8209;leakage DRAM (<strong>LPDDR</strong>)</td></tr>
+<tr><td><strong>One multiply&#8209;accumulate</strong></td><td>&prop; <code>C&middot;V&sup2;</code> of the toggling transistors; FP4&nbsp;&laquo;&nbsp;FP8&nbsp;&laquo;&nbsp;FP16</td><td><strong>prefill</strong> (O(N&sup2;) attn + O(N&middot;P) FFN)</td><td>low <em>V/f</em>, wide silicon, low precision</td></tr>
+</tbody>
+</table>
+<p>Two consequences fall straight out, and they decide everything below:</p>
+<ul>
+<li><strong>The <code>V&sup2;</code> term is the master lever, and it splits by workload.</strong> Prefill energy lives in the <em>compute</em> <code>V&sup2;</code>; decode energy lives in the <em>interface</em> <code>V&sup2;</code>. Different transistors, different voltages &mdash; so &ldquo;which machine is more efficient&rdquo; has <em>two</em> answers, not one.</li>
+<li><strong>Wide&#8209;and&#8209;slow beats narrow&#8209;and&#8209;fast, always.</strong> Raising clock <code>f</code> needs higher <code>V</code>, so dynamic power runs ~<code>V&sup2;&middot;f</code>&nbsp;&asymp;&nbsp;<code>f&sup3;</code>. Spreading the same throughput over 2&times; the silicon at &frac12; the clock costs far fewer joules per op. <em class="t">This is Apple&rsquo;s real superpower</em> &mdash; and &sect;03 is where the brief confiscates it.</li>
+</ul>
+
+<h2 id="apple"><span class="num">02</span>What Apple would actually do &mdash; and the memory it would pick</h2>
+<p>Apple&rsquo;s house style is not a DDR5 warehouse behind an impersonation PHY. It is <strong>unified LPDDR5X soldered next to the compute die</strong> &mdash; and from the <code>&frac12;CV&sup2;</code> view that is the single best bit&#8209;mover in the industry, on three axes at once:</p>
+<table>
+<thead><tr><th>Bit&#8209;movement lever</th><th>LPDDR5X (Apple)</th><th>GDDR7 (5090)</th><th>DDR5 DIMM (STRATA&#8209;V back)</th><th>HBM3e (NVL36)</th></tr></thead>
+<tbody>
+<tr><td>I/O voltage (the <code>V&sup2;</code>)</td><td><strong>~0.5&nbsp;V</strong></td><td>~1.35&nbsp;V</td><td>~1.1&nbsp;V</td><td>~0.4&nbsp;V</td></tr>
+<tr><td>Reach / capacitance <em>C</em></td><td><strong>on&#8209;package, point&#8209;to&#8209;point</strong></td><td>short soldered</td><td>long, stubbed, socketed</td><td>on&#8209;interposer (shortest)</td></tr>
+<tr><td>Interfaces GPU&nbsp;&rarr;&nbsp;cell (&ldquo;hops&rdquo;)</td><td><strong>1</strong></td><td>1</td><td><strong>3</strong> (front + D2D + DDR5 PHY)</td><td>1 (+ NVLink for cross&#8209;shard)</td></tr>
+<tr><td>Subsystem energy</td><td><strong>~1.5&ndash;4&nbsp;pJ/bit</strong></td><td>~4.5&nbsp;pJ/bit</td><td>~12&ndash;22&nbsp;pJ/bit</td><td>~3.5&ndash;4&nbsp;pJ/bit</td></tr>
+<tr><td>Static / refresh per GB</td><td><strong>lowest (mobile&#8209;bred)</strong></td><td>high</td><td>high</td><td>high</td></tr>
+</tbody>
+</table>
+<p>So Apple&rsquo;s answer to this whole repo is blunt: <strong>don&rsquo;t impersonate GDDR7 over DDR5 at all &mdash; put the 2.11&nbsp;TiB in LPDDR5X unified memory and read it directly.</strong> That is exactly the &ldquo;co&#8209;designed side&#8209;port&rdquo; your own <code>strata_v_design.html</code>&nbsp;&sect;06 design&#8209;in paradox already crowns as superior (it is what NVIDIA Grace does). Priced in watts, on the memory subsystem alone for the identical 2.11&nbsp;TiB&nbsp;@&nbsp;1.79&nbsp;TB/s:</p>
+<div class="callout spec"><span class="lab">The memory subsystem, head to head (2.11&nbsp;TiB @ 1.79&nbsp;TB/s)</span>
+<strong>STRATA&#8209;V DDR5</strong>: ~490&nbsp;W (&asymp;220&nbsp;W converter + ~270&nbsp;W DIMMs, per &sect;12). &nbsp;&rarr;&nbsp; <strong>Apple LPDDR5X</strong>: <strong>~150&ndash;190&nbsp;W</strong> (~175&nbsp;W central) &mdash; scaled from a shipping Mac&nbsp;Studio (M3&nbsp;Ultra, 512&nbsp;GB&nbsp;LPDDR5X&nbsp;@&nbsp;819&nbsp;GB/s): dynamic scales with bandwidth (&times;2.2), static with capacity (&times;4.2). <strong>&asymp;&nbsp;2.8&times; less memory power</strong> &mdash; the honest, first&#8209;principles size of &ldquo;Apple makes better engineering choices.&rdquo; It is real. Now watch the brief spend it.</div>
+
+<h2 id="clamp"><span class="num">03</span>The clamp &mdash; the brief removes Apple&rsquo;s best lever on purpose</h2>
+<p>Constraint&nbsp;(1): the Apple compute die is <strong>identical to an RTX&nbsp;5090 on prefill</strong>. Read through &sect;01&rsquo;s second consequence, that is not a small stipulation &mdash; it is a surrender of Apple&rsquo;s entire compute&#8209;efficiency advantage.</p>
+<ul>
+<li>Real Apple silicon is the world champion of <em>wide&#8209;and&#8209;slow</em>: giant dies at ~1&nbsp;GHz and low voltage, riding the bottom of the <code>V&sup2;f</code> curve.</li>
+<li>An RTX&nbsp;5090 is the opposite operating point: a ~750&nbsp;mm&sup2; die pushed to ~2.7&nbsp;GHz at high voltage to hit peak clocks &mdash; paying the cubic power penalty for frequency.</li>
+<li>Pinning &ldquo;identical compute to a 5090&rdquo; forces the Apple box onto the <em>5090&rsquo;s</em> voltage/clock point for the compute&#8209;bound phase. <strong>Apple&rsquo;s low&#8209;<code>V</code> compute lever is switched off; only its low&#8209;<code>V</code> <em>memory</em> lever survives.</strong></li>
+</ul>
+<p>The consequence is precise: Apple&rsquo;s advantage is now confined to the <strong>bit&#8209;movement</strong> term (decode), and denied in the <strong>MAC</strong> term (prefill). Constraint&nbsp;(2) &mdash; one agent vs ~165 &mdash; then removes its <em>other</em> structural lever, amortization. Both removals favor NVL36, and both are the brief&rsquo;s own choices, not the hardware&rsquo;s.</p>
+
+<h2 id="pin"><span class="num">04</span>The two machines, pinned</h2>
+<div class="diagram">
+  <div class="lbl">Apple box &mdash; one 5090&#8209;class compute die, 2.11&nbsp;TiB LPDDR5X unified &middot; serves 1 agent</div>
+  <div class="box bv">FP4 1,676&nbsp;TFLOPS (dense) &middot; 1.79&nbsp;TB/s bus &middot; 2.11&nbsp;TiB @ ~175&nbsp;W &middot; 1 hop to cell</div>
+  <div class="lbl" style="margin-top:10px">GB200 NVL36 &mdash; 36&times; B200, one NVLink domain &middot; serves ~165 agents</div>
+  <div class="box b1">FP4 324&nbsp;PFLOPS (dense, 36&times;9,000) &middot; 288&nbsp;TB/s HBM3e (36&times;8) &middot; 6,696&nbsp;GiB &middot; 60&nbsp;kW rack</div>
+</div>
+<p>Two &ldquo;coincidences&rdquo; make the per&#8209;user comparison genuinely fair &mdash; NVL36 is sized so each of its users gets almost exactly <em>one Apple box&rsquo;s worth</em> of both resources:</p>
+<table>
+<thead><tr><th>Resource</th><th>NVL36 aggregate &divide; 165 users</th><th>Apple box &divide; 1 user</th><th>Per&#8209;user match</th></tr></thead>
+<tbody>
+<tr><td>Memory bandwidth</td><td>288&nbsp;TB/s &divide; 165 = <strong>1.75&nbsp;TB/s</strong></td><td><strong>1.79&nbsp;TB/s</strong></td><td><span class="win">&asymp; equal &rarr; equal decode tok/s</span></td></tr>
+<tr><td>FP4 compute</td><td>324&nbsp;PFLOPS &divide; 165 = <strong>1.96&nbsp;PFLOPS</strong></td><td><strong>1.68&nbsp;PFLOPS</strong> (one 5090)</td><td><span class="win">1.17&times; &rarr; ~equal prefill speed</span></td></tr>
+<tr><td>Capacity model</td><td>K3 (~1.45&nbsp;TiB) + 165&times;28&nbsp;GiB KV</td><td>K3 + 1&times;28&nbsp;GiB KV (room for ~17)</td><td>both hold full FP16 KV</td></tr>
+</tbody>
+</table>
+<p>So an &ldquo;NVL36 user&#8209;slot&rdquo; &asymp; one Apple box, by construction. Everything now reduces to <strong>joules per slot</strong> &mdash; computed separately for the two phases, because &sect;01 says they burn in different silicon.</p>
+
+<h2 id="prefill"><span class="num">05</span>Scenario&nbsp;A &mdash; maxed <em>prefill</em> (compute&#8209;bound)</h2>
+<p>Ingesting a 1M&#8209;token context is a MAC problem: energy = FLOPs &times; J/FLOP. The FLOPs are fixed by K3 and the context; the J/FLOP is where the machines diverge &mdash; and &sect;03&rsquo;s clamp is the whole story.</p>
+<table>
+<thead><tr><th>Prefill, maxed</th><th>Machine power</th><th>Users</th><th>Power / served user</th><th>Prefill speed / user</th></tr></thead>
+<tbody>
+<tr><td><strong>Apple box</strong></td><td>~720&nbsp;W <span class="flag">(compute 480 + mem 130 + platform 40, &divide;0.9 PSU)</span></td><td>1</td><td class="big apl">~720&nbsp;W</td><td>1.0&times; 5090</td></tr>
+<tr><td><strong>NVL36</strong></td><td>~60&nbsp;kW <span class="flag">(compute&#8209;bound &rarr; near rack TDP)</span></td><td>~165</td><td class="big win">~364&nbsp;W</td><td>1.17&times; 5090</td></tr>
+</tbody>
+</table>
+<div class="callout punch"><span class="lab">Verdict &mdash; NVL36 ~2.0&times; more efficient per user, at equal speed</span>
+Prefill is MACs, and the datacenter part wins the <code>V&sup2;f</code> curve outright: <strong>B200 &asymp; 7.5&ndash;9&nbsp;TFLOPS/W FP4</strong> vs the <strong>5090&rsquo;s ~3.5&nbsp;TFLOPS/W</strong> &mdash; a ~2.5&times; J/FLOP gap that is <em>entirely</em> wide&#8209;slow&#8209;low&#8209;<em>V</em> beating narrow&#8209;fast&#8209;high&#8209;<em>V</em>. The Apple box, forced to <em>be</em> a 5090, eats that penalty; its excellent memory never enters the prefill equation. The ~720&nbsp;vs&nbsp;364&nbsp;W gap is the 2.5&times; silicon&#8209;efficiency gap, trimmed by Apple carrying less per&#8209;user platform overhead.</div>
+
+<h2 id="decode"><span class="num">06</span>Scenario&nbsp;B &mdash; maxed <em>decode</em> (bandwidth&#8209;bound)</h2>
+<p>Generation is a wire problem: energy = bytes&#8209;moved &times; pJ/bit + refresh + whatever compute won&rsquo;t power&#8209;gate. Both machines read ~27&nbsp;GB of active K3 weights (+ the 28&nbsp;GiB MLA&#8209;KV) per token, at matched per&#8209;user bandwidth &mdash; so tok/s is equal and only the joules differ.</p>
+<table>
+<thead><tr><th>Decode, maxed</th><th>Machine power</th><th>Users</th><th>Power / served user</th><th>Decode speed / user</th></tr></thead>
+<tbody>
+<tr><td><strong>Apple box</strong></td><td>~430&nbsp;W <span class="flag">(mem maxed 180 + 5090 core idling 170 + platform 40, &divide;0.9)</span></td><td>1</td><td class="big apl">~430&nbsp;W <span style="font-weight:400">(best&#8209;case gating ~300)</span></td><td>1.79&nbsp;TB/s &rarr; ~65&nbsp;tok/s</td></tr>
+<tr><td><strong>NVL36</strong></td><td>~44&nbsp;kW <span class="flag">(~73% TDP; tensor cores idle, HBM maxed)</span></td><td>~165</td><td class="big win">~270&nbsp;W</td><td>1.75&nbsp;TB/s &rarr; ~65&nbsp;tok/s</td></tr>
+</tbody>
+</table>
+<div class="callout catch"><span class="lab">Verdict &mdash; NVL36 ~1.5&times;, but it is close &mdash; and here&rsquo;s the surprise</span>
+<strong>LPDDR5X does <em>not</em> beat HBM3e per bit.</strong> HBM&rsquo;s whole trick is 1,024+ pins at a <em>low</em> ~9&nbsp;Gb/s each &mdash; low swing, short interposer reach &mdash; landing at ~3.5&ndash;4&nbsp;pJ/bit, right alongside LPDDR5X. So Apple&rsquo;s memory elegance buys <strong>parity, not a win</strong>, on the actual bits moved. What decides it is <strong>amortization</strong>: NVL36 spreads its CPUs, fabric, leakage, and static&#8209;refresh across 165 users, while the Apple box makes <em>one</em> user carry a whole powered&#8209;up 5090 core + the refresh of the full 2.11&nbsp;TiB + the entire platform. Power&#8209;gate the idle compute hard and Apple closes to a near&#8209;tie (~300 vs ~270&nbsp;W) &mdash; but it does not pull ahead.</div>
+<p style="font-size:13.6px;color:var(--muted)">In joules per decoded token per user (at ~65&nbsp;tok/s): Apple ~6.6&nbsp;J vs NVL36 ~4.1&nbsp;J. The tok/s cancels, so the ratio is just the power ratio, ~1.6&times;.</p>
+
+<h2 id="verdict"><span class="num">07</span>The verdict &mdash; and the inversion, in one table</h2>
+<p>&ldquo;Apple sips, NVIDIA guzzles&rdquo; is a pure <strong>absolute&#8209;power artifact</strong>. It is completely true &mdash; and it flips under division, because NVIDIA&rsquo;s 60&nbsp;kW is 165&#8209;way&#8209;shared while the Apple box&rsquo;s 0.5&nbsp;kW serves one.</p>
+<table>
+<thead><tr><th>Lens</th><th>Apple box (1 agent)</th><th>NVL36 (~165 agents)</th><th>Winner</th></tr></thead>
+<tbody>
+<tr><td>Absolute power</td><td>~0.4&ndash;0.7&nbsp;kW (a desktop)</td><td>~44&ndash;60&nbsp;kW (rack + CDU)</td><td><span class="apl">Apple ~100&times;</span></td></tr>
+<tr><td>Power / user &mdash; <strong>prefill</strong></td><td>~720&nbsp;W</td><td>~364&nbsp;W</td><td><span class="win">NVL36 ~2.0&times;</span></td></tr>
+<tr><td>Power / user &mdash; <strong>decode</strong></td><td>~430&nbsp;W</td><td>~270&nbsp;W</td><td><span class="win">NVL36 ~1.6&times;</span></td></tr>
+<tr><td>Joules / decoded token / user</td><td>~6.6&nbsp;J</td><td>~4.1&nbsp;J</td><td><span class="win">NVL36 ~1.6&times;</span></td></tr>
+<tr><td>$ / user &mdash; capacity, <em>vs NVL36&rsquo;s HBM3e</em></td><td>LPDDR5X ~$12&ndash;21/GB</td><td>HBM3e ~$20&ndash;30+/GB</td><td><span class="apl">Apple (narrowed by the crunch)</span></td></tr>
+<tr><td>Single&#8209;user latency / QoS</td><td>uncontended full 1.79&nbsp;TB/s</td><td>shared pool, cross&#8209;GPU hops</td><td><span class="apl">Apple</span></td></tr>
+</tbody>
+</table>
+<div class="callout spec"><span class="lab">The &ldquo;when&rdquo; seals it</span>A <strong>1M&#8209;token conversation is prefill&#8209;heavy</strong>: ingesting 1M tokens is an O(N&sup2;) <em>compute</em> mountain, while decode is a per&#8209;token trickle. So the workload spends the bulk of its joules in exactly the phase where the 5090&#8209;clamp makes Apple ~2&times; worse. Apple&rsquo;s LPDDR5X wins the <em>smaller</em> slice, to a tie. Only a short&#8209;prompt / long&#8209;output workload (decode&#8209;dominated) would tilt back toward Apple &mdash; and even then, not past NVL36.</div>
+<p class="big" style="margin-top:1.1em">One line: <em class="t">NVIDIA is built to move bits fast for many; Apple is built to hold bits at low power for one.</em> The 2.11&nbsp;TiB feat is a capacity feat, so Apple&rsquo;s LPDDR5X is the right <em>memory</em> &mdash; but the brief&rsquo;s clamp (5090 compute) and its scope (one agent) hand NVIDIA the two levers, prefill efficiency and amortization, that decide watts&#8209;per&#8209;served&#8209;user.</p>
+
+<h2 id="flags"><span class="num">08</span>Honest flags</h2>
+<ul>
+<li><strong>&plusmn;30% throughout.</strong> The load&#8209;bearing unknowns are the LPDDR5X static/refresh power at 2.11&nbsp;TiB (scaled from Mac&nbsp;Studio, not measured at this capacity) and the two rack&#8209;power split points (NVL36 near&#8209;TDP at prefill, ~73% at decode). None of the <em>verdicts</em> flip inside the band: prefill stays a clear NVL36 win, decode stays NVL36&#8209;wins&#8209;to&#8209;tie.</li>
+<li><strong>The 5090 core power split.</strong> 575&nbsp;W TBP &minus; ~95&nbsp;W GDDR7 &asymp; 480&nbsp;W compute core (used at prefill); ~170&nbsp;W assumed during memory&#8209;bound decode (a stalled GPU still burns leakage + clocks + the light matmul&#8209;vector). Aggressive power&#8209;gating is the main way Apple&rsquo;s decode number improves.</li>
+<li><strong>Decode tok/s uses the repo&rsquo;s 27&nbsp;GB/token weight&#8209;read bound (~65&nbsp;tok/s).</strong> Counting the 28&nbsp;GiB MLA&#8209;KV read <em>per step</em> at true 1M context pulls the realized rate toward ~30&nbsp;tok/s &mdash; but equally for both machines, since per&#8209;user bandwidth is matched, so the power ratio is unchanged.</li>
+<li><strong>Batching caveat, in NVL36&rsquo;s favor and against it.</strong> Large&#8209;batch MoE decode lets users <em>share</em> expert&#8209;weight reads (helps NVL36&rsquo;s effective throughput), but each user&rsquo;s 28&nbsp;GiB KV is private and re&#8209;read every step (does <em>not</em> share) &mdash; at 1M context the KV term dominates, which is exactly why the per&#8209;user&#8209;bandwidth framing holds.</li>
+<li><strong>Apple runs 1 of a possible ~17.</strong> Per the brief. Let Apple fill its 2.11&nbsp;TiB with ~17 agents and its fixed overhead amortizes ~17&times; &mdash; but each agent then shares the single 1.79&nbsp;TB/s pool (~0.1&nbsp;TB/s each &rarr; ~16&times; slower decode). That is the capacity&#8209;vs&#8209;bandwidth trade, not a free win; it changes the product, not just the price.</li>
+<li><strong>Cost is a different axis from power &mdash; and LPDDR5X is not the cheap memory.</strong> Two comparisons, kept apart. <em>Vs NVL36&rsquo;s HBM3e</em>: LPDDR5X is cheaper per GB (~$12&ndash;21 vs ~$20&ndash;30+) and buyable in principle &mdash; so Apple wins $/user there, though the 2026 crunch has <em>narrowed</em> the gap (<code>strata_v_design.html</code>&nbsp;&sect;13). <em>Vs this repo&rsquo;s DDR5&#8209;5600 UDIMM build</em>: LPDDR5X is <strong>not</strong> cheaper &mdash; mid&#8209;2026 contract LPDDR5X (~$12&ndash;21/GB, surging ~90% QoQ on NVIDIA Grace/Rubin demand) runs parity&#8209;to&#8209;premium over commodity DDR5 UDIMM (~$13&ndash;15/GB) and climbs faster. Its edge over the DDR5 build is <strong>~2.8&times; lower power + one&#8209;hop integration &mdash; never price.</strong></li>
+<li><strong>You cannot actually buy the LPDDR5X version.</strong> It is soldered, design&#8209;in, contract&#8209;allocation OEM silicon &mdash; no retail SKU, no swappable module, no 2.11&nbsp;TiB kit on a shelf. The 45&times; DDR5 UDIMM build is the only one an ordinary buyer can assemble; the LPDDR5X path is the &ldquo;you must <em>be</em> Apple/Grace&rdquo; design&#8209;in route (<code>strata_v_design.html</code>&nbsp;&sect;06) &mdash; a real practical asymmetry, not a footnote.</li>
+</ul>
+
+<footer>
+  <p><strong>Bottom line.</strong> Building the 2.11&nbsp;TiB machine the Apple way &mdash; LPDDR5X unified memory &mdash; genuinely cuts the <em>memory</em> subsystem to ~1/3 of the STRATA&#8209;V DDR5 converter&rsquo;s (~175&nbsp;W vs ~490&nbsp;W), because 0.5&nbsp;V on&#8209;package point&#8209;to&#8209;point is the lowest&#8209;energy way to move a bit. But with the compute clamped to an RTX&nbsp;5090 and the machine serving one agent, Apple&rsquo;s two decisive levers &mdash; low&#8209;voltage <em>compute</em> and 165&#8209;way <em>amortization</em> &mdash; are both switched off, so <strong>NVL36 wins watts&#8209;per&#8209;served&#8209;user ~2.0&times; (prefill) and ~1.6&times; (decode)</strong>, while Apple wins ~100&times; on absolute power, plus cost and single&#8209;user QoS. The efficient&#8209;Apple counterfactual is real &mdash; it just lands on the axes the brief did not ask about.</p>
+  <p style="color:var(--muted)">A hypothetical, first&#8209;principles power study, 2026&#8209;07. External anchors: RTX&nbsp;5090 (FP4 1,676&nbsp;TFLOPS dense, 1.79&nbsp;TB/s, 575&nbsp;W), B200 (FP4 9,000&nbsp;TFLOPS dense, 8&nbsp;TB/s), GB200&nbsp;NVL36 (~60&nbsp;kW single rack), LPDDR5X (~30&ndash;40% below DDR5 in energy/bit; at parity&#8209;to&#8209;premium on $/GB, mid&#8209;2026). K3 footprint, per&#8209;user KV, and 1.79&nbsp;TB/s target from this repo&rsquo;s <code>kimi_k3_*</code> and <code>strata_v_design</code> files. Estimates &plusmn;30%; capacity in GiB/TiB, bandwidth in GB/s, power in W.</p>
+</footer>
+
+</div>
+</body>
+</html>
